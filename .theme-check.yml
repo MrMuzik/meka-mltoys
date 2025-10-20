@@ -1,0 +1,3 @@
+extends: theme-check:recommended
+exclude:
+  - node_modules

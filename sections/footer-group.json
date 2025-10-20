@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "buy-now",
+            "menu": "buy-now"
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "support",
+            "menu": "support"
+          }
+        },
+        "89f2b72b-8551-4b3c-a430-1719424d7f61": {
+          "type": "link_list",
+          "settings": {
+            "heading": "more",
+            "menu": "more"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "89f2b72b-8551-4b3c-a430-1719424d7f61"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading_size": "h5",
+        "logo": "shopify://shop_images/ml-toy-logo.png",
+        "logo_width": 190,
+        "show_social": true,
+        "social_icon_style": "default",
+        "social_label": "",
+        "newsletter_enable": true,
+        "newsletter_enable_top": true,
+        "newsletter_title": "Join Our Community!",
+        "newsletter_description": "<p>Be the first to find out about new products and exclusive offer</p>",
+        "enable_follow_on_shop": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "footer_subtext": "",
+        "payment_enable": false,
+        "policy_color_scheme": "",
+        "show_policy": false,
+        "policy_padding_top": 20,
+        "policy_padding_bottom": 20,
+        "margin_top": 0,
+        "padding_top": 80,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

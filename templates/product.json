@@ -1,0 +1,338 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumbs_374JWg": {
+          "type": "breadcrumbs",
+          "settings": {
+            "color_scheme": "scheme-2",
+            "home": "Home",
+            "breadcrumbs_collection": true
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "Automobile parts",
+            "text_size": "text--medium",
+            "font_weight": "fw-400",
+            "text_color": "accent"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h3"
+          }
+        },
+        "judge_me_reviews_preview_badge_ddEEJh": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": "price--small",
+            "price_color": "foreground"
+          }
+        },
+        "inventory_pbCRT8": {
+          "type": "inventory",
+          "settings": {
+            "inventory_base": 100,
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true,
+            "show_progress_bar": true,
+            "label_font_size": "extra-small",
+            "color_in_stock": "#2cb683",
+            "color_low_stock": "#ff353c"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "color_scheme": "",
+            "picker_type": "dropdown",
+            "swatch_picker_type": "button",
+            "swatch_shape": "square",
+            "swatches_style": "outlined"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "color_scheme": "",
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "quantity_color_scheme": ""
+          }
+        },
+        "collapsible_tab_kLNhqq": {
+          "type": "collapsible_tab",
+          "name": "Description",
+          "settings": {
+            "heading": "Description",
+            "heading_size": "h5",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "35c54d21-aabe-4447-934d-bc793c25fd66": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "You might also like",
+            "product_list_limit": 10,
+            "pagination_style": "arrows",
+            "image_ratio": "portrait",
+            "enable_quick_add": true,
+            "product_heading_font_weight": "fw-400"
+          }
+        },
+        "delivery_date_Kz744U": {
+          "type": "delivery_date",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "show_delivery_date": true,
+            "delivery_max": 8,
+            "delivery_heading": "Expected delivery date:",
+            "delivery_text": "Usually ready in 2-3 days.",
+            "show_pickup_availability": true
+          }
+        },
+        "text_xtRNAN": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>Note:<\/strong> This is a demo store. The images have been sourced from Shutterstock and Adobe Stock.",
+            "text_size": "text--small",
+            "font_weight": "fw-400",
+            "text_color": "text-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumbs_374JWg",
+        "vendor",
+        "title",
+        "judge_me_reviews_preview_badge_ddEEJh",
+        "price",
+        "inventory_pbCRT8",
+        "variant_picker",
+        "buy_buttons",
+        "collapsible_tab_kLNhqq",
+        "35c54d21-aabe-4447-934d-bc793c25fd66",
+        "delivery_date_Kz744U",
+        "text_xtRNAN"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "media_position": "left",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "thumbnail_position": "bottom",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 140
+      }
+    },
+    "175607880400077e24": {
+      "type": "apps",
+      "blocks": {
+        "ecom_youtube_card_gallery_carousel_yqx8GH": {
+          "type": "shopify:\/\/apps\/ecom-youtube-card-gallery\/blocks\/carousel\/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "settings": {
+            "gallery-id": "nbXfspti",
+            "main-color": "#000000",
+            "sub-color": "#111111"
+          }
+        }
+      },
+      "block_order": [
+        "ecom_youtube_card_gallery_carousel_yqx8GH"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "help_and_feedback_mFaiKM": {
+      "type": "help-and-feedback",
+      "blocks": {
+        "collapsible_heading_x6ALmP": {
+          "type": "collapsible_heading",
+          "settings": {
+            "collapsible_heading": "FAQs",
+            "button_label": "See All",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods can I use?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": true
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are the autoparts on your website genuine?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer warranties on your autoparts?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer e-gift cards for international customers?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I ensure that I'm purchasing the correct part?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_heading_x6ALmP",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4",
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "text": "",
+        "color_scheme": "scheme-1",
+        "faq_color_scheme": "scheme-3",
+        "reviews_color_scheme": "",
+        "desktop_layout": "image_first",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "title": "Related products",
+        "heading_size": "h2",
+        "description": "",
+        "heading_alignment": "center",
+        "products_to_show": 10,
+        "columns_desktop": 3,
+        "enable_slideshow": true,
+        "slides_number": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "slides_number_mb": 1,
+        "padding_top": 60,
+        "padding_bottom": 140
+      }
+    },
+    "17560776142eb8d1a3": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_74nPG8": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_74nPG8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "sticky_add_to_cart_it6b6P": {
+      "type": "sticky-add-to-cart",
+      "settings": {
+        "color_scheme": "",
+        "style": "right-side",
+        "sticky_width": "56",
+        "title_font_weight": "600"
+      }
+    },
+    "175607666646f45d5d": {
+      "type": "apps",
+      "blocks": {
+        "ecom_youtube_card_gallery_carousel_zQPXaP": {
+          "type": "shopify:\/\/apps\/ecom-youtube-card-gallery\/blocks\/carousel\/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "settings": {
+            "gallery-id": "",
+            "main-color": "#000000",
+            "sub-color": "#111111"
+          }
+        }
+      },
+      "block_order": [
+        "ecom_youtube_card_gallery_carousel_zQPXaP"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "175607880400077e24",
+    "help_and_feedback_mFaiKM",
+    "related_products",
+    "17560776142eb8d1a3",
+    "sticky_add_to_cart_it6b6P",
+    "175607666646f45d5d"
+  ]
+}

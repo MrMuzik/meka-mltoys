@@ -1,0 +1,305 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_breadcrumbs_top": false,
+        "image": "",
+        "radius_background": false,
+        "banner_height": "default",
+        "banner_mobile_height": "default",
+        "content_alignment": "top",
+        "image_block": false,
+        "image_size": "60",
+        "image_overlay_opacity": 70,
+        "title": "Frequently asked questions",
+        "heading_size": "h0",
+        "description_text": "<p>Have questions? Read below for the answers<\/p>",
+        "text_size_block": "medium",
+        "heading_alignment": "left",
+        "color_scheme": "scheme-3",
+        "content_color_scheme": "",
+        "text_secondary_color": false,
+        "section_full_width": true,
+        "section_background": "#f4f2ec",
+        "padding_top": 200,
+        "padding_bottom": 60,
+        "content_padding_top": 100,
+        "content_padding_bottom": 100
+      }
+    },
+    "de973dd3-12c1-4ab9-bcf9-f03a7499782a": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I place an order?",
+            "icon": "none",
+            "row_content": "<p>You can place an order through our website or by calling our customer service team.<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I add or remove items from my cart?",
+            "icon": "none",
+            "row_content": "<p>Yes, you can modify your cart until you confirm your order<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do I need an account to place an order?",
+            "icon": "none",
+            "row_content": "<p>While not mandatory, creating an account allows you to track your order history, manage saved parts lists, and enjoy faster checkout in the future.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-1",
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-2",
+        "template--16766847647981__de973dd3-12c1-4ab9-bcf9-f03a7499782a-collapsible_row-3"
+      ],
+      "settings": {
+        "heading": "Ordering",
+        "heading_size": "h2",
+        "description": "<p>All your queries answered regarding ordering.<\/p>",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 134,
+        "padding_bottom": 70
+      }
+    },
+    "a4b190ec-7ab5-4d58-9343-8b6332fb2c88": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16766847647981__a4b190ec-7ab5-4d58-9343-8b6332fb2c88-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I find the right part for my car?",
+            "icon": "none",
+            "row_content": "<p>You can use our vehicle selection tool on the website or search by part number, keyword, or browse by category.<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__a4b190ec-7ab5-4d58-9343-8b6332fb2c88-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if I'm unsure about a part's compatibility?",
+            "icon": "none",
+            "row_content": "<p>Our customer service team is happy to assist you in finding the correct part for your vehicle. You can contact them by phone or chat online.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GKpzCm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer product warranties?",
+            "icon": "none",
+            "row_content": "<p>Warranty information varies depending on the specific product. Warranty details are usually included on the product page or packaging.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16766847647981__a4b190ec-7ab5-4d58-9343-8b6332fb2c88-collapsible_row-1",
+        "template--16766847647981__a4b190ec-7ab5-4d58-9343-8b6332fb2c88-collapsible_row-2",
+        "collapsible_row_GKpzCm"
+      ],
+      "settings": {
+        "heading": "Product",
+        "heading_size": "h2",
+        "description": "<p>All your queries answered regarding products.<\/p>",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 64,
+        "padding_bottom": 70
+      }
+    },
+    "7e8b8169-c1c3-4f79-8798-02c0d6b97e99": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16766847647981__7e8b8169-c1c3-4f79-8798-02c0d6b97e99-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods do you accept?",
+            "icon": "none",
+            "row_content": "<p>We accept major credit cards (Visa, Mastercard, etc.), debit cards, and some online payment methods (e.g., PayPal).<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__7e8b8169-c1c3-4f79-8798-02c0d6b97e99-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is my payment information secure?",
+            "icon": "none",
+            "row_content": "<p>Yes, we use secure encryption technology to protect your payment information.<\/p>",
+            "page": ""
+          }
+        },
+        "9f7c554b-8823-4deb-b5d2-f05062e1a2a4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer COD?",
+            "icon": "none",
+            "row_content": "<p>Sorry, at this moment we do not offer cash on delivery (COD) mode of payment.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16766847647981__7e8b8169-c1c3-4f79-8798-02c0d6b97e99-collapsible_row-1",
+        "template--16766847647981__7e8b8169-c1c3-4f79-8798-02c0d6b97e99-collapsible_row-2",
+        "9f7c554b-8823-4deb-b5d2-f05062e1a2a4"
+      ],
+      "settings": {
+        "heading": "Payment",
+        "heading_size": "h2",
+        "description": "<p>All your queries answered regarding payments.<\/p>",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 64,
+        "padding_bottom": 70
+      }
+    },
+    "d70c4540-7d30-47b9-ab30-73ac03ed75a9": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16766847647981__d70c4540-7d30-47b9-ab30-73ac03ed75a9-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are your shipping options?",
+            "icon": "none",
+            "row_content": "<p>We offer standard, expedited, and next-day delivery options (availability may vary depending on your location).<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__d70c4540-7d30-47b9-ab30-73ac03ed75a9-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much does shipping cost?",
+            "icon": "none",
+            "row_content": "<p>Shipping costs are calculated based on the weight, size of your order, your chosen delivery method, and your location. The final cost will be displayed at checkout.<\/p>",
+            "page": ""
+          }
+        },
+        "cce94d03-ca28-463f-899c-6bc8b645e508": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I track my order?",
+            "icon": "none",
+            "row_content": "<p>Yes, you can track your order's progress by logging into your account or using the tracking information provided in your order confirmation email.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16766847647981__d70c4540-7d30-47b9-ab30-73ac03ed75a9-collapsible_row-1",
+        "template--16766847647981__d70c4540-7d30-47b9-ab30-73ac03ed75a9-collapsible_row-2",
+        "cce94d03-ca28-463f-899c-6bc8b645e508"
+      ],
+      "settings": {
+        "heading": "Shipping",
+        "heading_size": "h2",
+        "description": "<p>All your queries answered regarding shipping.<\/p>",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 64,
+        "padding_bottom": 70
+      }
+    },
+    "66e33005-7207-480a-9aeb-c36a3b7bb2d1": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your return policy?",
+            "icon": "none",
+            "row_content": "<p>We offer a 14-day return policy on most unused parts (exceptions may apply). You can find detailed return instructions and any exclusions on our Returns Policy page.<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return an item?",
+            "icon": "none",
+            "row_content": "<p>Please visit our Returns Policy page or contact customer service for instructions on initiating a return.<\/p>",
+            "page": ""
+          }
+        },
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who pays for return shipping?",
+            "icon": "none",
+            "row_content": "<p>This depends on the reason for the return. Our Returns Policy will specify who is responsible for return shipping costs.<\/p><p><\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-1",
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-2",
+        "template--16766847647981__66e33005-7207-480a-9aeb-c36a3b7bb2d1-collapsible_row-4"
+      ],
+      "settings": {
+        "heading": "Return products",
+        "heading_size": "h2",
+        "description": "<p>All your queries answered regarding return.<\/p>",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 70,
+        "padding_bottom": 140
+      }
+    }
+  },
+  "order": [
+    "main",
+    "de973dd3-12c1-4ab9-bcf9-f03a7499782a",
+    "a4b190ec-7ab5-4d58-9343-8b6332fb2c88",
+    "7e8b8169-c1c3-4f79-8798-02c0d6b97e99",
+    "d70c4540-7d30-47b9-ab30-73ac03ed75a9",
+    "66e33005-7207-480a-9aeb-c36a3b7bb2d1"
+  ]
+}

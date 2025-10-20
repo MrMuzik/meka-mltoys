@@ -1,0 +1,258 @@
+{% comment %}
+  Section: Upgrades by Vehicle
+  This section displays a slider of vehicles with a title, subheading, and icons.
+{% endcomment %}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{{ 'upgrade-by-vehicle.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .upgrades-by-vehicle {
+    /* padding: 50px 0; */
+    text-align: center;
+    position: relative; /* anchor for the floating SVG holder */
+    {% if section.settings.background_image != blank %}
+      background-image: url('{{ section.settings.background_image | image_url }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    {% endif %}
+  }
+
+  /* Mobile background image */
+  @media (max-width: 767px) {
+    .upgrades-by-vehicle {
+      {% if section.settings.background_image_mobile != blank %}
+        background-image: url('{{ section.settings.background_image_mobile | image_url }}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      {% endif %}
+    }
+  }
+</style>
+
+<div class="upgrades-by-vehicle" data-section-id="{{ section.id }}">
+  <div class="upgrades-by-vehicle__header">
+    <div class="upgrades-by-vehicle__title-wrapper">
+      {% if section.settings.left_icon != blank %}
+        {{ section.settings.left_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon' }}
+      {% endif %}
+      <h2 class="upgrades-by-vehicle__title">{{ section.settings.title }}</h2>
+      {% if section.settings.right_icon != blank %}
+        {{ section.settings.right_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon' }}
+      {% endif %}
+    </div>
+    {% if section.settings.subheading != blank %}
+      <p class="upgrades-by-vehicle__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+  </div>
+
+  <div class="upgrades-by-vehicle__grid-container">
+    <div class="vehicle-swiper swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.settings.vehicle_image != blank %}
+            <div class="swiper-slide">
+              <div class="vehicle-card-wrapper">
+                <div class="vehicle-card__svg">
+                  <svg viewBox="0 0 255 123" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-202.000000, -621.000000)">
+                      <path d="M312.746942,635.665667 C342.795755,635.665667 375.470718,641.874839 402.954847,654.421766 C416.593426,660.647987 463.681881,688.842028 452.732938,710.684109 C448.31537,719.496729 431.51489,724.593355 423.521058,727.249019 C405.798351,733.136752 387.332026,736.758403 368.836609,739.086201 C349.245671,741.55188 329.886077,741.634649 310.180631,741.634649 C292.389277,741.772182 274.702257,738.728513 258.062494,732.345914 C235.229245,723.58765 191.996533,692.240765 212.255932,662.251693 C233.170218,631.293221 306.497162,621.021193 340.559557,623.102058 C369.728418,624.883978 439.625909,645.054895 444.325442,680.638624 C445.728867,691.26502 442.74171,700.834782 434.738991,708.135661 C406.670607,733.742444 340.753995,727.612232 305.738711,727.612232 C285.150548,727.426236 264.579746,724.714287 244.510468,720.151473 C210.20282,712.351521 184.271563,693.90334 222.539037,666.258949 C273.719197,629.286445 352.102877,620.558956 411.838688,637.850902 C435.325989,644.649857 461.201224,658.041509 453.667766,685.920104"/>
+                    </g>
+                  </svg>
+                </div>
+                {% if block.settings.vehicle_link != blank %}
+                  <a href="{{ block.settings.vehicle_link }}" class="vehicle-card" tabindex="0">
+                    {{ block.settings.vehicle_image | image_url: width: 200 | image_tag: class: 'vehicle-card__image', loading: 'lazy' }}
+                    <p class="vehicle-card__title">{{ block.settings.vehicle_title }}</p>
+                  </a>
+                {% else %}
+                  <div class="vehicle-card" tabindex="0">
+                    {{ block.settings.vehicle_image | image_url: width: 200 | image_tag: class: 'vehicle-card__image', loading: 'lazy' }}
+                    <p class="vehicle-card__title">{{ block.settings.vehicle_title }}</p>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+  <div class="swiper-button-next upgrade-next">{% render 'right-arrow-long' %}</div>
+  <div class="swiper-button-prev upgrade-prev">{% render 'left-arrow-long' %}</div>
+  </div>
+
+  {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+    <div class="ml-button-primary">
+      <a href="{{ section.settings.button_link }}">
+        {{ section.settings.button_label }} {% render 'arrow-right' %}
+      </a>
+    </div>
+  {% endif %}
+
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper for vehicle cards
+    const vehicleSwiper = new Swiper('.vehicle-swiper', {
+      // Default: 1 column, 2 rows for mobile/tablet vertical stacking
+      slidesPerView: 1,
+      grid: {
+        rows: 2,
+        fill: 'row'
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.upgrade-next',
+        prevEl: '.upgrade-prev',
+        disabledClass: 'swiper-button-disabled',
+      },
+
+      // Pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Responsive breakpoints
+      breakpoints: {
+        // Mobile: 2x2 grid
+        320: {
+          slidesPerView: 1,
+          grid: {
+            rows: 2
+          },
+          centeredSlides: true,
+          navigation: {
+            enabled: true
+          }
+        },
+
+        // Tablet: 3x2 grid
+        768: {
+          slidesPerView: 3,
+          grid: {
+            rows: 2
+          },
+          centeredSlides: true,
+          navigation: {
+            enabled: true
+          }
+        },
+
+        // Desktop: 4x2 grid
+        1024: {
+          slidesPerView: 3,
+          grid: {
+            rows: 2
+          },
+          centeredSlides: false,
+          navigation: {
+            enabled: true
+          }
+        },
+
+        1280: {
+          slidesPerView: 4,
+          grid: {
+            rows: 2
+          },
+          centeredSlides: false,
+          navigation: {
+            enabled: true
+          }
+        }
+
+      },
+
+      // Auto height
+      autoHeight: false,
+
+      // Disable loop for finite swiping
+      loop: false,
+
+      // Keyboard navigation
+      keyboard: {
+        enabled: true,
+      },
+
+      // Touch settings
+      touchRatio: 1,
+      touchAngle: 45,
+      grabCursor: true,
+
+      // Observer to watch for DOM changes (when blocks are added/removed)
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+    });
+
+    // Function to update Swiper when content changes
+    function updateVehicleSwiper() {
+      if (vehicleSwiper) {
+        vehicleSwiper.update();
+        vehicleSwiper.updateSlides();
+        vehicleSwiper.updateProgress();
+        vehicleSwiper.updateSlidesClasses();
+      }
+    }
+
+    // // Listen for section reloads (Shopify theme editor)
+    // document.addEventListener('shopify:section:load', function(event) {
+    //   if (event.detail.sectionId === '{{ section.id }}') {
+    //     setTimeout(updateVehicleSwiper, 100);
+    //   }
+    // });
+
+    // // Listen for block additions/removals
+    // document.addEventListener('shopify:block:select', updateVehicleSwiper);
+    // document.addEventListener('shopify:block:deselect', updateVehicleSwiper);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Upgrades by Vehicle",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Upgrades by Vehicle" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Parts for the most popular brands" },
+    { "type": "image_picker", "id": "left_icon", "label": "Left Icon" },
+    { "type": "image_picker", "id": "right_icon", "label": "Right Icon" },
+    { "type": "image_picker", "id": "background_image", "label": "Background Image (Desktop)" },
+    { "type": "image_picker", "id": "background_image_mobile", "label": "Background Image (Mobile)" },
+    { "type": "text", "id": "button_label", "label": "Button Label", "default": "View All Vehicles" },
+    { "type": "url", "id": "button_link", "label": "Button Link" }
+  ],
+  "blocks": [
+    {
+      "type": "vehicle",
+      "name": "Vehicle",
+      "settings": [
+        { "type": "image_picker", "id": "vehicle_image", "label": "Vehicle Image" },
+        { "type": "text", "id": "vehicle_title", "label": "Vehicle Title", "default": "Vehicle Name" },
+        { "type": "url", "id": "vehicle_link", "label": "Vehicle Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upgrades by Vehicle",
+      "blocks": [
+        { "type": "vehicle" }, { "type": "vehicle" }, { "type": "vehicle" }, { "type": "vehicle" },
+        { "type": "vehicle" }, { "type": "vehicle" }, { "type": "vehicle" }, { "type": "vehicle" }
+      ]
+    }
+  ]
+}
+{% endschema %}

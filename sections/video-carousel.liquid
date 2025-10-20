@@ -1,0 +1,361 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-video-carousel.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.57 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.57 | round: 0 }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1199px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.72 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.72 | round: 0 }}px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} {
+    --slides-per-view: {{ section.settings.slides_per_view_mobile }};
+    --slides-per-view-tablet: {{ section.settings.slides_per_view_tablet }};
+    --slides-per-view-desktop: {{ section.settings.slides_per_view_desktop }};
+    --space-between: {{ section.settings.space_between }}px;
+  }
+{%- endstyle -%}
+
+<video-carousel
+  class="video-carousel color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-loop="{{ section.settings.loop }}"
+  data-speed="{{ section.settings.autoplay_speed }}"
+  data-section-id="{{ section.id }}"
+>
+  {%- if section.settings.title != blank or section.settings.description != blank -%}
+    <div class="section-heading align-{{ section.settings.heading_alignment }} page-width">
+      {%- if section.settings.title != blank -%}
+        <h2 class="section-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="section-description rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="video-carousel__wrapper page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="video-carousel__inner">
+      <div class="swiper video-carousel-{{ section.id }}">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide video-carousel__slide" {{ block.shopify_attributes }}>
+              <div class="video-carousel__item">
+                <div class="video-carousel__video-container">
+                  {%- if block.settings.youtube_url != blank -%}
+                    {%- liquid
+                      assign youtube_id = block.settings.youtube_url | split: 'v=' | last | split: '&' | first
+                      if youtube_id == block.settings.youtube_url
+                        assign youtube_id = block.settings.youtube_url | split: 'youtu.be/' | last | split: '?' | first
+                      endif
+                    -%}
+
+                    <div class="video-carousel__thumbnail" data-youtube-id="{{ youtube_id }}">
+                      {%- if block.settings.thumbnail_image != blank -%}
+                        {{- block.settings.thumbnail_image | image_url: width: 800 | image_tag:
+                            alt: block.settings.video_title,
+                            class: 'video-carousel__thumbnail-image',
+                            loading: 'lazy'
+                        -}}
+                      {%- else -%}
+                        <img
+                          src="https://img.youtube.com/vi/{{ youtube_id }}/maxresdefault.jpg"
+                          alt="{{ block.settings.video_title | escape }}"
+                          class="video-carousel__thumbnail-image"
+                          loading="lazy"
+                        >
+                      {%- endif -%}
+
+                      <button class="video-carousel__play-button" aria-label="{{ 'sections.video_carousel.play_video' | t }}">
+                        <svg class="video-carousel__play-icon" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+
+                      <div class="video-carousel__overlay"></div>
+                    </div>
+
+                    <div class="video-carousel__iframe-container" style="display: none;">
+                      <!-- YouTube iframe will be inserted here -->
+                    </div>
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.video_title != blank or block.settings.video_description != blank -%}
+                  <div class="video-carousel__content">
+                    {%- if block.settings.video_title != blank -%}
+                      <h3 class="video-carousel__title">{{ block.settings.video_title }}</h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.video_description != blank -%}
+                      <div class="video-carousel__description rte">
+                        {{ block.settings.video_description }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        {%- if section.blocks.size > 1 -%}
+          <div class="swiper-button-prev video-carousel__nav video-carousel__nav--prev">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </div>
+          <div class="swiper-button-next video-carousel__nav video-carousel__nav--next">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </div>
+
+          {%- if section.settings.show_pagination -%}
+            <div class="swiper-pagination video-carousel__pagination"></div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</video-carousel>
+
+<script src="{{ 'video-carousel.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Video Carousel",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Video Carousel",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1,
+      "label": "Videos per slide (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view_tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2,
+      "label": "Videos per slide (tablet)"
+    },
+    {
+      "type": "range",
+      "id": "slides_per_view_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "Videos per slide (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "space_between",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "default": 20,
+      "label": "Space between videos"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": false,
+      "label": "Auto-rotate videos"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5,
+      "unit": "s",
+      "label": "Change videos every"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "default": true,
+      "label": "Loop carousel"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "default": true,
+      "label": "Show pagination dots"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "url",
+          "id": "youtube_url",
+          "label": "YouTube URL",
+          "info": "Enter a YouTube video URL (e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail_image",
+          "label": "Custom thumbnail image",
+          "info": "Optional: Upload a custom thumbnail. If not provided, YouTube's thumbnail will be used."
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Video title"
+        },
+        {
+          "type": "richtext",
+          "id": "video_description",
+          "label": "Video description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Carousel",
+      "blocks": [
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "Sample Video 1"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "Sample Video 2"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_title": "Sample Video 3"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

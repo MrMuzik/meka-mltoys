@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "show_breadcrumbs": true,
+        "image": "",
+        "image_overlay_opacity": 70,
+        "heading_size": "h0",
+        "description_text": "<p>Read our carefully curated blogs about everything auto parts.<\/p>",
+        "heading_alignment": "left",
+        "color_scheme": "",
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "adapt",
+        "show_date": true,
+        "show_author": false,
+        "read_more_title": "Read More",
+        "banner_padding_top": 200,
+        "banner_padding_bottom": 60,
+        "padding_top": 140,
+        "padding_bottom": 70
+      }
+    },
+    "15355796-ef3f-4c71-a2af-246c974a1bf4": {
+      "type": "contact-form",
+      "settings": {
+        "image": "",
+        "desktop_image_width": "e-small",
+        "layout": "text_first",
+        "heading": "Get in touch with us",
+        "description": "<p>Share your contact information with us, and our team will contact you soon to assist with any questions or requests. <\/p>",
+        "heading_size": "h2",
+        "color_scheme": "",
+        "show_textarea": false,
+        "secondary_background": true,
+        "secondary_background_color": "#f4f2ec",
+        "padding_top": 70,
+        "padding_bottom": 140
+      }
+    }
+  },
+  "order": [
+    "main",
+    "15355796-ef3f-4c71-a2af-246c974a1bf4"
+  ]
+}

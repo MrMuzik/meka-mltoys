@@ -1,0 +1,1231 @@
+{{ 'collage.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.57 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.57 | round: 0 }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1199px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.72 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.72 | round: 0 }}px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-mltoys-featured-blog">
+  {% if section.settings.enable_ripped_edges %}<div class="ripped-edge-top">{% render 'ripped-edge-top' %}</div>{% endif %}
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank or section.settings.description != blank -%}
+      <div class="section-heading align-{{ section.settings.heading_alignment }}">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="collage-wrapper-title section-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="section-description rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} clr-{{ section.settings.text_color }}">
+            {{ section.settings.description -}}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="collage collage--desktop-{{ section.settings.desktop_layout }} {% if section.settings.mobile_layout == 'collage' %} collage--mobile{% endif %} collage-col-{{ section.blocks.size }}">
+
+      {%- liquid
+        assign highest_ratio = 0
+        for block in section.blocks
+          if block.settings.image.aspect_ratio > highest_ratio
+            assign highest_ratio = block.settings.image.aspect_ratio
+          endif
+        endfor
+      -%}
+
+      {%- for block in section.blocks -%}
+        <div class="collage__item collage__item--{{ block.type }} collage__item--{{ section.settings.desktop_layout }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};" {% endif %} {{ block.shopify_attributes }}>
+
+          {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+          {%- case block.type -%}
+
+            {%- when 'image' -%}
+              {%- if block.settings.image_link != blank -%}
+                <a href="{{ block.settings.image_link }}" class="collage-card-link">
+              {%- endif -%}
+              <div class="collage-card card-wrapper product-card-wrapper color-{{ settings.card_color_scheme }} gradient">
+
+                <div class="media media--transparent ratio" {% if block.settings.image != blank %} style="--ratio-percent: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%" {% else %} style="--ratio-percent: 100%" {% endif %}>
+
+                  {%- if block.settings.image != blank -%}
+                    {%- liquid
+                      if section.settings.desktop_layout == 'left' or section.settings.desktop_layout == 'masonry-left'
+                        assign large_block = forloop.first
+                      else
+                        assign large_block = forloop.last
+                      endif
+
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                    -%}
+                    {%- if large_block -%}
+                      {%- capture sizes -%}
+                        {% if section.blocks.size == 1 -%}
+                          (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px)
+                        {% else %}
+                          (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {% endif %},
+                        {% if section.blocks.size == 1 -%}
+                          (min-width: 750px) calc(100vw - 100px)
+                        {% else %}
+                          (min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {% endif %},
+                        {% if section.blocks.size == 2 and section.settings.mobile_layout == 'collage' -%}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {%- endcapture -%}
+                      {{
+                        block.settings.image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- else -%}
+                      {%- capture sizes -%}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 1 / 2 - {{ grid_space_desktop }}),
+                        (min-width: 750px) calc((100vw - 100px) * 1 / 2 - {{ grid_space_desktop }}),
+                        {% if section.settings.mobile_layout == 'collage' %}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {%- endcapture -%}
+                      {{
+                        block.settings.image | image_url: width: 1200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 600, 750, 800, 900, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+              </div>
+              {%- if block.settings.image_link != blank -%}
+                </a>
+              {%- endif -%}
+
+            {%- when 'custom' -%}
+              {%- if block.settings.custom_link_url != blank -%}
+                <a href="{{ block.settings.custom_link_url }}" class="collage-card-link">
+              {%- endif -%}
+              <div class="collage-card card-wrapper product-card-wrapper color-{{ block.settings.item_color_scheme }} gradient">
+
+                {% liquid
+                  assign ratio_percent = 1 | divided_by: block.settings.custom_image.aspect_ratio | times: 100
+                  if ratio_percent > 100
+                    assign ratio_percent = 100
+                  endif
+                %}
+
+                <div class="media media--transparent ratio" {% if block.settings.custom_image != blank %} style="--ratio-percent: {{ ratio_percent }}%" {% else %} style="--ratio-percent: 50%" {% endif %}>
+                  {%- if block.settings.custom_image != blank -%}
+
+                    {%- liquid
+                      if section.settings.desktop_layout == 'left' or section.settings.desktop_layout == 'masonry-left'
+                        assign large_block = forloop.first
+                      else
+                        assign large_block = forloop.last
+                      endif
+
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                    -%}
+
+                    {%- if large_block -%}
+
+                      {%- capture sizes -%}
+                        {%- if section.blocks.size == 1 -%}
+                          (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px)
+                        {%- else %}
+                          (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 1 -%}
+                          (min-width: 750px) calc(100vw - 100px)
+                        {%- else %}
+                          (min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 2 and section.settings.mobile_layout == 'collage' -%}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {%- endcapture -%}
+                      {{ block.settings.custom_image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- else -%}
+
+                      {%- capture sizes %}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px) * 1 / 2),
+                        (min-width: 750px) calc(100vw / 2),
+                        {% if section.settings.mobile_layout == 'collage' %}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {% endcapture -%}
+
+                      {{ block.settings.custom_image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 550, 600, 650, 700, 750, 800, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- endif -%}
+
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+
+                  <div class="multicolumn-card__info">
+
+                    {%- if block.settings.custom_heading != blank -%}
+                      <h3 class="inline-richtext">
+                        {{ block.settings.custom_heading }}
+                      </h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.custom_description != blank -%}
+                      <div class="rte rte-{{ block.settings.text_size_block }} clr-{{ block.settings.text_color }}">
+                        {{ block.settings.custom_description }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.custom_link_title != blank -%}
+					{%- liquid
+						assign button_style = 'button button--secondary'
+
+						if block.settings.button_style == 'link'
+							assign button_style = 'link underlined-link'
+						elsif block.settings.button_style == 'solid'
+							assign button_style = 'button'
+						elsif block.settings.button_style == 'link_icon'
+							assign button_style = 'link animate-arrow'
+						elsif block.settings.button_style == 'link_hover'
+							assign button_style = 'link link-hover'
+						endif
+					-%}
+					<span class="{{ button_style }}">
+						<span>{{- block.settings.custom_link_title | escape -}}</span>
+						{%- if block.settings.button_style == 'link_icon' -%}
+							<span class="icon-wrap">
+							{%- render 'icon-caret' -%}
+							</span>
+						{%- endif -%}
+					</span>
+                    {%- endif -%}
+
+                  </div>
+                </div>
+
+              </div>
+              {%- if block.settings.custom_link_url != blank -%}
+                </a>
+              {%- endif -%}
+
+            {%- when 'image_text' -%}
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="collage-card-link">
+              {%- endif -%}
+              <div class="collage-card card-wrapper product-card-wrapper color-{{ block.settings.item_color_scheme }} gradient">
+
+                {% liquid
+                  assign ratio_percent = 1 | divided_by: block.settings.image.aspect_ratio | times: 100
+                  if ratio_percent > 100
+                    assign ratio_percent = 100
+                  endif
+                %}
+
+                <div class="media media--transparent ratio" {% if block.settings.image != blank %} style="--ratio-percent: {{ ratio_percent }}%" {% else %} style="--ratio-percent: 50%" {% endif %}>
+                  {%- if block.settings.image != blank -%}
+
+                    {%- liquid
+                      if section.settings.desktop_layout == 'left' or section.settings.desktop_layout == 'masonry-left'
+                        assign large_block = forloop.first
+                      else
+                        assign large_block = forloop.last
+                      endif
+
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                    -%}
+
+                    {%- if large_block -%}
+
+                      {%- capture sizes -%}
+                        {%- if section.blocks.size == 1 -%}
+                          (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px)
+                        {%- else %}
+                          (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 1 -%}
+                          (min-width: 750px) calc(100vw - 100px)
+                        {%- else %}
+                          (min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 2 and section.settings.mobile_layout == 'collage' -%}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {%- endcapture -%}
+                      {{ block.settings.image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- else -%}
+
+                      {%- capture sizes %}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px) * 1 / 2),
+                        (min-width: 750px) calc(100vw / 2),
+                        {% if section.settings.mobile_layout == 'collage' %}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {% endcapture -%}
+
+                      {{ block.settings.image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 550, 600, 650, 700, 750, 800, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- endif -%}
+
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+
+                  <div class="multicolumn-card__info">
+
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="inline-richtext">
+                        {{ block.settings.title }}
+                      </h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.text != blank -%}
+                      <div class="rte rte-{{ block.settings.text_size_block }} clr-{{ block.settings.text_color }}">
+                        {{ block.settings.text }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.link_label != blank -%}
+					{%- liquid
+						assign button_style = 'button button--secondary'
+
+						if block.settings.button_style == 'link'
+							assign button_style = 'link underlined-link'
+						elsif block.settings.button_style == 'solid'
+							assign button_style = 'button'
+						elsif block.settings.button_style == 'link_icon'
+							assign button_style = 'link animate-arrow'
+						elsif block.settings.button_style == 'link_hover'
+							assign button_style = 'link link-hover'
+						endif
+					-%}
+					<span class="{{ button_style }}">
+						<span>{{- block.settings.link_label | escape -}}</span>
+						{%- if block.settings.button_style == 'link_icon' -%}
+							<span class="icon-wrap">
+							{%- render 'icon-caret' -%}
+							</span>
+						{%- endif -%}
+					</span>
+                    {%- endif -%}
+
+                  </div>
+                </div>
+
+              </div>
+              {%- if block.settings.link != blank -%}
+                </a>
+              {%- endif -%}
+
+            {%- when 'product' -%}
+
+              {{ 'component-price.css' | asset_url | stylesheet_tag }}
+              {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-product',
+                card_product: block.settings.product,
+                media_aspect_ratio: 'adapt',
+                show_secondary_image: block.settings.second_image,
+                extend_height: true,
+                placeholder_image: placeholder_image
+              %}
+
+            {%- when 'collection' -%}
+              {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-collection',
+                card_collection: block.settings.collection,
+                media_aspect_ratio: 'adapt',
+                columns: 2,
+                extend_height: true,
+                wrapper_class: 'product-card-wrapper',
+                placeholder_image: placeholder_image,
+                card_heading_size: 'h4'
+              %}
+
+            {%- when 'blog' -%}
+              <a href="{{ block.settings.article.url }}" class="collage-card-link">
+              <div class="collage-card card-wrapper product-card-wrapper color-{{ block.settings.item_color_scheme }} gradient">
+
+                {% liquid
+                  assign ratio_percent = 1 | divided_by: block.settings.article.image.aspect_ratio | times: 100
+                  if ratio_percent > 100
+                    assign ratio_percent = 100
+                  endif
+                %}
+
+                <div class="media media--transparent ratio" {% if block.settings.article.image != blank %} style="--ratio-percent: {{ ratio_percent }}%" {% else %} style="--ratio-percent: 50%" {% endif %}>
+                  {%- if block.settings.article.image != blank -%}
+
+                    {%- liquid
+                      if section.settings.desktop_layout == 'left' or section.settings.desktop_layout == 'masonry-left'
+                        assign large_block = forloop.first
+                      else
+                        assign large_block = forloop.last
+                      endif
+
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                    -%}
+
+                    {%- if large_block -%}
+
+                      {%- capture sizes -%}
+                        {%- if section.blocks.size == 1 -%}
+                          (min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px)
+                        {%- else %}
+                          (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 1 -%}
+                          (min-width: 750px) calc(100vw - 100px)
+                        {%- else %}
+                          (min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }})
+                        {%- endif %},
+                        {% if section.blocks.size == 2 and section.settings.mobile_layout == 'collage' -%}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {%- endcapture -%}
+                      {{ block.settings.article.image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- else -%}
+
+                      {%- capture sizes %}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px) * 1 / 2),
+                        (min-width: 750px) calc(100vw / 2),
+                        {% if section.settings.mobile_layout == 'collage' %}
+                          calc((100vw - 30px) / 2)
+                        {% else %}
+                          calc(100vw - 30px)
+                        {% endif %}
+                      {% endcapture -%}
+
+                      {{ block.settings.article.image | image_url: width: 3200 | image_tag: sizes: sizes, widths: '50, 75, 100, 150, 200, 300, 400, 500, 550, 600, 650, 700, 750, 800, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200' }}
+
+                    {%- endif -%}
+
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+
+                  <div class="multicolumn-card__info">
+
+                    {%- if block.settings.article.title != blank -%}
+                      <h3 class="inline-richtext">
+                        {{ block.settings.article.title }}
+                      </h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.article.excerpt != blank -%}
+                      <div class="rte rte-{{ block.settings.text_size_block }} clr-{{ block.settings.text_color }}">
+                        {{ block.settings.article.excerpt }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.article.author != blank -%}
+                      <div class="blog-author rte rte-{{ block.settings.text_size_block }} clr-{{ block.settings.text_color }}">
+                        <span>By {{ block.settings.article.author }}</span>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.article.published_at != blank -%}
+                      <div class="blog-date rte rte-{{ block.settings.text_size_block }} clr-{{ block.settings.text_color }}">
+                        <time datetime="{{ block.settings.article.published_at | date: '%Y-%m-%d' }}">
+                          {{ block.settings.article.published_at | date: '%B %d, %Y' }}
+                        </time>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.link_label != blank -%}
+					{%- liquid
+						assign button_style = 'button button--secondary'
+
+						if block.settings.button_style == 'link'
+							assign button_style = 'link underlined-link'
+						elsif block.settings.button_style == 'solid'
+							assign button_style = 'button'
+						elsif block.settings.button_style == 'link_icon'
+							assign button_style = 'link animate-arrow'
+						elsif block.settings.button_style == 'link_hover'
+							assign button_style = 'link link-hover'
+						endif
+					-%}
+					<span class="{{ button_style }}">
+						<span>{{- block.settings.link_label | escape -}}</span>
+						{%- if block.settings.button_style == 'link_icon' -%}
+							<span class="icon-wrap">
+							{%- render 'icon-caret' -%}
+							</span>
+						{%- endif -%}
+					</span>
+                    {%- endif -%}
+
+                  </div>
+                </div>
+
+              </div>
+              </a>
+
+          {%- endcase -%}
+
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {% if section.settings.button_link != blank %}
+      <div class="button-wrapper">
+        <a href="{{ section.settings.button_link }}" class="ml-button-primary">{{ section.settings.button_text }} {% render 'arrow-right' %}</a>
+      </div>
+    {% endif %}
+  </div>
+{% if section.settings.enable_ripped_edges %} <div class="ripped-edge-bottom">{% render 'ripped-edge-bottom' %}</div>{% endif %}
+</div>
+
+<style>
+  {% if section.settings.background_image != blank %}
+    .section-mltoys-featured-blog {
+      background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');
+      background-size: cover;
+      background-position: center;
+    }
+  {% endif %}
+  {% if section.settings.background_color != blank %}
+    .section-mltoys-featured-blog {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endif %}
+  {% if section.settings.section_text_color != blank %}
+    .section-mltoys-featured-blog .collage-wrapper-title,
+    .section-mltoys-featured-blog .collage-wrapper-description,
+    .section-mltoys-featured-blog .section-description p,
+    .section-mltoys-featured-blog .section-mltoys-featured-blog {
+      color: {{ section.settings.section_text_color }} !important;
+    }
+  {% endif %}
+
+  .section-mltoys-featured-blog .section-description {
+    margin-top: 0 !important;
+  }
+
+  .collage-wrapper-title {
+    font-size: 55px;
+  }
+
+  .section-mltoys-featured-blog {
+    position: relative;
+  }
+
+  .section-mltoys-featured-blog .ripped-edge-top,
+  .section-mltoys-featured-blog .ripped-edge-bottom {
+    position: absolute;
+  }
+
+  .section-mltoys-featured-blog .ripped-edge-top svg,
+  .section-mltoys-featured-blog .ripped-edge-bottom svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-mltoys-featured-blog .ripped-edge-top {
+    top: -70px;
+    width: 100%;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    height: auto;
+    z-index: -1;
+  }
+
+  .section-mltoys-featured-blog .ripped-edge-bottom {
+    width: 100%;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    height: auto;
+    bottom: -55px;
+    z-index: -1;
+    transform: rotate(179deg);
+  }
+
+  .button-wrapper {
+    margin-top: 4.5rem;
+  }
+
+  .section-mltoys-featured-blog .multicolumn-card__info h3 {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-mltoys-featured-blog .multicolumn-card__info .link {
+    margin-top: 8px !important;
+  }
+
+  .section-mltoys-featured-blog .rte.rte-medium p {
+    font-size: 12px !important;
+  }
+
+  .section-mltoys-featured-blog .multicolumn-card__info a,
+  .section-mltoys-featured-blog .multicolumn-card__info h3 {
+    margin: 0px;
+  }
+
+  .section-mltoys-featured-blog .multicolumn-card__info h3,
+  .section-mltoys-featured-blog .multicolumn-card__info p,
+  .section-mltoys-featured-blog .multicolumn-card__info a {
+    color: #ffffff !important;
+  }
+
+  .section-mltoys-featured-blog .ml-button-primary  {
+    padding: 5px 15px 5px 19px;
+    font-size: 19px !important;
+  }
+
+  .section-mltoys-featured-blog .ml-button-primary:hover {
+    background-color: #ffffff !important;
+    color: #001429 !important;
+  }
+
+  .section-mltoys-featured-blog .ml-button-primary:hover svg path {
+    fill: #001429 !important;
+  }
+
+
+  .collage-card.product-card-wrapper {
+    background-color: transparent !important;
+  }
+
+  .collage-card .media {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collage-card .media img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .collage-card-link:hover .collage-card .media img {
+    transform: scale(1.05);
+  }
+
+  .collage-card .media::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .collage-card .multicolumn-card__info {
+    position: relative;
+    z-index: 2;
+  }
+
+  .collage-card .media .multicolumn-card__info {
+    padding: 40px !important;
+    align-self: flex-end;
+  }
+
+  .collage-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .collage-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .collage-card {
+      /* max-height: 280px; */
+    }
+
+    .section-mltoys-featured-blog .collage__item--left:nth-child(3n-2) .media, .section-mltoys-featured-blog .collage__item--right:nth-child(3n-2) .media {
+      padding-top: 0px;
+      height: fit-content;
+    }
+
+    .collage-card .media::after {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    .section-mltoys-featured-blog .multicolumn-card__info h3 {
+      font-size: 14px !important;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "ML Toys Featured Blog",
+    "class": "section section-mltoys-featured-blog",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_ripped_edges",
+        "label": "Enable ripped edges"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Image"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      },
+      {
+        "type": "color",
+        "id": "section_text_color",
+        "label": "Text color"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "Featured Blog Posts",
+        "label": "t:sections.collage.settings.heading.label"
+      },
+      {
+        "type": "text_alignment",
+        "id": "heading_alignment",
+        "label": "Heading alignment",
+        "default": "left"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h3",
+            "label": "t:sections.all.heading_size.options__1.label"
+          },
+          {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__2.label"
+          },
+          {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__3.label"
+          }
+        ],
+        "default": "h2",
+        "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "default": "<p>Discover our latest insights, tips, and stories</p>",
+        "label": "t:sections.featured-collection.settings.description.label"
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "options": [
+        {
+          "value": "foreground",
+          "label": "t:settings_schema.colors.settings.text.label"
+        },
+        {
+          "value": "foreground-secondary",
+          "label": "t:settings_schema.colors.settings.text_secondary.label"
+        },
+        {
+          "value": "accent",
+          "label": "t:settings_schema.colors.settings.accent_color.label"
+        }
+        ],
+        "default": "foreground",
+        "label": "Description color"
+      },
+      {
+        "type": "select",
+        "id": "desktop_layout",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.collage.settings.desktop_layout.options__1.label"
+          },
+          {
+            "value": "right",
+            "label": "t:sections.collage.settings.desktop_layout.options__2.label"
+          },
+					{
+            "value": "masonry-left",
+            "label": "t:sections.collage.settings.desktop_layout.options__3.label"
+          },
+          {
+            "value": "masonry-right",
+            "label": "t:sections.collage.settings.desktop_layout.options__4.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:sections.collage.settings.desktop_layout.label"
+      },
+      {
+        "type": "select",
+        "id": "mobile_layout",
+        "options": [
+          {
+            "value": "collage",
+            "label": "t:sections.collage.settings.mobile_layout.options__1.label"
+          },
+          {
+            "value": "column",
+            "label": "t:sections.collage.settings.mobile_layout.options__2.label"
+          }
+        ],
+        "default": "column",
+        "label": "t:sections.collage.settings.mobile_layout.label"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Section color scheme",
+        "info": "t:sections.all.colors.has_cards_info",
+        "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 180,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 180,
+        "step": 2,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 70
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "t:sections.collage.blocks.image.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.collage.blocks.image.settings.image.label"
+          },
+          {
+            "type": "url",
+            "id": "image_link",
+            "label": "Image link"
+          }
+        ]
+      },
+      {
+        "type": "product",
+        "name": "t:sections.collage.blocks.product.name",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "t:sections.collage.blocks.product.settings.product.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "second_image",
+            "default": false,
+            "label": "t:sections.collage.blocks.product.settings.second_image.label"
+          }
+        ]
+      },
+      {
+        "type": "collection",
+        "name": "t:sections.collage.blocks.collection.name",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "t:sections.collage.blocks.collection.settings.collection.label"
+          }
+        ]
+      },
+      {
+        "type": "blog",
+        "name": "Blog Post",
+        "settings": [
+          {
+            "type": "article",
+            "id": "article",
+            "label": "Select article"
+          },
+          {
+            "type": "select",
+            "id": "text_color",
+            "options": [
+            {
+              "value": "foreground",
+              "label": "t:settings_schema.colors.settings.text.label"
+            },
+            {
+              "value": "foreground-secondary",
+              "label": "t:settings_schema.colors.settings.text_secondary.label"
+            },
+            {
+              "value": "accent",
+              "label": "t:settings_schema.colors.settings.accent_color.label"
+            }
+            ],
+            "default": "foreground",
+            "label": "Text color"
+          },
+		  {
+            "type": "select",
+            "id": "text_size_block",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "medium",
+                "label": "Medium"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ],
+            "default": "medium",
+            "label": "Text size"
+          },
+		  {
+			"type": "select",
+			"id": "button_style",
+			"label": "Button style",
+			"options": [
+			  {
+				"value": "link",
+				"label": "Inline button"
+			  },
+			  {
+				"value": "link_hover",
+				"label": "Inline button with underline on hover"
+			  },
+			  {
+				"value": "link_icon",
+				"label": "Inline button with icon"
+			  },
+			  {
+				"value": "outline",
+				"label": "Outline button"
+			  },
+			  {
+				"value": "solid",
+				"label": "Solid button"
+			  }
+			],
+			"default": "link_icon"
+		  },
+          {
+            "type": "text",
+            "id": "link_label",
+            "default": "Read more",
+            "label": "Button text"
+          },
+          {
+            "type": "color_scheme",
+            "id": "item_color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "scheme-1"
+          }
+        ]
+      },
+      {
+        "type": "custom",
+        "name": "Custom Content",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "custom_image",
+            "label": "Custom Image"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "custom_heading",
+            "default": "Custom Heading",
+            "label": "Custom Heading Text"
+          },
+          {
+            "type": "richtext",
+            "id": "custom_description",
+            "default": "<p>Add your custom description text here.</p>",
+            "label": "Custom Description Text"
+          },
+          {
+            "type": "text",
+            "id": "custom_link_title",
+            "default": "Learn More",
+            "label": "Link Title"
+          },
+          {
+            "type": "url",
+            "id": "custom_link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "select",
+            "id": "text_color",
+            "options": [
+            {
+              "value": "foreground",
+              "label": "t:settings_schema.colors.settings.text.label"
+            },
+            {
+              "value": "foreground-secondary",
+              "label": "t:settings_schema.colors.settings.text_secondary.label"
+            },
+            {
+              "value": "accent",
+              "label": "t:settings_schema.colors.settings.accent_color.label"
+            }
+            ],
+            "default": "foreground",
+            "label": "Text Color"
+          },
+		  {
+            "type": "select",
+            "id": "text_size_block",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "medium",
+                "label": "Medium"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ],
+            "default": "medium",
+            "label": "Description Font Size"
+          },
+		  {
+			"type": "select",
+			"id": "button_style",
+			"label": "Button Style",
+			"options": [
+			  {
+				"value": "link",
+				"label": "Inline button"
+			  },
+			  {
+				"value": "link_hover",
+				"label": "Inline button with underline on hover"
+			  },
+			  {
+				"value": "link_icon",
+				"label": "Inline button with icon"
+			  },
+			  {
+				"value": "outline",
+				"label": "Outline button"
+			  },
+			  {
+				"value": "solid",
+				"label": "Solid button"
+			  }
+			],
+			"default": "link_icon"
+		  },
+          {
+            "type": "color_scheme",
+            "id": "item_color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "scheme-1"
+          }
+        ]
+      },
+      {
+        "type": "image_text",
+        "name": "Image with text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "title",
+            "default": "Title",
+            "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+          },
+          {
+            "type": "select",
+            "id": "text_color",
+            "options": [
+            {
+              "value": "foreground",
+              "label": "t:settings_schema.colors.settings.text.label"
+            },
+            {
+              "value": "foreground-secondary",
+              "label": "t:settings_schema.colors.settings.text_secondary.label"
+            },
+            {
+              "value": "accent",
+              "label": "t:settings_schema.colors.settings.accent_color.label"
+            }
+            ],
+            "default": "foreground",
+            "label": "Color"
+          },
+		  {
+            "type": "select",
+            "id": "text_size_block",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "medium",
+                "label": "Medium"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ],
+            "default": "medium",
+            "label": "Description font size"
+          },
+		  {
+			"type": "select",
+			"id": "button_style",
+			"label": "Button style",
+			"options": [
+			  {
+				"value": "link",
+				"label": "Inline button"
+			  },
+			  {
+				"value": "link_hover",
+				"label": "Inline button with underline on hover"
+			  },
+			  {
+				"value": "link_icon",
+				"label": "Inline button with icon"
+			  },
+			  {
+				"value": "outline",
+				"label": "Outline button"
+			  },
+			  {
+				"value": "solid",
+				"label": "Solid button"
+			  }
+			],
+			"default": "link_icon"
+		  },
+          {
+            "type": "text",
+            "id": "link_label",
+            "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+          },
+          {
+            "type": "color_scheme",
+            "id": "item_color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "scheme-1"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "ML Toys Featured Blog"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,19 @@
+{
+  "name": "meka-mltoys",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "use:dev": "cp .shopifyignore.dev .shopifyignore",
+    "use:client": "cp .shopifyignore.client .shopifyignore",
+
+    "dev": "npm run use:dev && shopify theme dev --store=ml-toys-dev.myshopify.com --theme \"Meka – Dev\"",
+    "push:dev": "npm run use:dev && shopify theme push --store=ml-toys-dev.myshopify.com --unpublished --theme \"Meka – Dev\"",
+
+    "push:client:preview": "npm run use:client && shopify theme push --store=ml-toys-store.myshopify.com --unpublished --theme \"Meka – Preview\"",
+    "push:client:meka": "npm run use:client && shopify theme push --store=ml-toys-store.myshopify.com --theme 179610845505"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

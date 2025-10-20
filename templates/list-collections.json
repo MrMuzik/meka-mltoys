@@ -1,0 +1,166 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "image": "",
+        "image_overlay_opacity": 60,
+        "show_breadcrumbs": true,
+        "title": "Our collections",
+        "heading_size": "h0",
+        "heading_alignment": "left",
+        "banner_color_scheme": "",
+        "padding_top": 200,
+        "padding_bottom": 60,
+        "sort": "date_reversed",
+        "image_ratio": "landscape",
+        "image_type": "cover",
+        "cover_color_scheme": "",
+        "show_description": true,
+        "link_label": "Shop Now",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "collection_padding_top": 100,
+        "collection_padding_bottom": 70
+      }
+    },
+    "help_and_feedback_mFaiKM": {
+      "type": "help-and-feedback",
+      "blocks": {
+        "collapsible_heading_x6ALmP": {
+          "type": "collapsible_heading",
+          "settings": {
+            "collapsible_heading": "FAQs",
+            "button_label": "See All",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods can I use?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": true
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are the autoparts on your website genuine?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer warranties on your autoparts?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer e-gift cards for international customers?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I ensure that I'm purchasing the correct part?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "testimonial_heading_gHfR4J": {
+          "type": "testimonial_heading",
+          "settings": {
+            "testimonial_heading": "Customer reviews"
+          }
+        },
+        "testimonial_h7J3f6": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "image": "",
+            "full_name": "Emma Johnson",
+            "job_title": "CCO at Happy Money",
+            "text": "Needed some replacement brake pads for my daily driver. The website was easy to navigate, and I found exactly what I needed at a competitive price. Delivery was quick, and the parts fit perfectly. Would recommend for basic maintenance needs."
+          }
+        },
+        "testimonial_rdyPDw": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "image": "",
+            "full_name": "Robert Wattson",
+            "job_title": "Finance Manager",
+            "text": "Needed some new spark plugs in a pinch. The website is super user-friendly, and checkout was a breeze. Parts arrived quickly and exactly as described. Will definitely use them again for future maintenance needs."
+          }
+        },
+        "testimonial_hxYY38": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "image": "",
+            "full_name": "Robert Jr.",
+            "job_title": "Engineering leader at a pre-IPO startup",
+            "text": "I was restoring a '67 Mustang and struggled to find the specific parts I needed. Ben at AutoParts was a lifesaver! His knowledge of vintage parts is incredible, and he helped me track down everything on my list. Fast shipping and a smooth transaction - will definitely be back!"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_heading_x6ALmP",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4",
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10",
+        "testimonial_heading_gHfR4J",
+        "testimonial_h7J3f6",
+        "testimonial_rdyPDw",
+        "testimonial_hxYY38"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "text": "",
+        "color_scheme": "",
+        "faq_color_scheme": "",
+        "reviews_color_scheme": "",
+        "desktop_layout": "image_first",
+        "padding_top": 70,
+        "padding_bottom": 140
+      }
+    }
+  },
+  "order": [
+    "main",
+    "help_and_feedback_mFaiKM"
+  ]
+}

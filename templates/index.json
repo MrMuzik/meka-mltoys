@@ -1,0 +1,658 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "6a2fc120-4bf3-4610-a05d-7f55944c6720": {
+      "type": "image-banner-filter",
+      "blocks": {
+        "image_slide_JcyBwK": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/HERO_HEADER.jpg",
+            "image_mobile": "shopify://shop_images/Group_427320676.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "The ultimate ride starts here.",
+            "heading_size": "h1",
+            "text": "<p>Check out our upgrades to make your </p><p>ride-on the absolute coolest around!</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop All Categories",
+            "button_link_1": "shopify://pages/upgrades-by-vehicle",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": true,
+            "button_label_2": "",
+            "button_link_2": "shopify://pages/upgrades-by-category",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_JcyBwK"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "image_height_mobile": "small",
+        "filter_color_scheme": "",
+        "section_full_width": true,
+        "section_background": "#ffffff"
+      }
+    },
+    "a845fd8c-a661-412b-b2da-7787cec2a078": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_7DKKte": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-wheels-electrical-upgrades",
+            "collection_title": "Electrical Upgrades",
+            "show_view_all": false,
+            "button_label": "Shop All Categories",
+            "button_style_secondary": false
+          }
+        },
+        "collection_PczVrk": {
+          "type": "collection",
+          "settings": {
+            "collection": "batteries-chargers",
+            "collection_title": "Batteries",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        },
+        "collection_PPt9QW": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-other-vehicles",
+            "collection_title": "Lighting",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        },
+        "collection_zRtVh4": {
+          "type": "collection",
+          "settings": {
+            "collection": "other-stock-parts",
+            "collection_title": "Stock Parts",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        },
+        "collection_rCjLVR": {
+          "type": "collection",
+          "settings": {
+            "collection": "combination-kits",
+            "collection_title": "Combination kits",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_7DKKte",
+        "collection_PczVrk",
+        "collection_PPt9QW",
+        "collection_zRtVh4",
+        "collection_rCjLVR"
+      ],
+      "settings": {
+        "button_url": "shopify://collections",
+        "button_label": "Shop All Collections",
+        "bg_image": "shopify://shop_images/Group_427320668.svg",
+        "show_background_tread": true,
+        "title": "Shop By Category",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "<p>Everything You Need To Get Started</p>",
+        "text_size_block": "medium",
+        "tabs_font_size": "h5",
+        "tabs_font_weight": "fw-700",
+        "tabs_font_family": "heading-font",
+        "card_heading_size": "h4",
+        "image_ratio": "square",
+        "image_overlay_opacity": 0,
+        "reverse_card": false,
+        "use_custom_product_card": true,
+        "product_image_ratio": "landscape",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "products_to_show": 3,
+        "color_scheme": "scheme-2",
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "padding_top": 50,
+        "padding_bottom": 56
+      }
+    },
+    "ml_upgrade_vehicle_HzwWPQ": {
+      "type": "ml-upgrade-vehicle",
+      "blocks": {
+        "vehicle_iUkNT3": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/car_cutout_1.png",
+            "vehicle_title": "Power Wheels Arctic Cat",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_jJFBe8": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Group_427320675.png",
+            "vehicle_title": "Power Wheels ATV",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_fXeNXY": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Baja Extreme",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_MYa83y": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Baja Trailster",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_DyC69y": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels C7 Corvette",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_Jwrp8Y": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
+            "vehicle_title": "Power Wheels Camper",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_xkRkk8": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Cadillac Escalade",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_y7CkyQ": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/pink_cart_cutout_1_ad8bfb81-4027-46f3-953e-ac41563d1c0c.png",
+            "vehicle_title": "Power Wheels Baja Trailster",
+            "vehicle_link": ""
+          }
+        },
+        "vehicle_rnBh8r": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/car_cutout_1.png",
+            "vehicle_title": "Vehicle",
+            "vehicle_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "vehicle_iUkNT3",
+        "vehicle_jJFBe8",
+        "vehicle_fXeNXY",
+        "vehicle_MYa83y",
+        "vehicle_DyC69y",
+        "vehicle_Jwrp8Y",
+        "vehicle_xkRkk8",
+        "vehicle_y7CkyQ",
+        "vehicle_rnBh8r"
+      ],
+      "name": "Upgrades by Vehicle",
+      "settings": {
+        "title": "Upgrades by Vehicle",
+        "subheading": "Parts for the most popular brands",
+        "left_icon": "shopify://shop_images/79.svg",
+        "right_icon": "shopify://shop_images/020.svg",
+        "background_image": "shopify://shop_images/stock_parts_bg_1.jpg",
+        "background_image_mobile": "shopify://shop_images/Group_427320677.png",
+        "button_label": "View All Vehicles",
+        "button_link": "shopify://pages/upgrades-by-vehicle"
+      }
+    },
+    "ml_video_carousel_Wgrakp": {
+      "type": "ML-video-carousel",
+      "blocks": {
+        "video_8bH7PF": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=sHnfvIdxVLw",
+            "cover_image": "shopify://shop_images/maxresdefault_1_1.png",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_zbjyzR": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/image_4.png",
+            "description": "",
+            "enable_video_looping": false
+          }
+        }
+      },
+      "block_order": [
+        "video_8bH7PF",
+        "video_zbjyzR"
+      ],
+      "name": "ML Video Carousel",
+      "settings": {
+        "title": "",
+        "enable_ripped_edges": true,
+        "background_image": "shopify://shop_images/Mask_group.png",
+        "background_color": "#001429",
+        "section_text_color": "#fefefe",
+        "heading": "Getting Started",
+        "heading_alignment": "left",
+        "heading_size": "h2",
+        "description": "<p>Our Comprehensive guides assist in steering clear of the pitfalls of upgrading your vehicle.</p>",
+        "text_color": "foreground",
+        "button_link": "shopify://pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
+        "button_text": "Learn More"
+      }
+    },
+    "collection_list_grid_QcWpEc": {
+      "type": "collection-list-grid",
+      "blocks": {
+        "custom_card_ezED8Y": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/unblurimageai_image_17.jpg",
+            "link_title": "Batteries",
+            "description": "",
+            "link_url": "shopify://collections/rear-axles"
+          }
+        },
+        "custom_card_Ux4Ujk": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/unblurimageai_image_17_1.jpg",
+            "link_title": "Gears & Motors",
+            "description": "",
+            "link_url": "shopify://collections/gears-motors"
+          }
+        },
+        "custom_card_4YXp3j": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/image_17_2.png",
+            "link_title": "Hoods",
+            "description": "",
+            "link_url": "shopify://collections/hoods"
+          }
+        },
+        "custom_card_YCXDji": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/image_17_5.png",
+            "link_title": "RIMS & HUBCAPS",
+            "description": "",
+            "link_url": "shopify://collections/rims-hubcaps"
+          }
+        },
+        "custom_card_Pzk7Dt": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/image_17_6.png",
+            "link_title": "Wheels",
+            "description": "",
+            "link_url": "shopify://collections/power-wheels-porsche-gt3-tuned-kits"
+          }
+        },
+        "custom_card_QU7AMW": {
+          "type": "custom_card",
+          "settings": {
+            "image": "shopify://shop_images/image_18.png",
+            "link_title": "Stickers",
+            "description": "",
+            "link_url": "shopify://collections/stickers"
+          }
+        }
+      },
+      "block_order": [
+        "custom_card_ezED8Y",
+        "custom_card_Ux4Ujk",
+        "custom_card_4YXp3j",
+        "custom_card_YCXDji",
+        "custom_card_Pzk7Dt",
+        "custom_card_QU7AMW"
+      ],
+      "name": "ML Featured Grid",
+      "settings": {
+        "button_url": "shopify://pages/stock-parts",
+        "button_label": "View All Stock Parts",
+        "bg_image": "shopify://shop_images/stock_parts_bg.jpg",
+        "show_background_tread": false,
+        "title": "Stock Parts",
+        "icon_one": "shopify://shop_images/elements_1.svg",
+        "icon_two": "shopify://shop_images/elements.svg",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "<p>Parts for the most popular brands</p>",
+        "text_size_block": "medium",
+        "image_ratio": "square",
+        "use_custom_product_card": false,
+        "product_image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "products_to_show": 8,
+        "color_scheme": "",
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "image_hubspot_banner_NDAMET": {
+      "type": "image-hubspot-banner",
+      "blocks": {
+        "hotspot_item_HJpAKW": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Amber-Warning-Lights-2_d6440ddb-1ad2-4e44-98d7-76257fb5c8eb.jpg",
+            "heading": "Lighting",
+            "link": "https://www.mltoys.com/collections/power-wheels-lighting-upgrades",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 23,
+            "vertical_position": 50,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        },
+        "hotspot_item_LaUdzM": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/B7659-2459-x2-2.jpg",
+            "heading": "Tires",
+            "link": "https://www.mltoys.com/collections/tires-wheels",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 40,
+            "vertical_position": 80,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        },
+        "hotspot_item_Q87X3e": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/CLK46-9809-2.jpg",
+            "heading": "Bumpers",
+            "link": "https://www.mltoys.com/collections/bumpers",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 23,
+            "vertical_position": 76,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        },
+        "hotspot_item_JJ8kww": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/3900-3803-2.jpg",
+            "heading": "Doors",
+            "link": "https://mltoys.com/collections/doors",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 82,
+            "vertical_position": 52,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        },
+        "hotspot_item_F94GKH": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/collection-steering-wheels.jpg",
+            "heading": "Steering Wheels",
+            "link": "https://mltoys.com/collections/steering-wheels",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 53,
+            "vertical_position": 20,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        },
+        "hotspot_item_brM6kn": {
+          "type": "hotspot_item",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/collection-seats.jpg",
+            "heading": "Seats",
+            "link": "https://mltoys.com/collections/seats",
+            "bullet_color": "",
+            "bullet_bg": "",
+            "horizontal_position": 68,
+            "vertical_position": 30,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 30,
+            "bubble_position": "bubble-bottom",
+            "hide_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_item_HJpAKW",
+        "hotspot_item_LaUdzM",
+        "hotspot_item_Q87X3e",
+        "hotspot_item_JJ8kww",
+        "hotspot_item_F94GKH",
+        "hotspot_item_brM6kn"
+      ],
+      "name": "Hotspot banner",
+      "settings": {
+        "heading": "Find What You Need",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "text": "<p>Need Stock Parts? We Got em'! </p>",
+        "text_size_block": "medium",
+        "image": "shopify://shop_images/updated-toycar-diagram-hotspot_d61111ab-e7a6-4ade-8469-da62afa507d6.jpg",
+        "color_scheme": "",
+        "section_full_width": false,
+        "section_container_width": false,
+        "hide_scroll_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 144
+      }
+    },
+    "ml_toys_product_slider_qxnMqY": {
+      "type": "ml-toys-product-slider",
+      "blocks": {
+        "slide_cheLU3": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify://shop_images/unblurimageai_Mask_group_1.jpg",
+            "slide_title_icon": "shopify://shop_images/Vector_4.svg",
+            "enable_img_radius": true,
+            "slide_title": "Power Wheels Racing",
+            "highlight_slide_title": "",
+            "heading_size": "h2",
+            "slide_description": "<p>Power Wheels Racing is where toys meet adrenaline. With upgraded motors, high-powered batteries, and custom performance parts, ordinary ride-on cars transform into race-ready machines.</p>",
+            "text_size_block": "medium",
+            "text_color": "main",
+            "slide_link": "shopify://pages/power-wheels-racing",
+            "slide_link_label": "Learn More",
+            "enable_add_to_cart": false,
+            "color_scheme_slide": "scheme-2",
+            "product": "",
+            "product_heading_font_family": "heading-font"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cheLU3"
+      ],
+      "name": "ML Toys Product slider",
+      "settings": {
+        "enable_ripped_edges_top": true,
+        "background_image": "shopify://shop_images/bg-white-bg-racetrack.svg",
+        "image_position": "image-right",
+        "section_color": "#001429",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "mltoys_featured_blog_section_gKepmf": {
+      "type": "mltoys-featured-blog-section",
+      "blocks": {
+        "custom_iih4B8": {
+          "type": "custom",
+          "settings": {
+            "custom_image": "shopify://shop_images/Rectangle_23798.png",
+            "custom_heading": "How To Get In To Power Wheels Racing",
+            "custom_description": "<p>March 19, 2025 - 6 min read</p>",
+            "custom_link_title": "Read More",
+            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/how-to-get-in-to-power-wheels-racing",
+            "text_color": "foreground",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "item_color_scheme": "scheme-1"
+          }
+        },
+        "custom_m9KxPH": {
+          "type": "custom",
+          "settings": {
+            "custom_image": "shopify://shop_images/Rectangle_23799.png",
+            "custom_heading": "How Do You Make a Power Wheels Faster?",
+            "custom_description": "<p>March 16, 2025 - 3 min read</p>",
+            "custom_link_title": "Read More",
+            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/how-do-you-make-a-power-wheels-faster",
+            "text_color": "foreground",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "item_color_scheme": "scheme-1"
+          }
+        },
+        "custom_UntPxk": {
+          "type": "custom",
+          "settings": {
+            "custom_image": "shopify://shop_images/Rectangle_23800.png",
+            "custom_heading": "What’s the Best Battery for a Power Wheels?",
+            "custom_description": "<p>March 13, 2025 - 7 min read</p>",
+            "custom_link_title": "Read More",
+            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/what-s-the-best-battery-for-a-power-wheels",
+            "text_color": "foreground",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "item_color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "custom_iih4B8",
+        "custom_m9KxPH",
+        "custom_UntPxk"
+      ],
+      "name": "ML Toys Featured Blog",
+      "settings": {
+        "enable_ripped_edges": true,
+        "background_image": "shopify://shop_images/bottom-bg-racetrack_2310922c-b6fc-489c-89a3-95f405519849.svg",
+        "background_color": "#001429",
+        "section_text_color": "#ffffff",
+        "heading": "Pit stop Blog",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "<p>Stay up-to-date with advice from our professionals</p>",
+        "text_color": "foreground",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "color_scheme": "",
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "button_link": "shopify://blogs/power-wheels-and-ride-on-toys",
+        "button_text": "View All Blogs"
+      }
+    },
+    "175825075732a38aad": {
+      "type": "apps",
+      "blocks": {
+        "ecom_youtube_card_gallery_carousel_YKTciC": {
+          "type": "shopify://apps/ecom-youtube-card-gallery/blocks/carousel/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "settings": {
+            "gallery-id": "AQR3Qx7V",
+            "main-color": "#000000",
+            "sub-color": "#111111"
+          }
+        }
+      },
+      "block_order": [
+        "ecom_youtube_card_gallery_carousel_YKTciC"
+      ],
+      "settings": {
+        "heading": "Our Podcast",
+        "subheading": "Join us as we discuss all things power wheels!",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": true,
+        "podcast_character_one_desktop": "shopify://shop_images/ML_character_one_1.svg",
+        "podcast_character_one_mobile": "shopify://shop_images/MLTOYS_HEAD_one_1.svg",
+        "podcast_character_two_desktop": "shopify://shop_images/MLG_character_two_1.svg",
+        "podcast_character_two_mobile": "shopify://shop_images/MLTOYS_HEAD_two_1.svg"
+      }
+    }
+  },
+  "order": [
+    "6a2fc120-4bf3-4610-a05d-7f55944c6720",
+    "a845fd8c-a661-412b-b2da-7787cec2a078",
+    "ml_upgrade_vehicle_HzwWPQ",
+    "ml_video_carousel_Wgrakp",
+    "collection_list_grid_QcWpEc",
+    "image_hubspot_banner_NDAMET",
+    "ml_toys_product_slider_qxnMqY",
+    "mltoys_featured_blog_section_gKepmf",
+    "175825075732a38aad"
+  ]
+}

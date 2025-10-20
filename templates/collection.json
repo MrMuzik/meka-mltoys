@@ -1,0 +1,329 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "text_secondary_color": false,
+        "show_collection_breadcrumbs": true,
+        "show_breadcrumbs_top": true,
+        "heading_size": "h0",
+        "show_collection_description": true,
+        "description_text": "",
+        "text_size_block": "medium",
+        "heading_alignment": "left",
+        "show_collection_image": true,
+        "banner_height": "default",
+        "image_block": false,
+        "hide_radius": false,
+        "image_size": "60",
+        "image_overlay_opacity": 70,
+        "content_alignment": "center",
+        "section_full_width": true,
+        "section_background": "#f4f2ec",
+        "padding_top": 200,
+        "padding_bottom": 60
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "subcollections_z3DaMJ": {
+          "type": "subcollections",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "menu": "",
+            "show_product_count": true,
+            "image_ratio": "landscape",
+            "overlay": "",
+            "image_overlay_opacity": 50,
+            "collections_desktop": 5,
+            "heading_size": "h5"
+          }
+        },
+        "promo_yaghg4": {
+          "type": "promo",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "position": 3,
+            "image_overlay_opacity": 50,
+            "title": "Hot Deals",
+            "description": "Check out our products with the hottest deals ever",
+            "link_label": "Shop Now",
+            "button_style": "link_icon",
+            "link": ""
+          }
+        },
+        "promo_zj3gnd": {
+          "type": "promo",
+          "settings": {
+            "color_scheme": "scheme-3",
+            "position": 4,
+            "image_overlay_opacity": 50,
+            "title": "Hot Deals",
+            "description": "Have a look at all of our products and collections",
+            "link_label": "View More",
+            "button_style": "link_icon",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subcollections_z3DaMJ",
+        "promo_yaghg4",
+        "promo_zj3gnd"
+      ],
+      "settings": {
+        "products_per_page": 10,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "landscape",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "swatch_layout": "default",
+        "filter_color_scheme": "",
+        "enable_sorting": true,
+        "sorting_color_scheme": "",
+        "sorting_inside_color_scheme": "",
+        "show_navigation": true,
+        "navigation_label": "",
+        "label_font_size": "text--medium",
+        "label_font_weight": "fw-500",
+        "label_font_style": "body",
+        "summary_font_size": "h5",
+        "summary_font_weight": "fw-500",
+        "filter_text_font_size": "b-text-md",
+        "filter_text_font_weight": "fw-400",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 140
+      }
+    },
+    "collection_discount_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16766664409325__homepage_discount_banner-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Save up to 50%",
+            "heading_size": "h2"
+          }
+        },
+        "template--16766664409325__homepage_discount_banner-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Our curated collections are meant to inspire your creativeside and provide you with product options.",
+            "text_style": "body",
+            "text_color": "main"
+          }
+        },
+        "template--16766664409325__homepage_discount_banner-buttons-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16766664409325__homepage_discount_banner-heading-1",
+        "template--16766664409325__homepage_discount_banner-text-1",
+        "template--16766664409325__homepage_discount_banner-buttons-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "content_width": 700,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "help_and_feedback_mFaiKM": {
+      "type": "help-and-feedback",
+      "blocks": {
+        "collapsible_heading_x6ALmP": {
+          "type": "collapsible_heading",
+          "settings": {
+            "collapsible_heading": "FAQs",
+            "button_label": "See All",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods can I use?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": true
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are the autoparts on your website genuine?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer warranties on your autoparts?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer e-gift cards for international customers?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How can I ensure that I'm purchasing the correct part?",
+            "icon": "none",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "page": "",
+            "open_collapsible_row": false
+          }
+        },
+        "testimonial_heading_gHfR4J": {
+          "type": "testimonial_heading",
+          "settings": {
+            "testimonial_heading": "Customer reviews"
+          }
+        },
+        "testimonial_h7J3f6": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "full_name": "Emma Johnson",
+            "full_name_size": "h6",
+            "full_name_font_weight": "fw-400",
+            "job_title": "CCO at Happy Money",
+            "job_title_color": "foreground",
+            "text": "Needed some replacement brake pads for my daily driver. The website was easy to navigate, and I found exactly what I needed at a competitive price. Delivery was quick, and the parts fit perfectly. Would recommend for basic maintenance needs.",
+            "text_color": "foreground"
+          }
+        },
+        "testimonial_rdyPDw": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "full_name": "Robert Wattson",
+            "full_name_size": "h6",
+            "full_name_font_weight": "fw-400",
+            "job_title": "Finance Manager",
+            "job_title_color": "foreground",
+            "text": "Needed some new spark plugs in a pinch. The website is super user-friendly, and checkout was a breeze. Parts arrived quickly and exactly as described. Will definitely use them again for future maintenance needs.",
+            "text_color": "foreground"
+          }
+        },
+        "testimonial_hxYY38": {
+          "type": "testimonial",
+          "settings": {
+            "rating_star": 5,
+            "full_name": "David G.",
+            "full_name_size": "h6",
+            "full_name_font_weight": "fw-400",
+            "job_title": "Director at Igloo",
+            "job_title_color": "foreground",
+            "text": "Always wanted to do some minor upgrades on my car but never knew where to start. The tutorials and guides on AutoParts were super helpful! They gave me the confidence to tackle a new air intake system myself. Thanks for empowering newbies like me!",
+            "text_color": "foreground"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_heading_x6ALmP",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3",
+        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4",
+        "21f3fdcb-3f3e-4608-830d-1c249c644c10",
+        "testimonial_heading_gHfR4J",
+        "testimonial_h7J3f6",
+        "testimonial_rdyPDw",
+        "testimonial_hxYY38"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "text": "",
+        "color_scheme": "",
+        "faq_color_scheme": "",
+        "reviews_color_scheme": "",
+        "desktop_layout": "image_first",
+        "padding_top": 140,
+        "padding_bottom": 70
+      }
+    },
+    "collection_description": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16766665162989__collection_description-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>AutoParts carries a vast selection of high-quality replacement parts and accessories to keep your vehicle running smoothly and looking sharp. Whether you're a seasoned mechanic tackling a complex repair or a weekend warrior performing routine maintenance, we have everything you need under one store.<\/p><p>By combining a vast product selection, diverse brand options, and valuable resources, AutoParts empowers you to maintain, repair, and personalize your vehicle with confidence. Explore our website or visit our store today and discover everything you need to get the most out of your car.<\/p><p>Shop with confidence at AutoParts and keep your vehicle on the road!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16766665162989__collection_description-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "padding_top": 70,
+        "padding_bottom": 140
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "collection_discount_banner",
+    "help_and_feedback_mFaiKM",
+    "collection_description"
+  ]
+}

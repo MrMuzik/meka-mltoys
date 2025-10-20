@@ -1,0 +1,168 @@
+{{ 'component-image-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  /* Using a style tag to keep styles scoped to this section */
+  #shopify-section-{{ section.id }} .banner--content-align-{{ section.settings.text_alignment }} {
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  #shopify-section-{{ section.id }} .banner__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .banner__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 767px) {
+    #shopify-section-{{ section.id }} .desktop-image {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    #shopify-section-{{ section.id }} .mobile-image {
+      display: none;
+    }
+  }
+{%- endstyle -%}
+
+<div id="banner-section-{{ section.id }}" class="relative w-full h-[60vh] md:h-[70vh] max-h-[600px] bg-gray-900 overflow-hidden shadow-2xl">
+    <!-- Background Images -->
+    <div class="banner__media">
+        {%- if section.settings.image_desktop != blank -%}
+            <img
+                src="{{ section.settings.image_desktop | image_url: width: 2000 }}"
+                alt="{{ section.settings.image_desktop.alt | escape }}"
+                width="{{ section.settings.image_desktop.width }}"
+                height="{{ section.settings.image_desktop.height }}"
+                class="desktop-image"
+                loading="lazy">
+        {%- endif -%}
+
+        {%- if section.settings.image_mobile != blank -%}
+            <img
+                src="{{ section.settings.image_mobile | image_url: width: 1000 }}"
+                alt="{{ section.settings.image_mobile.alt | escape }}"
+                width="{{ section.settings.image_mobile.width }}"
+                height="{{ section.settings.image_mobile.height }}"
+                class="mobile-image"
+                loading="lazy">
+        {%- elsif section.settings.image_desktop != blank -%}
+            <!-- Fallback to desktop image on mobile if no mobile image is set -->
+             <img
+                src="{{ section.settings.image_desktop | image_url: width: 1000 }}"
+                alt="{{ section.settings.image_desktop.alt | escape }}"
+                width="{{ section.settings.image_desktop.width }}"
+                height="{{ section.settings.image_desktop.height }}"
+                class="mobile-image"
+                loading="lazy">
+        {%- else -%}
+             {{ 'lifestyle-2' | placeholder_svg_tag: 'w-full h-full object-cover text-gray-500' }}
+        {%- endif -%}
+    </div>
+
+    <!-- Gradient Overlay and Content -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+    <div class="absolute inset-0 flex flex-col justify-center p-6 sm:p-12 md:p-16 w-full md:w-3/4 lg:w-3/5 banner--content-align-{{ section.settings.text_alignment }}">
+        {%- if section.settings.heading != blank -%}
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white uppercase leading-tight tracking-wide">
+                {{ section.settings.heading }}
+            </h1>
+        {%- endif -%}
+
+        {%- if section.settings.subtext != blank -%}
+            <p class="mt-4 text-lg text-gray-200 max-w-lg mx-auto md:mx-0">
+                {{ section.settings.subtext }}
+            </p>
+        {%- endif -%}
+
+        {%- if section.settings.link_title != blank and section.settings.link_url != blank -%}
+            <div class="mt-8">
+                <a href="{{ section.settings.link_url }}" class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-lg text-center transition-transform duration-300 hover:scale-105 shadow-lg w-full sm:w-auto">
+                    {{ section.settings.link_title }}
+                </a>
+            </div>
+        {%- endif -%}
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Ml-Image Banner",
+  "tag": "section",
+  "class": "shopify-section-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop Image",
+      "info": "Recommended size: 2000x800px"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image",
+      "info": "Recommended size: 1000x1200px. If not set, the desktop image will be used."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Ultimate Ride Starts Here."
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Check out our upgrades to make your ride-on the absolute coolest around!"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "link_title",
+      "label": "Button Label",
+      "default": "Shop All Categories"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ML-Image Banner"
+    }
+  ]
+}
+{% endschema %}
