@@ -1,160 +1,106 @@
+/* Base layout */
 .price {
-  font-size: 1.6rem;
   line-height: 1.5;
-}
-
-.price > * {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.price.price--unavailable {
-  visibility: hidden;
-}
-
-.price--end {
-  text-align: right;
-}
-
-.price .price-item {
-  display: inline-block;
-  margin: 0 .6rem 0 0;
-}
-
-.price__regular .price-item--regular {
-  margin-right: 0;
-}
-
-.price:not(.price--show-badge) .price-item--last:last-of-type {
-  margin: 0;
-}
-
-.price--small.price--on-sale .price-item--regular,
-.price--small .price-item,
-.price--small {
-  font-family: Inter;
   font-weight: 800;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0;
-  color: #C12626;
 }
-.product__tax.price--small {
-  font-size: 1.2rem;
-  letter-spacing: normal;
-}
+.price > * { display: inline-block; vertical-align: top; }
+.price .price-item { display: inline-block; margin: 0 .6rem 0 0; }
 
-.price--medium.price--on-sale .price-item--regular,
-.price--medium .price-item,
-.price--medium {
-  font-size: 1.8rem;
-  line-height: 1.5;
-  letter-spacing: 0.13rem;
-  word-break: break-word;
-}
-.product__tax.price--medium {
-  font-size: 1.4rem;
-  letter-spacing: normal;
-}
+/* Default color (overridable by modifiers) */
+.price .price-item { color: #001429; } /* default = text color */
 
-.price--large.price--on-sale .price-item--regular,
-.price--large .price-item,
-.price--large {
-  font-size: 2.2rem;
-  line-height: 1.5;
-  letter-spacing: 0.13rem;
-}
-.product__tax.price--large {
-  font-size: 1.6rem;
-  letter-spacing: normal;
-}
+/* Availability & visibility helpers */
+.price.price--unavailable { visibility: hidden; }
+.price--end { text-align: right; }
 
-.price--sold-out .price__availability,
-.price__regular {
-  display: block;
-}
-
+/* Regular vs sale visibility */
+.price__regular { display: block; }
 .price__sale,
 .price__availability,
 .price .price__badge-sale,
 .price .price__badge-sold-out,
 .price--on-sale .price__regular,
-.price--on-sale .price__availability {
-  display: none;
-}
+.price--on-sale .price__availability { display: none; }
 
-.price--sold-out .price__badge-sold-out,
-.price--on-sale .price__badge-sale,
-.volume-pricing--sale-badge .price__badge-sale {
-  display: inline-block;
-}
+.price--on-sale .price__sale { display: inline-flex; flex-direction: row; flex-wrap: wrap; }
+.price--center { display: inline-flex; justify-content: center; }
 
-.volume-pricing--sale-badge .price__badge-sale {
-  margin-left: 0.5rem;
-}
-
-.price--on-sale .price__sale {
-  display: initial;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.price--center {
-  display: initial;
-  justify-content: center;
-}
-
+/* Sale styling (compare-at & sale) */
 .price--on-sale .price-item--regular {
+  /* original/compare-at */
+  color: rgba(0, 0, 0, 0.5);
   text-decoration: line-through;
-  color: rgba(var(--color-foreground), 0.75);
-  font-size: 1.6rem;
+}
+.price--on-sale .price-item--sale {
+  /* sale/current */
+  color: #C12626;
 }
 
+/* Size scale (typography) */
+.price--size-sm .price-item--regular,
+.price--size-sm .price-item--sale,
+.price--size-sm {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.price--size-md .price-item--regular,
+.price--size-md .price-item--sale,
+.price--size-md {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.price--size-lg .price-item--regular,
+.price--size-lg .price-item--sale,
+.price--size-lg {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+/* Color modifiers (override default when set) */
+.price--color-text .price-item { color: #001429; }
+.price--color-text-secondary .price-item { color: rgba(0, 20, 41, 0.70); }
+.price--color-accent .price-item { color: #C12626; }
+
+/* Unit price */
 .unit-price {
   display: block;
-  font-size: 1.1rem;
+  font-size: 11px;
   letter-spacing: 0.04rem;
   line-height: 1.2;
   margin-top: 0.2rem;
+  color: rgba(0, 0, 0, 0.75);
   text-transform: uppercase;
-  color: rgba(var(--color-foreground), 0.75);
 }
 
+/* Desktop adjustments (optional gentle scale-up) */
 @media screen and (min-width: 750px) {
-  .price {
-    margin-bottom: 0;
-    font-size: 1.8rem;
+  .price--size-sm .price-item--regular,
+  .price--size-sm .price-item--sale,
+  .price--size-sm {
+    font-size: 15px;
+    line-height: 22px;
   }
-
-  .price--on-sale .price-item--regular {
-    font-size: 1.8rem;
+  .price--size-md .price-item--regular,
+  .price--size-md .price-item--sale,
+  .price--size-md {
+    font-size: 17px;
+    line-height: 26px;
   }
-
-  .price--small.price--on-sale .price-item--regular,
-  .price--small .price-item,
-  .price--small {
-    font-size: 1.8rem;
-  }
-  .product__tax.price--small {
-    font-size: 1.4rem;
-  }
-  
-  .price--medium.price--on-sale .price-item--regular,
-  .price--medium .price-item,
-  .price--medium {
-    font-size: 2.2rem;
-    word-break: break-word;
-  }
-  .product__tax.price--medium {
-    font-size: 1.6rem;
-  }
-  
-  .price--large.price--on-sale .price-item--regular,
-  .price--large .price-item,
-  .price--large {
-    font-size: 2.6rem;
-  }
-  .product__tax.price--large {
-    font-size: 1.8rem;
+  .price--size-lg .price-item--regular,
+  .price--size-lg .price-item--sale,
+  .price--size-lg {
+    font-size: 22px;
+    line-height: 30px;
   }
 }

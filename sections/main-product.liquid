@@ -118,12 +118,13 @@
               {%- when 'price' -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
 									{% liquid
-										assign price_class =  block.settings.price_size | append: " clr-" | append: block.settings.price_color
-									 %}
-                  {%- render 'price', 
-                    product: product, 
-                    use_variant: true, 
-                    show_badges: true, 
+                    assign price_class = 'price--size-' | append: block.settings.price_size | append: ' price--color-' | append: block.settings.price_color
+                  %}
+
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
                     price_class: price_class
                   -%}
                 </div>
@@ -928,36 +929,37 @@
         "name": "t:sections.main-product.blocks.price.name",
         "limit": 1,
         "settings": [
-					{
-						"type": "select",
-						"id": "price_size",
-						"options": [
-							{
-							"value": "price--small",
-							"label": "t:sections.all.heading_size.options__1.label"
-							},
-							{
-							"value": "price--medium",
-							"label": "t:sections.all.heading_size.options__2.label"
-							},
-							{
-							"value": "price--large",
-							"label": "t:sections.all.heading_size.options__3.label"
-							}
-						],
-						"default": "price--medium",
-						"label": "Price size"
-					},
-					{
+          {
             "type": "select",
-            "id": "price_color",
+            "id": "price_size",
+            "label": "Price size",
             "options": [
               {
-                "value": "foreground",
+                "value": "sm",
+                "label": "t:sections.all.heading_size.options__1.label"
+              },
+              {
+                "value": "md",
+                "label": "t:sections.all.heading_size.options__2.label"
+              },
+              {
+                "value": "lg",
+                "label": "t:sections.all.heading_size.options__3.label"
+              }
+            ],
+            "default": "md"
+          },
+          {
+            "type": "select",
+            "id": "price_color",
+            "label": "Color",
+            "options": [
+              {
+                "value": "text",
                 "label": "t:settings_schema.colors.settings.text.label"
               },
               {
-                "value": "foreground-secondary",
+                "value": "text-secondary",
                 "label": "t:settings_schema.colors.settings.text_secondary.label"
               },
               {
@@ -965,8 +967,7 @@
                 "label": "t:settings_schema.colors.settings.accent_color.label"
               }
             ],
-            "default": "foreground",
-            "label": "Color"
+            "default": "text"
           }
         ]
       },
