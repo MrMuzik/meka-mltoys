@@ -1,4 +1,21 @@
-targets.rtf
-*.rtf
+# Node / build
+node_modules/
+dist/
+.vscode/
+.DS_Store
+*.log
+
+# Shopify CLI cache
+.shopify/
+.shopify-cli.yml
+
+# Environment & secrets
 .env
 .env.*
+targets.rtf
+*.rtf
+.DS_Store
+
+# Auto-generated theme files
+config/settings_data.json
+*.zip

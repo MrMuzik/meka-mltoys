@@ -332,6 +332,11 @@ a.product__text {
 .product__title {
 	word-break: break-word;
 	margin-bottom: 1.5rem;
+	font-family: SUPR;
+	font-weight: 400;
+	font-size: 42px;
+	line-height: 38px;
+	letter-spacing: 0;
 }
 .product__title>* {
 	margin: 0;

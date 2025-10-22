@@ -112,7 +112,7 @@
       ],
       "settings": {
         "button_url": "shopify://collections",
-        "button_label": "Shop All Collections",
+        "button_label": "Shop All Categories",
         "bg_image": "shopify://shop_images/Group_427320668.svg",
         "show_background_tread": true,
         "title": "Shop By Category",
@@ -268,7 +268,7 @@
         "video_8bH7PF",
         "video_zbjyzR"
       ],
-      "name": "ML Video Carousel",
+      "name": " ",
       "settings": {
         "title": "",
         "enable_ripped_edges": true,
@@ -647,8 +647,8 @@
   "order": [
     "6a2fc120-4bf3-4610-a05d-7f55944c6720",
     "a845fd8c-a661-412b-b2da-7787cec2a078",
-    "ml_upgrade_vehicle_HzwWPQ",
     "ml_video_carousel_Wgrakp",
+    "ml_upgrade_vehicle_HzwWPQ",
     "collection_list_grid_QcWpEc",
     "image_hubspot_banner_NDAMET",
     "ml_toys_product_slider_qxnMqY",

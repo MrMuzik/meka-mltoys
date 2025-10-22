@@ -713,12 +713,24 @@ table:not([class]) th {
   text-align: left;
 }
 
+.justify-left {
+  justify-content: left;
+}
+
 .center {
   text-align: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .right {
   text-align: right;
+}
+
+.justify-right {
+  justify-content: right;
 }
 
 .capitalize {
@@ -2540,7 +2552,7 @@ input[type='checkbox'] {
   display: flex;
   border-radius: var(--inputs-radius);
 	overflow: hidden;
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  /* min-height: calc((var(--inputs-border-width) * 2) + 4.5rem); */
 }
 
 .quantity:after {

@@ -80,7 +80,7 @@
             </label>
 
             <div class="price-per-item__container">
-              <quantity-input class="quantity {% if quantity_color_scheme != blank %} color-{{ quantity_color_scheme }} {% endif %}">
+              <quantity-input class="quantity ml-button-primary {% if quantity_color_scheme != blank %} color-{{ quantity_color_scheme }} {% endif %}">
                 <button class="quantity__button no-js-hidden" name="minus" type="button">
                   <span class="visually-hidden">
                     {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
@@ -279,7 +279,7 @@
           </div>
 
 
-          <button id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit button button--primary" {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %} disabled{% endif %}>
+          <button id="ProductSubmitButton-{{ section_id }}" type="submit" name="add" class="product-form__submit justify-center ml-button-primary" {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %} disabled{% endif %}>
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}

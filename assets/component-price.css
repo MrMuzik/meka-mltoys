@@ -32,9 +32,12 @@
 .price--small.price--on-sale .price-item--regular,
 .price--small .price-item,
 .price--small {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  letter-spacing: 0.13rem;
+  font-family: Inter;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #C12626;
 }
 .product__tax.price--small {
   font-size: 1.2rem;
