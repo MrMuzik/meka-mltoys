@@ -4564,6 +4564,11 @@ h6,
   color: #fff !important;
 }
 
+.ml-button-primary.slider-button {
+  padding: 0;
+  box-shadow: -2px 3px #001429;
+}
+
 /* Digmo Updates: Podcast Characters */
 
 .section-apps {

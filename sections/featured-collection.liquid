@@ -173,7 +173,7 @@
     
         {%- if show_mobile_slider or show_desktop_slider -%}
           <div class="slider-buttons no-js-hidden">
-            <button type="button" class="slider-button slider-button--prev" name="previous"
+            <button type="button" class="slider-button ml-button-primary slider-button--prev" name="previous"
               aria-label="{{ 'general.slider.previous_slide' | t }}"
               aria-controls="Slider-{{ section.id }}">
               {% render 'icon-arrow-short' %}
@@ -188,7 +188,7 @@
               <span class="slider-counter--total">{{ products_to_display }}</span>
             </div>
     
-            <button type="button" class="slider-button slider-button--next"
+            <button type="button" class="slider-button ml-button-primary slider-button--next"
               name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="Slider-{{ section.id }}">
               {% render 'icon-arrow-short' %}
             </button>

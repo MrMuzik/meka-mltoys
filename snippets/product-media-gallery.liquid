@@ -122,7 +122,7 @@
     </ul>
 
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
-      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">
+      <button type="button" class="slider-button ml-button-primary slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">
         {% render 'icon-arrow-short' %}
       </button>
 
@@ -133,7 +133,7 @@
         <span class="slider-counter--total">{{ media_count }}</span>
       </div>
 
-      <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">
+      <button type="button" class="slider-button ml-button-primary slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">
         {% render 'icon-arrow-short' %}
       </button>
     </div>
@@ -163,7 +163,7 @@
 
     <slider-component id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider slider-mobile-gutter {% if section.settings.thumbnail_position != 'bottom' and section.settings.gallery_layout == 'thumbnail_slider' %} vertical-scroll{% endif %}{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}">
 
-      <button type="button" class="slider-button slider-button--prev{% if media_count <= 3 %} small-hide {% endif %}{% if media_count <= 5 and vertical_scroll == false %} medium-hide large-up-hide{% endif %}{% if media_count <= 4 and vertical_scroll == true %} medium-hide large-up-hide{% endif %}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">
+      <button type="button" class="slider-button ml-button-primary slider-button--prev{% if media_count <= 3 %} small-hide {% endif %}{% if media_count <= 5 and vertical_scroll == false %} medium-hide large-up-hide{% endif %}{% if media_count <= 4 and vertical_scroll == true %} medium-hide large-up-hide{% endif %}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">
         {% render 'icon-arrow-short' %}
       </button>
 
@@ -262,7 +262,7 @@
         {%- endfor -%}
       </ul>
 
-      <button type="button" class="slider-button slider-button--next{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 5 and vertical_scroll == false %} medium-hide large-up-hide{% endif %}{% if media_count <= 4 and vertical_scroll == true %} medium-hide large-up-hide{% endif %}" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">
+      <button type="button" class="slider-button ml-button-primary slider-button--next{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 5 and vertical_scroll == false %} medium-hide large-up-hide{% endif %}{% if media_count <= 4 and vertical_scroll == true %} medium-hide large-up-hide{% endif %}" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">
         {% render 'icon-arrow-short' %}
       </button>
       

@@ -6,8 +6,8 @@
 .price > * { display: inline-block; vertical-align: top; }
 .price .price-item { display: inline-block; margin: 0 .6rem 0 0; }
 
-/* Default color (overridable by modifiers) */
-.price .price-item { color: #001429; } /* default = text color */
+/* Default color (regular price only) */
+.price .price__regular .price-item--regular { color: #001429; }
 
 /* Availability & visibility helpers */
 .price.price--unavailable { visibility: hidden; }
@@ -68,9 +68,9 @@
 }
 
 /* Color modifiers (override default when set) */
-.price--color-text .price-item { color: #001429; }
-.price--color-text-secondary .price-item { color: rgba(0, 20, 41, 0.70); }
-.price--color-accent .price-item { color: #C12626; }
+.price--color-text .price__regular .price-item--regular { color: #001429; }
+.price--color-text-secondary .price__regular .price-item--regular { color: rgba(0, 20, 41, 0.70); }
+.price--color-accent .price__regular .price-item--regular { color: #C12626; }
 
 /* Unit price */
 .unit-price {

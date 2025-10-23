@@ -516,6 +516,9 @@ a.product__text {
 .product__media-list video {
 	border-radius: calc(var(--media-radius) - var(--media-border-width));
 }
+.product__media-list {
+	padding-top: 8px;
+}
 @media screen and (max-width: 749px) {
 	.product__media-list {
 		margin-left: -2.5rem;
@@ -1123,6 +1126,7 @@ a.product__text {
 }
 .thumbnail[aria-current] {
 	border-color: rgba(var(--color-button), var(--alpha-button-background));
+	border-width: calc(var(--border-width) + 1px);
 }
 .image-magnify-full-size {
 	cursor: zoom-out;
