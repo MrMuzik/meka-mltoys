@@ -1401,6 +1401,12 @@
     "name": "t:settings_schema.badges.name",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "show_discount_badges",
+        "label": "Show discount badges",
+        "default": true
+      },
+      {
         "type": "textarea",
         "id": "badge_names",
         "default": "Bestseller,",

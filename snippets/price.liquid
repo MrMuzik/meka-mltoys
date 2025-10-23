@@ -4,11 +4,10 @@
   Accepts:
   - product: {Object} Product Liquid object (optional)
   - use_variant: {Boolean} Use selected/first available variant price (optional)
-  - show_badges: {Boolean} Show 'Sale' badge/percent off when applicable (optional)
   - price_class: {String} Additional class for the root element (optional)
 
   Usage:
-  {% render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--size-md price--color-text' %}
+  {% render 'price', product: product, use_variant: true, price_class: 'price--size-md price--color-text' %}
 {% endcomment %}
 
 {%- liquid
@@ -80,7 +79,7 @@
           </s>
         </span>
 
-        {%- if show_badges and discount_percentage > 0 -%}
+        {%- if settings.show_discount_badges and discount_percentage > 0 -%}
           <span class="discount-badge badge text-color-secondary background--sale">
             {{ discount_percentage }}% {{ 'products.product.off' | t: default: 'Off' }}
           </span>
