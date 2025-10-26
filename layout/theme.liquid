@@ -38,6 +38,11 @@
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 
+    {% if shop.permanent_domain contains 'ml-toys-dev' %}
+      <!-- BugHerd script for dev only -->
+      <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=xvs5asrlhkhunm7kot6exq" async="true"></script>
+    {% endif %}
+
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
