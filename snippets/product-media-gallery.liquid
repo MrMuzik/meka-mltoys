@@ -50,7 +50,7 @@
   endif
 -%}
 
-<media-gallery id="MediaGallery-{{ section.id }}" role="region" class="{% if section.settings.enable_sticky_info %}product__column-sticky{% endif %}{% if vertical_scroll == true %} vertical-scroll{% endif %}"
+<media-gallery id="MediaGallery-{{ section.id }}" role="region" class="{% if section.settings.enable_sticky_media %}product__column-sticky{% endif %}{% if vertical_scroll == true %} vertical-scroll{% endif %}"
   aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
 
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>

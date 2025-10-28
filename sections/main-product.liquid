@@ -106,13 +106,11 @@
                 </div>
 
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1 class="{{ block.settings.heading_size }}">{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="{{ block.settings.heading_size }}">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
+                <div class="product__title-wrapper" {{ block.shopify_attributes }}>
+                  <{{ block.settings.heading_size }}
+                    class="product__title {{ block.settings.heading_size }}">
+                    {{ product.title | escape }}
+                  </{{ block.settings.heading_size }}>
                 </div>
 
               {%- when 'price' -%}
@@ -2513,6 +2511,12 @@
         "id": "enable_video_looping",
         "default": false,
         "label": "t:sections.main-product.settings.enable_video_looping.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sticky_media",
+        "default": true,
+        "label": "t:sections.main-product.settings.enable_sticky_media.label"
       },
       {
         "type": "header",
