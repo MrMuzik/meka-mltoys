@@ -1,0 +1,150 @@
+{%- comment -%}
+SNIPPET: product-tabs
+Usage:
+  {% render 'product-tabs', product: product %}
+
+Assumes:
+- Description: product.description (always shown)
+- HOW TO:      product.metafields.custom.how_to   (Multi-line text; HTML/iframes allowed; rendered with | raw)
+- FAQs:        product.metafields.custom.faqs     (List of metaobject references with fields:
+                 question (text) and answer (rich text))
+{%- endcomment -%}
+
+{%- liquid
+  assign howto_html = product.metafields.custom.how_to
+  assign faqs_field = product.metafields.custom.faqs
+
+  assign has_howto = false
+  if howto_html != blank
+    assign has_howto = true
+  endif
+
+  assign has_faqs = false
+  if faqs_field != blank
+    assign has_faqs = true
+  endif
+
+  assign tab_id = 'pd-tabs-' | append: product.id
+-%}
+
+<div class="pd-tabs" id="{{ tab_id }}">
+  {%- comment -%} Radios must be siblings of panels for CSS ~ selector {%- endcomment -%}
+  <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-desc" checked>
+  {%- if has_howto -%}
+    <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-howto">
+  {%- endif -%}
+  {%- if has_faqs -%}
+    <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-faqs">
+  {%- endif -%}
+
+  <div class="pd-tabs__nav" role="tablist" aria-label="Product information tabs">
+    <label class="pd-tabs__btn" for="{{ tab_id }}-desc" role="tab" aria-controls="{{ tab_id }}-panel-desc">Description</label>
+    {%- if has_howto -%}
+      <label class="pd-tabs__btn" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">HOW TO</label>
+    {%- endif -%}
+    {%- if has_faqs -%}
+      <label class="pd-tabs__btn" for="{{ tab_id }}-faqs" role="tab" aria-controls="{{ tab_id }}-panel-faqs">FAQs</label>
+    {%- endif -%}
+  </div>
+
+  <div class="pd-tabs__panels">
+    <!-- Description -->
+    <section class="pd-tabs__panel" id="{{ tab_id }}-panel-desc" role="tabpanel" aria-labelledby="{{ tab_id }}-desc">
+      <div class="rte">{{ product.description }}</div>
+    </section>
+
+    {%- if has_howto -%}
+      <section class="pd-tabs__panel" id="{{ tab_id }}-panel-howto" role="tabpanel" aria-labelledby="{{ tab_id }}-howto">
+        <div class="rte">{{ howto_html | raw }}</div>
+      </section>
+    {%- endif -%}
+
+    {%- comment -%} --- FAQs panel (iterate the resolved list) --- {%- endcomment -%}
+    {%- assign faqs_field = product.metafields.custom.faqs -%}
+    {%- assign faqs_list  = faqs_field.value | default: faqs_field.references -%}
+
+    {%- if faqs_field != blank -%}
+    <section class="pd-tabs__panel" id="{{ tab_id }}-panel-faqs" role="tabpanel" aria-labelledby="{{ tab_id }}-faqs">
+        <div class="faq-accordion" role="list">
+
+        {%- if faqs_list -%}
+            {%- for entry in faqs_list -%}
+            {%- comment -%}
+                Resolve QUESTION text across shapes:
+                - entry.question (string or metafield)
+                - entry.question.value (metafield value)
+                - entry.fields.question(.value) (older shape)
+            {%- endcomment -%}
+            {%- assign q_text = '' -%}
+            {%- if entry.question -%}
+                {%- assign q_text = entry.question.value | default: entry.question -%}
+            {%- elsif entry.fields and entry.fields.question -%}
+                {%- assign q_text = entry.fields.question.value | default: entry.fields.question -%}
+            {%- endif -%}
+
+            <details class="faq">
+                <summary class="faq__q">
+                {{ q_text }}
+                <span class="faq__icon" aria-hidden="true">▾</span>
+                </summary>
+
+                <div class="faq__a rte">
+                {%- if entry.answer -%}
+                    {{ entry.answer | metafield_tag }}
+                {%- elsif entry.fields and entry.fields.answer -%}
+                    {{ entry.fields.answer | metafield_tag }}
+                {%- endif -%}
+                </div>
+            </details>
+            {%- endfor -%}
+        {%- endif -%}
+
+        </div>
+    </section>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  /* ===== Product Tabs (scoped by ID) ===== */
+  #{{ tab_id }} { border-top: 1px solid rgba(0,0,0,.12); }
+  #{{ tab_id }} .pd-tabs__radio { position: absolute; opacity: 0; pointer-events: none; }
+  #{{ tab_id }} .pd-tabs__nav { display: flex; gap: 2rem; align-items: flex-end; padding-top: .75rem; }
+  #{{ tab_id }} .pd-tabs__btn {
+    position: relative; padding: .5rem 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+    cursor: pointer; opacity: .7;
+  }
+  #{{ tab_id }} .pd-tabs__btn::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: currentColor;
+    opacity: 0; transform: scaleX(0); transition: transform .2s ease, opacity .2s ease;
+  }
+
+  /* Active tab label */
+  #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
+  #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
+  #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
+  #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
+  #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
+  #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
+
+  #{{ tab_id }} .pd-tabs__panels { margin-top: 1.25rem; }
+  #{{ tab_id }} .pd-tabs__panel { display: none; }
+
+  /* Show the matching panel */
+  #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc { display: block; }
+  #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto { display: block; }
+  #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; }
+
+  /* RTE helpers */
+  #{{ tab_id }} .rte iframe { max-width: 100%; width: 100%; height: auto; aspect-ratio: 16/9; }
+  #{{ tab_id }} .rte img { max-width: 100%; height: auto; }
+
+  /* Accordion */
+  #{{ tab_id }} .faq { border-bottom: 1px solid rgba(0,0,0,.12); padding: .75rem 0; }
+  #{{ tab_id }} .faq summary { cursor: pointer; list-style: none; display: flex; align-items: center; }
+  #{{ tab_id }} .faq summary::-webkit-details-marker { display: none; }
+  #{{ tab_id }} .faq__q { font-weight: 800; width: 100%; }
+  #{{ tab_id }} .faq__icon { margin-left: auto; transition: transform .2s ease; }
+  #{{ tab_id }} .faq[open] .faq__icon { transform: rotate(180deg); }
+  #{{ tab_id }} .faq__a { padding-top: .5rem; }
+</style>
