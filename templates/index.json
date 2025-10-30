@@ -502,7 +502,7 @@
         "image": "shopify://shop_images/updated-toycar-diagram-hotspot_d61111ab-e7a6-4ade-8469-da62afa507d6.jpg",
         "color_scheme": "",
         "section_full_width": true,
-        "section_container_width": false,
+        "section_container_width": true,
         "hide_scroll_mobile": false,
         "padding_top": 60,
         "padding_bottom": 144
