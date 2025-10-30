@@ -148,8 +148,8 @@
           "type": "video",
           "settings": {
             "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=Xldr-V0ZEgo",
-            "cover_image": "shopify://shop_images/maxresdefault.jpg",
+            "video_url": "https://www.youtube.com/watch?v=sHnfvIdxVLw",
+            "cover_image": "shopify://shop_images/maxresdefault_1_1.png",
             "description": "",
             "enable_video_looping": false
           }
@@ -158,38 +158,8 @@
           "type": "video",
           "settings": {
             "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=Cp56iHbeigs",
-            "cover_image": "shopify://shop_images/hqdefault.jpg",
-            "description": "",
-            "enable_video_looping": false
-          }
-        },
-        "video_dewcMj": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=tzVRB_M_Aek",
-            "cover_image": "shopify://shop_images/hqdefault_1.jpg",
-            "description": "",
-            "enable_video_looping": false
-          }
-        },
-        "video_y3V7Mw": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=128RTB8ok5s",
-            "cover_image": "shopify://shop_images/maxresdefault_1.jpg",
-            "description": "",
-            "enable_video_looping": false
-          }
-        },
-        "video_TG7bHP": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=_Q-60ezTUK0",
-            "cover_image": "shopify://shop_images/maxresdefault_2.jpg",
+            "video_url": "",
+            "cover_image": "shopify://shop_images/image_4.png",
             "description": "",
             "enable_video_looping": false
           }
@@ -197,14 +167,11 @@
       },
       "block_order": [
         "video_8bH7PF",
-        "video_zbjyzR",
-        "video_dewcMj",
-        "video_y3V7Mw",
-        "video_TG7bHP"
+        "video_zbjyzR"
       ],
       "name": " ",
       "settings": {
-        "title": "Getting Started",
+        "title": "",
         "enable_ripped_edges": true,
         "background_image": "shopify://shop_images/Mask_group.png",
         "background_color": "#001429",
@@ -214,7 +181,7 @@
         "heading_size": "h2",
         "description": "<p>Our Comprehensive guides assist in steering clear of the pitfalls of upgrading your vehicle.</p>",
         "text_color": "foreground",
-        "button_link": "https://www.mltoys.com/pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
+        "button_link": "shopify://pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
         "button_text": "Learn More"
       }
     },
@@ -536,8 +503,8 @@
         "text_size_block": "medium",
         "image": "shopify://shop_images/updated-toycar-diagram-hotspot_d61111ab-e7a6-4ade-8469-da62afa507d6.jpg",
         "color_scheme": "",
-        "section_full_width": false,
-        "section_container_width": false,
+        "section_full_width": true,
+        "section_container_width": true,
         "hide_scroll_mobile": false,
         "padding_top": 60,
         "padding_bottom": 144

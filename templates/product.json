@@ -20,23 +20,18 @@
             "breadcrumbs_collection": true
           }
         },
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "Automobile parts",
-            "text_size": "text--medium",
-            "font_weight": "fw-400",
-            "text_color": "accent"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "heading_size": "h3"
           }
         },
+        "globo_product_options_app_block_czPKJJ": {
+          "type": "shopify://apps/globo-product-options/blocks/app-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
+          "settings": {}
+        },
         "judge_me_reviews_preview_badge_ddEEJh": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
         "price": {
@@ -115,7 +110,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<strong>Note:<\/strong> This is a demo store. The images have been sourced from Shutterstock and Adobe Stock.",
+            "text": "<strong>Note:</strong> This is a demo store. The images have been sourced from Shutterstock and Adobe Stock.",
             "text_size": "text--small",
             "font_weight": "fw-400",
             "text_color": "text-secondary"
@@ -124,8 +119,8 @@
       },
       "block_order": [
         "breadcrumbs_374JWg",
-        "vendor",
         "title",
+        "globo_product_options_app_block_czPKJJ",
         "judge_me_reviews_preview_badge_ddEEJh",
         "price",
         "inventory_pbCRT8",
@@ -149,6 +144,7 @@
         "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": false,
+        "enable_sticky_media": true,
         "padding_top": 0,
         "padding_bottom": 140
       }
@@ -157,7 +153,7 @@
       "type": "apps",
       "blocks": {
         "ecom_youtube_card_gallery_carousel_yqx8GH": {
-          "type": "shopify:\/\/apps\/ecom-youtube-card-gallery\/blocks\/carousel\/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "type": "shopify://apps/ecom-youtube-card-gallery/blocks/carousel/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
           "settings": {
             "gallery-id": "nbXfspti",
             "main-color": "#000000",
@@ -169,7 +165,11 @@
         "ecom_youtube_card_gallery_carousel_yqx8GH"
       ],
       "settings": {
-        "include_margins": true
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
       }
     },
     "help_and_feedback_mFaiKM": {
@@ -189,7 +189,7 @@
           "settings": {
             "heading": "What payment methods can I use?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": true
           }
@@ -199,7 +199,7 @@
           "settings": {
             "heading": "Are the autoparts on your website genuine?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -209,7 +209,7 @@
           "settings": {
             "heading": "Do you offer warranties on your autoparts?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -219,7 +219,7 @@
           "settings": {
             "heading": "Do you offer e-gift cards for international customers?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -229,7 +229,7 @@
           "settings": {
             "heading": "How can I ensure that I'm purchasing the correct part?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -283,10 +283,12 @@
       "type": "apps",
       "blocks": {
         "judge_me_reviews_review_widget_74nPG8": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
-            "max_width": 1200
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
           }
         }
       },
@@ -294,7 +296,11 @@
         "judge_me_reviews_review_widget_74nPG8"
       ],
       "settings": {
-        "include_margins": true
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
       }
     },
     "sticky_add_to_cart_it6b6P": {
@@ -310,7 +316,7 @@
       "type": "apps",
       "blocks": {
         "ecom_youtube_card_gallery_carousel_zQPXaP": {
-          "type": "shopify:\/\/apps\/ecom-youtube-card-gallery\/blocks\/carousel\/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "type": "shopify://apps/ecom-youtube-card-gallery/blocks/carousel/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
           "settings": {
             "gallery-id": "",
             "main-color": "#000000",
@@ -322,7 +328,11 @@
         "ecom_youtube_card_gallery_carousel_zQPXaP"
       ],
       "settings": {
-        "include_margins": true
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
       }
     }
   },

@@ -73,6 +73,15 @@
 
 /* base */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
 .no-js:not(html) {
   display: none !important;
 }
