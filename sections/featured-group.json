@@ -13,6 +13,7 @@
   "sections": {
     "notification_f8xtxd": {
       "type": "notification",
+      "disabled": true,
       "settings": {
         "enable_in_customizer": false,
         "color_scheme": "",
@@ -41,20 +42,19 @@
     },
     "promo_popup_Nph6RR": {
       "type": "promo-popup",
-      "disabled": true,
       "settings": {
         "enable_in_customizer": false,
         "popup_type": "popup_subscribe",
         "enable_promo_popup": true,
         "color_scheme": "",
-        "popup_text": "<h3>Welcome to Autoparts!<\/h3><p>Join our newsletter for exclusive updates and offers.<\/p>",
-        "popup_description": "<h6>Get 10% off on your first purchase<\/h6>",
-        "text_alignment": "left",
+        "popup_text": "<h3>Welcome to Autoparts!</h3><p>Join our newsletter for exclusive updates and offers.</p>",
+        "popup_description": "<h6>Get 10% off on your first purchase</h6>",
+        "text_alignment": "center",
         "popup_tag": "Discount code.",
         "popup_timeout": 30,
         "popup_times": 1,
         "discount_popup_heading": "Congratulations! You’ve successfully joined our list",
-        "discount_popup_description": "<p>Stay tuned for further updates<\/p>",
+        "discount_popup_description": "<p>Stay tuned for further updates</p>",
         "text_color": "foreground",
         "discount_promocode": "Promo",
         "text_alignment_promo": "center"
