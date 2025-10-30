@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
@@ -45,7 +45,7 @@
           "type": "link_list",
           "settings": {
             "menu_drawer_title": "Catalog",
-            "menu_drawer": "ml-mob-menu",
+            "menu_drawer": "main-menu-digmo-site-redesign",
             "icon": "shopify://shop_images/category_1.svg",
             "icon_width": 20,
             "icon_position": "top"
@@ -72,10 +72,11 @@
         "menu_type_desktop": "mega",
         "show_mm_image": false,
         "image_ratio": "landscape",
-        "drawer_product": "",
+        "power_wheels_nav_img": "shopify://shop_images/Group_427320675_8a35e93e-4280-45ac-a11f-f06b26a834ed.png",
+        "drawer_product": "18-20v-lithium-soft-start-low-voltage-module-v-3-0",
         "sticky_header_type": "reduce-logo-size",
-        "show_line_separator": false,
-        "show_shadow": false,
+        "show_line_separator": true,
+        "show_shadow": true,
         "round_borders": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
