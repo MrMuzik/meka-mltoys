@@ -44,7 +44,7 @@
         "link_list_4TGqRe": {
           "type": "link_list",
           "settings": {
-            "menu_drawer_title": "Catalog",
+            "menu_drawer_title": "Shop",
             "menu_drawer": "main-menu-digmo-site-redesign",
             "icon": "shopify://shop_images/category_1.svg",
             "icon_width": 20,
@@ -59,11 +59,20 @@
             "icon_width": 20,
             "icon_position": "top"
           }
+        },
+        "item_icon_BhGC4W": {
+          "type": "item_icon",
+          "settings": {
+            "menu_icon_title": "test123",
+            "icon_width": 20,
+            "icon_position": "top"
+          }
         }
       },
       "block_order": [
         "link_list_4TGqRe",
-        "item_icon_fpypKt"
+        "item_icon_fpypKt",
+        "item_icon_BhGC4W"
       ],
       "settings": {
         "logo_position": "middle-left",
