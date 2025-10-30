@@ -4722,6 +4722,36 @@ h6,
   max-width: 250px !important;
 }
 
+.ml-collection-list-grid {
+  position: relative;
+}
+
+.ml-collection-list-grid .top-torn-edge {
+  position: absolute;
+  top: -73px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: auto;
+}
+
+.ml-collection-list-grid .bottom-torn-edge {
+  position: absolute;
+  bottom: -73px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: auto;
+  transform: rotate(179deg);
+}
+
+.ml-collection-list-grid.ripped-edges-section {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
 .collection-tabs-bg-tread {
   position: absolute;
   top: -42px;
@@ -4978,6 +5008,19 @@ h6,
 
   .ml-toys-product-slider .product-slider__wrapper {
     padding: 1.5rem 3rem;
+  }
+
+  .ml-collection-list-grid.ripped-edges-section {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  .ml-collection-list-grid .top-torn-edge {
+    top: -25px;
+  }
+
+  .ml-collection-list-grid .bottom-torn-edge {
+    bottom: -25px;
   }
 }
 

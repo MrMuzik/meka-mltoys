@@ -234,7 +234,7 @@
   }
 
   .upgrades-by-vehicle .ml-button-primary {
-    margin-top: 50px !important;
+    margin-top: 10px !important;
   }
 
   .upgrade-next,
@@ -345,9 +345,6 @@
       font-size: 24px;
     }
 
-    .upgrades-by-vehicle .ml-button-primary {
-      margin-top: 35px !important;
-    }
   }
 
   @media (max-width: 480px) {

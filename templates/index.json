@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "6a2fc120-4bf3-4610-a05d-7f55944c6720": {
       "type": "image-banner-filter",
@@ -141,6 +141,83 @@
         "padding_bottom": 56
       }
     },
+    "ml_video_carousel_Wgrakp": {
+      "type": "ML-video-carousel",
+      "blocks": {
+        "video_8bH7PF": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=Xldr-V0ZEgo",
+            "cover_image": "shopify://shop_images/maxresdefault.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_zbjyzR": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=Cp56iHbeigs",
+            "cover_image": "shopify://shop_images/hqdefault.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_dewcMj": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=tzVRB_M_Aek",
+            "cover_image": "shopify://shop_images/hqdefault_1.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_y3V7Mw": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=128RTB8ok5s",
+            "cover_image": "shopify://shop_images/maxresdefault_1.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_TG7bHP": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://www.youtube.com/watch?v=_Q-60ezTUK0",
+            "cover_image": "shopify://shop_images/maxresdefault_2.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        }
+      },
+      "block_order": [
+        "video_8bH7PF",
+        "video_zbjyzR",
+        "video_dewcMj",
+        "video_y3V7Mw",
+        "video_TG7bHP"
+      ],
+      "name": " ",
+      "settings": {
+        "title": "",
+        "enable_ripped_edges": true,
+        "background_image": "shopify://shop_images/Mask_group.png",
+        "background_color": "#001429",
+        "section_text_color": "#fefefe",
+        "heading": "Getting Started",
+        "heading_alignment": "left",
+        "heading_size": "h2",
+        "description": "<p>Our Comprehensive guides assist in steering clear of the pitfalls of upgrading your vehicle.</p>",
+        "text_color": "foreground",
+        "button_link": "https://www.mltoys.com/pages/start-here",
+        "button_text": "Learn More"
+      }
+    },
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
@@ -149,7 +226,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/car_cutout_1.png",
             "vehicle_title": "Power Wheels Arctic Cat",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-arctic-cat"
           }
         },
         "vehicle_jJFBe8": {
@@ -157,7 +234,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/Group_427320675.png",
             "vehicle_title": "Power Wheels ATV",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-atv-quads"
           }
         },
         "vehicle_fXeNXY": {
@@ -165,7 +242,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Extreme",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-extreme"
           }
         },
         "vehicle_MYa83y": {
@@ -173,7 +250,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Trailster",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-trailster"
           }
         },
         "vehicle_DyC69y": {
@@ -181,7 +258,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels C7 Corvette",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-corvette-porsche-gt3-mustang-mcqueen-tuned-kits"
           }
         },
         "vehicle_Jwrp8Y": {
@@ -189,7 +266,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
             "vehicle_title": "Power Wheels Camper",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-barbie-campers"
           }
         },
         "vehicle_xkRkk8": {
@@ -197,7 +274,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Cadillac Escalade",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-cadillac-escalade"
           }
         },
         "vehicle_y7CkyQ": {
@@ -238,50 +315,6 @@
         "background_image_mobile": "shopify://shop_images/Group_427320677.png",
         "button_label": "View All Vehicles",
         "button_link": "shopify://pages/upgrades-by-vehicle"
-      }
-    },
-    "ml_video_carousel_Wgrakp": {
-      "type": "ML-video-carousel",
-      "blocks": {
-        "video_8bH7PF": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=sHnfvIdxVLw",
-            "cover_image": "shopify://shop_images/maxresdefault_1_1.png",
-            "description": "",
-            "enable_video_looping": false
-          }
-        },
-        "video_zbjyzR": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "",
-            "cover_image": "shopify://shop_images/image_4.png",
-            "description": "",
-            "enable_video_looping": false
-          }
-        }
-      },
-      "block_order": [
-        "video_8bH7PF",
-        "video_zbjyzR"
-      ],
-      "name": " ",
-      "settings": {
-        "title": "",
-        "enable_ripped_edges": true,
-        "background_image": "shopify://shop_images/Mask_group.png",
-        "background_color": "#001429",
-        "section_text_color": "#fefefe",
-        "heading": "Getting Started",
-        "heading_alignment": "left",
-        "heading_size": "h2",
-        "description": "<p>Our Comprehensive guides assist in steering clear of the pitfalls of upgrading your vehicle.</p>",
-        "text_color": "foreground",
-        "button_link": "shopify://pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
-        "button_text": "Learn More"
       }
     },
     "collection_list_grid_QcWpEc": {
@@ -354,11 +387,13 @@
       "settings": {
         "button_url": "shopify://pages/stock-parts",
         "button_label": "View All Stock Parts",
-        "bg_image": "shopify://shop_images/stock_parts_bg.jpg",
+        "background_color": "#001429",
+        "section_text_color": "#ffffff",
         "show_background_tread": false,
+        "show_ripped_edges": true,
         "title": "Stock Parts",
-        "icon_one": "shopify://shop_images/elements_1.svg",
-        "icon_two": "shopify://shop_images/elements.svg",
+        "icon_one": "shopify://shop_images/elements_1_0be52c91-f1df-4c16-b142-edce0de70434.svg",
+        "icon_two": "shopify://shop_images/elements_2.svg",
         "heading_alignment": "center",
         "heading_size": "h2",
         "description": "<p>Parts for the most popular brands</p>",
