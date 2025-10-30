@@ -287,6 +287,9 @@ fieldset.product-form__input .form__label {
 	color: rgb(var(--color-foreground));
 }
 /* Product info */
+.product__about-header { margin-bottom:.35rem; letter-spacing:.02em; }
+.product__about-body { margin-bottom:.5rem; }
+.product__about-readmore a { font-weight:600; text-transform:uppercase; font-size:.85em; }
 .product__info-container>*+* {
 	margin: 1.5rem 0;
 }
