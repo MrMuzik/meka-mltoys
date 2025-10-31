@@ -289,7 +289,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__product {
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 10rem 5rem 2rem 5rem;
 }
 
 .menu-drawer__product .card-wrapper {
@@ -371,7 +371,7 @@ padding-left: 3rem;
   .menu-drawer__product .card--media .card__inner .card__content {
     padding: 2rem 1.5rem;
   }
-  .menu-drawer .card--card:not(.card--horizontal) .quick-add, 
+  .menu-drawer .card--card:not(.card--horizontal) .quick-add,
   .menu-drawer .card--card .quick-add {
     padding: 0 1.5rem 2rem;
   }
@@ -425,5 +425,41 @@ padding-left: 3rem;
     transform: none !important;
     filter: none !important;
     transition: none !important;
+  }
+}
+
+/* DIGMO Update */
+.all-vehicles-link:hover {
+  background-color: transparent;
+}
+
+.all-vehicles-link-text {
+  padding: 1rem;
+  background-color: #df1d37;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 7px;
+  width: 75%;
+  text-align: center;
+}
+
+.js .menu-drawer__menu li a {
+  text-transform: capitalize;
+}
+
+.power-wheels-nav-img img {
+  max-width: 80px;
+  height: auto;
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 749px) {
+  .all-vehicles-link-text {
+    padding: 8px !important;
+    font-size: 16px !important;
+  }
+
+  .power-wheels-nav-img img {
+    max-width: 60px;
   }
 }

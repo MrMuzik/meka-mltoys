@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "6a2fc120-4bf3-4610-a05d-7f55944c6720": {
       "type": "image-banner-filter",
@@ -193,7 +193,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/car_cutout_1.png",
             "vehicle_title": "Power Wheels Arctic Cat",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-arctic-cat"
           }
         },
         "vehicle_jJFBe8": {
@@ -201,7 +201,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/Group_427320675.png",
             "vehicle_title": "Power Wheels ATV",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-atv-quads"
           }
         },
         "vehicle_fXeNXY": {
@@ -209,7 +209,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Extreme",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-extreme"
           }
         },
         "vehicle_MYa83y": {
@@ -217,7 +217,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Trailster",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-trailster"
           }
         },
         "vehicle_DyC69y": {
@@ -225,7 +225,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels C7 Corvette",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-corvette-porsche-gt3-mustang-mcqueen-tuned-kits"
           }
         },
         "vehicle_Jwrp8Y": {
@@ -233,7 +233,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
             "vehicle_title": "Power Wheels Camper",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-barbie-campers"
           }
         },
         "vehicle_xkRkk8": {
@@ -241,7 +241,7 @@
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Cadillac Escalade",
-            "vehicle_link": ""
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-cadillac-escalade"
           }
         },
         "vehicle_y7CkyQ": {
@@ -354,11 +354,13 @@
       "settings": {
         "button_url": "shopify://pages/stock-parts",
         "button_label": "View All Stock Parts",
-        "bg_image": "shopify://shop_images/stock_parts_bg.jpg",
+        "background_color": "#001429",
+        "section_text_color": "#ffffff",
         "show_background_tread": false,
+        "show_ripped_edges": true,
         "title": "Stock Parts",
-        "icon_one": "shopify://shop_images/elements_1.svg",
-        "icon_two": "shopify://shop_images/elements.svg",
+        "icon_one": "shopify://shop_images/elements_1_0be52c91-f1df-4c16-b142-edce0de70434.svg",
+        "icon_two": "shopify://shop_images/elements_2.svg",
         "heading_alignment": "center",
         "heading_size": "h2",
         "description": "<p>Parts for the most popular brands</p>",

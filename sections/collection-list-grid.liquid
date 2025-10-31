@@ -79,7 +79,12 @@
   endif
 -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient ml-collection-list-grid">
+<div class="color-{{ section.settings.color_scheme }} gradient ml-collection-list-grid {% if section.settings.show_ripped_edges %}ripped-edges-section{% endif %}">
+  {% if section.settings.show_ripped_edges %}
+    <div class="top-torn-edge">
+      {% render 'ripped-edge-top' %}
+    </div>
+  {% endif %}
   {% if section.settings.show_background_tread %}
     <div class="collection-tabs-bg-tread">
       {% render 'tire-tread-bg' %}
@@ -170,9 +175,31 @@
       </a>
     {% endif %}
   </div>
+  {% if section.settings.show_ripped_edges %}
+    <div class="bottom-torn-edge">
+      {% render 'ripped-edge-bottom' %}
+    </div>
+  {% endif %}
 </div>
 
-{% if section.settings.bg_image != blank %}
+
+{% if section.settings.bg_image == blank %}
+  <style>
+    .ml-collection-list-grid {
+      background-color: {{ section.settings.background_color }};
+    }
+    .ml-collection-list-grid .section-title {
+      color: {{ section.settings.section_text_color }};
+    }
+    .ml-collection-list-grid .section-description {
+      color: {{ section.settings.section_text_color }};
+    }
+
+    .custom-card__image-container {
+      border-color: {{ section.settings.background_color }} !important;
+    }
+  </style>
+{% elsif section.settings.bg_image != blank %}
   <style>
     .ml-collection-list-grid {
       background-image: url('{{ section.settings.bg_image | image_url: width: 1920 }}');
@@ -182,6 +209,7 @@
     }
   </style>
 {% endif %}
+
 
 
 {% schema %}
@@ -213,9 +241,25 @@
       "label": "Section Background Image"
     },
     {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "section_text_color",
+      "label": "Text color"
+    },
+    {
       "type": "checkbox",
       "id": "show_background_tread",
       "label": "Show background tire tread",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ripped_edges",
+      "label": "Show background ripped edges",
       "default": false
     },
     {

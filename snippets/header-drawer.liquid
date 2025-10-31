@@ -21,9 +21,9 @@
           <nav class="menu-drawer__navigation">
             {%- if shop.customer_accounts_enabled -%}
               <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide">
-    
+
                 {% render 'icon-account' %}
-    
+
                 {%- liquid
                   if customer
                     echo 'customer.account_fallback' | t
@@ -42,14 +42,14 @@
                     {% if block.settings.menu_drawer != blank %}
                       <li>
                         <details id="Details-menu-drawer-container-2" class="menu-drawer-container">
-          
+
                           <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
                             <span>
                               {{ block.settings.menu_drawer_title }}
                             </span>
                             {% render 'icon-caret' %}
                           </summary>
-                      
+
                           <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                             <div class="menu-drawer__inner-submenu">
                               <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
@@ -66,44 +66,54 @@
                                           {{ link.title | escape }}
                                           {% render 'icon-caret' %}
                                         </summary>
-                  
+
                                         <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                                           <div class="menu-drawer__inner-submenu">
-                  
+
                                             <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                               {% render 'icon-caret' %}
                                               {{ link.title | escape }}
                                             </button>
-                  
-                                            <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+
+                                            <ul class="menu-drawer__menu list-menu test-one" role="list" tabindex="-1">
                                               {%- for childlink in link.links -%}
+                                                {% assign childlink_title = childlink.title | escape | downcase %}
                                                 <li>
                                                   {%- if childlink.links == blank -%}
                                                     <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
-                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
                                                       {% if childlink.current %} aria-current="page" {% endif %}>
-                                                      {{ childlink.title | escape }}
+                                                        {% if childlink_title == 'all vehicles' %}
+                                                          <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
+                                                        {% else %}
+                                                          {{ childlink.title | escape }}
+                                                        {% endif %}
                                                     </a>
                                                   {%- else -%}
                                                     <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
                                                       <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                        {% if childlink_title == 'power wheels' and section.settings.power_wheels_nav_img != blank %}
+                                                          <div class="power-wheels-nav-img">
+                                                            <img src="{{ section.settings.power_wheels_nav_img | image_url: width: 100 }}" alt="{{ section.settings.power_wheels_nav_img.alt | escape }}" width="100" height="100">
+                                                          </div>
+                                                        {% endif %}
                                                         {{ childlink.title | escape }}
                                                         {% render 'icon-caret' %}
                                                       </summary>
                                                       <div id="childlink-{{ childlink.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce">
-                  
+
                                                         <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                                           {% render 'icon-caret' %}
                                                           {{ childlink.title | escape }}
                                                         </button>
-                  
-                                                        <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+
+                                                        <ul class="menu-drawer__menu list-menu test-two" role="list" tabindex="-1">
                                                           {%- for grandchildlink in childlink.links -%}
                                                             <li>
                                                               <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
                                                                 class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
                                                                 {% if grandchildlink.current %}  aria-current="page" {% endif %}>
-                  
+
                                                                 {{ grandchildlink.title | escape }}
                                                               </a>
                                                             </li>
@@ -130,7 +140,7 @@
                             </div>
                           </div>
 
-          
+
                         </details>
                       </li>
                     {%- endif -%}
@@ -155,7 +165,7 @@
                             {{ link.title | escape }}
                           </button>
 
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                          <ul class="menu-drawer__menu list-menu test-three" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
                                 {%- if childlink.links == blank -%}
@@ -177,7 +187,7 @@
                                         {{ childlink.title | escape }}
                                       </button>
 
-                                      <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                      <ul class="menu-drawer__menu list-menu test-four" role="list" tabindex="-1">
                                         {%- for grandchildlink in childlink.links -%}
                                           <li>
                                             <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
@@ -223,9 +233,9 @@
               %}
             </div>
           {% endif %}
-          
+
           <div class="menu-drawer__utility-links">
-            
+
             {%- if localization.available_countries or localization.available_languages -%}
               <div class="menu-drawer__localization header-localization">
                 {%- if localization.available_countries and localization.available_countries.size > 1 -%}
