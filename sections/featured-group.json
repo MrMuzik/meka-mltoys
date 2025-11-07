@@ -42,6 +42,7 @@
     },
     "promo_popup_Nph6RR": {
       "type": "promo-popup",
+      "disabled": true,
       "settings": {
         "enable_in_customizer": false,
         "popup_type": "popup_subscribe",
