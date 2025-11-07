@@ -5,20 +5,29 @@ Usage:
 
 Assumes:
 - Description: product.description (always shown)
-- HOW TO:      product.metafields.custom.how_to   (Multi-line text; HTML/iframes allowed; rendered with | raw)
-- FAQs:        product.metafields.custom.faqs     (List of metaobject references with fields:
-                 question (text) and answer (rich text))
+- HOW TO: product.metafields.custom.how_tos (metaobject reference(s) to type `how_to`; One or List)
+  Fields on each how_to:
+    title (text)
+    thumbnail (image file)  -> used as the YouTube poster
+    youtube_url (url)
+    description (rich text)
+    pdf (file)              -> single File reference
+    pdf_title (text) OR pdf_file_name (text) -> preferred link text
+- FAQs: product.metafields.custom.faqs (list of metaobject refs with question/answer)
 {%- endcomment -%}
 
 {%- liquid
-  assign howto_html = product.metafields.custom.how_to
-  assign faqs_field = product.metafields.custom.faqs
+  assign howtos_value = product.metafields.custom.how_tos.value
 
   assign has_howto = false
-  if howto_html != blank
-    assign has_howto = true
+  if howtos_value != blank
+    for _ in howtos_value
+      assign has_howto = true
+      break
+    endfor
   endif
 
+  assign faqs_field = product.metafields.custom.faqs
   assign has_faqs = false
   if faqs_field != blank
     assign has_faqs = true
@@ -28,7 +37,6 @@ Assumes:
 -%}
 
 <div class="pd-tabs" id="{{ tab_id }}">
-  {%- comment -%} Radios must be siblings of panels for CSS ~ selector {%- endcomment -%}
   <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-desc" checked>
   {%- if has_howto -%}
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-howto">
@@ -55,52 +63,113 @@ Assumes:
 
     {%- if has_howto -%}
       <section class="pd-tabs__panel" id="{{ tab_id }}-panel-howto" role="tabpanel" aria-labelledby="{{ tab_id }}-howto">
-        <div class="rte">{{ howto_html | raw }}</div>
+        <div class="howto-list">
+          {%- for how in howtos_value -%}
+            {%- assign _title = how.title | default: how.fields.title -%}
+            {%- assign _thumb = how.thumbnail | default: how.fields.thumbnail -%}
+            {%- assign _yt    = how.youtube_url | default: how.fields.youtube_url -%}
+            {%- assign _desc  = how.description | default: how.fields.description -%}
+            {%- assign _pdf   = how.pdf | default: how.fields.pdf -%}
+            {%- assign _pdf_title = how.pdf_title | default: how.fields.pdf_title | default: how.pdf_file_name | default: how.fields.pdf_file_name -%}
+
+            <article class="howto" role="article">
+              {%- if _title != blank -%}
+                <h3 class="howto-title">{{ _title | escape }}</h3>
+              {%- endif -%}
+
+              {%- assign yt = _yt | to_s -%}
+              {%- if yt != blank -%}
+                {%- assign id = yt -%}
+                {%- assign id = id | replace: 'https://youtu.be/', '' | replace: 'http://youtu.be/', '' -%}
+                {%- assign id = id | replace: 'https://www.youtube.com/watch?v=', '' | replace: 'http://www.youtube.com/watch?v=', '' -%}
+                {%- assign id = id | replace: 'https://youtube.com/watch?v=', '' | replace: 'http://youtube.com/watch?v=', '' -%}
+                {%- assign id = id | replace: 'https://www.youtube.com/embed/', '' | replace: 'http://www.youtube.com/embed/', '' -%}
+                {%- assign id = id | split: '?' | first | split: '&' | first -%}
+
+                {%- if _thumb -%}
+                  <div class="howto-video howto-video--poster" data-yt="{{ id | escape }}">
+                    <img class="howto-video__poster" src="{{ _thumb | image_url: width: 1600 }}" alt="{{ _title | escape }}">
+                    <button class="howto-video__play" type="button" aria-label="Play video">▶</button>
+                  </div>
+                {%- else -%}
+                  <div class="howto-video">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/{{ id | escape }}"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen></iframe>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if _desc != blank -%}
+                <div class="howto-desc rte">{{ _desc | metafield_tag }}</div>
+              {%- endif -%}
+
+              {%- if _pdf -%}
+                {%- assign pdf_url = _pdf | file_url -%}
+                {%- assign filename_guess = pdf_url | split: '/' | last | split: '?' | first -%}
+                {%- assign pdf_label = _pdf_title | default: _title | default: filename_guess -%}
+                <p class="howto-pdf">
+                  <a href="{{ pdf_url }}" target="_blank" rel="noopener">{{ pdf_label | escape }}</a>
+                </p>
+              {%- endif -%}
+            </article>
+          {%- endfor -%}
+        </div>
+
+        <script>
+            // click-to-play for poster thumbnails (runs once)
+          (function(){
+            var posters = document.querySelectorAll('#{{ tab_id }} .howto-video--poster');
+            if(!posters.length) return;
+            posters.forEach(function(box){
+              var id = box.getAttribute('data-yt');
+              if(!id) return;
+              var btn = box.querySelector('.howto-video__play');
+              var activate = function(){
+                var iframe = document.createElement('iframe');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+                box.innerHTML = '';
+                box.classList.remove('howto-video--poster');
+                box.appendChild(iframe);
+              };
+              box.addEventListener('click', activate);
+              if(btn) btn.addEventListener('click', function(e){ e.stopPropagation(); activate(); });
+            });
+          })();
+        </script>
       </section>
     {%- endif -%}
 
-    {%- comment -%} --- FAQs panel (iterate the resolved list) --- {%- endcomment -%}
-    {%- assign faqs_field = product.metafields.custom.faqs -%}
-    {%- assign faqs_list  = faqs_field.value | default: faqs_field.references -%}
-
+    {%- comment -%} --- FAQs panel --- {%- endcomment -%}
+    {%- assign faqs_list = faqs_field.value | default: faqs_field.references -%}
     {%- if faqs_field != blank -%}
-    <section class="pd-tabs__panel" id="{{ tab_id }}-panel-faqs" role="tabpanel" aria-labelledby="{{ tab_id }}-faqs">
+      <section class="pd-tabs__panel" id="{{ tab_id }}-panel-faqs" role="tabpanel" aria-labelledby="{{ tab_id }}-faqs">
         <div class="faq-accordion" role="list">
-
-        {%- if faqs_list -%}
+          {%- if faqs_list -%}
             {%- for entry in faqs_list -%}
-            {%- comment -%}
-                Resolve QUESTION text across shapes:
-                - entry.question (string or metafield)
-                - entry.question.value (metafield value)
-                - entry.fields.question(.value) (older shape)
-            {%- endcomment -%}
-            {%- assign q_text = '' -%}
-            {%- if entry.question -%}
-                {%- assign q_text = entry.question.value | default: entry.question -%}
-            {%- elsif entry.fields and entry.fields.question -%}
-                {%- assign q_text = entry.fields.question.value | default: entry.fields.question -%}
-            {%- endif -%}
+              {%- assign q_text = '' -%}
+              {%- if entry.question -%}{%- assign q_text = entry.question.value | default: entry.question -%}
+              {%- elsif entry.fields and entry.fields.question -%}{%- assign q_text = entry.fields.question.value | default: entry.fields.question -%}{%- endif -%}
 
-            <details class="faq">
+              <details class="faq">
                 <summary class="faq__q">
-                {{ q_text }}
-                <span class="faq__icon" aria-hidden="true">▾</span>
+                  {{ q_text }}
+                  <span class="faq__icon" aria-hidden="true">▾</span>
                 </summary>
-
                 <div class="faq__a rte">
-                {%- if entry.answer -%}
-                    {{ entry.answer | metafield_tag }}
-                {%- elsif entry.fields and entry.fields.answer -%}
-                    {{ entry.fields.answer | metafield_tag }}
-                {%- endif -%}
+                  {%- if entry.answer -%}{{ entry.answer | metafield_tag }}
+                  {%- elsif entry.fields and entry.fields.answer -%}{{ entry.fields.answer | metafield_tag }}{%- endif -%}
                 </div>
-            </details>
+              </details>
             {%- endfor -%}
-        {%- endif -%}
-
+          {%- endif -%}
         </div>
-    </section>
+      </section>
     {%- endif -%}
   </div>
 </div>
@@ -118,8 +187,6 @@ Assumes:
     content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: currentColor;
     opacity: 0; transform: scaleX(0); transition: transform .2s ease, opacity .2s ease;
   }
-
-  /* Active tab label */
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
@@ -129,8 +196,6 @@ Assumes:
 
   #{{ tab_id }} .pd-tabs__panels { margin-top: 1.25rem; }
   #{{ tab_id }} .pd-tabs__panel { display: none; }
-
-  /* Show the matching panel */
   #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc { display: block; }
   #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto { display: block; }
   #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; }
@@ -139,12 +204,33 @@ Assumes:
   #{{ tab_id }} .rte iframe { max-width: 100%; width: 100%; height: auto; aspect-ratio: 16/9; }
   #{{ tab_id }} .rte img { max-width: 100%; height: auto; }
 
-  /* Accordion */
-  #{{ tab_id }} .faq { border-bottom: 1px solid rgba(0,0,0,.12); padding: .75rem 0; }
-  #{{ tab_id }} .faq summary { cursor: pointer; list-style: none; display: flex; align-items: center; }
-  #{{ tab_id }} .faq summary::-webkit-details-marker { display: none; }
-  #{{ tab_id }} .faq__q { font-weight: 800; width: 100%; }
-  #{{ tab_id }} .faq__icon { margin-left: auto; transition: transform .2s ease; }
-  #{{ tab_id }} .faq[open] .faq__icon { transform: rotate(180deg); }
-  #{{ tab_id }} .faq__a { padding-top: .5rem; }
+  /* HOW-TO GRID */
+  #{{ tab_id }} .howto-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 750px) and (max-width: 989px) {
+    #{{ tab_id }} .howto-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (min-width: 990px) {
+    #{{ tab_id }} .howto-list { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  }
+
+  /* HOW-TO card */
+  #{{ tab_id }} .howto { border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 1rem; background: #fff; }
+  #{{ tab_id }} .howto-title { margin-bottom: .5rem; }
+  #{{ tab_id }} .howto-desc { margin-top: .5rem; }
+
+  /* Video & poster */
+  #{{ tab_id }} .howto-video { position: relative; width: 100%; padding-top: 56.25%; border-radius: 10px; overflow: hidden; background: #000; }
+  #{{ tab_id }} .howto-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  #{{ tab_id }} .howto-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #{{ tab_id }} .howto-video__play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    border: 0; border-radius: 999px; width: 64px; height: 64px; font-size: 24px; line-height: 64px;
+    background: rgba(255,255,255,.85); cursor: pointer;
+  }
+
+  #{{ tab_id }} .howto-pdf { margin-top: .5rem; }
 </style>
