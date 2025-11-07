@@ -38,44 +38,167 @@
         "content_padding_bottom": 50
       }
     },
-    "featured_collection_dgWLE8": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
+    "featured_grid_geV8d4": {
+      "type": "featured-grid",
+      "blocks": {
+        "grid_item_9NpRF9": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/killswitch3.jpg",
+            "title": "Kill Switch / Removable Key",
+            "url": "https://www.mltoys.com/products/key-start-for-ride-ons"
+          }
+        },
+        "grid_item_jWCThX": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/775-heatsink-2.jpg",
+            "title": "775 Heatsink",
+            "url": "https://www.mltoys.com/products/775-heatsink"
+          }
+        },
+        "grid_item_hfwMmK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/775BBI_1.jpg",
+            "title": "Matched Pair of 775 Ball Bearing Performance Motors",
+            "url": "https://www.mltoys.com/products/matched-pair-of-775-ball-bearing-performance-motors"
+          }
+        },
+        "grid_item_PqiwrK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/36vConversionKit.jpg",
+            "title": "36 Volt Conversion Kit * RACE ONLY *",
+            "url": "https://www.mltoys.com/products/36-volt-conversion-kit-race-only"
+          }
+        },
+        "grid_item_Crar7Q": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Dual775motorFirstGearDelete.jpg",
+            "title": "Phoenix First Gear Delete & Dual 775 Motor Mounting Plates",
+            "url": "https://www.mltoys.com/products/phoenix-first-gear-delete-dual-775-motor-mounting-plates"
+          }
+        },
+        "grid_item_TkDJTP": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/First_Gear_Delete_7R.jpg",
+            "title": "7R First Gear Delete & Dual 775 Motor Mounting Plates",
+            "url": "https://www.mltoys.com/products/7r-first-gear-delete-dual-775-motor-mounting-plates"
+          }
+        },
+        "grid_item_wqQfHG": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Steeringstabilizer.jpg",
+            "title": "Steering Stabilizer and Toe Adjuster",
+            "url": "https://www.mltoys.com/products/steering-stabilizer-and-toe-adjuster"
+          }
+        },
+        "grid_item_4MC3DY": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/solenoid.png",
+            "title": "Heavy Duty Solenoid",
+            "url": "https://www.mltoys.com/products/heavy-duty-solenoid"
+          }
+        },
+        "grid_item_CPqEzt": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/KillSwitch1.png",
+            "title": "High Capacity Kill Switch",
+            "url": "https://www.mltoys.com/products/high-capacity-kill-switch"
+          }
+        },
+        "grid_item_wyHtKp": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Wheelie3.jpg",
+            "title": "Wheelie Bar Kit",
+            "url": "https://www.mltoys.com/products/wheelie-bar-kit"
+          }
+        },
+        "grid_item_QgFwPH": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/8awgterminals_d5db531d-956c-4ddc-a22b-cd5b6d295558.png",
+            "title": "8awg Junction Terminal Bus Blocks",
+            "url": "https://www.mltoys.com/products/8awg-junction-terminal-blocks"
+          }
+        },
+        "grid_item_kpTjhm": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/100aBreaker.png",
+            "title": "100 amp Breaker",
+            "url": "https://www.mltoys.com/products/100-amp-breaker"
+          }
+        },
+        "grid_item_FkXTmD": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/8awgconnectorrings.png",
+            "title": "8awg Copper Ring Wire Connectors",
+            "url": "https://www.mltoys.com/products/8awg-copper-ring-wire-connectors-due-early-july-if-you-order-now"
+          }
+        },
+        "grid_item_MjHEAz": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/First_Gear_Delete_Kid_Trax.jpg",
+            "title": "Kid Trax First Gear Delete & Dual 775 Motor Mounting Plates",
+            "url": "https://www.mltoys.com/products/kid-trax-first-gear-delete-dual-775-motor-mounting-plates"
+          }
+        },
+        "grid_item_tinjMb": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Untitled.png",
+            "title": "8AWG Wire 10'",
+            "url": "https://www.mltoys.com/products/8awg-wire-10"
+          }
+        },
+        "grid_item_YPC6Uz": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Podium-Banner-2.png",
+            "title": "Power Wheels Podium Banner - Borrow or Buy",
+            "url": "https://www.mltoys.com/products/power-wheels-podium-banner-borrow-or-buy"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_9NpRF9",
+        "grid_item_jWCThX",
+        "grid_item_hfwMmK",
+        "grid_item_PqiwrK",
+        "grid_item_Crar7Q",
+        "grid_item_TkDJTP",
+        "grid_item_wqQfHG",
+        "grid_item_4MC3DY",
+        "grid_item_CPqEzt",
+        "grid_item_wyHtKp",
+        "grid_item_QgFwPH",
+        "grid_item_kpTjhm",
+        "grid_item_FkXTmD",
+        "grid_item_MjHEAz",
+        "grid_item_tinjMb",
+        "grid_item_YPC6Uz"
+      ],
+      "name": "Grid view",
       "settings": {
-        "title": "Products designed for racing",
-        "heading_size": "h2",
-        "description": "",
-        "text_size_block": "medium",
-        "text_color": "main",
-        "show_description": false,
-        "countdown_label": "Hurry up! Offer ends in",
-        "countdown_font_weight": "600",
-        "numbers_size": "h4",
-        "countdown_date": "",
-        "countdown_end": "show_zeroes",
-        "days_label": "Days",
-        "hours_label": "Hours",
-        "mins_label": "Minutes",
-        "secs_label": "Seconds",
-        "countdown_label_bg": "#fb542f",
-        "label_text_color": "main",
-        "collection": "all-other-vehicles",
-        "products_to_show": 12,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 70,
-        "padding_bottom": 70
+        "grid_gap": 30,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "text_alignment": "center",
+        "image_border_radius": 14,
+        "title_size": 18,
+        "title_spacing": 12,
+        "title_weight": "700",
+        "title_color": "#1d1d1f"
       }
     },
     "ml_toys_product_slider_eCpE3j": {
@@ -246,7 +369,7 @@
   },
   "order": [
     "main",
-    "featured_collection_dgWLE8",
+    "featured_grid_geV8d4",
     "ml_toys_product_slider_eCpE3j",
     "image_with_text_g8Eize",
     "image_with_text_34mVt7",

@@ -111,7 +111,7 @@
         "collection_rCjLVR"
       ],
       "settings": {
-        "button_url": "shopify://collections",
+        "button_url": "shopify://pages/upgrades-by-category-digmo",
         "button_label": "Shop All Categories",
         "bg_image": "shopify://shop_images/Group_427320668.svg",
         "show_background_tread": true,

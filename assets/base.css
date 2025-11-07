@@ -5082,11 +5082,6 @@ h6,
   height: 500px;
 }
 
-.calendar-iframe {
-  display: block;
-  margin: auto;
-}
-
 .iframe-header {
   text-align: center;
 }
@@ -5102,6 +5097,15 @@ h6,
 
 .main-page-content .row .one-sixth {
   font-weight: bold;
+}
+
+.calendar-iframe {
+  border: solid 1px #777;
+  max-width: 1262px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  max-width: 1262px;
 }
 
 @media screen and (max-width: 749px) {
@@ -5164,6 +5168,89 @@ div.snize:not(.snize-options) #snize-search-results-list-mode .snize-reviews {
     text-align: center !important;
   }
 }
+
+/* Referral Page Resets */
+.cf_ram_guest_main_content {
+  justify-content: center;
+}
+
+div#cf_ram_guest_image_section img {
+  border: 0px;
+  max-width: 500px;
+}
+
+#cf_ram_guest_image_section {
+  width: 50%;
+}
+
+#cf_ram_guest_section {
+  width: 50%;
+}
+
+#cf_ram_guest_section h2 br {
+  display: none;
+}
+
+.cf_ram_guest_page_text span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 23px;
+  line-height: normal !important;
+  display: block;
+  margin-top: 20px;
+}
+
+.cf_ram_guest_submit_button_container, .cf_ram_user_copy_button {
+  background: #df1d37 !important;
+  height: 57px !important;
+}
+
+#cf_ram_guest_submit_button_container_id {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  border-radius: 0px;
+}
+
+.cf_ram_guest_input_container {
+  width: 100% !important;
+  border-radius: 0 !important;
+}
+
+.terms-condition {
+  display: none !important;
+}
+
+#cf_ram_guest_submit_button_container_id input {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 750px) {
+  #cf_ram_guest_image_section, #cf_ram_guest_section,
+  #cf_ram_guest_image_section {
+    width: 100% !important;
+  }
+}
+
+/* Side Cart and Cart Updates */
+
+.cart-quantity.ml-button-primary .quantity__input[type=number] {
+  width: 35px !important;
+}
+
+.cart-drawer .cart-item__details .drawer-price {
+  font-size: 15px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.cart-drawer .price, .product-option.drawer-price {
+  color: inherit !important;
+}
+
 
 /*****************
 

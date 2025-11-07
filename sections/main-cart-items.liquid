@@ -268,7 +268,7 @@
                       {%- endif -%}
                     </div>
                   </td>
-                  
+
                   {%- liquid
                     assign has_qty_rules = false
                     if item.variant.quantity_rule.increment > 1 or item.variant.quantity_rule.min > 1 or item.variant.quantity_rule.max != null
@@ -294,7 +294,7 @@
                               {% render 'icon-info' %}
                             </button>
                           {%- endif -%}
-                          <quantity-input class="quantity cart-quantity">
+                          <quantity-input class="quantity cart-quantity ml-button-primary">
                             <button class="quantity__button no-js-hidden" name="minus" type="button">
                               <span class="visually-hidden">
                                 {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
