@@ -51,15 +51,6 @@
             "icon_position": "top"
           }
         },
-        "item_icon_fpypKt": {
-          "type": "item_icon",
-          "settings": {
-            "menu_icon_title": "Start Here",
-            "icon": "shopify://shop_images/icon-help_1.svg",
-            "icon_width": 20,
-            "icon_position": "top"
-          }
-        },
         "item_icon_BhGC4W": {
           "type": "item_icon",
           "settings": {
@@ -71,18 +62,17 @@
       },
       "block_order": [
         "link_list_4TGqRe",
-        "item_icon_fpypKt",
         "item_icon_BhGC4W"
       ],
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu-copy",
+        "menu": "digmo-menu-simple-top",
         "menu_font_weight": "500",
         "menu_type_desktop": "mega",
         "show_mm_image": false,
         "image_ratio": "landscape",
         "power_wheels_nav_img": "shopify://shop_images/Group_427320675_8a35e93e-4280-45ac-a11f-f06b26a834ed.png",
-        "drawer_product": "18-20v-lithium-soft-start-low-voltage-module-v-3-0",
+        "drawer_product": "",
         "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
         "show_shadow": true,

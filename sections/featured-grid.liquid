@@ -1,0 +1,263 @@
+{% assign grid_block_id = section.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .grid-block-{{ grid_block_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    width: 100%;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .grid-block-{{ grid_block_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .grid-item-{{ grid_block_id }} {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .grid-item-{{ grid_block_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .grid-item-image-wrapper-{{ grid_block_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: {{ section.settings.image_border_radius }}px;
+    background-color: #f4f4f4;
+  }
+
+  .grid-item-image-{{ grid_block_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .grid-item-image-wrapper-{{ grid_block_id }} svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .grid-item-title-{{ grid_block_id }} {
+    margin-top: {{ section.settings.title_spacing }}px;
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: {{ section.settings.title_weight }} !important;
+    font-family: var(--font-body-family) !important;
+    letter-spacing: normal;
+    color: {{ section.settings.title_color }};
+    text-align: {{ section.settings.text_alignment }};
+    text-transform: capitalize !important;
+    padding: 0px 20px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .grid-item-title-{{ grid_block_id }} {
+      font-size: 16px !important;
+    }
+
+    .grid-block-{{ grid_block_id }} {
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .grid-item-title-{{ grid_block_id }} {
+      font-size: 14px !important;
+    }
+
+
+  }
+{% endstyle %}
+
+<div class="grid-block-{{ grid_block_id }} page-width">
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {% assign item_image = block.settings.image %}
+      {% assign item_title = block.settings.title %}
+      {% assign item_url = block.settings.url %}
+
+      {% if item_image != blank or item_title != blank %}
+        <a
+          href="{{ item_url | default: '#' }}"
+          class="grid-item-{{ grid_block_id }}"
+          {% if item_url == blank %}aria-disabled="true"{% endif %}
+          {{ block.shopify_attributes }}
+        >
+          <div class="grid-item-image-wrapper-{{ grid_block_id }}">
+            {% if item_image != blank %}
+              <img
+                src="{{ item_image | image_url: width: 600 }}"
+                alt="{{ item_image.alt | escape }}"
+                loading="lazy"
+                width="{{ item_image.width }}"
+                height="{{ item_image.height }}"
+                class="grid-item-image-{{ grid_block_id }}"
+              >
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+          </div>
+
+          {% if item_title != blank %}
+            <h3 class="grid-item-title-{{ grid_block_id }}">{{ item_title }}</h3>
+          {% endif %}
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <!-- Optional: simple placeholder when no blocks exist -->
+    <div class="grid-item-{{ grid_block_id }}" aria-disabled="true">
+      <div class="grid-item-image-wrapper-{{ grid_block_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+      <h3 class="grid-item-title-{{ grid_block_id }}">Add grid items in the editor</h3>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Grid view",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Title spacing",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi bold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1d1d1f"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "grid_item",
+      "name": "Grid item",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid view",
+      "blocks": [
+        { "type": "grid_item" },
+        { "type": "grid_item" },
+        { "type": "grid_item" },
+        { "type": "grid_item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

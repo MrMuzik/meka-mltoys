@@ -429,6 +429,10 @@ padding-left: 3rem;
 }
 
 /* DIGMO Update */
+.menu-drawer {
+  width: 50rem;
+}
+
 .all-vehicles-link:hover {
   background-color: transparent;
 }
@@ -441,6 +445,11 @@ padding-left: 3rem;
   border-radius: 7px;
   width: 75%;
   text-align: center;
+  transition: all 0.25s ease;
+}
+
+.all-vehicles-link-text:hover {
+  background-color: #c41930;
 }
 
 .js .menu-drawer__menu li a {
@@ -453,7 +462,44 @@ padding-left: 3rem;
   margin-right: 15px;
 }
 
+.additional-drawer .menu-drawer__navigation {
+  display: flex;
+  height: 100%;
+}
+
+.list-menu {
+  width: 100%;
+}
+
+.menu-drawer summary.menu-drawer__menu-item {
+  font-weight: bold !important;
+}
+
+.has-menu-item-icon {
+  padding: 0.75rem 5rem;
+}
+
+.divider-line {
+  display: block !important;
+  width: 100%;
+  height: 2px;
+  width: 80%;
+  margin: auto;
+  border-radius: 9px;
+  background-color: rgba(var(--color-button), 0.5);
+  margin: 10px auto;
+}
+
+.menu-item-icon-image {
+  max-width: 85px !important;
+  margin-right: 15px !important;
+}
+
 @media screen and (max-width: 749px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
   .all-vehicles-link-text {
     padding: 8px !important;
     font-size: 16px !important;
@@ -461,5 +507,14 @@ padding-left: 3rem;
 
   .power-wheels-nav-img img {
     max-width: 60px;
+  }
+
+  .menu-item-icon-image {
+    max-width: 57px !important;
+    margin-right: 10px;
+  }
+
+  .menu-drawer {
+    max-width: 35rem;
   }
 }

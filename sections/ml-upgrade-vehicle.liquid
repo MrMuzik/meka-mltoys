@@ -84,8 +84,8 @@
       <div class="swiper-pagination"></div>
     </div>
 
-  <div class="swiper-button-next upgrade-next">{% render 'right-arrow-long' %}</div>
-  <div class="swiper-button-prev upgrade-prev">{% render 'left-arrow-long' %}</div>
+  <div class="swiper-button-next upgrade-next">{% render 'right-chevron' %}</div>
+  <div class="swiper-button-prev upgrade-prev">{% render 'left-chevron' %}</div>
   </div>
 
   {% if section.settings.button_label != blank and section.settings.button_link != blank %}
@@ -107,6 +107,7 @@
     const vehicleSwiper = new Swiper('.vehicle-swiper', {
       // Default: 1 column, 2 rows for mobile/tablet vertical stacking
       slidesPerView: 1,
+      slidesPerGroup: 1,
       grid: {
         rows: 2,
         fill: 'row'
@@ -140,6 +141,7 @@
         // Tablet: 3x2 grid
         768: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           grid: {
             rows: 2
           },
@@ -152,6 +154,7 @@
         // Desktop: 4x2 grid
         1024: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           grid: {
             rows: 2
           },
@@ -163,6 +166,7 @@
 
         1280: {
           slidesPerView: 4,
+          slidesPerGroup: 4,
           grid: {
             rows: 2
           },

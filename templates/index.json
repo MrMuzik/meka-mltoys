@@ -23,7 +23,7 @@
             "text": "<p>Check out our upgrades to make your </p><p>ride-on the absolute coolest around!</p>",
             "text_size_block": "medium",
             "button_label_1": "Shop All Categories",
-            "button_link_1": "shopify://pages/upgrades-by-vehicle",
+            "button_link_1": "shopify://pages/upgrades-by-category-digmo",
             "button_style_secondary_1": false,
             "enable_button_arrow": true,
             "button_label_2": "",
@@ -148,8 +148,8 @@
           "type": "video",
           "settings": {
             "video_title": "",
-            "video_url": "https://www.youtube.com/watch?v=sHnfvIdxVLw",
-            "cover_image": "shopify://shop_images/maxresdefault_1_1.png",
+            "video_url": "https://youtu.be/Xldr-V0ZEgo",
+            "cover_image": "shopify://shop_images/maxresdefault.jpg",
             "description": "",
             "enable_video_looping": false
           }
@@ -158,8 +158,38 @@
           "type": "video",
           "settings": {
             "video_title": "",
-            "video_url": "",
-            "cover_image": "shopify://shop_images/image_4.png",
+            "video_url": "https://youtu.be/Cp56iHbeigs",
+            "cover_image": "shopify://shop_images/hqdefault.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_WAabaP": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://youtu.be/tzVRB_M_Aek",
+            "cover_image": "shopify://shop_images/hqdefault_1.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_gkLzRa": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://youtu.be/128RTB8ok5s",
+            "cover_image": "shopify://shop_images/maxresdefault_1.jpg",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_mTKzhw": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "video_url": "https://youtu.be/_Q-60ezTUK0",
+            "cover_image": "shopify://shop_images/maxresdefault_2.jpg",
             "description": "",
             "enable_video_looping": false
           }
@@ -167,7 +197,10 @@
       },
       "block_order": [
         "video_8bH7PF",
-        "video_zbjyzR"
+        "video_zbjyzR",
+        "video_WAabaP",
+        "video_gkLzRa",
+        "video_mTKzhw"
       ],
       "name": " ",
       "settings": {
@@ -248,16 +281,264 @@
           "type": "vehicle",
           "settings": {
             "vehicle_image": "shopify://shop_images/pink_cart_cutout_1_ad8bfb81-4027-46f3-953e-ac41563d1c0c.png",
-            "vehicle_title": "Power Wheels Baja Trailster",
-            "vehicle_link": ""
+            "vehicle_title": "Power Wheels Dune Racer",
+            "vehicle_link": "shopify://collections/power-wheels-dune-racer"
           }
         },
-        "vehicle_rnBh8r": {
+        "vehicle_VcBCjR": {
           "type": "vehicle",
           "settings": {
-            "vehicle_image": "shopify://shop_images/car_cutout_1.png",
-            "vehicle_title": "Vehicle",
-            "vehicle_link": ""
+            "vehicle_image": "shopify://shop_images/ford_truck_cutout_jpg.png",
+            "vehicle_title": "Power Wheels Ford F-150",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-ford-f-150"
+          }
+        },
+        "vehicle_aLwVBB": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ford_mustang.png",
+            "vehicle_title": "Power Wheels Ford Mustang",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-ford-mustang"
+          }
+        },
+        "vehicle_kKAbER": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/hotwheels_cutout.png",
+            "vehicle_title": "Power Wheels Hot Wheels Racer",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
+          }
+        },
+        "vehicle_yi83xR": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/hurricane_cutout.png",
+            "vehicle_title": "Power Wheels Jeep Hurricane",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-jeep-hurricane"
+          }
+        },
+        "vehicle_CipJ7G": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/jeep_wrangler_cutout.png",
+            "vehicle_title": "Power Wheels Jeep Wranglers",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
+          }
+        },
+        "vehicle_DaFtyk": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/kawasaki_cutout.png",
+            "vehicle_title": "Power Wheels Kawasaki KFX's",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-quads"
+          }
+        },
+        "vehicle_XRF9mV": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/mcqueen_cutout.png",
+            "vehicle_title": "Power Wheels Lightning McQueen",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-disney-lightning-mcqueen"
+          }
+        },
+        "vehicle_LkzqGQ": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/porche_cutout.png",
+            "vehicle_title": "Power Wheels Porsche GT3",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
+          }
+        },
+        "vehicle_Akyjix": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/tank_cutout.png",
+            "vehicle_title": "Adventure Force 24v Thunder Tank",
+            "vehicle_link": "https://www.mltoys.com/collections/adventure-force-24v-thunder-tank"
+          }
+        },
+        "vehicle_kA7RJU": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/big_toys_country_cutout.png",
+            "vehicle_title": "Big Toys Country 24v Challenger XL",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-24v-challenger-xl"
+          }
+        },
+        "vehicle_dA3hqa": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/big_toys_direct_cutout.png",
+            "vehicle_title": "Big Toys Direct 24v Red Tiger",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-direct-24v-red-tiger"
+          }
+        },
+        "vehicle_UQtrDW": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/bravo_monster_cutout.png",
+            "vehicle_title": "Bravo Monster Jam 24v Grave Digger",
+            "vehicle_link": "https://www.mltoys.com/collections/bravo-monster-jam-24v-grave-digger"
+          }
+        },
+        "vehicle_Qa6Bj9": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dynacraft_might_dump_cutout.png",
+            "vehicle_title": "Dynacraft 12v Mighty Dump Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/dynacraft-12v-mighty-dump-truck"
+          }
+        },
+        "vehicle_EBmgjq": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dynacraft_24n_cutout.png",
+            "vehicle_title": "Dynacraft 24v UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-utv"
+          }
+        },
+        "vehicle_FpweXW": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dynacraft_trailrider.png",
+            "vehicle_title": "Dynacraft 24v Trailrider",
+            "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-trailrider"
+          }
+        },
+        "vehicle_qCW6rx": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/huffy_ford.png",
+            "vehicle_title": "Huffy 12v Ford F150",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-12v-f-150"
+          }
+        },
+        "vehicle_iyVLpg": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/corvette_cutout.png",
+            "vehicle_title": "Huffy C8 Corvette",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-c8-corvette"
+          }
+        },
+        "vehicle_B434hw": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/huffy_landrover.png",
+            "vehicle_title": "Huffy Land Rover",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-land-rover"
+          }
+        },
+        "vehicle_9wCyRp": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/camaro_cutout.png",
+            "vehicle_title": "Kid MotorZ Camaro",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-motorz-camaro"
+          }
+        },
+        "vehicle_pDRxBp": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/lawnmower_cutout.png",
+            "vehicle_title": "Kid Trax Zero Turn Lawn Mower",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
+          }
+        },
+        "vehicle_QM9BFX": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/kid_trax_cutout.png",
+            "vehicle_title": "Kid Trax 1969 Ford Bronco",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-1969-bronco"
+          }
+        },
+        "vehicle_n3DXMb": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/bronco_cutout.png",
+            "vehicle_title": "Kid Trax 2021 Ford Bronco",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-2021-ford-bronco"
+          }
+        },
+        "vehicle_c8xRCd": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/copcar_cutout.png",
+            "vehicle_title": "Kid Trax Dodge Charger",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-charger"
+          }
+        },
+        "vehicle_rVtQWD": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dodge_ram_cutout.png",
+            "vehicle_title": "Kid Trax Dodge Ram",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
+          }
+        },
+        "vehicle_GABVQL": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/mercedes_G63_cutout.png",
+            "vehicle_title": "Mercedes G63 6x6",
+            "vehicle_link": "https://www.mltoys.com/collections/mercedes-g63-6x6"
+          }
+        },
+        "vehicle_McdVpG": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/peg_john_deer_cutout.png",
+            "vehicle_title": "Peg Perego John Deere Gator",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-gator"
+          }
+        },
+        "vehicle_HhF8BK": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/john_deer_gound_force_cutout.png",
+            "vehicle_title": "Peg Perego John Deere Ground Force Tractor",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-force-tractor"
+          }
+        },
+        "vehicle_dPwRTQ": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/peg_polaris.png",
+            "vehicle_title": "Peg Perego Polaris RZR 900",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-polaris-rzr-900"
+          }
+        },
+        "vehicle_hUfKBY": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/monster_truck_cutout.png",
+            "vehicle_title": "Roll Play 24v Monster Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/rollplay-24v-monster-truck"
+          }
+        },
+        "vehicle_EheBWY": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/silverado_cutout.png",
+            "vehicle_title": "Roll Play Chevy Silverado",
+            "vehicle_link": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
+          }
+        },
+        "vehicle_yFmWMn": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/gmc_cutout.png",
+            "vehicle_title": "Roll Play GMC Denali",
+            "vehicle_link": "https://www.mltoys.com/collections/roll-play-gmc-denali"
+          }
+        },
+        "vehicle_EF4jWC": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_cutout.png",
+            "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
           }
         }
       },
@@ -270,7 +551,38 @@
         "vehicle_Jwrp8Y",
         "vehicle_xkRkk8",
         "vehicle_y7CkyQ",
-        "vehicle_rnBh8r"
+        "vehicle_VcBCjR",
+        "vehicle_aLwVBB",
+        "vehicle_kKAbER",
+        "vehicle_yi83xR",
+        "vehicle_CipJ7G",
+        "vehicle_DaFtyk",
+        "vehicle_XRF9mV",
+        "vehicle_LkzqGQ",
+        "vehicle_Akyjix",
+        "vehicle_kA7RJU",
+        "vehicle_dA3hqa",
+        "vehicle_UQtrDW",
+        "vehicle_Qa6Bj9",
+        "vehicle_EBmgjq",
+        "vehicle_FpweXW",
+        "vehicle_qCW6rx",
+        "vehicle_iyVLpg",
+        "vehicle_B434hw",
+        "vehicle_9wCyRp",
+        "vehicle_pDRxBp",
+        "vehicle_QM9BFX",
+        "vehicle_n3DXMb",
+        "vehicle_c8xRCd",
+        "vehicle_rVtQWD",
+        "vehicle_GABVQL",
+        "vehicle_McdVpG",
+        "vehicle_HhF8BK",
+        "vehicle_dPwRTQ",
+        "vehicle_hUfKBY",
+        "vehicle_EheBWY",
+        "vehicle_yFmWMn",
+        "vehicle_EF4jWC"
       ],
       "name": "Upgrades by Vehicle",
       "settings": {
@@ -281,7 +593,7 @@
         "background_image": "shopify://shop_images/stock_parts_bg_1.jpg",
         "background_image_mobile": "shopify://shop_images/Group_427320677.png",
         "button_label": "View All Vehicles",
-        "button_link": "shopify://pages/upgrades-by-vehicle"
+        "button_link": "shopify://pages/upgrades-by-vehicle-digmo"
       }
     },
     "collection_list_grid_QcWpEc": {
@@ -503,7 +815,7 @@
         "text_size_block": "medium",
         "image": "shopify://shop_images/updated-toycar-diagram-hotspot_d61111ab-e7a6-4ade-8469-da62afa507d6.jpg",
         "color_scheme": "",
-        "section_full_width": true,
+        "section_full_width": false,
         "section_container_width": true,
         "hide_scroll_mobile": false,
         "padding_top": 60,

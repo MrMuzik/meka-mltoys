@@ -33,9 +33,9 @@
     max-width: 1200px;
     margin: 0 auto;
     min-height: 600px; /* Increased to accommodate image overflow */
-    padding: 0 20px;
+    /* padding: 0 20px; */
     position: relative;
-    overflow: visible;
+    /* overflow: visible; */
   }
 
   .vehicle-swiper .swiper-slide {
@@ -75,6 +75,7 @@
     position: relative;
     z-index: 2; /* above the SVG (z:0) */
     margin: 0 auto; /* Center cards within their grid cells */
+    text-decoration: none;
   }
 
   .vehicle-card:hover {
@@ -273,10 +274,6 @@
       transform: translateY(-50%);
     }
 
-    .vehicle-swiper {
-      overflow: visible;
-    }
-
     .upgrades-by-vehicle__grid-container {
       padding: 0 60px; /* Reduced padding for tablet */
     }
@@ -286,7 +283,6 @@
 
     .vehicle-swiper {
       margin-top: 100px;
-      overflow: visible;
     }
 
     .vehicle-swiper .swiper-slide {
@@ -357,8 +353,7 @@
     }
     .vehicle-swiper {
       margin-top: 10px;
-      padding: 0 20px;
-      overflow: visible;
+      /* padding: 0 20px; */
       min-height: 450px;
     }
 

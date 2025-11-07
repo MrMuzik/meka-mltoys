@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
@@ -21,7 +21,7 @@
         "description_text": "",
         "text_size_block": "medium",
         "heading_alignment": "left",
-        "show_collection_image": true,
+        "show_collection_image": false,
         "banner_height": "default",
         "image_block": false,
         "hide_radius": false,
@@ -30,8 +30,27 @@
         "content_alignment": "center",
         "section_full_width": true,
         "section_background": "#f4f2ec",
-        "padding_top": 200,
+        "padding_top": 46,
         "padding_bottom": 60
+      }
+    },
+    "1762530886eadbc830": {
+      "type": "apps",
+      "blocks": {
+        "searchanise_search_filter_app_block_hjAHmV": {
+          "type": "shopify://apps/searchanise-search-filter/blocks/app-block/d8f24ada-02b1-458a-bbeb-5bf16d5c921e",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "searchanise_search_filter_app_block_hjAHmV"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
       }
     },
     "product-grid": {
@@ -82,6 +101,7 @@
         "promo_yaghg4",
         "promo_zj3gnd"
       ],
+      "disabled": true,
       "settings": {
         "products_per_page": 10,
         "columns_desktop": 4,
@@ -118,14 +138,14 @@
         "template--16766664409325__homepage_discount_banner-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Save up to 50%",
+            "heading": "Turn Your Referrals into Rewards!",
             "heading_size": "h2"
           }
         },
         "template--16766664409325__homepage_discount_banner-text-1": {
           "type": "text",
           "settings": {
-            "text": "Our curated collections are meant to inspire your creativeside and provide you with product options.",
+            "text": "Invite friends, upgrade rides, and celebrate the wins.",
             "text_style": "body",
             "text_color": "main"
           }
@@ -133,8 +153,8 @@
         "template--16766664409325__homepage_discount_banner-buttons-1": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop Now",
-            "button_link_1": "",
+            "button_label_1": "Get Started",
+            "button_link_1": "shopify://pages/referral-program",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -147,15 +167,17 @@
         "template--16766664409325__homepage_discount_banner-text-1",
         "template--16766664409325__homepage_discount_banner-buttons-1"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
+        "image": "shopify://shop_images/MLToys-1700x810-Referral.png",
+        "image_overlay_opacity": 37,
+        "image_height": "medium",
         "content_width": 700,
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
@@ -181,7 +203,7 @@
           "settings": {
             "heading": "What payment methods can I use?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": true
           }
@@ -191,7 +213,7 @@
           "settings": {
             "heading": "Are the autoparts on your website genuine?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -201,7 +223,7 @@
           "settings": {
             "heading": "Do you offer warranties on your autoparts?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -211,7 +233,7 @@
           "settings": {
             "heading": "Do you offer e-gift cards for international customers?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -221,7 +243,7 @@
           "settings": {
             "heading": "How can I ensure that I'm purchasing the correct part?",
             "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.<\/p>",
+            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
             "page": "",
             "open_collapsible_row": false
           }
@@ -284,6 +306,7 @@
         "testimonial_rdyPDw",
         "testimonial_hxYY38"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "heading_alignment": "center",
@@ -303,13 +326,14 @@
         "template--16766665162989__collection_description-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>AutoParts carries a vast selection of high-quality replacement parts and accessories to keep your vehicle running smoothly and looking sharp. Whether you're a seasoned mechanic tackling a complex repair or a weekend warrior performing routine maintenance, we have everything you need under one store.<\/p><p>By combining a vast product selection, diverse brand options, and valuable resources, AutoParts empowers you to maintain, repair, and personalize your vehicle with confidence. Explore our website or visit our store today and discover everything you need to get the most out of your car.<\/p><p>Shop with confidence at AutoParts and keep your vehicle on the road!<\/p>"
+            "text": "{{ collection.description }}"
           }
         }
       },
       "block_order": [
         "template--16766665162989__collection_description-text-1"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -321,6 +345,7 @@
   },
   "order": [
     "banner",
+    "1762530886eadbc830",
     "product-grid",
     "collection_discount_banner",
     "help_and_feedback_mFaiKM",
