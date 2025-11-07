@@ -1,4 +1,4 @@
-<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} app-wrapper">
+<div class="{% if section.settings.include_margins %}page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} app-wrapper {% if section.settings.podcast_character_one_desktop != blank or section.settings.podcast_character_two_desktop != blank %}has-podcast-characters{% endif %}">
   {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
     <div class="section-header text-{{ section.settings.text_alignment }}">
       {%- if section.settings.heading != blank -%}
@@ -16,18 +16,19 @@
     </div>
   {% endif %}
 
-<div class="podcast-characters-wrapper-mobile">
+{% if section.settings.podcast_character_one_mobile != blank or section.settings.podcast_character_two_mobile != blank %}
+  <div class="podcast-characters-wrapper-mobile">
+    {% if section.settings.podcast_character_one_mobile != blank %}
+      <img src="{{ section.settings.podcast_character_one_mobile | image_url: width: 1000 }}" alt="Podcast Character One" class="podcast-character-one-mobile">
+    {% endif %}
 
-  {% if section.settings.podcast_character_one_mobile != blank %}
-    <img src="{{ section.settings.podcast_character_one_mobile | image_url: width: 1000 }}" alt="Podcast Character One" class="podcast-character-one-mobile">
-  {% endif %}
+    {% if section.settings.podcast_character_two_mobile != blank %}
+      <img src="{{ section.settings.podcast_character_two_mobile | image_url: width: 1000 }}" alt="Podcast Character Two" class="podcast-character-two-mobile">
+    {% endif %}
+  </div>
+{% endif %}
 
-  {% if section.settings.podcast_character_two_mobile != blank %}
-    <img src="{{ section.settings.podcast_character_two_mobile | image_url: width: 1000 }}" alt="Podcast Character Two" class="podcast-character-two-mobile">
-  {% endif %}
-</div>
-
-<div class="content-wrapper">
+  <div class="content-wrapper {% if section.settings.podcast_character_one_desktop != blank or section.settings.podcast_character_two_desktop != blank %}has-podcast-characters{% endif %}">
     <div class="podcast-characters">
       <div class="podcast-character-one">
         {% if section.settings.podcast_character_one_desktop != blank %}
@@ -35,7 +36,7 @@
         {% endif %}
       </div>
     </div>
-    <div class="apps-content">
+    <div class="apps-content {% if section.settings.podcast_character_one_desktop != blank or section.settings.podcast_character_two_desktop != blank %}has-podcast-characters{% endif %}">
       {%- for block in section.blocks -%}
         {% render block %}
       {%- endfor -%}
@@ -77,7 +78,7 @@
     display: flex;
     justify-content: center;
   }
-    .apps-content {
+    .apps-content.has-podcast-characters {
       max-width: 90%;
     }
   }

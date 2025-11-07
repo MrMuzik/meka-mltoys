@@ -345,11 +345,16 @@
 
 															<nav class="menu-drawer__navigation">
 																<ul class="menu-drawer__menu has-submenu list-menu" role="list">
+                                  {%- assign seen_parent = false -%}
+                                  {%- assign divider_shown = false -%}
+                                  {%- assign menu_item_icons = shop.metaobjects.menu_item_icon.values -%}
+
 																	{%- for link in block.settings.menu_drawer.links -%}
 																		<li>
 																			{%- if link.links != blank -%}
+                                        {%- assign seen_parent = true -%}
 																				<details id="Details-menu-drawer-menu-item-{{ forloop.index }}" >
-											<summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset menu-drawer__menu-item--parent parent-link{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+											                    <summary id="HeaderDrawer-{{ link.handle }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset menu-drawer__menu-item--parent parent-link{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
 																						{{ link.title | escape }}
 																						{% render 'icon-caret' %}
 																					</summary>
@@ -373,20 +378,31 @@
                                                               {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
 																												{% if childlink.current %} aria-current="page" {% endif %}>
 
-                                                        {% if childlink_title == 'all vehicles' %}
+                                                        {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' %}
                                                           <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
                                                         {% else %}
                                                           {{ childlink.title | escape }}
                                                         {% endif %}
 																											</a>
 																										{%- else -%}
-																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
-                                                          {% if childlink_title == 'power wheels' and section.settings.power_wheels_nav_img != blank %}
-                                                            <div class="power-wheels-nav-img">
-                                                              <img src="{{ section.settings.power_wheels_nav_img | image_url: width: 100 }}" alt="{{ section.settings.power_wheels_nav_img.alt | escape }}" width="100" height="100">
-                                                            </div>
+                                                      {% assign has_menu_item_icon = false %}
+                                                      {%- for menu_item_icon in menu_item_icons -%}
+                                                        {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
+                                                        {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
+                                                          {% if menu_item_title == childlink_title %}
+                                                            {% assign has_menu_item_icon = true %}
+                                                            {% break %}
                                                           {% endif %}
+                                                      {%- endfor -%}
+																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
+
+                                                        {% if has_menu_item_icon %}
+                                                          <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
+                                                            <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
+                                                              width="85px" height="100%" loading="lazy">
+                                                          </span>
+                                                        {% endif %}
 																													{{ childlink.title | escape }}
 																													{% render 'icon-caret' %}
 																												</summary>
@@ -419,7 +435,12 @@
 																					</div>
 																				</details>
 																			{%- else -%}
-																				<a id="HeaderDrawer-{{ link.handle }}" href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
+                                        {%- if seen_parent and divider_shown == false -%}
+                                          <div class="divider-line"></div>
+                                          {%- assign divider_shown = true -%}
+                                        {%- endif -%}
+
+																				<a id="HeaderDrawer-{{ link.handle }}" href="{{ link.url }}" class="hide-mobile menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
 																					{{ link.title | escape }}
 																				</a>
 																			{%- endif -%}

@@ -49,11 +49,11 @@
           </div>
           {%- if settings.cart_drawer_collection != blank -%}
             <div class="cart-drawer__collection">
-              {% render 'card-collection', 
-                card_collection: settings.cart_drawer_collection, 
+              {% render 'card-collection',
+                card_collection: settings.cart_drawer_collection,
                 media_aspect_ratio: 'landscape',
                 columns: 1,
-                card_heading_size: 'h4' 
+                card_heading_size: 'h4'
               %}
             </div>
           {%- endif -%}
@@ -243,7 +243,7 @@
                             <quantity-popover>
                               <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                                 <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
-                                  <quantity-input class="quantity cart-quantity">
+                                  <quantity-input class="quantity cart-quantity ml-button-primary">
                                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                                       <span class="visually-hidden">
                                         {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
@@ -298,7 +298,7 @@
 
                                   <button type="button" class="cart-remove-button {{ remove_button_style }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}" data-variant-id="{{ item.variant.id }}">
                                     {% comment %} <span class="small-hide">
-                                      {{ 'sections.cart.remove' | t }} 
+                                      {{ 'sections.cart.remove' | t }}
 										{% if remove_button_icon %}
 										{% render 'icon-caret' %}
 										{% endif %}
@@ -313,7 +313,7 @@
 										  </span>
 										{%- else -%}
 										<span class="small-hide">
-											{{ 'sections.cart.remove' | t }} 
+											{{ 'sections.cart.remove' | t }}
 											{% render 'icon-caret' %}
 										  </span>
 										  <span class="medium-hide large-up-hide">
@@ -322,7 +322,7 @@
 									{%- endif -%}
                                   </button>
                                 </cart-remove-button>
-								
+
                               </div>
 
                               {%- if has_qty_rules or has_vol_pricing -%}
@@ -460,11 +460,11 @@
             <div class="recommendations-slider">
               {%- for product in settings.cart_drawer_promoted_collection.products limit: 10 -%}
                 <div id="Slide-{{ section.id }}-{{ forloop.index }}" class="recommendations-slide">
-                  {% render 'complimentary-product', 
-                    card_product: product, 
-                    media_aspect_ratio: 'portrait', 
-                    lazy_load: true, 
-                    show_quick_add: true, 
+                  {% render 'complimentary-product',
+                    card_product: product,
+                    media_aspect_ratio: 'portrait',
+                    lazy_load: true,
+                    show_quick_add: true,
                     section_id: section.id,
                     horizontal_class: true,
                     horizontal_quick_add: true show_add_to_cart: settings.show_add_to_cart
@@ -537,7 +537,7 @@
         <div class="cart__ctas" {{ block.shopify_attributes }}>
           <noscript>
             <button type="submit" class="button cart__update-button button--secondary" form="CartDrawer-Form">
-              {%- render 'icon-cart' %} 
+              {%- render 'icon-cart' %}
               <span>
                 {{ 'sections.cart.update' | t -}}
               </span>
@@ -556,7 +556,7 @@
           <button type="submit" id="CartDrawer-Checkout" class="button button-cart cart__checkout-button" name="checkout" form="CartDrawer-Form" {% if cart == empty %} disabled{% endif %}>
             <span>
               {%- render 'icon-cart' %} {{ 'sections.cart.checkout' | t -}}
-            </span> 
+            </span>
           </button>
         </div>
       </div>

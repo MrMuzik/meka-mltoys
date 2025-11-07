@@ -102,8 +102,8 @@
                               {{
                                 block.settings.bullet_icon
                                 | image_url: width: 35
-                                | image_tag: 
-                                  loading: 'lazy', 
+                                | image_tag:
+                                  loading: 'lazy',
                                   width: block.settings.bullet_icon.width,
                                   height: block.settings.bullet_icon.height
                               }}
@@ -121,13 +121,13 @@
                             <span class="bubble-close">x</span>
 
                             {% if block.settings.image != blank %}
-                              {{ block.settings.image | image_url: width: 80 | image_tag: loading: 'lazy' }}
+                              {{ block.settings.image | image_url: width: 150 | image_tag: loading: 'lazy' }}
                             {% endif %}
 
                             <h3 class="bubble-title inline-richtext h6">
                               {{ block.settings.heading }}
                             </h3>
-                              
+
                           </div>
                         </div>
                       </div>
@@ -156,8 +156,8 @@
                               {{
                                 block.settings.bullet_icon
                                 | image_url: width: 35
-                                | image_tag: 
-                                  loading: 'lazy', 
+                                | image_tag:
+                                  loading: 'lazy',
                                   width: block.settings.bullet_icon.width,
                                   height: block.settings.bullet_icon.height
                               }}
@@ -189,7 +189,7 @@
                                   {{- block.settings.product.title | escape -}}
                                 {% else %}
                                   {{- 'onboarding.product_title' | t -}}
-                                {% endif %} 
+                                {% endif %}
                               </h3>
                             </a>
 
