@@ -287,9 +287,65 @@ fieldset.product-form__input .form__label {
 	color: rgb(var(--color-foreground));
 }
 /* Product info */
-.product__about-header { margin-bottom:.35rem; letter-spacing:.02em; }
-.product__about-body { margin-bottom:.5rem; }
+.product__about {
+	--about-indent: 2.35rem; /* 15px icon + 8.5px gap in your 10px base */
+	border-radius: 3px;
+	border: 0.5px solid #001429;
+	background: #FAFAFA;
+	padding: 1.5rem 2rem;
+}
+.product__about-header,
+.product__about-readmore a { 
+	margin-bottom: 0.49rem;
+	letter-spacing: 0.028rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 800;
+	font-size: 1.4rem;
+	line-height: 1.75rem;
+	font-family: Inter, sans-serif;
+	color:#001429;
+}
+.product__about-header { position: relative; }
+.product__about-icon {
+  position: absolute;
+  inset-inline-start: -3px;
+  top: -1.5px;
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+  border: none !important;
+}
+.product__about-body { 
+	font-size: 1.4rem;
+	line-height: 2.52rem; 
+	font-style: normal;
+	font-weight: 500;
+	font-family: Inter, sans-serif;
+	color:#001429;
+}
 .product__about-readmore a { font-weight:600; text-transform:uppercase; font-size:.85em; }
+.product__about-readmore a::after {
+  content: "";
+  display: inline-block;
+  margin-left: .35em;
+  /* triangle */
+  border-left: .3em solid transparent;
+  border-right: .3em solid transparent;
+  border-top: .45em solid currentColor;
+  transform: translateY(-3px);
+  transition: transform .2s ease;
+}
+.product__about-readmore a:hover::after,
+.product__about-readmore a:focus::after {
+  transform: translateY(-2px);
+}
+.product__about-header,
+.product__about-body,
+.product__about-readmore {
+  padding-inline-start: var(--about-indent);
+}
 .product__info-container>*+* {
 	margin: 1.5rem 0;
 }
@@ -516,8 +572,10 @@ a.product__text {
 @media screen and (min-width: 1200px) {
 	.product-form__buttons .product-form__submit,
 	.product-form__buttons .product-form__input {
-		flex: 0 0 calc(50% - 1rem);
-		width: calc(50% - 1rem);
+		flex: 1 0 calc(50% - 1rem);
+	}
+	.product-form__buttons .product-form__input {
+		max-width: 40%;
 	}
 	.product-form__buttons .quantity {
 		max-width: 24rem;

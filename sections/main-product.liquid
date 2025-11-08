@@ -92,10 +92,112 @@
         <product-info id="ProductInfo-{{ section.id }}" data-section="{{ section.id }}" data-url="{{ product.url }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}">
 
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
-          {%- assign about_rendered = false -%}
+
+          {%- comment -%}
+            Prepass: capture Title, Price, and About (from collapsible_tab) so we can place them in a fixed order.
+          {%- endcomment -%}
+          {%- assign title_html = '' -%}
+          {%- assign price_html = '' -%}
+          {%- assign about_html = '' -%}
 
           {%- for block in section.blocks -%}
+            {%- case block.type -%}
 
+              {%- when 'title' -%}
+                {%- capture title_html -%}
+                  <div class="product__title-wrapper" {{ block.shopify_attributes }}>
+                    <{{ block.settings.heading_size }}
+                      class="product__title {{ block.settings.heading_size }}">
+                      {{ product.title | escape }}
+                    </{{ block.settings.heading_size }}>
+                  </div>
+                {%- endcapture -%}
+
+              {%- when 'price' -%}
+                {%- capture price_html -%}
+                  <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                    {% liquid
+                      assign price_class = 'price--size-' | append: block.settings.price_size | append: ' price--color-' | append: block.settings.price_color
+                    %}
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      price_class: price_class,
+                      show_shipping_message: block.settings.show_shipping_message,
+                      shipping_message_text: block.settings.shipping_message_text,
+                      shipping_page: block.settings.shipping_page
+                    -%}
+                  </div>
+
+                  {%- if product.quantity_price_breaks_configured? -%}
+                    <div class="volume-pricing-note clr-{{ block.settings.price_color }}" id="Volume-Note-{{ section.id }}">
+                      <span>{{ 'products.product.volume_pricing.note' | t }}</span>
+                    </div>
+                  {%- endif -%}
+
+                  {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                    <div class="product__tax {{ block.settings.price_size }} clr-{{ block.settings.price_color }} rte">
+                      {%- if cart.taxes_included -%}
+                        {{ 'products.product.include_taxes' | t }}
+                      {%- endif -%}
+                      {%- if shop.shipping_policy.body != blank -%}
+                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if product != blank -%}
+                    <div>
+                      {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
+                      {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
+                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        {{ form | payment_terms }}
+                      {%- endform -%}
+                    </div>
+                  {%- endif -%}
+                {%- endcapture -%}
+
+              {%- when 'collapsible_tab' -%}
+                {%- assign about = product.metafields.custom.about -%}
+                {%- if about != blank -%}
+                  {%- capture about_html -%}
+                    <div class="product__about rte quick-add-hidden" {{ block.shopify_attributes }}>
+                      <div class="product__about-header">
+                        <img
+                          src="{{ 'info-about.svg' | asset_url }}"
+                          alt=""
+                          width="15"
+                          height="15"
+                          class="product__about-icon"
+                        >
+                        <strong>ABOUT</strong>
+                      </div>
+                      <div class="product__about-body">
+                        {{ about | metafield_tag }}
+                      </div>
+                      <div class="product__about-readmore">
+                        {%- assign tab_id = 'pd-tabs-' | append: product.id -%}
+                        <a class="link" href="#{{ tab_id }}"><strong>READ MORE</strong></a>
+                      </div>
+                    </div>
+                  {%- endcapture -%}
+                {%- endif -%}
+
+            {%- endcase -%}
+          {%- endfor -%}
+
+          {%- comment -%} Output in the required fixed order {%- endcomment -%}
+          {{ title_html }}
+          {{ price_html }}
+          {{ about_html }}
+          <div id="globo-options-anchor" class="product__globo-options-anchor"></div>
+
+          {%- comment -%}
+            Second pass: render the rest of the blocks in their original order,
+            skipping title, price, and collapsible_tab (already rendered).
+          {%- endcomment -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'title' or block.type == 'price' or block.type == 'collapsible_tab' -%}{% continue %}{%- endif -%}
             {%- case block.type -%}
 
               {%- when '@app' -%}
@@ -105,134 +207,6 @@
                 <div class="product__text inline-richtext {{ block.settings.text_size }} {{ block.settings.font_weight }} color-{{ block.settings.text_color }}" {{ block.shopify_attributes }}>
                   {{- block.settings.text -}}
                 </div>
-
-              {%- when 'title' -%}
-                <div class="product__title-wrapper" {{ block.shopify_attributes }}>
-                  <{{ block.settings.heading_size }}
-                    class="product__title {{ block.settings.heading_size }}">
-                    {{ product.title | escape }}
-                  </{{ block.settings.heading_size }}>
-                </div>
-
-              {%- when 'price' -%}
-                <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-									{% liquid
-                    assign price_class = 'price--size-' | append: block.settings.price_size | append: ' price--color-' | append: block.settings.price_color
-                  %}
-
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: price_class
-                  -%}
-                </div>
-
-                {%- if product.quantity_price_breaks_configured? -%}
-                  <div class="volume-pricing-note clr-{{ block.settings.price_color }}" id="Volume-Note-{{ section.id }}">
-                    <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-                  </div>
-                {%- endif -%}
-
-                {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
-                  <div class="product__tax {{ block.settings.price_size }} clr-{{ block.settings.price_color }} rte">
-                    {%- if cart.taxes_included -%}
-                      {{ 'products.product.include_taxes' | t }}
-                    {%- endif -%}
-                    {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-
-                {%- if product != blank -%}
-                  <div {{ block.shopify_attributes }}>
-                    {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                      {{ form | payment_terms }}
-                    {%- endform -%}
-                  </div>
-                {%- endif -%}
-
-              {%- when 'inventory' -%}
-                
-                {% unless product.gift_card? == true %}
-                  <p class="product__inventory text--{{ block.settings.label_font_size }} no-js-hidden{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}{% if block.settings.show_progress_bar %}with-progress-bar{% endif %}" id="Inventory-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-
-                    {%- liquid
-                      assign inventory_color = block.settings.color_in_stock
-                      if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold
-                        assign inventory_color = block.settings.color_low_stock
-                      endif
-                      assign percentageRemaining = product.selected_or_first_available_variant.inventory_quantity | times: 100 | divided_by: block.settings.inventory_base
-                    -%}
-
-                    <span class="inventory-info" style="color: {{ inventory_color }};">
-                      {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%} 
-                        {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-                          {%- if product.selected_or_first_available_variant.inventory_quantity <= block.settings.inventory_threshold -%}
-                            {% unless block.settings.show_progress_bar %}
-                              <svg width="15" height="15" aria-hidden="true">
-                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgba({{ inventory_color.red }},{{ inventory_color.green }},{{ inventory_color.blue }}, 0.3)"/>
-                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="{{ inventory_color }}"/>
-                              </svg>
-                            {% endunless %}
-                            {%- if block.settings.show_inventory_quantity -%}
-                              {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-                            {%- else -%}
-                              {{- 'products.product.inventory_low_stock' | t -}}
-                            {%- endif -%}
-                          {%- else -%}
-                            {% unless block.settings.show_progress_bar %}
-                              <svg width="15" height="15"  aria-hidden="true">
-                                <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)" />
-                                <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)" />
-                              </svg>
-                            {% endunless %}
-                            {%- if block.settings.show_inventory_quantity -%}
-                              {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
-                            {%- else -%}
-                              {{- 'products.product.inventory_in_stock' | t -}}
-                            {%- endif -%}
-                          {%- endif -%}
-                        {%- else -%}
-                          {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
-                            <svg width="15" height="15" aria-hidden="true">
-                              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(62,214,96, 0.3)" />
-                              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)" />
-                            </svg>
-                            {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
-                          {%- else -%}
-                            <svg width="15" height="15" aria-hidden="true">
-                              <circle cx="7.5" cy="7.5" r="7.5" fill="rgb(200,200,200, 0.3)" />
-                              <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(200,200,200)" />
-                            </svg>
-                            {{- 'products.product.inventory_out_of_stock' | t -}}
-                          {%- endif -%}
-                        {%- endif -%}
-                      {%- endif -%}
-                    </span>
-
-                    {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' -%}
-                      {%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}
-                        {% if block.settings.show_progress_bar %}
-                          <span class="inventory-progress-bar">
-                            <span style="background-color: {{ inventory_color }}; width: {{ percentageRemaining }}%;"></span>
-                          </span>
-                        {% endif %}
-                      {%- else -%}
-                        {%- if product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
-                          {% if block.settings.show_progress_bar %}
-                            <span class="inventory-progress-bar">
-                              <span style="background-color: {{ inventory_color }}; width: 100%;"></span>
-                            </span>
-                          {% endif %}
-                        {%- endif -%}
-                      {%- endif -%}
-                    {%- endif -%}
-                  </p>
-                {% endunless %}
 
               {%- when 'countdown' -%}
                 {% assign label_color = "" %}
@@ -271,21 +245,6 @@
 
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
-
-              {%- when 'collapsible_tab' -%}
-                {%- assign about = product.metafields.custom.about -%}
-                {%- if about != blank -%}
-                  <div class="product__about rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    <div class="product__about-header"><strong>ABOUT</strong></div>
-                    <div class="product__about-body">
-                      {{ about | metafield_tag }}
-                    </div>
-                    <div class="product__about-readmore">
-                      {%- assign tab_id = 'pd-tabs-' | append: product.id -%}
-                      <a class="link underlined-link" href="#{{ tab_id }}">READ MORE</a>
-                    </div>
-                  </div>
-                {%- endif -%}
 
               {%- when 'popup' -%}
                 <modal-opener class="product-popup-modal__opener no-js-hidden quick-add-hidden"  data-modal="#PopupModal-{{ block.id }}" {{ block.shopify_attributes }}>
@@ -956,7 +915,10 @@
               }
             ],
             "default": "text"
-          }
+          },
+          { "type": "checkbox", "id": "show_shipping_message", "label": "Display shipping message", "default": true },
+          { "type": "text", "id": "shipping_message_text", "label": "Shipping message", "default": "Shipping calculated at checkout." },
+          { "type": "page", "id": "shipping_page", "label": "Shipping page link" }
         ]
       },
       {
@@ -1725,202 +1687,6 @@
           {
             "type": "select",
             "id": "icon_1",
-            "options": [
-              {
-                "value": "none",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
-              },
-              {
-                "value": "apple",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
-              },
-              {
-                "value": "banana",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
-              },
-              {
-                "value": "bottle",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
-              },
-              {
-                "value": "box",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
-              },
-              {
-                "value": "carrot",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
-              },
-              {
-                "value": "chat_bubble",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
-              },
-              {
-                "value": "check_mark",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
-              },
-              {
-                "value": "clipboard",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
-              },
-              {
-                "value": "dairy",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
-              },
-              {
-                "value": "dairy_free",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
-              },
-              {
-                "value": "dryer",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
-              },
-              {
-                "value": "eye",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
-              },
-              {
-                "value": "fire",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
-              },
-              {
-                "value": "gluten_free",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
-              },
-              {
-                "value": "heart",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
-              },
-              {
-                "value": "iron",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
-              },
-              {
-                "value": "leaf",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
-              },
-              {
-                "value": "leather",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
-              },
-              {
-                "value": "lightning_bolt",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
-              },
-              {
-                "value": "lipstick",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
-              },
-              {
-                "value": "lock",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
-              },
-              {
-                "value": "map_pin",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
-              },
-              {
-                "value": "nut_free",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
-              },
-              {
-                "value": "pants",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__25.label"
-              },
-              {
-                "value": "paw_print",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__26.label"
-              },
-              {
-                "value": "pepper",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__27.label"
-              },
-              {
-                "value": "perfume",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__28.label"
-              },
-              {
-                "value": "plane",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__29.label"
-              },
-              {
-                "value": "plant",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__30.label"
-              },
-              {
-                "value": "price_tag",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__31.label"
-              },
-              {
-                "value": "question_mark",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__32.label"
-              },
-              {
-                "value": "recycle",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__33.label"
-              },
-              {
-                "value": "return",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__34.label"
-              },
-              {
-                "value": "ruler",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__35.label"
-              },
-              {
-                "value": "serving_dish",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__36.label"
-              },
-              {
-                "value": "shirt",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__37.label"
-              },
-              {
-                "value": "shoe",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__38.label"
-              },
-              {
-                "value": "silhouette",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__39.label"
-              },
-              {
-                "value": "snowflake",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__40.label"
-              },
-              {
-                "value": "star",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__41.label"
-              },
-              {
-                "value": "stopwatch",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__42.label"
-              },
-              {
-                "value": "truck",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__43.label"
-              },
-              {
-                "value": "washing",
-                "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
-              }
-            ],
-            "default": "return",
-            "label": "t:sections.main-product.blocks.icon_with_text.settings.icon_2.label"
-          },
-          {
-            "type": "image_picker",
-            "id": "image_2",
-            "label": "t:sections.main-product.blocks.icon_with_text.settings.image_2.label"
-          },
-          {
-            "type": "inline_richtext",
-            "id": "heading_2",
-            "default": "Heading",
-            "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_2.label",
-            "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
-          },
-          {
-            "type": "select",
-            "id": "icon_3",
             "options": [
               {
                 "value": "none",

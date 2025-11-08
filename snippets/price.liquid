@@ -1,14 +1,9 @@
-{% comment %}
-  Renders a list of product's price (regular, sale)
-
-  Accepts:
-  - product: {Object} Product Liquid object (optional)
-  - use_variant: {Boolean} Use selected/first available variant price (optional)
-  - price_class: {String} Additional class for the root element (optional)
-
-  Usage:
-  {% render 'price', product: product, use_variant: true, price_class: 'price--size-md price--color-text' %}
-{% endcomment %}
+{%- comment -%}
+  Added accepts:
+  - show_shipping_message: {Boolean}
+  - shipping_message_text: {String}
+  - shipping_page: {Page}
+{%- endcomment -%}
 
 {%- liquid
   assign target = product
@@ -25,19 +20,16 @@
     assign money_price = price | money_with_currency
   endif
 
-  # on_sale only when compare_at exists and greater than price
   assign on_sale = false
   if compare_at_price and compare_at_price > price
     assign on_sale = true
   endif
 
-  # discount only if on_sale (avoids divide-by-zero/NaN)
   assign discount_percentage = 0
   if on_sale
     assign discount_percentage = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round: 0
   endif
 
-  # “From” label when showing product-wide price range
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
@@ -48,16 +40,29 @@
   endif
 
   assign upm = target.unit_price_measurement
+
+  # Defaults
+  if show_shipping_message == nil
+    assign show_shipping_message = false
+  endif
+  if shipping_message_text == blank
+    assign shipping_message_text = 'Shipping calculated at checkout.'
+  endif
+
+  # Build the linked "Shipping" word if a page is chosen
+  assign ship_word = 'Shipping'
+  if shipping_page
+    assign ship_link = '<a class="price__subtext-link" href="' | append: shipping_page.url | append: '">' | append: ship_word | append: '</a>'
+  else
+    assign ship_link = ship_word
+  endif
+
+  # Replace "Shipping" with linked version (case-sensitive)
+  assign rendered_message = shipping_message_text | replace: ship_word, ship_link
 -%}
 
 <div class="price{% if price_class %} {{ price_class }}{% endif %}{% unless available %} price--sold-out{% endunless %}{% if on_sale %} price--on-sale{% endif %}{% if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}">
   <div class="price__container">
-    {%- comment -%}
-    CSS handles visibility:
-      - .price__regular shown normally, hidden when .price--on-sale
-      - .price__sale shown when .price--on-sale
-    {%- endcomment -%}
-
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="price-item price-item--regular">
@@ -74,11 +79,8 @@
       {%- unless product.price_varies == false and product.compare_at_price_varies -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item--last">
-          <s class="price-item price-item--regular">
-            {{ money_compare }}
-          </s>
+          <s class="price-item price-item--regular">{{ money_compare }}</s>
         </span>
-
         {%- if settings.show_discount_badges and discount_percentage > 0 -%}
           <span class="discount-badge badge text-color-secondary background--sale">
             {{ discount_percentage }}% {{ 'products.product.off' | t: default: 'Off' }}
@@ -102,4 +104,8 @@
       </span>
     </small>
   </div>
+
+  {%- if show_shipping_message -%}
+    <p class="price__subtext caption">{{ rendered_message }}</p>
+  {%- endif -%}
 </div>

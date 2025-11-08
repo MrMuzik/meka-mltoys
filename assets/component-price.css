@@ -83,6 +83,20 @@
   text-transform: uppercase;
 }
 
+.price__subtext {
+  display: block;
+  margin-top: 4px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.price__subtext-link {
+  text-decoration: underline;
+  color: inherit;
+}
+
 /* Desktop adjustments (optional gentle scale-up) */
 @media screen and (min-width: 750px) {
   .price--size-sm .price-item--regular,
