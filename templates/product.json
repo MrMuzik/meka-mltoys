@@ -335,7 +335,11 @@
         "subheading": "",
         "text_alignment": "center",
         "include_margins": true,
-        "include_treadmark_bg": false
+        "include_treadmark_bg": false,
+        "podcast_character_one_desktop": "shopify://shop_images/ML_character_one_1.svg",
+        "podcast_character_one_mobile": "shopify://shop_images/MLTOYS_HEAD_one_1.svg",
+        "podcast_character_two_desktop": "shopify://shop_images/MLG_character_two_1.svg",
+        "podcast_character_two_mobile": "shopify://shop_images/MLTOYS_HEAD_two_1.svg"
       }
     }
   },
