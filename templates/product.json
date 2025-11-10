@@ -40,6 +40,17 @@
             "shipping_page": "shipping-policy"
           }
         },
+        "collapsible_tab_kLNhqq": {
+          "type": "collapsible_tab",
+          "name": "Description",
+          "settings": {
+            "heading": "Description",
+            "heading_size": "h5",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
         "globo_product_options_app_block_czPKJJ": {
           "type": "shopify://apps/globo-product-options/blocks/app-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
           "settings": {}
@@ -73,17 +84,6 @@
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "quantity_color_scheme": ""
-          }
-        },
-        "collapsible_tab_kLNhqq": {
-          "type": "collapsible_tab",
-          "name": "Description",
-          "settings": {
-            "heading": "Description",
-            "heading_size": "h5",
-            "icon": "none",
-            "content": "{{ product.description }}",
-            "page": ""
           }
         },
         "35c54d21-aabe-4447-934d-bc793c25fd66": {
@@ -125,11 +125,11 @@
         "title",
         "judge_me_reviews_preview_badge_ddEEJh",
         "price",
+        "collapsible_tab_kLNhqq",
         "globo_product_options_app_block_czPKJJ",
         "inventory_pbCRT8",
         "variant_picker",
         "buy_buttons",
-        "collapsible_tab_kLNhqq",
         "35c54d21-aabe-4447-934d-bc793c25fd66",
         "delivery_date_Kz744U",
         "text_xtRNAN"
