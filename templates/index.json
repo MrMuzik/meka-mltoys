@@ -75,7 +75,7 @@
         "collection_PPt9QW": {
           "type": "collection",
           "settings": {
-            "collection": "all-other-vehicles-upgrades",
+            "collection": "all-other-vehicles",
             "collection_title": "Lighting",
             "show_view_all": false,
             "button_label": "View all",
