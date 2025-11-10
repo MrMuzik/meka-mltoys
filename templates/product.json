@@ -175,92 +175,9 @@
         "include_treadmark_bg": false
       }
     },
-    "help_and_feedback_mFaiKM": {
-      "type": "help-and-feedback",
-      "blocks": {
-        "collapsible_heading_x6ALmP": {
-          "type": "collapsible_heading",
-          "settings": {
-            "collapsible_heading": "FAQs",
-            "button_label": "See All",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        },
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What payment methods can I use?",
-            "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
-            "page": "",
-            "open_collapsible_row": true
-          }
-        },
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are the autoparts on your website genuine?",
-            "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
-            "page": "",
-            "open_collapsible_row": false
-          }
-        },
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Do you offer warranties on your autoparts?",
-            "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
-            "page": "",
-            "open_collapsible_row": false
-          }
-        },
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Do you offer e-gift cards for international customers?",
-            "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
-            "page": "",
-            "open_collapsible_row": false
-          }
-        },
-        "21f3fdcb-3f3e-4608-830d-1c249c644c10": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How can I ensure that I'm purchasing the correct part?",
-            "icon": "none",
-            "row_content": "<p>We offer 35 different payment methods including major providers like Mastercard, Visa, PayPal, American Express and Diners as well as many different local payment methods including Klarna, iDEAL, AliPay, Sofort, giropay and more.</p>",
-            "page": "",
-            "open_collapsible_row": false
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_heading_x6ALmP",
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-1",
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-2",
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-3",
-        "template--16766664605933__213deb17-cc31-4e82-8167-e558eae2a42d-collapsible_row-4",
-        "21f3fdcb-3f3e-4608-830d-1c249c644c10"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_alignment": "center",
-        "heading_size": "h2",
-        "text": "",
-        "color_scheme": "scheme-1",
-        "faq_color_scheme": "scheme-3",
-        "reviews_color_scheme": "",
-        "desktop_layout": "image_first",
-        "padding_top": 70,
-        "padding_bottom": 70
-      }
-    },
     "related_products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "title": "Related products",
         "heading_size": "h2",
@@ -306,15 +223,6 @@
         "include_treadmark_bg": false
       }
     },
-    "sticky_add_to_cart_it6b6P": {
-      "type": "sticky-add-to-cart",
-      "settings": {
-        "color_scheme": "",
-        "style": "right-side",
-        "sticky_width": "56",
-        "title_font_weight": "600"
-      }
-    },
     "175607666646f45d5d": {
       "type": "apps",
       "blocks": {
@@ -346,10 +254,8 @@
   "order": [
     "main",
     "175607880400077e24",
-    "help_and_feedback_mFaiKM",
     "related_products",
     "17560776142eb8d1a3",
-    "sticky_add_to_cart_it6b6P",
     "175607666646f45d5d"
   ]
 }
