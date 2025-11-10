@@ -23,7 +23,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "heading_size": "h3"
+            "heading_size": "h2"
           }
         },
         "globo_product_options_app_block_czPKJJ": {
@@ -37,11 +37,11 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_size": "price--small",
+            "price_size": "md",
             "price_color": "foreground",
             "show_shipping_message": false,
-            "shipping_message_text": "Shipping calculated at checkout?",
-            "shipping_page": ""
+            "shipping_message_text": "Shipping calculated at checkout.",
+            "shipping_page": "shipping-policy"
           }
         },
         "inventory_pbCRT8": {
