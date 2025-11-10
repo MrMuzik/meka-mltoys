@@ -250,6 +250,55 @@
         "podcast_character_two_desktop": "shopify://shop_images/MLG_character_two_1.svg",
         "podcast_character_two_mobile": "shopify://shop_images/MLTOYS_HEAD_two_1.svg"
       }
+    },
+    "ml_video_carousel_DdUVtr": {
+      "type": "ML-video-carousel",
+      "blocks": {
+        "video_8wKQnT": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_3znGai": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "description": "",
+            "enable_video_looping": false
+          }
+        },
+        "video_jNgzGN": {
+          "type": "video",
+          "settings": {
+            "video_title": "",
+            "description": "",
+            "enable_video_looping": false
+          }
+        }
+      },
+      "block_order": [
+        "video_8wKQnT",
+        "video_3znGai",
+        "video_jNgzGN"
+      ],
+      "name": "ML Video Carousel",
+      "settings": {
+        "title": "",
+        "enable_ripped_edges": true,
+        "background_image": "shopify://shop_images/Mask_group.png",
+        "background_color": "#001429",
+        "section_text_color": "#fefefe",
+        "heading": "Getting Started",
+        "heading_alignment": "left",
+        "heading_size": "h2",
+        "description": "<p>Our comprehensive guides assist in steering clear of the pitfalls of upgrading your vehicle.</p>",
+        "text_color": "foreground",
+        "button_link": "shopify://pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
+        "button_text": "Learn More"
+      }
     }
   },
   "order": [
@@ -257,6 +306,7 @@
     "175607880400077e24",
     "related_products",
     "17560776142eb8d1a3",
-    "175607666646f45d5d"
+    "175607666646f45d5d",
+    "ml_video_carousel_DdUVtr"
   ]
 }
