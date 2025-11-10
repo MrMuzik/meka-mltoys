@@ -26,10 +26,6 @@
             "heading_size": "h2"
           }
         },
-        "globo_product_options_app_block_czPKJJ": {
-          "type": "shopify://apps/globo-product-options/blocks/app-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
-          "settings": {}
-        },
         "judge_me_reviews_preview_badge_ddEEJh": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
@@ -43,6 +39,10 @@
             "shipping_message_text": "Shipping calculated at checkout.",
             "shipping_page": "shipping-policy"
           }
+        },
+        "globo_product_options_app_block_czPKJJ": {
+          "type": "shopify://apps/globo-product-options/blocks/app-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
+          "settings": {}
         },
         "inventory_pbCRT8": {
           "type": "inventory",
@@ -123,9 +123,9 @@
       "block_order": [
         "breadcrumbs_374JWg",
         "title",
-        "globo_product_options_app_block_czPKJJ",
         "judge_me_reviews_preview_badge_ddEEJh",
         "price",
+        "globo_product_options_app_block_czPKJJ",
         "inventory_pbCRT8",
         "variant_picker",
         "buy_buttons",
