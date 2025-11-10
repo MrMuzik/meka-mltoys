@@ -221,7 +221,7 @@
         "subheading": "",
         "text_alignment": "center",
         "include_margins": true,
-        "include_treadmark_bg": false
+        "include_treadmark_bg": true
       }
     },
     "175607666646f45d5d": {
