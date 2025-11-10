@@ -157,6 +157,7 @@
       "blocks": {
         "ecom_youtube_card_gallery_carousel_yqx8GH": {
           "type": "shopify://apps/ecom-youtube-card-gallery/blocks/carousel/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+          "disabled": true,
           "settings": {
             "gallery-id": "nbXfspti",
             "main-color": "#000000",
@@ -205,7 +206,7 @@
         "judge_me_reviews_review_widget_74nPG8": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "review_data": "sample_data",
+            "review_data": "real_data",
             "max_width": 1200,
             "show_shop_reviews": false,
             "empty_state": "empty_widget"
