@@ -38,7 +38,10 @@
           "type": "price",
           "settings": {
             "price_size": "price--small",
-            "price_color": "foreground"
+            "price_color": "foreground",
+            "show_shipping_message": false,
+            "shipping_message_text": "Shipping calculated at checkout?",
+            "shipping_page": ""
           }
         },
         "inventory_pbCRT8": {
@@ -139,7 +142,7 @@
         "constrain_to_viewport": false,
         "media_fit": "cover",
         "gallery_layout": "thumbnail_slider",
-        "thumbnail_position": "bottom",
+        "thumbnail_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": false,

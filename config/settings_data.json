@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "current": {
     "logo": "shopify://shop_images/ml-toy-logo.png",
     "logo_width": 185,
@@ -70,6 +70,7 @@
     "popup_corner_radius": 5,
     "drawer_border_thickness": 1,
     "drawer_border_opacity": 10,
+    "show_discount_badges": false,
     "badge_position": "top left",
     "badge_font_weight": "500",
     "badge_corner_radius": 2,
