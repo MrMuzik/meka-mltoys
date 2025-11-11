@@ -5257,6 +5257,12 @@ div#cf_ram_guest_image_section img {
  display: flex;
 }
 
+@media only screen and (max-width: 450px) {
+  .collection-description-container .container.is-flex-row {
+    flex-direction: column;
+  }
+}
+
 
 /*****************
 
