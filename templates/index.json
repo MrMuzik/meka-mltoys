@@ -149,6 +149,7 @@
           "settings": {
             "video_title": "",
             "video_url": "https://youtu.be/Xldr-V0ZEgo",
+            "cover_image": "shopify://shop_images/maxresdefault.jpg",
             "description": "",
             "enable_video_looping": false
           }
