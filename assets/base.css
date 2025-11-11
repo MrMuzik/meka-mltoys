@@ -5251,6 +5251,12 @@ div#cf_ram_guest_image_section img {
   color: inherit !important;
 }
 
+/* Collection Description */
+
+.collection-description-container .container.is-flex-row {
+ display: flex;
+}
+
 
 /*****************
 
