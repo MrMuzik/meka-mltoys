@@ -81,7 +81,7 @@
           "type": "buy_buttons",
           "settings": {
             "color_scheme": "",
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": true,
             "quantity_color_scheme": ""
           }
@@ -231,6 +231,7 @@
           "type": "video",
           "settings": {
             "video_title": "",
+            "video_url": "",
             "description": "",
             "enable_video_looping": false
           }
@@ -239,6 +240,7 @@
           "type": "video",
           "settings": {
             "video_title": "",
+            "video_url": "",
             "description": "",
             "enable_video_looping": false
           }
@@ -247,6 +249,7 @@
           "type": "video",
           "settings": {
             "video_title": "",
+            "video_url": "",
             "description": "",
             "enable_video_looping": false
           }
