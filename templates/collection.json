@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "banner": {
       "type": "main-collection-banner",
@@ -32,6 +32,16 @@
         "section_background": "#f4f2ec",
         "padding_top": 46,
         "padding_bottom": 60
+      }
+    },
+    "custom_liquid_DdqLnE": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% if collection.description != blank %}\n      <div class=\"container\">\n        <div class=\"one-whole column\">\n          <div class=\"collection_description text-align-left rte\">\n            {{ collection.description }}\n          </div>\n        </div>\n      </div>\n    {% endif %}",
+        "color_scheme": "",
+        "padding_top": 70,
+        "padding_bottom": 70
       }
     },
     "1762530886eadbc830": {
@@ -345,6 +355,7 @@
   },
   "order": [
     "banner",
+    "custom_liquid_DdqLnE",
     "1762530886eadbc830",
     "product-grid",
     "collection_discount_banner",
