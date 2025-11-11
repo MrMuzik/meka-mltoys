@@ -176,29 +176,58 @@ Assumes:
 
 <style>
   /* ===== Product Tabs (scoped by ID) ===== */
-  #{{ tab_id }} { border-top: 1px solid rgba(0,0,0,.12); }
   #{{ tab_id }} .pd-tabs__radio { position: absolute; opacity: 0; pointer-events: none; }
-  #{{ tab_id }} .pd-tabs__nav { display: flex; gap: 2rem; align-items: flex-end; padding-top: .75rem; }
+  #{{ tab_id }} .pd-tabs__nav { display: flex; gap: 2rem; align-items: flex-end; padding: .75rem 5rem 0 5rem; border-bottom: 2px solid #001429;
+    padding-bottom: 8px; justify-content: space-between; }
   #{{ tab_id }} .pd-tabs__btn {
-    position: relative; padding: .5rem 0; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+    position: relative; padding: .5rem 3rem; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
     cursor: pointer; opacity: .7;
   }
   #{{ tab_id }} .pd-tabs__btn::after {
-    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: currentColor;
+    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 4px; background: currentColor;
     opacity: 0; transform: scaleX(0); transition: transform .2s ease, opacity .2s ease;
   }
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
-  #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
+  #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; color: #C12726; }
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
 
+  #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
+  #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
+  #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
+  #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
+  #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
+  #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
+
   #{{ tab_id }} .pd-tabs__panels { margin-top: 1.25rem; }
   #{{ tab_id }} .pd-tabs__panel { display: none; }
-  #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc { display: block; }
-  #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto { display: block; }
-  #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; }
+  #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc, 
+  #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto, 
+  #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; font-size: 16px; font-weight: 500; line-height: 25px; padding: 3rem 2rem 0 2rem; }
+
+  summary.faq__q { 
+    font-family: var(--font-heading-family-digmo), sans-serif !important; 
+    text-transform: uppercase; 
+    font-size: 20px; 
+    letter-spacing: .25px; 
+    padding: 1.5rem 0;
+    border-top: 2px solid #eee;
+  }
+
+  .faq-accordion .faq:last-child .faq__a {
+    border-bottom: 2px solid #eee;
+  }
+
+  .faq__a p {
+    margin-block-start: 0;
+    margin-top: 0;
+  }
+
+  .faq-accordion .faq:first-child .faq__q {
+    border-top: none;
+  }
 
   /* RTE helpers */
   #{{ tab_id }} .rte iframe { max-width: 100%; width: 100%; height: auto; aspect-ratio: 16/9; }

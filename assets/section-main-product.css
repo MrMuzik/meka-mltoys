@@ -1,6 +1,9 @@
 .product {
 	margin: 0;
 }
+.product.main-product {
+	margin-bottom: 8rem;
+}
 .product.grid {
 	gap: 2.7rem;
 }
@@ -124,6 +127,9 @@
 /* Product form */
 .product-buy-buttons {
 	background-color: transparent;
+}
+.product-buy-buttons .product-form {
+	margin-top: 0;
 }
 .product-form {
 	display: block;
@@ -293,6 +299,7 @@ fieldset.product-form__input .form__label {
 	border: 0.5px solid #001429;
 	background: #FAFAFA;
 	padding: 1.5rem 2rem;
+	margin-bottom: 5rem !important; /* do this better later */
 }
 .product__about-header,
 .product__about-readmore a { 
