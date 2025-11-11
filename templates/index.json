@@ -57,8 +57,8 @@
           "settings": {
             "collection": "power-wheels-motor-upgrades",
             "collection_title": "Faster Motors",
-            "show_view_all": false,
-            "button_label": "Shop All Categories",
+            "show_view_all": true,
+            "button_label": "All Motors",
             "button_style_secondary": false
           }
         },
@@ -67,8 +67,8 @@
           "settings": {
             "collection": "power-wheels-upgrade-batteries",
             "collection_title": "Batteries",
-            "show_view_all": false,
-            "button_label": "View all",
+            "show_view_all": true,
+            "button_label": "All Batteries",
             "button_style_secondary": false
           }
         },
