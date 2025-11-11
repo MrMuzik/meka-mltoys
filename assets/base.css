@@ -5258,7 +5258,7 @@ div#cf_ram_guest_image_section img {
 }
 
 .collection-description-container h4 {
-  font-size: var(--font-heading-2-size-mb);
+  font-size: var(--font-heading-2-size-mb) !important;
 }
 
 @media only screen and (max-width: 450px) {
