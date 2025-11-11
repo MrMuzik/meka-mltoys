@@ -5261,6 +5261,10 @@ div#cf_ram_guest_image_section img {
   .collection-description-container .container.is-flex-row {
     flex-direction: column;
   }
+
+  .collection-description-container .collection-vehicle-image {
+    padding-left: 0px;
+  }
 }
 
 
