@@ -17,7 +17,7 @@
         "show_collection_breadcrumbs": true,
         "show_breadcrumbs_top": true,
         "heading_size": "h0",
-        "show_collection_description": true,
+        "show_collection_description": false,
         "description_text": "",
         "text_size_block": "medium",
         "heading_alignment": "left",
