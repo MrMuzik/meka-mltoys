@@ -38,7 +38,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "{% if collection.description != blank %}\n      <div class=\"container\">\n        <div class=\"one-whole column\">\n          <div class=\"collection_description text-align-left rte\">\n            {{ collection.description }}\n          </div>\n        </div>\n      </div>\n    {% endif %}",
+        "custom_liquid": "{% if collection.description != blank %}\n      <div class=\"container collection-description-container\">\n        <div class=\"one-whole column\">\n          <div class=\"collection_description text-align-left rte\">\n            {{ collection.description }}\n          </div>\n        </div>\n      </div>\n    {% endif %}",
         "color_scheme": "",
         "padding_top": 70,
         "padding_bottom": 70
