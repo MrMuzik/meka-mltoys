@@ -77,8 +77,8 @@
           "settings": {
             "collection": "combination-kits",
             "collection_title": "Combo Kits",
-            "show_view_all": false,
-            "button_label": "View all",
+            "show_view_all": true,
+            "button_label": "All Combo Kits",
             "button_style_secondary": false
           }
         },
@@ -87,8 +87,8 @@
           "settings": {
             "collection": "power-wheels-electrical-upgrades",
             "collection_title": "Electrical",
-            "show_view_all": false,
-            "button_label": "View all",
+            "show_view_all": true,
+            "button_label": "All Electrical",
             "button_style_secondary": false
           }
         },
@@ -97,8 +97,8 @@
           "settings": {
             "collection": "power-wheels-lighting-upgrades",
             "collection_title": "Lighting",
-            "show_view_all": false,
-            "button_label": "View all",
+            "show_view_all": true,
+            "button_label": "All Lighting",
             "button_style_secondary": false
           }
         },
@@ -107,8 +107,8 @@
           "settings": {
             "collection": "individual-performance-gears-for-power-wheels",
             "collection_title": "Gears",
-            "show_view_all": false,
-            "button_label": "View all",
+            "show_view_all": true,
+            "button_label": "All Gears",
             "button_style_secondary": false
           }
         }
