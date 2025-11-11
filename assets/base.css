@@ -72,7 +72,7 @@
 }
 
 img.snize-item-image.snize-flip-image, #snize-search-results-grid-mode span.snize-thumbnail img, #snize-search-results-grid-mode span.snize-thumbnail, #snize-search-results-grid-mode .snize-thumbnail-wrapper {
-  object-fit: contain;
+  object-fit: contain !important;
 }
 
 /* base */
