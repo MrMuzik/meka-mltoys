@@ -34,6 +34,7 @@
   font-weight: 600;
   column-gap: 2rem;
   font-size: 1.6rem;
+  display: none !important;
 }
 
 .breadcrumbs__item {
