@@ -294,22 +294,17 @@ fieldset.product-form__input .form__label {
 }
 /* Product info */
 .product__about {
-	--about-indent: 2.35rem; /* 15px icon + 8.5px gap in your 10px base */
-	border-radius: 3px;
-	border: 0.5px solid #001429;
-	background: #FAFAFA;
-	padding: 1.5rem 2rem;
-	margin-bottom: 5rem !important; /* do this better later */
+	margin: 3rem 0 !important; /* do this better later */
 }
 .product__about-header,
 .product__about-readmore a { 
 	margin-bottom: 0.49rem;
-	letter-spacing: 0.028rem;
+	letter-spacing: 0.036rem;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 800;
-	font-size: 1.4rem;
-	line-height: 1.75rem;
+	font-size: 1.8rem;
+	line-height: 2.25rem;
 	font-family: Inter, sans-serif;
 	color:#001429;
 }
@@ -325,8 +320,8 @@ fieldset.product-form__input .form__label {
   border: none !important;
 }
 .product__about-body { 
-	font-size: 1.4rem;
-	line-height: 2.52rem; 
+	font-size: 1.8rem;
+	line-height: 3.24rem; 
 	font-style: normal;
 	font-weight: 500;
 	font-family: Inter, sans-serif;

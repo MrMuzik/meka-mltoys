@@ -79,7 +79,7 @@ img.snize-item-image.snize-flip-image, #snize-search-results-grid-mode span.sniz
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 * {
