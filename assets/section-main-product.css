@@ -562,6 +562,7 @@ a.product__text {
 	align-items: flex-end;
 	flex-wrap: wrap;
 	gap: 2rem;
+	margin-bottom: 5rem; /* do this better later */
 }
 .product-form__buttons .product-form__submit,
 .product-form__buttons .product-form__input {
