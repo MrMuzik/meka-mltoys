@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
@@ -18,7 +18,7 @@
           "type": "link_list",
           "settings": {
             "heading": "buy-now",
-            "menu": "buy-now"
+            "menu": "buy-now-footer-digmo"
           }
         },
         "footer-1": {
