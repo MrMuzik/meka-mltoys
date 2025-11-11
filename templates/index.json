@@ -55,8 +55,8 @@
         "collection_7DKKte": {
           "type": "collection",
           "settings": {
-            "collection": "power-wheels-electrical-upgrades",
-            "collection_title": "Electrical Upgrades",
+            "collection": "power-wheels-motor-upgrades",
+            "collection_title": "Faster Motors",
             "show_view_all": false,
             "button_label": "Shop All Categories",
             "button_style_secondary": false
@@ -65,18 +65,8 @@
         "collection_PczVrk": {
           "type": "collection",
           "settings": {
-            "collection": "batteries-chargers",
+            "collection": "power-wheels-upgrade-batteries",
             "collection_title": "Batteries",
-            "show_view_all": false,
-            "button_label": "View all",
-            "button_style_secondary": false
-          }
-        },
-        "collection_PPt9QW": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-other-vehicles",
-            "collection_title": "Lighting",
             "show_view_all": false,
             "button_label": "View all",
             "button_style_secondary": false
@@ -85,8 +75,8 @@
         "collection_zRtVh4": {
           "type": "collection",
           "settings": {
-            "collection": "other-stock-parts",
-            "collection_title": "Stock Parts",
+            "collection": "combination-kits",
+            "collection_title": "Combo Kits",
             "show_view_all": false,
             "button_label": "View all",
             "button_style_secondary": false
@@ -95,8 +85,28 @@
         "collection_rCjLVR": {
           "type": "collection",
           "settings": {
-            "collection": "combination-kits",
-            "collection_title": "Combination kits",
+            "collection": "power-wheels-electrical-upgrades",
+            "collection_title": "Electrical",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        },
+        "collection_PPt9QW": {
+          "type": "collection",
+          "settings": {
+            "collection": "power-wheels-lighting-upgrades",
+            "collection_title": "Lighting",
+            "show_view_all": false,
+            "button_label": "View all",
+            "button_style_secondary": false
+          }
+        },
+        "collection_4biRzd": {
+          "type": "collection",
+          "settings": {
+            "collection": "individual-performance-gears-for-power-wheels",
+            "collection_title": "Gears",
             "show_view_all": false,
             "button_label": "View all",
             "button_style_secondary": false
@@ -106,16 +116,17 @@
       "block_order": [
         "collection_7DKKte",
         "collection_PczVrk",
-        "collection_PPt9QW",
         "collection_zRtVh4",
-        "collection_rCjLVR"
+        "collection_rCjLVR",
+        "collection_PPt9QW",
+        "collection_4biRzd"
       ],
       "settings": {
         "button_url": "shopify://pages/upgrades-by-category-digmo",
         "button_label": "Shop All Categories",
         "bg_image": "shopify://shop_images/Group_427320668.svg",
         "show_background_tread": true,
-        "title": "Shop By Category",
+        "title": "Shop Upgraded Parts By Category",
         "heading_alignment": "center",
         "heading_size": "h2",
         "description": "<p>Everything You Need To Get Started</p>",
