@@ -170,7 +170,7 @@
           "settings": {
             "video_title": "",
             "video_url": "https://youtu.be/Cp56iHbeigs",
-            "cover_image": "shopify://shop_images/hqdefault.jpg",
+            "cover_image": "shopify://shop_images/maxresdefault_3.webp",
             "description": "",
             "enable_video_looping": false
           }
@@ -180,7 +180,7 @@
           "settings": {
             "video_title": "",
             "video_url": "https://youtu.be/tzVRB_M_Aek",
-            "cover_image": "shopify://shop_images/hqdefault_1.jpg",
+            "cover_image": "shopify://shop_images/motors-gearboxes.webp",
             "description": "",
             "enable_video_looping": false
           }
@@ -190,13 +190,14 @@
           "settings": {
             "video_title": "",
             "video_url": "https://youtu.be/128RTB8ok5s",
-            "cover_image": "shopify://shop_images/maxresdefault_1.jpg",
+            "cover_image": "shopify://shop_images/choosing_tires.webp",
             "description": "",
             "enable_video_looping": false
           }
         },
         "video_mTKzhw": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_title": "",
             "video_url": "https://youtu.be/_Q-60ezTUK0",
