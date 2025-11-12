@@ -232,6 +232,7 @@
           "settings": {
             "video_title": "",
             "video_url": "",
+            "cover_image": "shopify://shop_images/choose_car_thumbnail.webp",
             "description": "",
             "enable_video_looping": false
           }
