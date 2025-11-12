@@ -598,7 +598,7 @@
       "name": "Upgrades by Vehicle",
       "settings": {
         "title": "Upgrades by Vehicle",
-        "subheading": "Parts for the most popular brands",
+        "subheading": "Parts for the most popular cars",
         "left_icon": "shopify://shop_images/79.svg",
         "right_icon": "shopify://shop_images/020.svg",
         "background_image": "shopify://shop_images/stock_parts_bg_1.jpg",
