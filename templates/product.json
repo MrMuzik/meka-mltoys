@@ -236,30 +236,10 @@
             "description": "",
             "enable_video_looping": false
           }
-        },
-        "video_3znGai": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "",
-            "description": "",
-            "enable_video_looping": false
-          }
-        },
-        "video_jNgzGN": {
-          "type": "video",
-          "settings": {
-            "video_title": "",
-            "video_url": "",
-            "description": "",
-            "enable_video_looping": false
-          }
         }
       },
       "block_order": [
-        "video_8wKQnT",
-        "video_3znGai",
-        "video_jNgzGN"
+        "video_8wKQnT"
       ],
       "name": "ML Video Carousel",
       "settings": {
