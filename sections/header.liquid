@@ -378,7 +378,7 @@
                                                               {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
 																												{% if childlink.current %} aria-current="page" {% endif %}>
 
-                                                        {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' %}
+                                                        {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' or childlink_title == 'all stock parts' %}
                                                           <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
                                                         {% else %}
                                                           {{ childlink.title | escape }}
