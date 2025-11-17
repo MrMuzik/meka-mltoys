@@ -37,9 +37,125 @@
         "content_padding_top": 50,
         "content_padding_bottom": 50
       }
+    },
+    "card_slider_97k6hp": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_RTMmXe": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/ledf150_364ee21b-ee7c-45fe-9380-e33ad9cca1a9.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_h4XQGH": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/f150-1_dc57cd6d-233c-4775-a6b1-5ccd985d52c6.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_PnnHzj": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/f150-2.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_thGiHE": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/f150-4.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_38mPdy": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/f150-5.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_jfbkry": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image_overlay_opacity": 0,
+            "title": "Column",
+            "heading_size_block": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_RTMmXe",
+        "slide_h4XQGH",
+        "slide_PnnHzj",
+        "slide_thGiHE",
+        "slide_38mPdy",
+        "slide_jfbkry"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Heading",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "card_slider_97k6hp"
   ]
 }
