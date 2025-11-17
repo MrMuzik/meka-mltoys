@@ -246,6 +246,15 @@
   color: rgb(var(--color-foreground));
 }
 
+.article-template__content-wrapper img[style*="float: left"] {
+  margin: 20px 20px 20px 0 !important;
+}
+
+.article-template__content-wrapper img[style*="float: right"] {
+  margin: 20px 0 20px 20px !important;
+}
+
+
 .article-template__social-sharing {
   display: flex;
   align-items: center;

@@ -197,6 +197,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-weight: 500;
 }
 
+ul.menu-drawer__menu.list-menu {
+    padding-bottom: 40px;
+}
+
 .menu-drawer__menu-item {
   padding: 1.1rem 5rem 1.1rem 5rem;
   text-decoration: none;

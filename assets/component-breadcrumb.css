@@ -37,6 +37,10 @@
   display: none !important;
 }
 
+nav.breadcrumbs > a {
+  display: none !important;
+}
+
 .breadcrumbs__item {
   display: flex;
   color: rgba(var(--color-foreground), 1);

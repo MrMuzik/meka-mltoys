@@ -859,7 +859,7 @@ cart-drawer :is(.link, .link-with-arrow):not(.predictive-search__item) {
 }
 
 a:not([href]) {
-  cursor: not-allowed;
+  cursor: text;
 }
 
 .circle-divider::after {
