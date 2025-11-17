@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -53,7 +53,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Let Us Guide You",
-            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_link_1": "shopify://pages/upgrades-by-category-old",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
