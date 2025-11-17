@@ -540,6 +540,173 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_nqNkYf": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_xxFXJm": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Wrangler-headlight1_e475737d-e0dc-42bb-9c74-dd7fbf2eb499.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_ctiR3K": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/wrangler3_a2e9c9b4-2677-4513-aaf2-5f0c8783804e.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_HmHf6M": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Wrangler2_7096d516-dd77-41cc-834c-88d55f3e8bc5.jpg",
+            "image_overlay_opacity": 0,
+            "title": "Column",
+            "heading_size_block": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_4Kkijm": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_xxFXJm",
+        "slide_ctiR3K",
+        "slide_HmHf6M",
+        "slide_4Kkijm"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels Jeep Wranglers",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "card_slider_D7Xz9f": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_LzEypQ": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Mustangs1_c59ffd30-aa93-4892-919b-94a03b713583.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_7FnHiH": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Mustangs2_1.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_KYCexF": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Mustang_1.jpg",
+            "image_overlay_opacity": 0,
+            "title": "Column",
+            "heading_size_block": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_y7Na6x": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Emergency-Lights-5_46d030ee-f64d-43e2-b853-c779c5172257.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_LzEypQ",
+        "slide_7FnHiH",
+        "slide_KYCexF",
+        "slide_y7Na6x"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels Mustangs",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
@@ -549,6 +716,8 @@
     "card_slider_qCAabx",
     "card_slider_QzdFtt",
     "card_slider_DxVTCq",
-    "card_slider_NwMyRT"
+    "card_slider_NwMyRT",
+    "card_slider_nqNkYf",
+    "card_slider_D7Xz9f"
   ]
 }
