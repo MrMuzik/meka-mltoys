@@ -676,7 +676,7 @@
       ],
       "name": "ML Featured Grid",
       "settings": {
-        "button_url": "shopify://pages/stock-parts",
+        "button_url": "shopify://pages/stock-parts-old",
         "button_label": "View All Stock Parts",
         "background_color": "#001429",
         "section_text_color": "#ffffff",
