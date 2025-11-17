@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -355,16 +355,6 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
-    },
-    "custom_liquid_YYJPz4": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<h2 class=\"iframe-header\">Upcoming races Around the country\n</h2>\n<iframe class=\"calendar-iframe\" src=\"https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FNew_York&amp;showPrint=0&amp;src=Y181ZDczMmI3NDlhNGFlMWJiOTZkZjVhMmM5ZTQwNjVkYjExZDgwODYxZTdiYTYyZTk1YzcwMWMxYTRlMTFiMjM2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%234285F4\" style=\"border:solid 1px #777\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>",
-        "color_scheme": "",
-        "padding_top": 70,
-        "padding_bottom": 70
-      }
     }
   },
   "order": [
@@ -373,7 +363,6 @@
     "ml_toys_product_slider_eCpE3j",
     "image_with_text_g8Eize",
     "image_with_text_34mVt7",
-    "image_with_text_Hqgpmy",
-    "custom_liquid_YYJPz4"
+    "image_with_text_Hqgpmy"
   ]
 }
