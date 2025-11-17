@@ -386,7 +386,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Upgrades",
-            "button_link": "shopify://pages/upgrades-by-vehicle-digmo",
+            "button_link": "shopify://pages/upgrades-by-vehicle",
             "button_style_secondary": false
           }
         }
