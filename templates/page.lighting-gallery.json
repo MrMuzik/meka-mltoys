@@ -152,10 +152,63 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_d6C4Vx": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_njWGb7": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/kfx1_7be5cbfe-7e00-486f-95cc-fcc8db1e8d8e.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_fWhAr6": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/kfx2.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_njWGb7",
+        "slide_fWhAr6"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels KFX Kawasaki",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
     "main",
-    "card_slider_97k6hp"
+    "card_slider_97k6hp",
+    "card_slider_d6C4Vx"
   ]
 }
