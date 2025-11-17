@@ -70,6 +70,25 @@
           {% render 'icon-close' %}
         </button>
 
+        {%- if cart != empty and settings.drawer_text != blank -%}
+          <div class="drawer__sale-banner" style="background-color: {{ settings.drawer_message_background_color }};">
+            {%- if settings.drawer_image_before != blank -%}
+              {{
+                settings.drawer_image_before | image_url: width: 100 | image_tag: loading: 'lazy', sizes: '100px', widths: '100'
+              }}
+            {%- endif -%}
+            <p class="announcement-bar__message" style="color: {{ settings.drawer_message_text_color }};">
+              {{ settings.drawer_text | escape }}
+            </p>
+            {%- if settings.drawer_image_after != blank -%}
+              {{
+                settings.drawer_image_after | image_url: width: 100 | image_tag: loading: 'lazy', sizes: '100px', widths: '100'
+              }}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
       <div class="drawer__body">
         <cart-drawer-items {% if cart == empty %} class="is-empty" {% endif %}>
           <form action="{{ routes.cart_url }}" id="CartDrawer-Form" class="cart__contents cart-drawer__form" method="post">
