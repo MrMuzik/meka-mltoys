@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -45,7 +45,7 @@
           "type": "grid_item",
           "settings": {
             "image": "shopify://shop_images/vehicle-all-other-vehicles-800px.jpg",
-            "title": "All Other Vehicles",
+            "title": "All Others / Off Brand / Amazon Vehicles",
             "url": "/collections/all-other-vehicles"
           }
         },
