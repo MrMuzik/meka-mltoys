@@ -204,11 +204,128 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_qCAabx": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_NtF9TV": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/HUR3-3_eec17609-8edc-4d7c-8e65-ae1fa7fd2200.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_3FWYc3": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Hur4-1_25fbd1a5-4761-4ae2-b295-f6d07ae00b9d.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_NTkVaK": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/HUR3-2_7c43fd4d-cbac-4e62-9b02-1fd9a87767b9.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_d3tMcA": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Hurricane-Lights_b5e9ff05-97d4-42fb-a50d-d41625bd74ff.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_tz6pC9": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Hurricane2-1_78114fb9-2a31-4658-9a6d-d25886f5b95e.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_8ckKV8": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/hurricane-20tails_84a7c526-47cc-4fac-b525-c4b7ca73bb14.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_NtF9TV",
+        "slide_3FWYc3",
+        "slide_NTkVaK",
+        "slide_d3tMcA",
+        "slide_tz6pC9",
+        "slide_8ckKV8"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels Jeep Hurricanes",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
     "main",
     "card_slider_97k6hp",
-    "card_slider_d6C4Vx"
+    "card_slider_d6C4Vx",
+    "card_slider_qCAabx"
   ]
 }
