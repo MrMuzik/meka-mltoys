@@ -472,6 +472,74 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_NwMyRT": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_y6PJJN": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/porsche2_c0009fe0-4a6e-4e68-8aa7-dc5856d79d1c.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_xbLWtn": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/porsche3_d6884675-e05e-4c7b-9aea-148054b37e2c.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_JaB7kF": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/porsche1.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_y6PJJN",
+        "slide_xbLWtn",
+        "slide_JaB7kF"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels Porsche GT3s",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
@@ -480,6 +548,7 @@
     "card_slider_d6C4Vx",
     "card_slider_qCAabx",
     "card_slider_QzdFtt",
-    "card_slider_DxVTCq"
+    "card_slider_DxVTCq",
+    "card_slider_NwMyRT"
   ]
 }
