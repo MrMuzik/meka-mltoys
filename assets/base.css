@@ -5257,12 +5257,63 @@ div#cf_ram_guest_image_section img {
 
 /* Collection Description */
 
-.collection-description-container .container.is-flex-row {
+/* .collection-description-container .container.is-flex-row {
  display: flex;
-}
+} */
 
+.collection_description.rte h2,
 .collection-description-container h4 {
   font-size: var(--font-heading-2-size-mb) !important;
+}
+
+/* Copied from live site */
+.is-flex-row {
+  flex-direction: row;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.collection_description .one-third {
+  width: calc(33.3333333333% - 20px);
+}
+
+.collection_description .two-thirds {
+  width: calc(66.6666666667% - 20px);
+}
+
+.collection_description hr.collection-vehicle {
+  width: 100%;
+}
+
+.collection_description {
+  margin: 0 0 1.5em 0;
+}
+
+.collection_description.rte img {
+  border: 0px;
+}
+
+.collection_description hr {
+  margin: 12px 0;
+}
+
+.collection_description.rte h2 {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 798px) {
+  .collection_description .one-third {
+    width: calc(100%);
+  }
+
+  .collection_description .two-thirds {
+    width: calc(100%);
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -5272,6 +5323,12 @@ div#cf_ram_guest_image_section img {
 
   .collection-description-container .collection-vehicle-image {
     padding-left: 0px !important;
+  }
+
+  .collection_description.rte img {
+    max-width: 75%;
+    display: block;
+    margin: 0 auto;
   }
 }
 
