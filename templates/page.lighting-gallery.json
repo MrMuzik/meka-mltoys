@@ -707,6 +707,122 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_qwqd3k": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_eaAhRW": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/gator2_f5ba589e-a82f-41af-83b5-6c4053a4cca6.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_WcMggn": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Gator4_0c9cc9b1-b0d1-4b22-aa57-e538de24ab31.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_bthKKE": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Gator6.jpg",
+            "image_overlay_opacity": 0,
+            "title": "Column",
+            "heading_size_block": "h2",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_iCD3EB": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Camper1_45f2db66-516c-4899-9d96-2643294c2efd.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_DTYxBn": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/Camper3_aa1067ba-4af4-4f53-a69f-097b122437b5.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_RNJ476": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/quad2_d40c6f68-a93e-49fa-9cc8-720b4b75e7be.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_eaAhRW",
+        "slide_WcMggn",
+        "slide_bthKKE",
+        "slide_iCD3EB",
+        "slide_DTYxBn",
+        "slide_RNJ476"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Other Ride-On Cars",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
@@ -718,6 +834,7 @@
     "card_slider_DxVTCq",
     "card_slider_NwMyRT",
     "card_slider_nqNkYf",
-    "card_slider_D7Xz9f"
+    "card_slider_D7Xz9f",
+    "card_slider_qwqd3k"
   ]
 }
