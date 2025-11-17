@@ -23,7 +23,7 @@
             "text": "<p>Check out our upgrades to make your </p><p>ride-on the absolute coolest around!</p>",
             "text_size_block": "medium",
             "button_label_1": "Shop All Categories",
-            "button_link_1": "shopify://pages/upgrades-by-category-digmo",
+            "button_link_1": "shopify://pages/upgrades-by-category",
             "button_style_secondary_1": false,
             "enable_button_arrow": true,
             "button_label_2": "",
@@ -122,7 +122,7 @@
         "collection_4biRzd"
       ],
       "settings": {
-        "button_url": "shopify://pages/upgrades-by-category-digmo",
+        "button_url": "shopify://pages/upgrades-by-category",
         "button_label": "Shop All Categories",
         "bg_image": "shopify://shop_images/Group_427320668.svg",
         "show_background_tread": true,
