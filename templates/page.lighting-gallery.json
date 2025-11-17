@@ -356,6 +356,122 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "card_slider_DxVTCq": {
+      "type": "card-slider",
+      "blocks": {
+        "slide_rGDVhR": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/dune3_5b168cea-c943-4cca-9346-e6afec5aa99c.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_HrY9pw": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/bajaextreme1_2214f3f0-18b4-45fd-b2c1-c8b10ee41d06.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_mmmVrb": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/dune4_f246df8b-01f3-426a-995b-4c31f78570f9.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_jbPzmB": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Dune2_3c88ea11-9e9c-4935-acef-1bbf31cae51c.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_LaMwrF": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/dune1_476723da-2e58-467f-998c-367cd3e69153.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "slide_YfJPpx": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Stinger1_52b7f3db-ff27-4322-a5e7-31007728fe24.jpg",
+            "image_overlay_opacity": 0,
+            "title": "",
+            "heading_size_block": "h2",
+            "text": "",
+            "text_size_block": "medium",
+            "button_style": "link_icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_rGDVhR",
+        "slide_HrY9pw",
+        "slide_mmmVrb",
+        "slide_jbPzmB",
+        "slide_LaMwrF",
+        "slide_YfJPpx"
+      ],
+      "name": "Card slider",
+      "settings": {
+        "title": "Power Wheels Dune Racers, Stingers, and Baja Extremes",
+        "heading_alignment": "center",
+        "heading_size": "h2",
+        "description": "",
+        "color_scheme": "",
+        "slide_content_width": "40",
+        "loop": true,
+        "auto_play": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
     }
   },
   "order": [
@@ -363,6 +479,7 @@
     "card_slider_97k6hp",
     "card_slider_d6C4Vx",
     "card_slider_qCAabx",
-    "card_slider_QzdFtt"
+    "card_slider_QzdFtt",
+    "card_slider_DxVTCq"
   ]
 }
