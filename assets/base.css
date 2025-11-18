@@ -5367,6 +5367,10 @@ div#cf_ram_guest_image_section img {
   margin: 0 !important;
 }
 
+.footer__content-bottom {
+  padding-top: 20px;
+}
+
 @media only screen and (max-width: 450px) {
   .st-footer-copyright-block {
     flex-direction: column;
