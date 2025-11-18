@@ -5342,16 +5342,13 @@ div#cf_ram_guest_image_section img {
   color: #ffffff;
 }
 
-.st-footer-copyright-block {
-  gap: 1rem;
-}
-
 .st-footer-copyright-block,
 .st-footer-copyright-text,
 .st-footer-copyright-text a
  {
   display: flex;
   justify-content: center;
+  gap: 1rem;
 }
 
 .st-footer-digital-text a,
