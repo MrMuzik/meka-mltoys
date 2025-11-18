@@ -5332,8 +5332,9 @@ div#cf_ram_guest_image_section img {
   }
 }
 
-.st-footer-copyright-text svg {
+.st-footer-copyright-block svg {
   max-width: 30px;
+  width: 100%;
   height: auto;
 }
 
