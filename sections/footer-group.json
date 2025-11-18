@@ -43,6 +43,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-3",
+        "enable_copywrite_digmo_text": true,
         "heading_size": "h5",
         "logo": "shopify://shop_images/ML-Toys-transparent_a4897331-497e-45dc-8d70-298c4eff54c3.png",
         "logo_width": 190,
@@ -64,7 +65,7 @@
         "policy_padding_bottom": 20,
         "margin_top": 0,
         "padding_top": 80,
-        "padding_bottom": 50
+        "padding_bottom": 30
       }
     }
   },
