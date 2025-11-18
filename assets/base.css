@@ -5332,6 +5332,8 @@ div#cf_ram_guest_image_section img {
   }
 }
 
+/* Digmo Footer Copywrite Text */
+
 .st-footer-copyright-block svg {
   max-width: 30px;
   width: 100%;
@@ -5350,6 +5352,7 @@ div#cf_ram_guest_image_section img {
  {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
