@@ -5380,6 +5380,10 @@ div#cf_ram_guest_image_section img {
   .st-footer-digital-text p, .st-footer-copyright-text p {
     text-align: center;
   }
+
+  .st-footer-digital-text a {
+    display: block;
+  }
 }
 
 
