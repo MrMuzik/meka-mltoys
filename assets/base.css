@@ -5349,6 +5349,10 @@ div#cf_ram_guest_image_section img {
   justify-content: center;
 }
 
+.st-footer-copyright-text p {
+  margin: 0 !important;
+}
+
 
 /*****************
 
