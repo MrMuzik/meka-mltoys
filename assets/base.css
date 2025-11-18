@@ -5362,6 +5362,21 @@ div#cf_ram_guest_image_section img {
   margin: 0 !important;
 }
 
+@media only screen and (max-width: 450px) {
+  .st-footer-copyright-text {
+    flex-direction: row;
+  }
+
+  .st-footer-copyright-block svg {
+    margin: auto;
+    display: block;
+  }
+
+  .st-footer-digital-text p, .st-footer-copyright-text p {
+    text-align: center;
+  }
+}
+
 
 /*****************
 
