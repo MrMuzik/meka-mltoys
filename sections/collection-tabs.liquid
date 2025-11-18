@@ -219,8 +219,8 @@
               {%- endfor -%}
 
               {%- if block.settings.button_label != blank and block.settings.show_view_all == true -%}
-                <li class="collection-list__item-button grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
-                  <a {% if block.settings.collection == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.collection.url }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">
+                <li class="collection-list__item-button grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} " {% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
+                  <a {% if block.settings.collection == blank %} role="link" aria-disabled="true" {% else %} href="{{ block.settings.collection.url }}" {% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %} ml-button-primary">
                     <span>
                       {{ block.settings.button_label | escape }}
                     </span>

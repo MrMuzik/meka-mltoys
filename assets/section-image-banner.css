@@ -50,7 +50,8 @@
   .banner--content-align-left.banner--desktop-transparent .banner__box,
   .banner--content-align-right.banner--desktop-transparent .banner__box,
   .banner--medium.banner--desktop-transparent .banner__box {
-    max-width: var(--content-width, 72rem);
+    /* max-width: var(--content-width, 72rem); */
+    max-width: 500px;
   }
 
 	.image-banner.page-width .banner {
@@ -1092,6 +1093,26 @@ DIGMO UPDATES BEGIN
   border-radius: 50px;
 }
 
+.banner__buttons a.button--secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #df1d37;
+  padding: 5px 12px;
+  min-height: 32px;
+  line-height: normal;
+  box-shadow: unset;
+}
+
+.banner__buttons a.button--secondary:hover {
+  background-color: #df1d37;
+  color: #fff !important;
+  border: 2px solid #df1d37;
+}
+
+.banner__buttons a.button--secondary:before {
+  display: none;
+}
+
 .banner__buttons a span {
   display: flex;
   align-items: center;
@@ -1117,7 +1138,6 @@ DIGMO UPDATES BEGIN
 
 .banner__heading {
   margin-bottom: 0;
-  max-width: 310px;
 }
 
 .mobile-banner-image {
