@@ -36,10 +36,37 @@
             "desktop_content_alignment": "left",
             "mobile_content_alignment": "center"
           }
+        },
+        "image_slide_TYM4M9": {
+          "type": "image_slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/MLToys_-_1700x810_-_Hero_-_Black_Friday.jpg",
+            "image_mobile": "shopify://shop_images/MobileBF5.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "The Black Friday Sale is Here!",
+            "heading_size": "h1",
+            "text": "<p>Save 15% through Monday.</p><p>Discount automatically applied in cart. Tires excluded.</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop By Category",
+            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": false,
+            "button_label_2": "Shop By Vehicle",
+            "button_link_2": "shopify://pages/upgrades-by-vehicle",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
         }
       },
       "block_order": [
-        "image_slide_JcyBwK"
+        "image_slide_JcyBwK",
+        "image_slide_TYM4M9"
       ],
       "settings": {
         "image_height": "medium",
