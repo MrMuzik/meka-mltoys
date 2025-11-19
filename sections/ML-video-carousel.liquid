@@ -9,7 +9,7 @@
       <h2>{{ section.settings.heading }} {% render 'header-accent' %}</h2>
       <p>{{ section.settings.description }}</p>
       {% if section.settings.button_text and section.settings.button_link %}
-        <a href="{{ section.settings.button_link }}" class="ml-button-primary">{{ section.settings.button_text }} {% render 'arrow-right' %}</a>
+        <a href="{{ section.settings.button_link }}" class="ml-button-primary pulse">{{ section.settings.button_text }} {% render 'arrow-right' %}</a>
       {% endif %}
     </div>
     <div class="swiper video-carousel-swiper">
@@ -113,7 +113,7 @@
       background-repeat: no-repeat;
       background-color: {{ section.settings.background_color }};
       color: {{ section.settings.section_text_color }};
-      padding: 90px 300px;
+      padding: 150px 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -129,32 +129,39 @@
       margin: auto;
     }
 
+    .ml-video-carousel .video-container {
+      color: {{ section.settings.section_text_color }};
+      width: 100%;
+      max-width: 1250px;
+      position: relative;
+      display: flex;
+    }
+
     .ml-video-carousel .text-container {
-      text-align: {{ section.settings.heading_alignment }};
-      max-width: 250px;
+      text-align: left;
+      max-width: unset;
+      width: 30%;
       display: flex;
       flex-direction: column;
       gap: 15px;
-      /* position: relative; */
-      position: absolute;
-      left: -300px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      padding-left: 2rem;
+      position: relative;
+      left: unset;
+      top: unset;
+      transform: unset;
+      padding-left: 0;
+      justify-content: center;
     }
 
-    .ml-video-carousel .text-container .squiggly-arrow svg {
-      position: absolute;
-      top: -91px;
-      right: 29px;
-      transform: rotate(354deg);
+    .ml-video-carousel .text-container h2,
+    .ml-video-carousel .text-container p {
+      color: {{ section.settings.section_text_color }};
+      margin: 0;
     }
 
     .ml-video-carousel .text-container h2 {
-      font-size: 80px;
+      font-size: 120px;
+      line-height: 105px !important;
       position: relative;
-      line-height: normal;
     }
 
     .ml-video-carousel .text-container h2 svg {
@@ -164,33 +171,55 @@
       width: 50px;
     }
 
-    .ml-video-carousel .text-container h2,
     .ml-video-carousel .text-container p {
-      color: {{ section.settings.section_text_color }};
-      margin: 0px;
+      padding-right: 40px;
     }
 
-    .ml-video-carousel .video-container {
-      color: {{ section.settings.section_text_color }};
-      width: 100%;
-      max-width: 900px;
-      position: relative;
+    .ml-video-carousel .text-container .squiggly-arrow svg {
+      position: absolute;
+      top: -38px;
+      right: 46px;
+      transform: rotate(353deg);
+    }
+
+    .ml-video-carousel .text-container .ml-button-primary {
+      padding: 10px 10px 10px 20px;
+    }
+
+    .ml-video-carousel .ml-button-primary {
+      margin: unset;
+      font-size: 25px !important;
+      padding: 10px;
+      display: flex;
+    }
+
+    .ml-video-carousel .ml-button-primary svg {
+      width: 35px;
+      height: 35px;
     }
 
     .video-carousel-swiper {
       position: relative;
       border-radius: 12px;
+      width: 70%;
     }
 
     .video-carousel-item {
       width: 300px;
       flex-shrink: 0;
+      opacity: 0.7;
+      background-color: #001429;
+    }
+
+    .video-carousel-item.swiper-slide-active {
+      opacity: 1;
     }
 
     .video-carousel-item .video-section__media {
       border-radius: 8px;
       overflow: hidden;
       aspect-ratio: 16/9;
+      background-color: unset;
     }
 
     .video-carousel-item-title {
@@ -201,21 +230,29 @@
       text-align: center;
     }
 
-    /* Navigation container */
+    .ml-video-carousel .deferred-media__poster-button {
+      background-color: #001429;
+    }
+
+    .ml-video-carousel .deferred-media__poster-button svg path {
+      fill: #fff !important;
+    }
+
     .video-carousel-navigation {
+      position: absolute;
+      bottom: -80px;
+      right: 405px;
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin-top: 20px;
+      margin: auto;
     }
 
-    /* Custom Swiper navigation buttons with custom styling */
     .video-carousel-navigation .swiper-button-next,
     .video-carousel-navigation .swiper-button-prev {
       background-color: #ffffff;
       color: #001429;
       border: 3px solid #001429;
-      padding: 10px 20px;
       box-shadow: 5px 5px #001429;
       transition: 0.25s;
       font-weight: 500;
@@ -233,13 +270,13 @@
       min-height: 50px;
     }
 
-    .ml-video-carousel .text-container .ml-button-primary {
-      padding: 10px 10px 10px 20px;
-    }
-
     .video-carousel-navigation .swiper-button-next:after,
     .video-carousel-navigation .swiper-button-prev:after {
-        display: none;
+      display: none;
+    }
+
+    .video-carousel-navigation .swiper-button-prev {
+      transform: rotate(180deg) !important;
     }
 
     .video-carousel-navigation .swiper-button-next:hover,
@@ -248,23 +285,24 @@
       transform: scale(1.05);
     }
 
+    .video-carousel-navigation .swiper-button-prev:hover {
+      transform: rotate(180deg) scale(1.05) !important;
+    }
+
     .video-carousel-navigation .swiper-button-next:active,
     .video-carousel-navigation .swiper-button-prev:active {
       box-shadow: 0px 0px #001429;
       transform: translate(5px, 5px);
     }
 
-    .video-carousel-navigation .swiper-button-prev {
-      transform: rotate(180deg) !important;
+    .video-carousel-navigation .swiper-button-prev:active {
+      transform: rotate(180deg) translate(5px, 5px) !important;
     }
 
-    /* Custom pagination container */
     .video-carousel-pagination {
-      text-align: center;
-      margin: 20px 0;
+      display: none;
     }
 
-    /* Swiper pagination */
     .video-carousel-pagination .swiper-pagination {
       position: relative;
       bottom: auto;
@@ -292,46 +330,28 @@
       transform: scale(1.1);
     }
 
-    .ml-video-carousel .ml-button-primary {
-      margin: unset;
-      font-size: 25px !important;
-      padding: 10px;
-      display: flex;
-    }
+    @media screen and (max-width: 1250px) {
+      .ml-video-carousel .text-container .squiggly-arrow svg {
+        top: -57px;
+      }
 
-    .ml-video-carousel .ml-button-primary svg {
-      width: 35px;
-      height: 35px;
-    }
+      .ml-video-carousel .text-container h2 {
+        font-size: 90px;
+        line-height: normal !important;
+      }
 
-    .video-carousel-item {
-      opacity: 0.7;
-      background-color: #001429;
-    }
+      .ml-video-carousel .text-container p {
+        font-size: 16px;
+      }
 
-    .video-carousel-item.swiper-slide-active {
-      opacity: 1;
-    }
-
-    .ml-video-carousel .deferred-media__poster-button {
-      background-color: #001429;
-    }
-
-    .ml-video-carousel .deferred-media__poster-button svg path {
-      fill: #fff !important;
-    }
-
-    .ml-video-carousel .video-carousel-item .video-section__media {
-      background-color: unset;
-    }
-
-    @media screen and (max-width: 1550px) {
-      .ml-video-carousel .video-container {
-        max-width: 750px;
+      .video-carousel-navigation {
+        right: 0;
+        left: 0;
+        bottom: -72px;
       }
     }
 
-    @media screen and (max-width: 1200px) {
+    /* @media screen and (max-width: 1200px) {
       .ml-video-carousel {
         flex-direction: column;
         padding: 80px 50px;
@@ -340,6 +360,7 @@
       .ml-video-carousel .video-container {
         margin-left: 30px;
         width: 100%;
+        flex-direction: column;
         max-width: 600px;
       }
 
@@ -352,11 +373,11 @@
         padding-right: 26px;
       }
 
-       .text-container .ml-button-primary {
-         font-size: 18px !important;
-       }
+      .text-container .ml-button-primary {
+        font-size: 18px !important;
+      }
 
-       .ml-video-carousel .ml-button-primary svg {
+      .ml-video-carousel .ml-button-primary svg {
         height: 25px;
         width: 25px;
       }
@@ -368,17 +389,40 @@
       .video-carousel-pagination {
         margin: 15px 0;
       }
+    } */
 
-      .ml-video-carousel .text-container {
-        left: -240px;
+    @media screen and (max-width: 1080px) {
+
+    .ml-video-carousel .text-container h2 {
+        font-size: 60px;
       }
-    }
 
-    @media screen and (max-width: 1150px) {
 
-    .ml-video-carousel {
-      padding: 50px;
-    }
+      .ml-video-carousel .ml-button-primary svg {
+        height: 25px;
+        width: 25px;
+      }
+
+      .text-container .ml-button-primary {
+        font-size: 18px !important;
+      }
+
+      .ml-video-carousel {
+        flex-direction: column;
+        padding: 35px 0px 100px 0px;
+      }
+
+      .ml-video-carousel .video-container {
+        margin-left: 30px;
+        width: 100%;
+        flex-direction: column;
+        max-width: 600px;
+      }
+
+      .ml-video-carousel .video-container {
+        margin-left: 0;
+      }
+
       .ml-video-carousel .text-container {
         position: relative;
         left: 0;
@@ -386,20 +430,18 @@
         transform: translateY(0);
         padding-left: 10px;
         margin: auto;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         max-width: 310px;
-      }
-
-      .ml-video-carousel .video-container {
-        margin-left: 0px;
+        width: 100%;
       }
 
       .ml-video-carousel .text-container .squiggly-arrow svg {
         position: absolute;
         top: unset;
-        right: -34px;
+        right: -25px;
         transform: rotate(75deg);
-        bottom: 0px;
+        bottom: 0;
+        width: 100px;
       }
 
       .ml-video-carousel .text-container h2 svg {
@@ -408,15 +450,15 @@
         left: -30px;
         width: 30px;
       }
-
-      .ml-video-carousel .text-container h2 {
-
-      }
     }
 
     @media screen and (max-width: 768px) {
-      .ml-video-carousel {
+      /* .ml-video-carousel {
         padding: 60px 20px;
+      } */
+
+      .video-carousel-swiper {
+        width: 90%;
       }
 
       .video-carousel-item {
@@ -430,7 +472,6 @@
 
       .video-carousel-navigation .swiper-button-next,
       .video-carousel-navigation .swiper-button-prev {
-        padding: 8px 16px;
         min-width: 40px;
         min-height: 40px;
         box-shadow: 3px 3px #001429;
@@ -447,13 +488,13 @@
         transform: translate(3px, 3px);
       }
 
+      .video-carousel-navigation .swiper-button-prev:active {
+        transform: rotate(180deg) translate(3px, 3px) !important;
+      }
+
       .video-carousel-navigation .swiper-button-next:hover,
       .video-carousel-navigation .swiper-button-prev:hover {
         background-color: #ffffff;
-      }
-
-      .video-carousel-pagination {
-        margin: 10px 0;
       }
 
       .video-carousel-pagination .swiper-pagination-bullet {
@@ -465,15 +506,20 @@
     }
 
     @media screen and (max-width: 450px) {
-    .video-carousel-navigation .swiper-button-next, .video-carousel-navigation .swiper-button-prev {
-      padding: 10px;
-    }
+      .video-carousel-navigation .swiper-button-next,
+      .video-carousel-navigation .swiper-button-prev {
+        padding: 10px;
+      }
+
+      .ml-video-carousel .text-container .squiggly-arrow svg {
+        bottom: -7px;
+      }
     }
 
     @media screen and (max-width: 375px) {
       .ml-video-carousel .text-container .squiggly-arrow svg {
         width: 100px;
-        right: 0px;
+        right: 0;
       }
     }
   </style>
@@ -488,7 +534,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Swiper parameters - show multiple slides
     slidesPerView: 1,
     spaceBetween: 20,
-    centeredSlides: false,
+    centeredSlides: true,
+    loop: true,
 
     // Navigation arrows
     navigation: {

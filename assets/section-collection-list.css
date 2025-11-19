@@ -90,8 +90,8 @@
   margin-top: 2rem;
 }
 
-.collection-list .collection-list__item-button .button {
-  margin: 0 auto;
+.collection-list__item-button .ml-button-primary:after {
+  display: none;
 }
 
 .collection-list-title {
