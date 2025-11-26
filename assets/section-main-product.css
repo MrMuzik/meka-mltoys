@@ -1479,6 +1479,18 @@ a.product__text {
 .product__sku.visibility-hidden::after {
 	content: '#';
 }
+.product__sku {
+  margin: 0 0 0.5rem;
+  font-size: 14px;
+}
+.product__sku-label {
+  margin-right: 0.25em;
+  font-weight: 700;
+}
+.product__sku-value {
+  font-weight: 400;
+  color: rgba(var(--color-foreground), 0.60);
+}
 /* Product-thumbnail snippet */
 .product-media-container {
 	--aspect-ratio: var(--preview-ratio);
