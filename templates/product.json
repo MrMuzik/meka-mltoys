@@ -30,6 +30,13 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
+        "sku_Htybng": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body",
+            "label_text": "Product code"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -124,6 +131,7 @@
         "breadcrumbs_374JWg",
         "title",
         "judge_me_reviews_preview_badge_ddEEJh",
+        "sku_Htybng",
         "price",
         "collapsible_tab_kLNhqq",
         "globo_product_options_app_block_czPKJJ",
