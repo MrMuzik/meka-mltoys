@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Upgrade Your Power Wheels and Ride-On Toys!",
+            "text": "Black Friday Sale - Extra 15% Taken Off At Checkout",
             "link": ""
           }
         }
