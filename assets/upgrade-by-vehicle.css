@@ -7,13 +7,10 @@
   }
 
   .upgrades-by-vehicle__title {
-    font-size: 55px;
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
   }
-
-  .upgrades-by-vehicle__icon { width: 30px; height: auto; }
 
   .upgrades-by-vehicle__subheading {
     font-size: 18px;
@@ -282,7 +279,7 @@
   @media (max-width: 768px) {
 
     .vehicle-swiper {
-      margin-top: 100px;
+      margin-top: 10px;
     }
 
     .vehicle-swiper .swiper-slide {
@@ -300,9 +297,9 @@
     /* Add spacing for 3x2 grid on tablet */
     .vehicle-swiper .swiper-slide {
       margin-bottom: 20px;
-      padding-top: 100px;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-top: 75px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
     /* Adjust image positioning for tablet */
@@ -335,10 +332,6 @@
 
     .vehicle-swiper .swiper-pagination {
       margin-top: 40px;
-    }
-
-    .upgrades-by-vehicle__title {
-      font-size: 24px;
     }
 
   }
@@ -410,10 +403,6 @@
 
     .vehicle-swiper .swiper-pagination {
       margin-top: 30px;
-    }
-
-    .upgrades-by-vehicle__title {
-      font-size: 45px;
     }
 
     .upgrades-by-vehicle__header {

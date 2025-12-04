@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
@@ -16,7 +16,7 @@
         "text_secondary_color": false,
         "show_collection_breadcrumbs": true,
         "show_breadcrumbs_top": true,
-        "heading_size": "h0",
+        "heading_size": "h1",
         "show_collection_description": false,
         "description_text": "",
         "text_size_block": "medium",

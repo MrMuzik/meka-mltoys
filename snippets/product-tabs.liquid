@@ -203,15 +203,14 @@ Assumes:
 
   #{{ tab_id }} .pd-tabs__panels { margin-top: 1.25rem; }
   #{{ tab_id }} .pd-tabs__panel { display: none; }
-  #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc, 
-  #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto, 
+  #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc,
+  #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto,
   #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; font-size: 16px; font-weight: 500; line-height: 25px; padding: 3rem 2rem 0 2rem; }
 
-  summary.faq__q { 
-    font-family: var(--font-heading-family-digmo), sans-serif !important; 
-    text-transform: uppercase; 
-    font-size: 20px; 
-    letter-spacing: .25px; 
+  summary.faq__q {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: .25px;
     padding: 1.5rem 0;
     border-top: 2px solid #eee;
   }

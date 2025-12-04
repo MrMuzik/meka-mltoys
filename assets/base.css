@@ -4473,23 +4473,9 @@ DIGMO UPDATES BEGIN
 
 *****************/
 
-.h0,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  font-family: var(--font-heading-family-digmo), sans-serif !important;
+
+.footer-block--menu h2 {
   text-transform: uppercase !important;
-  font-weight: normal !important;
-  line-height: normal !important;
 }
 
 .header.page-width {
@@ -4890,10 +4876,6 @@ h6,
     padding: 12px;
   }
 
-  .custom-card__title {
-    font-size: 14px;
-  }
-
   .custom-card__description {
     font-size: 0.85rem;
   }
@@ -4909,19 +4891,30 @@ h6,
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    position: relative;
+    margin: auto;
+    width: fit-content;
   }
 
   .upgrades-by-vehicle__title {
-    font-size: 28px;
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
   }
 
+  .upgrades-by-vehicle__title-wrapper .upgrades-by-vehicle__icon.left {
+    position: absolute;
+    left: -30px;
+  }
+
+  .upgrades-by-vehicle__title-wrapper .upgrades-by-vehicle__icon.right {
+    position: absolute;
+    right: -30px;
+  }
+
   .upgrades-by-vehicle__icon {
-    width: 30px;
-    height: auto;
+    width: auto;
+    height: 3rem;
   }
 
   .upgrades-by-vehicle__subheading {
@@ -5033,7 +5026,7 @@ h6,
   }
 
   .ml-toys-product-slider .slide__title {
-    font-size: 44px;
+    font-size: 35px;
     text-align: center;
   }
 
@@ -5057,16 +5050,16 @@ h6,
   .ml-collection-list-grid .bottom-torn-edge {
     bottom: -25px;
   }
+
+  .upgrades-by-vehicle__title-wrapper {
+    max-width: 75%;
+  }
 }
 
 /* Hotspot */
 
 .image-hotspot-wrapper .section-heading {
   margin-bottom: 0px !important;
-}
-
-.image-hotspot-wrapper .section-heading h2 {
-  font-size: 55px !important;
 }
 
 .image-hotspot-wrapper .section-heading .section-title+.section-description {
@@ -5096,10 +5089,6 @@ h6,
 
 .rte ul, .main-page-content .rte ol {
   padding: 3rem;
-}
-
-.main-page-content {
-  max-width: 100rem;
 }
 
 .main-page-content iframe {
@@ -5418,6 +5407,36 @@ div#cf_ram_guest_image_section img {
   .st-footer-digital-text a {
     display: block;
   }
+}
+
+/* Font Update Requests */
+
+.section-heading .section-title+.section-description {
+  margin-top: 1.5rem !important;
+}
+
+.section-template--25625002803521__collection_list_grid_QcWpEc-padding .section-title-wrapper {
+  position: relative !important;
+  display: block !important;
+  margin: auto !important;
+  width: fit-content !important;
+}
+
+.section-template--25625002803521__collection_list_grid_QcWpEc-padding .section-title-wrapper .section-title__icon--left{
+  position: absolute;
+  left: -40px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: auto;
+}
+.section-template--25625002803521__collection_list_grid_QcWpEc-padding .section-title-wrapper .section-title__icon--right{
+  position: absolute;
+  right: -40px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: auto;
 }
 
 

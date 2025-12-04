@@ -37,11 +37,11 @@
   <div class="upgrades-by-vehicle__header">
     <div class="upgrades-by-vehicle__title-wrapper">
       {% if section.settings.left_icon != blank %}
-        {{ section.settings.left_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon' }}
+        {{ section.settings.left_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon left' }}
       {% endif %}
       <h2 class="upgrades-by-vehicle__title">{{ section.settings.title }}</h2>
       {% if section.settings.right_icon != blank %}
-        {{ section.settings.right_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon' }}
+        {{ section.settings.right_icon | image_url: width: 30 | image_tag: class: 'upgrades-by-vehicle__icon right' }}
       {% endif %}
     </div>
     {% if section.settings.subheading != blank %}
@@ -140,8 +140,7 @@
 
         // Tablet: 3x2 grid
         768: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
+          slidesPerView: 1,
           grid: {
             rows: 2
           },
