@@ -7,12 +7,13 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "current": {
     "logo": "shopify://shop_images/ML-Toys-transparent_a4897331-497e-45dc-8d70-298c4eff54c3.png",
     "logo_width": 185,
     "favicon": "shopify://shop_images/favicon.png",
-    "type_header_font": "inter_n8",
+    "use_digmo_header_font": false,
+    "type_header_font": "ibm_plex_sans_n7",
     "heading_2_size": 44,
     "heading_3_size": 30,
     "type_body_font": "inter_n4",

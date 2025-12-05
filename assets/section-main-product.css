@@ -299,7 +299,7 @@ fieldset.product-form__input .form__label {
 	margin: 3rem 0 !important; /* do this better later */
 }
 .product__about-header,
-.product__about-readmore a { 
+.product__about-readmore a {
 	margin-bottom: 0.49rem;
 	letter-spacing: 0.036rem;
 	text-transform: uppercase;
@@ -321,9 +321,9 @@ fieldset.product-form__input .form__label {
   pointer-events: none;
   border: none !important;
 }
-.product__about-body { 
+.product__about-body {
 	font-size: 1.8rem;
-	line-height: 3.24rem; 
+	line-height: 3.24rem;
 	font-style: normal;
 	font-weight: 500;
 	font-family: Inter, sans-serif;
@@ -392,41 +392,7 @@ a.product__text {
 	text-decoration: none;
 	color: rgb(var(--color-foreground));
 }
-.product__title {
-	word-break: break-word;
-	margin-bottom: 1.5rem;
-	font-family: 'SUPR', sans-serif;
-	font-weight: 400;
-	font-size: 42px;
-	line-height: 38px;
-	letter-spacing: 0;
-	margin-block-start: 0;
-}
-/* === Product Title Sizes === */
-.product__title.h1 {
-  color: #001429;
-  font-family: 'SUPR', sans-serif;
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 50px;
-}
-.product__title.h2 {
-  color: #001429;
-  font-family: 'SUPR', sans-serif;
-  font-size: 42px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 38px;
-}
-.product__title.h3 {
-  color: #001429;
-  font-family: 'SUPR', sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 29px;
-}
+
 .product__title>* {
 	margin: 0;
 }
