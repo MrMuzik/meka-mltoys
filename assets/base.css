@@ -4896,10 +4896,8 @@ DIGMO UPDATES BEGIN
     width: fit-content;
   }
 
-  .upgrades-by-vehicle__title {
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
+  .upgrades-by-vehicle__title-wrapper h2 {
+    margin: 0px;
   }
 
   .upgrades-by-vehicle__title-wrapper .upgrades-by-vehicle__icon.left {
