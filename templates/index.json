@@ -625,7 +625,7 @@
       ],
       "name": "Upgrades by Vehicle",
       "settings": {
-        "title": "Upgrades by Vehicle",
+        "title": "Upgrades By Vehicle",
         "subheading": "Parts for the most popular cars",
         "left_icon": "shopify://shop_images/79.svg",
         "right_icon": "shopify://shop_images/020.svg",
@@ -955,7 +955,7 @@
         "background_image": "shopify://shop_images/bottom-bg-racetrack_2310922c-b6fc-489c-89a3-95f405519849.svg",
         "background_color": "#001429",
         "section_text_color": "#ffffff",
-        "heading": "Pit stop Blog",
+        "heading": "Pit Stop Blog",
         "heading_alignment": "center",
         "heading_size": "h2",
         "description": "<p>Stay up-to-date with advice from our professionals</p>",
