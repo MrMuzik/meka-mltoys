@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "current": {
     "logo": "shopify://shop_images/ML-Toys-transparent_a4897331-497e-45dc-8d70-298c4eff54c3.png",
     "logo_width": 185,
@@ -81,9 +81,9 @@
     "sold_color_bg": "#ff353c",
     "blog_color_text": "#ffffff",
     "blog_color_bg": "#083c7e",
-    "social_facebook_link": "",
-    "social_instagram_link": "",
-    "social_youtube_link": "",
+    "social_facebook_link": "https://www.facebook.com/MLToys1",
+    "social_instagram_link": "https://www.instagram.com/m.l.toys/?hl=en",
+    "social_youtube_link": "https://www.youtube.com/channel/UC3A3_SgqzY0glmpl0qzRSCw",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
