@@ -14,6 +14,7 @@
       "blocks": {
         "image_slide_JcyBwK": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HERO_HEADER.jpg",
             "image_mobile": "shopify://shop_images/Group_427320676.jpg",
@@ -39,12 +40,11 @@
         },
         "image_slide_TYM4M9": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/MLToys-1780x514-Hero-Xmas.jpg",
             "image_mobile": "shopify://shop_images/MLToys-768x908-Hero-Xmas.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Last Chance Sale! - Save 10%",
+            "heading": "Last Chance Sale! Save 10%",
             "heading_size": "h1",
             "text": "<p>Make sure your parts arrive in time for the holidays. </p>",
             "text_size_block": "medium",
