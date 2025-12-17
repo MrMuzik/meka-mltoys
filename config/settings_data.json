@@ -164,38 +164,8 @@
     },
     "content_for_index": [],
     "blocks": {
-      "16881471024131275657": {
-        "type": "shopify://apps/searchanise-search-filter/blocks/app-embed/d8f24ada-02b1-458a-bbeb-5bf16d5c921e",
-        "disabled": true,
-        "settings": {}
-      },
-      "15971307017328703636": {
-        "type": "shopify://apps/ecom-youtube-card-gallery/blocks/app-embed/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
-        "disabled": false,
-        "settings": {}
-      },
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
       "3720565183479497137": {
         "type": "shopify://apps/globo-product-option/blocks/app-embed-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
-        "disabled": false,
-        "settings": {}
-      },
-      "319724205969189013": {
-        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-        "disabled": false,
-        "settings": {}
-      },
-      "4113930173634242220": {
-        "type": "shopify://apps/referral-program-shopjar/blocks/app-shopjar/bf205236-47cf-42ff-acf9-5de1b0804e4d",
         "disabled": false,
         "settings": {}
       }

@@ -4,8 +4,8 @@
     "theme_name": "Meka",
     "theme_version": "5.0.2",
     "theme_author": "Muup",
-    "theme_documentation_url": "https:\/\/docs.muup.co\/collection\/855-meka-documentation",
-    "theme_support_url": "https:\/\/docs.muup.co"
+    "theme_documentation_url": "https://docs.muup.co/collection/855-meka-documentation",
+    "theme_support_url": "https://docs.muup.co"
   },
   {
     "name": "Theme presets information",
@@ -1782,6 +1782,24 @@
         "id": "show_cart_note",
         "label": "t:settings_schema.cart.settings.show_cart_note.label",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_agree_to_terms_checkbox",
+        "label": "Show \"agree to terms\" checkbox",
+        "default": true,
+        "info": "If the dynamic payment button is enabled, customers will be able to bypass these terms. [Learn more](https:\/\/help.shopify.com\/en\/manual\/sell-online\/online-store\/dynamic-checkout)"      },
+      {
+        "type": "text",
+        "id": "cart_agree_to_terms_label_text",
+        "label": "Checkbox label",
+        "default": "I have read about homemade modifications & shipping times"
+      },
+      {
+        "type": "page",
+        "id": "cart_agree_to_terms_page",
+        "label": "Terms page ([View Terms] link)",
+        "info": "Required when the checkbox is enabled."
       },
       {
         "type": "header",

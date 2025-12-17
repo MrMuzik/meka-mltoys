@@ -12,6 +12,35 @@
   .drawer {
     visibility: hidden;
   }
+
+  /* Checkout gating UI (drawer) */
+  .cart-gating {
+    margin: 1rem 0;
+  }
+  .cart-gating__fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .cart-gating__row {
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+    margin: .5rem 0;
+  }
+  .cart-gating__row input[type="checkbox"] {
+    margin-top: .2rem;
+  }
+  .cart-gating__label {
+    line-height: 1.35;
+  }
+  .cart-gating__error {
+    display: none;
+    margin-top: .75rem;
+  }
+  .cart-gating__error.is-visible {
+    display: block;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
@@ -441,6 +470,36 @@
           </details>
         {%- endif -%}
 
+        {%- assign gating_enabled = settings.cart_show_agree_to_terms_checkbox -%}
+        {%- assign terms_page_handle = settings.cart_agree_to_terms_page -%}
+        {%- assign terms_page = pages[terms_page_handle] -%}
+        {%- assign label_text = settings.cart_agree_to_terms_label_text | default: 'I have read about homemade modifications & shipping times' -%}
+
+        {% if gating_enabled and cart != empty %}
+          <div class="cart-gating" data-cart-gating="cart-drawer">
+            <fieldset class="cart-gating__fieldset">
+              <div class="cart-gating__row">
+                <input
+                  id="CartDrawerAgreeToTerms"
+                  type="checkbox"
+                  data-gating-checkbox="agree"
+                  data-required="true"
+                >
+                <label class="cart-gating__label" for="CartDrawerAgreeToTerms">
+                  {{ label_text }}
+                  {% if terms_page != blank %}
+                    <a class="link" href="{{ terms_page.url }}">[View Terms]</a>
+                  {% endif %}
+                </label>
+              </div>
+
+              <div class="cart-gating__error" data-gating-error role="alert">
+                <small class="caption-large rte">Please check this box if you want to proceed.</small>
+              </div>
+            </fieldset>
+          </div>
+        {% endif %}
+
         <div class="cart__ctas" {{ block.shopify_attributes }}>
           <noscript>
             <button type="submit" class="button cart__update-button button--secondary" form="CartDrawer-Form">
@@ -456,7 +515,15 @@
             </span>
           </a>
 
-          <button type="submit" id="CartDrawer-Checkout" class="button button-cart cart__checkout-button" name="checkout" form="CartDrawer-Form" {% if cart == empty %} disabled{% endif %}>
+          <button
+            type="submit"
+            id="CartDrawer-Checkout"
+            class="button button-cart cart__checkout-button"
+            name="checkout"
+            form="CartDrawer-Form"
+            {% if cart == empty %} disabled{% endif %}
+            {% if gating_enabled and cart != empty %} data-gated-checkout="true" aria-disabled="true" {% endif %}
+          >
             <span>{%- render 'icon-cart' %} {{ 'sections.cart.checkout' | t }}</span>
           </button>
         </div>
@@ -474,6 +541,47 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+
+    // Checkout gating (cart drawer)
+    (function initCartDrawerCheckoutGating() {
+      var gatingRoot = document.querySelector('[data-cart-gating="cart-drawer"]');
+      if (!gatingRoot) return;
+
+      var checkoutBtn = document.querySelector('#CartDrawer-Checkout[data-gated-checkout="true"]');
+      if (!checkoutBtn) return;
+
+      var errorEl = gatingRoot.querySelector('[data-gating-error]');
+      var checkbox = gatingRoot.querySelector('input[type="checkbox"][data-gating-checkbox="agree"][data-required="true"]');
+      if (!checkbox) return;
+
+      function isBlocked() {
+        return !checkbox.checked;
+      }
+
+      function setCheckoutState() {
+        var blocked = isBlocked();
+        checkoutBtn.disabled = blocked;
+        checkoutBtn.setAttribute('aria-disabled', blocked ? 'true' : 'false');
+        if (!blocked && errorEl) errorEl.classList.remove('is-visible');
+      }
+
+      function showError() {
+        if (errorEl) errorEl.classList.add('is-visible');
+      }
+
+      checkoutBtn.addEventListener('click', function (e) {
+        if (isBlocked()) {
+          e.preventDefault();
+          showError();
+          checkbox.focus && checkbox.focus();
+        }
+      });
+
+      checkbox.addEventListener('change', setCheckoutState);
+
+      setCheckoutState();
+    })();
+
     function isIE() {
       const ua = window.navigator.userAgent;
       const msie = ua.indexOf('MSIE ');

@@ -27,6 +27,35 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* Checkout gating UI */
+  .cart-gating {
+    margin: 1.25rem 0;
+  }
+  .cart-gating__fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .cart-gating__row {
+    display: flex;
+    gap: .75rem;
+    align-items: baseline;
+    margin: .5rem 0;
+  }
+  .cart-gating__row input[type="checkbox"] {
+    margin-top: .2rem;
+  }
+  .cart-gating__label {
+    line-height: 1.35;
+  }
+  .cart-gating__error {
+    display: none;
+    margin-top: .75rem;
+  }
+  .cart-gating__error.is-visible {
+    display: block;
+  }
 {%- endstyle -%}
 
 <div class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
@@ -35,7 +64,6 @@
 
       {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
       {{ 'component-card.css' | asset_url | stylesheet_tag }}
-
 
       {% if section.settings.cart_drawer_promoted_collection != blank %}
 
@@ -148,6 +176,35 @@
                 </cart-note>
               {%- endif -%}
 
+              {%- assign gating_enabled = settings.cart_show_agree_to_terms_checkbox -%}
+              {%- assign terms_page_handle = settings.cart_agree_to_terms_page -%}
+              {%- assign terms_page = pages[terms_page_handle] -%}
+              {%- assign label_text = settings.cart_agree_to_terms_label_text | default: 'I have read about homemade modifications & shipping times' -%}
+
+              {% if gating_enabled and cart != empty %}
+                <div class="cart-gating" data-cart-gating="cart-page">
+                  <fieldset class="cart-gating__fieldset">
+                    <div class="cart-gating__row">
+                      <input
+                        id="CartAgreeToTerms"
+                        type="checkbox"
+                        data-gating-checkbox="agree"
+                        data-required="true"
+                      >
+                      <label class="cart-gating__label" for="CartAgreeToTerms">
+                        {{ label_text }}
+                        {% if terms_page != blank %}
+                          <a class="link" href="{{ terms_page.url }}">[View Terms]</a>
+                        {% endif %}
+                      </label>
+                    </div>
+
+                    <div class="cart-gating__error" data-gating-error role="alert">
+                      <small class="caption-large rte">Please check this box if you want to proceed.</small>
+                    </div>
+                  </fieldset>
+                </div>
+              {% endif %}
 
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
@@ -158,7 +215,15 @@
                   </button>
                 </noscript>
 
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout" {% if cart == empty %} disabled {% endif %}  form="cart">
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %} disabled {% endif %}
+                  form="cart"
+                  {% if gating_enabled and cart != empty %} data-gated-checkout="true" aria-disabled="true" {% endif %}
+                >
                   <span>
                     {% render 'icon-cart' %}
                     {{ 'sections.cart.checkout' | t }}
@@ -174,11 +239,6 @@
 
           {%- endcase -%}
         {% endfor %}
-
-        {% comment %} <a class="cart__blocks-link link-with-arrow" href="{{ routes.all_products_collection_url }}">
-          {{ 'general.continue_shopping' | t }}
-          {% render 'icon-caret' %}
-        </a> {% endcomment %}
 
 		{%- liquid
 		assign button_style = 'button button--secondary'
@@ -199,9 +259,7 @@
 				<span>  {{ 'general.continue_shopping' | t }}</span>
 				{%- else -%}
 				 {{ 'general.continue_shopping' | t }}
-			
 				{%- render 'icon-caret' -%}
-				
 			{%- endif -%}
 		</a>
 
@@ -213,6 +271,48 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+
+    // Checkout gating (cart page)
+    (function initCartPageCheckoutGating() {
+      var gatingRoot = document.querySelector('[data-cart-gating="cart-page"]');
+      if (!gatingRoot) return;
+
+      var checkoutBtn = document.querySelector('#checkout[data-gated-checkout="true"]');
+      if (!checkoutBtn) return;
+
+      var errorEl = gatingRoot.querySelector('[data-gating-error]');
+      var checkbox = gatingRoot.querySelector('input[type="checkbox"][data-gating-checkbox="agree"][data-required="true"]');
+      if (!checkbox) return;
+
+      function isBlocked() {
+        return !checkbox.checked;
+      }
+
+      function setCheckoutState() {
+        var blocked = isBlocked();
+        checkoutBtn.disabled = blocked;
+        checkoutBtn.setAttribute('aria-disabled', blocked ? 'true' : 'false');
+        if (!blocked && errorEl) errorEl.classList.remove('is-visible');
+      }
+
+      function showError() {
+        if (errorEl) errorEl.classList.add('is-visible');
+      }
+
+      // Prevent submit if someone removes disabled via devtools, etc.
+      checkoutBtn.addEventListener('click', function (e) {
+        if (isBlocked()) {
+          e.preventDefault();
+          showError();
+          checkbox.focus && checkbox.focus();
+        }
+      });
+
+      checkbox.addEventListener('change', setCheckoutState);
+
+      setCheckoutState();
+    })();
+
     function isIE() {
       const ua = window.navigator.userAgent;
       const msie = ua.indexOf('MSIE ');
