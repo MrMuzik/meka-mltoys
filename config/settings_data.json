@@ -179,6 +179,21 @@
         "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
         "disabled": false,
         "settings": {}
+      },
+      "15971307017328703636": {
+        "type": "shopify://apps/ecom-youtube-card-gallery/blocks/app-embed/a0f27191-6c92-4d0a-a87c-2e3f3ecdeeab",
+        "disabled": false,
+        "settings": {}
+      },
+      "4113930173634242220": {
+        "type": "shopify://apps/referral-program-shopjar/blocks/app-shopjar/bf205236-47cf-42ff-acf9-5de1b0804e4d",
+        "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
