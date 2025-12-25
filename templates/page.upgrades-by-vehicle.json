@@ -391,6 +391,14 @@
             "title": "Ryder Toys Lamborghini Aventador SVJ",
             "url": "shopify://collections/ryder-lamborghini-aventador"
           }
+        },
+        "grid_item_hhGEcG": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_lifted_jeep.jpg",
+            "title": "Ryder Toys Lifted Jeep",
+            "url": "shopify://collections/ryder-lifted-jeep"
+          }
         }
       },
       "block_order": [
@@ -437,7 +445,8 @@
         "grid_item_i6VzWa",
         "grid_item_pwY6b4",
         "grid_item_QmyHdc",
-        "grid_item_rUUAge"
+        "grid_item_rUUAge",
+        "grid_item_hhGEcG"
       ],
       "name": "Grid view",
       "settings": {
