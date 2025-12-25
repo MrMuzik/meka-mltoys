@@ -367,6 +367,14 @@
             "title": "Ryder Toys 24v All Wheel Drive Buggy",
             "url": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
           }
+        },
+        "grid_item_pwY6b4": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_XXL_UTV.png",
+            "title": "Ryder Toys 24v XXL UTV",
+            "url": "shopify://collections/ryder-24v-xxl-utv"
+          }
         }
       },
       "block_order": [
@@ -410,7 +418,8 @@
         "grid_item_CwMM8z",
         "grid_item_EdPmna",
         "grid_item_PXkYVJ",
-        "grid_item_i6VzWa"
+        "grid_item_i6VzWa",
+        "grid_item_pwY6b4"
       ],
       "name": "Grid view",
       "settings": {
