@@ -399,6 +399,38 @@
             "title": "Ryder Toys Lifted Jeep",
             "url": "shopify://collections/ryder-lifted-jeep"
           }
+        },
+        "grid_item_GpqrnR": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_Mercedes_G63.png",
+            "title": "Ryder Toys Mercedes Benz G63",
+            "url": "shopify://collections/ryder-mercedes-benz-g63"
+          }
+        },
+        "grid_item_dajWFV": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_trailflex_jeep.jpg",
+            "title": "Ryder Toys Trailflex Jeep",
+            "url": "shopify://collections/ryder-trailflex-jeep"
+          }
+        },
+        "grid_item_UfF7Ta": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_vintage_jeep.png",
+            "title": "Ryder Toys Vintage Jeep",
+            "url": "shopify://collections/ryder-vintage-jeep"
+          }
+        },
+        "grid_item_FjLbF7": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_XL_UTV.png",
+            "title": "Ryder Toys XL UTV",
+            "url": "shopify://collections/ryder-xl-utv"
+          }
         }
       },
       "block_order": [
@@ -446,7 +478,11 @@
         "grid_item_pwY6b4",
         "grid_item_QmyHdc",
         "grid_item_rUUAge",
-        "grid_item_hhGEcG"
+        "grid_item_hhGEcG",
+        "grid_item_GpqrnR",
+        "grid_item_dajWFV",
+        "grid_item_UfF7Ta",
+        "grid_item_FjLbF7"
       ],
       "name": "Grid view",
       "settings": {
