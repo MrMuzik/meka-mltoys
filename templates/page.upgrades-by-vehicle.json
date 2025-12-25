@@ -375,6 +375,14 @@
             "title": "Ryder Toys 24v XXL UTV",
             "url": "shopify://collections/ryder-24v-xxl-utv"
           }
+        },
+        "grid_item_QmyHdc": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_2.0_drifter.png",
+            "title": "Ryder Toys Drifter 2.0 Go Kart",
+            "url": "shopify://collections/ryder-2-0-go-kart"
+          }
         }
       },
       "block_order": [
@@ -419,7 +427,8 @@
         "grid_item_EdPmna",
         "grid_item_PXkYVJ",
         "grid_item_i6VzWa",
-        "grid_item_pwY6b4"
+        "grid_item_pwY6b4",
+        "grid_item_QmyHdc"
       ],
       "name": "Grid view",
       "settings": {
