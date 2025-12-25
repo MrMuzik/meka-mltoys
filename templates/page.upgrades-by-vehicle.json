@@ -383,6 +383,14 @@
             "title": "Ryder Toys Drifter 2.0 Go Kart",
             "url": "shopify://collections/ryder-2-0-go-kart"
           }
+        },
+        "grid_item_rUUAge": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_lambo.png",
+            "title": "Ryder Toys Lamborghini Aventador SVJ",
+            "url": "shopify://collections/ryder-lamborghini-aventador"
+          }
         }
       },
       "block_order": [
@@ -428,7 +436,8 @@
         "grid_item_PXkYVJ",
         "grid_item_i6VzWa",
         "grid_item_pwY6b4",
-        "grid_item_QmyHdc"
+        "grid_item_QmyHdc",
+        "grid_item_rUUAge"
       ],
       "name": "Grid view",
       "settings": {
