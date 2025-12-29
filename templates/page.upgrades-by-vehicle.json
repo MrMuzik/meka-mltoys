@@ -431,14 +431,6 @@
             "title": "Ryder Toys Vintage Jeep",
             "url": "shopify://collections/ryder-vintage-jeep"
           }
-        },
-        "grid_item_FjLbF7": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Ryder_XL_UTV.png",
-            "title": "Ryder Toys XL UTV",
-            "url": "shopify://collections/ryder-xl-utv"
-          }
         }
       },
       "block_order": [
@@ -490,13 +482,64 @@
         "grid_item_hhGEcG",
         "grid_item_GpqrnR",
         "grid_item_dajWFV",
-        "grid_item_UfF7Ta",
-        "grid_item_FjLbF7"
+        "grid_item_UfF7Ta"
       ],
       "name": "Grid view",
       "settings": {
         "grid_gap": 30,
         "padding_top": 72,
+        "padding_bottom": 0,
+        "text_alignment": "center",
+        "image_border_radius": 14,
+        "title_size": 18,
+        "title_spacing": 12,
+        "title_weight": "700",
+        "title_color": "#1d1d1f"
+      }
+    },
+    "featured_grid_6MymWm": {
+      "type": "featured-grid",
+      "blocks": {
+        "grid_item_YEFLPw": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_XL_UTV.png",
+            "title": "Ryder Toys XL UTV",
+            "url": "shopify://collections/ryder-xl-utv"
+          }
+        },
+        "grid_item_YFL3tK": {
+          "type": "grid_item",
+          "settings": {
+            "title": "",
+            "url": ""
+          }
+        },
+        "grid_item_Yqyt98": {
+          "type": "grid_item",
+          "settings": {
+            "title": "",
+            "url": ""
+          }
+        },
+        "grid_item_Jg8Tfg": {
+          "type": "grid_item",
+          "settings": {
+            "title": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_YEFLPw",
+        "grid_item_YFL3tK",
+        "grid_item_Yqyt98",
+        "grid_item_Jg8Tfg"
+      ],
+      "name": "Grid view",
+      "settings": {
+        "grid_gap": 30,
+        "padding_top": 0,
         "padding_bottom": 76,
         "text_alignment": "center",
         "image_border_radius": 14,
@@ -509,6 +552,7 @@
   },
   "order": [
     "main",
-    "featured_grid_teH8cm"
+    "featured_grid_teH8cm",
+    "featured_grid_6MymWm"
   ]
 }
