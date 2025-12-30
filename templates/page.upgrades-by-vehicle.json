@@ -524,6 +524,14 @@
             "url": "shopify://collections/ryder-2-0-go-kart"
           }
         },
+        "grid_item_WypQFN": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_ford_super_duty.png",
+            "title": "Ryder Toys Ford Super Duty Truck",
+            "url": "shopify://collections/ryder-mercedes-benz-g63-copy"
+          }
+        },
         "grid_item_LXwTRK": {
           "type": "grid_item",
           "settings": {
@@ -606,6 +614,7 @@
         "grid_item_fxMmX3",
         "grid_item_p99DV4",
         "grid_item_Ae7Yti",
+        "grid_item_WypQFN",
         "grid_item_LXwTRK",
         "grid_item_tb8HmJ",
         "grid_item_qKfGLY",
