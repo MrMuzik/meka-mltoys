@@ -423,14 +423,6 @@
             "title": "Ryder Toys Lamborghini Aventador SVJ",
             "url": "shopify://collections/ryder-lamborghini-aventador"
           }
-        },
-        "grid_item_hhGEcG": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/ryder_lifted_jeep.jpg",
-            "title": "Ryder Toys Lifted Jeep",
-            "url": "shopify://collections/ryder-lifted-jeep"
-          }
         }
       },
       "block_order": [
@@ -481,8 +473,7 @@
         "grid_item_i6VzWa",
         "grid_item_pwY6b4",
         "grid_item_QmyHdc",
-        "grid_item_rUUAge",
-        "grid_item_hhGEcG"
+        "grid_item_rUUAge"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +491,14 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_tb8HmJ": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_lifted_jeep.jpg",
+            "title": "Ryder Toys Lifted Jeep",
+            "url": "shopify://collections/ryder-lifted-jeep"
+          }
+        },
         "grid_item_qKfGLY": {
           "type": "grid_item",
           "settings": {
@@ -532,6 +531,14 @@
             "url": "shopify://collections/ryder-xl-utv"
           }
         },
+        "grid_item_GHaeWX": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-all-other-vehicles-800px.jpg",
+            "title": "All Others / Off Brand / Amazon Vehicles",
+            "url": "/collections/all-other-vehicles"
+          }
+        },
         "grid_item_YFL3tK": {
           "type": "grid_item",
           "settings": {
@@ -555,10 +562,12 @@
         }
       },
       "block_order": [
+        "grid_item_tb8HmJ",
         "grid_item_qKfGLY",
         "grid_item_3Tyb6D",
         "grid_item_3BxbzF",
         "grid_item_YEFLPw",
+        "grid_item_GHaeWX",
         "grid_item_YFL3tK",
         "grid_item_Yqyt98",
         "grid_item_Jg8Tfg"
