@@ -580,6 +580,14 @@
             "url": "shopify://collections/ryder-xl-utv"
           }
         },
+        "grid_item_tbwRUM": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Tobbi_Lamborghini.png",
+            "title": "Tobbi Lamborghini Aventador SVJ",
+            "url": "shopify://collections/tobbi-24v-lamborghini"
+          }
+        },
         "grid_item_GHaeWX": {
           "type": "grid_item",
           "settings": {
@@ -621,6 +629,7 @@
         "grid_item_3Tyb6D",
         "grid_item_3BxbzF",
         "grid_item_YEFLPw",
+        "grid_item_tbwRUM",
         "grid_item_GHaeWX",
         "grid_item_YFL3tK",
         "grid_item_Yqyt98",
