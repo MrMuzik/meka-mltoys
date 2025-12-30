@@ -72,6 +72,14 @@
             "url": "shopify://collections/big-toys-green-country-24v-alpine-crawler-4x4"
           }
         },
+        "grid_item_AfKeEp": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/BTGC_Can_Am_28d44708-e877-4ff7-bb1e-1691e08fe56f.png",
+            "title": "Big Toys Green Country Can-Am Maverick X3 4x4 UTV 24v",
+            "url": "shopify://collections/big-toys-green-country-24v-can-am-maverick-x3-4x4-utv"
+          }
+        },
         "grid_item_10": {
           "type": "grid_item",
           "settings": {
@@ -414,6 +422,7 @@
         "grid_item_1",
         "grid_item_3Y63P3",
         "grid_item_frcCx7",
+        "grid_item_AfKeEp",
         "grid_item_10",
         "grid_item_11",
         "grid_item_gzhMtA",
