@@ -88,6 +88,14 @@
             "url": "/collections/big-toys-country-24v-challenger-xl"
           }
         },
+        "grid_item_VKFMGU": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/BTGC_GMC_Denali.png",
+            "title": "Big Toys Green Country GMC Denali",
+            "url": "shopify://collections/big-toys-green-country-12v-gmc-denali-4x4"
+          }
+        },
         "grid_item_11": {
           "type": "grid_item",
           "settings": {
@@ -424,6 +432,7 @@
         "grid_item_frcCx7",
         "grid_item_AfKeEp",
         "grid_item_10",
+        "grid_item_VKFMGU",
         "grid_item_11",
         "grid_item_gzhMtA",
         "grid_item_xtG8AC",
