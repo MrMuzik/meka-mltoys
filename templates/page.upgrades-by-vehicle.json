@@ -224,6 +224,14 @@
             "url": "https://www.mltoys.com/collections/mercedes-g63-6x6"
           }
         },
+        "grid_item_UhG4Cb": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/BTGC_Can_Am_28d44708-e877-4ff7-bb1e-1691e08fe56f.png",
+            "title": "Moderno Can-Am Maverick X3 4x4 UTV 24v",
+            "url": "shopify://collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
+          }
+        },
         "grid_item_16": {
           "type": "grid_item",
           "settings": {
@@ -425,6 +433,7 @@
         "grid_item_15",
         "grid_item_DKtAfQ",
         "grid_item_EWMgDr",
+        "grid_item_UhG4Cb",
         "grid_item_16",
         "grid_item_MfFxqq",
         "grid_item_cRUb4C",
