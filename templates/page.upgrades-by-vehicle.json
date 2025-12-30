@@ -399,38 +399,6 @@
             "title": "Roll Play GMC Denali",
             "url": "https://www.mltoys.com/collections/roll-play-gmc-denali"
           }
-        },
-        "grid_item_i6VzWa": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Ryder_24v.png",
-            "title": "Ryder Toys 24v All Wheel Drive Buggy",
-            "url": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
-          }
-        },
-        "grid_item_pwY6b4": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Ryder_XXL_UTV.png",
-            "title": "Ryder Toys 24v XXL UTV",
-            "url": "shopify://collections/ryder-24v-xxl-utv"
-          }
-        },
-        "grid_item_QmyHdc": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Ryder_2.0_drifter.png",
-            "title": "Ryder Toys Drifter 2.0 Go Kart",
-            "url": "shopify://collections/ryder-2-0-go-kart"
-          }
-        },
-        "grid_item_rUUAge": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/ryder_lambo.png",
-            "title": "Ryder Toys Lamborghini Aventador SVJ",
-            "url": "shopify://collections/ryder-lamborghini-aventador"
-          }
         }
       },
       "block_order": [
@@ -478,11 +446,7 @@
         "grid_item_WCJMte",
         "grid_item_CwMM8z",
         "grid_item_EdPmna",
-        "grid_item_PXkYVJ",
-        "grid_item_i6VzWa",
-        "grid_item_pwY6b4",
-        "grid_item_QmyHdc",
-        "grid_item_rUUAge"
+        "grid_item_PXkYVJ"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +464,38 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_fxMmX3": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_24v.png",
+            "title": "Ryder Toys 24v All Wheel Drive Buggy",
+            "url": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
+          }
+        },
+        "grid_item_p99DV4": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_XXL_UTV.png",
+            "title": "Ryder Toys 24v XXL UTV",
+            "url": "shopify://collections/ryder-24v-xxl-utv"
+          }
+        },
+        "grid_item_Ae7Yti": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_2.0_drifter.png",
+            "title": "Ryder Toys Drifter 2.0 Go Kart",
+            "url": "shopify://collections/ryder-2-0-go-kart"
+          }
+        },
+        "grid_item_LXwTRK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_lambo.png",
+            "title": "Ryder Toys Lamborghini Aventador SVJ",
+            "url": "shopify://collections/ryder-lamborghini-aventador"
+          }
+        },
         "grid_item_tb8HmJ": {
           "type": "grid_item",
           "settings": {
@@ -571,6 +567,10 @@
         }
       },
       "block_order": [
+        "grid_item_fxMmX3",
+        "grid_item_p99DV4",
+        "grid_item_Ae7Yti",
+        "grid_item_LXwTRK",
         "grid_item_tb8HmJ",
         "grid_item_qKfGLY",
         "grid_item_3Tyb6D",
