@@ -407,30 +407,6 @@
             "title": "Ryder Toys Lifted Jeep",
             "url": "shopify://collections/ryder-lifted-jeep"
           }
-        },
-        "grid_item_GpqrnR": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/Ryder_Mercedes_G63.png",
-            "title": "Ryder Toys Mercedes Benz G63",
-            "url": "shopify://collections/ryder-mercedes-benz-g63"
-          }
-        },
-        "grid_item_dajWFV": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/ryder_trailflex_jeep.jpg",
-            "title": "Ryder Toys Trailflex Jeep",
-            "url": "shopify://collections/ryder-trailflex-jeep"
-          }
-        },
-        "grid_item_UfF7Ta": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/ryder_vintage_jeep.png",
-            "title": "Ryder Toys Vintage Jeep",
-            "url": "shopify://collections/ryder-vintage-jeep"
-          }
         }
       },
       "block_order": [
@@ -479,10 +455,7 @@
         "grid_item_pwY6b4",
         "grid_item_QmyHdc",
         "grid_item_rUUAge",
-        "grid_item_hhGEcG",
-        "grid_item_GpqrnR",
-        "grid_item_dajWFV",
-        "grid_item_UfF7Ta"
+        "grid_item_hhGEcG"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +473,30 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_qKfGLY": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Ryder_Mercedes_G63.png",
+            "title": "Ryder Toys Mercedes Benz G63",
+            "url": "shopify://collections/ryder-mercedes-benz-g63"
+          }
+        },
+        "grid_item_3Tyb6D": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_trailflex_jeep.jpg",
+            "title": "Ryder Toys Trailflex Jeep",
+            "url": "shopify://collections/ryder-trailflex-jeep"
+          }
+        },
+        "grid_item_3BxbzF": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/ryder_vintage_jeep.png",
+            "title": "Ryder Toys Vintage Jeep",
+            "url": "shopify://collections/ryder-vintage-jeep"
+          }
+        },
         "grid_item_YEFLPw": {
           "type": "grid_item",
           "settings": {
@@ -531,6 +528,9 @@
         }
       },
       "block_order": [
+        "grid_item_qKfGLY",
+        "grid_item_3Tyb6D",
+        "grid_item_3BxbzF",
         "grid_item_YEFLPw",
         "grid_item_YFL3tK",
         "grid_item_Yqyt98",
