@@ -248,6 +248,14 @@
             "url": "shopify://collections/moderno-lamborghini-aventador-svj"
           }
         },
+        "grid_item_VJhFw6": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/moderno_g63.png",
+            "title": "Moderno Mercedes G63 24v",
+            "url": "shopify://collections/moderno-24v-mercedes-g63-copy"
+          }
+        },
         "grid_item_16": {
           "type": "grid_item",
           "settings": {
@@ -452,6 +460,7 @@
         "grid_item_UhG4Cb",
         "grid_item_wwBRk9",
         "grid_item_Bj88pY",
+        "grid_item_VJhFw6",
         "grid_item_16",
         "grid_item_MfFxqq",
         "grid_item_cRUb4C",
