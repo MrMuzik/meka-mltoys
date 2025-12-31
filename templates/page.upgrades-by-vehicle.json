@@ -232,6 +232,14 @@
             "url": "shopify://collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
           }
         },
+        "grid_item_3ciDyK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/moderno_can-am_outlander.png",
+            "title": "Moderno Can-Am Outlander",
+            "url": "shopify://collections/moderno-can-am-renegade-copy"
+          }
+        },
         "grid_item_wwBRk9": {
           "type": "grid_item",
           "settings": {
@@ -423,14 +431,6 @@
             "title": "Roll Play Chevy Silverado",
             "url": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
           }
-        },
-        "grid_item_PXkYVJ": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-roll-play-GMC-denali-800px.jpg",
-            "title": "Roll Play GMC Denali",
-            "url": "https://www.mltoys.com/collections/roll-play-gmc-denali"
-          }
         }
       },
       "block_order": [
@@ -458,6 +458,7 @@
         "grid_item_DKtAfQ",
         "grid_item_EWMgDr",
         "grid_item_UhG4Cb",
+        "grid_item_3ciDyK",
         "grid_item_wwBRk9",
         "grid_item_Bj88pY",
         "grid_item_VJhFw6",
@@ -481,8 +482,7 @@
         "grid_item_9",
         "grid_item_WCJMte",
         "grid_item_CwMM8z",
-        "grid_item_EdPmna",
-        "grid_item_PXkYVJ"
+        "grid_item_EdPmna"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +500,14 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_MkPMfc": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-roll-play-GMC-denali-800px.jpg",
+            "title": "Roll Play GMC Denali",
+            "url": "https://www.mltoys.com/collections/roll-play-gmc-denali"
+          }
+        },
         "grid_item_fxMmX3": {
           "type": "grid_item",
           "settings": {
@@ -619,6 +627,7 @@
         }
       },
       "block_order": [
+        "grid_item_MkPMfc",
         "grid_item_fxMmX3",
         "grid_item_p99DV4",
         "grid_item_Ae7Yti",
