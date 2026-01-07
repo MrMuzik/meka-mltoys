@@ -168,6 +168,14 @@
             "url": "shopify://collections/garvee-24v-dump-truck"
           }
         },
+        "grid_item_MXtBim": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Garvee_Jeep.png",
+            "title": "Garvee 24v Jeep",
+            "url": "shopify://collections/garvee-24v-jeep"
+          }
+        },
         "grid_item_egNE6n": {
           "type": "grid_item",
           "settings": {
@@ -426,6 +434,7 @@
         "grid_item_12",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
+        "grid_item_MXtBim",
         "grid_item_egNE6n",
         "grid_item_YcEnLK",
         "grid_item_13",
