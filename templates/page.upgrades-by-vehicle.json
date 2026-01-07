@@ -391,46 +391,6 @@
             "title": "Power Wheels Jeep Wranglers",
             "url": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
           }
-        },
-        "grid_item_z3VfW9": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-kawasaki-KFX.jpg",
-            "title": "Power Wheels Kawasaki KFX's",
-            "url": "https://www.mltoys.com/collections/power-wheels-quads"
-          }
-        },
-        "grid_item_9": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-lightning-mcqueen-800px.jpg",
-            "title": "Power Wheels Lightning McQueen",
-            "url": "/collections/power-wheels-lightning-mcqueen"
-          }
-        },
-        "grid_item_WCJMte": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-porsche-GT3-800px.jpg",
-            "title": "Power Wheels Porsche GT3",
-            "url": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
-          }
-        },
-        "grid_item_CwMM8z": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-roll-play-24v-monster-truck-800px_600x_e5dc4a5c-ce77-4fed-a75b-402517e9693f.webp",
-            "title": "Roll Play 24v Monster Truck",
-            "url": "https://www.mltoys.com/collections/rollplay-24v-monster-truck"
-          }
-        },
-        "grid_item_EdPmna": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-roll-play-chevy-silverado-800px.jpg",
-            "title": "Roll Play Chevy Silverado",
-            "url": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
-          }
         }
       },
       "block_order": [
@@ -477,12 +437,7 @@
         "grid_item_DNHKJT",
         "grid_item_ViCWW7",
         "grid_item_tPigkQ",
-        "grid_item_w3UHRx",
-        "grid_item_z3VfW9",
-        "grid_item_9",
-        "grid_item_WCJMte",
-        "grid_item_CwMM8z",
-        "grid_item_EdPmna"
+        "grid_item_w3UHRx"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +455,38 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_YLdAhm": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-kawasaki-KFX.jpg",
+            "title": "Power Wheels Kawasaki KFX's",
+            "url": "https://www.mltoys.com/collections/power-wheels-quads"
+          }
+        },
+        "grid_item_BLrWKk": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-lightning-mcqueen-800px.jpg",
+            "title": "Power Wheels Lightning McQueen",
+            "url": "/collections/power-wheels-lightning-mcqueen"
+          }
+        },
+        "grid_item_HMyXeR": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-porsche-GT3-800px.jpg",
+            "title": "Power Wheels Porsche GT3",
+            "url": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
+          }
+        },
+        "grid_item_YxGNzJ": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-roll-play-24v-monster-truck-800px_600x_e5dc4a5c-ce77-4fed-a75b-402517e9693f.webp",
+            "title": "Roll Play 24v Monster Truck",
+            "url": "https://www.mltoys.com/collections/rollplay-24v-monster-truck"
+          }
+        },
         "grid_item_MkPMfc": {
           "type": "grid_item",
           "settings": {
@@ -627,6 +614,10 @@
         }
       },
       "block_order": [
+        "grid_item_YLdAhm",
+        "grid_item_BLrWKk",
+        "grid_item_HMyXeR",
+        "grid_item_YxGNzJ",
         "grid_item_MkPMfc",
         "grid_item_fxMmX3",
         "grid_item_p99DV4",
