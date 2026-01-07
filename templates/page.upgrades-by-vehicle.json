@@ -152,6 +152,14 @@
             "url": "/collections/dynacraft-24v-utv"
           }
         },
+        "grid_item_B68eQM": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Garvee_Chevy_Silverado.png",
+            "title": "Garvee 24v Chevy Silverado",
+            "url": "shopify://collections/garvee-24v-chevy-silverado"
+          }
+        },
         "grid_item_egNE6n": {
           "type": "grid_item",
           "settings": {
@@ -408,6 +416,7 @@
         "grid_item_xtG8AC",
         "grid_item_TtGBcH",
         "grid_item_12",
+        "grid_item_B68eQM",
         "grid_item_egNE6n",
         "grid_item_YcEnLK",
         "grid_item_13",
