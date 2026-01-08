@@ -378,7 +378,7 @@
                                                               {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
 																												{% if childlink.current %} aria-current="page" {% endif %}>
 
-                                                        {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' or childlink_title == 'all stock parts' %}
+                                                        {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' %}
                                                           <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
                                                         {% else %}
                                                           {{ childlink.title | escape }}
@@ -414,40 +414,16 @@
 																													</button>
 
 																													<ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-																														{%- assign grandchildlink_title = grandchildlink.title | escape | downcase | strip -%}
-
-                                                            {% assign has_menu_item_icon = false %}
-                                                            {% assign menu_menu_item_icon = nil %}
-                                                            {% assign matched_menu_item_icon = nil %}
-
-                                                            {%- for menu_item_icon in menu_item_icons -%}
-                                                              {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase | strip -%}
-                                                              {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
-                                                              {% if menu_item_title == grandchildlink_title %}
-                                                                {% assign has_menu_item_icon = true %}
-                                                                {% assign matched_menu_item_icon = menu_item_icon %}
-                                                                {% break %}
-                                                              {% endif %}
-                                                            {%- endfor -%}
-
-
+																														{%- for grandchildlink in childlink.links -%}
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
-																																	class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
-
-                                                                  {% if has_menu_item_icon and menu_menu_item_icon != blank %}
-                                                                    <span class="menu-item-icon icon-{{ matched_menu_item_icon.icon_position }}">
-                                                                      <img class="menu-item-icon-image"
-                                                                        src="{{ menu_menu_item_icon | image_url: width: matched_menu_item_icon.icon_width }}"
-                                                                        alt="{{ menu_menu_item_icon.alt | escape }}"
-                                                                        width="85px" height="100%" loading="lazy">
-                                                                    </span>
-                                                                  {% endif %}
 
 																																	{{ grandchildlink.title | escape }}
 																																</a>
 																															</li>
+																														{%- endfor -%}
 																													</ul>
 																												</div>
 																											</details>
