@@ -39,6 +39,19 @@
               {%- assign divider_shown = false -%}
               {%- assign menu_item_icons = shop.metaobjects.menu_item_icon.values -%}
 
+              {%- comment -%}
+                Build a fast lookup map from handle -> metaobject.
+                Prefer the metaobject entry's own handle (shown in Admin), but fall back to a handleized title.
+              {%- endcomment -%}
+              {%- assign icon_lookup = '' -%}
+              {%- for icon_obj in menu_item_icons -%}
+                {%- assign icon_key = icon_obj.handle | downcase | strip -%}
+                {%- if icon_key == blank -%}
+                  {%- assign icon_key = icon_obj.menu_item_title.value | handleize -%}
+                {%- endif -%}
+                {%- assign icon_lookup = icon_lookup | append: '||' | append: icon_key | append: '::' | append: icon_obj.handle -%}
+              {%- endfor -%}
+
               {%- for block in section.blocks -%}
                 {%- case block.type -%}
                   {%- when 'link_list' -%}
@@ -80,13 +93,15 @@
 
                                             <ul class="menu-drawer__menu list-menu test-one" role="list" tabindex="-1">
                                               {%- for childlink in link.links -%}
-                                                {% assign childlink_title = childlink.title | escape | downcase %}
+                                                {%- assign child_handle = childlink.handle | downcase | strip -%}
+                                                {%- assign child_title = childlink.title | escape | downcase -%}
+
                                                 <li>
                                                   {%- if childlink.links == blank -%}
                                                     <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
-                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if child_title == 'all vehicles' %} all-vehicles-link{% endif %}"
                                                       {% if childlink.current %} aria-current="page" {% endif %}>
-                                                      {% if childlink_title == 'all vehicles' %}
+                                                      {% if child_title == 'all vehicles' %}
                                                         <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
                                                       {% else %}
                                                         {{ childlink.title | escape }}
@@ -99,8 +114,12 @@
                                                     {%- assign menu_menu_item_icon = nil -%}
 
                                                     {%- for icon_obj in menu_item_icons -%}
-                                                      {%- assign menu_item_title = icon_obj.menu_item_title.value | downcase -%}
-                                                      {%- if menu_item_title == childlink_title -%}
+                                                      {%- assign icon_key = icon_obj.handle | downcase | strip -%}
+                                                      {%- if icon_key == blank -%}
+                                                        {%- assign icon_key = icon_obj.menu_item_title.value | handleize -%}
+                                                      {%- endif -%}
+
+                                                      {%- if icon_key == child_handle -%}
                                                         {%- assign has_menu_item_icon = true -%}
                                                         {%- assign matched_menu_item_icon = icon_obj -%}
                                                         {%- assign menu_menu_item_icon = icon_obj.icon_image.value -%}
@@ -130,15 +149,19 @@
 
                                                         <ul class="menu-drawer__menu list-menu test-two" role="list" tabindex="-1">
                                                           {%- for grandchildlink in childlink.links -%}
-                                                            {%- assign grandchildlink_title = grandchildlink.title | escape | downcase -%}
+                                                            {%- assign grandchild_handle = grandchildlink.handle | downcase | strip -%}
 
                                                             {%- assign grandchild_has_menu_item_icon = false -%}
                                                             {%- assign grandchild_matched_menu_item_icon = nil -%}
                                                             {%- assign grandchild_menu_menu_item_icon = nil -%}
 
                                                             {%- for icon_obj in menu_item_icons -%}
-                                                              {%- assign icon_title = icon_obj.menu_item_title.value | downcase -%}
-                                                              {%- if icon_title == grandchildlink_title -%}
+                                                              {%- assign icon_key = icon_obj.handle | downcase | strip -%}
+                                                              {%- if icon_key == blank -%}
+                                                                {%- assign icon_key = icon_obj.menu_item_title.value | handleize -%}
+                                                              {%- endif -%}
+
+                                                              {%- if icon_key == grandchild_handle -%}
                                                                 {%- assign grandchild_has_menu_item_icon = true -%}
                                                                 {%- assign grandchild_matched_menu_item_icon = icon_obj -%}
                                                                 {%- assign grandchild_menu_menu_item_icon = icon_obj.icon_image.value -%}
@@ -148,7 +171,7 @@
 
                                                             <li>
                                                               <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
-                                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %} grandchild-link"
                                                                 {% if grandchildlink.current %} aria-current="page" {% endif %}>
 
                                                                 {% if grandchild_has_menu_item_icon and grandchild_menu_menu_item_icon != blank %}
@@ -211,7 +234,7 @@
 
                           <ul class="menu-drawer__menu list-menu test-three" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
-                              {%- assign childlink_title = childlink.title | escape | downcase -%}
+                              {%- assign child_handle_2 = childlink.handle | downcase | strip -%}
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
@@ -226,8 +249,12 @@
                                   {%- assign menu_menu_item_icon_2 = nil -%}
 
                                   {%- for icon_obj in menu_item_icons -%}
-                                    {%- assign icon_title = icon_obj.menu_item_title.value | downcase -%}
-                                    {%- if icon_title == childlink_title -%}
+                                    {%- assign icon_key = icon_obj.handle | downcase | strip -%}
+                                    {%- if icon_key == blank -%}
+                                      {%- assign icon_key = icon_obj.menu_item_title.value | handleize -%}
+                                    {%- endif -%}
+
+                                    {%- if icon_key == child_handle_2 -%}
                                       {%- assign has_menu_item_icon_2 = true -%}
                                       {%- assign matched_menu_item_icon_2 = icon_obj -%}
                                       {%- assign menu_menu_item_icon_2 = icon_obj.icon_image.value -%}
@@ -257,15 +284,19 @@
 
                                       <ul class="menu-drawer__menu list-menu test-four" role="list" tabindex="-1">
                                         {%- for grandchildlink in childlink.links -%}
-                                          {%- assign grandchildlink_title = grandchildlink.title | escape | downcase -%}
+                                          {%- assign grandchild_handle_2 = grandchildlink.handle | downcase | strip -%}
 
                                           {%- assign grandchild_has_menu_item_icon_2 = false -%}
                                           {%- assign grandchild_matched_menu_item_icon_2 = nil -%}
                                           {%- assign grandchild_menu_menu_item_icon_2 = nil -%}
 
                                           {%- for icon_obj in menu_item_icons -%}
-                                            {%- assign icon_title = icon_obj.menu_item_title.value | downcase -%}
-                                            {%- if icon_title == grandchildlink_title -%}
+                                            {%- assign icon_key = icon_obj.handle | downcase | strip -%}
+                                            {%- if icon_key == blank -%}
+                                              {%- assign icon_key = icon_obj.menu_item_title.value | handleize -%}
+                                            {%- endif -%}
+
+                                            {%- if icon_key == grandchild_handle_2 -%}
                                               {%- assign grandchild_has_menu_item_icon_2 = true -%}
                                               {%- assign grandchild_matched_menu_item_icon_2 = icon_obj -%}
                                               {%- assign grandchild_menu_menu_item_icon_2 = icon_obj.icon_image.value -%}
@@ -275,7 +306,7 @@
 
                                           <li>
                                             <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
-                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %} grandchild-link"
                                               {% if grandchildlink.current %} aria-current="page" {% endif %}>
 
                                               {% if grandchild_has_menu_item_icon_2 and grandchild_menu_menu_item_icon_2 != blank %}
