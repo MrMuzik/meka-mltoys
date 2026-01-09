@@ -3704,6 +3704,7 @@ details[open]>.header__submenu {
 }
 .menu-item-icon {
   display: flex;
+  flex-shrink: 0;
 }
 .menu-item-icon.icon-top {
   margin-bottom: .5rem;
