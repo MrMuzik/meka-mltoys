@@ -5,6 +5,7 @@ Usage:
 
 Assumes:
 - Description: product.description (always shown)
+- Before You Buy: product.metafields.custom.before_you_buy (rich text)
 - HOW TO: product.metafields.custom.how_tos (metaobject reference(s) to type `how_to`; One or List)
   Fields on each how_to:
     title (text)
@@ -17,6 +18,13 @@ Assumes:
 {%- endcomment -%}
 
 {%- liquid
+  assign before_you_buy_value = product.metafields.custom.before_you_buy.value
+
+  assign has_before_you_buy = false
+  if before_you_buy_value != blank
+    assign has_before_you_buy = true
+  endif
+
   assign howtos_value = product.metafields.custom.how_tos.value
 
   assign has_howto = false
@@ -41,6 +49,9 @@ Assumes:
   {%- if has_howto -%}
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-howto">
   {%- endif -%}
+  {%- if has_before_you_buy -%}
+    <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-beforeyoubuy">
+  {%- endif -%}
   {%- if has_faqs -%}
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-faqs">
   {%- endif -%}
@@ -48,7 +59,10 @@ Assumes:
   <div class="pd-tabs__nav" role="tablist" aria-label="Product information tabs">
     <label class="pd-tabs__btn" for="{{ tab_id }}-desc" role="tab" aria-controls="{{ tab_id }}-panel-desc">Description</label>
     {%- if has_howto -%}
-      <label class="pd-tabs__btn" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">HOW TO</label>
+      <label class="pd-tabs__btn" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">INSTALLATION INSTRUCTIONS</label>
+    {%- endif -%}
+    {%- if has_before_you_buy -%}
+      <label class="pd-tabs__btn" for="{{ tab_id }}-beforeyoubuy" role="tab" aria-controls="{{ tab_id }}-panel-beforeyoubuy">BEFORE YOU BUY</label>
     {%- endif -%}
     {%- if has_faqs -%}
       <label class="pd-tabs__btn" for="{{ tab_id }}-faqs" role="tab" aria-controls="{{ tab_id }}-panel-faqs">FAQs</label>
@@ -119,7 +133,7 @@ Assumes:
         </div>
 
         <script>
-            // click-to-play for poster thumbnails (runs once)
+          // click-to-play for poster thumbnails (runs once)
           (function(){
             var posters = document.querySelectorAll('#{{ tab_id }} .howto-video--poster');
             if(!posters.length) return;
@@ -142,6 +156,14 @@ Assumes:
             });
           })();
         </script>
+      </section>
+    {%- endif -%}
+
+    {%- if has_before_you_buy -%}
+      <section class="pd-tabs__panel" id="{{ tab_id }}-panel-beforeyoubuy" role="tabpanel" aria-labelledby="{{ tab_id }}-beforeyoubuy">
+        <div class="rte">
+          {{ product.metafields.custom.before_you_buy | metafield_tag }}
+        </div>
       </section>
     {%- endif -%}
 
@@ -177,35 +199,66 @@ Assumes:
 <style>
   /* ===== Product Tabs (scoped by ID) ===== */
   #{{ tab_id }} .pd-tabs__radio { position: absolute; opacity: 0; pointer-events: none; }
-  #{{ tab_id }} .pd-tabs__nav { display: flex; gap: 2rem; align-items: flex-end; padding: .75rem 5rem 0 5rem; border-bottom: 2px solid #001429;
-    padding-bottom: 8px; justify-content: space-between; }
+  /* NAV: default (desktop/tablet) */
+  #{{ tab_id }} .pd-tabs__nav {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    padding: .75rem 5rem 0 5rem;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #001429;
+    justify-content: space-between;
+  }
+  /* Make buttons never shrink weirdly */
   #{{ tab_id }} .pd-tabs__btn {
-    position: relative; padding: .5rem 3rem; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
-    cursor: pointer; opacity: .7;
+    position: relative;
+    padding: .5rem 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    cursor: pointer;
+    opacity: .7;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
   #{{ tab_id }} .pd-tabs__btn::after {
     content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 4px; background: currentColor;
     opacity: 0; transform: scaleX(0); transition: transform .2s ease, opacity .2s ease;
   }
+
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
+  #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"],
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; color: #C12726; }
+
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
+  #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"]::after,
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
 
   #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
   #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
+  #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"],
   #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
+
   #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
   #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
+  #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"]::after,
   #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
 
   #{{ tab_id }} .pd-tabs__panels { margin-top: 1.25rem; }
   #{{ tab_id }} .pd-tabs__panel { display: none; }
+
   #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc,
   #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto,
-  #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  { display: block; font-size: 16px; font-weight: 500; line-height: 25px; padding: 3rem 2rem 0 2rem; }
+  #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-beforeyoubuy,
+  #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    padding: 3rem 2rem 0 2rem;
+  }
 
   summary.faq__q {
     text-transform: uppercase;
@@ -261,4 +314,40 @@ Assumes:
   }
 
   #{{ tab_id }} .howto-pdf { margin-top: .5rem; }
+
+  /* TABLET (769px–1024px): remove dangerous padding */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    #{{ tab_id }} .pd-tabs__nav {
+      gap: 0;
+      padding: .75rem 1rem; /* reduced */
+      justify-content: space-between;
+    }
+
+    #{{ tab_id }} .pd-tabs__btn {
+      padding: .5rem 1rem;
+      font-size: 16px;
+    }
+  }
+
+  /* MOBILE: scrollable tabs that don't break container */
+  @media (max-width: 768px) {
+    #{{ tab_id }} .pd-tabs__nav {
+      justify-content: flex-start;              /* stop the "spread" */
+      flex-wrap: nowrap;                        /* single row */
+      overflow-x: auto;                         /* scroll */
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;        /* smooth iOS scrolling */
+      gap: 1rem;
+      padding: .75rem 1rem 0 1rem;              /* sane mobile padding */
+      scroll-snap-type: x proximity;            
+    }
+
+    #{{ tab_id }} .pd-tabs__btn {
+      padding: .5rem 1rem;                      /* smaller pills on mobile */
+      scroll-snap-align: start;                 
+    }
+
+    #{{ tab_id }} .pd-tabs__nav::-webkit-scrollbar { display: none; }
+    #{{ tab_id }} .pd-tabs__nav { scrollbar-width: none; }
+  }
 </style>
