@@ -64,6 +64,14 @@
             "url": "https://www.mltoys.com/collections/adventure-force-24v-thunder-tank"
           }
         },
+        "grid_item_43KgHN": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/BCP_Angry_Jeep.png",
+            "title": "Best Choice Products 12v Angry Jeep",
+            "url": "shopify://collections/best-choice-products-12v-angry-jeep"
+          }
+        },
         "grid_item_11": {
           "type": "grid_item",
           "settings": {
@@ -413,6 +421,7 @@
         "grid_item_baetGY",
         "grid_item_1",
         "grid_item_3Y63P3",
+        "grid_item_43KgHN",
         "grid_item_11",
         "grid_item_PJpRPX",
         "grid_item_frcCx7",
