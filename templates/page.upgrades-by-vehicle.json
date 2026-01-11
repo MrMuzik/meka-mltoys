@@ -75,6 +75,14 @@
         "grid_item_XqADci": {
           "type": "grid_item",
           "settings": {
+            "image": "shopify://shop_images/BCP_Land_rover.png",
+            "title": "Best Choice Products 12v Land Rover",
+            "url": "shopify://collections/best-choice-products-12v-land-rover"
+          }
+        },
+        "grid_item_Ci9xtx": {
+          "type": "grid_item",
+          "settings": {
             "image": "shopify://shop_images/BCP_12v_Jeep.png",
             "title": "Best Choice Products 12v Jeep",
             "url": "shopify://collections/best-choice-products-12v-jeep"
@@ -431,6 +439,7 @@
         "grid_item_3Y63P3",
         "grid_item_43KgHN",
         "grid_item_XqADci",
+        "grid_item_Ci9xtx",
         "grid_item_11",
         "grid_item_PJpRPX",
         "grid_item_frcCx7",
