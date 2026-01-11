@@ -407,30 +407,6 @@
             "title": "Power Wheels Ford Mustang",
             "url": "https://www.mltoys.com/collections/power-wheels-ford-mustang"
           }
-        },
-        "grid_item_ViCWW7": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-hot-wheels-racer-800px.jpg",
-            "title": "Power Wheels Hot Wheels Racer",
-            "url": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
-          }
-        },
-        "grid_item_tPigkQ": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-jeep-hurricane-800px.jpg",
-            "title": "Power Wheels Jeep Hurricane",
-            "url": "https://www.mltoys.com/collections/power-wheels-jeep-hurricane"
-          }
-        },
-        "grid_item_w3UHRx": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-jeep-wrangler-800px.jpg",
-            "title": "Power Wheels Jeep Wranglers",
-            "url": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
-          }
         }
       },
       "block_order": [
@@ -479,10 +455,7 @@
         "grid_item_8",
         "grid_item_zi3zix",
         "grid_item_Dyy6Ua",
-        "grid_item_DNHKJT",
-        "grid_item_ViCWW7",
-        "grid_item_tPigkQ",
-        "grid_item_w3UHRx"
+        "grid_item_DNHKJT"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +473,30 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_GMBw9X": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-hot-wheels-racer-800px.jpg",
+            "title": "Power Wheels Hot Wheels Racer",
+            "url": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
+          }
+        },
+        "grid_item_rpnmLR": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-jeep-hurricane-800px.jpg",
+            "title": "Power Wheels Jeep Hurricane",
+            "url": "https://www.mltoys.com/collections/power-wheels-jeep-hurricane"
+          }
+        },
+        "grid_item_JdNxb6": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/vehicle-power-wheels-jeep-wrangler-800px.jpg",
+            "title": "Power Wheels Jeep Wranglers",
+            "url": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
+          }
+        },
         "grid_item_YLdAhm": {
           "type": "grid_item",
           "settings": {
@@ -659,6 +656,9 @@
         }
       },
       "block_order": [
+        "grid_item_GMBw9X",
+        "grid_item_rpnmLR",
+        "grid_item_JdNxb6",
         "grid_item_YLdAhm",
         "grid_item_BLrWKk",
         "grid_item_HMyXeR",
