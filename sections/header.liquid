@@ -398,8 +398,6 @@
                                                         {% endif %}
                                                       {%- endfor -%}
 
-                                                      {% assign has_menu_item_icon = matched_icon != nil %}
-
 																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
 																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
 
@@ -416,7 +414,7 @@
                                                             >
                                                           </span>
                                                         {% endif %}
-                                                        <!-- child {{ childlink.title }} matched? {{ has_menu_item_icon }} img blank? {{ matched_icon.icon_image.value == blank }} -->
+                                                        <!-- matched: {% if has_menu_item_icon %}yes{% else %}no{% endif %} | icon_image blank: {% if matched_icon != blank and matched_icon.icon_image.value != blank %}no{% else %}yes{% endif %} -->
 																													{{ childlink.title | escape }}
 																													{% render 'icon-caret' %}
 																												</summary>
