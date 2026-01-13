@@ -401,7 +401,8 @@
                                                       {%- assign has_menu_item_icon = false -%}
 
                                                       {%- for icon in menu_item_icons_a_f -%}
-                                                        {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                        {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                        {%- if icon_key == item_key -%}
                                                           {%- assign matched_icon = icon -%}
                                                           {%- assign has_menu_item_icon = true -%}
                                                           {%- break -%}
@@ -410,7 +411,8 @@
 
                                                       {%- if matched_icon == blank -%}
                                                         {%- for icon in menu_item_icons_g_m -%}
-                                                          {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                          {%- if icon_key == item_key -%}
                                                             {%- assign matched_icon = icon -%}
                                                             {%- assign has_menu_item_icon = true -%}
                                                             {%- break -%}
@@ -420,7 +422,8 @@
 
                                                       {%- if matched_icon == blank -%}
                                                         {%- for icon in menu_item_icons_n_t -%}
-                                                          {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                          {%- if icon_key == item_key -%}
                                                             {%- assign matched_icon = icon -%}
                                                             {%- assign has_menu_item_icon = true -%}
                                                             {%- break -%}
@@ -430,7 +433,8 @@
 
                                                       {%- if matched_icon == blank -%}
                                                         {%- for icon in menu_item_icons_u_z -%}
-                                                          {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                          {%- if icon_key == item_key -%}
                                                             {%- assign matched_icon = icon -%}
                                                             {%- assign has_menu_item_icon = true -%}
                                                             {%- break -%}
@@ -471,7 +475,8 @@
                                                               {%- assign has_menu_item_icon = false -%}
 
                                                               {%- for icon in menu_item_icons_a_f -%}
-                                                                {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                                {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                                {%- if icon_key == item_key -%}
                                                                   {%- assign matched_icon = icon -%}
                                                                   {%- assign has_menu_item_icon = true -%}
                                                                   {%- break -%}
@@ -480,7 +485,8 @@
 
                                                               {%- if matched_icon == blank -%}
                                                                 {%- for icon in menu_item_icons_g_m -%}
-                                                                  {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                                  {%- if icon_key == item_key -%}
                                                                     {%- assign matched_icon = icon -%}
                                                                     {%- assign has_menu_item_icon = true -%}
                                                                     {%- break -%}
@@ -490,7 +496,8 @@
 
                                                               {%- if matched_icon == blank -%}
                                                                 {%- for icon in menu_item_icons_n_t -%}
-                                                                  {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                                  {%- if icon_key == item_key -%}
                                                                     {%- assign matched_icon = icon -%}
                                                                     {%- assign has_menu_item_icon = true -%}
                                                                     {%- break -%}
@@ -500,7 +507,8 @@
 
                                                               {%- if matched_icon == blank -%}
                                                                 {%- for icon in menu_item_icons_u_z -%}
-                                                                  {%- if icon.menu_item_title.value | handleize == item_key -%}
+                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
+                                                                  {%- if icon_key == item_key -%}
                                                                     {%- assign matched_icon = icon -%}
                                                                     {%- assign has_menu_item_icon = true -%}
                                                                     {%- break -%}
