@@ -347,7 +347,10 @@
 																<ul class="menu-drawer__menu has-submenu list-menu" role="list">
                                   {%- assign seen_parent = false -%}
                                   {%- assign divider_shown = false -%}
-                                  {%- assign menu_item_icons = shop.metaobjects.menu_item_icon.values -%}
+                                  {% paginate shop.metaobjects.menu_item_icon.values by 250 %}
+                                    {% assign menu_item_icons = paginate.items %}
+                                  {% endpaginate %}
+
 
 																	{%- for link in block.settings.menu_drawer.links -%}
 																		<li>
