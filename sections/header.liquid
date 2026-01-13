@@ -344,22 +344,11 @@
 															</div>
 
 															<nav class="menu-drawer__navigation">
-                                {%- comment -%}
-                                  Split metaobjects into four definitions to avoid the 50 `.values` limit.
-                                  Create these metaobject definitions in Admin (same fields as before):
-                                  - menu_item_icon_a_f
-                                  - menu_item_icon_g_m
-                                  - menu_item_icon_n_t
-                                  - menu_item_icon_u_z
-                                {%- endcomment -%}
-                                {% assign menu_item_icons_a_f = shop.metaobjects.menu_item_icon_a_f.values %}
-                                {% assign menu_item_icons_g_m = shop.metaobjects.menu_item_icon_g_m.values %}
-                                {% assign menu_item_icons_n_t = shop.metaobjects.menu_item_icon_n_t.values %}
-                                {% assign menu_item_icons_u_z = shop.metaobjects.menu_item_icon_u_z.values %}
-
 																<ul class="menu-drawer__menu has-submenu list-menu" role="list">
                                   {%- assign seen_parent = false -%}
                                   {%- assign divider_shown = false -%}
+                                  {%- assign menu_item_icons = shop.metaobjects.menu_item_icon.values -%}
+
 																	{%- for link in block.settings.menu_drawer.links -%}
 																		<li>
 																			{%- if link.links != blank -%}
@@ -396,66 +385,22 @@
                                                         {% endif %}
 																											</a>
 																										{%- else -%}
-                                                      {%- assign item_key = childlink.title | handleize -%}
-                                                      {%- assign matched_icon = blank -%}
-                                                      {%- assign has_menu_item_icon = false -%}
-
-                                                      {%- for icon in menu_item_icons_a_f -%}
-                                                        {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                        {%- if icon_key == item_key -%}
-                                                          {%- assign matched_icon = icon -%}
-                                                          {%- assign has_menu_item_icon = true -%}
-                                                          {%- break -%}
-                                                        {%- endif -%}
+                                                      {% assign has_menu_item_icon = false %}
+                                                      {%- for menu_item_icon in menu_item_icons -%}
+                                                        {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
+                                                        {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
+                                                          {% if menu_item_title == childlink_title %}
+                                                            {% assign has_menu_item_icon = true %}
+                                                            {% break %}
+                                                          {% endif %}
                                                       {%- endfor -%}
-
-                                                      {%- if matched_icon == blank -%}
-                                                        {%- for icon in menu_item_icons_g_m -%}
-                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                          {%- if icon_key == item_key -%}
-                                                            {%- assign matched_icon = icon -%}
-                                                            {%- assign has_menu_item_icon = true -%}
-                                                            {%- break -%}
-                                                          {%- endif -%}
-                                                        {%- endfor -%}
-                                                      {%- endif -%}
-
-                                                      {%- if matched_icon == blank -%}
-                                                        {%- for icon in menu_item_icons_n_t -%}
-                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                          {%- if icon_key == item_key -%}
-                                                            {%- assign matched_icon = icon -%}
-                                                            {%- assign has_menu_item_icon = true -%}
-                                                            {%- break -%}
-                                                          {%- endif -%}
-                                                        {%- endfor -%}
-                                                      {%- endif -%}
-
-                                                      {%- if matched_icon == blank -%}
-                                                        {%- for icon in menu_item_icons_u_z -%}
-                                                          {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                          {%- if icon_key == item_key -%}
-                                                            {%- assign matched_icon = icon -%}
-                                                            {%- assign has_menu_item_icon = true -%}
-                                                            {%- break -%}
-                                                          {%- endif -%}
-                                                        {%- endfor -%}
-                                                      {%- endif -%}
-
 																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
 																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
 
-                                                        {% if has_menu_item_icon and matched_icon.icon_image.value != blank %}
-                                                          {% assign icon_image = matched_icon.icon_image.value %}
-                                                          <span class="menu-item-icon icon-{{ matched_icon.icon_position }}">
-                                                            <img
-                                                              class="menu-item-icon-image"
-                                                              src="{{ icon_image | image_url: width: matched_icon.icon_width }}"
-                                                              alt="{{ icon_image.alt | escape }}"
-                                                              width="85"
-                                                              height="100%"
-                                                              loading="lazy"
-                                                            >
+                                                        {% if has_menu_item_icon %}
+                                                          <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
+                                                            <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
+                                                              width="85px" height="100%" loading="lazy">
                                                           </span>
                                                         {% endif %}
 																													{{ childlink.title | escape }}
@@ -470,67 +415,24 @@
 
 																													<ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
 																														{%- for grandchildlink in childlink.links -%}
-                                                              {%- assign item_key = grandchildlink.title | handleize -%}
-                                                              {%- assign matched_icon = blank -%}
-                                                              {%- assign has_menu_item_icon = false -%}
-
-                                                              {%- for icon in menu_item_icons_a_f -%}
-                                                                {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                                {%- if icon_key == item_key -%}
-                                                                  {%- assign matched_icon = icon -%}
-                                                                  {%- assign has_menu_item_icon = true -%}
-                                                                  {%- break -%}
-                                                                {%- endif -%}
+                                                              {% assign grandchildlink_title = grandchildlink.title | escape | downcase %}
+                                                              {% assign has_menu_item_icon = false %}
+                                                              {%- for menu_item_icon in menu_item_icons -%}
+                                                                {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
+                                                                {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
+                                                                  {% if menu_item_title == grandchildlink_title %}
+                                                                    {% assign has_menu_item_icon = true %}
+                                                                    {% break %}
+                                                                  {% endif %}
                                                               {%- endfor -%}
-
-                                                              {%- if matched_icon == blank -%}
-                                                                {%- for icon in menu_item_icons_g_m -%}
-                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                                  {%- if icon_key == item_key -%}
-                                                                    {%- assign matched_icon = icon -%}
-                                                                    {%- assign has_menu_item_icon = true -%}
-                                                                    {%- break -%}
-                                                                  {%- endif -%}
-                                                                {%- endfor -%}
-                                                              {%- endif -%}
-
-                                                              {%- if matched_icon == blank -%}
-                                                                {%- for icon in menu_item_icons_n_t -%}
-                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                                  {%- if icon_key == item_key -%}
-                                                                    {%- assign matched_icon = icon -%}
-                                                                    {%- assign has_menu_item_icon = true -%}
-                                                                    {%- break -%}
-                                                                  {%- endif -%}
-                                                                {%- endfor -%}
-                                                              {%- endif -%}
-
-                                                              {%- if matched_icon == blank -%}
-                                                                {%- for icon in menu_item_icons_u_z -%}
-                                                                  {%- assign icon_key = icon.menu_item_title.value | handleize -%}
-                                                                  {%- if icon_key == item_key -%}
-                                                                    {%- assign matched_icon = icon -%}
-                                                                    {%- assign has_menu_item_icon = true -%}
-                                                                    {%- break -%}
-                                                                  {%- endif -%}
-                                                                {%- endfor -%}
-                                                              {%- endif -%}
-
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
 																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
-                                                                  {% if has_menu_item_icon and matched_icon.icon_image.value != blank %}
-                                                                    {% assign icon_image = matched_icon.icon_image.value %}
-                                                                    <span class="menu-item-icon icon-{{ matched_icon.icon_position }}">
-                                                                      <img
-                                                                        class="menu-item-icon-image"
-                                                                        src="{{ icon_image | image_url: width: matched_icon.icon_width }}"
-                                                                        alt="{{ icon_image.alt | escape }}"
-                                                                        width="85"
-                                                                        height="100%"
-                                                                        loading="lazy"
-                                                                      >
+                                                                  {% if has_menu_item_icon %}
+                                                                    <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
+                                                                      <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
+                                                                        width="85px" height="100%" loading="lazy">
                                                                     </span>
                                                                   {% endif %}
 																																	{{ grandchildlink.title | escape }}
