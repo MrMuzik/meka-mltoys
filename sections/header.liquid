@@ -385,24 +385,37 @@
                                                         {% endif %}
 																											</a>
 																										{%- else -%}
-                                                      {% assign has_menu_item_icon = false %}
-                                                      {%- for menu_item_icon in menu_item_icons -%}
-                                                        {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
-                                                        {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
-                                                          {% if menu_item_title == childlink_title %}
-                                                            {% assign has_menu_item_icon = true %}
-                                                            {% break %}
-                                                          {% endif %}
+                                                      {% assign child_key = childlink.title | handleize %}
+                                                      {% assign matched_icon = nil %}
+
+                                                      {%- for icon in menu_item_icons -%}
+                                                        {% assign icon_key = icon.menu_item_title.value | handleize %}
+                                                        {% if icon_key == child_key %}
+                                                          {% assign matched_icon = icon %}
+                                                          {% break %}
+                                                        {% endif %}
                                                       {%- endfor -%}
+
+                                                      {% assign has_menu_item_icon = matched_icon != nil %}
+
+
 																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
 																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
 
                                                         {% if has_menu_item_icon %}
-                                                          <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
-                                                            <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
-                                                              width="85px" height="100%" loading="lazy">
+                                                          {% assign icon_image = matched_icon.icon_image.value %}
+                                                          <span class="menu-item-icon icon-{{ matched_icon.icon_position }}">
+                                                            <img
+                                                              class="menu-item-icon-image"
+                                                              src="{{ icon_image | image_url: width: matched_icon.icon_width }}"
+                                                              alt="{{ icon_image.alt | escape }}"
+                                                              width="85"
+                                                              height="100%"
+                                                              loading="lazy"
+                                                            >
                                                           </span>
                                                         {% endif %}
+                                                        <!-- child {{ childlink.title }} matched? {{ has_menu_item_icon }} img blank? {{ matched_icon.icon_image.value == blank }} -->
 																													{{ childlink.title | escape }}
 																													{% render 'icon-caret' %}
 																												</summary>
