@@ -368,6 +368,11 @@
 																							</button>
 
 																							<ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                <!-- ICON KEYS:
+                                                {%- for icon in menu_item_icons -%}
+                                                  {{ icon.menu_item_title.value | handleize }}{% unless forloop.last %}, {% endunless %}
+                                                {%- endfor -%}
+                                                -->
 																								{%- for childlink in link.links -%}
                                                   {% assign childlink_title = childlink.title | escape | downcase %}
 																									<li>
