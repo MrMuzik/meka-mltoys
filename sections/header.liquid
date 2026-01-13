@@ -421,6 +421,7 @@
 
                                                               {%- for menu_item_icon in menu_item_icons -%}
                                                                 {%- assign candidate_title = menu_item_icon.menu_item_title.value | downcase | strip -%}
+                                                                <!-- icon {{ forloop.index }}: {{ candidate_title }} -->
                                                                 {%- if candidate_title == grandchildlink_title -%}
                                                                   {% assign has_menu_item_icon = true %}
                                                                   {% assign matched_title = candidate_title %}
@@ -431,7 +432,7 @@
 
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
-																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %} {{ matched_title }} vs {{ grandchildlink_title }}"
+																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
                                                                   {% if has_menu_item_icon %}
                                                                     <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
