@@ -386,18 +386,19 @@
 																											</a>
 																										{%- else -%}
                                                       {% assign child_key = childlink.title | handleize %}
-                                                      {% assign matched_icon = nil %}
+                                                      {% assign has_menu_item_icon = false %}
+                                                      {% assign matched_icon = blank %}
 
                                                       {%- for icon in menu_item_icons -%}
                                                         {% assign icon_key = icon.menu_item_title.value | handleize %}
                                                         {% if icon_key == child_key %}
                                                           {% assign matched_icon = icon %}
+                                                          {% assign has_menu_item_icon = true %}
                                                           {% break %}
                                                         {% endif %}
                                                       {%- endfor -%}
 
                                                       {% assign has_menu_item_icon = matched_icon != nil %}
-
 
 																											<details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
 																												<summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset child-link">
