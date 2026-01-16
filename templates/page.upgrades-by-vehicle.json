@@ -288,6 +288,14 @@
             "url": "shopify://collections/freddo-24v-raider-jeep"
           }
         },
+        "grid_item_ch4rB3": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Storm.png",
+            "title": "Freddo Toys 24v Storm UTV",
+            "url": "shopify://collections/freddo-24v-storm-utv"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -457,6 +465,7 @@
         "grid_item_jc9rKk",
         "grid_item_8zQGgK",
         "grid_item_Rd7Uwq",
+        "grid_item_ch4rB3",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
