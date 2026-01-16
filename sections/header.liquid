@@ -433,8 +433,7 @@
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
 																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-																																	<!-- Test: {{ grandchildlink.object.metafields.custom.menu_icon.value }} -->
-                                                                  {% if grandchildlink.current %}  aria-current="page" {% endif %}>
+																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}
                                                                   {% if has_menu_item_icon %}
                                                                     <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
                                                                       <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
