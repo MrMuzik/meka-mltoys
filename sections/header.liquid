@@ -420,6 +420,7 @@
                                                               {%- liquid
                                                                 assign grandchildlink_title = grandchildlink.title | downcase | strip
                                                                 assign grandchild_key = grandchildlink.title | handleize
+                                                                assign gc_icon_entry = nil
                                                                 assign gc_icon_entry = shop.metaobjects.menu_item_icon[grandchild_key]
                                                                 assign has_gc_icon = false
                                                                 assign gc_menu_item_icon = nil
