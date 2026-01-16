@@ -422,6 +422,7 @@
                                                                 assign grandchild_key = grandchildlink.title | handleize
                                                                 assign gc_icon_entry = shop.metaobjects.menu_item_icon[grandchild_key]
                                                                 assign has_gc_icon = false
+                                                                assign gc_menu_item_icon = nil
 
                                                                 if gc_icon_entry != blank and gc_icon_entry.icon_image != blank and gc_icon_entry.icon_image.value != blank
                                                                   assign has_gc_icon = true
@@ -435,7 +436,7 @@
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
                                                                   {% if has_gc_icon %}
                                                                     <span class="menu-item-icon icon-{{ gc_icon_entry.icon_position }}">
-                                                                    <!-- {{ gc_icon_entry }} vs. {{ gc_menu_item_icon }} -->
+                                                                    <!-- {{ gc_icon_entry != blank }} and {{ gc_icon_entry.icon_image != blank }} and {{ gc_icon_entry.icon_image.value }}  vs. {{ gc_menu_item_icon }} -->
                                                                       <img class="menu-item-icon-image" src="{{ gc_menu_item_icon | image_url: width: gc_icon_entry.icon_width }}" alt="{{ gc_menu_item_icon.alt | escape }}"
                                                                         width="85px" height="100%" loading="lazy">
                                                                     </span>
