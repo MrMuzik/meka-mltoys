@@ -180,7 +180,7 @@
           "type": "grid_item",
           "settings": {
             "image": "shopify://shop_images/Freddo_C8.png",
-            "title": "Freddo Toys C8 Corvette",
+            "title": "Freddo Toys 12v C8 Corvette",
             "url": "shopify://collections/freddo-12v-c8-corvette-stingray"
           }
         },
@@ -214,6 +214,14 @@
             "image": "shopify://shop_images/Freddo_24v_C8.png",
             "title": "Freddo Toys 24v C8 Corvette",
             "url": "shopify://collections/freddo-24v-c8-corvette-stingray"
+          }
+        },
+        "grid_item_Y6aARY": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Can-Am_Maverick.png",
+            "title": "Freddo Toys 24v Can-Am Maverick",
+            "url": "shopify://collections/freddo-24v-can-am-maverick"
           }
         },
         "grid_item_B68eQM": {
@@ -376,6 +384,7 @@
         "grid_item_DnRMfF",
         "grid_item_YqqK6Q",
         "grid_item_X9TQRD",
+        "grid_item_Y6aARY",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
