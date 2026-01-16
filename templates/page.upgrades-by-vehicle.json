@@ -280,6 +280,14 @@
             "url": "shopify://collections/freddo-24v-willy-military-jeep"
           }
         },
+        "grid_item_Rd7Uwq": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Raider.png",
+            "title": "Freddo Toys 24v Raider Jeep",
+            "url": "shopify://collections/freddo-24v-raider-jeep"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -448,6 +456,7 @@
         "grid_item_VdbL6V",
         "grid_item_jc9rKk",
         "grid_item_8zQGgK",
+        "grid_item_Rd7Uwq",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
