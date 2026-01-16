@@ -224,6 +224,14 @@
             "url": "shopify://collections/freddo-24v-can-am-maverick"
           }
         },
+        "grid_item_WJNQdX": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Can-Am_Outlander.png",
+            "title": "Freddo Toys 24v Can-Am Outlander",
+            "url": "shopify://collections/freddo-24v-can-am-outlander"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -385,6 +393,7 @@
         "grid_item_YqqK6Q",
         "grid_item_X9TQRD",
         "grid_item_Y6aARY",
+        "grid_item_WJNQdX",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
