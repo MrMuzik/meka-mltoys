@@ -256,6 +256,14 @@
             "url": "shopify://collections/freddo-24v-gmc-denali"
           }
         },
+        "grid_item_VdbL6V": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Huracan.png",
+            "title": "Freddo Toys 24v Lamborghini Huracan",
+            "url": "shopify://collections/freddo-24v-lamborghini-huracan"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -421,6 +429,7 @@
         "grid_item_aPfbVY",
         "grid_item_nPkJJa",
         "grid_item_3ANmXB",
+        "grid_item_VdbL6V",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
