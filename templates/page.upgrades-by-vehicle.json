@@ -184,6 +184,14 @@
             "url": "shopify://collections/freddo-12v-c8-corvette-stingray"
           }
         },
+        "grid_item_wAtdcy": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Cat_Dump.png",
+            "title": "Freddo Toys 12v Cat Dump Truck",
+            "url": "shopify://collections/freddo-12v-cat-dump-truck"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -340,6 +348,7 @@
         "grid_item_TtGBcH",
         "grid_item_12",
         "grid_item_J398gb",
+        "grid_item_wAtdcy",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
