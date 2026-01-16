@@ -419,7 +419,7 @@
 																														{%- for grandchildlink in childlink.links -%}
                                                               {%- liquid
                                                                 assign grandchildlink_title = grandchildlink.title | downcase | strip
-                                                                assign grandchild_key = grandchildlink.title | handleize
+                                                                assign grandchild_key = grandchildlink.handle | default: grandchildlink.title | strip | handleize
                                                                 assign gc_icon_entry = nil
                                                                 assign gc_icon_entry = shop.metaobjects.menu_item_icon[grandchild_key]
                                                                 assign has_gc_icon = false
