@@ -176,6 +176,14 @@
             "url": "/collections/dynacraft-24v-utv"
           }
         },
+        "grid_item_J398gb": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_C8.png",
+            "title": "Freddo Toys C8 Corvette",
+            "url": "shopify://collections/freddo-12v-c8-corvette-stingray"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -331,6 +339,7 @@
         "grid_item_xtG8AC",
         "grid_item_TtGBcH",
         "grid_item_12",
+        "grid_item_J398gb",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
