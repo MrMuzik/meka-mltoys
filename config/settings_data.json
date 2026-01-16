@@ -97,6 +97,7 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": true,
+    "cart_show_agree_to_terms_checkbox": false,
     "cart_agree_to_terms_page": "order-terms",
     "drawer_text": "Free Shipping On All Orders Above $50!",
     "cart_drawer_promoted_collection": "",
