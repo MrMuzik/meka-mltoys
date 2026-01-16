@@ -248,6 +248,14 @@
             "url": "shopify://collections/freddo-24v-chevy-silverado"
           }
         },
+        "grid_item_3ANmXB": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_GMC_Denali.png",
+            "title": "Freddo Toys 24v GMC Denali",
+            "url": "shopify://collections/freddo-24v-gmc-denali"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -412,6 +420,7 @@
         "grid_item_WJNQdX",
         "grid_item_aPfbVY",
         "grid_item_nPkJJa",
+        "grid_item_3ANmXB",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
