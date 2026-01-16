@@ -200,6 +200,14 @@
             "url": "shopify://collections/freddo-24v-buccaneer-dune-buggy"
           }
         },
+        "grid_item_YqqK6Q": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Buccaneer_XXL.png",
+            "title": "Freddo Toys 24v Buccaneer XXL",
+            "url": "shopify://collections/freddo-24v-buccaneer-xxl-dune-buggy"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -358,6 +366,7 @@
         "grid_item_J398gb",
         "grid_item_wAtdcy",
         "grid_item_DnRMfF",
+        "grid_item_YqqK6Q",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
