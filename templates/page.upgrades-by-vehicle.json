@@ -192,6 +192,14 @@
             "url": "shopify://collections/freddo-12v-cat-dump-truck"
           }
         },
+        "grid_item_DnRMfF": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Buccaneer.png",
+            "title": "Freddo Toys 24v Buccaneer",
+            "url": "shopify://collections/freddo-24v-buccaneer-dune-buggy"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -349,6 +357,7 @@
         "grid_item_12",
         "grid_item_J398gb",
         "grid_item_wAtdcy",
+        "grid_item_DnRMfF",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
