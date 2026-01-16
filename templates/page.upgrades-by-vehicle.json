@@ -264,6 +264,14 @@
             "url": "shopify://collections/freddo-24v-lamborghini-huracan"
           }
         },
+        "grid_item_jc9rKk": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_GWagon.png",
+            "title": "Freddo Toys 24v Mercedes G63",
+            "url": "shopify://collections/freddo-24v-mercedes-benx-gwagon"
+          }
+        },
         "grid_item_B68eQM": {
           "type": "grid_item",
           "settings": {
@@ -430,6 +438,7 @@
         "grid_item_nPkJJa",
         "grid_item_3ANmXB",
         "grid_item_VdbL6V",
+        "grid_item_jc9rKk",
         "grid_item_B68eQM",
         "grid_item_RFjFBm",
         "grid_item_MXtBim",
