@@ -435,6 +435,7 @@
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
                                                                   {% if has_gc_icon %}
                                                                     <span class="menu-item-icon icon-{{ gc_icon_entry.icon_position }}">
+                                                                    <!-- {{ gc_icon_entry }} vs. {{ gc_menu_item_icon }} -->
                                                                       <img class="menu-item-icon-image" src="{{ gc_menu_item_icon | image_url: width: gc_icon_entry.icon_width }}" alt="{{ gc_menu_item_icon.alt | escape }}"
                                                                         width="85px" height="100%" loading="lazy">
                                                                     </span>
