@@ -435,8 +435,10 @@
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
 																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
 																																	{% if grandchildlink.current %}  aria-current="page" {% endif %}>
-                                                                  <!-- key: {{ grandchild_key }} -->
-                                                                  <!-- pre: {{ gc_icon_entry | json }} -->
+                                                                  <!-- key_json: {{ grandchild_key | json }} -->
+                                                                  <!-- key_size: {{ grandchild_key | size }} -->
+                                                                  <!-- key_urlenc: {{ grandchild_key | url_encode }} -->
+                                                                  <!-- lookup: {{ shop.metaobjects.menu_item_icon[grandchild_key] | json }} -->
                                                                   {% if has_gc_icon %}
                                                                     <span class="menu-item-icon icon-{{ gc_icon_entry.icon_position }}">
                                                                       <img class="menu-item-icon-image" src="{{ gc_menu_item_icon | image_url: width: gc_icon_entry.icon_width }}" alt="{{ gc_menu_item_icon.alt | escape }}"
