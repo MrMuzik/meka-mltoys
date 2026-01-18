@@ -412,6 +412,7 @@ Assumes:
   #{{ tab_id }} .pd-tabs__btn {
     position: relative;
     padding: .5rem 3rem;
+    padding-bottom: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .02em;
@@ -421,8 +422,14 @@ Assumes:
     white-space: nowrap;
   }
   #{{ tab_id }} .pd-tabs__btn::after {
-    content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 4px; background: currentColor;
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: currentColor;
     opacity: 0; transform: scaleX(0); transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #{{ tab_id }} .pd-tabs__btn.is-active::after,
+  #{{ tab_id }} .pd-tabs__btn:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
@@ -602,10 +609,6 @@ Assumes:
     opacity: 1;
     color: #C12726;
   }
-  #{{ tab_id }} .pd-tabs__btn.is-active::after {
-    opacity: 1;
-    transform: scaleX(1);
-  }
 
   /* Default: your tab row */
   #{{ tab_id }} .pd-tabs__nav {
@@ -637,7 +640,7 @@ Assumes:
   @media (min-width: 769px) and (max-width: 1024px) {
     #{{ tab_id }} .pd-tabs__nav {
       gap: 0;
-      padding: .75rem 1rem; /* reduced */
+      padding: .75rem 1rem 0 1rem; /* reduced */
       justify-content: start;
     }
 
