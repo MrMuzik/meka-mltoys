@@ -56,18 +56,48 @@ Assumes:
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-faqs">
   {%- endif -%}
 
-  <div class="pd-tabs__nav" role="tablist" aria-label="Product information tabs">
-    <label class="pd-tabs__btn" for="{{ tab_id }}-desc" role="tab" aria-controls="{{ tab_id }}-panel-desc">Description</label>
-    {%- if has_howto -%}
-      <label class="pd-tabs__btn" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">INSTALLATION INSTRUCTIONS</label>
-    {%- endif -%}
-    {%- if has_before_you_buy -%}
-      <label class="pd-tabs__btn" for="{{ tab_id }}-beforeyoubuy" role="tab" aria-controls="{{ tab_id }}-panel-beforeyoubuy">BEFORE YOU BUY</label>
-    {%- endif -%}
-    {%- if has_faqs -%}
-      <label class="pd-tabs__btn" for="{{ tab_id }}-faqs" role="tab" aria-controls="{{ tab_id }}-panel-faqs">FAQs</label>
-    {%- endif -%}
-  </div>
+  <slideshow-component class="slider-mobile-gutter pd-tabs__nav-wrap" data-tabs-slider>
+    <button
+      type="button"
+      class="slider-button ml-button-primary slider-button--prev pd-tabs__nav-btn"
+      name="previous"
+      aria-label="{{ 'general.slider.previous_slide' | t }}"
+      hidden
+    >
+      {% render 'icon-arrow-short' %}
+    </button>
+
+    <div
+      id="Tabs-{{ tab_id }}"
+      class="pd-tabs__nav pd-tabs__nav--slider slider slider--everywhere"
+      role="tablist"
+      aria-label="Product information tabs"
+    >
+      <label class="pd-tabs__btn slider__slide is-active" for="{{ tab_id }}-desc" role="tab" aria-controls="{{ tab_id }}-panel-desc">Description</label>
+
+      {%- if has_howto -%}
+        <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">INSTALLATION INSTRUCTIONS</label>
+      {%- endif -%}
+
+      {%- if has_before_you_buy -%}
+        <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-beforeyoubuy" role="tab" aria-controls="{{ tab_id }}-panel-beforeyoubuy">BEFORE YOU BUY</label>
+      {%- endif -%}
+
+      {%- if has_faqs -%}
+        <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-faqs" role="tab" aria-controls="{{ tab_id }}-panel-faqs">FAQs</label>
+      {%- endif -%}
+    </div>
+
+    <button
+      type="button"
+      class="slider-button ml-button-primary slider-button--next pd-tabs__nav-btn"
+      name="next"
+      aria-label="{{ 'general.slider.next_slide' | t }}"
+      hidden
+    >
+      {% render 'icon-arrow-short' %}
+    </button>
+  </slideshow-component>
 
   <div class="pd-tabs__panels">
     <!-- Description -->
@@ -133,27 +163,196 @@ Assumes:
         </div>
 
         <script>
-          // click-to-play for poster thumbnails (runs once)
-          (function(){
-            var posters = document.querySelectorAll('#{{ tab_id }} .howto-video--poster');
-            if(!posters.length) return;
-            posters.forEach(function(box){
-              var id = box.getAttribute('data-yt');
-              if(!id) return;
-              var btn = box.querySelector('.howto-video__play');
-              var activate = function(){
-                var iframe = document.createElement('iframe');
-                iframe.setAttribute('allowfullscreen', '');
-                iframe.setAttribute('title', 'YouTube video player');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-                iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
-                box.innerHTML = '';
-                box.classList.remove('howto-video--poster');
-                box.appendChild(iframe);
-              };
-              box.addEventListener('click', activate);
-              if(btn) btn.addEventListener('click', function(e){ e.stopPropagation(); activate(); });
-            });
+          (function () {
+            var root = document.getElementById('{{ tab_id }}');
+            if (!root) return;
+
+            /* =========================
+              1) Tabs nav slider (only when overflow)
+              ========================= */
+            (function initTabsSlider() {
+              var START_OFFSET = 40; // treat this as "scrollLeft = 0" visually
+              var wrap = root.querySelector('[data-tabs-slider]');
+              var track = root.querySelector('#Tabs-{{ tab_id }}');
+              if (!wrap || !track) return;
+
+              var prev = wrap.querySelector('[name="previous"]');
+              var next = wrap.querySelector('[name="next"]');
+
+              function hasOverflow(el) {
+                return el.scrollWidth > (el.clientWidth + 2);
+              }
+
+              function atStart(el) {
+                return el.scrollLeft <= (START_OFFSET + 1);
+              }
+
+              function atEnd(el) {
+                return el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+              }
+
+              function setBtnState(btn, isDisabled) {
+                if (!btn) return;
+                btn.disabled = !!isDisabled;
+                btn.setAttribute('aria-disabled', isDisabled ? 'true' : 'false');
+              }
+
+              function update() {
+                var overflow = hasOverflow(track);
+
+                // Count tabs (labels)
+                var count = track.querySelectorAll('.pd-tabs__btn').length;
+
+                // Show/hide buttons based on overflow
+                if (prev) prev.hidden = !overflow;
+                if (next) next.hidden = !overflow;
+
+                // Overflow state (slider mode)
+                wrap.classList.toggle('pd-tabs__nav-wrap--overflow', overflow);
+
+                // No-overflow state (distribution mode)
+                wrap.classList.toggle('pd-tabs__nav-wrap--no-overflow', !overflow);
+
+                // Count-based distribution classes (only meaningful when NOT overflowing)
+                wrap.classList.toggle('pd-tabs--count-1', !overflow && count === 1);
+                wrap.classList.toggle('pd-tabs--count-2-3', !overflow && (count === 2 || count === 3));
+                wrap.classList.toggle('pd-tabs--count-4plus', !overflow && count >= 4);
+
+                // If no overflow, snap to "visual start" and disable both
+                if (!overflow) {
+                  track.scrollLeft = START_OFFSET;
+                  setBtnState(prev, true);
+                  setBtnState(next, true);
+                  return;
+                }
+
+                // Overflow: clamp to floor so "visual start" acts like 0
+                if (track.scrollLeft < START_OFFSET) {
+                  track.scrollLeft = START_OFFSET;
+                }
+
+                // Overflow: disable buttons based on current scroll position
+                setBtnState(prev, atStart(track));
+                setBtnState(next, atEnd(track));
+              }
+
+              function scrollByStep(direction) {
+                // Hard-stop if disabled (prevents the "Description shifts to center" issue)
+                if (direction < 0 && (prev && prev.disabled)) return;
+                if (direction > 0 && (next && next.disabled)) return;
+
+                // Step by one tab width (fallback 200)
+                var slide = track.querySelector('.pd-tabs__btn');
+                var step = slide ? slide.getBoundingClientRect().width : 200;
+
+                track.scrollBy({ left: direction * step, behavior: 'smooth' });
+
+                // Disabled state should update after scrolling settles
+                setTimeout(update, 180);
+                setTimeout(update, 400);
+              }
+
+              if (prev) prev.addEventListener('click', function () { scrollByStep(-1); });
+              if (next) next.addEventListener('click', function () { scrollByStep(1); });
+
+              // Only scroll a clicked tab into view if it's clipped (don't auto-center)
+              track.addEventListener('click', function (e) {
+                var btn = e.target.closest('.pd-tabs__btn');
+                if (!btn) return;
+                if (!wrap.classList.contains('pd-tabs__nav-wrap--overflow')) return;
+
+                var trackRect = track.getBoundingClientRect();
+                var btnRect = btn.getBoundingClientRect();
+
+                var clippedLeft = btnRect.left < trackRect.left;
+                var clippedRight = btnRect.right > trackRect.right;
+
+                if (clippedLeft || clippedRight) {
+                  btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+                  setTimeout(update, 180);
+                  setTimeout(update, 400);
+                }
+              });
+
+              // Keep button states accurate as user swipes/scrolls
+              track.addEventListener('scroll', function () {
+                // throttle-ish without overthinking it
+                window.requestAnimationFrame(update);
+              }, { passive: true });
+
+              update();
+              window.addEventListener('resize', update, { passive: true });
+              setTimeout(update, 250);
+              setTimeout(update, 1000);
+            })();
+
+            /* =========================
+              2) HOW-TO click-to-play posters
+              ========================= */
+            (function initHowtoPosters() {
+              var posters = root.querySelectorAll('.howto-video--poster');
+              if (!posters.length) return;
+
+              posters.forEach(function (box) {
+                var id = box.getAttribute('data-yt');
+                if (!id) return;
+
+                var btn = box.querySelector('.howto-video__play');
+
+                var activate = function () {
+                  // Prevent double-activation if already swapped
+                  if (!box.classList.contains('howto-video--poster')) return;
+
+                  var iframe = document.createElement('iframe');
+                  iframe.setAttribute('allowfullscreen', '');
+                  iframe.setAttribute('title', 'YouTube video player');
+                  iframe.setAttribute(
+                    'allow',
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  );
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+
+                  box.innerHTML = '';
+                  box.classList.remove('howto-video--poster');
+                  box.appendChild(iframe);
+                };
+
+                box.addEventListener('click', activate);
+                if (btn) {
+                  btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    activate();
+                  });
+                }
+              });
+            })();
+            (function initActiveTabClass() {
+              var nav = root.querySelector('#Tabs-{{ tab_id }}');
+              if (!nav) return;
+
+              var labels = Array.prototype.slice.call(nav.querySelectorAll('.pd-tabs__btn'));
+              if (!labels.length) return;
+
+              function setActiveFromChecked() {
+                var checked = root.querySelector('.pd-tabs__radio:checked');
+                if (!checked) return;
+
+                var id = checked.id; // e.g. "{{ tab_id }}-desc"
+                labels.forEach(function (lbl) {
+                  lbl.classList.toggle('is-active', lbl.getAttribute('for') === id);
+                });
+              }
+
+              // On load
+              setActiveFromChecked();
+
+              // When any radio changes
+              root.addEventListener('change', function (e) {
+                if (e.target && e.target.classList && e.target.classList.contains('pd-tabs__radio')) {
+                  setActiveFromChecked();
+                }
+              });
+            })();
           })();
         </script>
       </section>
@@ -204,7 +403,7 @@ Assumes:
     display: flex;
     gap: 2rem;
     align-items: flex-end;
-    padding: .75rem 5rem 0 5rem;
+    padding: 0;
     padding-bottom: 8px;
     border-bottom: 2px solid #001429;
     justify-content: start;
@@ -315,6 +514,125 @@ Assumes:
 
   #{{ tab_id }} .howto-pdf { margin-top: .5rem; }
 
+  /* INLINE slider layout: prev | track | next (no overlap) */
+  #{{ tab_id }} .pd-tabs__nav-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: end;              /* matches your "align-items: flex-end" feel */
+    gap: .5rem;
+    border-bottom: 2px solid #001429;
+    padding: .75rem 1rem 0 1rem;   /* you can tune this per breakpoint */
+  }
+
+  #{{ tab_id }} .pd-tabs__nav {
+    border-bottom: 0;              /* border now lives on wrap */
+    padding: 0;                    /* padding now lives on wrap */
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  /* Buttons: place at left/right when overflow */
+  #{{ tab_id }} .pd-tabs__nav-wrap--overflow .pd-tabs__nav-buttons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none; /* so the nav remains clickable */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+    z-index: 2;
+    width: 100%;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap--overflow .pd-tabs__nav-buttons .slider-button {
+    margin: 0;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap--overflow .pd-tabs__nav-buttons .slider-button {
+    pointer-events: auto; /* re-enable for the buttons */
+  }
+
+  /* When overflow, give the track breathing room so tabs don't sit under arrows */
+  #{{ tab_id }} .pd-tabs__nav-wrap--overflow .pd-tabs__nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  /* Make the nav behave like a slider track */
+  #{{ tab_id }} .pd-tabs__nav--slider {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure slides size to content (labels) */
+  #{{ tab_id }} .pd-tabs__nav--slider .slider__slide {
+    width: auto;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-btn {
+    align-self: center;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-btn[disabled],
+  #{{ tab_id }} .pd-tabs__nav-btn[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-btn[disabled]:hover .icon,
+  #{{ tab_id }} .pd-tabs__nav-btn[aria-disabled="true"]:hover .icon {
+    color: #fff;
+  }
+
+  /* When there is NO overflow, collapse the grid so it feels like a normal tab bar */
+  #{{ tab_id }} .pd-tabs__nav-wrap:not(.pd-tabs__nav-wrap--overflow) {
+    grid-template-columns: 1fr;
+  }
+  #{{ tab_id }} .pd-tabs__nav-wrap:not(.pd-tabs__nav-wrap--overflow) .pd-tabs__nav-btn {
+    display: none; /* extra safety if hidden attr gets funky */
+  }
+
+  #{{ tab_id }} .pd-tabs__btn.is-active {
+    opacity: 1;
+    color: #C12726;
+  }
+  #{{ tab_id }} .pd-tabs__btn.is-active::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  /* Default: your tab row */
+  #{{ tab_id }} .pd-tabs__nav {
+    justify-content: flex-start; /* baseline for overflow mode (scrolling) */
+  }
+
+  /* When NOT overflowing, distribute tabs based on count */
+  #{{ tab_id }} .pd-tabs__nav-wrap.pd-tabs__nav-wrap--no-overflow .pd-tabs__nav {
+    width: 100%;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap.pd-tabs--count-1 .pd-tabs__nav {
+    justify-content: flex-start;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap.pd-tabs--count-2-3 .pd-tabs__nav {
+    justify-content: space-evenly;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap.pd-tabs--count-4plus .pd-tabs__nav {
+    justify-content: space-between;
+  }
+
+  #{{ tab_id }} .pd-tabs__nav-wrap.pd-tabs__nav-wrap--no-overflow .pd-tabs__nav {
+    gap: 0; /* let justify-content do the spacing */
+  }
+
   /* TABLET (769px–1024px): remove dangerous padding */
   @media (min-width: 769px) and (max-width: 1024px) {
     #{{ tab_id }} .pd-tabs__nav {
@@ -328,6 +646,13 @@ Assumes:
       font-size: 16px;
     }
   }
+
+  @media (min-width: 990px) {
+    #{{ tab_id }} .pd-tabs__nav-wrap {
+      padding: .75rem 5rem 0 5rem;
+    }
+  }
+
 
   /* MOBILE: scrollable tabs that don't break container */
   @media (max-width: 768px) {
