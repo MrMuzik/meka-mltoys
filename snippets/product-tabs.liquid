@@ -203,7 +203,7 @@ Assumes:
 
 <script>
   (function () {
-    var START_OFFSET = 40; // treat this as "scrollLeft = 0" visually
+    var START_OFFSET = window.matchMedia('(max-width: 768px)').matches ? 0 : 40;
 
     function initPdTabs(root) {
       if (!root || root.dataset.pdTabsInit === '1') return;
@@ -284,12 +284,22 @@ Assumes:
           return el.scrollWidth > (el.clientWidth + 2);
         }
 
-        function atStart(el) {
-          return el.scrollLeft <= (START_OFFSET + 1);
+        function hasClippedRight() {
+          var trackRect = track.getBoundingClientRect();
+          var tabs = track.querySelectorAll('.pd-tabs__btn');
+          for (var i = 0; i < tabs.length; i++) {
+            if (tabs[i].getBoundingClientRect().right > trackRect.right + 1) return true;
+          }
+          return false;
         }
 
-        function atEnd(el) {
-          return el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        function hasClippedLeft() {
+          var trackRect = track.getBoundingClientRect();
+          var tabs = track.querySelectorAll('.pd-tabs__btn');
+          for (var i = tabs.length - 1; i >= 0; i--) {
+            if (tabs[i].getBoundingClientRect().left < trackRect.left - 1) return true;
+          }
+          return false;
         }
 
         function setBtnState(btn, isDisabled) {
@@ -322,34 +332,81 @@ Assumes:
 
           // overflow: clamp and disable at ends
           if (track.scrollLeft < START_OFFSET) track.scrollLeft = START_OFFSET;
-          setBtnState(prev, atStart(track));
-          setBtnState(next, atEnd(track));
+          setBtnState(prev, !hasClippedLeft());
+          setBtnState(next, !hasClippedRight());
         }
 
         function scrollByStep(direction) {
-          if (direction < 0 && prev && prev.disabled) return;
-          if (direction > 0 && next && next.disabled) return;
+          if (direction < 0 && (prev && prev.disabled)) return;
+          if (direction > 0 && (next && next.disabled)) return;
 
           if (track.scrollLeft < START_OFFSET) track.scrollLeft = START_OFFSET;
 
-          var slide = track.querySelector('.pd-tabs__btn');
-          var step = slide ? slide.getBoundingClientRect().width : 200;
+          var trackRect = track.getBoundingClientRect();
+          var tabs = Array.prototype.slice.call(track.querySelectorAll('.pd-tabs__btn'));
+          if (!tabs.length) return;
 
-          track.scrollBy({ left: direction * step, behavior: 'smooth' });
+          var target = null;
 
+          if (direction > 0) {
+            // first tab clipped on right
+            for (var i = 0; i < tabs.length; i++) {
+              var r = tabs[i].getBoundingClientRect();
+              if (r.right > trackRect.right + 1) { target = tabs[i]; break; }
+            }
+          } else {
+            // last tab clipped on left
+            for (var j = tabs.length - 1; j >= 0; j--) {
+              var l = tabs[j].getBoundingClientRect();
+              if (l.left < trackRect.left - 1) { target = tabs[j]; break; }
+            }
+          }
+
+          if (!target) return;
+
+          var EDGE_PAD = 12; // breathing room inside the viewport
+
+          // Compute scrollLeft needed to fully reveal the target (prefer aligning right edge)
+          var desired;
+          if (direction > 0) {
+            // Make target's RIGHT edge visible
+            desired = (target.offsetLeft + target.offsetWidth) - track.clientWidth + EDGE_PAD;
+          } else {
+            // Make target's LEFT edge visible
+            desired = target.offsetLeft - EDGE_PAD;
+          }
+
+          // Clamp
+          var visibleW = trackRect.width;
+          var maxScroll = track.scrollWidth - visibleW;     
+          desired = Math.max(START_OFFSET, desired);
+          desired = Math.min(maxScroll, desired);
+
+          // TEMP disable snap so the animation doesn't bounce back
+          var prevSnapType = track.style.scrollSnapType;
+          track.style.scrollSnapType = 'none';
+
+          track.scrollTo({ left: desired, behavior: 'smooth' });
+
+          // Re-enable snap after scroll settles
           setTimeout(function () {
+            track.style.scrollSnapType = prevSnapType || '';
             if (track.scrollLeft < START_OFFSET) track.scrollLeft = START_OFFSET;
             update();
-          }, 180);
-
-          setTimeout(function () {
-            if (track.scrollLeft < START_OFFSET) track.scrollLeft = START_OFFSET;
-            update();
-          }, 400);
+          }, 450);
         }
 
-        if (prev) prev.addEventListener('click', function () { scrollByStep(-1); });
-        if (next) next.addEventListener('click', function () { scrollByStep(1); });
+        if (prev) prev.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          scrollByStep(-1);
+        });
+
+        if (next) next.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          scrollByStep(1);
+        });
 
         // Don’t auto-center tabs; only bring into view if clipped
         track.addEventListener('click', function (e) {
@@ -544,11 +601,20 @@ Assumes:
   /* INLINE slider layout: prev | track | next (no overlap) */
   #{{ tab_id }} .pd-tabs__nav-wrap {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: end;              /* matches your "align-items: flex-end" feel */
+    grid-template-columns: auto minmax(0, 1fr) auto; /* key: minmax(0,1fr) */
+    align-items: end;
     gap: .5rem;
     border-bottom: 2px solid #001429;
     padding: .75rem 1rem 0 1rem;   /* you can tune this per breakpoint */
+  }
+
+  /* Force Dawn slider buttons to be inline/grid items (not overlay) */
+  #{{ tab_id }} .pd-tabs__nav-wrap .slider-button {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 1;
   }
 
   #{{ tab_id }} .pd-tabs__nav {
