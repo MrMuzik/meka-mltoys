@@ -532,6 +532,14 @@
             "url": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-force-tractor"
           }
         },
+        "grid_item_bzrXrX": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/John_Deere_Ground_Loader.png",
+            "title": "Peg Perego John Deere Ground Force Loader",
+            "url": "shopify://collections/peg-perego-john-deere-ground-loader-tractor-copy"
+          }
+        },
         "grid_item_pcRnbV": {
           "type": "grid_item",
           "settings": {
@@ -807,6 +815,7 @@
         "grid_item_wNn7bi",
         "grid_item_za84cb",
         "grid_item_iTqfjG",
+        "grid_item_bzrXrX",
         "grid_item_pcRnbV",
         "grid_item_tHzt49",
         "grid_item_XGcm8r",
