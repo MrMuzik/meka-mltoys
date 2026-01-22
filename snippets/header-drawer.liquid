@@ -101,7 +101,7 @@
                                                 <li>
                                                   {%- if childlink.links == blank -%}
                                                     <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
-                                                      class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
+                                                      class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' %} all-vehicles-link{% endif %}"
                                                       {% if childlink.current %} aria-current="page" {% endif %}>
 
                                                       {% if child_has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
@@ -113,7 +113,7 @@
                                                         </span>
                                                       {% endif %}
 
-                                                      {% if childlink_title == 'all vehicles' %}
+                                                      {% if childlink_title == 'all vehicles' or childlink_title == 'all categories' %}
                                                         <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
                                                       {% else %}
                                                         {{ childlink.title | escape }}
