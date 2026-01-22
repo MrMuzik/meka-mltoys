@@ -443,18 +443,26 @@
                                                               -%}
 
                                                               <!--
-                                                                {% if gc_collection %}
-                                                                  handle: {{ gc_collection.handle }}
-                                                                  title: {{ gc_collection.title }}
-                                                                  id: {{ gc_collection.id }}
-                                                                  url: {{ gc_collection.url }}
+                                                              {% if gc_collection %}
+                                                                handle: {{ gc_collection.handle }}
+                                                                title: {{ gc_collection.title }}
+                                                                id: {{ gc_collection.id }}
+                                                                url: {{ gc_collection.url }}
 
-                                                                  has metafield? {{ gc_collection.metafields.custom.menu_icon != blank }}
-                                                                  metafield value: {{ gc_collection.metafields.custom.menu_icon.value | json }}
-                                                                  link type: {{ grandchildlink.type }}
+                                                                {% assign gc_menu_icon_mf = gc_collection.metafields.custom.menu_icon %}
+                                                                has metafield? {% if gc_menu_icon_mf != blank %}YES{% else %}NO{% endif %}
+
+                                                                metafield value:
+                                                                {% if gc_menu_icon_mf != blank %}
+                                                                  {{ gc_menu_icon_mf.value | json }}
                                                                 {% else %}
-                                                                  gc_collection is NIL
+                                                                  null
                                                                 {% endif %}
+
+                                                                link type: {{ grandchildlink.type }}
+                                                              {% else %}
+                                                                gc_collection is NIL
+                                                              {% endif %}
                                                               -->
 
 																															<li>
