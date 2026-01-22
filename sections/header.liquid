@@ -442,6 +442,17 @@
                                                                 endif
                                                               -%}
 
+                                                              <!--
+                                                                handle: {{ gc_collection.handle }}
+                                                                title: {{ gc_collection.title }}
+                                                                id: {{ gc_collection.id }}
+                                                                url: {{ gc_collection.url }}
+
+                                                                has metafield? {{ gc_collection.metafields.custom.menu_icon != blank }}
+                                                                metafield value: {{ gc_collection.metafields.custom.menu_icon.value | json }}
+                                                                link type: {{ grandchildlink.type }}
+                                                              -->
+
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
 																																	class="menu-drawer__menu-item link link--text list-menu__item focus-inset grandchild-link{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
