@@ -423,6 +423,14 @@
             "title": "Moderno Can-Am Outlander",
             "url": "shopify://collections/moderno-can-am-outlander"
           }
+        },
+        "grid_item_YdNxeF": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/moderno_can_am_renegade.png",
+            "title": "Moderno Can-Am Renegade",
+            "url": "shopify://collections/moderno-can-am-renegade"
+          }
         }
       },
       "block_order": [
@@ -473,7 +481,8 @@
         "grid_item_DKtAfQ",
         "grid_item_EWMgDr",
         "grid_item_UhG4Cb",
-        "grid_item_3ciDyK"
+        "grid_item_3ciDyK",
+        "grid_item_YdNxeF"
       ],
       "name": "Grid view",
       "settings": {
@@ -491,14 +500,6 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
-        "grid_item_76gtTg": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/moderno_can_am_renegade.png",
-            "title": "Moderno Can-Am Renegade",
-            "url": "shopify://collections/moderno-can-am-renegade"
-          }
-        },
         "grid_item_yCMxUH": {
           "type": "grid_item",
           "settings": {
@@ -802,7 +803,6 @@
         }
       },
       "block_order": [
-        "grid_item_76gtTg",
         "grid_item_yCMxUH",
         "grid_item_wNn7bi",
         "grid_item_za84cb",
