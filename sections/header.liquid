@@ -432,7 +432,18 @@
                                                               {%- liquid
                                                                 assign has_gc_icon = false
                                                                 assign gc_menu_item_icon = nil
-                                                                assign gc_collection = grandchildlink.object
+                                                                assign gc_collection = nil
+
+                                                                if grandchildlink.type == 'collection_link' and grandchildlink.object != blank
+                                                                  assign gc_collection = grandchildlink.object
+                                                                else
+                                                                  # Fallback for http_link pointing to /collections/<handle>
+                                                                  if grandchildlink.url contains '/collections/'
+                                                                    assign gc_handle = grandchildlink.url | split: '/collections/' | last
+                                                                    assign gc_handle = gc_handle | split: '?' | first | split: '#' | first | split: '/' | first
+                                                                    assign gc_collection = collections[gc_handle]
+                                                                  endif
+                                                                endif
 
                                                                 if gc_collection != nil
                                                                   assign gc_menu_item_icon = gc_collection.metafields.custom.menu_icon.value
@@ -463,6 +474,8 @@
                                                               {% else %}
                                                                 gc_collection is NIL
                                                                 link type: {{ grandchildlink.type }}
+                                                                url: {{ grandchildlink.url }}
+                                                                object blank?: {% if grandchildlink.object == blank %}yes{% else %}no{% endif %}
                                                               {% endif %}
                                                               -->
 
