@@ -53,7 +53,7 @@
                             {% render 'icon-caret' %}
                           </summary>
 
-                          <div id="link-{{ link.handle | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                          <div id="link-{{ block.settings.menu_drawer_title | handleize | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                             <div class="menu-drawer__inner-submenu">
                               <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                 {% render 'icon-caret' %}
@@ -93,22 +93,29 @@
                                                         {% endif %}
                                                     </a>
                                                   {%- else -%}
+                                                    {%- liquid
+                                                      assign has_menu_item_icon = false
+                                                      assign child_icon_entry = nil
+                                                      assign child_menu_item_icon = nil
 
-                                                    {% assign has_menu_item_icon = false %}
-                                                    {%- for menu_item_icon in menu_item_icons -%}
-                                                      {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
-                                                      {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
-                                                        {% if menu_item_title == childlink_title %}
-                                                          {% assign has_menu_item_icon = true %}
-                                                          {% break %}
-                                                        {% endif %}
-                                                    {%- endfor -%}
+                                                      for icon_entry in menu_item_icons
+                                                        assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
+                                                        if icon_entry_title == childlink_title
+                                                          assign has_menu_item_icon = true
+                                                          assign child_icon_entry = icon_entry
+                                                          assign child_menu_item_icon = icon_entry.icon_image.value
+                                                          break
+                                                        endif
+                                                      endfor
+                                                    -%}
 
                                                     <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                                      <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                                        {% if has_menu_item_icon %}
-                                                          <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
-                                                            <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
+                                                      <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                        {% if has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                                          <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
+                                                            <img class="menu-item-icon-image"
+                                                              src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
+                                                              alt="{{ child_menu_item_icon.alt | escape }}"
                                                               width="85px" height="100%" loading="lazy">
                                                           </span>
                                                         {% endif %}
@@ -124,26 +131,43 @@
 
                                                         <ul class="menu-drawer__menu list-menu test-two" role="list" tabindex="-1">
                                                           {%- for grandchildlink in childlink.links -%}
-                                                            {% assign grandchildlink_title = grandchildlink.title | escape | downcase %}
-                                                            {% assign has_menu_item_icon = false %}
-                                                            {%- for menu_item_icon in menu_item_icons -%}
-                                                              {%- assign menu_item_title = menu_item_icon.menu_item_title.value | downcase -%}
-                                                              {%- assign menu_menu_item_icon = menu_item_icon.icon_image.value -%}
-                                                                {% if menu_item_title == grandchildlink_title %}
-                                                                  {% assign has_menu_item_icon = true %}
-                                                                  {% break %}
-                                                                {% endif %}
-                                                            {%- endfor -%}
+                                                            {%- liquid
+                                                              assign has_gc_icon = false
+                                                              assign gc_menu_item_icon = nil
+                                                              assign gc_collection = nil
+
+                                                              if grandchildlink.type == 'collection_link' and grandchildlink.object != blank
+                                                                assign gc_collection = grandchildlink.object
+                                                              else
+                                                                if grandchildlink.url contains '/collections/'
+                                                                  assign gc_handle = grandchildlink.url | split: '/collections/' | last
+                                                                  assign gc_handle = gc_handle | split: '?' | first | split: '#' | first | split: '/' | first
+                                                                  assign gc_collection = collections[gc_handle]
+                                                                endif
+                                                              endif
+
+                                                              if gc_collection != nil
+                                                                assign gc_menu_item_icon = gc_collection.metafields.custom.menu_icon.value
+                                                                if gc_menu_item_icon != blank
+                                                                  assign has_gc_icon = true
+                                                                endif
+                                                              endif
+                                                            -%}
+
                                                             <li>
                                                               <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
-                                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %} {{ menu_item_title }} {{ grandchildlink_title }}"
+                                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
                                                                 {% if grandchildlink.current %}  aria-current="page" {% endif %}>
-                                                                {% if has_menu_item_icon %}
-                                                                  <span class="menu-item-icon icon-{{ menu_item_icon.icon_position }}">
-                                                                    <img class="menu-item-icon-image" src="{{ menu_menu_item_icon | image_url: width: menu_item_icon.icon_width }}" alt="{{ menu_menu_item_icon.alt | escape }}"
+
+                                                                {% if has_gc_icon and gc_menu_item_icon != nil %}
+                                                                  <span class="menu-item-icon icon-left">
+                                                                    <img class="menu-item-icon-image"
+                                                                      src="{{ gc_menu_item_icon | image_url: width: 85 }}"
+                                                                      alt="{{ gc_menu_item_icon.alt | escape }}"
                                                                       width="85px" height="100%" loading="lazy">
                                                                   </span>
                                                                 {% endif %}
+
                                                                 {{ grandchildlink.title | escape }}
                                                               </a>
                                                             </li>
@@ -169,7 +193,6 @@
 
                             </div>
                           </div>
-
 
                         </details>
                       </li>
@@ -197,6 +220,7 @@
 
                           <ul class="menu-drawer__menu list-menu test-three" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
+                              {%- assign childlink_title = childlink.title | escape | downcase -%}
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
@@ -205,8 +229,33 @@
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
+                                  {%- liquid
+                                    assign has_menu_item_icon = false
+                                    assign child_icon_entry = nil
+                                    assign child_menu_item_icon = nil
+
+                                    for icon_entry in menu_item_icons
+                                      assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
+                                      if icon_entry_title == childlink_title
+                                        assign has_menu_item_icon = true
+                                        assign child_icon_entry = icon_entry
+                                        assign child_menu_item_icon = icon_entry.icon_image.value
+                                        break
+                                      endif
+                                    endfor
+                                  -%}
+
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                    <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                      {% if has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                        <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
+                                          <img class="menu-item-icon-image"
+                                            src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
+                                            alt="{{ child_menu_item_icon.alt | escape }}"
+                                            width="85px" height="100%" loading="lazy">
+                                        </span>
+                                      {% endif %}
+
                                       {{ childlink.title | escape }}
                                       {% render 'icon-caret' %}
                                     </summary>
@@ -219,10 +268,42 @@
 
                                       <ul class="menu-drawer__menu list-menu test-four" role="list" tabindex="-1">
                                         {%- for grandchildlink in childlink.links -%}
+                                          {%- liquid
+                                            assign has_gc_icon = false
+                                            assign gc_menu_item_icon = nil
+                                            assign gc_collection = nil
+
+                                            if grandchildlink.type == 'collection_link' and grandchildlink.object != blank
+                                              assign gc_collection = grandchildlink.object
+                                            else
+                                              if grandchildlink.url contains '/collections/'
+                                                assign gc_handle = grandchildlink.url | split: '/collections/' | last
+                                                assign gc_handle = gc_handle | split: '?' | first | split: '#' | first | split: '/' | first
+                                                assign gc_collection = collections[gc_handle]
+                                              endif
+                                            endif
+
+                                            if gc_collection != nil
+                                              assign gc_menu_item_icon = gc_collection.metafields.custom.menu_icon.value
+                                              if gc_menu_item_icon != blank
+                                                assign has_gc_icon = true
+                                              endif
+                                            endif
+                                          -%}
+
                                           <li>
                                             <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
                                               class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
                                               {% if grandchildlink.current %}  aria-current="page" {% endif %}>
+
+                                              {% if has_gc_icon and gc_menu_item_icon != nil %}
+                                                <span class="menu-item-icon icon-left">
+                                                  <img class="menu-item-icon-image"
+                                                    src="{{ gc_menu_item_icon | image_url: width: 85 }}"
+                                                    alt="{{ gc_menu_item_icon.alt | escape }}"
+                                                    width="85px" height="100%" loading="lazy">
+                                                </span>
+                                              {% endif %}
 
                                               {{ grandchildlink.title | escape }}
                                             </a>

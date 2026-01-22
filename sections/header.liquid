@@ -348,10 +348,6 @@
                                   {%- assign seen_parent = false -%}
                                   {%- assign divider_shown = false -%}
 
-                                  {%- comment -%}
-                                    We intentionally use `.values` and title matching to avoid the
-                                    "Exceeded maximum number of unique handles" limit from per-handle lookups.
-                                  {%- endcomment -%}
                                   {%- assign menu_item_icons = shop.metaobjects.menu_item_icon.values -%}
 
 																	{%- for link in block.settings.menu_drawer.links -%}
@@ -452,32 +448,6 @@
                                                                   endif
                                                                 endif
                                                               -%}
-
-                                                              <!--
-                                                              {% if gc_collection %}
-                                                                handle: {{ gc_collection.handle }}
-                                                                title: {{ gc_collection.title }}
-                                                                id: {{ gc_collection.id }}
-                                                                url: {{ gc_collection.url }}
-
-                                                                {% assign gc_menu_icon_mf = gc_collection.metafields.custom.menu_icon %}
-                                                                has metafield? {% if gc_menu_icon_mf != blank %}YES{% else %}NO{% endif %}
-
-                                                                metafield value:
-                                                                {% if gc_menu_icon_mf != blank %}
-                                                                  {{ gc_menu_icon_mf.value | json }}
-                                                                {% else %}
-                                                                  null
-                                                                {% endif %}
-
-                                                                link type: {{ grandchildlink.type }}
-                                                              {% else %}
-                                                                gc_collection is NIL
-                                                                link type: {{ grandchildlink.type }}
-                                                                url: {{ grandchildlink.url }}
-                                                                object blank?: {% if grandchildlink.object == blank %}yes{% else %}no{% endif %}
-                                                              {% endif %}
-                                                              -->
 
 																															<li>
 																																<a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
