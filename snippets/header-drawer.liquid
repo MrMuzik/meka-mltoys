@@ -80,38 +80,49 @@
 
                                             <ul class="menu-drawer__menu list-menu test-one" role="list" tabindex="-1">
                                               {%- for childlink in link.links -%}
-                                                {% assign childlink_title = childlink.title | escape | downcase %}
+                                                {%- assign childlink_title = childlink.title | escape | downcase -%}
+
+                                                {%- liquid
+                                                  assign child_has_menu_item_icon = false
+                                                  assign child_icon_entry = nil
+                                                  assign child_menu_item_icon = nil
+
+                                                  for icon_entry in menu_item_icons
+                                                    assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
+                                                    if icon_entry_title == childlink_title
+                                                      assign child_has_menu_item_icon = true
+                                                      assign child_icon_entry = icon_entry
+                                                      assign child_menu_item_icon = icon_entry.icon_image.value
+                                                      break
+                                                    endif
+                                                  endfor
+                                                -%}
+
                                                 <li>
                                                   {%- if childlink.links == blank -%}
                                                     <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
-                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
+                                                      class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %} {% if childlink_title == 'all vehicles' %} all-vehicles-link{% endif %}"
                                                       {% if childlink.current %} aria-current="page" {% endif %}>
-                                                        {% if childlink_title == 'all vehicles' %}
-                                                          <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
-                                                        {% else %}
-                                                          {{ childlink.title | escape }}
-                                                        {% endif %}
+
+                                                      {% if child_has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                                        <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
+                                                          <img class="menu-item-icon-image"
+                                                            src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
+                                                            alt="{{ child_menu_item_icon.alt | escape }}"
+                                                            width="85px" height="100%" loading="lazy">
+                                                        </span>
+                                                      {% endif %}
+
+                                                      {% if childlink_title == 'all vehicles' %}
+                                                        <span class="all-vehicles-link-text">{{ childlink.title | escape }}</span>
+                                                      {% else %}
+                                                        {{ childlink.title | escape }}
+                                                      {% endif %}
                                                     </a>
                                                   {%- else -%}
-                                                    {%- liquid
-                                                      assign has_menu_item_icon = false
-                                                      assign child_icon_entry = nil
-                                                      assign child_menu_item_icon = nil
-
-                                                      for icon_entry in menu_item_icons
-                                                        assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
-                                                        if icon_entry_title == childlink_title
-                                                          assign has_menu_item_icon = true
-                                                          assign child_icon_entry = icon_entry
-                                                          assign child_menu_item_icon = icon_entry.icon_image.value
-                                                          break
-                                                        endif
-                                                      endfor
-                                                    -%}
-
                                                     <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                                      <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                                        {% if has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                                      <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                                        {% if child_has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
                                                           <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
                                                             <img class="menu-item-icon-image"
                                                               src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
@@ -157,7 +168,7 @@
                                                             <li>
                                                               <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
                                                                 class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                                                {% if grandchildlink.current %}  aria-current="page" {% endif %}>
+                                                                {% if grandchildlink.current %} aria-current="page" {% endif %}>
 
                                                                 {% if has_gc_icon and gc_menu_item_icon != nil %}
                                                                   <span class="menu-item-icon icon-left">
@@ -183,6 +194,11 @@
                                         </div>
                                       </details>
                                     {%- else -%}
+                                      {%- if seen_parent and divider_shown == false -%}
+                                        <div class="divider-line"></div>
+                                        {%- assign divider_shown = true -%}
+                                      {%- endif -%}
+
                                       <a id="HeaderDrawer-{{ link.handle }}" href="{{ link.url }}" class="hide-mobile menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}" {% if link.current %} aria-current="page" {% endif %}>
                                         {{ link.title | escape }}
                                       </a>
@@ -199,7 +215,6 @@
                     {%- endif -%}
                 {%- endcase -%}
               {%- endfor -%}
-
 
               {%- for link in section.settings.menu.links -%}
                 <li>
@@ -221,33 +236,44 @@
                           <ul class="menu-drawer__menu list-menu test-three" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               {%- assign childlink_title = childlink.title | escape | downcase -%}
+
+                              {%- liquid
+                                assign child_has_menu_item_icon = false
+                                assign child_icon_entry = nil
+                                assign child_menu_item_icon = nil
+
+                                for icon_entry in menu_item_icons
+                                  assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
+                                  if icon_entry_title == childlink_title
+                                    assign child_has_menu_item_icon = true
+                                    assign child_icon_entry = icon_entry
+                                    assign child_menu_item_icon = icon_entry.icon_image.value
+                                    break
+                                  endif
+                                endfor
+                              -%}
+
                               <li>
                                 {%- if childlink.links == blank -%}
                                   <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}"
-                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                    class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                     {% if childlink.current %} aria-current="page" {% endif %}>
+
+                                    {% if child_has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                      <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
+                                        <img class="menu-item-icon-image"
+                                          src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
+                                          alt="{{ child_menu_item_icon.alt | escape }}"
+                                          width="85px" height="100%" loading="lazy">
+                                      </span>
+                                    {% endif %}
+
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
-                                  {%- liquid
-                                    assign has_menu_item_icon = false
-                                    assign child_icon_entry = nil
-                                    assign child_menu_item_icon = nil
-
-                                    for icon_entry in menu_item_icons
-                                      assign icon_entry_title = icon_entry.menu_item_title.value | downcase | strip
-                                      if icon_entry_title == childlink_title
-                                        assign has_menu_item_icon = true
-                                        assign child_icon_entry = icon_entry
-                                        assign child_menu_item_icon = icon_entry.icon_image.value
-                                        break
-                                      endif
-                                    endfor
-                                  -%}
-
                                   <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                      {% if has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
+                                    <summary id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}" class="{% if child_has_menu_item_icon %}has-menu-item-icon{% endif %} menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                      {% if child_has_menu_item_icon and child_icon_entry != nil and child_menu_item_icon != nil %}
                                         <span class="menu-item-icon icon-{{ child_icon_entry.icon_position }}">
                                           <img class="menu-item-icon-image"
                                             src="{{ child_menu_item_icon | image_url: width: child_icon_entry.icon_width }}"
@@ -294,7 +320,7 @@
                                           <li>
                                             <a id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
                                               class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                              {% if grandchildlink.current %}  aria-current="page" {% endif %}>
+                                              {% if grandchildlink.current %} aria-current="page" {% endif %}>
 
                                               {% if has_gc_icon and gc_menu_item_icon != nil %}
                                                 <span class="menu-item-icon icon-left">
