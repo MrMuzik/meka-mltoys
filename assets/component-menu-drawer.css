@@ -361,7 +361,8 @@ padding-left: 3rem;
   .menu-drawer__menu-item,
   .menu-drawer summary.menu-drawer__menu-item,
   .header--has-social .menu-drawer__utility-links,
-  .menu-drawer__product {
+  .menu-drawer__product,
+  .menu-drawer__menu .list-menu__item {
     padding-left: 2rem;
     padding-right: 2rem;
   }
