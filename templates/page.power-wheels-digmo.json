@@ -41,22 +41,6 @@
     "featured_grid_geV8d4": {
       "type": "featured-grid",
       "blocks": {
-        "grid_item_9NpRF9": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/killswitch3.jpg",
-            "title": "Kill Switch / Removable Key",
-            "url": "https://www.mltoys.com/products/key-start-for-ride-ons"
-          }
-        },
-        "grid_item_jWCThX": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/775-heatsink-2.jpg",
-            "title": "775 Heatsink",
-            "url": "https://www.mltoys.com/products/775-heatsink"
-          }
-        },
         "grid_item_hfwMmK": {
           "type": "grid_item",
           "settings": {
@@ -65,12 +49,12 @@
             "url": "https://www.mltoys.com/products/matched-pair-of-775-ball-bearing-performance-motors"
           }
         },
-        "grid_item_PqiwrK": {
+        "grid_item_jWCThX": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/36vConversionKit.jpg",
-            "title": "36 Volt Conversion Kit * RACE ONLY *",
-            "url": "https://www.mltoys.com/products/36-volt-conversion-kit-race-only"
+            "image": "shopify://shop_images/775-heatsink-2.jpg",
+            "title": "775 Heatsink",
+            "url": "https://www.mltoys.com/products/775-heatsink"
           }
         },
         "grid_item_Crar7Q": {
@@ -89,12 +73,12 @@
             "url": "https://www.mltoys.com/products/7r-first-gear-delete-dual-775-motor-mounting-plates"
           }
         },
-        "grid_item_wqQfHG": {
+        "grid_item_MjHEAz": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/Steeringstabilizer.jpg",
-            "title": "Steering Stabilizer and Toe Adjuster",
-            "url": "https://www.mltoys.com/products/steering-stabilizer-and-toe-adjuster"
+            "image": "shopify://shop_images/First_Gear_Delete_Kid_Trax.jpg",
+            "title": "Kid Trax First Gear Delete & Dual 775 Motor Mounting Plates",
+            "url": "https://www.mltoys.com/products/kid-trax-first-gear-delete-dual-775-motor-mounting-plates"
           }
         },
         "grid_item_4MC3DY": {
@@ -111,6 +95,38 @@
             "image": "shopify://shop_images/KillSwitch1.png",
             "title": "High Capacity Kill Switch",
             "url": "https://www.mltoys.com/products/high-capacity-kill-switch"
+          }
+        },
+        "grid_item_aYBG3W": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Drag_Wheel1.jpg",
+            "title": "Drag Front Wheels & Bearings",
+            "url": "shopify://products/dragster-front-wheels-bearings"
+          }
+        },
+        "grid_item_9NpRF9": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/killswitch3.jpg",
+            "title": "Kill Switch / Removable Key",
+            "url": "https://www.mltoys.com/products/key-start-for-ride-ons"
+          }
+        },
+        "grid_item_PqiwrK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/36vConversionKit.jpg",
+            "title": "36 Volt Conversion Kit * RACE ONLY *",
+            "url": "https://www.mltoys.com/products/36-volt-conversion-kit-race-only"
+          }
+        },
+        "grid_item_wqQfHG": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Steeringstabilizer.jpg",
+            "title": "Steering Stabilizer and Toe Adjuster",
+            "url": "https://www.mltoys.com/products/steering-stabilizer-and-toe-adjuster"
           }
         },
         "grid_item_wyHtKp": {
@@ -145,14 +161,6 @@
             "url": "https://www.mltoys.com/products/8awg-copper-ring-wire-connectors-due-early-july-if-you-order-now"
           }
         },
-        "grid_item_MjHEAz": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/First_Gear_Delete_Kid_Trax.jpg",
-            "title": "Kid Trax First Gear Delete & Dual 775 Motor Mounting Plates",
-            "url": "https://www.mltoys.com/products/kid-trax-first-gear-delete-dual-775-motor-mounting-plates"
-          }
-        },
         "grid_item_tinjMb": {
           "type": "grid_item",
           "settings": {
@@ -171,20 +179,21 @@
         }
       },
       "block_order": [
-        "grid_item_9NpRF9",
-        "grid_item_jWCThX",
         "grid_item_hfwMmK",
-        "grid_item_PqiwrK",
+        "grid_item_jWCThX",
         "grid_item_Crar7Q",
         "grid_item_TkDJTP",
-        "grid_item_wqQfHG",
+        "grid_item_MjHEAz",
         "grid_item_4MC3DY",
         "grid_item_CPqEzt",
+        "grid_item_aYBG3W",
+        "grid_item_9NpRF9",
+        "grid_item_PqiwrK",
+        "grid_item_wqQfHG",
         "grid_item_wyHtKp",
         "grid_item_QgFwPH",
         "grid_item_kpTjhm",
         "grid_item_FkXTmD",
-        "grid_item_MjHEAz",
         "grid_item_tinjMb",
         "grid_item_YPC6Uz"
       ],
