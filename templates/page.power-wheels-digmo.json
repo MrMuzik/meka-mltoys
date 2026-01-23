@@ -105,22 +105,6 @@
             "url": "shopify://products/dragster-front-wheels-bearings"
           }
         },
-        "grid_item_9NpRF9": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/killswitch3.jpg",
-            "title": "Kill Switch / Removable Key",
-            "url": "https://www.mltoys.com/products/key-start-for-ride-ons"
-          }
-        },
-        "grid_item_PqiwrK": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/36vConversionKit.jpg",
-            "title": "36 Volt Conversion Kit * RACE ONLY *",
-            "url": "https://www.mltoys.com/products/36-volt-conversion-kit-race-only"
-          }
-        },
         "grid_item_wqQfHG": {
           "type": "grid_item",
           "settings": {
@@ -137,6 +121,14 @@
             "url": "https://www.mltoys.com/products/wheelie-bar-kit"
           }
         },
+        "grid_item_kpTjhm": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/100aBreaker.png",
+            "title": "100 amp Breaker",
+            "url": "https://www.mltoys.com/products/100-amp-breaker"
+          }
+        },
         "grid_item_QgFwPH": {
           "type": "grid_item",
           "settings": {
@@ -145,12 +137,12 @@
             "url": "https://www.mltoys.com/products/8awg-junction-terminal-blocks"
           }
         },
-        "grid_item_kpTjhm": {
+        "grid_item_tinjMb": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/100aBreaker.png",
-            "title": "100 amp Breaker",
-            "url": "https://www.mltoys.com/products/100-amp-breaker"
+            "image": "shopify://shop_images/Untitled.png",
+            "title": "8AWG Wire 10'",
+            "url": "https://www.mltoys.com/products/8awg-wire-10"
           }
         },
         "grid_item_FkXTmD": {
@@ -161,12 +153,20 @@
             "url": "https://www.mltoys.com/products/8awg-copper-ring-wire-connectors-due-early-july-if-you-order-now"
           }
         },
-        "grid_item_tinjMb": {
+        "grid_item_9NpRF9": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/Untitled.png",
-            "title": "8AWG Wire 10'",
-            "url": "https://www.mltoys.com/products/8awg-wire-10"
+            "image": "shopify://shop_images/killswitch3.jpg",
+            "title": "Kill Switch / Removable Key",
+            "url": "https://www.mltoys.com/products/key-start-for-ride-ons"
+          }
+        },
+        "grid_item_PqiwrK": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/36vConversionKit.jpg",
+            "title": "36 Volt Conversion Kit * RACE ONLY *",
+            "url": "https://www.mltoys.com/products/36-volt-conversion-kit-race-only"
           }
         },
         "grid_item_YPC6Uz": {
@@ -187,14 +187,14 @@
         "grid_item_4MC3DY",
         "grid_item_CPqEzt",
         "grid_item_aYBG3W",
-        "grid_item_9NpRF9",
-        "grid_item_PqiwrK",
         "grid_item_wqQfHG",
         "grid_item_wyHtKp",
-        "grid_item_QgFwPH",
         "grid_item_kpTjhm",
-        "grid_item_FkXTmD",
+        "grid_item_QgFwPH",
         "grid_item_tinjMb",
+        "grid_item_FkXTmD",
+        "grid_item_9NpRF9",
+        "grid_item_PqiwrK",
         "grid_item_YPC6Uz"
       ],
       "name": "Grid view",
