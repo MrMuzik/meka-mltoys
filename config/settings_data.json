@@ -195,6 +195,26 @@
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "15520324995437669244": {
+        "type": "shopify://apps/recaptcha-spambuster/blocks/reCAPTCHA-spambuster/bfbda1cf-d162-41f6-9fc1-6d7890aa3e54",
+        "disabled": false,
+        "settings": {
+          "site_key": "",
+          "api_version": "3",
+          "environment": "prod",
+          "debug_mode": false,
+          "spam_threshold": 0.7,
+          "language": "en",
+          "contact_enabled": true,
+          "contact_form_enabled": true,
+          "comment_form_enabled": false,
+          "login_form_enabled": false,
+          "newsletter_form_enabled": false,
+          "registration_form_enabled": false,
+          "password_reset_form_enabled": false,
+          "order_form_enabled": false
+        }
       }
     },
     "color_schemes": {
