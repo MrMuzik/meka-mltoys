@@ -196,25 +196,10 @@
         "disabled": false,
         "settings": {}
       },
-      "15520324995437669244": {
-        "type": "shopify://apps/recaptcha-spambuster/blocks/reCAPTCHA-spambuster/bfbda1cf-d162-41f6-9fc1-6d7890aa3e54",
+      "12429728106950981667": {
+        "type": "shopify://apps/blocky-fraud-blocker/blocks/app-embed/aa25b3bf-c2c5-4359-aa61-7836c225c5a9",
         "disabled": false,
-        "settings": {
-          "site_key": "",
-          "api_version": "3",
-          "environment": "prod",
-          "debug_mode": false,
-          "spam_threshold": 0.7,
-          "language": "en",
-          "contact_enabled": true,
-          "contact_form_enabled": true,
-          "comment_form_enabled": false,
-          "login_form_enabled": false,
-          "newsletter_form_enabled": false,
-          "registration_form_enabled": false,
-          "password_reset_form_enabled": false,
-          "order_form_enabled": false
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
