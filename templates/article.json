@@ -39,21 +39,13 @@
           "settings": {
             "text_color": "main"
           }
-        },
-        "author_zJcKDe": {
-          "type": "author",
-          "settings": {
-            "custom_author": "",
-            "custom_author_bio": "Engineering leader at a pre-IPO startup"
-          }
         }
       },
       "block_order": [
         "navigation_iCDdcQ",
         "title",
         "featured_image",
-        "content",
-        "author_zJcKDe"
+        "content"
       ],
       "settings": {
         "color_scheme": ""
