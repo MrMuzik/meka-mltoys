@@ -37,6 +37,32 @@
             "mobile_content_alignment": "center"
           }
         },
+        "image_slide_6Dg7rM": {
+          "type": "image_slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_2.jpg",
+            "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Save 20% On Upgraded Parts!",
+            "heading_size": "h1",
+            "text": "<p>Only through Sunday on most items! Tires Excluded from the sale.</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop By Category",
+            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": false,
+            "button_label_2": "Shop By Vehicle",
+            "button_link_2": "shopify://pages/upgrades-by-vehicle",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
+        },
         "image_slide_TYM4M9": {
           "type": "image_slide",
           "disabled": true,
@@ -66,6 +92,7 @@
       },
       "block_order": [
         "image_slide_JcyBwK",
+        "image_slide_6Dg7rM",
         "image_slide_TYM4M9"
       ],
       "settings": {
