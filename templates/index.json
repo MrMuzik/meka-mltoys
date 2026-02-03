@@ -14,6 +14,7 @@
       "blocks": {
         "image_slide_JcyBwK": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HERO_HEADER.jpg",
             "image_mobile": "shopify://shop_images/Group_427320676.jpg",
@@ -39,7 +40,6 @@
         },
         "image_slide_6Dg7rM": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_2.jpg",
             "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights.jpg",
