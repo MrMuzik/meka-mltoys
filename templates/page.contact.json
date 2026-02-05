@@ -38,22 +38,87 @@
         "content_padding_bottom": 100
       }
     },
-    "17703133972aa1d056": {
-      "type": "apps",
+    "featured_product_qgnVgJ": {
+      "type": "featured-product",
       "blocks": {
-        "easy_appointment_booking_inline_calendar_HhLCX7": {
-          "type": "shopify://apps/easy-appointment-booking/blocks/inline_calendar/cc7b690c-65b5-4bb4-a46c-1e4bd73e1c12",
+        "text_YCzrqG": {
+          "type": "text",
           "settings": {
-            "product": "video-conference-with-tech-support",
-            "event_unique_id": "",
-            "variant_id": "",
-            "css_class_names": "servicify-inline-calendar"
+            "text": "{{ section.settings.product.vendor }}",
+            "text_size_block": "medium",
+            "text_style": "uppercase",
+            "text_color": "foreground"
+          }
+        },
+        "title_zELxAw": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "price_ykzLfC": {
+          "type": "price",
+          "settings": {
+            "price_size": "price--medium"
+          }
+        },
+        "variant_picker_DFe88p": {
+          "type": "variant_picker",
+          "settings": {
+            "color_scheme": "",
+            "picker_type": "button",
+            "swatch_picker_type": "button",
+            "swatch_shape": "square",
+            "swatches_style": "outlined"
+          }
+        },
+        "buy_buttons_6tmxDi": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "quantity_color_scheme": "",
+            "color_scheme": ""
+          }
+        },
+        "share_9n6QGX": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "easy_appointment_booking_inline_calendar_HhLCX7"
+        "text_YCzrqG",
+        "title_zELxAw",
+        "price_ykzLfC",
+        "variant_picker_DFe88p",
+        "buy_buttons_6tmxDi",
+        "share_9n6QGX"
       ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "video-conference-with-tech-support",
+        "color_scheme": "",
+        "secondary_background": true,
+        "secondary_background_color": "#F4F2EC",
+        "enable_sticky_info": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "thumbnail_position": "bottom",
+        "media_position": "left",
+        "mobile_thumbnails": "show",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "17703133972aa1d056": {
+      "type": "apps",
       "settings": {
         "heading": "",
         "subheading": "",
@@ -111,6 +176,7 @@
   "order": [
     "main",
     "17703133972aa1d056",
+    "featured_product_qgnVgJ",
     "1762540074df721e94"
   ]
 }
