@@ -38,6 +38,61 @@
         "content_padding_bottom": 100
       }
     },
+    "17703133972aa1d056": {
+      "type": "apps",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
+      }
+    },
+    "1762540074df721e94": {
+      "type": "apps",
+      "blocks": {
+        "hulk_form_builder_form_block_PP6E8i": {
+          "type": "shopify://apps/hulk-form-builder/blocks/form-block/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "MyqJvf7AHENPY3sElsqwlg",
+            "form_settings": false,
+            "font_color": "#000000",
+            "size": 14,
+            "input_background_color": "#ffffff",
+            "input_background_color_focus": "#f4dada",
+            "input_border_radius": 1,
+            "input_border_color": "#ebe9e9",
+            "input_border_color_focus": "#2d2727",
+            "input_font_color": "#3d3131",
+            "input_size": 14,
+            "border_color": "#121212",
+            "border_radius": 2,
+            "border": 1,
+            "fill_color": "#ebe9e9",
+            "padding": 35,
+            "form_width": 600,
+            "btn_text": "Submit",
+            "sub_btn_txt_color": "#f3f3f3",
+            "sub_btn_bg_color": "#3f3333",
+            "sub_btn_font_size": 14,
+            "sub_btn_bdr_color": "#ffffff",
+            "sub_btn_bdr_rad": 3,
+            "sub_btn_bdr_width": 1,
+            "fonts": "Times New Roman"
+          }
+        }
+      },
+      "block_order": [
+        "hulk_form_builder_form_block_PP6E8i"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "text_alignment": "center",
+        "include_margins": true,
+        "include_treadmark_bg": false
+      }
+    },
     "featured_product_qgnVgJ": {
       "type": "featured-product",
       "blocks": {
@@ -116,67 +171,12 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
-    },
-    "17703133972aa1d056": {
-      "type": "apps",
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "text_alignment": "center",
-        "include_margins": true,
-        "include_treadmark_bg": false
-      }
-    },
-    "1762540074df721e94": {
-      "type": "apps",
-      "blocks": {
-        "hulk_form_builder_form_block_PP6E8i": {
-          "type": "shopify://apps/hulk-form-builder/blocks/form-block/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-          "settings": {
-            "form_uuid": "MyqJvf7AHENPY3sElsqwlg",
-            "form_settings": false,
-            "font_color": "#000000",
-            "size": 14,
-            "input_background_color": "#ffffff",
-            "input_background_color_focus": "#f4dada",
-            "input_border_radius": 1,
-            "input_border_color": "#ebe9e9",
-            "input_border_color_focus": "#2d2727",
-            "input_font_color": "#3d3131",
-            "input_size": 14,
-            "border_color": "#121212",
-            "border_radius": 2,
-            "border": 1,
-            "fill_color": "#ebe9e9",
-            "padding": 35,
-            "form_width": 600,
-            "btn_text": "Submit",
-            "sub_btn_txt_color": "#f3f3f3",
-            "sub_btn_bg_color": "#3f3333",
-            "sub_btn_font_size": 14,
-            "sub_btn_bdr_color": "#ffffff",
-            "sub_btn_bdr_rad": 3,
-            "sub_btn_bdr_width": 1,
-            "fonts": "Times New Roman"
-          }
-        }
-      },
-      "block_order": [
-        "hulk_form_builder_form_block_PP6E8i"
-      ],
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "text_alignment": "center",
-        "include_margins": true,
-        "include_treadmark_bg": false
-      }
     }
   },
   "order": [
     "main",
     "17703133972aa1d056",
-    "featured_product_qgnVgJ",
-    "1762540074df721e94"
+    "1762540074df721e94",
+    "featured_product_qgnVgJ"
   ]
 }
