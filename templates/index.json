@@ -14,6 +14,7 @@
       "blocks": {
         "image_slide_JcyBwK": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HERO_HEADER.jpg",
             "image_mobile": "shopify://shop_images/Group_427320676.jpg",
@@ -39,14 +40,13 @@
         },
         "image_slide_6Dg7rM": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_2.jpg",
             "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Save 20% On Upgraded Parts!",
+            "heading": "Save up to 30% On Select Products",
             "heading_size": "h1",
-            "text": "<p>Only through Sunday on most items! Tires Excluded from the sale.</p>",
+            "text": "<p>For a limited time we've marked down lights, batteries, motors, combo packs, gearing upgrades and more!</p>",
             "text_size_block": "medium",
             "button_label_1": "Shop By Category",
             "button_link_1": "shopify://pages/upgrades-by-category",
