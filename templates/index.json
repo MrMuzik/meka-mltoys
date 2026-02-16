@@ -109,8 +109,8 @@
         "collection_7DKKte": {
           "type": "collection",
           "settings": {
-            "collection": "power-wheels-motor-upgrades",
-            "collection_title": "Faster Motors",
+            "collection": "motor-gearing-tuned-systems",
+            "collection_title": "Motors/Gearing",
             "show_view_all": true,
             "button_label": "All Motors",
             "button_style_secondary": false
