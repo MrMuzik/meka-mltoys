@@ -104,8 +104,15 @@
             "product_heading_font_weight": "fw-400"
           }
         },
+        "custom_liquid_myKNBi": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"product-share\" style=\"margin-top:16px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;\">\n  <strong style=\"margin-right:6px;\">Share:</strong>\n\n  {%- assign share_url = shop.url | append: product.url -%}\n  {%- assign share_title = product.title | url_param_escape -%}\n  {%- assign share_media = product.featured_image | image_url: width: 1200 | url_param_escape -%}\n  {%- assign share_url_enc = share_url | url_param_escape -%}\n\n  <!-- Facebook -->\n  <a href=\"https://www.facebook.com/sharer/sharer.php?u={{ share_url_enc }}\"\n     target=\"_blank\" rel=\"noopener\"\n     aria-label=\"Share on Facebook\"\n     style=\"display:inline-flex; align-items:center;\">\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"#192754\">\n      <path d=\"M22 12a10 10 0 1 0-11.5 9.9v-7h-2.6v-2.9h2.6V9.5c0-2.6 1.5-4 3.9-4 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6v1.9h2.9l-.5 2.9h-2.4v7A10 10 0 0 0 22 12\"/>\n    </svg>\n  </a>\n\n  <!-- X -->\n  <a href=\"https://twitter.com/intent/tweet?url={{ share_url_enc }}&text={{ share_title }}\"\n     target=\"_blank\" rel=\"noopener\"\n     aria-label=\"Share on X\"\n     style=\"display:inline-flex; align-items:center;\">\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"#192754\">\n      <path d=\"M18 2h3l-7.5 8.6L22 22h-6.9l-5.4-7-6 7H1l8-9.2L2 2h7l5 6.5L18 2z\"/>\n    </svg>\n  </a>\n\n  <!-- Pinterest -->\n  <a href=\"https://pinterest.com/pin/create/button/?url={{ share_url_enc }}&media={{ share_media }}&description={{ share_title }}\"\n     target=\"_blank\" rel=\"noopener\"\n     aria-label=\"Share on Pinterest\"\n     style=\"display:inline-flex; align-items:center;\">\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"#192754\">\n      <path d=\"M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 .1-2.9l1-4.2s-.3-.6-.3-1.4c0-1.3.7-2.3 1.7-2.3.8 0 1.1.6 1.1 1.3 0 .8-.5 2-.8 3-.2.8.4 1.5 1.2 1.5 1.5 0 2.6-1.6 2.6-3.8 0-2-1.4-3.4-3.5-3.4-2.4 0-3.8 1.8-3.8 3.7 0 .7.3 1.5.6 1.9.1.1.1.2.1.4l-.2.9c0 .1-.1.2-.2.1-1-.5-1.7-2-1.7-3.2 0-2.6 1.9-5 5.5-5 2.9 0 5.1 2.1 5.1 4.8 0 2.9-1.8 5.2-4.3 5.2-.8 0-1.6-.4-1.8-.9l-.5 2c-.2.8-.7 1.9-1 2.5.8.2 1.6.3 2.4.3A10 10 0 0 0 12 2z\"/>\n    </svg>\n  </a>\n\n  <!-- Email -->\n  <a href=\"mailto:?subject={{ share_title }}&body={{ share_url_enc }}\"\n     aria-label=\"Share by email\"\n     style=\"display:inline-flex; align-items:center;\">\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"#192754\">\n      <path d=\"M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z\"/>\n    </svg>\n  </a>\n\n  <!-- Copy link -->\n  <button type=\"button\"\n          aria-label=\"Copy link\"\n          onclick=\"(async () => { try { await navigator.clipboard.writeText('{{ share_url }}'); } catch(e) { prompt('Copy this link:', '{{ share_url }}'); } })();\"\n          style=\"background:none; border:0; padding:0; cursor:pointer; display:inline-flex; align-items:center;\">\n    <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"#192754\">\n      <path d=\"M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm4 4H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 18H8V7h12v16z\"/>\n    </svg>\n  </button>\n\n</div>"
+          }
+        },
         "share_GkUBzj": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
           }
@@ -145,6 +152,7 @@
         "variant_picker",
         "buy_buttons",
         "35c54d21-aabe-4447-934d-bc793c25fd66",
+        "custom_liquid_myKNBi",
         "share_GkUBzj",
         "delivery_date_Kz744U",
         "text_xtRNAN"
