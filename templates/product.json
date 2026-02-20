@@ -104,6 +104,12 @@
             "product_heading_font_weight": "fw-400"
           }
         },
+        "share_GkUBzj": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
         "delivery_date_Kz744U": {
           "type": "delivery_date",
           "disabled": true,
@@ -139,6 +145,7 @@
         "variant_picker",
         "buy_buttons",
         "35c54d21-aabe-4447-934d-bc793c25fd66",
+        "share_GkUBzj",
         "delivery_date_Kz744U",
         "text_xtRNAN"
       ],
