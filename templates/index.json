@@ -12,19 +12,18 @@
     "6a2fc120-4bf3-4610-a05d-7f55944c6720": {
       "type": "image-banner-filter",
       "blocks": {
-        "image_slide_JcyBwK": {
+        "image_slide_73mVmn": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/HERO_HEADER.jpg",
-            "image_mobile": "shopify://shop_images/Group_427320676.jpg",
+            "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_7.jpg",
+            "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights_4.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Better & Faster Parts For Power Wheels",
+            "heading": "More Power! 15% Off Batteries!",
             "heading_size": "h1",
-            "text": "<p>Give your kid the coolest toy on the block</p><p>with upgraded ride-on toy parts!</p>",
+            "text": "<p>For a limited time give your ride-on toys a powerful boost. Upgrade the fun and take 15% off!</p>",
             "text_size_block": "medium",
-            "button_label_1": "Shop By Category",
-            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_label_1": "Shop Batteries",
+            "button_link_1": "shopify://collections/power-wheels-upgrade-batteries",
             "button_style_secondary_1": false,
             "enable_button_arrow": false,
             "button_label_2": "Shop By Vehicle",
@@ -38,18 +37,18 @@
             "mobile_content_alignment": "center"
           }
         },
-        "image_slide_73mVmn": {
+        "image_slide_JcyBwK": {
           "type": "image_slide",
           "settings": {
-            "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_7.jpg",
-            "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights_4.jpg",
+            "image": "shopify://shop_images/HERO_HEADER.jpg",
+            "image_mobile": "shopify://shop_images/Group_427320676.jpg",
             "image_overlay_opacity": 0,
-            "heading": "More Power! 15% Off Batteries!",
+            "heading": "Better & Faster Parts For Power Wheels",
             "heading_size": "h1",
-            "text": "<p>For a limited time give your ride-on toys a powerful boost. Upgrade the fun and take 15% off!</p>",
+            "text": "<p>Give your kid the coolest toy on the block</p><p>with upgraded ride-on toy parts!</p>",
             "text_size_block": "medium",
-            "button_label_1": "Shop Batteries",
-            "button_link_1": "shopify://collections/power-wheels-upgrade-batteries",
+            "button_label_1": "Shop By Category",
+            "button_link_1": "shopify://pages/upgrades-by-category",
             "button_style_secondary_1": false,
             "enable_button_arrow": false,
             "button_label_2": "Shop By Vehicle",
@@ -117,8 +116,8 @@
         }
       },
       "block_order": [
-        "image_slide_JcyBwK",
         "image_slide_73mVmn",
+        "image_slide_JcyBwK",
         "image_slide_6Dg7rM",
         "image_slide_TYM4M9"
       ],
