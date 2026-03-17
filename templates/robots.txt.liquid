@@ -14,12 +14,13 @@
 #  ┃  Contact: bots@shopify.com                                           ┃
 #  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-{% for group in robots.default_groups %}{% if group.user_agent == 'adsbot-google' %}
+{% for group in robots.default_groups %}{% if group.user_agent contains 'adsbot-google' %}
 # Google adsbot ignores robots.txt unless specifically named!
-{% endif %}User-agent: {{ group.user_agent }}
+{% endif %}{{ group.user_agent }}
 {% if group.crawl_delay %}Crawl-delay: {{ group.crawl_delay }}
 {% endif %}{% for rule in group.rules %}{{ rule }}
-{% endfor %}{% if group.user_agent == '*' %}Disallow: /?variant=
-{% endif %}{% if group.sitemap %}Sitemap: {{ group.sitemap }}
+{% endfor %}{% unless group.user_agent contains 'Nutch' or group.user_agent contains 'MJ12bot' or group.user_agent contains 'Pinterest' %}Disallow: /sf_private_access_tokens
+{% endunless %}{% if group.user_agent contains '*' %}Disallow: /?variant=
+{% endif %}{% if group.sitemap %}{{ group.sitemap }}
 {% endif %}
 {% endfor %}
