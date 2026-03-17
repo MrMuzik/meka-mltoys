@@ -20,7 +20,7 @@
 {% if group.crawl_delay %}Crawl-delay: {{ group.crawl_delay }}
 {% endif %}{% for rule in group.rules %}{{ rule }}
 {% endfor %}{% unless group.user_agent contains 'Nutch' or group.user_agent contains 'MJ12bot' or group.user_agent contains 'Pinterest' %}Disallow: /sf_private_access_tokens
-{% endunless %}{% if group.user_agent contains '*' %}Disallow: /?variant=
+{% endunless %}{% if forloop.first %}Disallow: /?variant=
 {% endif %}{% if group.sitemap %}{{ group.sitemap }}
 {% endif %}
 {% endfor %}
