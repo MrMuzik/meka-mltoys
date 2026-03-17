@@ -14,7 +14,7 @@
 #  ┃  Contact: bots@shopify.com                                           ┃
 #  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-{% for group in robots.txt.default_groups %}{% if group.user_agent == 'adsbot-google' %}
+{% for group in robots.default_groups %}{% if group.user_agent == 'adsbot-google' %}
 # Google adsbot ignores robots.txt unless specifically named!
 {% endif %}User-agent: {{ group.user_agent }}
 {% if group.crawl_delay %}Crawl-delay: {{ group.crawl_delay }}
