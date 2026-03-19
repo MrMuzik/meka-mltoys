@@ -13,7 +13,7 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true, color_scheme: block.settings.color_scheme %}
 {% endcomment %}
 
-
+{% unless product.tags contains 'globo-product-options' %}
 <div class="product-buy-buttons color-{{ color_scheme }}" {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -311,4 +311,4 @@
     </div>
   {%- endif -%}
 </div>
-
+{% endunless %}
