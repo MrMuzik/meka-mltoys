@@ -14,17 +14,16 @@
       "blocks": {
         "image_slide_73mVmn": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/MLToys-2880x832-MotorBatteriesLights_7.jpg",
-            "image_mobile": "shopify://shop_images/MLToys-856x1012-MotorBatteriesLights_4.jpg",
+            "image": "shopify://shop_images/Dektop.jpg",
+            "image_mobile": "shopify://shop_images/Mobile.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Final Hours - Save 15% On Batteries!",
+            "heading": "Save Big On Replacement Parts",
             "heading_size": "h1",
-            "text": "<p>Ending Soon - Upgrade the fun and take 15% off batteries. </p>",
+            "text": "<p>Power Wheels doors, mirrors, seats, grills, bumpers and more on sale for a limited time!</p>",
             "text_size_block": "medium",
-            "button_label_1": "Shop Batteries",
-            "button_link_1": "shopify://collections/power-wheels-upgrade-batteries",
+            "button_label_1": "Stock Parts",
+            "button_link_1": "shopify://pages/stock-parts",
             "button_style_secondary_1": false,
             "enable_button_arrow": false,
             "button_label_2": "Shop By Vehicle",

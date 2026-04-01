@@ -17,8 +17,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Upgrade Your Ride-On Toys!",
-            "link": ""
+            "text": "Save 25% On Stock Power Wheels Parts!",
+            "link": "shopify://pages/stock-parts"
           }
         }
       },
