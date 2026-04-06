@@ -61,6 +61,7 @@
         },
         "grid_item_CFpCFN": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-barbie-dream-camper.jpg",
             "title": "Barbie Dream Camper Power Wheels Parts",
