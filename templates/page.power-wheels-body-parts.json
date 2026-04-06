@@ -21,7 +21,7 @@
         "image_block": false,
         "image_size": "60",
         "image_overlay_opacity": 70,
-        "title": "",
+        "title": "Power Wheels Body Parts",
         "heading_size": "h1",
         "description_text": "<p>Our curated collections are meant to inspire your creative side and provide you with product options.</p>",
         "text_size_block": "medium",
@@ -43,6 +43,7 @@
       "blocks": {
         "grid_item_VqYabR": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-axles-front.jpg",
             "title": "Front Axles",
@@ -51,6 +52,7 @@
         },
         "grid_item_yc3n9z": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-axles-rear.jpg",
             "title": "Rear Axles",
@@ -67,6 +69,7 @@
         },
         "grid_item_dGcEpD": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-batteries-chargers.jpg",
             "title": "Batteries & Chargers",
@@ -83,6 +86,7 @@
         },
         "grid_item_q4EPRa": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-bushings.jpg",
             "title": "Bushings",
@@ -99,6 +103,7 @@
         },
         "grid_item_eGw7Qz": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-electrical-parts.jpg",
             "title": "Electrical Parts",
@@ -107,6 +112,7 @@
         },
         "grid_item_C9t9eM": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-gears-motors.jpg",
             "title": "Gears & Motors",
@@ -123,6 +129,7 @@
         },
         "grid_item_9mjizW": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-hardware.jpg",
             "title": "Hardware",
@@ -131,6 +138,7 @@
         },
         "grid_item_7dMi7y": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-hood-latches.jpg",
             "title": "Hood Latches",
@@ -147,6 +155,7 @@
         },
         "grid_item_abmWHt": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-owners-manuals.jpg",
             "title": "Owners Manuals",
@@ -195,6 +204,7 @@
         },
         "grid_item_NEPjxc": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-steering-columns-handlebars.jpg",
             "title": "Steering Columns & Handlebars",
@@ -203,6 +213,7 @@
         },
         "grid_item_8Tgwnr": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-steering-linkages.jpg",
             "title": "Steering Linkages",
@@ -219,6 +230,7 @@
         },
         "grid_item_cRgJra": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/3900-3179-2.jpg",
             "title": "Power Wheels Stickers",
@@ -235,6 +247,7 @@
         },
         "grid_item_3nmEaJ": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/BCK85-2659-x2-2.jpg",
             "title": "Tires & Wheels",
@@ -243,6 +256,7 @@
         },
         "grid_item_PqAKer": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-wheel-driver-hubs.jpg",
             "title": "Wheel Driver Hubs",
@@ -251,6 +265,7 @@
         },
         "grid_item_AWKeWM": {
           "type": "grid_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/collection-other-stock-parts.jpg",
             "title": "Other Stock Parts",
