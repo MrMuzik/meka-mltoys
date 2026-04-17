@@ -14,6 +14,32 @@
       "blocks": {
         "image_slide_73mVmn": {
           "type": "image_slide",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Dektop_1a20751c-b2a4-46d1-979a-1f80ddd9dbd5.jpg",
+            "image_mobile": "shopify://shop_images/Mobile_1.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Save 15% Off $150 or More!",
+            "heading_size": "h1",
+            "text": "<p>For a limited time, save on upgraded ride-on toy parts!</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop By Category",
+            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": false,
+            "button_label_2": "Shop By Vehicle",
+            "button_link_2": "shopify://pages/upgrades-by-vehicle",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "image_slide_TGGRkA": {
+          "type": "image_slide",
           "settings": {
             "image": "shopify://shop_images/Desktop-banner2_1.jpg",
             "image_mobile": "shopify://shop_images/Mobile.jpg",
@@ -87,39 +113,13 @@
             "desktop_content_alignment": "left",
             "mobile_content_alignment": "center"
           }
-        },
-        "image_slide_TYM4M9": {
-          "type": "image_slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/MLToys-1780x514-Hero-Xmas.jpg",
-            "image_mobile": "shopify://shop_images/MLToys-768x908-Hero-Xmas.jpg",
-            "image_overlay_opacity": 0,
-            "heading": "Last Chance Sale! Save 10%",
-            "heading_size": "h1",
-            "text": "<p>Upgrade Your Power Wheels with better parts! Make sure your parts arrive in time for the holidays. </p>",
-            "text_size_block": "medium",
-            "button_label_1": "Shop By Category",
-            "button_link_1": "shopify://pages/upgrades-by-category",
-            "button_style_secondary_1": false,
-            "enable_button_arrow": false,
-            "button_label_2": "Shop By Vehicle",
-            "button_link_2": "shopify://pages/upgrades-by-vehicle",
-            "button_style_secondary_2": true,
-            "color_scheme": "scheme-3",
-            "show_text_box": false,
-            "desktop_content_position": "bottom-center",
-            "mobile_content_position": "bottom-center",
-            "desktop_content_alignment": "left",
-            "mobile_content_alignment": "center"
-          }
         }
       },
       "block_order": [
         "image_slide_73mVmn",
+        "image_slide_TGGRkA",
         "image_slide_JcyBwK",
-        "image_slide_6Dg7rM",
-        "image_slide_TYM4M9"
+        "image_slide_6Dg7rM"
       ],
       "settings": {
         "image_height": "medium",
