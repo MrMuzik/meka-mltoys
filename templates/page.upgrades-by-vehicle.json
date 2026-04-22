@@ -583,25 +583,9 @@
         "grid_item_MCLkxM": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px.jpg",
+            "image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
             "title": "Power Wheels Cadillac Escalade",
             "url": "/collections/power-wheels-cadillac-escalade"
-          }
-        },
-        "grid_item_JfMwGq": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px.jpg",
-            "title": "Power Wheels Ford F-150",
-            "url": "/collections/power-wheels-ford-f-150"
-          }
-        },
-        "grid_item_W4XKDN": {
-          "type": "grid_item",
-          "settings": {
-            "image": "shopify://shop_images/collection-barbie-dream-camper.jpg",
-            "title": "Power Wheels Jeep Hurricane",
-            "url": "/collections/power-wheels-jeep-hurricane"
           }
         },
         "grid_item_KFzgfU": {
@@ -612,12 +596,12 @@
             "url": "https://www.mltoys.com/collections/power-wheels-dune-racer"
           }
         },
-        "grid_item_tDMLTw": {
+        "grid_item_JfMwGq": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/vehicle-power-wheels-ford-F-150-800px.jpg",
+            "image": "shopify://shop_images/vehicle-power-wheels-ford-F-150-800px_600x_641f9ad5-a8a7-48e1-a825-09b46c24c1da.webp",
             "title": "Power Wheels Ford F-150",
-            "url": "https://www.mltoys.com/collections/power-wheels-ford-f-150"
+            "url": "/collections/power-wheels-ford-f-150"
           }
         },
         "grid_item_TgLL3w": {
@@ -634,6 +618,14 @@
             "image": "shopify://shop_images/vehicle-power-wheels-hot-wheels-racer-800px.jpg",
             "title": "Power Wheels Hot Wheels Racer",
             "url": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
+          }
+        },
+        "grid_item_W4XKDN": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/collection-barbie-dream-camper.jpg",
+            "title": "Power Wheels Jeep Hurricane",
+            "url": "/collections/power-wheels-jeep-hurricane"
           }
         },
         "grid_item_rpnmLR": {
@@ -822,12 +814,11 @@
         "grid_item_Ajw3mj",
         "grid_item_PNp7yM",
         "grid_item_MCLkxM",
-        "grid_item_JfMwGq",
-        "grid_item_W4XKDN",
         "grid_item_KFzgfU",
-        "grid_item_tDMLTw",
+        "grid_item_JfMwGq",
         "grid_item_TgLL3w",
         "grid_item_GMBw9X",
+        "grid_item_W4XKDN",
         "grid_item_rpnmLR",
         "grid_item_JdNxb6",
         "grid_item_YLdAhm",
