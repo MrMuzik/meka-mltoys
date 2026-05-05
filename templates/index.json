@@ -40,6 +40,7 @@
         },
         "image_slide_TGGRkA": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Desktop_-_Blue.png",
             "image_mobile": "shopify://shop_images/Screenshot_2026-05-05_at_10.34.29_AM.png",
