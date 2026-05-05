@@ -65,7 +65,6 @@
         },
         "image_slide_JcyBwK": {
           "type": "image_slide",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HERO_HEADER.jpg",
             "image_mobile": "shopify://shop_images/Group_427320676.jpg",
