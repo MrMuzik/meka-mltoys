@@ -32,9 +32,9 @@
         "section_full_width": true,
         "section_background": "#f4f2ec",
         "content_text_color": "main",
-        "padding_top": 200,
-        "padding_bottom": 60,
-        "content_padding_top": 100,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "content_padding_top": 50,
         "content_padding_bottom": 100
       }
     },
@@ -156,7 +156,7 @@
         "product": "video-conference-with-tech-support",
         "color_scheme": "",
         "secondary_background": true,
-        "secondary_background_color": "#F4F2EC",
+        "secondary_background_color": "#f4f2ec",
         "enable_sticky_info": false,
         "media_size": "small",
         "constrain_to_viewport": true,
