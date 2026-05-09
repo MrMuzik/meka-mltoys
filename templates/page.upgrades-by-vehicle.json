@@ -657,7 +657,7 @@
           "settings": {
             "image": "shopify://shop_images/vehicle-power-wheels-lightning-mcqueen-800px.jpg",
             "title": "Power Wheels Lightning McQueen",
-            "url": "/collections/power-wheels-lightning-mcqueen"
+            "url": "shopify://collections/power-wheels-disney-lightning-mcqueen"
           }
         },
         "grid_item_HMyXeR": {
