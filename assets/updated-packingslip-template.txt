@@ -181,7 +181,13 @@
         </div>
         <div class="flex-line-item-quantity">
           <p class="text-align-right">
-            {{ line_item.quantity }}
+            {% if isAddonProduct %}
+              {{ line_item.quantity }}
+            {% elsif line_item.shipping_quantity != blank and line_item.shipping_quantity != line_item.quantity %}
+              {{ line_item.shipping_quantity }} of {{ line_item.quantity }}
+            {% else %}
+              {{ line_item.quantity }}
+            {% endif %}
           </p>
         </div>
       </div>
@@ -197,7 +203,7 @@
   {% if order.note != blank %}
     <div class="notes">
       <p class="subtitle-bold to-uppercase">
-        Notes BELOW
+        Notes
       </p>
       <p class="notes-details">
         {{ order.note }}
@@ -455,12 +461,7 @@
 
   /* DIGMO EDITS 05.12.26 */
 
-  /* .globo-addon-line {
-    margin-left: 4.5em;
-    font-size: 0.95em;
-  } */
-
-    .line-item-description-line strong {
+  .line-item-description-line strong {
     font-weight: bold !important;
   }
 </style>
