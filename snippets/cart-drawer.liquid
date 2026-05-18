@@ -111,7 +111,16 @@
                   <table class="cart-items" role="table">
                     <tbody role="rowgroup">
                       {%- for item in cart.items -%}
-                        <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
+                        {%- liquid
+                          assign isAddonProduct = false
+                          for property in item.properties
+                            if property contains '_gpo_parent_product_group'
+                              assign isAddonProduct = true
+                              break
+                            endif
+                          endfor
+                        -%}
+                        <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item{% if isAddonProduct %} cart-item--addon{% endif %}" role="row">
                           <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                             {% if item.image %}
                               <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
@@ -231,6 +240,10 @@
                             <quantity-popover>
                               <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                                 <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
+                                  {%- if isAddonProduct -%}
+                                  <input type="hidden" name="updates[]" value="{{ item.quantity }}">
+                                  {%- endif -%}
+                                  {%- unless isAddonProduct -%}
                                   <quantity-input class="quantity cart-quantity ml-button-primary">
                                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                                       {% render 'icon-minus' %}
@@ -255,6 +268,7 @@
                                       {% render 'icon-plus' %}
                                     </button>
                                   </quantity-input>
+                                  {%- endunless -%}
                                 </div>
 
                                 <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">

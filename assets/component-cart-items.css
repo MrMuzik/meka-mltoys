@@ -503,6 +503,17 @@ cart-items .title-wrapper-with-link {
   .cart-item .cart-item__quantity {
     width: 150px;
   }
+
+  .cart-wrapper .cart-item.cart-item--addon .cart-item__quantity {
+    padding-left: 0;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .cart-wrapper .cart-item.cart-item--addon cart-remove-button {
+    margin-left: 0;
+  }
 }
 
 @media screen and (min-width: 749px) and (max-width: 990px) {
