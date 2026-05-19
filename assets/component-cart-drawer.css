@@ -641,6 +641,10 @@ cart-drawer-items {
   margin-top: 0;
 }
 
+.cart-drawer .cart-item.cart-item--addon cart-remove-button {
+  margin-left: 0;
+}
+
 .cart-drawer .cart-item .cart-remove-button {
   font-size: 1.6rem;
   position: relative;
@@ -727,6 +731,10 @@ cart-drawer-items {
 
   .cart-drawer .cart-item cart-remove-button {
     margin-left: 1.5rem;
+  }
+
+  .cart-drawer .cart-item.cart-item--addon cart-remove-button {
+    margin-left: 0;
   }
 
   .cart-drawer .cart-item__totals {

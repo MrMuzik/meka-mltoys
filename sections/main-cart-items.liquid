@@ -141,7 +141,16 @@
 
             <tbody class="color-{{ section.settings.color_scheme }}">
               {%- for item in cart.items -%}
-                <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+                {%- liquid
+                  assign isAddonProduct = false
+                  for property in item.properties
+                    if property contains '_gpo_parent_product_group'
+                      assign isAddonProduct = true
+                      break
+                    endif
+                  endfor
+                -%}
+                <tr class="cart-item{% if isAddonProduct %} cart-item--addon{% endif %}" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
@@ -284,9 +293,11 @@
                   <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
                     <quantity-popover>
                       <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
+                        {%- unless isAddonProduct -%}
                         <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                           {{ 'products.product.quantity.label' | t }}
                         </label>
+                        {%- endunless -%}
 
                         <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
                           {%- if has_qty_rules or has_vol_pricing -%}
@@ -294,6 +305,10 @@
                               {% render 'icon-info' %}
                             </button>
                           {%- endif -%}
+                          {%- if isAddonProduct -%}
+                          <input type="hidden" name="updates[]" value="{{ item.quantity }}">
+                          {%- endif -%}
+                          {%- unless isAddonProduct -%}
                           <quantity-input class="quantity cart-quantity ml-button-primary">
                             <button class="quantity__button no-js-hidden" name="minus" type="button">
                               <span class="visually-hidden">
@@ -323,6 +338,7 @@
                               {% render 'icon-plus' %}
                             </button>
                           </quantity-input>
+                          {%- endunless -%}
                         </div>
 
                       </div>
