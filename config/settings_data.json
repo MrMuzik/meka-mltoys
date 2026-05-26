@@ -200,6 +200,11 @@
         "type": "shopify://apps/theme-scheduler-auto/blocks/theme-scheduler/05d79aee-8e7f-404c-bb87-0c1c79a4040f",
         "disabled": false,
         "settings": {}
+      },
+      "649651990075569088": {
+        "type": "shopify://apps/blog-product-spotlight/blocks/app-embed/3dc47331-0778-42b5-9fb0-518fad36306f",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
