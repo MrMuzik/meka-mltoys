@@ -146,7 +146,7 @@
         "ft_hook_Nm4p": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{%- assign hook = product.metafields.custom.hook_text.value -%}\n{%- if hook != blank -%}\n<div class=\"ft-hook-wrap\" style=\"display:flex;gap:16px;align-items:flex-start;margin:2px 0;\">\n  <div style=\"background:#e11d2a;width:3px;min-width:3px;border-radius:2px;align-self:stretch;\"></div>\n  <p style=\"font-size:16px;font-weight:500;line-height:1.5;color:#2a2d33;margin:0;\">{{ hook }}</p>\n</div>\n{%- endif -%}"
+            "custom_liquid": "{%- assign about = product.metafields.custom.about -%}\n{%- if about != blank -%}\n<div class=\"ft-hook-wrap\" style=\"display:flex;gap:16px;align-items:flex-start;margin:2px 0;\">\n  <div style=\"background:#e11d2a;width:3px;min-width:3px;border-radius:2px;align-self:stretch;\"></div>\n  <div style=\"font-size:16px;font-weight:500;line-height:1.5;color:#2a2d33;margin:0;\">{{ about | metafield_tag }}</div>\n</div>\n{%- endif -%}"
           }
         },
         "ft_save_Rq7s": {
