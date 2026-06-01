@@ -4468,6 +4468,12 @@ details-disclosure>details {
   background: inherit !important;
 }
 
+/* hide remove button on GPO addon items before JS loads to prevent flash */
+.cart-item--addon cart-remove-button,
+.cart-item--addon .cart-item__remove {
+  display: none;
+}
+
 /*****************
 
 DIGMO UPDATES BEGIN
