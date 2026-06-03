@@ -41,15 +41,42 @@ Assumes:
     assign has_faqs = true
   endif
 
+  assign witb_value = product.metafields.custom.whats_in_the_box.value
+  assign has_witb = false
+  if witb_value != blank
+    assign has_witb = true
+  endif
+
+  assign specs_value = product.metafields.custom.spec_categories.value
+  assign has_specs = false
+  if specs_value != blank
+    for _ in specs_value
+      assign has_specs = true
+      break
+    endfor
+  endif
+
+  assign byb_sections_value = product.metafields.custom.before_you_buy_sections.value
+  assign has_byb_sections = false
+  if byb_sections_value != blank
+    for _ in byb_sections_value
+      assign has_byb_sections = true
+      break
+    endfor
+  endif
+
   assign tab_id = 'pd-tabs-' | append: product.id
 -%}
 
 <div class="pd-tabs" id="{{ tab_id }}">
   <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-desc" checked>
+  {%- if has_specs -%}
+    <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-specs">
+  {%- endif -%}
   {%- if has_howto -%}
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-howto">
   {%- endif -%}
-  {%- if has_before_you_buy -%}
+  {%- if has_before_you_buy or has_byb_sections -%}
     <input class="pd-tabs__radio" type="radio" name="{{ tab_id }}-rad" id="{{ tab_id }}-beforeyoubuy">
   {%- endif -%}
   {%- if has_faqs -%}
@@ -75,11 +102,15 @@ Assumes:
     >
       <label class="pd-tabs__btn slider__slide is-active" for="{{ tab_id }}-desc" role="tab" aria-controls="{{ tab_id }}-panel-desc">Description</label>
 
+      {%- if has_specs -%}
+        <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-specs" role="tab" aria-controls="{{ tab_id }}-panel-specs">SPECS</label>
+      {%- endif -%}
+
       {%- if has_howto -%}
         <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-howto" role="tab" aria-controls="{{ tab_id }}-panel-howto">INSTALLATION INSTRUCTIONS</label>
       {%- endif -%}
 
-      {%- if has_before_you_buy -%}
+      {%- if has_before_you_buy or has_byb_sections -%}
         <label class="pd-tabs__btn slider__slide" for="{{ tab_id }}-beforeyoubuy" role="tab" aria-controls="{{ tab_id }}-panel-beforeyoubuy">BEFORE YOU BUY</label>
       {%- endif -%}
 
@@ -102,8 +133,44 @@ Assumes:
   <div class="pd-tabs__panels">
     <!-- Description -->
     <section class="pd-tabs__panel" id="{{ tab_id }}-panel-desc" role="tabpanel" aria-labelledby="{{ tab_id }}-desc">
-      <div class="rte">{{ product.description }}</div>
+      <div class="pd-desc-wrap{% if has_witb %} pd-desc-wrap--with-card{% endif %}">
+        <div class="rte pd-desc-body">{{ product.description }}</div>
+        {%- if has_witb -%}
+          <aside class="pd-witb-card">
+            <h3 class="pd-witb-card__title">WHAT'S IN THE BOX</h3>
+            <div class="rte pd-witb-card__body">{{ product.metafields.custom.whats_in_the_box | metafield_tag }}</div>
+          </aside>
+        {%- endif -%}
+      </div>
     </section>
+
+    {%- if has_specs -%}
+      <section class="pd-tabs__panel" id="{{ tab_id }}-panel-specs" role="tabpanel" aria-labelledby="{{ tab_id }}-specs">
+        <div class="pd-specs">
+          {%- for cat in specs_value -%}
+            {%- assign cat_name = cat.category_name | default: cat.fields.category_name -%}
+            {%- assign cat_entries = cat.specs.value | default: cat.fields.specs.value -%}
+            <div class="pd-specs__category">
+              {%- if cat_name != blank -%}
+                <h3 class="pd-specs__cat-title">{{ cat_name }}</h3>
+              {%- endif -%}
+              {%- if cat_entries != blank -%}
+                <dl class="pd-specs__grid">
+                  {%- for entry in cat_entries -%}
+                    {%- assign entry_key = entry.key | default: entry.fields.key -%}
+                    {%- assign entry_val = entry.value | default: entry.fields.value -%}
+                    <div class="pd-specs__row">
+                      <dt class="pd-specs__key">{{ entry_key }}</dt>
+                      <dd class="pd-specs__val">{{ entry_val }}</dd>
+                    </div>
+                  {%- endfor -%}
+                </dl>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </section>
+    {%- endif -%}
 
     {%- if has_howto -%}
       <section class="pd-tabs__panel" id="{{ tab_id }}-panel-howto" role="tabpanel" aria-labelledby="{{ tab_id }}-howto">
@@ -164,11 +231,32 @@ Assumes:
       </section>
     {%- endif -%}
 
-    {%- if has_before_you_buy -%}
+    {%- if has_byb_sections or has_before_you_buy -%}
       <section class="pd-tabs__panel" id="{{ tab_id }}-panel-beforeyoubuy" role="tabpanel" aria-labelledby="{{ tab_id }}-beforeyoubuy">
-        <div class="rte">
-          {{ product.metafields.custom.before_you_buy | metafield_tag }}
-        </div>
+        {%- if has_byb_sections -%}
+          {%- comment -%} New structured card layout {%- endcomment -%}
+          <div class="pd-byb-cards">
+            {%- for card in byb_sections_value -%}
+              {%- assign card_title = card.title | default: card.fields.title -%}
+              {%- assign card_body  = card.body  | default: card.fields.body -%}
+              {%- assign card_num   = forloop.index | prepend: '0' | slice: -2, 2 -%}
+              <div class="pd-byb-card">
+                <span class="pd-byb-card__num">{{ card_num }}</span>
+                {%- if card_title != blank -%}
+                  <h3 class="pd-byb-card__title">{{ card_title }}</h3>
+                {%- endif -%}
+                {%- if card_body != blank -%}
+                  <div class="rte pd-byb-card__body">{{ card_body | metafield_tag }}</div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- elsif has_before_you_buy -%}
+          {%- comment -%} Legacy rich text fallback {%- endcomment -%}
+          <div class="rte">
+            {{ product.metafields.custom.before_you_buy | metafield_tag }}
+          </div>
+        {%- endif -%}
       </section>
     {%- endif -%}
 
@@ -510,21 +598,25 @@ Assumes:
   }
 
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
+  #{{ tab_id }} #{{ tab_id }}-specs:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-specs"],
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
   #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"],
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; color: #C12726; }
 
   #{{ tab_id }} #{{ tab_id }}-desc:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
+  #{{ tab_id }} #{{ tab_id }}-specs:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-specs"]::after,
   #{{ tab_id }} #{{ tab_id }}-howto:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
   #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"]::after,
   #{{ tab_id }} #{{ tab_id }}-faqs:checked  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
 
   #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"],
+  #{{ tab_id }} #{{ tab_id }}-specs:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-specs"],
   #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"],
   #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"],
   #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"] { opacity: 1; }
 
   #{{ tab_id }} #{{ tab_id }}-desc:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-desc"]::after,
+  #{{ tab_id }} #{{ tab_id }}-specs:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-specs"]::after,
   #{{ tab_id }} #{{ tab_id }}-howto:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-howto"]::after,
   #{{ tab_id }} #{{ tab_id }}-beforeyoubuy:hover ~ .pd-tabs__nav label[for="{{ tab_id }}-beforeyoubuy"]::after,
   #{{ tab_id }} #{{ tab_id }}-faqs:hover  ~ .pd-tabs__nav label[for="{{ tab_id }}-faqs"]::after { opacity: 1; transform: scaleX(1); }
@@ -533,6 +625,7 @@ Assumes:
   #{{ tab_id }} .pd-tabs__panel { display: none; }
 
   #{{ tab_id }}-desc:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-desc,
+  #{{ tab_id }}-specs:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-specs,
   #{{ tab_id }}-howto:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-howto,
   #{{ tab_id }}-beforeyoubuy:checked ~ .pd-tabs__panels #{{ tab_id }}-panel-beforeyoubuy,
   #{{ tab_id }}-faqs:checked  ~ .pd-tabs__panels #{{ tab_id }}-panel-faqs  {
@@ -735,5 +828,185 @@ Assumes:
 
     #{{ tab_id }} .pd-tabs__nav::-webkit-scrollbar { display: none; }
     #{{ tab_id }} .pd-tabs__nav { scrollbar-width: none; }
+  }
+
+  /* ===== Description: two-column layout with What's In The Box card ===== */
+  #{{ tab_id }} .pd-desc-wrap { display: block; }
+
+  @media (min-width: 990px) {
+    #{{ tab_id }} .pd-desc-wrap--with-card {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+  }
+
+  #{{ tab_id }} .pd-witb-card {
+    border: 2px solid #001429;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  #{{ tab_id }} .pd-witb-card__title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #0b0c0e;
+    margin: 0 0 1rem 0;
+  }
+
+  #{{ tab_id }} .pd-witb-card__body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #{{ tab_id }} .pd-witb-card__body li {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #0b0c0e;
+  }
+
+  #{{ tab_id }} .pd-witb-card__body li::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #e11d2a;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  #{{ tab_id }} .pd-witb-card__body a {
+    color: #e11d2a;
+  }
+
+  @media (max-width: 989px) {
+    #{{ tab_id }} .pd-witb-card {
+      margin-top: 2rem;
+    }
+  }
+
+  /* ===== Specs tab ===== */
+  #{{ tab_id }} .pd-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  #{{ tab_id }} .pd-specs__cat-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b0c0e;
+    margin: 0 0 .5rem 0;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid #0b0c0e;
+    display: inline-block;
+  }
+
+  #{{ tab_id }} .pd-specs__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 749px) {
+    #{{ tab_id }} .pd-specs__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #{{ tab_id }} .pd-specs__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e1dccd;
+    align-items: baseline;
+  }
+
+  #{{ tab_id }} .pd-specs__row:last-child { border-bottom: none; }
+
+  #{{ tab_id }} .pd-specs__key {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(11,12,14,0.5);
+  }
+
+  #{{ tab_id }} .pd-specs__val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b0c0e;
+    text-align: right;
+    margin: 0;
+  }
+
+  /* ===== Before You Buy: 3-column card grid ===== */
+  #{{ tab_id }} .pd-byb-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 989px) {
+    #{{ tab_id }} .pd-byb-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 749px) {
+    #{{ tab_id }} .pd-byb-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #{{ tab_id }} .pd-byb-card {
+    border: 2px solid #001429;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  #{{ tab_id }} .pd-byb-card__num {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #e11d2a;
+    line-height: 1;
+  }
+
+  #{{ tab_id }} .pd-byb-card__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b0c0e;
+    margin: 0;
+  }
+
+  #{{ tab_id }} .pd-byb-card__body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #0b0c0e;
+    margin-top: .25rem;
+  }
+
+  #{{ tab_id }} .pd-byb-card__body ul {
+    padding-left: 1rem;
+    margin: .5rem 0 0 0;
+  }
+
+  #{{ tab_id }} .pd-byb-card__body li {
+    padding: 2px 0;
   }
 </style>
