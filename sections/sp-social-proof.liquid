@@ -28,9 +28,12 @@
           <p class="sp-subtext">{{ section.settings.subtext }}</p>
         {%- endif -%}
       </div>
-      {%- if section.settings.show_judgeme_badge -%}
+      {%- if section.settings.rating_text != blank -%}
         <div class="sp-rating">
-          {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+          <div class="sp-rating__inner">
+            <span class="sp-rating__stars" aria-hidden="true">★★★★★</span>
+            <span class="sp-rating__text">{{ section.settings.rating_text }}</span>
+          </div>
         </div>
       {%- endif -%}
     </div>
@@ -141,7 +144,7 @@
   #sp-{{ section.id }} {
     position: relative;
     background: #001429;
-    /* no top/bottom padding here — rips handle the edges */
+    overflow: visible; /* let rip edges bleed outside section bounds */
   }
 
   /* ── Rip edges ── */
@@ -150,26 +153,51 @@
     width: 100%;
     line-height: 0;
     font-size: 0;
-    overflow: hidden;
+    position: relative;
+    z-index: 2; /* sit above adjacent sections */
   }
 
   .sp-rip img {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 182px;
-    object-fit: fill; /* stretch horizontally to fill viewport */
   }
 
-  /* Top rip: the jagged dark shape sits at the very top,
-     eating into the white content above */
+  /*
+    Top rip: pull it UP so it overlaps the white page above.
+    The SVG is a navy jagged shape — the torn edge hangs over
+    whatever is above this section.
+  */
   .sp-rip--top {
-    margin-top: 0;
+    margin-top: -90px;
   }
 
-  /* Bottom rip: sits flush at the base */
+  /*
+    Bottom rip: push it DOWN so it overlaps the white page below.
+  */
   .sp-rip--bottom {
-    margin-bottom: 0;
+    margin-bottom: -90px;
+  }
+
+  /* Rating */
+  .sp-rating__inner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sp-rating__stars {
+    color: #e11d2a;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .sp-rating__text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
   }
 
   /* ── Body ── */
@@ -495,11 +523,11 @@
       "default": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
     },
     {
-      "type": "checkbox",
-      "id": "show_judgeme_badge",
-      "label": "Show Judge.me star rating",
-      "default": true,
-      "info": "Displays the live review score from your Judge.me account. Only works on product pages."
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating line",
+      "default": "4.9 / 5 · 312 verified reviews",
+      "info": "Text shown next to the five stars. Update this manually to match your current review count."
     }
   ],
   "blocks": [
