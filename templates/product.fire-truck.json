@@ -301,30 +301,35 @@
         "photo_ckxhYC": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/1.png",
             "alt": ""
           }
         },
         "photo_HFEtMi": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/2.png",
             "alt": ""
           }
         },
         "photo_cL6rRV": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/3.png",
             "alt": ""
           }
         },
         "photo_4i6LwV": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/4.png",
             "alt": ""
           }
         },
         "photo_maU3ad": {
           "type": "photo",
           "settings": {
+            "image": "shopify://shop_images/5.png",
             "alt": ""
           }
         },
@@ -333,7 +338,8 @@
           "settings": {
             "quote_text": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet.",
             "reviewer_name": "Marcus T.",
-            "reviewer_location": "Houston, TX"
+            "reviewer_location": "Houston, TX",
+            "avatar": "shopify://shop_images/Marcus.png"
           }
         },
         "quote_hkwaMA": {
@@ -341,7 +347,8 @@
           "settings": {
             "quote_text": "Worth every penny. The quality is obvious the second you open the box. Doesn't feel like a toy — feels like a real vehicle.",
             "reviewer_name": "Sarah K.",
-            "reviewer_location": "Buffalo, NY"
+            "reviewer_location": "Buffalo, NY",
+            "avatar": "shopify://shop_images/Sarah.png"
           }
         },
         "quote_3GwXjw": {
@@ -349,7 +356,8 @@
           "settings": {
             "quote_text": "Had a question, emailed ML Toys, and heard back fast from a real person. Great experience start to finish.",
             "reviewer_name": "Derek L.",
-            "reviewer_location": "Sacramento, CA"
+            "reviewer_location": "Sacramento, CA",
+            "avatar": "shopify://shop_images/Derek.png"
           }
         }
       },
