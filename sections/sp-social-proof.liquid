@@ -28,14 +28,9 @@
           <p class="sp-subtext">{{ section.settings.subtext }}</p>
         {%- endif -%}
       </div>
-      {%- if section.settings.rating_text != blank -%}
-        <div class="sp-rating">
-          <div class="sp-rating__inner">
-            <span class="sp-rating__stars" aria-hidden="true">★★★★★</span>
-            <span class="sp-rating__text">{{ section.settings.rating_text }}</span>
-          </div>
-        </div>
-      {%- endif -%}
+      <div class="sp-rating">
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+      </div>
     </div>
 
     {%- comment -%} PHOTO GRID {%- endcomment -%}
@@ -523,11 +518,8 @@
       "default": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
     },
     {
-      "type": "text",
-      "id": "rating_text",
-      "label": "Rating line",
-      "default": "4.9 / 5 · 312 verified reviews",
-      "info": "Text shown next to the five stars. Update this manually to match your current review count."
+      "type": "paragraph",
+      "content": "The star rating pulls live from Judge.me automatically. No settings needed."
     }
   ],
   "blocks": [
