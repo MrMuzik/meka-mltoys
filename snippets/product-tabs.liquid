@@ -843,35 +843,44 @@ Assumes:
   }
 
   #{{ tab_id }} .pd-witb-card {
-    border: 2px solid #001429;
-    border-radius: 12px;
-    padding: 1.5rem;
+    border: 7px solid #001429;
+    border-radius: 18px;
+    box-shadow: -8px 12px 0px 0px #001429;
+    padding: 24px;
     flex-shrink: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   #{{ tab_id }} .pd-witb-card__title {
-    font-size: 13px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.72px;
     text-transform: uppercase;
-    color: #0b0c0e;
-    margin: 0 0 1rem 0;
+    color: #001429;
+    margin: 0 0 16px 0;
   }
 
   #{{ tab_id }} .pd-witb-card__body ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   #{{ tab_id }} .pd-witb-card__body li {
     display: flex;
-    align-items: baseline;
-    gap: 8px;
-    padding: 5px 0;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #0b0c0e;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: #2a2d33;
   }
 
   #{{ tab_id }} .pd-witb-card__body li::before {
@@ -882,7 +891,7 @@ Assumes:
     border-radius: 50%;
     background: #e11d2a;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 3px;
   }
 
   #{{ tab_id }} .pd-witb-card__body a {
@@ -892,6 +901,14 @@ Assumes:
   @media (max-width: 989px) {
     #{{ tab_id }} .pd-witb-card {
       margin-top: 2rem;
+    }
+  }
+
+  /* Room for the -8px 12px shadow to breathe on desktop */
+  @media (min-width: 990px) {
+    #{{ tab_id }} .pd-desc-wrap--with-card {
+      padding-bottom: 16px;
+      padding-left: 10px;
     }
   }
 
