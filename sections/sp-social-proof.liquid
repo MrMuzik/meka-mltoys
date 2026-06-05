@@ -167,12 +167,24 @@
     position: relative;
   }
 
-  .sp-rip::before {
+  .sp-rip--top::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: #ffffff;
+    background: white;
     z-index: 0;
+    height: 60px;
+    bottom: 0;
+  }
+
+  .sp-rip--bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 60px;
+    top: 50px;
   }
 
   .sp-rip img {
