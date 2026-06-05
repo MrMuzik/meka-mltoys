@@ -149,22 +149,38 @@
   */
   #sp-{{ section.id }} {
     position: relative;
-    background: transparent;
+    background: #001429;
   }
 
   /* ── Rip edges ── */
+  /*
+    The SVG path floats in the middle of its viewBox — transparent space
+    above AND below the navy shape. We add a white ::before behind each
+    rip so those transparent gaps show white, creating the torn paper look.
+    The navy parts of the SVG blend seamlessly with the section background.
+  */
   .sp-rip {
     display: block;
     width: 100%;
     line-height: 0;
     font-size: 0;
+    position: relative;
+  }
+
+  .sp-rip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    z-index: 0;
   }
 
   .sp-rip img {
     display: block;
     width: 100%;
     height: auto;
-    /* stretch width, maintain proportional height */
+    position: relative;
+    z-index: 1;
   }
 
   /* Rating */
