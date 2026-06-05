@@ -291,6 +291,86 @@
         "include_treadmark_bg": true
       }
     },
+    "sp_social_proof_ixHC8m": {
+      "type": "sp-social-proof",
+      "blocks": {
+        "judge_me_reviews_preview_badge_PjEYbq": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "photo_ckxhYC": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo_HFEtMi": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo_cL6rRV": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo_4i6LwV": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "photo_maU3ad": {
+          "type": "photo",
+          "settings": {
+            "alt": ""
+          }
+        },
+        "quote_rrVfhP": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet.",
+            "reviewer_name": "Marcus T.",
+            "reviewer_location": "Houston, TX"
+          }
+        },
+        "quote_hkwaMA": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Worth every penny. The quality is obvious the second you open the box. Doesn't feel like a toy — feels like a real vehicle.",
+            "reviewer_name": "Sarah K.",
+            "reviewer_location": "Buffalo, NY"
+          }
+        },
+        "quote_3GwXjw": {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Had a question, emailed ML Toys, and heard back fast from a real person. Great experience start to finish.",
+            "reviewer_name": "Derek L.",
+            "reviewer_location": "Sacramento, CA"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_PjEYbq",
+        "photo_ckxhYC",
+        "photo_HFEtMi",
+        "photo_cL6rRV",
+        "photo_4i6LwV",
+        "photo_maU3ad",
+        "quote_rrVfhP",
+        "quote_hkwaMA",
+        "quote_3GwXjw"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "eyebrow": "OUT IN THE WILD",
+        "headline": "The Coolest Ride On The Block",
+        "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
+      }
+    },
     "ml_video_carousel_DdUVtr": {
       "type": "ML-video-carousel",
       "blocks": {
@@ -382,81 +462,6 @@
         "podcast_character_one_mobile": "shopify://shop_images/MLTOYS_HEAD_one_1.svg",
         "podcast_character_two_desktop": "shopify://shop_images/MLG_character_two_1.svg",
         "podcast_character_two_mobile": "shopify://shop_images/MLTOYS_HEAD_two_1.svg"
-      }
-    },
-    "sp_social_proof_ixHC8m": {
-      "type": "sp-social-proof",
-      "blocks": {
-        "photo_ckxhYC": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo_HFEtMi": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo_cL6rRV": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo_4i6LwV": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "photo_maU3ad": {
-          "type": "photo",
-          "settings": {
-            "alt": ""
-          }
-        },
-        "quote_rrVfhP": {
-          "type": "quote",
-          "settings": {
-            "quote_text": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet.",
-            "reviewer_name": "Marcus T.",
-            "reviewer_location": "Houston, TX"
-          }
-        },
-        "quote_hkwaMA": {
-          "type": "quote",
-          "settings": {
-            "quote_text": "Worth every penny. The quality is obvious the second you open the box. Doesn't feel like a toy — feels like a real vehicle.",
-            "reviewer_name": "Sarah K.",
-            "reviewer_location": "Buffalo, NY"
-          }
-        },
-        "quote_3GwXjw": {
-          "type": "quote",
-          "settings": {
-            "quote_text": "Had a question, emailed ML Toys, and heard back fast from a real person. Great experience start to finish.",
-            "reviewer_name": "Derek L.",
-            "reviewer_location": "Sacramento, CA"
-          }
-        }
-      },
-      "block_order": [
-        "photo_ckxhYC",
-        "photo_HFEtMi",
-        "photo_cL6rRV",
-        "photo_4i6LwV",
-        "photo_maU3ad",
-        "quote_rrVfhP",
-        "quote_hkwaMA",
-        "quote_3GwXjw"
-      ],
-      "name": "Social Proof",
-      "settings": {
-        "eyebrow": "OUT IN THE WILD",
-        "headline": "The Coolest Ride On The Block",
-        "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
       }
     }
   },
