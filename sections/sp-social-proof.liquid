@@ -183,6 +183,12 @@
     z-index: 1;
   }
 
+  /* Top rip: flip vertically so transparent area faces UP (shows white page)
+     and navy shape faces DOWN (connects to .sp-body) */
+  .sp-rip--top img {
+    transform: scaleY(-1);
+  }
+
   /* Rating */
   .sp-rating__inner {
     display: flex;
