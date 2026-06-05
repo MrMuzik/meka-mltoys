@@ -1,0 +1,592 @@
+{%- liquid
+  assign photo_blocks = section.blocks | where: 'type', 'photo'
+  assign quote_blocks = section.blocks | where: 'type', 'quote'
+  assign hero_photo   = photo_blocks[0]
+  assign grid_photos  = photo_blocks | slice: 1, 4
+-%}
+
+<div class="sp-wrap" id="sp-{{ section.id }}">
+
+  {%- comment -%} ── TOP RIP ── {%- endcomment -%}
+  <div class="sp-rip sp-rip--top" aria-hidden="true">
+    <img src="{{ 'sp-rip-top.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
+  </div>
+
+  {%- comment -%} ── MAIN BODY ── {%- endcomment -%}
+  <div class="sp-body">
+
+    {%- comment -%} HEAD ── eyebrow / headline / subtext / rating {%- endcomment -%}
+    <div class="sp-head">
+      <div class="sp-head__left">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="sp-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.headline != blank -%}
+          <h2 class="sp-headline">{{ section.settings.headline }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtext != blank -%}
+          <p class="sp-subtext">{{ section.settings.subtext }}</p>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.show_judgeme_badge -%}
+        <div class="sp-rating">
+          {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} PHOTO GRID {%- endcomment -%}
+    {%- if photo_blocks.size > 0 -%}
+      <div class="sp-grid">
+
+        {%- comment -%} Hero — first photo, large left cell {%- endcomment -%}
+        {%- if hero_photo != blank -%}
+          <div class="sp-grid__hero">
+            {%- if hero_photo.settings.image != blank -%}
+              <img
+                src="{{ hero_photo.settings.image | image_url: width: 1360 }}"
+                alt="{{ hero_photo.settings.alt | escape }}"
+                loading="lazy"
+                width="680" height="460"
+                class="sp-grid__img"
+              >
+            {%- else -%}
+              <div class="sp-grid__placeholder">{{ 'image' | placeholder_svg_tag: 'sp-grid__placeholder-svg' }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Grid — photos 2–5 in 2×2 {%- endcomment -%}
+        {%- if grid_photos.size > 0 -%}
+          <div class="sp-grid__cells">
+            {%- for photo in grid_photos -%}
+              <div class="sp-grid__cell">
+                {%- if photo.settings.image != blank -%}
+                  <img
+                    src="{{ photo.settings.image | image_url: width: 680 }}"
+                    alt="{{ photo.settings.alt | escape }}"
+                    loading="lazy"
+                    width="340" height="222"
+                    class="sp-grid__img"
+                  >
+                {%- else -%}
+                  <div class="sp-grid__placeholder">{{ 'image' | placeholder_svg_tag: 'sp-grid__placeholder-svg' }}</div>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} QUOTE CARDS {%- endcomment -%}
+    {%- if quote_blocks.size > 0 -%}
+      <div class="sp-quotes">
+        {%- for card in quote_blocks -%}
+          <div class="sp-quote-card">
+            <div class="sp-quote-card__mark" aria-hidden="true">
+              <svg width="33" height="21" viewBox="0 0 33 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 20.5V12.3C0 9.03333 0.716667 6.23333 2.15 3.9C3.61667 1.53333 5.88333 0 8.95 0V3.65C7.51667 3.65 6.38333 4.21667 5.55 5.35C4.75 6.45 4.35 7.88333 4.35 9.65H8.95V20.5H0ZM16.05 20.5V12.3C16.05 9.03333 16.7667 6.23333 18.2 3.9C19.6667 1.53333 21.9333 0 25 0V3.65C23.5667 3.65 22.4333 4.21667 21.6 5.35C20.8 6.45 20.4 7.88333 20.4 9.65H25V20.5H16.05Z" fill="#E11D2A"/>
+              </svg>
+            </div>
+            {%- if card.settings.quote_text != blank -%}
+              <p class="sp-quote-card__text">{{ card.settings.quote_text }}</p>
+            {%- endif -%}
+            <div class="sp-quote-card__spacer"></div>
+            <div class="sp-quote-card__footer">
+              {%- if card.settings.avatar != blank -%}
+                <img
+                  src="{{ card.settings.avatar | image_url: width: 80 }}"
+                  alt="{{ card.settings.reviewer_name | escape }}"
+                  class="sp-quote-card__avatar"
+                  loading="lazy"
+                  width="40" height="40"
+                >
+              {%- else -%}
+                <div class="sp-quote-card__avatar sp-quote-card__avatar--empty"></div>
+              {%- endif -%}
+              <div class="sp-quote-card__meta">
+                {%- if card.settings.reviewer_name != blank -%}
+                  <p class="sp-quote-card__name">{{ card.settings.reviewer_name }}</p>
+                {%- endif -%}
+                <div class="sp-quote-card__loc-row">
+                  {%- if card.settings.reviewer_location != blank -%}
+                    <span class="sp-quote-card__loc">{{ card.settings.reviewer_location }}</span>
+                    <span class="sp-quote-card__dot" aria-hidden="true"></span>
+                  {%- endif -%}
+                  <span class="sp-quote-card__verified">VERIFIED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>{%- comment -%} /.sp-body {%- endcomment -%}
+
+  {%- comment -%} ── BOTTOM RIP ── {%- endcomment -%}
+  <div class="sp-rip sp-rip--bottom" aria-hidden="true">
+    <img src="{{ 'sp-rip-bottom.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
+  </div>
+
+</div>
+
+<style>
+  /* ═══════════════════════════════════════════
+     Social Proof Section  —  sp-social-proof
+  ═══════════════════════════════════════════ */
+
+  #sp-{{ section.id }} {
+    position: relative;
+    background: #001429;
+    /* no top/bottom padding here — rips handle the edges */
+  }
+
+  /* ── Rip edges ── */
+  .sp-rip {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+  }
+
+  .sp-rip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 182px;
+    object-fit: fill; /* stretch horizontally to fill viewport */
+  }
+
+  /* Top rip: the jagged dark shape sits at the very top,
+     eating into the white content above */
+  .sp-rip--top {
+    margin-top: 0;
+  }
+
+  /* Bottom rip: sits flush at the base */
+  .sp-rip--bottom {
+    margin-bottom: 0;
+  }
+
+  /* ── Body ── */
+  .sp-body {
+    padding: 52px 56px 57px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  /* ── Head ── */
+  .sp-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .sp-head__left {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 760px;
+  }
+
+  .sp-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+  }
+
+  .sp-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(42px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.01;
+    color: #fff;
+    margin: 0;
+  }
+
+  .sp-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 750px;
+  }
+
+  /* ── Judge.me badge override (white on dark bg) ── */
+  .sp-rating {
+    flex-shrink: 0;
+    align-self: flex-end;
+  }
+
+  .sp-rating .jdgm-prev-badge,
+  .sp-rating .jdgm-preview-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-direction: row !important;
+    text-align: right !important;
+  }
+
+  .sp-rating .jdgm-prev-badge__stars,
+  .sp-rating .jdgm-preview-badge__stars {
+    color: #e11d2a !important;
+    font-size: 22px !important;
+  }
+
+  .sp-rating .jdgm-prev-badge__text,
+  .sp-rating .jdgm-preview-badge__count {
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ── Photo Grid ── */
+  .sp-grid {
+    display: grid;
+    grid-template-columns: 680px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .sp-grid__hero {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 460px;
+    background: #0d2035;
+  }
+
+  .sp-grid__hero .sp-grid__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sp-grid__cells {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .sp-grid__cell {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 222px;
+    background: #0d2035;
+  }
+
+  .sp-grid__cell .sp-grid__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sp-grid__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0d2035;
+  }
+
+  .sp-grid__placeholder-svg {
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+    fill: #fff;
+  }
+
+  /* ── Quote Cards ── */
+  .sp-quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .sp-quote-card {
+    background: #fff;
+    border: 1.5px solid #e1dccd;
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 291px;
+  }
+
+  .sp-quote-card__mark {
+    flex-shrink: 0;
+  }
+
+  .sp-quote-card__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #0b0c0e;
+    margin: 0;
+    flex: 1;
+  }
+
+  .sp-quote-card__spacer {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .sp-quote-card__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px dashed #e1dccd;
+    flex-shrink: 0;
+  }
+
+  .sp-quote-card__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .sp-quote-card__avatar--empty {
+    background: #e1dccd;
+  }
+
+  .sp-quote-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .sp-quote-card__name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b0c0e;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .sp-quote-card__loc-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sp-quote-card__loc {
+    font-size: 12px;
+    font-weight: 400;
+    color: #6b7280;
+    white-space: nowrap;
+  }
+
+  .sp-quote-card__dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #6b7280;
+    flex-shrink: 0;
+  }
+
+  .sp-quote-card__verified {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #1e8c4a;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1199px) {
+    .sp-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sp-grid__hero {
+      height: 380px;
+    }
+
+    .sp-grid__cells {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 989px) {
+    .sp-body {
+      padding: 40px 32px 48px;
+      gap: 36px;
+    }
+
+    .sp-quotes {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 749px) {
+    .sp-body {
+      padding: 32px 20px 40px;
+      gap: 28px;
+    }
+
+    .sp-headline {
+      font-size: 38px;
+    }
+
+    .sp-grid__cells {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .sp-grid__cell {
+      height: 160px;
+    }
+
+    .sp-quotes {
+      grid-template-columns: 1fr;
+    }
+
+    .sp-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Social Proof",
+  "tag": "section",
+  "class": "sp-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "OUT IN THE WILD"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "The Coolest Ride On The Block"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_judgeme_badge",
+      "label": "Show Judge.me star rating",
+      "default": true,
+      "info": "Displays the live review score from your Judge.me account. Only works on product pages."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "info": "Describe the image for screen readers"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Quote Card",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Quote",
+          "default": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer name",
+          "default": "Marcus T."
+        },
+        {
+          "type": "text",
+          "id": "reviewer_location",
+          "label": "City, State",
+          "default": "Houston, TX"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Reviewer avatar photo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof",
+      "blocks": [
+        { "type": "photo" },
+        { "type": "photo" },
+        { "type": "photo" },
+        { "type": "photo" },
+        { "type": "photo" },
+        {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet.",
+            "reviewer_name": "Marcus T.",
+            "reviewer_location": "Houston, TX"
+          }
+        },
+        {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Worth every penny. The quality is obvious the second you open the box. Doesn't feel like a toy — feels like a real vehicle.",
+            "reviewer_name": "Sarah K.",
+            "reviewer_location": "Buffalo, NY"
+          }
+        },
+        {
+          "type": "quote",
+          "settings": {
+            "quote_text": "Had a question, emailed ML Toys, and heard back fast from a real person. Great experience start to finish.",
+            "reviewer_name": "Derek L.",
+            "reviewer_location": "Sacramento, CA"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
