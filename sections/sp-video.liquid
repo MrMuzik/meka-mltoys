@@ -1,0 +1,419 @@
+<div class="sv-wrap" id="sv-{{ section.id }}">
+
+  {%- comment -%} ── Decorative background icons ── {%- endcomment -%}
+  <div class="sv-icons" aria-hidden="true">
+    <img src="{{ 'sv-icon-carlight.svg' | asset_url }}"    alt="" class="sv-icon sv-icon--carlight">
+    <img src="{{ 'sv-icon-engine.svg' | asset_url }}"      alt="" class="sv-icon sv-icon--engine">
+    <img src="{{ 'sv-icon-filter.svg' | asset_url }}"      alt="" class="sv-icon sv-icon--filter">
+    <img src="{{ 'sv-icon-battery.svg' | asset_url }}"     alt="" class="sv-icon sv-icon--battery">
+    <img src="{{ 'sv-icon-screwdriver.svg' | asset_url }}" alt="" class="sv-icon sv-icon--screwdriver">
+    <img src="{{ 'sv-icon-hashlines.svg' | asset_url }}"   alt="" class="sv-icon sv-icon--hashlines">
+  </div>
+
+  {%- comment -%} ── Head ── {%- endcomment -%}
+  <div class="sv-head">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="sv-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.headline != blank -%}
+      <h2 class="sv-headline">{{ section.settings.headline }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtext != blank -%}
+      <p class="sv-subtext">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} ── Video Player ── {%- endcomment -%}
+  <div class="sv-player">
+
+    {%- if section.settings.video_type == 'youtube' and section.settings.youtube_url != blank -%}
+
+      {%- comment -%} Extract YouTube ID {%- endcomment -%}
+      {%- assign yt_url = section.settings.youtube_url -%}
+      {%- assign yt_id = yt_url
+        | replace: 'https://youtu.be/', ''
+        | replace: 'http://youtu.be/', ''
+        | replace: 'https://www.youtube.com/watch?v=', ''
+        | replace: 'http://www.youtube.com/watch?v=', ''
+        | replace: 'https://youtube.com/watch?v=', ''
+        | replace: 'https://www.youtube.com/embed/', ''
+        | split: '?' | first
+        | split: '&' | first -%}
+
+      <div class="sv-youtube sv-youtube--poster" data-yt="{{ yt_id | escape }}">
+        {%- if section.settings.poster_image != blank -%}
+          <img
+            src="{{ section.settings.poster_image | image_url: width: 1760 }}"
+            alt="{{ section.settings.headline | escape }}"
+            class="sv-youtube__poster"
+            loading="lazy"
+          >
+        {%- else -%}
+          {%- comment -%} Fallback: YouTube's own thumbnail {%- endcomment -%}
+          <img
+            src="https://i.ytimg.com/vi/{{ yt_id | escape }}/maxresdefault.jpg"
+            alt="{{ section.settings.headline | escape }}"
+            class="sv-youtube__poster"
+            loading="lazy"
+            onerror="this.src='https://i.ytimg.com/vi/{{ yt_id | escape }}/hqdefault.jpg'"
+          >
+        {%- endif -%}
+        <div class="sv-youtube__overlay"></div>
+        <button class="sv-youtube__play" type="button" aria-label="Play video">
+          <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" width="96" height="96">
+            <circle cx="48" cy="48" r="48" fill="#e11d2a"/>
+            <polygon points="38,28 72,48 38,68" fill="#ffffff"/>
+          </svg>
+        </button>
+        {%- if section.settings.duration_label != blank -%}
+          <div class="sv-duration">{{ section.settings.duration_label }}</div>
+        {%- endif -%}
+      </div>
+
+    {%- elsif section.settings.video_type == 'native' and section.settings.video_file != blank -%}
+
+      <div class="sv-native">
+        {%- if section.settings.poster_image != blank -%}
+          <video
+            controls
+            playsinline
+            poster="{{ section.settings.poster_image | image_url: width: 1760 }}"
+            class="sv-native__video"
+          >
+            <source src="{{ section.settings.video_file }}">
+          </video>
+        {%- else -%}
+          <video controls playsinline class="sv-native__video">
+            <source src="{{ section.settings.video_file }}">
+          </video>
+        {%- endif -%}
+        {%- if section.settings.duration_label != blank -%}
+          <div class="sv-duration">{{ section.settings.duration_label }}</div>
+        {%- endif -%}
+      </div>
+
+    {%- else -%}
+      {%- comment -%} Editor placeholder {%- endcomment -%}
+      <div class="sv-placeholder">
+        <p>Add a YouTube URL or native video file in the section settings.</p>
+      </div>
+    {%- endif -%}
+
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    document.querySelectorAll('.sv-youtube--poster[data-yt]').forEach(function (box) {
+      if (box.dataset.svInit) return;
+      box.dataset.svInit = '1';
+      var id = box.getAttribute('data-yt');
+      if (!id) return;
+
+      function activate() {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('title', 'YouTube video player');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.className = 'sv-youtube__iframe';
+        box.innerHTML = '';
+        box.classList.remove('sv-youtube--poster');
+        box.classList.add('sv-youtube--playing');
+        box.appendChild(iframe);
+      }
+
+      box.addEventListener('click', activate);
+    });
+  })();
+</script>
+
+<style>
+  /* ═══════════════════════════════════════════
+     Video Section  —  sp-video
+  ═══════════════════════════════════════════ */
+
+  #sv-{{ section.id }} {
+    position: relative;
+    background: #ffffff;
+    padding: 126px 56px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    overflow: hidden;
+  }
+
+  /* ── Decorative icons ── */
+  .sv-icons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .sv-icon {
+    position: absolute;
+    opacity: 0.35;
+  }
+
+  .sv-icon--carlight    { width: 64px;   top: 96px;   right: 120px; }
+  .sv-icon--engine      { width: 71px;   top: 346px;  left: 61px; }
+  .sv-icon--filter      { width: 118px;  top: 27%;    right: 80px; transform: rotate(-90.29deg); }
+  .sv-icon--battery     { width: 120px;  bottom: 22%; left: 30px; }
+  .sv-icon--screwdriver { width: 22px;   top: 102px;  left: 206px; transform: rotate(29.09deg); }
+  .sv-icon--hashlines   { width: 80px;   top: 43%;    right: 13%; }
+
+  @media (max-width: 989px) {
+    .sv-icons { display: none; }
+  }
+
+  /* ── Head ── */
+  .sv-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sv-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+
+  .sv-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(42px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.01;
+    color: #001429;
+    margin: 0;
+  }
+
+  .sv-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #2a2d33;
+    margin: 0;
+    max-width: 700px;
+  }
+
+  /* ── Player wrapper ── */
+  .sv-player {
+    width: 100%;
+    max-width: 880px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── YouTube poster mode ── */
+  .sv-youtube {
+    position: relative;
+    width: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0px 28px 48px -20px rgba(0,0,0,0.3), 0px 2px 0px 0px rgba(0,0,0,0.04);
+    cursor: pointer;
+    background: #000;
+  }
+
+  .sv-youtube--poster {
+    aspect-ratio: 16 / 9;
+  }
+
+  .sv-youtube__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sv-youtube__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+
+  .sv-youtube__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+    z-index: 2;
+  }
+
+  .sv-youtube__play:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  /* ── YouTube playing (iframe) mode ── */
+  .sv-youtube--playing {
+    aspect-ratio: 16 / 9;
+  }
+
+  .sv-youtube__iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* ── Native video ── */
+  .sv-native {
+    position: relative;
+    width: 100%;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0px 28px 48px -20px rgba(0,0,0,0.3), 0px 2px 0px 0px rgba(0,0,0,0.04);
+  }
+
+  .sv-native__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  /* ── Duration badge ── */
+  .sv-duration {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background: rgba(20,22,26,0.8);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.66px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* ── Editor placeholder ── */
+  .sv-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #f1f1f1;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    #sv-{{ section.id }} {
+      padding: 80px 32px 80px;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 749px) {
+    #sv-{{ section.id }} {
+      padding: 60px 20px 60px;
+      gap: 24px;
+    }
+
+    .sv-headline {
+      font-size: 38px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Video — See it in Action",
+  "tag": "section",
+  "class": "sv-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "ROLL THE TAPE"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "See it in Action"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Full vehicle walkthrough, real ride footage, and everything that makes this truck the real deal."
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "select",
+      "id": "video_type",
+      "label": "Video source",
+      "options": [
+        { "value": "youtube", "label": "YouTube" },
+        { "value": "native",  "label": "Native video file" }
+      ],
+      "default": "youtube"
+    },
+    {
+      "type": "text",
+      "id": "youtube_url",
+      "label": "YouTube URL",
+      "info": "Paste a full YouTube URL (e.g. https://youtu.be/abc123). Used when source is set to YouTube.",
+      "placeholder": "https://youtu.be/..."
+    },
+    {
+      "type": "video_url",
+      "id": "video_file",
+      "label": "Native video file",
+      "accept": ["mp4", "ogg", "webm"],
+      "info": "Used when source is set to Native video file."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster / thumbnail image",
+      "info": "For YouTube: overrides the auto-fetched thumbnail. For native video: shown before playback."
+    },
+    {
+      "type": "text",
+      "id": "duration_label",
+      "label": "Duration badge",
+      "placeholder": "3:42",
+      "info": "Shown in the bottom-left corner of the video. Leave blank to hide."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video — See it in Action"
+    }
+  ]
+}
+{% endschema %}
