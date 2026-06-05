@@ -22,7 +22,11 @@
           <p class="sp-eyebrow">{{ section.settings.eyebrow }}</p>
         {%- endif -%}
         {%- if section.settings.headline != blank -%}
-          <h2 class="sp-headline">{{ section.settings.headline }}</h2>
+          <h2 class="sp-headline">
+            <img src="{{ 'sp-flourish-lines.svg' | asset_url }}" alt="" class="sp-flourish sp-flourish--lines" aria-hidden="true">
+            {{ section.settings.headline }}
+            <img src="{{ 'sp-flourish-arrow.svg' | asset_url }}" alt="" class="sp-flourish sp-flourish--arrow" aria-hidden="true">
+          </h2>
         {%- endif -%}
         {%- if section.settings.subtext != blank -%}
           <p class="sp-subtext">{{ section.settings.subtext }}</p>
@@ -264,6 +268,30 @@
     line-height: 1.01;
     color: #fff;
     margin: 0;
+    position: relative;
+  }
+
+  .sp-flourish {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  /* Lines flourish — top-left of headline, rotated as in Figma */
+  .sp-flourish--lines {
+    width: 54px;
+    height: auto;
+    top: -10px;
+    left: -20px;
+    transform: rotate(-149.52deg);
+  }
+
+  /* Arrow flourish — to the right of headline text, pointing down */
+  .sp-flourish--arrow {
+    width: 118px;
+    height: auto;
+    bottom: -30px;
+    right: -80px;
+    transform: rotate(27.4deg) scaleY(-1);
   }
 
   .sp-subtext {
@@ -464,6 +492,15 @@
     color: #1e8c4a;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+
+  /* ── Rip visibility: only show between 1025px and 1860px ── */
+  @media (max-width: 1024px) {
+    .sp-rip { display: none; }
+  }
+
+  @media (min-width: 1861px) {
+    .sp-rip { display: none; }
   }
 
   /* ── Responsive ── */
