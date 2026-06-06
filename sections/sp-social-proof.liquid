@@ -8,9 +8,11 @@
 <div class="sp-wrap" id="sp-{{ section.id }}">
 
   {%- comment -%} ── TOP RIP ── {%- endcomment -%}
-  <div class="sp-rip sp-rip--top" aria-hidden="true">
-    <img src="{{ 'sp-rip-top.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
-  </div>
+  {%- if section.settings.show_top_rip -%}
+    <div class="sp-rip sp-rip--top" aria-hidden="true">
+      <img src="{{ 'sp-rip-top.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
+    </div>
+  {%- endif -%}
 
   {%- comment -%} ── MAIN BODY ── {%- endcomment -%}
   <div class="sp-body">
@@ -134,9 +136,11 @@
   </div>{%- comment -%} /.sp-body {%- endcomment -%}
 
   {%- comment -%} ── BOTTOM RIP ── {%- endcomment -%}
-  <div class="sp-rip sp-rip--bottom" aria-hidden="true">
-    <img src="{{ 'sp-rip-bottom.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
-  </div>
+  {%- if section.settings.show_bottom_rip -%}
+    <div class="sp-rip sp-rip--bottom" aria-hidden="true">
+      <img src="{{ 'sp-rip-bottom.svg' | asset_url }}" alt="" loading="lazy" width="1846" height="182">
+    </div>
+  {%- endif -%}
 
 </div>
 
@@ -585,7 +589,10 @@
     {
       "type": "paragraph",
       "content": "The star rating pulls live from Judge.me automatically. No settings needed."
-    }
+    },
+    { "type": "header",   "content": "Ripped paper edges" },
+    { "type": "checkbox", "id": "show_top_rip",    "label": "Show top rip",    "default": true },
+    { "type": "checkbox", "id": "show_bottom_rip", "label": "Show bottom rip", "default": true }
   ],
   "blocks": [
     {
