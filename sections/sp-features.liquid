@@ -1,0 +1,311 @@
+<div id="sf-{{ section.id }}" class="sf-wrap">
+
+  {%- comment -%} ── Decorative background ── {%- endcomment -%}
+  <div class="sf-bg-deco" aria-hidden="true">
+    <img src="{{ 'sf-tire-track.svg' | asset_url }}" alt="" class="sf-tire-track" loading="lazy">
+    <img src="{{ 'sf-motor-filter.svg' | asset_url }}" alt="" class="sf-motor-filter" loading="lazy">
+  </div>
+
+  {%- comment -%} ── Head ── {%- endcomment -%}
+  <div class="sf-head">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="sf-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    <div class="sf-headline-wrap">
+      {%- if section.settings.headline != blank -%}
+        <h2 class="sf-headline">{{ section.settings.headline }}</h2>
+      {%- endif -%}
+      <img src="{{ 'sf-arrow.svg' | asset_url }}" alt="" class="sf-arrow" loading="lazy" aria-hidden="true">
+    </div>
+  </div>
+
+  {%- comment -%} ── Tiles Grid ── {%- endcomment -%}
+  {%- assign tile_blocks = section.blocks | where: 'type', 'tile' -%}
+  {%- if tile_blocks.size > 0 -%}
+    <div class="sf-grid">
+      {%- for block in tile_blocks -%}
+        <div class="sf-tile" {{ block.shopify_attributes }}>
+          <div class="sf-tile__image">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+                class="sf-tile__img"
+              >
+            {%- else -%}
+              <div class="sf-tile__img-placeholder"></div>
+            {%- endif -%}
+            <div class="sf-tile__overlay"></div>
+            {%- if block.settings.tag != blank -%}
+              <span class="sf-tile__tag sf-tile__tag--{{ block.settings.tag_color | default: 'navy' }}">
+                {{ block.settings.tag }}
+              </span>
+            {%- endif -%}
+          </div>
+          <div class="sf-tile__body">
+            {%- if block.settings.title != blank -%}
+              <p class="sf-tile__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="sf-tile__desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  #sf-{{ section.id }} {
+    position: relative;
+    background: #ffffff;
+    padding: 120px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    overflow: hidden;
+  }
+
+  /* ── Decorative background ── */
+  .sf-bg-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .sf-tire-track {
+    position: absolute;
+    top: -115px;
+    left: -342px;
+    width: 1849px;
+    height: auto;
+    opacity: 0.07;
+    transform: rotate(1.13deg);
+  }
+  .sf-motor-filter {
+    position: absolute;
+    top: 192px;
+    right: 56px;
+    width: 118px;
+    height: 118px;
+    opacity: 0.4;
+    transform: rotate(-90.29deg);
+  }
+  @media (max-width: 989px) {
+    .sf-motor-filter { display: none; }
+    .sf-tire-track { display: none; }
+  }
+
+  /* ── Head ── */
+  .sf-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .sf-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+  .sf-headline-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .sf-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.32px;
+    color: #0b0c0e;
+    margin: 0;
+    max-width: 811px;
+  }
+  .sf-arrow {
+    position: absolute;
+    width: 118px;
+    height: 82px;
+    top: 13px;
+    left: 782px;
+    transform: rotate(47.04deg) scaleY(-1);
+    pointer-events: none;
+  }
+  @media (max-width: 989px) {
+    .sf-arrow { display: none; }
+  }
+
+  /* ── Tiles grid ── */
+  .sf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px 36px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sf-tile {
+    background: #ffffff;
+    border: 7px solid #001429;
+    border-radius: 18px;
+    box-shadow: -8px 12px 0px 0px #001429;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Tile image ── */
+  .sf-tile__image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px 22px;
+  }
+  .sf-tile__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .sf-tile__img-placeholder {
+    position: absolute;
+    inset: 0;
+    background: #e5e7eb;
+  }
+  .sf-tile__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+  }
+  .sf-tile__tag {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    align-self: flex-start;
+  }
+  .sf-tile__tag--navy { background: #0b0c0e; }
+  .sf-tile__tag--red  { background: #e11d2a; }
+
+  /* ── Tile body ── */
+  .sf-tile__body {
+    background: #ffffff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .sf-tile__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.12px;
+    color: #0b0c0e;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .sf-tile__desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2a2d33;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    #sf-{{ section.id }} {
+      padding: 80px 32px;
+      gap: 40px;
+    }
+    .sf-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 749px) {
+    #sf-{{ section.id }} {
+      padding: 60px 20px;
+      gap: 32px;
+    }
+    .sf-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .sf-tile__title {
+      white-space: normal;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Features",
+  "tag": "section",
+  "class": "sf-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "UNDER THE HOOD" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Built to Handle Everything A Kid Can Throw at It" }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Feature tile",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "tag", "label": "Tag label", "placeholder": "GRIP" },
+        {
+          "type": "select",
+          "id": "tag_color",
+          "label": "Tag color",
+          "options": [
+            { "value": "navy", "label": "Navy" },
+            { "value": "red", "label": "Red" }
+          ],
+          "default": "navy"
+        },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features",
+      "blocks": [
+        { "type": "tile", "settings": { "tag": "GRIP", "tag_color": "navy", "title": "Rubber All-Terrain Tires", "description": "EVA rubber tread that bites into grass, dirt, and pavement. None of the plastic-skid nonsense from generic listings." } },
+        { "type": "tile", "settings": { "tag": "BODY", "tag_color": "navy", "title": "Authentic Fire Truck Body", "description": "Working details kids go crazy for. Realistic livery, ladder rack, side compartments, and a chrome bumper that actually looks the part." } },
+        { "type": "tile", "settings": { "tag": "AUDIO", "tag_color": "navy", "title": "Built-In Bluetooth Radio", "description": "Touchscreen audio dash with Bluetooth, AM/FM, working PA system, and a siren that doesn't sound like a cartoon." } },
+        { "type": "tile", "settings": { "tag": "LIGHTS", "tag_color": "red", "title": "LED Headlights & Bar", "description": "Bright, realistic, and ready for full effect day or night. Working emergency light bar on the roof, head/tail beams up front and back." } },
+        { "type": "tile", "settings": { "tag": "DRIVE", "tag_color": "red", "title": "Stronger Motors & Gearboxes", "description": "Built tougher than stock from day one. Reinforced linkages, upgraded gearbox internals, and rated for the rough stuff kids put it through." } },
+        { "type": "tile", "settings": { "tag": "FUTURE", "tag_color": "navy", "title": "Upgrade-Ready Electronics", "description": "Pre-wired and waiting. Full ML Toys performance catalog drops in cleanly when your kid is ready for more speed and torque." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
