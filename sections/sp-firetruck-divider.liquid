@@ -1,3 +1,8 @@
+{%- assign align = section.settings.alignment | default: 'center' -%}
+{%- assign justify = 'center' -%}
+{%- if align == 'left'  -%}{%- assign justify = 'flex-start' -%}{%- endif -%}
+{%- if align == 'right' -%}{%- assign justify = 'flex-end'   -%}{%- endif -%}
+
 <div id="sfd-{{ section.id }}" class="sfd-wrap" aria-hidden="true">
   {%- if section.settings.image != blank -%}
     <img
@@ -20,17 +25,16 @@
     height: 0;
     overflow: visible;
     display: flex;
-    justify-content: center;
+    justify-content: {{ justify }};
     pointer-events: none;
     z-index: 10;
-    margin-top: {{ section.settings.vertical_offset }};
+    margin-top: {{ section.settings.margin_top }};
+    margin-bottom: {{ section.settings.margin_bottom }};
   }
 
-  .sfd-img {
+  #sfd-{{ section.id }} .sfd-img {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: {{ section.settings.vertical_offset }};
     width: 100%;
     max-width: {{ section.settings.max_width }};
     height: auto;
@@ -39,11 +43,9 @@
     user-select: none;
   }
 
-  .sfd-placeholder {
+  #sfd-{{ section.id }} .sfd-placeholder {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
     max-width: {{ section.settings.max_width }};
     height: 200px;
@@ -58,11 +60,24 @@
     color: rgba(0,20,41,0.4);
   }
 
+  @media (max-width: 989px) {
+    #sfd-{{ section.id }} {
+      margin-top: {{ section.settings.margin_top_tablet }};
+      margin-bottom: {{ section.settings.margin_bottom_tablet }};
+    }
+    #sfd-{{ section.id }} .sfd-img {
+      top: {{ section.settings.vertical_offset_tablet }};
+      max-width: {{ section.settings.max_width_tablet }};
+    }
+  }
+
   @media (max-width: 749px) {
     #sfd-{{ section.id }} {
-      margin-top: {{ section.settings.vertical_offset_mobile }};
+      margin-top: {{ section.settings.margin_top_mobile }};
+      margin-bottom: {{ section.settings.margin_bottom_mobile }};
     }
-    .sfd-img {
+    #sfd-{{ section.id }} .sfd-img {
+      top: {{ section.settings.vertical_offset_mobile }};
       max-width: 90vw;
     }
   }
@@ -81,25 +96,97 @@
       "info": "Use a PNG or WebP with a transparent background for best results."
     },
     {
+      "type": "select",
+      "id": "alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
       "type": "text",
       "id": "max_width",
       "label": "Image max width",
       "default": "900px",
-      "info": "Controls how wide the truck renders (e.g. 900px, 75vw)."
+      "info": "e.g. 900px or 60vw"
     },
     {
       "type": "text",
       "id": "vertical_offset",
-      "label": "Vertical offset (desktop)",
+      "label": "Vertical offset",
       "default": "-120px",
-      "info": "Negative values pull the truck up to overlap the section above. Positive values push it down."
+      "info": "Moves the image up (negative) or down (positive) from the section's zero-height anchor point."
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin top",
+      "default": "0px",
+      "info": "Adds space above the section itself (shifts the anchor point down)."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin bottom",
+      "default": "0px",
+      "info": "Adds space below the section itself (pushes the next section down)."
+    },
+    {
+      "type": "header",
+      "content": "Tablet (≤989px)"
+    },
+    {
+      "type": "text",
+      "id": "max_width_tablet",
+      "label": "Image max width",
+      "default": "680px"
+    },
+    {
+      "type": "text",
+      "id": "vertical_offset_tablet",
+      "label": "Vertical offset",
+      "default": "-80px"
+    },
+    {
+      "type": "text",
+      "id": "margin_top_tablet",
+      "label": "Margin top",
+      "default": "0px"
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom_tablet",
+      "label": "Margin bottom",
+      "default": "0px"
+    },
+    {
+      "type": "header",
+      "content": "Mobile (≤749px)"
     },
     {
       "type": "text",
       "id": "vertical_offset_mobile",
-      "label": "Vertical offset (mobile)",
-      "default": "-60px",
-      "info": "Separate offset for screens under 750px wide."
+      "label": "Vertical offset",
+      "default": "-60px"
+    },
+    {
+      "type": "text",
+      "id": "margin_top_mobile",
+      "label": "Margin top",
+      "default": "0px"
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom_mobile",
+      "label": "Margin bottom",
+      "default": "0px"
     }
   ],
   "presets": [

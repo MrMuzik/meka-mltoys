@@ -54,7 +54,9 @@
     {%- if section.settings.button_label != blank -%}
       <a href="{{ section.settings.button_url | default: '#' }}" class="sc-btn">
         {{ section.settings.button_label }}
-        <img src="{{ 'sc-icon-arrow.svg' | asset_url }}" alt="" class="sc-btn__arrow" aria-hidden="true">
+        {%- if section.settings.show_arrow -%}
+          <img src="{{ 'sc-icon-arrow.svg' | asset_url }}" alt="" class="sc-btn__arrow" aria-hidden="true">
+        {%- endif -%}
       </a>
     {%- endif -%}
 
@@ -182,8 +184,10 @@
   .sc-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     height: 55px;
+    min-width: 326px;
     padding: 4px 16px;
     background: #ffffff;
     border: 4px solid #001429;
@@ -203,8 +207,8 @@
     box-shadow: -3px 6px 0px #001429;
   }
   .sc-btn__arrow {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     flex-shrink: 0;
     object-fit: contain;
   }
@@ -242,9 +246,10 @@
     { "type": "text", "id": "col_feature", "label": "Feature column",  "default": "Features" },
     { "type": "text", "id": "col_ml",      "label": "ML Toys column",  "default": "ML Toys Fire Truck" },
     { "type": "text", "id": "col_generic", "label": "Generic column",   "default": "Generic Amazon Brands" },
-    { "type": "header", "content": "CTA Button" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Order Your Fire Truck" },
-    { "type": "url",  "id": "button_url",   "label": "Button URL" }
+    { "type": "header",   "content": "CTA Button" },
+    { "type": "text",     "id": "button_label", "label": "Button label",       "default": "Order Your Fire Truck" },
+    { "type": "url",      "id": "button_url",   "label": "Button URL" },
+    { "type": "checkbox", "id": "show_arrow",   "label": "Show arrow icon",    "default": true }
   ],
   "blocks": [
     {
