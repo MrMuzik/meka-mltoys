@@ -1,4 +1,4 @@
-<div id="sf-{{ section.id }}" class="sf-wrap">
+<div id="sf-{{ section.id }}" class="sf-wrap" style="margin-top: {{ section.settings.margin_top }}">
 
   {%- comment -%} ── Decorative background ── {%- endcomment -%}
   <div class="sf-bg-deco" aria-hidden="true">
@@ -270,7 +270,8 @@
   "class": "sf-section",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "UNDER THE HOOD" },
-    { "type": "text", "id": "headline", "label": "Headline", "default": "Built to Handle Everything A Kid Can Throw at It" }
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Built to Handle Everything A Kid Can Throw at It" },
+    { "type": "text", "id": "margin_top", "label": "Top margin / overlap", "default": "-40px", "info": "Use a negative value (e.g. -40px) to pull the section up and overlap the section above it." }
   ],
   "blocks": [
     {
