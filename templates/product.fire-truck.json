@@ -392,6 +392,93 @@
         "duration_label": ""
       }
     },
+    "sp_upgrade_story_LeafAn": {
+      "type": "sp-upgrade-story",
+      "blocks": {
+        "stage_dMLWnf": {
+          "type": "stage",
+          "settings": {
+            "icon": "shopify://shop_images/StockBuild.png",
+            "badge": "",
+            "label": "STOCK BUILD",
+            "title": "Stock Build",
+            "description": "Fast, strong, and ready to ride right out of the box.",
+            "speed_value": "3",
+            "speed_unit": "MPH"
+          }
+        },
+        "stage_N86Xdw": {
+          "type": "stage",
+          "settings": {
+            "icon": "shopify://shop_images/Battery.png",
+            "badge": "",
+            "label": "BATTERY",
+            "title": "Battery Upgrades",
+            "description": "More ride time, more consistent power, longer adventures.",
+            "speed_value": "5",
+            "speed_unit": "MPH"
+          }
+        },
+        "stage_xcPQ6W": {
+          "type": "stage",
+          "settings": {
+            "icon": "shopify://shop_images/Gearbox.png",
+            "badge": "",
+            "label": "MOTORS",
+            "title": "Motor/Gearbox Upgrades",
+            "description": "More speed, more torque, more excitement.",
+            "speed_value": "6.5",
+            "speed_unit": "MPH"
+          }
+        },
+        "stage_GaNVmA": {
+          "type": "stage",
+          "settings": {
+            "icon": "shopify://shop_images/SteeringWheel.png",
+            "badge": "",
+            "label": "FULL PERF",
+            "title": "Tires, Lights & More",
+            "description": "Shop our full range of available upgrades.",
+            "speed_value": "8",
+            "speed_unit": "MPH"
+          }
+        },
+        "extra_card_HCyhhX": {
+          "type": "extra_card",
+          "settings": {
+            "title": "Stickers & Style",
+            "description": "Four sticker packs to change the personality of the truck — Classic FD, Wildland, EMS Rescue, and a Custom Decals option for the kids who want to make it theirs.",
+            "link_label": "EXPLORE STICKER PACKS",
+            "link_url": ""
+          }
+        },
+        "extra_card_kQrKHK": {
+          "type": "extra_card",
+          "settings": {
+            "title": "Service Centers & Parts",
+            "description": "Service centers across the USA ready to support your upgrades. All parts from the biggest name in ride-on toy upgrades. Stocked and ready to ship.",
+            "link_label": "FIND A SERVICE CENTER",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "stage_dMLWnf",
+        "stage_N86Xdw",
+        "stage_xcPQ6W",
+        "stage_GaNVmA",
+        "extra_card_HCyhhX",
+        "extra_card_kQrKHK"
+      ],
+      "name": "Upgrade Story",
+      "settings": {
+        "eyebrow": "THE PATH AHEAD",
+        "headline": "The Last Ride-On You'll Ever Need To Buy",
+        "subtext": "Most ride-ons have a ceiling. This one doesn't. When your kid is ready for more, the ML Toys upgrade path is already waiting.",
+        "show_top_rip": true,
+        "show_bottom_rip": true
+      }
+    },
     "ml_video_carousel_DdUVtr": {
       "type": "ML-video-carousel",
       "blocks": {
@@ -457,89 +544,6 @@
         "text_color": "foreground",
         "button_link": "shopify://pages/how-to-start-modifying-power-wheels-and-ride-on-toys",
         "button_text": "Learn More"
-      }
-    },
-    "sp_upgrade_story_LeafAn": {
-      "type": "sp-upgrade-story",
-      "blocks": {
-        "stage_dMLWnf": {
-          "type": "stage",
-          "settings": {
-            "badge": "",
-            "label": "STOCK BUILD",
-            "title": "Stock Build",
-            "description": "Fast, strong, and ready to ride right out of the box.",
-            "speed_value": "3",
-            "speed_unit": "MPH"
-          }
-        },
-        "stage_N86Xdw": {
-          "type": "stage",
-          "settings": {
-            "badge": "",
-            "label": "BATTERY",
-            "title": "Battery Upgrades",
-            "description": "More ride time, more consistent power, longer adventures.",
-            "speed_value": "5",
-            "speed_unit": "MPH"
-          }
-        },
-        "stage_xcPQ6W": {
-          "type": "stage",
-          "settings": {
-            "badge": "",
-            "label": "MOTORS",
-            "title": "Motor/Gearbox Upgrades",
-            "description": "More speed, more torque, more excitement.",
-            "speed_value": "6.5",
-            "speed_unit": "MPH"
-          }
-        },
-        "stage_GaNVmA": {
-          "type": "stage",
-          "settings": {
-            "badge": "",
-            "label": "FULL PERF",
-            "title": "Tires, Lights & More",
-            "description": "Shop our full range of available upgrades.",
-            "speed_value": "8",
-            "speed_unit": "MPH"
-          }
-        },
-        "extra_card_HCyhhX": {
-          "type": "extra_card",
-          "settings": {
-            "title": "Stickers & Style",
-            "description": "Four sticker packs to change the personality of the truck — Classic FD, Wildland, EMS Rescue, and a Custom Decals option for the kids who want to make it theirs.",
-            "link_label": "EXPLORE STICKER PACKS",
-            "link_url": ""
-          }
-        },
-        "extra_card_kQrKHK": {
-          "type": "extra_card",
-          "settings": {
-            "title": "Service Centers & Parts",
-            "description": "Service centers across the USA ready to support your upgrades. All parts from the biggest name in ride-on toy upgrades. Stocked and ready to ship.",
-            "link_label": "FIND A SERVICE CENTER",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "stage_dMLWnf",
-        "stage_N86Xdw",
-        "stage_xcPQ6W",
-        "stage_GaNVmA",
-        "extra_card_HCyhhX",
-        "extra_card_kQrKHK"
-      ],
-      "name": "Upgrade Story",
-      "settings": {
-        "eyebrow": "THE PATH AHEAD",
-        "headline": "The Last Ride-On You'll Ever Need To Buy",
-        "subtext": "Most ride-ons have a ceiling. This one doesn't. When your kid is ready for more, the ML Toys upgrade path is already waiting.",
-        "show_top_rip": true,
-        "show_bottom_rip": true
       }
     }
   },
