@@ -764,9 +764,9 @@
         "vertical_offset_tablet": "0",
         "margin_top_tablet": "-150px",
         "margin_bottom_tablet": "345px",
-        "vertical_offset_mobile": "-60px",
-        "margin_top_mobile": "0px",
-        "margin_bottom_mobile": "0px"
+        "vertical_offset_mobile": "-40px",
+        "margin_top_mobile": "0",
+        "margin_bottom_mobile": "150px"
       }
     },
     "sp_why_mltoys_Jh9M8H": {
