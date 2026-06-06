@@ -379,6 +379,19 @@
         "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
       }
     },
+    "sp_video_9gYm76": {
+      "type": "sp-video",
+      "name": "Video — See it in Action",
+      "settings": {
+        "eyebrow": "ROLL THE TAPE",
+        "headline": "See it in Action",
+        "subtext": "Full vehicle walkthrough, real ride footage, and everything that makes this truck the real deal.",
+        "video_type": "youtube",
+        "youtube_url": "https://www.youtube.com/watch?v=IRi0n3ZSqxM",
+        "video_file": "",
+        "duration_label": ""
+      }
+    },
     "ml_video_carousel_DdUVtr": {
       "type": "ML-video-carousel",
       "blocks": {
@@ -453,6 +466,7 @@
     "related_products",
     "17560776142eb8d1a3",
     "sp_social_proof_ixHC8m",
+    "sp_video_9gYm76",
     "ml_video_carousel_DdUVtr"
   ]
 }
