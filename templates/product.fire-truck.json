@@ -746,7 +746,8 @@
         "col_ml": "ML Toys Fire Truck",
         "col_generic": "Generic Amazon Brands",
         "button_label": "Order Your Fire Truck",
-        "button_url": ""
+        "button_url": "",
+        "show_arrow": true
       }
     },
     "sp_firetruck_divider_RiFVJW": {
@@ -754,9 +755,18 @@
       "name": "Fire Truck Divider",
       "settings": {
         "image": "shopify://shop_images/FireTruckSketch.png",
+        "alignment": "right",
         "max_width": "656px",
-        "vertical_offset": "220px",
-        "vertical_offset_mobile": "-60px"
+        "vertical_offset": "0",
+        "margin_top": "0px",
+        "margin_bottom": "0px",
+        "max_width_tablet": "680px",
+        "vertical_offset_tablet": "0",
+        "margin_top_tablet": "-150px",
+        "margin_bottom_tablet": "345px",
+        "vertical_offset_mobile": "-60px",
+        "margin_top_mobile": "0px",
+        "margin_bottom_mobile": "0px"
       }
     },
     "sp_why_mltoys_Jh9M8H": {
