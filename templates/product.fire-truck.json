@@ -446,6 +446,7 @@
         "extra_card_HCyhhX": {
           "type": "extra_card",
           "settings": {
+            "icon": "shopify://shop_images/stickers.png",
             "title": "Stickers & Style",
             "description": "Four sticker packs to change the personality of the truck — Classic FD, Wildland, EMS Rescue, and a Custom Decals option for the kids who want to make it theirs.",
             "link_label": "EXPLORE STICKER PACKS",
@@ -455,6 +456,7 @@
         "extra_card_kQrKHK": {
           "type": "extra_card",
           "settings": {
+            "icon": "shopify://shop_images/service.png",
             "title": "Service Centers & Parts",
             "description": "Service centers across the USA ready to support your upgrades. All parts from the biggest name in ride-on toy upgrades. Stocked and ready to ship.",
             "link_label": "FIND A SERVICE CENTER",
