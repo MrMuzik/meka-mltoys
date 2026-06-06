@@ -1,0 +1,111 @@
+<div id="sfd-{{ section.id }}" class="sfd-wrap" aria-hidden="true">
+  {%- if section.settings.image != blank -%}
+    <img
+      src="{{ section.settings.image | image_url: width: 1800 }}"
+      alt=""
+      class="sfd-img"
+      loading="lazy"
+      draggable="false"
+    >
+  {%- else -%}
+    <div class="sfd-placeholder">
+      <p>Upload a fire truck image in section settings</p>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  #sfd-{{ section.id }} {
+    position: relative;
+    height: 0;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 10;
+    margin-top: {{ section.settings.vertical_offset }};
+  }
+
+  .sfd-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: {{ section.settings.max_width }};
+    height: auto;
+    display: block;
+    object-fit: contain;
+    user-select: none;
+  }
+
+  .sfd-placeholder {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: {{ section.settings.max_width }};
+    height: 200px;
+    background: rgba(0,20,41,0.08);
+    border: 2px dashed rgba(0,20,41,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(0,20,41,0.4);
+  }
+
+  @media (max-width: 749px) {
+    #sfd-{{ section.id }} {
+      margin-top: {{ section.settings.vertical_offset_mobile }};
+    }
+    .sfd-img {
+      max-width: 90vw;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Fire Truck Divider",
+  "tag": "div",
+  "class": "sfd-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Fire truck image",
+      "info": "Use a PNG or WebP with a transparent background for best results."
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Image max width",
+      "default": "900px",
+      "info": "Controls how wide the truck renders (e.g. 900px, 75vw)."
+    },
+    {
+      "type": "text",
+      "id": "vertical_offset",
+      "label": "Vertical offset (desktop)",
+      "default": "-120px",
+      "info": "Negative values pull the truck up to overlap the section above. Positive values push it down."
+    },
+    {
+      "type": "text",
+      "id": "vertical_offset_mobile",
+      "label": "Vertical offset (mobile)",
+      "default": "-60px",
+      "info": "Separate offset for screens under 750px wide."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fire Truck Divider"
+    }
+  ]
+}
+{% endschema %}

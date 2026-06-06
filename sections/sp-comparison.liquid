@@ -1,0 +1,278 @@
+<div id="sc-{{ section.id }}" class="sc-wrap">
+
+  <div class="sc-inner">
+
+    {%- comment -%} ── Head ── {%- endcomment -%}
+    <div class="sc-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sc-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="sc-headline">
+        {{ section.settings.headline_ml }}
+        <span class="sc-headline__vs">vs.</span>
+        {{ section.settings.headline_generic }}
+      </h2>
+    </div>
+
+    {%- comment -%} ── Table ── {%- endcomment -%}
+    {%- assign row_blocks = section.blocks | where: 'type', 'row' -%}
+    <div class="sc-table">
+
+      {%- comment -%} Header row {%- endcomment -%}
+      <div class="sc-table__head">
+        <div class="sc-table__cell sc-table__cell--label">
+          <span class="sc-th">{{ section.settings.col_feature }}</span>
+        </div>
+        <div class="sc-table__cell sc-table__cell--ml">
+          <span class="sc-th sc-th--ml">{{ section.settings.col_ml }}</span>
+        </div>
+        <div class="sc-table__cell sc-table__cell--generic">
+          <span class="sc-th sc-th--generic">{{ section.settings.col_generic }}</span>
+        </div>
+      </div>
+
+      {%- comment -%} Body rows {%- endcomment -%}
+      {%- for block in row_blocks -%}
+        <div class="sc-table__row{% cycle ' sc-table__row--white', ' sc-table__row--gray' %}" {{ block.shopify_attributes }}>
+          <div class="sc-table__cell sc-table__cell--label">
+            <span class="sc-row__label">{{ block.settings.feature }}</span>
+          </div>
+          <div class="sc-table__cell sc-table__cell--ml">
+            <img src="{{ 'sc-icon-check.svg' | asset_url }}" alt="" class="sc-row__icon" loading="lazy" aria-hidden="true">
+            <span class="sc-row__val sc-row__val--ml">{{ block.settings.ml_value }}</span>
+          </div>
+          <div class="sc-table__cell sc-table__cell--generic">
+            <img src="{{ 'sc-icon-cross.svg' | asset_url }}" alt="" class="sc-row__icon" loading="lazy" aria-hidden="true">
+            <span class="sc-row__val sc-row__val--generic">{{ block.settings.generic_value }}</span>
+          </div>
+        </div>
+      {%- endfor -%}
+
+    </div>
+
+    {%- comment -%} ── CTA ── {%- endcomment -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_url | default: '#' }}" class="sc-btn">
+        {{ section.settings.button_label }}
+        <img src="{{ 'sc-icon-arrow.svg' | asset_url }}" alt="" class="sc-btn__arrow" aria-hidden="true">
+      </a>
+    {%- endif -%}
+
+  </div>
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  #sc-{{ section.id }} {
+    background: #ffffff;
+  }
+
+  .sc-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
+    padding: 100px 56px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* ── Head ── */
+  .sc-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    text-align: center;
+  }
+  .sc-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+  .sc-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 56px);
+    letter-spacing: -0.28px;
+    color: #0b0c0e;
+    margin: 0;
+    line-height: 1;
+  }
+  .sc-headline__vs {
+    color: #e11d2a;
+  }
+
+  /* ── Table ── */
+  .sc-table {
+    width: 100%;
+    border: 6px solid #001429;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+  .sc-table__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #001429;
+    padding: 22px 28px;
+    gap: 16px;
+  }
+  .sc-table__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 18px 28px;
+    align-items: center;
+  }
+  .sc-table__row--white { background: #ffffff; }
+  .sc-table__row--gray  { background: #eaeef2; }
+
+  .sc-table__cell {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  /* Header cells */
+  .sc-th {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.72px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  .sc-th--ml      { color: #ffc72c; }
+  .sc-th--generic { color: #b5bac2; }
+
+  /* Row cells */
+  .sc-row__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.56px;
+    color: #0b0c0e;
+    white-space: nowrap;
+  }
+  .sc-row__icon {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .sc-row__val {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.45;
+    flex: 1;
+  }
+  .sc-row__val--ml      { color: #0b0c0e; }
+  .sc-row__val--generic { color: #6b7280; }
+
+  /* ── CTA ── */
+  .sc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 55px;
+    padding: 4px 16px;
+    background: #ffffff;
+    border: 4px solid #001429;
+    border-radius: 96px;
+    box-shadow: -2px 4px 0px #001429;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #001429;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sc-btn:hover {
+    transform: translate(1px, -2px);
+    box-shadow: -3px 6px 0px #001429;
+  }
+  .sc-btn__arrow {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .sc-inner { padding: 80px 32px; gap: 32px; }
+    .sc-table__head,
+    .sc-table__row { grid-template-columns: 1fr 1fr 1fr; padding: 14px 16px; gap: 10px; }
+    .sc-th,
+    .sc-row__label { font-size: 13px; white-space: normal; }
+    .sc-row__val   { font-size: 13px; }
+  }
+  @media (max-width: 749px) {
+    .sc-inner { padding: 60px 20px; }
+    .sc-table__head,
+    .sc-table__row { grid-template-columns: 1fr; gap: 6px; }
+    .sc-table__cell--label { border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 6px; margin-bottom: 2px; }
+    .sc-th--generic,
+    .sc-row__val--generic { display: none; }
+    .sc-th { font-size: 16px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Comparison Table",
+  "tag": "section",
+  "class": "sc-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow",          "label": "Eyebrow",                "default": "HEAD-TO-HEAD" },
+    { "type": "text", "id": "headline_ml",      "label": "Headline — ML Toys name","default": "ML Toys" },
+    { "type": "text", "id": "headline_generic", "label": "Headline — Competitor",  "default": "The Generic Amazon Ride-On" },
+    { "type": "header", "content": "Column labels" },
+    { "type": "text", "id": "col_feature", "label": "Feature column",  "default": "Features" },
+    { "type": "text", "id": "col_ml",      "label": "ML Toys column",  "default": "ML Toys Fire Truck" },
+    { "type": "text", "id": "col_generic", "label": "Generic column",   "default": "Generic Amazon Brands" },
+    { "type": "header", "content": "CTA Button" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Order Your Fire Truck" },
+    { "type": "url",  "id": "button_url",   "label": "Button URL" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Comparison row",
+      "limit": 20,
+      "settings": [
+        { "type": "text",     "id": "feature",       "label": "Feature label" },
+        { "type": "textarea", "id": "ml_value",      "label": "ML Toys value" },
+        { "type": "textarea", "id": "generic_value", "label": "Generic value" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison Table",
+      "blocks": [
+        { "type": "row", "settings": { "feature": "Brand Identity",     "ml_value": "ML Toys — established American company",                        "generic_value": "Vague overseas listing, no accountability" } },
+        { "type": "row", "settings": { "feature": "Customer Support",   "ml_value": "Fast email replies from people who know the product",             "generic_value": "No support. No response." } },
+        { "type": "row", "settings": { "feature": "Upgrade-Ready",      "ml_value": "Pre-wired & compatible with full ML Toys upgrade catalog",        "generic_value": "No upgrade path" } },
+        { "type": "row", "settings": { "feature": "Motors & Gearboxes", "ml_value": "Stronger out of the box · full performance catalog",             "generic_value": "Stock only" } },
+        { "type": "row", "settings": { "feature": "Tires",              "ml_value": "Rubberized EVA all-terrain tires",                               "generic_value": "Hard plastic wheels, poor traction" } },
+        { "type": "row", "settings": { "feature": "Build Quality",      "ml_value": "Built to handle upgrades & long-term use",                       "generic_value": "Cheap plastic, breaks easily" } },
+        { "type": "row", "settings": { "feature": "Warranty & Returns", "ml_value": "Clear policy · backed by US-based support",                      "generic_value": "Vague or non-existent" } },
+        { "type": "row", "settings": { "feature": "Parts Availability", "ml_value": "Full ML Toys parts catalog · in stock",                          "generic_value": "Replacement parts unavailable" } },
+        { "type": "row", "settings": { "feature": "Community",          "ml_value": "Guides, videos, podcast, active community",                       "generic_value": "Nothing" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

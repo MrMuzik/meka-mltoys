@@ -1,0 +1,216 @@
+<div id="sw-{{ section.id }}" class="sw-wrap">
+
+  <div class="sw-inner">
+
+    {%- comment -%} ── Head ── {%- endcomment -%}
+    <div class="sw-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sw-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <div class="sw-headline-wrap">
+        {%- if section.settings.headline != blank -%}
+          <h2 class="sw-headline">{{ section.settings.headline }}</h2>
+        {%- endif -%}
+        <img src="{{ 'sw-arrow.svg' | asset_url }}" alt="" class="sw-arrow" loading="lazy" aria-hidden="true">
+      </div>
+    </div>
+
+    {%- comment -%} ── Pillars ── {%- endcomment -%}
+    {%- assign pillar_blocks = section.blocks | where: 'type', 'pillar' -%}
+    {%- if pillar_blocks.size > 0 -%}
+      <div class="sw-pillars">
+        {%- for block in pillar_blocks -%}
+          <div class="sw-pillar" {{ block.shopify_attributes }}>
+            <div class="sw-pillar__top">
+              {%- if block.settings.icon != blank -%}
+                <div class="sw-pillar__icon">
+                  <img src="{{ block.settings.icon | image_url: width: 96 }}" alt="" loading="lazy">
+                </div>
+              {%- endif -%}
+              <span class="sw-pillar__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            </div>
+            {%- if block.settings.title != blank -%}
+              <p class="sw-pillar__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="sw-pillar__desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  #sw-{{ section.id }} {
+    background: #f0f0f0;
+  }
+
+  .sw-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    padding: 100px 56px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ── Head ── */
+  .sw-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sw-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+  .sw-headline-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .sw-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.28px;
+    color: #0b0c0e;
+    margin: 0;
+    max-width: 670px;
+  }
+  .sw-arrow {
+    position: absolute;
+    width: 118px;
+    height: 82px;
+    top: 100px;
+    left: 640px;
+    transform: rotate(47.04deg) scaleY(-1);
+    pointer-events: none;
+  }
+  @media (max-width: 989px) {
+    .sw-arrow { display: none; }
+  }
+
+  /* ── Pillars ── */
+  .sw-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  .sw-pillar {
+    background: #ffffff;
+    border: 3px solid #001429;
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 260px;
+  }
+  .sw-pillar__top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sw-pillar__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: #e11d2a;
+    border: 2px solid #001429;
+    box-shadow: -2px 4px 0px 0px #001429;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .sw-pillar__icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+  .sw-pillar__num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 0.88px;
+    color: #b5bac2;
+  }
+  .sw-pillar__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.08px;
+    color: #0b0c0e;
+    margin: 0;
+  }
+  .sw-pillar__desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2a2d33;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .sw-inner { padding: 80px 32px; gap: 40px; }
+    .sw-pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 749px) {
+    .sw-inner { padding: 60px 20px; }
+    .sw-pillars { grid-template-columns: 1fr; }
+    .sw-pillar { min-height: auto; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Why ML Toys",
+  "tag": "section",
+  "class": "sw-section",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",  "label": "Eyebrow",  "default": "THE COMPANY BEHIND THE TRUCK" },
+    { "type": "text",     "id": "headline", "label": "Headline", "default": "Why Families Keep Coming Back To ML Toys" }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "limit": 8,
+      "settings": [
+        { "type": "image_picker", "id": "icon",        "label": "Icon" },
+        { "type": "text",         "id": "title",       "label": "Title" },
+        { "type": "textarea",     "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why ML Toys",
+      "blocks": [
+        { "type": "pillar", "settings": { "title": "Biggest Name In The Hobby",   "description": "One of the most trusted names in Power Wheels and ride-on toys in the USA. We've been doing this longer than most." } },
+        { "type": "pillar", "settings": { "title": "Real Human Support",           "description": "Email us. A real person — who actually knows the product — replies fast. No chatbots. No tickets bouncing into the void." } },
+        { "type": "pillar", "settings": { "title": "Available Exclusively Here",   "description": "This Fire Truck is sold only through ML Toys. There is no Amazon version. There is no rebrand on a different storefront." } },
+        { "type": "pillar", "settings": { "title": "Trusted By Thousands",         "description": "Families who take their kid's ride seriously. Repeat customers, garage builders, podcast listeners, and the kids who outgrew their first ML Toys ride." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
