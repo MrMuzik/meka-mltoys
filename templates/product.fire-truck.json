@@ -480,6 +480,84 @@
         "show_top_rip": true,
         "show_bottom_rip": true
       }
+    },
+    "sp_features_bhN6Pm": {
+      "type": "sp-features",
+      "blocks": {
+        "tile_jiktR9": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/1_52e4b2d3-1c84-408f-95a8-9d3d896bec9b.png",
+            "tag": "GRIP",
+            "tag_color": "navy",
+            "title": "Rubber All-Terrain Tires",
+            "description": "EVA rubber tread that bites into grass, dirt, and pavement. None of the plastic-skid nonsense from generic listings."
+          }
+        },
+        "tile_3jYMFJ": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/2_e33f7e78-4afc-47f6-9cf0-6d31e45ac66a.png",
+            "tag": "BODY",
+            "tag_color": "navy",
+            "title": "Authentic Fire Truck Body",
+            "description": "Working details kids go crazy for. Realistic livery, ladder rack, side compartments, and a chrome bumper that actually looks the part."
+          }
+        },
+        "tile_wnRKME": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/3_27d7ed22-dd62-4ab2-afdf-9f9f75f5739d.png",
+            "tag": "AUDIO",
+            "tag_color": "navy",
+            "title": "Built-In Bluetooth Radio",
+            "description": "Touchscreen audio dash with Bluetooth, AM/FM, working PA system, and a siren that doesn't sound like a cartoon."
+          }
+        },
+        "tile_VUa3xj": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/4_f0427af3-9987-406f-8c99-bd665c41a2ec.png",
+            "tag": "LIGHTS",
+            "tag_color": "red",
+            "title": "LED Headlights & Bar",
+            "description": "Bright, realistic, and ready for full effect day or night. Working emergency light bar on the roof, head/tail beams up front and back."
+          }
+        },
+        "tile_KMFzek": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/5_5b223a30-6489-4382-b8cc-e57f6a373c88.png",
+            "tag": "DRIVE",
+            "tag_color": "red",
+            "title": "Stronger Motors & Gearboxes",
+            "description": "Built tougher than stock from day one. Reinforced linkages, upgraded gearbox internals, and rated for the rough stuff kids put it through."
+          }
+        },
+        "tile_Fy7kV4": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/6.png",
+            "tag": "FUTURE",
+            "tag_color": "navy",
+            "title": "Upgrade-Ready Electronics",
+            "description": "Pre-wired and waiting. Full ML Toys performance catalog drops in cleanly when your kid is ready for more speed and torque."
+          }
+        }
+      },
+      "block_order": [
+        "tile_jiktR9",
+        "tile_3jYMFJ",
+        "tile_wnRKME",
+        "tile_VUa3xj",
+        "tile_KMFzek",
+        "tile_Fy7kV4"
+      ],
+      "name": "Features",
+      "settings": {
+        "eyebrow": "UNDER THE HOOD",
+        "headline": "Built to Handle Everything A Kid Can Throw at It"
+      }
     }
   },
   "order": [
@@ -489,6 +567,7 @@
     "17560776142eb8d1a3",
     "sp_social_proof_ixHC8m",
     "sp_video_9gYm76",
-    "sp_upgrade_story_LeafAn"
+    "sp_upgrade_story_LeafAn",
+    "sp_features_bhN6Pm"
   ]
 }
