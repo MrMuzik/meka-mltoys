@@ -558,6 +558,94 @@
         "eyebrow": "UNDER THE HOOD",
         "headline": "Built to Handle Everything A Kid Can Throw at It"
       }
+    },
+    "sp_sound_familiar_e7nFpH": {
+      "type": "sp-sound-familiar",
+      "blocks": {
+        "pain_row_Y9n6Xk": {
+          "type": "pain_row",
+          "settings": {
+            "text": "You bought a ride-on and it fell apart after a few weeks."
+          }
+        },
+        "pain_row_tAeDew": {
+          "type": "pain_row",
+          "settings": {
+            "text": "The brand was some vague Amazon listing — no name, no identity, no accountability."
+          }
+        },
+        "pain_row_47ErAB": {
+          "type": "pain_row",
+          "settings": {
+            "text": "It looked great in the photos but the parts felt cheap the moment you opened the box."
+          }
+        },
+        "pain_row_EfBLEK": {
+          "type": "pain_row",
+          "settings": {
+            "text": "You tried to upgrade it and the plastic components cracked under the stress."
+          }
+        },
+        "pain_row_C4UN3L": {
+          "type": "pain_row",
+          "settings": {
+            "text": "Something went wrong and there was nowhere to turn. No support, no response, no answers."
+          }
+        },
+        "fix_row_ceTdqi": {
+          "type": "fix_row",
+          "settings": {
+            "text": "A ride-on from a real American company with a real name behind it."
+          }
+        },
+        "fix_row_pYd7JV": {
+          "type": "fix_row",
+          "settings": {
+            "text": "Built stronger out of the box, with a full upgrade path waiting when your kid wants more."
+          }
+        },
+        "fix_row_jkXnCx": {
+          "type": "fix_row",
+          "settings": {
+            "text": "Questions answered fast, by people who actually know the product. No runaround. No dead ends."
+          }
+        },
+        "fix_row_gAftkR": {
+          "type": "fix_row",
+          "settings": {
+            "text": "Service centers across the USA. Parts in stock. A real warranty."
+          }
+        },
+        "fix_row_hP3GmL": {
+          "type": "fix_row",
+          "settings": {
+            "text": "Backed by the most trusted name in the ride-on hobby — and a community of families who get it."
+          }
+        }
+      },
+      "block_order": [
+        "pain_row_Y9n6Xk",
+        "pain_row_tAeDew",
+        "pain_row_47ErAB",
+        "pain_row_EfBLEK",
+        "pain_row_C4UN3L",
+        "fix_row_ceTdqi",
+        "fix_row_pYd7JV",
+        "fix_row_jkXnCx",
+        "fix_row_gAftkR",
+        "fix_row_hP3GmL"
+      ],
+      "name": "Sound Familiar?",
+      "settings": {
+        "eyebrow": "STRAIGHT TALK",
+        "headline": "Sounds Familiar?",
+        "pain_heading": "WHAT YOU'VE BEEN THROUGH",
+        "fix_heading": "NOW IMAGINE",
+        "button_label": "Get the ML Toys Fire Truck",
+        "button_url": "",
+        "show_top_rip": true,
+        "show_bottom_rip": true
+      }
     }
   },
   "order": [
@@ -568,6 +656,7 @@
     "sp_social_proof_ixHC8m",
     "sp_video_9gYm76",
     "sp_upgrade_story_LeafAn",
-    "sp_features_bhN6Pm"
+    "sp_features_bhN6Pm",
+    "sp_sound_familiar_e7nFpH"
   ]
 }
