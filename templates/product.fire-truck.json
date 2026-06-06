@@ -644,7 +644,7 @@
         "button_label": "Get the ML Toys Fire Truck",
         "button_url": "",
         "show_top_rip": true,
-        "show_bottom_rip": true
+        "show_bottom_rip": false
       }
     }
   },
