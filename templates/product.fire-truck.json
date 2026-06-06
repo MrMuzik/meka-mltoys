@@ -376,7 +376,9 @@
       "settings": {
         "eyebrow": "OUT IN THE WILD",
         "headline": "The Coolest Ride On The Block",
-        "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever."
+        "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever.",
+        "show_top_rip": true,
+        "show_bottom_rip": true
       }
     },
     "sp_video_9gYm76": {
@@ -556,7 +558,8 @@
       "name": "Features",
       "settings": {
         "eyebrow": "UNDER THE HOOD",
-        "headline": "Built to Handle Everything A Kid Can Throw at It"
+        "headline": "Built to Handle Everything A Kid Can Throw at It",
+        "margin_top": "-40px"
       }
     },
     "sp_sound_familiar_e7nFpH": {
@@ -646,6 +649,163 @@
         "show_top_rip": true,
         "show_bottom_rip": false
       }
+    },
+    "sp_comparison_jWq4zE": {
+      "type": "sp-comparison",
+      "blocks": {
+        "row_RGLW8q": {
+          "type": "row",
+          "settings": {
+            "feature": "Brand Identity",
+            "ml_value": "ML Toys — established American company",
+            "generic_value": "Vague overseas listing, no accountability"
+          }
+        },
+        "row_8yiERp": {
+          "type": "row",
+          "settings": {
+            "feature": "Customer Support",
+            "ml_value": "Fast email replies from people who know the product",
+            "generic_value": "No support. No response."
+          }
+        },
+        "row_wAAMCM": {
+          "type": "row",
+          "settings": {
+            "feature": "Upgrade-Ready",
+            "ml_value": "Pre-wired & compatible with full ML Toys upgrade catalog",
+            "generic_value": "No upgrade path"
+          }
+        },
+        "row_rGFGeA": {
+          "type": "row",
+          "settings": {
+            "feature": "Motors & Gearboxes",
+            "ml_value": "Stronger out of the box · full performance catalog",
+            "generic_value": "Stock only"
+          }
+        },
+        "row_YJWJ8b": {
+          "type": "row",
+          "settings": {
+            "feature": "Tires",
+            "ml_value": "Rubberized EVA all-terrain tires",
+            "generic_value": "Hard plastic wheels, poor traction"
+          }
+        },
+        "row_3fXLYp": {
+          "type": "row",
+          "settings": {
+            "feature": "Build Quality",
+            "ml_value": "Built to handle upgrades & long-term use",
+            "generic_value": "Cheap plastic, breaks easily"
+          }
+        },
+        "row_B8QraH": {
+          "type": "row",
+          "settings": {
+            "feature": "Warranty & Returns",
+            "ml_value": "Clear policy · backed by US-based support",
+            "generic_value": "Vague or non-existent"
+          }
+        },
+        "row_yNRAJW": {
+          "type": "row",
+          "settings": {
+            "feature": "Parts Availability",
+            "ml_value": "Full ML Toys parts catalog · in stock",
+            "generic_value": "Replacement parts unavailable"
+          }
+        },
+        "row_AQV4TK": {
+          "type": "row",
+          "settings": {
+            "feature": "Community",
+            "ml_value": "Guides, videos, podcast, active community",
+            "generic_value": "Nothing"
+          }
+        }
+      },
+      "block_order": [
+        "row_RGLW8q",
+        "row_8yiERp",
+        "row_wAAMCM",
+        "row_rGFGeA",
+        "row_YJWJ8b",
+        "row_3fXLYp",
+        "row_B8QraH",
+        "row_yNRAJW",
+        "row_AQV4TK"
+      ],
+      "name": "Comparison Table",
+      "settings": {
+        "eyebrow": "HEAD-TO-HEAD",
+        "headline_ml": "ML Toys",
+        "headline_generic": "The Generic Amazon Ride-On",
+        "col_feature": "Features",
+        "col_ml": "ML Toys Fire Truck",
+        "col_generic": "Generic Amazon Brands",
+        "button_label": "Order Your Fire Truck",
+        "button_url": ""
+      }
+    },
+    "sp_firetruck_divider_RiFVJW": {
+      "type": "sp-firetruck-divider",
+      "name": "Fire Truck Divider",
+      "settings": {
+        "image": "shopify://shop_images/FireTruckSketch.png",
+        "max_width": "656px",
+        "vertical_offset": "220px",
+        "vertical_offset_mobile": "-60px"
+      }
+    },
+    "sp_why_mltoys_Jh9M8H": {
+      "type": "sp-why-mltoys",
+      "blocks": {
+        "pillar_VAwqnD": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/1_728abde2-9f87-4296-b21f-6032264bb3f7.png",
+            "title": "Biggest Name In The Hobby",
+            "description": "One of the most trusted names in Power Wheels and ride-on toys in the USA. We've been doing this longer than most."
+          }
+        },
+        "pillar_gJ84Jk": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/2_b69d06d1-eb87-4c37-9de8-54ebe29936d6.png",
+            "title": "Real Human Support",
+            "description": "Email us. A real person — who actually knows the product — replies fast. No chatbots. No tickets bouncing into the void."
+          }
+        },
+        "pillar_X3Fmfd": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/3_1f58d2e4-9d26-4149-9904-d5e3c1a03275.png",
+            "title": "Available Exclusively Here",
+            "description": "This Fire Truck is sold only through ML Toys. There is no Amazon version. There is no rebrand on a different storefront."
+          }
+        },
+        "pillar_rx7fRj": {
+          "type": "pillar",
+          "settings": {
+            "icon": "shopify://shop_images/4_3c574018-fff3-4e75-a787-e1d59c24adcb.png",
+            "title": "Trusted By Thousands",
+            "description": "Families who take their kid's ride seriously. Repeat customers, garage builders, podcast listeners, and the kids who outgrew their first ML Toys ride."
+          }
+        }
+      },
+      "block_order": [
+        "pillar_VAwqnD",
+        "pillar_gJ84Jk",
+        "pillar_X3Fmfd",
+        "pillar_rx7fRj"
+      ],
+      "name": "Why ML Toys",
+      "settings": {
+        "eyebrow": "THE COMPANY BEHIND THE TRUCK",
+        "headline": "Why Families Keep Coming Back To ML Toys"
+      }
     }
   },
   "order": [
@@ -657,6 +817,9 @@
     "sp_video_9gYm76",
     "sp_upgrade_story_LeafAn",
     "sp_features_bhN6Pm",
-    "sp_sound_familiar_e7nFpH"
+    "sp_sound_familiar_e7nFpH",
+    "sp_comparison_jWq4zE",
+    "sp_firetruck_divider_RiFVJW",
+    "sp_why_mltoys_Jh9M8H"
   ]
 }
