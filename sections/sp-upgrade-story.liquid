@@ -1,0 +1,443 @@
+<div id="su-{{ section.id }}" class="su-wrap">
+
+  {%- if section.settings.show_top_rip -%}
+    <span class="su-rip su-rip--top">
+      <img src="{{ 'su-rip-top.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+  <div class="su-inner">
+
+    {%- comment -%} ── Head ── {%- endcomment -%}
+    <div class="su-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="su-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.headline != blank -%}
+        <h2 class="su-headline">{{ section.settings.headline }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtext != blank -%}
+        <p class="su-subtext">{{ section.settings.subtext }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Stages / Path ── {%- endcomment -%}
+    {%- assign stage_blocks = section.blocks | where: 'type', 'stage' -%}
+    {%- if stage_blocks.size > 0 -%}
+      <div class="su-path su-path--count-{{ stage_blocks.size }}">
+        <span class="su-path__connector"></span>
+        {%- for block in stage_blocks -%}
+          {%- assign idx = forloop.index -%}
+          <div class="su-stage" {{ block.shopify_attributes }}>
+            <div class="su-stage__disc">
+              {%- if block.settings.icon != blank -%}
+                <img src="{{ block.settings.icon | image_url: width: 144 }}" alt="" loading="lazy" class="su-stage__icon">
+              {%- endif -%}
+              <span class="su-stage__badge">{{ block.settings.badge | default: idx | prepend: '0' | slice: -2, 2 }}</span>
+            </div>
+            {%- if block.settings.label != blank -%}
+              <p class="su-stage__label">{{ block.settings.label }}</p>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <p class="su-stage__title">{{ block.settings.title }}</p>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="su-stage__desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+            {%- if block.settings.speed_value != blank -%}
+              <div class="su-stage__speed">
+                <span class="su-stage__speed-num">{{ block.settings.speed_value }}</span>
+                <span class="su-stage__speed-unit">{{ block.settings.speed_unit | default: 'MPH' }}</span>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── Extras ── {%- endcomment -%}
+    {%- assign extra_blocks = section.blocks | where: 'type', 'extra_card' -%}
+    {%- if extra_blocks.size > 0 -%}
+      <div class="su-extras">
+        {%- for block in extra_blocks -%}
+          <div class="su-extra" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="su-extra__icon">
+                <img src="{{ block.settings.icon | image_url: width: 160 }}" alt="" loading="lazy">
+              </div>
+            {%- endif -%}
+            <div class="su-extra__body">
+              {%- if block.settings.title != blank -%}
+                <p class="su-extra__title">{{ block.settings.title }}</p>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="su-extra__desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+              {%- if block.settings.link_label != blank -%}
+                <a href="{{ block.settings.link_url | default: '#' }}" class="su-extra__link">{{ block.settings.link_label }} →</a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+
+  {%- if section.settings.show_bottom_rip -%}
+    <span class="su-rip su-rip--bottom">
+      <img src="{{ 'su-rip-bottom.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+</div>
+
+<style>
+  #su-{{ section.id }} {
+    position: relative;
+    background: #001429;
+  }
+
+  .su-rip {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+  }
+  .su-rip--top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 50px;
+    bottom: 0;
+  }
+  .su-rip--bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 170px;
+    top: 75px;
+  }
+  .su-rip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .su-rip--top img {
+    transform: scaleY(-1);
+  }
+  @media (max-width: 1024px) {
+    .su-rip { display: none; }
+  }
+  @media (min-width: 1861px) {
+    .su-rip { display: none; }
+  }
+
+  .su-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 111px;
+    padding: 120px 56px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* ── Head ── */
+  .su-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    max-width: 900px;
+    text-align: center;
+  }
+  .su-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2.88px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .su-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(34px, 4.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.32px;
+    color: #ffffff;
+    margin: 0;
+    max-width: 728px;
+  }
+  .su-subtext {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #b5bac2;
+    margin: 0;
+    max-width: 700px;
+  }
+
+  /* ── Path / Stages ── */
+  .su-path {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    width: 100%;
+    max-width: 1328px;
+  }
+  .su-path__connector {
+    position: absolute;
+    top: 56px;
+    left: 8%;
+    right: 8%;
+    height: 0;
+    border-top: 3px dashed rgba(255,255,255,0.25);
+    z-index: 0;
+  }
+  .su-stage {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+  .su-stage__disc {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .su-stage__icon {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+  }
+  .su-stage__badge {
+    position: absolute;
+    top: -8px;
+    left: 76px;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: #e11d2a;
+    border: 4px solid #14161a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .su-stage__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.76px;
+    text-transform: uppercase;
+    color: #e11d2a;
+    margin: 0;
+  }
+  .su-stage__title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.26px;
+    color: #ffffff;
+    margin: 0;
+  }
+  .su-stage__desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #b5bac2;
+    margin: 0;
+    max-width: 252px;
+  }
+  .su-stage__speed {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    padding-top: 12px;
+    border-top: 2px solid #e11d2a;
+  }
+  .su-stage__speed-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+  }
+  .su-stage__speed-unit {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.96px;
+    color: #b5bac2;
+  }
+
+  /* ── Extras ── */
+  .su-extras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1254px;
+  }
+  .su-extra {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 32px;
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+  }
+  .su-extra__icon {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 16px;
+    background: #e11d2a;
+    border: 2px solid #001429;
+    box-shadow: -2px 4px 0px 0px #001429;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .su-extra__icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+  }
+  .su-extra__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .su-extra__title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.26px;
+    color: #001429;
+    margin: 0;
+  }
+  .su-extra__desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #2a2d33;
+    margin: 0;
+  }
+  .su-extra__link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+    color: #e11d2a;
+    text-decoration: none;
+  }
+  .su-extra__link:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .su-inner {
+      gap: 64px;
+      padding: 80px 32px;
+    }
+    .su-path__connector { display: none; }
+  }
+  @media (max-width: 749px) {
+    .su-inner {
+      padding: 60px 20px;
+    }
+    .su-path {
+      grid-template-columns: 1fr;
+      gap: 56px;
+    }
+    .su-extras {
+      grid-template-columns: 1fr;
+    }
+    .su-extra {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Upgrade Story",
+  "tag": "section",
+  "class": "su-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "THE PATH AHEAD" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "The Last Ride-On You'll Ever Need To Buy" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Most ride-ons have a ceiling. This one doesn't. When your kid is ready for more, the ML Toys upgrade path is already waiting." },
+    { "type": "header", "content": "Ripped paper edges" },
+    { "type": "checkbox", "id": "show_top_rip", "label": "Show top rip", "default": true },
+    { "type": "checkbox", "id": "show_bottom_rip", "label": "Show bottom rip", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "stage",
+      "name": "Stage",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "badge", "label": "Badge number", "info": "e.g. 01 — leave blank to auto-number based on order", "placeholder": "01" },
+        { "type": "text", "id": "label", "label": "Eyebrow label", "placeholder": "STOCK BUILD" },
+        { "type": "text", "id": "title", "label": "Title", "placeholder": "Stock Build" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "speed_value", "label": "Speed value", "placeholder": "3" },
+        { "type": "text", "id": "speed_unit", "label": "Speed unit", "default": "MPH" }
+      ]
+    },
+    {
+      "type": "extra_card",
+      "name": "Extra card",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "title", "label": "Title", "placeholder": "Stickers & Style" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "link_label", "label": "Link label", "placeholder": "EXPLORE STICKER PACKS" },
+        { "type": "url", "id": "link_url", "label": "Link URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upgrade Story",
+      "blocks": [
+        { "type": "stage", "settings": { "label": "STOCK BUILD", "title": "Stock Build", "description": "Fast, strong, and ready to ride right out of the box.", "speed_value": "3" } },
+        { "type": "stage", "settings": { "label": "BATTERY", "title": "Battery Upgrades", "description": "More ride time, more consistent power, longer adventures.", "speed_value": "5" } },
+        { "type": "stage", "settings": { "label": "MOTORS", "title": "Motor/Gearbox Upgrades", "description": "More speed, more torque, more excitement.", "speed_value": "6.5" } },
+        { "type": "stage", "settings": { "label": "FULL PERF", "title": "Tires, Lights & More", "description": "Shop our full range of available upgrades.", "speed_value": "8" } },
+        { "type": "extra_card", "settings": { "title": "Stickers & Style", "description": "Four sticker packs to change the personality of the truck — Classic FD, Wildland, EMS Rescue, and a Custom Decals option for the kids who want to make it theirs.", "link_label": "EXPLORE STICKER PACKS" } },
+        { "type": "extra_card", "settings": { "title": "Service Centers & Parts", "description": "Service centers across the USA ready to support your upgrades. All parts from the biggest name in ride-on toy upgrades. Stocked and ready to ship.", "link_label": "FIND A SERVICE CENTER" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
