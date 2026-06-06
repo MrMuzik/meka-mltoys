@@ -29,6 +29,9 @@
         {%- for block in stage_blocks -%}
           {%- assign idx = forloop.index -%}
           <div class="su-stage" {{ block.shopify_attributes }}>
+            <span class="su-stage__swirl" aria-hidden="true">
+              <img src="{{ 'su-icon-swirl.svg' | asset_url }}" alt="" loading="lazy">
+            </span>
             <div class="su-stage__disc">
               {%- if block.settings.icon != blank -%}
                 <img src="{{ block.settings.icon | image_url: width: 144 }}" alt="" loading="lazy" class="su-stage__icon">
@@ -93,6 +96,8 @@
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&family=Anton&display=swap');
+
   #su-{{ section.id }} {
     position: relative;
     background: #001429;
@@ -216,6 +221,25 @@
     gap: 14px;
     text-align: center;
   }
+  .su-stage__swirl {
+    position: absolute;
+    top: -39px;
+    left: 50%;
+    width: 186px;
+    height: 144px;
+    margin-left: -93px;
+    transform: rotate(18.75deg);
+    pointer-events: none;
+    z-index: 0;
+    display: block;
+    line-height: 0;
+  }
+  .su-stage__swirl img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
   .su-stage__disc {
     position: relative;
     width: 112px;
@@ -225,6 +249,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
   .su-stage__icon {
     width: 72px;
