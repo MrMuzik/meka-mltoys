@@ -1,0 +1,365 @@
+<div id="ssf-{{ section.id }}" class="ssf-wrap">
+
+  {%- if section.settings.show_top_rip -%}
+    <span class="ssf-rip ssf-rip--top">
+      <img src="{{ 'su-rip-top.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+  <div class="ssf-inner">
+
+    {%- comment -%} ── Decorative burst ── {%- endcomment -%}
+    <div class="ssf-burst" aria-hidden="true">
+      <img src="{{ 'ssf-burst.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Head ── {%- endcomment -%}
+    <div class="ssf-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ssf-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.headline != blank -%}
+        <h2 class="ssf-headline">{{ section.settings.headline }}</h2>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Split grid ── {%- endcomment -%}
+    {%- assign pain_blocks = section.blocks | where: 'type', 'pain_row' -%}
+    {%- assign fix_blocks  = section.blocks | where: 'type', 'fix_row' -%}
+
+    <div class="ssf-grid">
+
+      {%- comment -%} Pain column {%- endcomment -%}
+      <div class="ssf-col ssf-col--pain">
+        {%- if section.settings.pain_heading != blank -%}
+          <p class="ssf-col__heading">{{ section.settings.pain_heading }}</p>
+        {%- endif -%}
+        {%- for block in pain_blocks -%}
+          <div class="ssf-row" {{ block.shopify_attributes }}>
+            <img src="{{ 'ssf-icon-cross.svg' | asset_url }}" alt="" class="ssf-row__icon" loading="lazy" aria-hidden="true">
+            <p class="ssf-row__text">{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%} Fix column {%- endcomment -%}
+      <div class="ssf-col ssf-col--fix">
+        {%- if section.settings.fix_heading != blank -%}
+          <p class="ssf-col__heading ssf-col__heading--dark">{{ section.settings.fix_heading }}</p>
+        {%- endif -%}
+        {%- for block in fix_blocks -%}
+          <div class="ssf-row" {{ block.shopify_attributes }}>
+            <img src="{{ 'ssf-icon-check.svg' | asset_url }}" alt="" class="ssf-row__icon" loading="lazy" aria-hidden="true">
+            <p class="ssf-row__text ssf-row__text--dark">{{ block.settings.text }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+
+    </div>
+
+    {%- comment -%} ── CTA button ── {%- endcomment -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_url | default: '#' }}" class="ssf-btn">
+        {{ section.settings.button_label }}
+        <img src="{{ 'ssf-icon-arrow.svg' | asset_url }}" alt="" class="ssf-btn__arrow" aria-hidden="true">
+      </a>
+    {%- endif -%}
+
+  </div>
+
+  {%- if section.settings.show_bottom_rip -%}
+    <span class="ssf-rip ssf-rip--bottom">
+      <img src="{{ 'su-rip-bottom.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  /* ── Section wrapper ── */
+  #ssf-{{ section.id }} {
+    position: relative;
+    background: #001429;
+  }
+
+  /* ── Rips ── */
+  .ssf-rip {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+  }
+  .ssf-rip--top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 50px;
+    bottom: 0;
+  }
+  .ssf-rip--bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 170px;
+    top: 75px;
+  }
+  .ssf-rip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .ssf-rip--top img {
+    transform: scaleY(-1);
+  }
+  @media (max-width: 1024px) {
+    .ssf-rip { display: none; }
+  }
+  @media (min-width: 1861px) {
+    .ssf-rip { display: none; }
+  }
+
+  /* ── Inner ── */
+  .ssf-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+    padding: 148px 56px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* ── Decorative burst ── */
+  .ssf-burst {
+    position: absolute;
+    top: -478px;
+    right: -200px;
+    width: 1250px;
+    height: 1641px;
+    pointer-events: none;
+    transform: rotate(85.53deg) skewX(3.36deg);
+    opacity: 0.12;
+  }
+  .ssf-burst img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 989px) {
+    .ssf-burst { display: none; }
+  }
+
+  /* ── Head ── */
+  .ssf-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .ssf-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+  }
+  .ssf-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.32px;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Split grid ── */
+  .ssf-grid {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Columns ── */
+  .ssf-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 32px;
+    border-radius: 22px;
+    flex: 1;
+    max-width: 472px;
+  }
+  .ssf-col--pain { background: #e11d2a; }
+  .ssf-col--fix  { background: #ffbb00; }
+
+  .ssf-col__heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+  }
+  .ssf-col__heading--dark {
+    color: #001429;
+  }
+
+  /* ── Rows ── */
+  .ssf-row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .ssf-row__icon {
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .ssf-row__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 0;
+    flex: 1;
+  }
+  .ssf-row__text--dark {
+    color: #0b0c0e;
+  }
+
+  /* ── CTA button ── */
+  .ssf-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 55px;
+    padding: 4px 16px;
+    background: #ffffff;
+    border: 4px solid #001429;
+    border-radius: 96px;
+    box-shadow: -2px 4px 0px #001429;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #001429;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .ssf-btn:hover {
+    transform: translate(1px, -2px);
+    box-shadow: -3px 6px 0px #001429;
+  }
+  .ssf-btn__arrow {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .ssf-inner {
+      padding: 80px 32px 80px;
+      gap: 40px;
+    }
+    .ssf-grid {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .ssf-col {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 749px) {
+    .ssf-inner {
+      padding: 60px 20px 60px;
+      gap: 32px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Sound Familiar?",
+  "tag": "section",
+  "class": "ssf-section",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow label",       "default": "STRAIGHT TALK" },
+    { "type": "text",     "id": "headline",     "label": "Headline",            "default": "Sounds Familiar?" },
+    { "type": "header",   "content": "Left column (pain)" },
+    { "type": "text",     "id": "pain_heading", "label": "Column heading",      "default": "WHAT YOU'VE BEEN THROUGH" },
+    { "type": "header",   "content": "Right column (fix)" },
+    { "type": "text",     "id": "fix_heading",  "label": "Column heading",      "default": "NOW IMAGINE" },
+    { "type": "header",   "content": "CTA Button" },
+    { "type": "text",     "id": "button_label", "label": "Button label",        "default": "Get the ML Toys Fire Truck" },
+    { "type": "url",      "id": "button_url",   "label": "Button URL" },
+    { "type": "header",   "content": "Ripped paper edges" },
+    { "type": "checkbox", "id": "show_top_rip",    "label": "Show top rip",    "default": true },
+    { "type": "checkbox", "id": "show_bottom_rip", "label": "Show bottom rip", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "pain_row",
+      "name": "Pain point",
+      "limit": 12,
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "fix_row",
+      "name": "Fix point",
+      "limit": 12,
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sound Familiar?",
+      "blocks": [
+        { "type": "pain_row", "settings": { "text": "You bought a ride-on and it fell apart after a few weeks." } },
+        { "type": "pain_row", "settings": { "text": "The brand was some vague Amazon listing — no name, no identity, no accountability." } },
+        { "type": "pain_row", "settings": { "text": "It looked great in the photos but the parts felt cheap the moment you opened the box." } },
+        { "type": "pain_row", "settings": { "text": "You tried to upgrade it and the plastic components cracked under the stress." } },
+        { "type": "pain_row", "settings": { "text": "Something went wrong and there was nowhere to turn. No support, no response, no answers." } },
+        { "type": "fix_row",  "settings": { "text": "A ride-on from a real American company with a real name behind it." } },
+        { "type": "fix_row",  "settings": { "text": "Built stronger out of the box, with a full upgrade path waiting when your kid wants more." } },
+        { "type": "fix_row",  "settings": { "text": "Questions answered fast, by people who actually know the product. No runaround. No dead ends." } },
+        { "type": "fix_row",  "settings": { "text": "Service centers across the USA. Parts in stock. A real warranty." } },
+        { "type": "fix_row",  "settings": { "text": "Backed by the most trusted name in the ride-on hobby — and a community of families who get it." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
