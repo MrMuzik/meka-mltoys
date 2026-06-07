@@ -40,14 +40,17 @@
       </div>
     </div>
 
-    {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
-    <div class="srv-reviews">
-      {%- if product.metafields.judge_me.widget != blank -%}
-        {{ product.metafields.judge_me.widget }}
-      {%- else -%}
-        <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}" data-handle="{{ product.handle }}"></div>
-      {%- endif -%}
-    </div>
+    {%- comment -%} ── Zone 2: App blocks (Judge.me Review Widget goes here) ── {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="srv-reviews">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
 
   </div>
 
@@ -298,7 +301,7 @@
     { "type": "header",   "content": "Judge.me Integration" },
     { "type": "text", "id": "jm_api_token", "label": "Judge.me Public API Token", "info": "Found in your Judge.me dashboard → Settings → API. Safe to use on the storefront." }
   ],
-  "blocks": [],
+  "blocks": [{ "type": "@app" }],
   "presets": [
     {
       "name": "Reviews"
