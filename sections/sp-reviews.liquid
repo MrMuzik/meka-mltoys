@@ -51,9 +51,9 @@
       <button class="srv-pill" data-filter="support">MENTIONS SUPPORT</button>
     </div>
 
-    {%- comment -%} ── Zone 2: App blocks (Judge.me Review Widget goes here) ── {%- endcomment -%}
+    {%- comment -%} ── Zone 2: Judge.me widget (shown when filter = all) ── {%- endcomment -%}
     {%- if section.blocks.size > 0 -%}
-      <div class="srv-reviews">
+      <div class="srv-reviews srv-reviews--jm">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -62,6 +62,9 @@
         {%- endfor -%}
       </div>
     {%- endif -%}
+
+    {%- comment -%} ── Zone 2b: Custom filtered review list (shown when filter ≠ all) ── {%- endcomment -%}
+    <div class="srv-reviews srv-filtered-reviews" style="display:none"></div>
 
   </div>
 
@@ -381,6 +384,41 @@
     color: #2a2d33 !important;
   }
 
+  /* ── Custom filtered review cards ── */
+  .srv-filtered-reviews { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .srv-frev {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1.5px solid #e1dccd;
+    border-radius: 18px;
+    padding: 24px 28px;
+  }
+  .srv-frev__av {
+    flex-shrink: 0;
+    width: 56px; height: 56px;
+    border-radius: 999px;
+    background: #ffd2ff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700; font-size: 26px; color: #0b0c0e;
+    overflow: hidden;
+  }
+  .srv-frev__av img { width: 100%; height: 100%; object-fit: cover; }
+  .srv-frev__col { flex-shrink: 0; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  .srv-frev__name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; color: #0b0c0e; }
+  .srv-frev__verified { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 9px; letter-spacing: 0.72px; color: #1e8c4a; text-transform: uppercase; }
+  .srv-frev__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+  .srv-frev__top { display: flex; align-items: center; gap: 12px; }
+  .srv-frev__stars { color: #e11d2a; font-size: 14px; letter-spacing: 1px; }
+  .srv-frev__date { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 12px; color: #6b7280; }
+  .srv-frev__title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: #0b0c0e; margin: 0; }
+  .srv-frev__text { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; line-height: 1.6; color: #2a2d33; margin: 0; }
+  .srv-frev__photos { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .srv-frev__photos img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; display: block !important; }
+  .srv-filtered-empty { font-family: 'Inter', sans-serif; font-size: 14px; color: #6b7280; padding: 32px; border: 2px dashed #e1dccd; border-radius: 18px; text-align: center; }
+
   /* ── Responsive ── */
   @media (max-width: 989px) {
     .srv-inner { padding: 100px 32px 80px; }
@@ -469,87 +507,116 @@
   document.addEventListener('jdgm:all_widgets:load', tryWithDelay);
   setTimeout(tryWithDelay, 500);
 
-  // ── Filter pills ──
+  // ── Filter pills — API-based cross-page filtering ──
   var activeFilter = 'all';
-  var filtersInited = false;
+  var cachedReviews = null;
+  var jmApiToken  = {{ section.settings.jm_api_token | json }};
+  var jmShop      = {{ shop.permanent_domain | json }};
+  var jmProductId = {{ product.id | json }};
+  var jmEl        = section.querySelector('.srv-reviews--jm');
+  var filteredEl  = section.querySelector('.srv-filtered-reviews');
 
-  function reviewIsVerified(review) {
-    return review.getAttribute('data-verified-buyer') === 'true';
-  }
-  function reviewStars(review) {
-    var score = review.getAttribute('data-score') || review.getAttribute('data-rating');
-    if (score) return Math.round(parseFloat(score));
-    return review.querySelectorAll('.jdgm-star.jdgm--on').length || null;
-  }
-  function reviewHasPhotos(review) {
-    if (review.querySelector('.jdgm-rev__pics, .jdgm-rev__pic, [class*="rev__pic"], [class*="rev-media"], [class*="rev__media"]')) return true;
-    return Array.from(review.querySelectorAll('img')).some(function(img) {
-      var src = img.getAttribute('src') || img.getAttribute('data-src') || '';
-      return src.length > 0 && /cdn\.shopify|judge\.me/i.test(src);
-    });
+  // Fetch every review from JM API (pages until exhausted)
+  function fetchAllReviews(cb) {
+    if (cachedReviews) { cb(cachedReviews); return; }
+    if (!jmApiToken) { cb([]); return; }
+    var all = [], page = 1;
+    function next() {
+      fetch('https://judge.me/api/v1/reviews'
+        + '?api_token=' + encodeURIComponent(jmApiToken)
+        + '&shop_domain=' + encodeURIComponent(jmShop)
+        + '&product_id=' + encodeURIComponent(jmProductId)
+        + '&per_page=100&page=' + page)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var chunk = data.reviews || [];
+          all = all.concat(chunk);
+          if (chunk.length === 100) { page++; next(); }
+          else { cachedReviews = all; cb(all); }
+        })
+        .catch(function() { cb(all); });
+    }
+    next();
   }
 
-  function applyFilter() {
-    var reviews = Array.from(document.querySelectorAll('.srv-reviews .jdgm-rev'));
-    reviews.forEach(function(review) {
-      var show = true;
-      var body = review.textContent.toLowerCase();
-      if (activeFilter === 'verified') {
-        show = reviewIsVerified(review);
-      } else if (activeFilter === '5' || activeFilter === '4') {
-        show = reviewStars(review) === parseInt(activeFilter, 10);
-      } else if (activeFilter === 'photos') {
-        show = reviewHasPhotos(review);
-      } else if (activeFilter === 'upgrades') {
-        show = /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
-      } else if (activeFilter === 'support') {
-        show = /support|customer service|helped|help |staff|response|reply|team/.test(body);
-      }
-      // Use class-based hiding so !important beats JM's own display rules
-      if (show) {
-        review.classList.remove('srv-hidden');
+  function matchesFilter(r) {
+    var body = ((r.title || '') + ' ' + (r.body || '')).toLowerCase();
+    if (activeFilter === 'verified') return r.reviewer && r.reviewer.verified_buyer;
+    if (activeFilter === '5') return r.rating === 5;
+    if (activeFilter === '4') return r.rating === 4;
+    if (activeFilter === 'photos') return r.pictures && r.pictures.length > 0;
+    if (activeFilter === 'upgrades') return /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
+    if (activeFilter === 'support') return /support|customer service|helped|help |staff|response|reply|team/.test(body);
+    return true;
+  }
+
+  function fmtDate(str) {
+    try {
+      var d = new Date(str);
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch(e) { return str; }
+  }
+
+  function renderCard(r) {
+    var name     = (r.reviewer && r.reviewer.name) || 'Anonymous';
+    var initial  = name.charAt(0).toUpperCase();
+    var verified = r.reviewer && r.reviewer.verified_buyer;
+    var stars    = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+    var date     = fmtDate(r.created_at);
+    var photos   = (r.pictures || []).map(function(p) {
+      var src = (p.urls && (p.urls.small || p.urls.original)) || p.url || '';
+      return src ? '<img src="' + src + '" alt="" loading="lazy">' : '';
+    }).join('');
+    return '<div class="srv-frev">'
+      + '<div class="srv-frev__col">'
+      +   '<div class="srv-frev__av">' + initial + '</div>'
+      +   '<p class="srv-frev__name">' + name + '</p>'
+      +   (verified ? '<p class="srv-frev__verified">✓ VERIFIED</p>' : '')
+      + '</div>'
+      + '<div class="srv-frev__body">'
+      +   '<div class="srv-frev__top"><span class="srv-frev__stars">' + stars + '</span><span class="srv-frev__date">' + date + '</span></div>'
+      +   (r.title ? '<p class="srv-frev__title">' + r.title + '</p>' : '')
+      +   (r.body  ? '<p class="srv-frev__text">' + r.body  + '</p>' : '')
+      +   (photos  ? '<div class="srv-frev__photos">' + photos + '</div>' : '')
+      + '</div>'
+      + '</div>';
+  }
+
+  function showFiltered(reviews) {
+    if (!filteredEl) return;
+    var matched = reviews.filter(matchesFilter);
+    filteredEl.innerHTML = matched.length
+      ? matched.map(renderCard).join('')
+      : '<p class="srv-filtered-empty">No reviews match this filter.</p>';
+    if (jmEl) jmEl.style.display = 'none';
+    filteredEl.style.display = 'flex';
+  }
+
+  function showAll() {
+    if (jmEl) jmEl.style.display = '';
+    if (filteredEl) filteredEl.style.display = 'none';
+  }
+
+  // Wire pills
+  var pills = section.querySelectorAll('.srv-pill');
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.forEach(function(p) { p.classList.remove('srv-pill--active'); });
+      pill.classList.add('srv-pill--active');
+      activeFilter = pill.getAttribute('data-filter');
+
+      if (activeFilter === 'all') {
+        showAll();
       } else {
-        review.classList.add('srv-hidden');
+        fetchAllReviews(showFiltered);
       }
     });
-  }
+  });
 
-  function initFilters() {
-    if (filtersInited) return;
-    filtersInited = true;
-
-    var pills = section.querySelectorAll('.srv-pill');
-    pills.forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        pills.forEach(function(p) { p.classList.remove('srv-pill--active'); });
-        pill.classList.add('srv-pill--active');
-        activeFilter = pill.getAttribute('data-filter');
-        applyFilter();
-      });
-    });
-
-    // Re-apply filter whenever JM swaps in new reviews (pagination)
-    var reviewsContainer = document.querySelector('.srv-reviews');
-    if (reviewsContainer) {
-      new MutationObserver(function() {
-        // Small delay so JM finishes rendering the new page of reviews
-        setTimeout(applyFilter, 150);
-      }).observe(reviewsContainer, { childList: true, subtree: true });
-    }
-  }
-
-  // Poll until .jdgm-rev items are in the DOM
-  var filtersPollCount = 0;
-  function pollForFilters() {
-    if (document.querySelectorAll('.srv-reviews .jdgm-rev').length > 0) {
-      initFilters();
-    } else if (filtersPollCount < 20) {
-      filtersPollCount++;
-      setTimeout(pollForFilters, 500);
-    }
-  }
-  window.addEventListener('load', pollForFilters);
-  setTimeout(pollForFilters, 1000);
+  // Pre-fetch in the background so first filter click is instant
+  window.addEventListener('load', function() {
+    setTimeout(function() { fetchAllReviews(function() {}); }, 2000);
+  });
 })();
 </script>
 
