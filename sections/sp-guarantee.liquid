@@ -114,7 +114,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: #f4efe2;
+    background: {{ section.settings.bottom_rip_bg | default: '#f4efe2' }};
     z-index: 0;
     height: 170px;
     top: 75px;
@@ -158,7 +158,8 @@
     { "type": "text",     "id": "headline",    "label": "Headline",     "default": "We Stand Behind Every Vehicle." },
     { "type": "textarea", "id": "body",        "label": "Body",         "default": "If something isn't right, we'll make it right. That's the deal, backed by US-based ML Toys support and a parts catalog that's stocked and ready to ship." },
     { "type": "header",   "content": "Ripped paper edge" },
-    { "type": "checkbox", "id": "show_bottom_rip", "label": "Show bottom rip", "default": true }
+    { "type": "checkbox", "id": "show_bottom_rip",  "label": "Show bottom rip",                "default": true },
+    { "type": "color",    "id": "bottom_rip_bg",    "label": "Bottom rip — background color",  "default": "#f4efe2", "info": "Match this to the background color of the section directly below." }
   ],
   "presets": [
     {
