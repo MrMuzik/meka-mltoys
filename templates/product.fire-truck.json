@@ -847,6 +847,25 @@
         "bottom_rip_bg": "#ffffff",
         "margin_bottom": "-150px"
       }
+    },
+    "sp_final_cta_ijt9wD": {
+      "type": "sp-final-cta",
+      "name": "Anchor CTA",
+      "settings": {
+        "hero_image": "shopify://shop_images/hero-composite.png",
+        "eyebrow": "LAST LAP",
+        "headline_prefix": "The",
+        "headline_highlight": "Industry Leader",
+        "headline_suffix": "In Performance Ride On Parts.",
+        "subtext": "Built stronger, backed by real support, and ready to upgrade.\nOrder yours before they're gone.",
+        "primary_label": "Order Now • $649",
+        "primary_url": "",
+        "primary_show_arrow": true,
+        "secondary_label": "Watch The Walkthrough",
+        "secondary_url": "",
+        "show_scarcity": true,
+        "scarcity_text": "LIMITED STOCK · SHIPS IN 24 HRS · FREE U.S. SHIPPING"
+      }
     }
   },
   "order": [
@@ -863,6 +882,7 @@
     "sp_firetruck_divider_RiFVJW",
     "sp_why_mltoys_Jh9M8H",
     "sp_founder_nDztyp",
-    "sp_guarantee_jqmQUD"
+    "sp_guarantee_jqmQUD",
+    "sp_final_cta_ijt9wD"
   ]
 }
