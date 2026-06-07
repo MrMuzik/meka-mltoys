@@ -1,10 +1,5 @@
 <div id="srv-{{ section.id }}" class="srv-wrap">
 
-  {%- comment -%} ── Decorative terrain rip (top) ── {%- endcomment -%}
-  <div class="srv-terrain" aria-hidden="true">
-    <img src="{{ 'sfaq-rip-bottom.svg' | asset_url }}" alt="" loading="eager">
-  </div>
-
   <div class="srv-inner">
 
     {%- comment -%} ── Zone 1: Header ── {%- endcomment -%}
@@ -47,7 +42,7 @@
 
     {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
     <div class="srv-reviews">
-      <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}"></div>
+      <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}" data-handle="{{ product.handle }}"></div>
     </div>
 
   </div>
@@ -62,23 +57,6 @@
     position: relative;
     background: #ffffff;
     overflow: hidden;
-  }
-
-  /* ── Decorative terrain ── */
-  .srv-terrain {
-    position: absolute;
-    top: -60px;
-    left: -10%;
-    width: 120%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 1;
-    transform: rotate(1.13deg);
-  }
-  .srv-terrain img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   /* ── Inner ── */
