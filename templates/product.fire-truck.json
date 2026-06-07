@@ -966,6 +966,15 @@
         "show_bottom_rip": true,
         "bottom_rip_bg": "#ffffff"
       }
+    },
+    "sp_reviews_ta3E86": {
+      "type": "sp-reviews",
+      "name": "Reviews",
+      "settings": {
+        "eyebrow": "CUSTOMER REVIEWS",
+        "headline": "From The Families Who Already Own One.",
+        "jm_api_token": "jmFfNgpAKPWv8BjVPUqavKVGk10"
+      }
     }
   },
   "order": [
@@ -984,6 +993,7 @@
     "sp_founder_nDztyp",
     "sp_guarantee_jqmQUD",
     "sp_final_cta_ijt9wD",
-    "sp_faq_zhjHBV"
+    "sp_faq_zhjHBV",
+    "sp_reviews_ta3E86"
   ]
 }
