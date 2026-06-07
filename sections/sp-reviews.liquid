@@ -1,0 +1,325 @@
+<div id="srv-{{ section.id }}" class="srv-wrap">
+
+  {%- comment -%} ── Decorative terrain rip (top) ── {%- endcomment -%}
+  <div class="srv-terrain" aria-hidden="true">
+    <img src="{{ 'sfaq-rip-bottom.svg' | asset_url }}" alt="" loading="eager">
+  </div>
+
+  <div class="srv-inner">
+
+    {%- comment -%} ── Zone 1: Header ── {%- endcomment -%}
+    <div class="srv-head">
+
+      {%- comment -%} Left: Eyebrow + Headline ── {%- endcomment -%}
+      <div class="srv-head__left">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="srv-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.headline != blank -%}
+          <h2 class="srv-headline">{{ section.settings.headline }}</h2>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Right: Rating summary card ── {%- endcomment -%}
+      <div class="srv-card">
+
+        <div class="srv-card__summary">
+          <p class="srv-card__score">{{ product.metafields.judge_me.rating | default: '—' }}</p>
+          <p class="srv-card__stars">★★★★★</p>
+          <p class="srv-card__count"><span data-jm-count>{{ product.metafields.judge_me.rating_count | default: '—' }}</span> reviews</p>
+        </div>
+
+        <div class="srv-card__bars">
+          {%- for i in (1..5) -%}
+            {%- assign star = 6 | minus: i -%}
+            <div class="srv-bar-row">
+              <span class="srv-bar-row__label">{{ star }}★</span>
+              <div class="srv-bar-row__track">
+                <div class="srv-bar-row__fill" data-star="{{ star }}" style="width: 0%"></div>
+              </div>
+              <span class="srv-bar-row__pct" data-star-pct="{{ star }}">—</span>
+            </div>
+          {%- endfor -%}
+        </div>
+
+      </div>
+    </div>
+
+    {%- comment -%} ── Zone 2: Judge.me Reviews Grid ── {%- endcomment -%}
+    <div class="srv-reviews">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  /* ── Wrapper ── */
+  #srv-{{ section.id }} {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  /* ── Decorative terrain ── */
+  .srv-terrain {
+    position: absolute;
+    top: -60px;
+    left: -10%;
+    width: 120%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+    transform: rotate(1.13deg);
+  }
+  .srv-terrain img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── Inner ── */
+  .srv-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    padding: 144px 56px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* ── Head ── */
+  .srv-head {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .srv-head__left {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+  }
+  .srv-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .srv-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.28px;
+    color: #0b0c0e;
+    margin: 0;
+  }
+
+  /* ── Rating card ── */
+  .srv-card {
+    flex-shrink: 0;
+    width: 533px;
+    border: 4px solid #001429;
+    border-radius: 18px;
+    padding: 24px 28px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    background: #ffffff;
+  }
+  .srv-card__summary {
+    flex-shrink: 0;
+    width: 123px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .srv-card__score {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    color: #0b0c0e;
+    margin: 0;
+  }
+  .srv-card__stars {
+    font-size: 14px;
+    color: #e11d2a;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  .srv-card__count {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.88px;
+    color: #6b7280;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ── Breakdown bars ── */
+  .srv-card__bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .srv-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .srv-bar-row__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.44px;
+    color: #6b7280;
+    width: 20px;
+    flex-shrink: 0;
+  }
+  .srv-bar-row__track {
+    flex: 1;
+    height: 8px;
+    background: #f4efe2;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .srv-bar-row__fill {
+    height: 100%;
+    border-radius: 999px;
+    background: #e11d2a;
+    transition: width 0.6s ease;
+  }
+  /* Gray fill for 3★ and below */
+  .srv-bar-row__fill[data-star="3"],
+  .srv-bar-row__fill[data-star="2"],
+  .srv-bar-row__fill[data-star="1"] {
+    background: #b5bac2;
+  }
+  .srv-bar-row__pct {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #2a2d33;
+    width: 28px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  /* ── Reviews zone ── */
+  .srv-reviews {
+    width: 100%;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .srv-inner { padding: 100px 32px 80px; }
+    .srv-head { flex-direction: column; }
+    .srv-card { width: 100%; max-width: 533px; }
+  }
+  @media (max-width: 749px) {
+    .srv-inner { padding: 80px 20px 60px; }
+    .srv-card { flex-direction: column; gap: 16px; }
+    .srv-card__summary { width: 100%; flex-direction: row; gap: 16px; align-items: center; }
+    .srv-card__score { font-size: 40px; }
+  }
+</style>
+
+<script>
+(function() {
+  var section = document.getElementById('srv-{{ section.id }}');
+  if (!section) return;
+
+  var apiToken = {{ section.settings.jm_api_token | json }};
+  var shopDomain = {{ shop.permanent_domain | json }};
+  var productId = {{ product.id | json }};
+
+  if (!apiToken || !shopDomain || !productId) return;
+
+  var url = 'https://judge.me/api/v1/reviews'
+    + '?api_token=' + encodeURIComponent(apiToken)
+    + '&shop_domain=' + encodeURIComponent(shopDomain)
+    + '&product_id=' + encodeURIComponent(productId)
+    + '&per_page=0';
+
+  fetch(url)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var dist = data.star_distribution || {};
+      var total = 0;
+      for (var k in dist) { total += dist[k]; }
+      if (!total) return;
+
+      // Update bars
+      section.querySelectorAll('[data-star]').forEach(function(fill) {
+        var star = fill.getAttribute('data-star');
+        var count = dist[star] || 0;
+        var pct = Math.round((count / total) * 100);
+        fill.style.width = pct + '%';
+      });
+
+      // Update percentage labels
+      section.querySelectorAll('[data-star-pct]').forEach(function(label) {
+        var star = label.getAttribute('data-star-pct');
+        var count = dist[star] || 0;
+        var pct = Math.round((count / total) * 100);
+        label.textContent = pct + '%';
+      });
+
+      // Update total count if API returns it and Liquid didn't populate
+      if (data.total_count) {
+        var countEl = section.querySelector('[data-jm-count]');
+        if (countEl && countEl.textContent.trim() === '—') {
+          countEl.textContent = data.total_count;
+        }
+      }
+    })
+    .catch(function() { /* fail silently */ });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Reviews",
+  "tag": "section",
+  "class": "srv-section",
+  "settings": [
+    { "type": "header",   "content": "Head" },
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",   "default": "CUSTOMER REVIEWS" },
+    { "type": "textarea", "id": "headline",     "label": "Headline",  "default": "From The Families Who Already Own One." },
+    { "type": "header",   "content": "Judge.me Integration" },
+    { "type": "text",     "id": "jm_api_token", "label": "Judge.me Public API Token", "info": "Found in your Judge.me dashboard → Settings → API. Safe to use on the storefront." }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %}
