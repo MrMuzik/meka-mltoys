@@ -516,12 +516,24 @@
   var jmEl        = section.querySelector('.srv-reviews--jm');
   var filteredEl  = section.querySelector('.srv-filtered-reviews');
 
-  console.log('[srv-reviews] token:', jmApiToken, '| shop:', jmShop, '| product:', jmProductId);
+  // Debug: inspect JM internals
+  setTimeout(function() {
+    console.log('[srv-reviews] window.jdgm keys:', window.jdgm ? Object.keys(window.jdgm) : 'NOT FOUND');
+    var widgetEl = document.getElementById('judgeme_product_reviews');
+    if (widgetEl) {
+      console.log('[srv-reviews] widget el keys:', Object.keys(widgetEl).filter(function(k){ return k.startsWith('jdgm') || k.startsWith('__'); }));
+      var filterBtns = widgetEl.querySelectorAll('[data-filter], [data-rating], [data-sort], [class*="filter"], [class*="sort"]');
+      console.log('[srv-reviews] filter/sort elements inside widget:', filterBtns.length);
+      filterBtns.forEach(function(el) { console.log('  -', el.tagName, el.className, JSON.stringify(el.dataset)); });
+    }
+  }, 3000);
 
   // Fetch every review from JM API (pages until exhausted)
   function fetchAllReviews(cb) {
     if (cachedReviews) { cb(cachedReviews); return; }
-    if (!jmApiToken) { console.warn('[srv-reviews] No API token — enter it in Reviews section settings'); cb([]); return; }
+    if (!jmApiToken) { console.warn('[srv-reviews] No API token set'); cb([]); return; }
+    // Note: direct API fetch blocked by CORS — this path currently unused
+    cb([]); return;
     var all = [], page = 1;
     function next() {
       var url = 'https://judge.me/api/v1/reviews'
@@ -590,9 +602,12 @@
   function showFiltered(reviews) {
     if (!filteredEl) return;
     var matched = reviews.filter(matchesFilter);
-    filteredEl.innerHTML = matched.length
-      ? matched.map(renderCard).join('')
-      : '<p class="srv-filtered-empty">No reviews match this filter.</p>';
+    if (!matched.length) {
+      // No API data yet — fall back to showing JM widget
+      showAll();
+      return;
+    }
+    filteredEl.innerHTML = matched.map(renderCard).join('');
     if (jmEl) jmEl.style.display = 'none';
     filteredEl.style.display = 'flex';
   }
