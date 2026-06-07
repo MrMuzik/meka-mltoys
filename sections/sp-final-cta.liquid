@@ -57,13 +57,7 @@
     {%- endif -%}
 
     {%- comment -%} ── Headline ── {%- endcomment -%}
-    <h2 class="sfc-headline">
-      {{- section.settings.headline_prefix -}}
-      {%- if section.settings.headline_highlight != blank -%}
-        <span class="sfc-headline__red">{{ section.settings.headline_highlight }}</span>
-      {%- endif -%}
-      {{- section.settings.headline_suffix -}}
-    </h2>
+    <h2 class="sfc-headline">{{ section.settings.headline_prefix }} <span class="sfc-headline__red">{{ section.settings.headline_highlight }}</span> {{ section.settings.headline_suffix }}</h2>
 
     {%- comment -%} ── Subtext ── {%- endcomment -%}
     {%- if section.settings.subtext != blank -%}
@@ -422,9 +416,9 @@
     { "type": "image_picker", "id": "hero_image",       "label": "Product image" },
     { "type": "header",       "content": "Headline" },
     { "type": "text",         "id": "eyebrow",          "label": "Eyebrow",              "default": "LAST LAP" },
-    { "type": "text",         "id": "headline_prefix",  "label": "Headline — prefix",    "default": "The " },
+    { "type": "text",         "id": "headline_prefix",  "label": "Headline — prefix",    "default": "The" },
     { "type": "text",         "id": "headline_highlight","label": "Headline — red text", "default": "Industry Leader" },
-    { "type": "text",         "id": "headline_suffix",  "label": "Headline — suffix",    "default": " In Performance Ride On Parts." },
+    { "type": "text",         "id": "headline_suffix",  "label": "Headline — suffix",    "default": "In Performance Ride On Parts." },
     { "type": "textarea",     "id": "subtext",          "label": "Subtext",              "default": "Built stronger, backed by real support, and ready to upgrade.\nOrder yours before they're gone." },
     { "type": "header",       "content": "Primary button" },
     { "type": "text",         "id": "primary_label",    "label": "Label",                "default": "Order Now • $649" },
