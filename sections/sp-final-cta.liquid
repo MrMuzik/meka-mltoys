@@ -7,11 +7,6 @@
       <img src="{{ 'sfc-tire-track.svg' | asset_url }}" alt="" loading="lazy">
     </div>
 
-    {%- comment -%} ── Decorative: horizontal tire track ── {%- endcomment -%}
-    <div class="sfc-tire-track-h" aria-hidden="true">
-      <img src="{{ 'sfc-tire-track-h.svg' | asset_url }}" alt="" loading="lazy">
-    </div>
-
     {%- comment -%} ── Decorative: swirl path behind image ── {%- endcomment -%}
     <div class="sfc-swirl" aria-hidden="true">
       <img src="{{ 'sfc-swirl-path.svg' | asset_url }}" alt="" loading="lazy">
@@ -187,13 +182,13 @@
   /* ── Decorative: battery (top left) ── */
   .sfc-battery {
     position: absolute;
-    top: 53px;
-    left: 56px;
+    top: 33px;
+    left: 276px;
     width: 122px;
     height: 122px;
     pointer-events: none;
     opacity: 0.4;
-    z-index: 1;
+    z-index: 10;
   }
   .sfc-battery img {
     display: block;
@@ -206,7 +201,7 @@
   .sfc-carlight {
     position: absolute;
     top: 9px;
-    right: 56px;
+    right: 296px;
     width: 64px;
     height: 54px;
     pointer-events: none;
@@ -222,10 +217,10 @@
   /* ── Decorative: motor filter (right) ── */
   .sfc-motorfilter {
     position: absolute;
-    top: 423px;
-    right: 56px;
-    width: 119px;
-    height: 119px;
+    top: 373px;
+    right: 136px;
+    width: 117px;
+    height: 117px;
     pointer-events: none;
     opacity: 0.4;
     z-index: 1;
