@@ -20,7 +20,7 @@
 
         <div class="srv-card__summary">
           <p class="srv-card__score">{{ product.metafields.judge_me.rating | default: '—' }}</p>
-          <p class="srv-card__stars">★★★★★</p>
+          <p class="srv-card__stars" data-jm-stars>★★★★★</p>
           <p class="srv-card__count"><span data-jm-count>{{ product.metafields.judge_me.rating_count | default: '—' }}</span> reviews</p>
         </div>
 
@@ -222,9 +222,13 @@
     margin: 0;
   }
 
-  /* ── Hide Judge.me's duplicate header & summary in Zone 2 (we have our own in Zone 1) ── */
+  /* ── Hide Judge.me's duplicate header & summary in Zone 2 ── */
   .srv-reviews .jdgm-review-header,
-  .srv-reviews .jdgm-summary { display: none !important; }
+  .srv-reviews .jdgm-summary,
+  .srv-reviews [class*="review-header"],
+  .srv-reviews [class*="widget-title"],
+  .srv-reviews [class*="widget__title"],
+  .srv-reviews [class*="summary"] { display: none !important; }
 
   /* ── Judge.me widget base resets ── */
   .srv-reviews .jdgm-widget { font-family: 'Inter', sans-serif !important; }
@@ -255,39 +259,59 @@
 
   var populated = false;
 
+  function renderStars(score) {
+    var full  = Math.floor(score);
+    var half  = (score - full) >= 0.4 ? 1 : 0;
+    var empty = 5 - full - half;
+    return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+  }
+
   function tryPopulate() {
     if (populated) return;
 
-    // ── Score & count: read from Judge.me's auto-injected badge ──
-    var badge = document.querySelector('.jdgm-prev-badge[data-average-rating], .jdgm-preview-badge[data-average-rating]');
+    // ── Score & count from Judge.me badge ──
+    var badge = document.querySelector('[data-average-rating]');
     var score = badge ? parseFloat(badge.getAttribute('data-average-rating')) : null;
     var total = badge ? parseInt(badge.getAttribute('data-number-of-reviews'), 10) : null;
 
     if (score) {
       var scoreEl = section.querySelector('.srv-card__score');
-      if (scoreEl && scoreEl.textContent.trim() === '—') scoreEl.textContent = score.toFixed(1);
+      if (scoreEl) scoreEl.textContent = score.toFixed(1);
+
+      var starsEl = section.querySelector('[data-jm-stars]');
+      if (starsEl) {
+        var full = Math.floor(score + 0.5);
+        starsEl.textContent = '★'.repeat(full) + '☆'.repeat(5 - full);
+      }
     }
     if (total) {
       var countEl = section.querySelector('[data-jm-count]');
-      if (countEl && countEl.textContent.trim() === '—') countEl.textContent = total;
+      if (countEl) countEl.textContent = total;
     }
 
-    // ── Bars: read from Judge.me's rendered histogram rows ──
-    var rows = document.querySelectorAll('.jdgm-histogram__row');
+    // ── Bars: read from Judge.me's histogram (try multiple selectors) ──
+    var rows = document.querySelectorAll('.jdgm-histogram__row, [class*="histogram"] [class*="row"]');
     if (!rows.length) return;
 
     var gotBars = false;
     rows.forEach(function(row) {
-      var labelEl = row.querySelector('a, .jdgm-histogram__label');
-      var barEl   = row.querySelector('.jdgm-histogram__bar');
-      if (!labelEl || !barEl) return;
-
-      var starMatch = (labelEl.textContent || '').match(/(\d)/);
+      // Star number: look for a digit before "star" or just first digit
+      var text = row.textContent || '';
+      var starMatch = text.match(/(\d)\s*star/i) || text.match(/(\d)/);
       if (!starMatch) return;
       var star = starMatch[1];
 
-      var widthMatch = (barEl.style.width || '').match(/(\d+(?:\.\d+)?)/);
-      var pct = widthMatch ? Math.round(parseFloat(widthMatch[1])) : 0;
+      // Bar width: inline style on any child div
+      var barEl = row.querySelector('[style*="width"]');
+      var pct = 0;
+      if (barEl) {
+        var w = (barEl.style.width || '').match(/(\d+(?:\.\d+)?)/);
+        pct = w ? Math.round(parseFloat(w[1])) : 0;
+      }
+
+      // Count: look for a standalone number at end of row
+      var countMatch = text.match(/(\d+)\s*$/);
+      var count = countMatch ? parseInt(countMatch[1], 10) : null;
 
       var fill  = section.querySelector('[data-star="' + star + '"]');
       var label = section.querySelector('[data-star-pct="' + star + '"]');
@@ -295,20 +319,26 @@
       if (label) label.textContent = pct + '%';
     });
 
-    if (gotBars) {
+    if (gotBars && score) {
       populated = true;
       observer.disconnect();
     }
   }
 
-  // Watch for Judge.me to render its widget into the DOM
-  var observer = new MutationObserver(tryPopulate);
+  function tryWithDelay() {
+    tryPopulate();
+    if (!populated) setTimeout(tryPopulate, 300);
+    if (!populated) setTimeout(tryPopulate, 800);
+    if (!populated) setTimeout(tryPopulate, 1500);
+  }
+
+  var observer = new MutationObserver(function() { setTimeout(tryPopulate, 100); });
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // Also try on page events
-  window.addEventListener('load', tryPopulate);
-  document.addEventListener('jdgm.widget.load', function() { tryPopulate(); });
-  document.addEventListener('jdgm:all_widgets:load', function() { tryPopulate(); });
+  window.addEventListener('load', tryWithDelay);
+  document.addEventListener('jdgm.widget.load', tryWithDelay);
+  document.addEventListener('jdgm:all_widgets:load', tryWithDelay);
+  setTimeout(tryWithDelay, 500);
 })();
 </script>
 
