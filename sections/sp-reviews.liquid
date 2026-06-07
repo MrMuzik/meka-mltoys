@@ -257,7 +257,7 @@
 
   /* ── Hide Judge.me's duplicate header, summary & sort dropdown ── */
   .srv-reviews .jdgm-rev-widg__header,
-  .srv-reviews .jdgm-review-header,
+  .srv-reviews .jdgm-rev-header,
   .srv-reviews .jdgm-summary,
   .srv-reviews [class*="review-header"],
   .srv-reviews [class*="widget-title"],
@@ -265,12 +265,12 @@
   .srv-reviews [class*="summary"],
   .srv-reviews .jdgm-form,
   .srv-reviews select,
-  .srv-reviews .jdgm-reviews-filter-and-sort,
+  .srv-reviews .jdgm-revs-filter-and-sort,
   .srv-reviews [class*="filter-and-sort"],
   .srv-reviews [class*="sort"] { display: none !important; }
 
   /* ── Review card: match Figma layout ── */
-  .srv-reviews .jdgm-review {
+  .srv-reviews .jdgm-rev {
     display: flex !important;
     gap: 24px !important;
     align-items: flex-start !important;
@@ -282,8 +282,8 @@
   }
 
   /* ── Avatar column ── */
-  .srv-reviews .jdgm-review .jdgm-reviewer-info,
-  .srv-reviews .jdgm-review .jdgm-reviewer {
+  .srv-reviews .jdgm-rev .jdgm-reviewer-info,
+  .srv-reviews .jdgm-rev .jdgm-reviewer {
     flex-shrink: 0 !important;
     width: 120px !important;
     display: flex !important;
@@ -293,8 +293,8 @@
     text-align: center !important;
   }
   /* Avatar circle */
-  .srv-reviews .jdgm-review .jdgm-reviewer-icon,
-  .srv-reviews .jdgm-review .jdgm-avatar {
+  .srv-reviews .jdgm-rev .jdgm-reviewer-icon,
+  .srv-reviews .jdgm-rev .jdgm-avatar {
     width: 56px !important;
     height: 56px !important;
     border-radius: 999px !important;
@@ -309,7 +309,7 @@
     overflow: hidden !important;
     flex-shrink: 0 !important;
   }
-  .srv-reviews .jdgm-review .jdgm-reviewer-name {
+  .srv-reviews .jdgm-rev .jdgm-reviewer-name {
     font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important;
     font-size: 13px !important;
@@ -317,9 +317,9 @@
     text-align: center !important;
   }
   /* Verified badge */
-  .srv-reviews .jdgm-review .jdgm-verified-text,
-  .srv-reviews .jdgm-review .jdgm-badge-check,
-  .srv-reviews .jdgm-review [class*="verified"] {
+  .srv-reviews .jdgm-rev .jdgm-verified-text,
+  .srv-reviews .jdgm-rev .jdgm-badge-check,
+  .srv-reviews .jdgm-rev [class*="verified"] {
     font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important;
     font-size: 9px !important;
@@ -329,8 +329,8 @@
   }
 
   /* ── Review body ── */
-  .srv-reviews .jdgm-review .jdgm-review-content,
-  .srv-reviews .jdgm-review .jdgm-rev-body {
+  .srv-reviews .jdgm-rev .jdgm-review-content,
+  .srv-reviews .jdgm-rev .jdgm-rev-body {
     flex: 1 !important;
     min-width: 0 !important;
     display: flex !important;
@@ -338,29 +338,29 @@
     gap: 10px !important;
   }
   /* Stars + date row */
-  .srv-reviews .jdgm-review .jdgm-review-header-with-date,
-  .srv-reviews .jdgm-review .jdgm-rev-header {
+  .srv-reviews .jdgm-rev .jdgm-review-header-with-date,
+  .srv-reviews .jdgm-rev .jdgm-rev-header {
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
   }
-  .srv-reviews .jdgm-review .jdgm-star-rating,
-  .srv-reviews .jdgm-review [class*="star"] {
+  .srv-reviews .jdgm-rev .jdgm-star-rating,
+  .srv-reviews .jdgm-rev [class*="star"] {
     color: #e11d2a !important;
     font-size: 14px !important;
     letter-spacing: 1px !important;
   }
-  .srv-reviews .jdgm-review .jdgm-review-date,
-  .srv-reviews .jdgm-review .jdgm-rev-date,
-  .srv-reviews .jdgm-review time {
+  .srv-reviews .jdgm-rev .jdgm-review-date,
+  .srv-reviews .jdgm-rev .jdgm-rev-date,
+  .srv-reviews .jdgm-rev time {
     font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
     font-size: 12px !important;
     color: #6b7280 !important;
   }
   /* Review title */
-  .srv-reviews .jdgm-review .jdgm-rev-title,
-  .srv-reviews .jdgm-review .jdgm-review-title {
+  .srv-reviews .jdgm-rev .jdgm-rev-title,
+  .srv-reviews .jdgm-rev .jdgm-review-title {
     font-family: 'Inter', sans-serif !important;
     font-weight: 700 !important;
     font-size: 16px !important;
@@ -368,9 +368,9 @@
     color: #0b0c0e !important;
   }
   /* Review body text */
-  .srv-reviews .jdgm-review .jdgm-rev-text,
-  .srv-reviews .jdgm-review .jdgm-review__body,
-  .srv-reviews .jdgm-review .jdgm-review-body {
+  .srv-reviews .jdgm-rev .jdgm-rev-text,
+  .srv-reviews .jdgm-rev .jdgm-review__body,
+  .srv-reviews .jdgm-rev .jdgm-review-body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
     font-size: 14px !important;
@@ -469,49 +469,39 @@
   setTimeout(tryWithDelay, 500);
 
   // ── Filter pills ──
+  // JM uses .jdgm-rev for individual review items (not .jdgm-review)
   function getReviews() {
-    return Array.from(document.querySelectorAll('.srv-reviews .jdgm-review'));
+    return Array.from(document.querySelectorAll('.srv-reviews .jdgm-rev'));
   }
 
   function reviewIsVerified(review) {
-    // JM adds a verified element — try class match first, then text fallback
+    // JM marks verified with data-verified or a verified class/element
+    if (review.getAttribute('data-verified') === 'true') return true;
     if (review.querySelector('[class*="verified"]')) return true;
-    var txt = review.textContent;
-    return txt.indexOf('Verified') !== -1 || txt.indexOf('VERIFIED') !== -1 || txt.indexOf('verified') !== -1;
+    return false;
   }
 
   function reviewStars(review) {
-    // Try data-score on the review itself first
+    // JM uses data-score on the review element
     var score = review.getAttribute('data-score') || review.getAttribute('data-rating');
     if (score) return Math.round(parseFloat(score));
-    // Fall back to counting filled ★ chars in the star element
-    var starEl = review.querySelector('[class*="star"]');
-    if (starEl) return (starEl.textContent.match(/★/g) || []).length;
-    return null;
+    // Fallback: count .jdgm-star.jdgm--on elements
+    return review.querySelectorAll('.jdgm-star.jdgm--on').length || null;
   }
 
   function reviewHasPhotos(review) {
-    // JM wraps review photos in a photos/media container
-    if (review.querySelector('[class*="photo"] img, [class*="media"] img, [class*="picture"] img')) return true;
-    // Fallback: any img whose src isn't a gravatar / avatar / icon
-    return Array.from(review.querySelectorAll('img')).some(function(img) {
-      var src = (img.getAttribute('src') || img.getAttribute('data-src') || '').toLowerCase();
-      return src.length > 0 && !/gravatar|avatar|icon|badge|star|check|logo|placeholder/i.test(src);
-    });
+    return !!review.querySelector('[class*="photo"], [class*="media"], [class*="picture"]');
   }
 
   function initFilters() {
     var pills = section.querySelectorAll('.srv-pill');
     if (!pills.length) return;
 
-    // Debug: log first review structure to console once
-    var firstReview = document.querySelector('.srv-reviews .jdgm-review');
+    var firstReview = getReviews()[0];
     if (firstReview) {
-      console.log('[srv-reviews] first review classes:', firstReview.className);
-      console.log('[srv-reviews] first review data-*:', firstReview.dataset);
-      console.log('[srv-reviews] verified check:', reviewIsVerified(firstReview));
-      console.log('[srv-reviews] stars:', reviewStars(firstReview));
-      console.log('[srv-reviews] photos:', reviewHasPhotos(firstReview));
+      console.log('[srv-reviews] first .jdgm-rev classes:', firstReview.className);
+      console.log('[srv-reviews] first .jdgm-rev dataset:', JSON.stringify(firstReview.dataset));
+      console.log('[srv-reviews] verified:', reviewIsVerified(firstReview), '| stars:', reviewStars(firstReview), '| photos:', reviewHasPhotos(firstReview));
     }
 
     pills.forEach(function(pill) {
@@ -531,8 +521,7 @@
           } else if (filter === 'verified') {
             show = reviewIsVerified(review);
           } else if (filter === '5' || filter === '4') {
-            var stars = reviewStars(review);
-            show = stars === parseInt(filter, 10);
+            show = reviewStars(review) === parseInt(filter, 10);
           } else if (filter === 'photos') {
             show = reviewHasPhotos(review);
           } else if (filter === 'upgrades') {
@@ -547,17 +536,12 @@
     });
   }
 
-  // Poll until JM reviews are in the DOM, then init filters
+  // Poll until .jdgm-rev items exist in the DOM
   var filtersPollCount = 0;
   function pollForFilters() {
-    var wrapper = document.querySelector('.srv-reviews');
-    if (wrapper && filtersPollCount === 5) {
-      // Log the actual HTML structure so we can see what JM renders
-      console.log('[srv-reviews] .srv-reviews innerHTML snapshot:', wrapper.innerHTML.substring(0, 2000));
-    }
-    var reviews = document.querySelectorAll('.srv-reviews .jdgm-review');
-    console.log('[srv-reviews] pollForFilters attempt', filtersPollCount, '— reviews found:', reviews.length);
+    var reviews = document.querySelectorAll('.srv-reviews .jdgm-rev');
     if (reviews.length > 0) {
+      console.log('[srv-reviews] found', reviews.length, '.jdgm-rev items — initialising filters');
       initFilters();
     } else if (filtersPollCount < 20) {
       filtersPollCount++;
