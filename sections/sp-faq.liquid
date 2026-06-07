@@ -1,0 +1,393 @@
+<div id="sfaq-{{ section.id }}" class="sfaq-wrap">
+
+  {%- if section.settings.show_top_rip -%}
+    <span class="sfaq-rip sfaq-rip--top">
+      <img src="{{ 'sfaq-rip-top.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+  <div class="sfaq-inner">
+
+    {%- comment -%} ── Decorative path (top right) ── {%- endcomment -%}
+    <div class="sfaq-path" aria-hidden="true">
+      <img src="{{ 'sfaq-path.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Left column: Head ── {%- endcomment -%}
+    <div class="sfaq-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="sfaq-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.headline != blank -%}
+        <h2 class="sfaq-headline">{{ section.settings.headline }}</h2>
+      {%- endif -%}
+      {%- if section.settings.blurb != blank -%}
+        <p class="sfaq-blurb">{{ section.settings.blurb }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="sfaq-btn">
+          {{ section.settings.cta_label }}
+          {%- if section.settings.cta_show_arrow -%}
+            <img src="{{ 'sfaq-arrow.svg' | asset_url }}" alt="" class="sfaq-btn__arrow" aria-hidden="true" loading="lazy">
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Right column: Accordion ── {%- endcomment -%}
+    {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+    {%- if faq_blocks.size > 0 -%}
+      <div class="sfaq-list">
+        {%- for block in faq_blocks -%}
+          <details class="sfaq-item" {{ block.shopify_attributes }}>
+            <summary class="sfaq-item__header">
+              <span class="sfaq-item__question">{{ block.settings.question }}</span>
+              <span class="sfaq-item__toggle" aria-hidden="true">
+                <span class="sfaq-item__toggle-open">
+                  <img src="{{ 'sfaq-plus.svg' | asset_url }}" alt="" loading="lazy">
+                </span>
+                <span class="sfaq-item__toggle-close">
+                  <img src="{{ 'sfaq-minus.svg' | asset_url }}" alt="" loading="lazy">
+                </span>
+              </span>
+            </summary>
+            {%- if block.settings.answer != blank -%}
+              <div class="sfaq-item__body">
+                <div class="sfaq-item__divider"></div>
+                <p class="sfaq-item__answer">{{ block.settings.answer }}</p>
+              </div>
+            {%- endif -%}
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+
+  {%- if section.settings.show_bottom_rip -%}
+    <span class="sfaq-rip sfaq-rip--bottom">
+      <img src="{{ 'sfaq-rip-bottom.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  /* ── Wrapper ── */
+  #sfaq-{{ section.id }} {
+    position: relative;
+    background: #f0f0f0;
+  }
+
+  /* ── Rips ── */
+  .sfaq-rip {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .sfaq-rip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .sfaq-rip--top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: {{ section.settings.top_rip_bg | default: '#ffffff' }};
+    z-index: 0;
+    height: 50px;
+    bottom: 0;
+    top: auto;
+  }
+  .sfaq-rip--bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: {{ section.settings.bottom_rip_bg | default: '#ffffff' }};
+    z-index: 0;
+    height: 50px;
+    top: auto;
+    bottom: 0;
+  }
+  @media (max-width: 1024px) {
+    .sfaq-rip { display: none; }
+  }
+  @media (min-width: 1861px) {
+    .sfaq-rip { display: none; }
+  }
+
+  /* ── Inner ── */
+  .sfaq-inner {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 64px;
+    align-items: start;
+    padding: 87px 56px 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ── Decorative path ── */
+  .sfaq-path {
+    position: absolute;
+    top: -2px;
+    right: 56px;
+    width: 368px;
+    height: 400px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sfaq-path img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 989px) {
+    .sfaq-path { display: none; }
+  }
+
+  /* ── Head ── */
+  .sfaq-head {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 1;
+  }
+  .sfaq-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+  .sfaq-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.28px;
+    color: #0b0c0e;
+    margin: 0;
+  }
+  .sfaq-blurb {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #2a2d33;
+    margin: 0;
+  }
+  .sfaq-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 4px 16px;
+    background: #ffffff;
+    border: 4px solid #001429;
+    border-radius: 96px;
+    box-shadow: -2px 4px 0px #001429;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #001429;
+    text-decoration: none;
+    white-space: nowrap;
+    width: fit-content;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sfaq-btn:hover {
+    transform: translate(1px, -2px);
+    box-shadow: -3px 6px 0px #001429;
+  }
+  .sfaq-btn__arrow {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  /* ── FAQ List ── */
+  .sfaq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── FAQ Item (closed) ── */
+  .sfaq-item {
+    background: #ffffff;
+    border: 4px solid #001429;
+    border-radius: 21px;
+    box-shadow: -2px 4px 0px 0px #001429;
+    overflow: hidden;
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* ── FAQ Item (open) ── */
+  .sfaq-item[open] {
+    background: #e0e0e0;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  /* ── Summary / Header ── */
+  .sfaq-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .sfaq-item__header::-webkit-details-marker { display: none; }
+
+  .sfaq-item__question {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    color: #0b0c0e;
+    line-height: 1.3;
+  }
+
+  /* ── Toggle button ── */
+  .sfaq-item__toggle {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid #001429;
+    box-shadow: -1px 3px 0px 0px #001429;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+  .sfaq-item__toggle img {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+  .sfaq-item__toggle-open  { display: flex; align-items: center; justify-content: center; }
+  .sfaq-item__toggle-close { display: none;  align-items: center; justify-content: center; }
+
+  /* Open state: swap icons, red toggle */
+  .sfaq-item[open] .sfaq-item__toggle {
+    background: #e11d2a;
+    border-color: #001429;
+  }
+  .sfaq-item[open] .sfaq-item__toggle-open  { display: none; }
+  .sfaq-item[open] .sfaq-item__toggle-close { display: flex; }
+  .sfaq-item[open] .sfaq-item__toggle img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  /* ── Body / Answer ── */
+  .sfaq-item__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 24px 22px;
+  }
+  .sfaq-item__divider {
+    height: 1px;
+    background: #e1dccd;
+    width: 100%;
+  }
+  .sfaq-item__answer {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2a2d33;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .sfaq-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 80px 32px;
+    }
+    .sfaq-head { position: static; }
+  }
+  @media (max-width: 749px) {
+    .sfaq-inner { padding: 60px 20px; gap: 32px; }
+    .sfaq-item__question { font-size: 16px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "sfaq-section",
+  "settings": [
+    { "type": "header",   "content": "Head" },
+    { "type": "text",     "id": "eyebrow",        "label": "Eyebrow",        "default": "STILL WONDERING?" },
+    { "type": "text",     "id": "headline",       "label": "Headline",       "default": "Every Answer You Need." },
+    { "type": "textarea", "id": "blurb",          "label": "Support blurb",  "default": "Can't find what you're looking for? Email us at support@mltoys.com — a real human writes back, fast." },
+    { "type": "header",   "content": "CTA Button" },
+    { "type": "text",     "id": "cta_label",      "label": "Button label",   "default": "Email ML Toys" },
+    { "type": "url",      "id": "cta_url",        "label": "Button URL" },
+    { "type": "checkbox", "id": "cta_show_arrow", "label": "Show arrow",     "default": true },
+    { "type": "header",   "content": "Ripped paper edges" },
+    { "type": "checkbox", "id": "show_top_rip",    "label": "Show top rip",               "default": true },
+    { "type": "color",    "id": "top_rip_bg",      "label": "Top rip — background color", "default": "#ffffff", "info": "Match to the section directly above." },
+    { "type": "checkbox", "id": "show_bottom_rip", "label": "Show bottom rip",            "default": true },
+    { "type": "color",    "id": "bottom_rip_bg",   "label": "Bottom rip — background color", "default": "#ffffff", "info": "Match to the section directly below." }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "limit": 12,
+      "settings": [
+        { "type": "text",     "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer",   "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "How long does the battery last on a single charge?", "answer": "Stock 12V 12Ah battery delivers about 1.5 to 2 hours of mixed driving on flat surfaces. Upgraded ML Toys batteries can stretch that to 3+ hours." } },
+        { "type": "faq", "settings": { "question": "How fast does it go?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "Can it be upgraded with better motors or batteries?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "What ML Toys parts is it compatible with?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "Is this available anywhere else in the USA?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "What is the weight limit and age range?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "How difficult is assembly?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "What does the warranty cover?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "How do I reach ML Toys with a question?", "answer": "" } },
+        { "type": "faq", "settings": { "question": "What is the return policy?", "answer": "" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
