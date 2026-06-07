@@ -394,9 +394,7 @@
 
 <script>
 (function() {
-  console.log('[srv-reviews] script loaded');
   var section = document.getElementById('srv-{{ section.id }}');
-  console.log('[srv-reviews] section el:', section);
   if (!section) return;
 
   var populated = false;
@@ -475,10 +473,8 @@
   }
 
   function reviewIsVerified(review) {
-    // JM marks verified with data-verified or a verified class/element
-    if (review.getAttribute('data-verified') === 'true') return true;
-    if (review.querySelector('[class*="verified"]')) return true;
-    return false;
+    // JM uses data-verified-buyer="true" on the .jdgm-rev element
+    return review.getAttribute('data-verified-buyer') === 'true';
   }
 
   function reviewStars(review) {
@@ -490,19 +486,17 @@
   }
 
   function reviewHasPhotos(review) {
-    return !!review.querySelector('[class*="photo"], [class*="media"], [class*="picture"]');
+    // JM photo containers: .jdgm-rev__pics, .jdgm-rev__pic, .jdgm-rev-media, or any img with a CDN src
+    if (review.querySelector('.jdgm-rev__pics, .jdgm-rev__pic, [class*="rev__pic"], [class*="rev-media"], [class*="rev__media"]')) return true;
+    return Array.from(review.querySelectorAll('img')).some(function(img) {
+      var src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+      return src.length > 0 && /cdn\.shopify|shopify\.com|judge\.me|ugc|review/i.test(src);
+    });
   }
 
   function initFilters() {
     var pills = section.querySelectorAll('.srv-pill');
     if (!pills.length) return;
-
-    var firstReview = getReviews()[0];
-    if (firstReview) {
-      console.log('[srv-reviews] first .jdgm-rev classes:', firstReview.className);
-      console.log('[srv-reviews] first .jdgm-rev dataset:', JSON.stringify(firstReview.dataset));
-      console.log('[srv-reviews] verified:', reviewIsVerified(firstReview), '| stars:', reviewStars(firstReview), '| photos:', reviewHasPhotos(firstReview));
-    }
 
     pills.forEach(function(pill) {
       pill.addEventListener('click', function() {
@@ -541,7 +535,6 @@
   function pollForFilters() {
     var reviews = document.querySelectorAll('.srv-reviews .jdgm-rev');
     if (reviews.length > 0) {
-      console.log('[srv-reviews] found', reviews.length, '.jdgm-rev items — initialising filters');
       initFilters();
     } else if (filtersPollCount < 20) {
       filtersPollCount++;
