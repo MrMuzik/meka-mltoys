@@ -480,27 +480,24 @@
     return section.querySelector('.jdgm-rev-widg');
   }
 
-  // Trigger JM's own native filter (cross-page via AJAX)
+  // Trigger JM's own native filter by clicking its histogram rows.
+  // The header is CSS-hidden, so we briefly un-hide it, click, then re-hide
+  // before the browser paints — JM's AJAX fires asynchronously and continues.
   function triggerJMRatingFilter(rating) {
-    var w = getWidgetEl();
-    if (!w) return;
-    if (rating === null) {
-      // Prefer direct API call; fall back to clicking the clear-filter element
-      if (window.jdgm && window.jdgm._resetFilterAndSearch) {
-        window.jdgm._resetFilterAndSearch(w);
-      } else {
-        var clearBtn = document.querySelector('.jdgm-histogram__clear-filter');
-        if (clearBtn) clearBtn.click();
-      }
-    } else {
-      // Prefer direct API call; fall back to clicking the histogram row
-      if (window.jdgm && window.jdgm.filterReviewsByRating) {
-        window.jdgm.filterReviewsByRating(w, rating);
-      } else {
-        var row = document.querySelector('.jdgm-histogram__row[data-rating="' + rating + '"]');
-        if (row) row.click();
-      }
-    }
+    var header = document.querySelector('.jdgm-rev-widg__header');
+    var selector = rating === null
+      ? '.jdgm-histogram__clear-filter'
+      : '.jdgm-histogram__row[data-rating="' + rating + '"]';
+    var target = document.querySelector(selector);
+    if (!target) return;
+
+    // Un-hide so browser treats element as interactive
+    if (header) header.style.setProperty('display', 'block', 'important');
+    target.click();
+    // Re-hide on next tick — AJAX is already in flight
+    if (header) requestAnimationFrame(function() {
+      header.style.setProperty('display', 'none', 'important');
+    });
   }
 
   // DOM-level hide/show for filters JM doesn't natively support
