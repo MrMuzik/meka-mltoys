@@ -467,41 +467,76 @@
   setTimeout(tryWithDelay, 500);
 
   // ── Filter pills ──
+  function getReviews() {
+    return Array.from(document.querySelectorAll('.srv-reviews .jdgm-review'));
+  }
+
+  function reviewIsVerified(review) {
+    // JM adds a verified element — try class match first, then text fallback
+    if (review.querySelector('[class*="verified"]')) return true;
+    var txt = review.textContent;
+    return txt.indexOf('Verified') !== -1 || txt.indexOf('VERIFIED') !== -1 || txt.indexOf('verified') !== -1;
+  }
+
+  function reviewStars(review) {
+    // Try data-score on the review itself first
+    var score = review.getAttribute('data-score') || review.getAttribute('data-rating');
+    if (score) return Math.round(parseFloat(score));
+    // Fall back to counting filled ★ chars in the star element
+    var starEl = review.querySelector('[class*="star"]');
+    if (starEl) return (starEl.textContent.match(/★/g) || []).length;
+    return null;
+  }
+
+  function reviewHasPhotos(review) {
+    // JM wraps review photos in a photos/media container
+    if (review.querySelector('[class*="photo"] img, [class*="media"] img, [class*="picture"] img')) return true;
+    // Fallback: any img whose src isn't a gravatar / avatar / icon
+    return Array.from(review.querySelectorAll('img')).some(function(img) {
+      var src = (img.getAttribute('src') || img.getAttribute('data-src') || '').toLowerCase();
+      return src.length > 0 && !/gravatar|avatar|icon|badge|star|check|logo|placeholder/i.test(src);
+    });
+  }
+
   function initFilters() {
     var pills = section.querySelectorAll('.srv-pill');
     if (!pills.length) return;
 
+    // Debug: log first review structure to console once
+    var firstReview = document.querySelector('.srv-reviews .jdgm-review');
+    if (firstReview) {
+      console.log('[srv-reviews] first review classes:', firstReview.className);
+      console.log('[srv-reviews] first review data-*:', firstReview.dataset);
+      console.log('[srv-reviews] verified check:', reviewIsVerified(firstReview));
+      console.log('[srv-reviews] stars:', reviewStars(firstReview));
+      console.log('[srv-reviews] photos:', reviewHasPhotos(firstReview));
+    }
+
     pills.forEach(function(pill) {
       pill.addEventListener('click', function() {
-        // Update active state
         pills.forEach(function(p) { p.classList.remove('srv-pill--active'); });
         pill.classList.add('srv-pill--active');
 
         var filter = pill.getAttribute('data-filter');
-
-        // Get all review items (wait for JM to render)
-        var reviews = document.querySelectorAll('.srv-reviews .jdgm-review, .srv-reviews [class*="jdgm-rev"]:not([class*="header"]):not([class*="widg"])');
+        var reviews = getReviews();
 
         reviews.forEach(function(review) {
           var show = true;
+          var body = review.textContent.toLowerCase();
 
           if (filter === 'all') {
             show = true;
           } else if (filter === 'verified') {
-            show = !!review.querySelector('[class*="verified"]');
+            show = reviewIsVerified(review);
           } else if (filter === '5' || filter === '4') {
-            var starEl = review.querySelector('[data-score], [class*="star-rating"], [class*="jdgm-star"]');
-            var starText = starEl ? starEl.textContent : '';
-            var filledStars = (starText.match(/★/g) || []).length;
-            show = filledStars === parseInt(filter, 10);
+            var stars = reviewStars(review);
+            show = stars === parseInt(filter, 10);
           } else if (filter === 'photos') {
-            show = !!review.querySelector('img:not([class*="avatar"]):not([class*="icon"])');
+            show = reviewHasPhotos(review);
           } else if (filter === 'upgrades') {
-            var body = review.textContent.toLowerCase();
-            show = body.indexOf('upgrad') !== -1 || body.indexOf('motor') !== -1 || body.indexOf('battery') !== -1;
+            show = /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
           } else if (filter === 'support') {
-            var body = review.textContent.toLowerCase();
-            show = body.indexOf('support') !== -1 || body.indexOf('customer service') !== -1 || body.indexOf('help') !== -1;
+            show = /support|customer service|helped|help |staff|response|reply|team/.test(body);
           }
 
           review.style.display = show ? '' : 'none';
