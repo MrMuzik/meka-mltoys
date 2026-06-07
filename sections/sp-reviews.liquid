@@ -40,6 +40,17 @@
       </div>
     </div>
 
+    {%- comment -%} ── Filter pills ── {%- endcomment -%}
+    <div class="srv-filters" role="group" aria-label="Filter reviews">
+      <button class="srv-pill srv-pill--active" data-filter="all">ALL REVIEWS</button>
+      <button class="srv-pill" data-filter="verified">VERIFIED ONLY</button>
+      <button class="srv-pill" data-filter="5">5★</button>
+      <button class="srv-pill" data-filter="4">4★</button>
+      <button class="srv-pill" data-filter="photos">WITH PHOTOS</button>
+      <button class="srv-pill" data-filter="upgrades">MENTIONS UPGRADES</button>
+      <button class="srv-pill" data-filter="support">MENTIONS SUPPORT</button>
+    </div>
+
     {%- comment -%} ── Zone 2: App blocks (Judge.me Review Widget goes here) ── {%- endcomment -%}
     {%- if section.blocks.size > 0 -%}
       <div class="srv-reviews">
@@ -212,37 +223,160 @@
     text-align: right;
   }
 
+  /* ── Filter pills ── */
+  .srv-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+  .srv-pill {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.88px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #e1dccd;
+    background: #ffffff;
+    color: #2a2d33;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .srv-pill--active {
+    background: #0b0c0e;
+    color: #ffffff;
+  }
+
   /* ── Reviews zone ── */
   .srv-reviews {
     width: 100%;
   }
-  .srv-jm-notice {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #6b7280;
-    padding: 32px;
-    border: 2px dashed #e1dccd;
-    border-radius: 18px;
-    text-align: center;
-    margin: 0;
-  }
 
-  /* ── Hide Judge.me's duplicate header & summary in Zone 2 ── */
+  /* ── Hide Judge.me's duplicate header, summary & sort dropdown ── */
   .srv-reviews .jdgm-rev-widg__header,
   .srv-reviews .jdgm-review-header,
   .srv-reviews .jdgm-summary,
   .srv-reviews [class*="review-header"],
   .srv-reviews [class*="widget-title"],
   .srv-reviews [class*="widget__title"],
-  .srv-reviews [class*="summary"] { display: none !important; }
+  .srv-reviews [class*="summary"],
+  .srv-reviews .jdgm-form,
+  .srv-reviews select,
+  .srv-reviews .jdgm-reviews-filter-and-sort,
+  .srv-reviews [class*="filter-and-sort"],
+  .srv-reviews [class*="sort"] { display: none !important; }
 
-  /* ── Judge.me widget base resets ── */
-  .srv-reviews .jdgm-widget { font-family: 'Inter', sans-serif !important; }
-  .srv-reviews .jdgm-review { border-bottom: 1px solid #e1dccd !important; padding: 24px 0 !important; }
-  .srv-reviews .jdgm-reviewer-name { font-weight: 700 !important; color: #0b0c0e !important; }
-  .srv-reviews .jdgm-review__timestamp { color: #6b7280 !important; font-size: 12px !important; }
-  .srv-reviews .jdgm-review__body { color: #2a2d33 !important; font-size: 15px !important; line-height: 1.6 !important; }
-  .srv-reviews .jdgm-star-rating { color: #e11d2a !important; }
+  /* ── Review card: match Figma layout ── */
+  .srv-reviews .jdgm-review {
+    display: flex !important;
+    gap: 24px !important;
+    align-items: flex-start !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e1dccd !important;
+    border-radius: 18px !important;
+    padding: 24px 28px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* ── Avatar column ── */
+  .srv-reviews .jdgm-review .jdgm-reviewer-info,
+  .srv-reviews .jdgm-review .jdgm-reviewer {
+    flex-shrink: 0 !important;
+    width: 120px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
+  /* Avatar circle */
+  .srv-reviews .jdgm-review .jdgm-reviewer-icon,
+  .srv-reviews .jdgm-review .jdgm-avatar {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 999px !important;
+    background: #ffd2ff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 26px !important;
+    color: #0b0c0e !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+  }
+  .srv-reviews .jdgm-review .jdgm-reviewer-name {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    color: #0b0c0e !important;
+    text-align: center !important;
+  }
+  /* Verified badge */
+  .srv-reviews .jdgm-review .jdgm-verified-text,
+  .srv-reviews .jdgm-review .jdgm-badge-check,
+  .srv-reviews .jdgm-review [class*="verified"] {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 9px !important;
+    letter-spacing: 0.72px !important;
+    color: #1e8c4a !important;
+    text-transform: uppercase !important;
+  }
+
+  /* ── Review body ── */
+  .srv-reviews .jdgm-review .jdgm-review-content,
+  .srv-reviews .jdgm-review .jdgm-rev-body {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  /* Stars + date row */
+  .srv-reviews .jdgm-review .jdgm-review-header-with-date,
+  .srv-reviews .jdgm-review .jdgm-rev-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .srv-reviews .jdgm-review .jdgm-star-rating,
+  .srv-reviews .jdgm-review [class*="star"] {
+    color: #e11d2a !important;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+  }
+  .srv-reviews .jdgm-review .jdgm-review-date,
+  .srv-reviews .jdgm-review .jdgm-rev-date,
+  .srv-reviews .jdgm-review time {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: #6b7280 !important;
+  }
+  /* Review title */
+  .srv-reviews .jdgm-review .jdgm-rev-title,
+  .srv-reviews .jdgm-review .jdgm-review-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.08px !important;
+    color: #0b0c0e !important;
+  }
+  /* Review body text */
+  .srv-reviews .jdgm-review .jdgm-rev-text,
+  .srv-reviews .jdgm-review .jdgm-review__body,
+  .srv-reviews .jdgm-review .jdgm-review-body {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #2a2d33 !important;
+  }
 
   /* ── Responsive ── */
   @media (max-width: 989px) {
@@ -331,6 +465,56 @@
   document.addEventListener('jdgm.widget.load', tryWithDelay);
   document.addEventListener('jdgm:all_widgets:load', tryWithDelay);
   setTimeout(tryWithDelay, 500);
+
+  // ── Filter pills ──
+  function initFilters() {
+    var pills = section.querySelectorAll('.srv-pill');
+    if (!pills.length) return;
+
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        // Update active state
+        pills.forEach(function(p) { p.classList.remove('srv-pill--active'); });
+        pill.classList.add('srv-pill--active');
+
+        var filter = pill.getAttribute('data-filter');
+
+        // Get all review items (wait for JM to render)
+        var reviews = document.querySelectorAll('.srv-reviews .jdgm-review, .srv-reviews [class*="jdgm-rev"]:not([class*="header"]):not([class*="widg"])');
+
+        reviews.forEach(function(review) {
+          var show = true;
+
+          if (filter === 'all') {
+            show = true;
+          } else if (filter === 'verified') {
+            show = !!review.querySelector('[class*="verified"]');
+          } else if (filter === '5' || filter === '4') {
+            var starEl = review.querySelector('[data-score], [class*="star-rating"], [class*="jdgm-star"]');
+            var starText = starEl ? starEl.textContent : '';
+            var filledStars = (starText.match(/★/g) || []).length;
+            show = filledStars === parseInt(filter, 10);
+          } else if (filter === 'photos') {
+            show = !!review.querySelector('img:not([class*="avatar"]):not([class*="icon"])');
+          } else if (filter === 'upgrades') {
+            var body = review.textContent.toLowerCase();
+            show = body.indexOf('upgrad') !== -1 || body.indexOf('motor') !== -1 || body.indexOf('battery') !== -1;
+          } else if (filter === 'support') {
+            var body = review.textContent.toLowerCase();
+            show = body.indexOf('support') !== -1 || body.indexOf('customer service') !== -1 || body.indexOf('help') !== -1;
+          }
+
+          review.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  // Init filters after JM renders
+  window.addEventListener('load', function() { setTimeout(initFilters, 800); });
+  document.addEventListener('jdgm.widget.load', function() { setTimeout(initFilters, 200); });
+  document.addEventListener('jdgm:all_widgets:load', function() { setTimeout(initFilters, 200); });
+  setTimeout(initFilters, 1500);
 })();
 </script>
 
