@@ -7,16 +7,6 @@
       <img src="{{ 'sfc-tire-track.svg' | asset_url }}" alt="" loading="lazy">
     </div>
 
-    {%- comment -%} ── Decorative: swirl path behind image ── {%- endcomment -%}
-    <div class="sfc-swirl" aria-hidden="true">
-      <img src="{{ 'sfc-swirl-path.svg' | asset_url }}" alt="" loading="lazy">
-    </div>
-
-    {%- comment -%} ── Decorative: oval frame behind image ── {%- endcomment -%}
-    <div class="sfc-oval" aria-hidden="true">
-      <img src="{{ 'sfc-ellipse-frame.svg' | asset_url }}" alt="" loading="lazy">
-    </div>
-
     {%- comment -%} ── Decorative: car battery (top left) ── {%- endcomment -%}
     <div class="sfc-battery" aria-hidden="true">
       <img src="{{ 'sfc-car-battery.svg' | asset_url }}" alt="" loading="lazy">
@@ -113,70 +103,19 @@
   /* ── Decorative: diagonal tire track ── */
   .sfc-tire-track {
     position: absolute;
-    top: -120px;
-    left: -22%;
-    width: 140%;
+    top: 290px;
+    left: -32%;
+    width: 1986px;
+    height: 355px;
     pointer-events: none;
-    opacity: 0.07;
+    opacity: 1;
     transform: rotate(1.13deg);
-    z-index: 0;
+    z-index: 1;
   }
   .sfc-tire-track img {
     display: block;
     width: 100%;
     height: auto;
-  }
-
-  /* ── Decorative: horizontal tire track ── */
-  .sfc-tire-track-h {
-    position: absolute;
-    bottom: 0;
-    left: -24%;
-    width: 148%;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .sfc-tire-track-h img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* ── Decorative: swirl path ── */
-  .sfc-swirl {
-    position: absolute;
-    top: 121px;
-    left: 50%;
-    margin-left: -316px;
-    width: 632px;
-    height: 371px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .sfc-swirl img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  /* ── Decorative: oval frame ── */
-  .sfc-oval {
-    position: absolute;
-    top: 79px;
-    left: 50%;
-    margin-left: -147px;
-    width: 293px;
-    height: 293px;
-    pointer-events: none;
-    z-index: 2;
-    transform: rotate(16.82deg);
-  }
-  .sfc-oval img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   /* ── Decorative: battery (top left) ── */
