@@ -91,6 +91,9 @@
     overflow: hidden;
     height: 80px;
   }
+  .sfaq-rip--top {
+    height: 60px;
+  }
   .sfaq-rip img {
     display: block;
     width: 100%;
@@ -195,10 +198,7 @@
   .sfaq-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    height: 55px;
-    min-width: 326px;
     padding: 4px 16px;
     background: #ffffff;
     border: 4px solid #001429;
@@ -211,6 +211,7 @@
     color: #001429;
     text-decoration: none;
     white-space: nowrap;
+    width: fit-content;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   .sfaq-btn:hover {
@@ -336,7 +337,6 @@
   @media (max-width: 749px) {
     .sfaq-inner { padding: 60px 20px; gap: 32px; }
     .sfaq-item__question { font-size: 16px; }
-    .sfaq-btn { min-width: 0; width: 100%; }
   }
 </style>
 
