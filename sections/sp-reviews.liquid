@@ -42,7 +42,11 @@
 
     {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
     <div class="srv-reviews">
-      <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}" data-handle="{{ product.handle }}"></div>
+      {%- if product.metafields.judge_me.widget != blank -%}
+        {{ product.metafields.judge_me.widget }}
+      {%- else -%}
+        <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}" data-handle="{{ product.handle }}"></div>
+      {%- endif -%}
     </div>
 
   </div>
