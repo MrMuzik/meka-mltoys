@@ -1,0 +1,446 @@
+<div id="sfc-{{ section.id }}" class="sfc-wrap">
+
+  <div class="sfc-inner">
+
+    {%- comment -%} ── Decorative: tire track background (diagonal) ── {%- endcomment -%}
+    <div class="sfc-tire-track" aria-hidden="true">
+      <img src="{{ 'sfc-tire-track.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: horizontal tire track ── {%- endcomment -%}
+    <div class="sfc-tire-track-h" aria-hidden="true">
+      <img src="{{ 'sfc-tire-track-h.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: swirl path behind image ── {%- endcomment -%}
+    <div class="sfc-swirl" aria-hidden="true">
+      <img src="{{ 'sfc-swirl-path.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: oval frame behind image ── {%- endcomment -%}
+    <div class="sfc-oval" aria-hidden="true">
+      <img src="{{ 'sfc-ellipse-frame.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: car battery (top left) ── {%- endcomment -%}
+    <div class="sfc-battery" aria-hidden="true">
+      <img src="{{ 'sfc-car-battery.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: car light (top right) ── {%- endcomment -%}
+    <div class="sfc-carlight" aria-hidden="true">
+      <img src="{{ 'sfc-car-light.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Decorative: motor filter (right) ── {%- endcomment -%}
+    <div class="sfc-motorfilter" aria-hidden="true">
+      <img src="{{ 'sfc-motor-filter.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Hero image ── {%- endcomment -%}
+    <div class="sfc-hero-img">
+      {%- if section.settings.hero_image != blank -%}
+        <img
+          src="{{ section.settings.hero_image | image_url: width: 1400 }}"
+          alt="{{ section.settings.headline_prefix }} {{ section.settings.headline_highlight }} {{ section.settings.headline_suffix }}"
+          class="sfc-hero-img__photo"
+          loading="eager"
+        >
+      {%- else -%}
+        <div class="sfc-hero-img__placeholder">Upload product image in settings</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Eyebrow ── {%- endcomment -%}
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="sfc-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- comment -%} ── Headline ── {%- endcomment -%}
+    <h2 class="sfc-headline">
+      {{- section.settings.headline_prefix -}}
+      {%- if section.settings.headline_highlight != blank -%}
+        <span class="sfc-headline__red">{{ section.settings.headline_highlight }}</span>
+      {%- endif -%}
+      {{- section.settings.headline_suffix -}}
+    </h2>
+
+    {%- comment -%} ── Subtext ── {%- endcomment -%}
+    {%- if section.settings.subtext != blank -%}
+      <p class="sfc-subtext">{{ section.settings.subtext | newline_to_br }}</p>
+    {%- endif -%}
+
+    {%- comment -%} ── CTA buttons ── {%- endcomment -%}
+    <div class="sfc-cta-row">
+      {%- if section.settings.primary_label != blank -%}
+        <a href="{{ section.settings.primary_url | default: '#' }}" class="sfc-btn sfc-btn--primary">
+          {{ section.settings.primary_label }}
+          {%- if section.settings.primary_show_arrow -%}
+            <img src="{{ 'sfc-arrow-right.svg' | asset_url }}" alt="" class="sfc-btn__arrow" aria-hidden="true" loading="lazy">
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.secondary_label != blank -%}
+        <a href="{{ section.settings.secondary_url | default: '#' }}" class="sfc-btn sfc-btn--secondary">
+          {{ section.settings.secondary_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Scarcity line ── {%- endcomment -%}
+    {%- if section.settings.show_scarcity and section.settings.scarcity_text != blank -%}
+      <div class="sfc-scarcity">
+        <img src="{{ 'sfc-ellipse-dot.svg' | asset_url }}" alt="" class="sfc-scarcity__dot" aria-hidden="true" loading="lazy">
+        <p class="sfc-scarcity__text">{{ section.settings.scarcity_text }}</p>
+      </div>
+    {%- endif -%}
+
+  </div>
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  /* ── Wrapper ── */
+  #sfc-{{ section.id }} {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  /* ── Inner ── */
+  .sfc-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 104px 56px 72px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* ── Decorative: diagonal tire track ── */
+  .sfc-tire-track {
+    position: absolute;
+    top: -120px;
+    left: -22%;
+    width: 140%;
+    pointer-events: none;
+    opacity: 0.07;
+    transform: rotate(1.13deg);
+    z-index: 0;
+  }
+  .sfc-tire-track img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── Decorative: horizontal tire track ── */
+  .sfc-tire-track-h {
+    position: absolute;
+    bottom: 0;
+    left: -24%;
+    width: 148%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sfc-tire-track-h img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── Decorative: swirl path ── */
+  .sfc-swirl {
+    position: absolute;
+    top: 121px;
+    left: 50%;
+    margin-left: -316px;
+    width: 632px;
+    height: 371px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .sfc-swirl img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Decorative: oval frame ── */
+  .sfc-oval {
+    position: absolute;
+    top: 79px;
+    left: 50%;
+    margin-left: -147px;
+    width: 293px;
+    height: 293px;
+    pointer-events: none;
+    z-index: 2;
+    transform: rotate(16.82deg);
+  }
+  .sfc-oval img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Decorative: battery (top left) ── */
+  .sfc-battery {
+    position: absolute;
+    top: 53px;
+    left: 56px;
+    width: 122px;
+    height: 122px;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+  }
+  .sfc-battery img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Decorative: car light (top right) ── */
+  .sfc-carlight {
+    position: absolute;
+    top: 9px;
+    right: 56px;
+    width: 64px;
+    height: 54px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .sfc-carlight img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Decorative: motor filter (right) ── */
+  .sfc-motorfilter {
+    position: absolute;
+    top: 423px;
+    right: 56px;
+    width: 119px;
+    height: 119px;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+    transform: rotate(1.06deg);
+  }
+  .sfc-motorfilter img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Hero image ── */
+  .sfc-hero-img {
+    position: relative;
+    z-index: 3;
+    width: 690px;
+    height: 402px;
+    flex-shrink: 0;
+  }
+  .sfc-hero-img__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .sfc-hero-img__placeholder {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,20,41,0.06);
+    border: 2px dashed rgba(0,20,41,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(0,20,41,0.4);
+  }
+
+  /* ── Eyebrow ── */
+  .sfc-eyebrow {
+    position: relative;
+    z-index: 3;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2.52px;
+    text-transform: uppercase;
+    color: #001429;
+    margin: 0;
+  }
+
+  /* ── Headline ── */
+  .sfc-headline {
+    position: relative;
+    z-index: 3;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.48px;
+    color: #0b0c0e;
+    text-align: center;
+    max-width: 990px;
+    margin: 0;
+  }
+  .sfc-headline__red {
+    color: #e11d2a;
+  }
+
+  /* ── Subtext ── */
+  .sfc-subtext {
+    position: relative;
+    z-index: 3;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #2a2d33;
+    text-align: center;
+    margin: 0;
+    max-width: 620px;
+  }
+
+  /* ── CTA Row ── */
+  .sfc-cta-row {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  .sfc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 55px;
+    min-width: 326px;
+    padding: 4px 16px;
+    border: 4px solid #001429;
+    border-radius: 96px;
+    box-shadow: -2px 4px 0px #001429;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .sfc-btn:hover {
+    transform: translate(1px, -2px);
+    box-shadow: -3px 6px 0px #001429;
+  }
+  .sfc-btn--primary {
+    background: #e11d2a;
+    color: #ffffff;
+  }
+  .sfc-btn--secondary {
+    background: #ffffff;
+    color: #001429;
+  }
+  .sfc-btn__arrow {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  /* ── Scarcity ── */
+  .sfc-scarcity {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .sfc-scarcity__dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  .sfc-scarcity__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    color: #2a2d33;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 989px) {
+    .sfc-battery,
+    .sfc-carlight,
+    .sfc-motorfilter,
+    .sfc-oval,
+    .sfc-swirl { display: none; }
+
+    .sfc-inner { padding: 80px 32px 56px; gap: 24px; }
+    .sfc-hero-img { width: 100%; max-width: 560px; height: auto; aspect-ratio: 690/402; }
+    .sfc-headline { font-size: clamp(36px, 6vw, 60px); }
+  }
+  @media (max-width: 749px) {
+    .sfc-inner { padding: 60px 20px 48px; gap: 20px; }
+    .sfc-btn { min-width: 280px; }
+    .sfc-scarcity__text { white-space: normal; text-align: center; }
+    .sfc-headline { font-size: clamp(32px, 8vw, 48px); }
+    .sfc-subtext { font-size: 16px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "tag": "section",
+  "class": "sfc-section",
+  "settings": [
+    { "type": "header",       "content": "Hero image" },
+    { "type": "image_picker", "id": "hero_image",       "label": "Product image" },
+    { "type": "header",       "content": "Headline" },
+    { "type": "text",         "id": "eyebrow",          "label": "Eyebrow",              "default": "LAST LAP" },
+    { "type": "text",         "id": "headline_prefix",  "label": "Headline — prefix",    "default": "The " },
+    { "type": "text",         "id": "headline_highlight","label": "Headline — red text", "default": "Industry Leader" },
+    { "type": "text",         "id": "headline_suffix",  "label": "Headline — suffix",    "default": " In Performance Ride On Parts." },
+    { "type": "textarea",     "id": "subtext",          "label": "Subtext",              "default": "Built stronger, backed by real support, and ready to upgrade.\nOrder yours before they're gone." },
+    { "type": "header",       "content": "Primary button" },
+    { "type": "text",         "id": "primary_label",    "label": "Label",                "default": "Order Now • $649" },
+    { "type": "url",          "id": "primary_url",      "label": "URL" },
+    { "type": "checkbox",     "id": "primary_show_arrow","label": "Show arrow icon",     "default": true },
+    { "type": "header",       "content": "Secondary button" },
+    { "type": "text",         "id": "secondary_label",  "label": "Label",                "default": "Watch The Walkthrough" },
+    { "type": "url",          "id": "secondary_url",    "label": "URL" },
+    { "type": "header",       "content": "Scarcity line" },
+    { "type": "checkbox",     "id": "show_scarcity",    "label": "Show scarcity line",   "default": true },
+    { "type": "text",         "id": "scarcity_text",    "label": "Scarcity text",        "default": "LIMITED STOCK · SHIPS IN 24 HRS · FREE U.S. SHIPPING" }
+  ],
+  "presets": [
+    {
+      "name": "Final CTA"
+    }
+  ]
+}
+{% endschema %}
