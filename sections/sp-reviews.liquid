@@ -63,9 +63,6 @@
       </div>
     {%- endif -%}
 
-    {%- comment -%} ── Zone 2b: Custom filtered review list (shown when filter ≠ all) ── {%- endcomment -%}
-    <div class="srv-reviews srv-filtered-reviews" style="display:none"></div>
-
   </div>
 
 </div>
@@ -384,41 +381,6 @@
     color: #2a2d33 !important;
   }
 
-  /* ── Custom filtered review cards ── */
-  .srv-filtered-reviews { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-  .srv-frev {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    background: #ffffff;
-    border: 1.5px solid #e1dccd;
-    border-radius: 18px;
-    padding: 24px 28px;
-  }
-  .srv-frev__av {
-    flex-shrink: 0;
-    width: 56px; height: 56px;
-    border-radius: 999px;
-    background: #ffd2ff;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700; font-size: 26px; color: #0b0c0e;
-    overflow: hidden;
-  }
-  .srv-frev__av img { width: 100%; height: 100%; object-fit: cover; }
-  .srv-frev__col { flex-shrink: 0; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
-  .srv-frev__name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; color: #0b0c0e; }
-  .srv-frev__verified { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 9px; letter-spacing: 0.72px; color: #1e8c4a; text-transform: uppercase; }
-  .srv-frev__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
-  .srv-frev__top { display: flex; align-items: center; gap: 12px; }
-  .srv-frev__stars { color: #e11d2a; font-size: 14px; letter-spacing: 1px; }
-  .srv-frev__date { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 12px; color: #6b7280; }
-  .srv-frev__title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: #0b0c0e; margin: 0; }
-  .srv-frev__text { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; line-height: 1.6; color: #2a2d33; margin: 0; }
-  .srv-frev__photos { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
-  .srv-frev__photos img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; display: block !important; }
-  .srv-filtered-empty { font-family: 'Inter', sans-serif; font-size: 14px; color: #6b7280; padding: 32px; border: 2px dashed #e1dccd; border-radius: 18px; text-align: center; }
-
   /* ── Responsive ── */
   @media (max-width: 989px) {
     .srv-inner { padding: 100px 32px 80px; }
@@ -507,115 +469,86 @@
   document.addEventListener('jdgm:all_widgets:load', tryWithDelay);
   setTimeout(tryWithDelay, 500);
 
-  // ── Filter pills — API-based cross-page filtering ──
-  var activeFilter = 'all';
-  var cachedReviews = null;
-  var jmApiToken  = {{ section.settings.jm_api_token | json }};
-  var jmShop      = {{ shop.permanent_domain | json }};
-  var jmProductId = {{ product.id | json }};
-  var jmEl        = section.querySelector('.srv-reviews--jm');
-  var filteredEl  = section.querySelector('.srv-filtered-reviews');
+  // ── Filter pills ──
+  var activeFilter   = 'all';
+  var domObserver    = null;
 
-  // Debug: inspect JM internals
-  setTimeout(function() {
-    console.log('[srv-reviews] window.jdgm keys:', window.jdgm ? Object.keys(window.jdgm) : 'NOT FOUND');
-    var widgetEl = document.getElementById('judgeme_product_reviews');
-    if (widgetEl) {
-      console.log('[srv-reviews] widget el keys:', Object.keys(widgetEl).filter(function(k){ return k.startsWith('jdgm') || k.startsWith('__'); }));
-      var filterBtns = widgetEl.querySelectorAll('[data-filter], [data-rating], [data-sort], [class*="filter"], [class*="sort"]');
-      console.log('[srv-reviews] filter/sort elements inside widget:', filterBtns.length);
-      filterBtns.forEach(function(el) { console.log('  -', el.tagName, el.className, JSON.stringify(el.dataset)); });
-    }
-  }, 3000);
-
-  // Fetch every review from JM API (pages until exhausted)
-  function fetchAllReviews(cb) {
-    if (cachedReviews) { cb(cachedReviews); return; }
-    if (!jmApiToken) { console.warn('[srv-reviews] No API token set'); cb([]); return; }
-    // Note: direct API fetch blocked by CORS — this path currently unused
-    cb([]); return;
-    var all = [], page = 1;
-    function next() {
-      var url = 'https://judge.me/api/v1/reviews'
-        + '?api_token=' + encodeURIComponent(jmApiToken)
-        + '&shop_domain=' + encodeURIComponent(jmShop)
-        + '&product_id=' + encodeURIComponent(jmProductId)
-        + '&per_page=100&page=' + page;
-      console.log('[srv-reviews] fetching page', page, url);
-      fetch(url)
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-          console.log('[srv-reviews] page', page, '— reviews returned:', (data.reviews || []).length, '| first review:', data.reviews && data.reviews[0]);
-          var chunk = data.reviews || [];
-          all = all.concat(chunk);
-          if (chunk.length === 100) { page++; next(); }
-          else { cachedReviews = all; cb(all); }
-        })
-        .catch(function(err) { console.error('[srv-reviews] fetch error:', err); cb(all); });
-    }
-    next();
+  // Returns the .jdgm-rev-widg element JM methods expect
+  function getWidgetEl() {
+    var outer = document.getElementById('judgeme_product_reviews');
+    if (outer) return outer.querySelector('.jdgm-rev-widg') || outer;
+    return section.querySelector('.jdgm-rev-widg');
   }
 
-  function matchesFilter(r) {
-    var body = ((r.title || '') + ' ' + (r.body || '')).toLowerCase();
-    if (activeFilter === 'verified') return r.reviewer && r.reviewer.verified_buyer;
-    if (activeFilter === '5') return r.rating === 5;
-    if (activeFilter === '4') return r.rating === 4;
-    if (activeFilter === 'photos') return r.pictures && r.pictures.length > 0;
-    if (activeFilter === 'upgrades') return /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
-    if (activeFilter === 'support') return /support|customer service|helped|help |staff|response|reply|team/.test(body);
+  // Trigger JM's own native filter (cross-page via AJAX)
+  function triggerJMRatingFilter(rating) {
+    var w = getWidgetEl();
+    if (!w) return;
+    if (rating === null) {
+      // Prefer direct API call; fall back to clicking the clear-filter element
+      if (window.jdgm && window.jdgm._resetFilterAndSearch) {
+        window.jdgm._resetFilterAndSearch(w);
+      } else {
+        var clearBtn = document.querySelector('.jdgm-histogram__clear-filter');
+        if (clearBtn) clearBtn.click();
+      }
+    } else {
+      // Prefer direct API call; fall back to clicking the histogram row
+      if (window.jdgm && window.jdgm.filterReviewsByRating) {
+        window.jdgm.filterReviewsByRating(w, rating);
+      } else {
+        var row = document.querySelector('.jdgm-histogram__row[data-rating="' + rating + '"]');
+        if (row) row.click();
+      }
+    }
+  }
+
+  // DOM-level hide/show for filters JM doesn't natively support
+  function matchesDOMFilter(rev) {
+    var ds   = rev.dataset;
+    var body = (rev.querySelector('.jdgm-rev__body')  || {}).textContent || '';
+    var title= (rev.querySelector('.jdgm-rev__title') || {}).textContent || '';
+    var text = (title + ' ' + body).toLowerCase();
+    if (activeFilter === 'verified') return ds.verifiedBuyer === 'true';
+    if (activeFilter === 'photos')   return !!rev.querySelector('.jdgm-rev__pics img, .jdgm-rev-pic, .jdgm-rev__pic-wrap img');
+    if (activeFilter === 'upgrades') return /upgrad|motor|battery|speed|volt|amp|watt/.test(text);
+    if (activeFilter === 'support')  return /support|customer.?service|helped|help |staff|response|reply|team/.test(text);
     return true;
   }
 
-  function fmtDate(str) {
-    try {
-      var d = new Date(str);
-      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    } catch(e) { return str; }
+  function applyDOMFilter() {
+    var w = getWidgetEl();
+    if (!w) return;
+    w.querySelectorAll('.jdgm-rev').forEach(function(rev) {
+      if (matchesDOMFilter(rev)) rev.classList.remove('srv-hidden');
+      else rev.classList.add('srv-hidden');
+    });
   }
 
-  function renderCard(r) {
-    var name     = (r.reviewer && r.reviewer.name) || 'Anonymous';
-    var initial  = name.charAt(0).toUpperCase();
-    var verified = r.reviewer && r.reviewer.verified_buyer;
-    var stars    = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-    var date     = fmtDate(r.created_at);
-    var photos   = (r.pictures || []).map(function(p) {
-      var src = (p.urls && (p.urls.small || p.urls.original)) || p.url || '';
-      return src ? '<img src="' + src + '" alt="" loading="lazy">' : '';
-    }).join('');
-    return '<div class="srv-frev">'
-      + '<div class="srv-frev__col">'
-      +   '<div class="srv-frev__av">' + initial + '</div>'
-      +   '<p class="srv-frev__name">' + name + '</p>'
-      +   (verified ? '<p class="srv-frev__verified">✓ VERIFIED</p>' : '')
-      + '</div>'
-      + '<div class="srv-frev__body">'
-      +   '<div class="srv-frev__top"><span class="srv-frev__stars">' + stars + '</span><span class="srv-frev__date">' + date + '</span></div>'
-      +   (r.title ? '<p class="srv-frev__title">' + r.title + '</p>' : '')
-      +   (r.body  ? '<p class="srv-frev__text">' + r.body  + '</p>' : '')
-      +   (photos  ? '<div class="srv-frev__photos">' + photos + '</div>' : '')
-      + '</div>'
-      + '</div>';
+  function clearDOMFilter() {
+    var w = getWidgetEl();
+    if (!w) return;
+    w.querySelectorAll('.jdgm-rev.srv-hidden').forEach(function(rev) {
+      rev.classList.remove('srv-hidden');
+    });
   }
 
-  function showFiltered(reviews) {
-    if (!filteredEl) return;
-    var matched = reviews.filter(matchesFilter);
-    if (!matched.length) {
-      // No API data yet — fall back to showing JM widget
-      showAll();
-      return;
-    }
-    filteredEl.innerHTML = matched.map(renderCard).join('');
-    if (jmEl) jmEl.style.display = 'none';
-    filteredEl.style.display = 'flex';
+  function startDOMWatch() {
+    if (domObserver) domObserver.disconnect();
+    applyDOMFilter();
+    var w = getWidgetEl();
+    if (!w) return;
+    domObserver = new MutationObserver(function() { applyDOMFilter(); });
+    domObserver.observe(w, { childList: true, subtree: true });
   }
 
-  function showAll() {
-    if (jmEl) jmEl.style.display = '';
-    if (filteredEl) filteredEl.style.display = 'none';
+  function stopDOMWatch() {
+    if (domObserver) { domObserver.disconnect(); domObserver = null; }
+    clearDOMFilter();
   }
+
+  // DOM-filter set: verified, photos, upgrades, support
+  var domFilters = { verified: 1, photos: 1, upgrades: 1, support: 1 };
 
   // Wire pills
   var pills = section.querySelectorAll('.srv-pill');
@@ -625,17 +558,18 @@
       pill.classList.add('srv-pill--active');
       activeFilter = pill.getAttribute('data-filter');
 
+      stopDOMWatch(); // always clear previous DOM hiding first
+
       if (activeFilter === 'all') {
-        showAll();
-      } else {
-        fetchAllReviews(showFiltered);
+        triggerJMRatingFilter(null);
+      } else if (activeFilter === '5' || activeFilter === '4') {
+        triggerJMRatingFilter(parseInt(activeFilter, 10));
+      } else if (domFilters[activeFilter]) {
+        // Reset JM to show all, then apply DOM filter on rendered reviews
+        triggerJMRatingFilter(null);
+        setTimeout(startDOMWatch, 600);
       }
     });
-  });
-
-  // Pre-fetch in the background so first filter click is instant
-  window.addEventListener('load', function() {
-    setTimeout(function() { fetchAllReviews(function() {}); }, 2000);
   });
 })();
 </script>
@@ -648,9 +582,7 @@
   "settings": [
     { "type": "header",   "content": "Head" },
     { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",   "default": "CUSTOMER REVIEWS" },
-    { "type": "textarea", "id": "headline",     "label": "Headline",  "default": "From The Families Who Already Own One." },
-    { "type": "header",   "content": "Judge.me Integration" },
-    { "type": "text", "id": "jm_api_token", "label": "Judge.me Public API Token", "info": "Found in your Judge.me dashboard → Settings → API. Safe to use on the storefront." }
+    { "type": "textarea", "id": "headline",     "label": "Headline",  "default": "From The Families Who Already Own One." }
   ],
   "blocks": [{ "type": "@app" }],
   "presets": [
