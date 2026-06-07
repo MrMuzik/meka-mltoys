@@ -34,6 +34,7 @@
   #sg-{{ section.id }} {
     position: relative;
     background: #f4efe2;
+    margin-bottom: {{ section.settings.margin_bottom | default: '0px' }};
   }
 
   /* ── Inner ── */
@@ -161,7 +162,8 @@
     { "type": "textarea", "id": "body",        "label": "Body",         "default": "If something isn't right, we'll make it right. That's the deal, backed by US-based ML Toys support and a parts catalog that's stocked and ready to ship." },
     { "type": "header",   "content": "Ripped paper edge" },
     { "type": "checkbox", "id": "show_bottom_rip",  "label": "Show bottom rip",                "default": true },
-    { "type": "color",    "id": "bottom_rip_bg",    "label": "Bottom rip — background color",  "default": "#f4efe2", "info": "Match this to the background color of the section directly below." }
+    { "type": "color",    "id": "bottom_rip_bg",    "label": "Bottom rip — background color",  "default": "#f4efe2", "info": "Match this to the background color of the section directly below." },
+    { "type": "text",     "id": "margin_bottom",    "label": "Bottom margin / overlap",        "default": "-150px", "info": "Use a negative value (e.g. -150px) to pull the rip into the section below and absorb the extra spacing." }
   ],
   "presets": [
     {
