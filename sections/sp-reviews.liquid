@@ -223,6 +223,9 @@
     text-align: right;
   }
 
+  /* ── Filter hide class (must beat JM's !important) ── */
+  .srv-reviews .jdgm-rev.srv-hidden { display: none !important; }
+
   /* ── Filter pills ── */
   .srv-filters {
     display: flex;
@@ -467,74 +470,78 @@
   setTimeout(tryWithDelay, 500);
 
   // ── Filter pills ──
-  // JM uses .jdgm-rev for individual review items (not .jdgm-review)
-  function getReviews() {
-    return Array.from(document.querySelectorAll('.srv-reviews .jdgm-rev'));
-  }
+  var activeFilter = 'all';
+  var filtersInited = false;
 
   function reviewIsVerified(review) {
-    // JM uses data-verified-buyer="true" on the .jdgm-rev element
     return review.getAttribute('data-verified-buyer') === 'true';
   }
-
   function reviewStars(review) {
-    // JM uses data-score on the review element
     var score = review.getAttribute('data-score') || review.getAttribute('data-rating');
     if (score) return Math.round(parseFloat(score));
-    // Fallback: count .jdgm-star.jdgm--on elements
     return review.querySelectorAll('.jdgm-star.jdgm--on').length || null;
   }
-
   function reviewHasPhotos(review) {
-    // JM photo containers: .jdgm-rev__pics, .jdgm-rev__pic, .jdgm-rev-media, or any img with a CDN src
     if (review.querySelector('.jdgm-rev__pics, .jdgm-rev__pic, [class*="rev__pic"], [class*="rev-media"], [class*="rev__media"]')) return true;
     return Array.from(review.querySelectorAll('img')).some(function(img) {
       var src = img.getAttribute('src') || img.getAttribute('data-src') || '';
-      return src.length > 0 && /cdn\.shopify|shopify\.com|judge\.me|ugc|review/i.test(src);
+      return src.length > 0 && /cdn\.shopify|judge\.me/i.test(src);
+    });
+  }
+
+  function applyFilter() {
+    var reviews = Array.from(document.querySelectorAll('.srv-reviews .jdgm-rev'));
+    reviews.forEach(function(review) {
+      var show = true;
+      var body = review.textContent.toLowerCase();
+      if (activeFilter === 'verified') {
+        show = reviewIsVerified(review);
+      } else if (activeFilter === '5' || activeFilter === '4') {
+        show = reviewStars(review) === parseInt(activeFilter, 10);
+      } else if (activeFilter === 'photos') {
+        show = reviewHasPhotos(review);
+      } else if (activeFilter === 'upgrades') {
+        show = /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
+      } else if (activeFilter === 'support') {
+        show = /support|customer service|helped|help |staff|response|reply|team/.test(body);
+      }
+      // Use class-based hiding so !important beats JM's own display rules
+      if (show) {
+        review.classList.remove('srv-hidden');
+      } else {
+        review.classList.add('srv-hidden');
+      }
     });
   }
 
   function initFilters() {
-    var pills = section.querySelectorAll('.srv-pill');
-    if (!pills.length) return;
+    if (filtersInited) return;
+    filtersInited = true;
 
+    var pills = section.querySelectorAll('.srv-pill');
     pills.forEach(function(pill) {
       pill.addEventListener('click', function() {
         pills.forEach(function(p) { p.classList.remove('srv-pill--active'); });
         pill.classList.add('srv-pill--active');
-
-        var filter = pill.getAttribute('data-filter');
-        var reviews = getReviews();
-
-        reviews.forEach(function(review) {
-          var show = true;
-          var body = review.textContent.toLowerCase();
-
-          if (filter === 'all') {
-            show = true;
-          } else if (filter === 'verified') {
-            show = reviewIsVerified(review);
-          } else if (filter === '5' || filter === '4') {
-            show = reviewStars(review) === parseInt(filter, 10);
-          } else if (filter === 'photos') {
-            show = reviewHasPhotos(review);
-          } else if (filter === 'upgrades') {
-            show = /upgrad|motor|battery|speed|volt|amp|watt/.test(body);
-          } else if (filter === 'support') {
-            show = /support|customer service|helped|help |staff|response|reply|team/.test(body);
-          }
-
-          review.style.display = show ? '' : 'none';
-        });
+        activeFilter = pill.getAttribute('data-filter');
+        applyFilter();
       });
     });
+
+    // Re-apply filter whenever JM swaps in new reviews (pagination)
+    var reviewsContainer = document.querySelector('.srv-reviews');
+    if (reviewsContainer) {
+      new MutationObserver(function() {
+        // Small delay so JM finishes rendering the new page of reviews
+        setTimeout(applyFilter, 150);
+      }).observe(reviewsContainer, { childList: true, subtree: true });
+    }
   }
 
-  // Poll until .jdgm-rev items exist in the DOM
+  // Poll until .jdgm-rev items are in the DOM
   var filtersPollCount = 0;
   function pollForFilters() {
-    var reviews = document.querySelectorAll('.srv-reviews .jdgm-rev');
-    if (reviews.length > 0) {
+    if (document.querySelectorAll('.srv-reviews .jdgm-rev').length > 0) {
       initFilters();
     } else if (filtersPollCount < 20) {
       filtersPollCount++;
