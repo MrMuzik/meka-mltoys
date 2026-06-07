@@ -1,0 +1,398 @@
+<div id="sfo-{{ section.id }}" class="sfo-wrap">
+
+  {%- if section.settings.show_top_rip -%}
+    <span class="sfo-rip sfo-rip--top">
+      <img src="{{ 'sf-rip-founder-top.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+  <div class="sfo-inner">
+
+    {%- comment -%} ── Decorative burst ── {%- endcomment -%}
+    <div class="sfo-burst" aria-hidden="true">
+      <img src="{{ 'sf-burst.svg' | asset_url }}" alt="" loading="lazy">
+    </div>
+
+    {%- comment -%} ── Founder grid ── {%- endcomment -%}
+    <div class="sfo-grid">
+
+      {%- comment -%} Left — Photo card {%- endcomment -%}
+      <div class="sfo-photo">
+        {%- comment -%} Halftone overlay {%- endcomment -%}
+        <div class="sfo-photo__halftone" aria-hidden="true">
+          <img src="{{ 'sf-halftone.png' | asset_url }}" alt="" loading="lazy">
+        </div>
+        {%- comment -%} Gradient fade {%- endcomment -%}
+        <div class="sfo-photo__fade" aria-hidden="true"></div>
+        {%- comment -%} Photo {%- endcomment -%}
+        {%- if section.settings.photo != blank -%}
+          <img
+            src="{{ section.settings.photo | image_url: width: 1200 }}"
+            alt="{{ section.settings.founder_name | escape }}"
+            class="sfo-photo__img"
+            loading="lazy"
+          >
+        {%- endif -%}
+        {%- comment -%} Caption bar {%- endcomment -%}
+        <div class="sfo-photo__cap">
+          {%- if section.settings.cap_tag != blank -%}
+            <span class="sfo-photo__tag">{{ section.settings.cap_tag }}</span>
+          {%- endif -%}
+          {%- if section.settings.founder_name != blank -%}
+            <p class="sfo-photo__name">{{ section.settings.founder_name }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} Right — Story {%- endcomment -%}
+      <div class="sfo-story">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="sfo-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.headline != blank -%}
+          <h2 class="sfo-headline">{{ section.settings.headline }}</h2>
+        {%- endif -%}
+        {%- if section.settings.quote != blank -%}
+          <p class="sfo-quote">{{ section.settings.quote }}</p>
+        {%- endif -%}
+        {%- if section.settings.attribution != blank -%}
+          <div class="sfo-attribution">
+            <span class="sfo-attribution__dash"></span>
+            <span class="sfo-attribution__text">{{ section.settings.attribution }}</span>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <p class="sfo-body">{{ section.settings.body }}</p>
+        {%- endif -%}
+        {%- if section.settings.closing != blank -%}
+          <p class="sfo-closing">{{ section.settings.closing }}</p>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+  </div>
+
+  {%- if section.settings.show_bottom_rip -%}
+    <span class="sfo-rip sfo-rip--bottom">
+      <img src="{{ 'su-rip-bottom.svg' | asset_url }}" alt="" loading="lazy">
+    </span>
+  {%- endif -%}
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;0,700;0,900;1,400&family=IBM+Plex+Sans:wght@700&display=swap');
+
+  /* ── Wrapper ── */
+  #sfo-{{ section.id }} {
+    position: relative;
+    background: #001429;
+  }
+
+  /* ── Rips ── */
+  .sfo-rip {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+  }
+  .sfo-rip--top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 50px;
+    bottom: 0;
+  }
+  .sfo-rip--bottom::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: 0;
+    height: 170px;
+    top: 75px;
+  }
+  .sfo-rip img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .sfo-rip--top img {
+    transform: scaleY(-1);
+  }
+  @media (max-width: 1024px) {
+    .sfo-rip { display: none; }
+  }
+  @media (min-width: 1861px) {
+    .sfo-rip { display: none; }
+  }
+
+  /* ── Inner ── */
+  .sfo-inner {
+    position: relative;
+    padding: 120px 56px;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* ── Decorative burst ── */
+  .sfo-burst {
+    position: absolute;
+    top: -28px;
+    right: -200px;
+    width: 1250px;
+    height: 1641px;
+    pointer-events: none;
+    transform: rotate(85.53deg) skewX(3.36deg);
+    opacity: 0.12;
+    z-index: 0;
+  }
+  .sfo-burst img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @media (max-width: 989px) {
+    .sfo-burst { display: none; }
+  }
+
+  /* ── Grid ── */
+  .sfo-grid {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Photo card ── */
+  .sfo-photo {
+    position: relative;
+    flex-shrink: 0;
+    width: 560px;
+    height: 620px;
+    border: 9px solid #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+  }
+  .sfo-photo__halftone {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .sfo-photo__halftone img {
+    display: block;
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+    object-position: top left;
+  }
+  .sfo-photo__fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,20,41,0) 27.75%, #001429 69.527%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .sfo-photo__img {
+    position: absolute;
+    top: 114px;
+    left: -29px;
+    width: calc(100% + 29px);
+    height: 506px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    z-index: 0;
+  }
+  .sfo-photo__cap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 138px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: flex-end;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    z-index: 3;
+  }
+  .sfo-photo__tag {
+    display: inline-flex;
+    align-items: center;
+    background: #e11d2a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 1.08px;
+    text-transform: uppercase;
+    color: #ffffff;
+    align-self: flex-start;
+  }
+  .sfo-photo__name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: 0.32px;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* ── Story ── */
+  .sfo-story {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .sfo-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2.88px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+  }
+  .sfo-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 4.5vw, 60px);
+    line-height: 0.95;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+    margin: 0;
+  }
+  .sfo-quote {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.45;
+    color: #d1c8c1;
+    margin: 0;
+  }
+  .sfo-attribution {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sfo-attribution__dash {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #e11d2a;
+    flex-shrink: 0;
+  }
+  .sfo-attribution__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+    color: #b5bac2;
+  }
+  .sfo-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #b5bac2;
+    margin: 0;
+  }
+  .sfo-closing {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #f4efe2;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1100px) {
+    .sfo-photo {
+      width: 420px;
+      height: 480px;
+    }
+    .sfo-photo__img {
+      height: 400px;
+      top: 80px;
+      left: 0;
+      width: 100%;
+    }
+  }
+  @media (max-width: 989px) {
+    .sfo-inner { padding: 80px 32px; }
+    .sfo-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 40px;
+    }
+    .sfo-photo {
+      width: 100%;
+      height: 460px;
+    }
+    .sfo-photo__img {
+      left: 0;
+      width: 100%;
+      top: 60px;
+      height: 400px;
+    }
+    .sfo-headline { font-size: 38px; }
+    .sfo-quote    { font-size: 18px; }
+  }
+  @media (max-width: 749px) {
+    .sfo-inner { padding: 60px 20px; }
+    .sfo-photo { height: 380px; }
+    .sfo-photo__img { top: 0; height: 100%; }
+    .sfo-headline { font-size: 32px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Founder Story",
+  "tag": "section",
+  "class": "sfo-section",
+  "settings": [
+    { "type": "header",       "content": "Photo card" },
+    { "type": "image_picker", "id": "photo",         "label": "Founder photo" },
+    { "type": "text",         "id": "cap_tag",       "label": "Caption tag",     "default": "ML TOYS FOUNDER" },
+    { "type": "text",         "id": "founder_name",  "label": "Founder name",    "default": "ALAN PLACER" },
+    { "type": "header",       "content": "Story" },
+    { "type": "text",         "id": "eyebrow",       "label": "Eyebrow",         "default": "ABOUT THE FOUNDER" },
+    { "type": "text",         "id": "headline",      "label": "Headline",        "default": "Built By A Firefighter. For The Next Generation." },
+    { "type": "textarea",     "id": "quote",         "label": "Pull quote",      "default": "“When I say this truck is built right, I mean it. I served 20 years in fire and EMS. I was on the scene at the World Trade Center on September 11, 2001. I don’t make claims I can’t back up.”" },
+    { "type": "text",         "id": "attribution",   "label": "Attribution",     "default": "ALAN PLACER · FOUNDER, ML TOYS" },
+    { "type": "textarea",     "id": "body",          "label": "Body paragraph",  "default": "ML Toys was founded by a real American family. Alan started this company because he wanted his own kids to have something built right — and quickly realized other parents needed the same thing." },
+    { "type": "textarea",     "id": "closing",       "label": "Closing statement","default": "This is the perfect ride for the kids of firefighters — or for any kid who dreams of taking on the job one day." },
+    { "type": "header",       "content": "Ripped paper edges" },
+    { "type": "checkbox",     "id": "show_top_rip",    "label": "Show top rip",    "default": true },
+    { "type": "checkbox",     "id": "show_bottom_rip", "label": "Show bottom rip", "default": true }
+  ],
+  "presets": [
+    {
+      "name": "Founder Story"
+    }
+  ]
+}
+{% endschema %}
