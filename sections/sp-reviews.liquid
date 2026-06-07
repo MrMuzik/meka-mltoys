@@ -47,11 +47,7 @@
 
     {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
     <div class="srv-reviews">
-      {%- if product.metafields.judge_me.widget != blank -%}
-        {{ product.metafields.judge_me.widget }}
-      {%- else -%}
-        <p class="srv-jm-notice">Reviews will appear here once Judge.me is connected to this theme. Go to your Judge.me dashboard → Settings → Widget Installation and install on this theme.</p>
-      {%- endif -%}
+      {% render 'judgeme_widgets', widget_type: 'product_reviews', concierge_install: true, product: product %}
     </div>
 
   </div>
