@@ -816,6 +816,23 @@
         "eyebrow": "THE COMPANY BEHIND THE TRUCK",
         "headline": "Why Families Keep Coming Back To ML Toys"
       }
+    },
+    "sp_founder_nDztyp": {
+      "type": "sp-founder",
+      "name": "Founder Story",
+      "settings": {
+        "photo": "shopify://shop_images/Headshot.png",
+        "cap_tag": "ML TOYS FOUNDER",
+        "founder_name": "ALAN PLACER",
+        "eyebrow": "ABOUT THE FOUNDER",
+        "headline": "Built By A Firefighter. For The Next Generation.",
+        "quote": "“When I say this truck is built right, I mean it. I served 20 years in fire and EMS. I was on the scene at the World Trade Center on September 11, 2001. I don’t make claims I can’t back up.”",
+        "attribution": "ALAN PLACER · FOUNDER, ML TOYS",
+        "body": "ML Toys was founded by a real American family. Alan started this company because he wanted his own kids to have something built right — and quickly realized other parents needed the same thing.",
+        "closing": "This is the perfect ride for the kids of firefighters — or for any kid who dreams of taking on the job one day.",
+        "show_top_rip": true,
+        "show_bottom_rip": false
+      }
     }
   },
   "order": [
@@ -830,6 +847,7 @@
     "sp_sound_familiar_e7nFpH",
     "sp_comparison_jWq4zE",
     "sp_firetruck_divider_RiFVJW",
-    "sp_why_mltoys_Jh9M8H"
+    "sp_why_mltoys_Jh9M8H",
+    "sp_founder_nDztyp"
   ]
 }
