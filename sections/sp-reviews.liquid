@@ -290,37 +290,20 @@
       if (countEl) countEl.textContent = total;
     }
 
-    // ── Bars: exact selector from DevTools ──
-    // Structure: .jdgm-histogram > div (row) > .jdgm-histogram__bar > div (fill with width style)
-    var rows = document.querySelectorAll('.jdgm-histogram > div');
+    // ── Bars: read from .jdgm-histogram__row data attributes ──
+    var rows = document.querySelectorAll('.jdgm-histogram__row');
     var gotBars = false;
 
     rows.forEach(function(row) {
-      // Star label: first link or first text node with a digit + "star"
-      var labelEl = row.querySelector('a') || row.firstElementChild;
-      var labelText = labelEl ? labelEl.textContent : row.textContent;
-      var starMatch = labelText.match(/(\d)\s*star/i);
-      if (!starMatch) return;
-      var star = starMatch[1];
-
-      // Fill div: .jdgm-histogram__bar > div carries the inline width
-      var fillDiv = row.querySelector('.jdgm-histogram__bar > div, .jdgm-histogram__bar div');
-      var pct = 0;
-      if (fillDiv) {
-        var w = (fillDiv.style.width || '').match(/(\d+(?:\.\d+)?)/);
-        pct = w ? Math.round(parseFloat(w[1])) : 0;
-      }
-
-      // Count: last standalone number in row text (exclude the star digit)
-      var allNums = (row.textContent || '').match(/\d+/g) || [];
-      var countNums = allNums.filter(function(n) { return parseInt(n, 10) !== parseInt(star, 10); });
-      var count = countNums.length ? parseInt(countNums[countNums.length - 1], 10) : null;
-      var rowPct = (total && count != null) ? Math.round((count / total) * 100) : pct;
+      var star  = row.getAttribute('data-rating');
+      var pct   = row.getAttribute('data-percentage');
+      var count = row.getAttribute('data-frequency');
+      if (!star) return;
 
       var ourFill  = section.querySelector('[data-star="' + star + '"]');
       var ourLabel = section.querySelector('[data-star-pct="' + star + '"]');
-      if (ourFill)  { ourFill.style.width = rowPct + '%'; gotBars = true; }
-      if (ourLabel) ourLabel.textContent = rowPct + '%';
+      if (ourFill)  { ourFill.style.width = (pct || 0) + '%'; gotBars = true; }
+      if (ourLabel) ourLabel.textContent = (count || '0');
     });
 
     if (gotBars && score) {
