@@ -516,25 +516,30 @@
   var jmEl        = section.querySelector('.srv-reviews--jm');
   var filteredEl  = section.querySelector('.srv-filtered-reviews');
 
+  console.log('[srv-reviews] token:', jmApiToken, '| shop:', jmShop, '| product:', jmProductId);
+
   // Fetch every review from JM API (pages until exhausted)
   function fetchAllReviews(cb) {
     if (cachedReviews) { cb(cachedReviews); return; }
-    if (!jmApiToken) { cb([]); return; }
+    if (!jmApiToken) { console.warn('[srv-reviews] No API token — enter it in Reviews section settings'); cb([]); return; }
     var all = [], page = 1;
     function next() {
-      fetch('https://judge.me/api/v1/reviews'
+      var url = 'https://judge.me/api/v1/reviews'
         + '?api_token=' + encodeURIComponent(jmApiToken)
         + '&shop_domain=' + encodeURIComponent(jmShop)
         + '&product_id=' + encodeURIComponent(jmProductId)
-        + '&per_page=100&page=' + page)
+        + '&per_page=100&page=' + page;
+      console.log('[srv-reviews] fetching page', page, url);
+      fetch(url)
         .then(function(r) { return r.json(); })
         .then(function(data) {
+          console.log('[srv-reviews] page', page, '— reviews returned:', (data.reviews || []).length, '| first review:', data.reviews && data.reviews[0]);
           var chunk = data.reviews || [];
           all = all.concat(chunk);
           if (chunk.length === 100) { page++; next(); }
           else { cachedReviews = all; cb(all); }
         })
-        .catch(function() { cb(all); });
+        .catch(function(err) { console.error('[srv-reviews] fetch error:', err); cb(all); });
     }
     next();
   }
