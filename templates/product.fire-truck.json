@@ -833,6 +833,17 @@
         "show_top_rip": true,
         "show_bottom_rip": false
       }
+    },
+    "sp_guarantee_jqmQUD": {
+      "type": "sp-guarantee",
+      "name": "Guarantee Bar",
+      "settings": {
+        "badge_pct": "100%",
+        "badge_label": "GUARANTEE",
+        "headline": "We Stand Behind Every Vehicle.",
+        "body": "If something isn't right, we'll make it right. That's the deal, backed by US-based ML Toys support and a parts catalog that's stocked and ready to ship.",
+        "show_bottom_rip": true
+      }
     }
   },
   "order": [
@@ -848,6 +859,7 @@
     "sp_comparison_jWq4zE",
     "sp_firetruck_divider_RiFVJW",
     "sp_why_mltoys_Jh9M8H",
-    "sp_founder_nDztyp"
+    "sp_founder_nDztyp",
+    "sp_guarantee_jqmQUD"
   ]
 }
