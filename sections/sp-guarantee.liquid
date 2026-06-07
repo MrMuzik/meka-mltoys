@@ -109,6 +109,7 @@
     line-height: 0;
     font-size: 0;
     position: relative;
+    overflow: hidden;
   }
   .sg-rip--bottom::before {
     content: '';
@@ -116,8 +117,9 @@
     inset: 0;
     background: {{ section.settings.bottom_rip_bg | default: '#f4efe2' }};
     z-index: 0;
-    height: 170px;
-    top: 75px;
+    height: 80px;
+    bottom: 0;
+    top: calc(100% - 80px);
   }
   .sg-rip img {
     display: block;
