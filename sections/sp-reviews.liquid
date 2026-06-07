@@ -47,7 +47,7 @@
 
     {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
     <div class="srv-reviews">
-      {% render 'judgeme_widgets', widget_type: 'product_reviews', concierge_install: true, product: product %}
+      <div id="judgeme_product_reviews" class="jdgm-widget jdgm-review-widget" data-id="{{ product.id }}"></div>
     </div>
 
   </div>
