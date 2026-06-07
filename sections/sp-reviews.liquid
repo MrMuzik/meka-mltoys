@@ -222,6 +222,18 @@
     margin: 0;
   }
 
+  /* ── Hide Judge.me's duplicate header & summary in Zone 2 (we have our own in Zone 1) ── */
+  .srv-reviews .jdgm-review-header,
+  .srv-reviews .jdgm-summary { display: none !important; }
+
+  /* ── Judge.me widget base resets ── */
+  .srv-reviews .jdgm-widget { font-family: 'Inter', sans-serif !important; }
+  .srv-reviews .jdgm-review { border-bottom: 1px solid #e1dccd !important; padding: 24px 0 !important; }
+  .srv-reviews .jdgm-reviewer-name { font-weight: 700 !important; color: #0b0c0e !important; }
+  .srv-reviews .jdgm-review__timestamp { color: #6b7280 !important; font-size: 12px !important; }
+  .srv-reviews .jdgm-review__body { color: #2a2d33 !important; font-size: 15px !important; line-height: 1.6 !important; }
+  .srv-reviews .jdgm-star-rating { color: #e11d2a !important; }
+
   /* ── Responsive ── */
   @media (max-width: 989px) {
     .srv-inner { padding: 100px 32px 80px; }
@@ -241,51 +253,62 @@
   var section = document.getElementById('srv-{{ section.id }}');
   if (!section) return;
 
-  var apiToken = {{ section.settings.jm_api_token | json }};
-  var shopDomain = {{ shop.permanent_domain | json }};
-  var productId = {{ product.id | json }};
+  var populated = false;
 
-  if (!apiToken || !shopDomain || !productId) return;
+  function tryPopulate() {
+    if (populated) return;
 
-  var url = 'https://judge.me/api/v1/reviews'
-    + '?api_token=' + encodeURIComponent(apiToken)
-    + '&shop_domain=' + encodeURIComponent(shopDomain)
-    + '&product_id=' + encodeURIComponent(productId)
-    + '&per_page=0';
+    // ── Score & count: read from Judge.me's auto-injected badge ──
+    var badge = document.querySelector('.jdgm-prev-badge[data-average-rating], .jdgm-preview-badge[data-average-rating]');
+    var score = badge ? parseFloat(badge.getAttribute('data-average-rating')) : null;
+    var total = badge ? parseInt(badge.getAttribute('data-number-of-reviews'), 10) : null;
 
-  fetch(url)
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var dist = data.star_distribution || {};
-      var total = 0;
-      for (var k in dist) { total += dist[k]; }
-      if (!total) return;
+    if (score) {
+      var scoreEl = section.querySelector('.srv-card__score');
+      if (scoreEl && scoreEl.textContent.trim() === '—') scoreEl.textContent = score.toFixed(1);
+    }
+    if (total) {
+      var countEl = section.querySelector('[data-jm-count]');
+      if (countEl && countEl.textContent.trim() === '—') countEl.textContent = total;
+    }
 
-      // Update bars
-      section.querySelectorAll('[data-star]').forEach(function(fill) {
-        var star = fill.getAttribute('data-star');
-        var count = dist[star] || 0;
-        var pct = Math.round((count / total) * 100);
-        fill.style.width = pct + '%';
-      });
+    // ── Bars: read from Judge.me's rendered histogram rows ──
+    var rows = document.querySelectorAll('.jdgm-histogram__row');
+    if (!rows.length) return;
 
-      // Update percentage labels
-      section.querySelectorAll('[data-star-pct]').forEach(function(label) {
-        var star = label.getAttribute('data-star-pct');
-        var count = dist[star] || 0;
-        var pct = Math.round((count / total) * 100);
-        label.textContent = pct + '%';
-      });
+    var gotBars = false;
+    rows.forEach(function(row) {
+      var labelEl = row.querySelector('a, .jdgm-histogram__label');
+      var barEl   = row.querySelector('.jdgm-histogram__bar');
+      if (!labelEl || !barEl) return;
 
-      // Update total count if API returns it and Liquid didn't populate
-      if (data.total_count) {
-        var countEl = section.querySelector('[data-jm-count]');
-        if (countEl && countEl.textContent.trim() === '—') {
-          countEl.textContent = data.total_count;
-        }
-      }
-    })
-    .catch(function() { /* fail silently */ });
+      var starMatch = (labelEl.textContent || '').match(/(\d)/);
+      if (!starMatch) return;
+      var star = starMatch[1];
+
+      var widthMatch = (barEl.style.width || '').match(/(\d+(?:\.\d+)?)/);
+      var pct = widthMatch ? Math.round(parseFloat(widthMatch[1])) : 0;
+
+      var fill  = section.querySelector('[data-star="' + star + '"]');
+      var label = section.querySelector('[data-star-pct="' + star + '"]');
+      if (fill)  { fill.style.width = pct + '%'; gotBars = true; }
+      if (label) label.textContent = pct + '%';
+    });
+
+    if (gotBars) {
+      populated = true;
+      observer.disconnect();
+    }
+  }
+
+  // Watch for Judge.me to render its widget into the DOM
+  var observer = new MutationObserver(tryPopulate);
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Also try on page events
+  window.addEventListener('load', tryPopulate);
+  document.addEventListener('jdgm.widget.load', function() { tryPopulate(); });
+  document.addEventListener('jdgm:all_widgets:load', function() { tryPopulate(); });
 })();
 </script>
 
