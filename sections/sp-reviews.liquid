@@ -47,7 +47,11 @@
 
     {%- comment -%} ── Zone 2: Judge.me Reviews Widget ── {%- endcomment -%}
     <div class="srv-reviews">
-      {% render 'judgeme_widgets', widget_type: section.settings.jm_widget_type, jm_style: '', concierge_install: true, product: product %}
+      {%- if product.metafields.judge_me.widget != blank -%}
+        {{ product.metafields.judge_me.widget }}
+      {%- else -%}
+        <p class="srv-jm-notice">Reviews will appear here once Judge.me is connected to this theme. Go to your Judge.me dashboard → Settings → Widget Installation and install on this theme.</p>
+      {%- endif -%}
     </div>
 
   </div>
@@ -226,6 +230,16 @@
   .srv-reviews {
     width: 100%;
   }
+  .srv-jm-notice {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6b7280;
+    padding: 32px;
+    border: 2px dashed #e1dccd;
+    border-radius: 18px;
+    text-align: center;
+    margin: 0;
+  }
 
   /* ── Responsive ── */
   @media (max-width: 989px) {
@@ -304,19 +318,7 @@
     { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",   "default": "CUSTOMER REVIEWS" },
     { "type": "textarea", "id": "headline",     "label": "Headline",  "default": "From The Families Who Already Own One." },
     { "type": "header",   "content": "Judge.me Integration" },
-    { "type": "text",     "id": "jm_api_token",    "label": "Judge.me Public API Token", "info": "Found in your Judge.me dashboard → Settings → API. Safe to use on the storefront." },
-    {
-      "type": "select",
-      "id": "jm_widget_type",
-      "label": "Judge.me widget type",
-      "default": "judgeme_review_widget",
-      "options": [
-        { "value": "judgeme_review_widget",  "label": "Reviews Widget (full)" },
-        { "value": "judgeme_reviews_grid",   "label": "Reviews Grid" },
-        { "value": "judgeme_review_carousel","label": "Testimonials Carousel" }
-      ],
-      "info": "Choose which Judge.me widget to display in the reviews area."
-    }
+    { "type": "text", "id": "jm_api_token", "label": "Judge.me Public API Token", "info": "Found in your Judge.me dashboard → Settings → API. Safe to use on the storefront." }
   ],
   "blocks": [],
   "presets": [
