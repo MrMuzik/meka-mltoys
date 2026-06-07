@@ -34,7 +34,11 @@
   #sg-{{ section.id }} {
     position: relative;
     background: #f4efe2;
-    margin-bottom: {{ section.settings.margin_bottom | default: '0px' }};
+  }
+  @media (min-width: 1025px) and (max-width: 1860px) {
+    #sg-{{ section.id }} {
+      margin-bottom: {{ section.settings.margin_bottom | default: '0px' }};
+    }
   }
 
   /* ── Inner ── */
