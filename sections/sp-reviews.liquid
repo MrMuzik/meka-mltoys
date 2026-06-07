@@ -550,6 +550,11 @@
   // Poll until JM reviews are in the DOM, then init filters
   var filtersPollCount = 0;
   function pollForFilters() {
+    var wrapper = document.querySelector('.srv-reviews');
+    if (wrapper && filtersPollCount === 5) {
+      // Log the actual HTML structure so we can see what JM renders
+      console.log('[srv-reviews] .srv-reviews innerHTML snapshot:', wrapper.innerHTML.substring(0, 2000));
+    }
     var reviews = document.querySelectorAll('.srv-reviews .jdgm-review');
     console.log('[srv-reviews] pollForFilters attempt', filtersPollCount, '— reviews found:', reviews.length);
     if (reviews.length > 0) {
