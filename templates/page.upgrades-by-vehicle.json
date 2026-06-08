@@ -272,6 +272,14 @@
             "url": "shopify://collections/freddo-24v-mercedes-benx-gwagon"
           }
         },
+        "grid_item_EwnwE3": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/Freddo_Mercedes_GT63.png",
+            "title": "Freddo Toys 24v GT63 Mercedes AMG",
+            "url": "shopify://collections/freddo-24v-mercedes-gt63"
+          }
+        },
         "grid_item_8zQGgK": {
           "type": "grid_item",
           "settings": {
@@ -463,6 +471,7 @@
         "grid_item_3ANmXB",
         "grid_item_VdbL6V",
         "grid_item_jc9rKk",
+        "grid_item_EwnwE3",
         "grid_item_8zQGgK",
         "grid_item_Rd7Uwq",
         "grid_item_ch4rB3",
