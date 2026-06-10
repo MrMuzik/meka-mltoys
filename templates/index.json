@@ -12,6 +12,31 @@
     "6a2fc120-4bf3-4610-a05d-7f55944c6720": {
       "type": "image-banner-filter",
       "blocks": {
+        "image_slide_6Dg7rM": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop.jpg",
+            "image_mobile": "shopify://shop_images/Mobile_-_Long.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Upgrade Their Ride This Summer!",
+            "heading_size": "h1",
+            "text": "<p>From faster motors to longer lasting batteries, shop upgraded parts for ride-on vehicles.</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop By Category",
+            "button_link_1": "shopify://pages/upgrades-by-category",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": false,
+            "button_label_2": "Shop By Vehicle",
+            "button_link_2": "shopify://pages/upgrades-by-vehicle",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
+        },
         "image_slide_73mVmn": {
           "type": "image_slide",
           "settings": {
@@ -64,6 +89,7 @@
         },
         "image_slide_JcyBwK": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/HERO_HEADER.jpg",
             "image_mobile": "shopify://shop_images/Group_427320676.jpg",
@@ -86,39 +112,13 @@
             "desktop_content_alignment": "left",
             "mobile_content_alignment": "center"
           }
-        },
-        "image_slide_6Dg7rM": {
-          "type": "image_slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Desktop.png",
-            "image_mobile": "shopify://shop_images/Mobile_-_Long.png",
-            "image_overlay_opacity": 0,
-            "heading": "Memorial Day Sale - Save 15%",
-            "heading_size": "h1",
-            "text": "<p>Automatically save 15% on most products in the store. Hurry this sale ends Monday! Saving shown in cart.</p>",
-            "text_size_block": "medium",
-            "button_label_1": "Shop By Category",
-            "button_link_1": "shopify://pages/upgrades-by-category",
-            "button_style_secondary_1": false,
-            "enable_button_arrow": false,
-            "button_label_2": "Shop By Vehicle",
-            "button_link_2": "shopify://pages/upgrades-by-vehicle",
-            "button_style_secondary_2": true,
-            "color_scheme": "scheme-3",
-            "show_text_box": false,
-            "desktop_content_position": "bottom-center",
-            "mobile_content_position": "bottom-center",
-            "desktop_content_alignment": "left",
-            "mobile_content_alignment": "center"
-          }
         }
       },
       "block_order": [
+        "image_slide_6Dg7rM",
         "image_slide_73mVmn",
         "image_slide_TGGRkA",
-        "image_slide_JcyBwK",
-        "image_slide_6Dg7rM"
+        "image_slide_JcyBwK"
       ],
       "settings": {
         "image_height": "medium",
