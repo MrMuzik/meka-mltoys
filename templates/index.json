@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_kpU8Mw": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/moderno_g63_png.png",
+            "vehicle_title": "Moderno 24v Mercedes G63",
+            "vehicle_link": ""
+          }
+        },
         "vehicle_cRiqWM": {
           "type": "vehicle",
           "settings": {
@@ -898,6 +906,7 @@
         }
       },
       "block_order": [
+        "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
