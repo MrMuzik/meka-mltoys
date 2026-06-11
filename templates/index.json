@@ -566,6 +566,7 @@
         },
         "vehicle_ahCinF": {
           "type": "vehicle",
+          "name": "Freddo 24v Can-Am Renegade ATV",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Can-Am_renegade_png.png",
             "vehicle_title": "Freddo 24v Can-Am Renegade ATV",
@@ -574,6 +575,7 @@
         },
         "vehicle_zyVdVA": {
           "type": "vehicle",
+          "name": "Freddo 24v Can-Am Outlander",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Outlander_png.png",
             "vehicle_title": "Freddo 24v Can-Am Outlander",
@@ -582,6 +584,7 @@
         },
         "vehicle_m6jPfd": {
           "type": "vehicle",
+          "name": "Freddo 24v Can-Am Maverick",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Maverick_png.png",
             "vehicle_title": "Freddo 24v Can-Am Maverick",
@@ -590,6 +593,7 @@
         },
         "vehicle_BfQBrg": {
           "type": "vehicle",
+          "name": "Freddo 24v C8 Corvette Stingray",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_24v_C8_png.png",
             "vehicle_title": "Freddo 24v C8 Corvette Stingray",
@@ -598,6 +602,7 @@
         },
         "vehicle_DxVg4k": {
           "type": "vehicle",
+          "name": "Freddo 24v Buccaneer XXL",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_XXL_png.png",
             "vehicle_title": "Freddo 24v Buccaneer XXL",
