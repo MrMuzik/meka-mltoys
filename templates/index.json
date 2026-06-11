@@ -519,6 +519,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-alpine-crawler-4x4"
           }
         },
+        "vehicle_8Nzyzg": {
+          "type": "vehicle",
+          "name": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
+            "vehicle_title": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-can-am-maverick-x3-4x4-utv"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -861,15 +870,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-12v-gmc-denali-4x4"
           }
         },
-        "vehicle_8Nzyzg": {
-          "type": "vehicle",
-          "name": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
-            "vehicle_title": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
-            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-can-am-maverick-x3-4x4-utv"
-          }
-        },
         "vehicle_kA7RJU": {
           "type": "vehicle",
           "name": "Big Toys Country 24v Challenger XL",
@@ -1093,6 +1093,7 @@
         "vehicle_dA3hqa",
         "vehicle_QAx3Hz",
         "vehicle_jYyTiD",
+        "vehicle_8Nzyzg",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1131,7 +1132,6 @@
         "vehicle_qkkMLp",
         "vehicle_6dfrEG",
         "vehicle_X8Bjgg",
-        "vehicle_8Nzyzg",
         "vehicle_kA7RJU",
         "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
