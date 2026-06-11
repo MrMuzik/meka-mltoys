@@ -312,6 +312,60 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_iUkNT3": {
+          "type": "vehicle",
+          "name": "Power Wheels Arctic Cat",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/car_cutout_1.png",
+            "vehicle_title": "Power Wheels Arctic Cat",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-arctic-cat"
+          }
+        },
+        "vehicle_jJFBe8": {
+          "type": "vehicle",
+          "name": "Power Wheels ATV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Group_427320675.png",
+            "vehicle_title": "Power Wheels ATV",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-atv-quads"
+          }
+        },
+        "vehicle_fXeNXY": {
+          "type": "vehicle",
+          "name": "Power Wheels Baja Extreme",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Baja Extreme",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-extreme"
+          }
+        },
+        "vehicle_MYa83y": {
+          "type": "vehicle",
+          "name": "Power Wheels Baja Trailster",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Baja Trailster",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-trailster"
+          }
+        },
+        "vehicle_Jwrp8Y": {
+          "type": "vehicle",
+          "name": "Power Wheels Camper",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
+            "vehicle_title": "Power Wheels Camper",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-barbie-campers"
+          }
+        },
+        "vehicle_DyC69y": {
+          "type": "vehicle",
+          "name": "Power Wheels C7 Corvette",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels C7 Corvette",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-corvette-porsche-gt3-mustang-mcqueen-tuned-kits"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -699,60 +753,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-angry-jeep"
           }
         },
-        "vehicle_iUkNT3": {
-          "type": "vehicle",
-          "name": "Power Wheels Arctic Cat",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/car_cutout_1.png",
-            "vehicle_title": "Power Wheels Arctic Cat",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-arctic-cat"
-          }
-        },
-        "vehicle_jJFBe8": {
-          "type": "vehicle",
-          "name": "Power Wheels ATV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Group_427320675.png",
-            "vehicle_title": "Power Wheels ATV",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-atv-quads"
-          }
-        },
-        "vehicle_fXeNXY": {
-          "type": "vehicle",
-          "name": "Power Wheels Baja Extreme",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
-            "vehicle_title": "Power Wheels Baja Extreme",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-extreme"
-          }
-        },
-        "vehicle_MYa83y": {
-          "type": "vehicle",
-          "name": "Power Wheels Baja Trailster",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
-            "vehicle_title": "Power Wheels Baja Trailster",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-baja-trailster"
-          }
-        },
-        "vehicle_DyC69y": {
-          "type": "vehicle",
-          "name": "Power Wheels C7 Corvette",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
-            "vehicle_title": "Power Wheels C7 Corvette",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-corvette-porsche-gt3-mustang-mcqueen-tuned-kits"
-          }
-        },
-        "vehicle_Jwrp8Y": {
-          "type": "vehicle",
-          "name": "Power Wheels Camper",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
-            "vehicle_title": "Power Wheels Camper",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-barbie-campers"
-          }
-        },
         "vehicle_KR4kxX": {
           "type": "vehicle",
           "name": "Best Choice Products 12v Land Rover",
@@ -1070,6 +1070,12 @@
         }
       },
       "block_order": [
+        "vehicle_iUkNT3",
+        "vehicle_jJFBe8",
+        "vehicle_fXeNXY",
+        "vehicle_MYa83y",
+        "vehicle_Jwrp8Y",
+        "vehicle_DyC69y",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1113,12 +1119,6 @@
         "vehicle_QAx3Hz",
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
-        "vehicle_iUkNT3",
-        "vehicle_jJFBe8",
-        "vehicle_fXeNXY",
-        "vehicle_MYa83y",
-        "vehicle_DyC69y",
-        "vehicle_Jwrp8Y",
         "vehicle_KR4kxX",
         "vehicle_xkRkk8",
         "vehicle_y7CkyQ",
