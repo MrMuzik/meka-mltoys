@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_iMPeTg": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Raider_png.png",
+            "vehicle_title": "Freddo 24v Raider Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-raider-jeep"
+          }
+        },
         "vehicle_diJPym": {
           "type": "vehicle",
           "settings": {
@@ -802,6 +810,7 @@
         }
       },
       "block_order": [
+        "vehicle_iMPeTg",
         "vehicle_diJPym",
         "vehicle_Tb4ETW",
         "vehicle_YaNVUr",
