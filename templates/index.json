@@ -323,8 +323,9 @@
         "vehicle_TLY4Hc": {
           "type": "vehicle",
           "settings": {
-            "vehicle_title": "Vehicle Name",
-            "vehicle_link": ""
+            "vehicle_image": "shopify://shop_images/moderno_can_am_renegade_png.png",
+            "vehicle_title": "Moderno Can-Am Renegade",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-renegade"
           }
         },
         "vehicle_jW9jyU": {
