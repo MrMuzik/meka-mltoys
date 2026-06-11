@@ -323,7 +323,7 @@
         "vehicle_QAx3Hz": {
           "type": "vehicle",
           "settings": {
-            "vehicle_image": "shopify://shop_images/Moderno_Lambo.png",
+            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
             "vehicle_title": "Big Toys Country Lamborghini Aventador SVJ",
             "vehicle_link": "shopify://collections/big-toys-country-lamborghini-aventador-svj"
           }
