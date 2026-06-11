@@ -665,6 +665,7 @@
         },
         "vehicle_jYyTiD": {
           "type": "vehicle",
+          "name": "Big Toys Green Country 24v Alpine Crawler 4x4",
           "settings": {
             "vehicle_image": "shopify://shop_images/BTGC_Alpine_Crawler_png.png",
             "vehicle_title": "Big Toys Green Country 24v Alpine Crawler 4x4",
@@ -673,6 +674,7 @@
         },
         "vehicle_QAx3Hz": {
           "type": "vehicle",
+          "name": "Big Toys Country Lamborghini Aventador SVJ",
           "settings": {
             "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
             "vehicle_title": "Big Toys Country Lamborghini Aventador SVJ",
@@ -681,6 +683,7 @@
         },
         "vehicle_DA6Q3c": {
           "type": "vehicle",
+          "name": "Best Choice Products 12v Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/BCP_12v_Jeep_png.png",
             "vehicle_title": "Best Choice Products 12v Jeep",
@@ -689,6 +692,7 @@
         },
         "vehicle_xyecRV": {
           "type": "vehicle",
+          "name": "Best Choice Products Angry Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/BCP_Angry_Jeep_png.png",
             "vehicle_title": "Best Choice Products Angry Jeep",
@@ -697,6 +701,7 @@
         },
         "vehicle_iUkNT3": {
           "type": "vehicle",
+          "name": "Power Wheels Arctic Cat",
           "settings": {
             "vehicle_image": "shopify://shop_images/car_cutout_1.png",
             "vehicle_title": "Power Wheels Arctic Cat",
@@ -705,6 +710,7 @@
         },
         "vehicle_jJFBe8": {
           "type": "vehicle",
+          "name": "Power Wheels ATV",
           "settings": {
             "vehicle_image": "shopify://shop_images/Group_427320675.png",
             "vehicle_title": "Power Wheels ATV",
