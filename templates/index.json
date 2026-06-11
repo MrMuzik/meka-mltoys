@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_bbcTPc": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Garvee_Jeep_png.png",
+            "vehicle_title": "Garvee 24v Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-jeep"
+          }
+        },
         "vehicle_emC8Hc": {
           "type": "vehicle",
           "settings": {
@@ -842,6 +850,7 @@
         }
       },
       "block_order": [
+        "vehicle_bbcTPc",
         "vehicle_emC8Hc",
         "vehicle_U3WWQR",
         "vehicle_YC3H48",
