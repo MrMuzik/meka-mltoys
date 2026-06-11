@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_8Nzyzg": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
+            "vehicle_title": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-can-am-maverick-x3-4x4-utv"
+          }
+        },
         "vehicle_jYyTiD": {
           "type": "vehicle",
           "settings": {
@@ -674,6 +682,7 @@
         }
       },
       "block_order": [
+        "vehicle_8Nzyzg",
         "vehicle_jYyTiD",
         "vehicle_QAx3Hz",
         "vehicle_DA6Q3c",
