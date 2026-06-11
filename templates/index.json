@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_DA6Q3c": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BCP_12v_Jeep.png",
+            "vehicle_title": "Best Choice Products 12v Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-jeep"
+          }
+        },
         "vehicle_xyecRV": {
           "type": "vehicle",
           "settings": {
@@ -650,6 +658,7 @@
         }
       },
       "block_order": [
+        "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_iUkNT3",
         "vehicle_jJFBe8",
