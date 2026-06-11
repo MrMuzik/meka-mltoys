@@ -420,6 +420,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/power-wheels-jeep-hurricane"
           }
         },
+        "vehicle_CipJ7G": {
+          "type": "vehicle",
+          "name": "Power Wheels Jeep Wranglers",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/jeep_wrangler_cutout.png",
+            "vehicle_title": "Power Wheels Jeep Wranglers",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -816,15 +825,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_CipJ7G": {
-          "type": "vehicle",
-          "name": "Power Wheels Jeep Wranglers",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/jeep_wrangler_cutout.png",
-            "vehicle_title": "Power Wheels Jeep Wranglers",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-jeep-wranglers"
-          }
-        },
         "vehicle_DaFtyk": {
           "type": "vehicle",
           "name": "Power Wheels Kawasaki KFX's",
@@ -1082,6 +1082,7 @@
         "vehicle_aLwVBB",
         "vehicle_kKAbER",
         "vehicle_yi83xR",
+        "vehicle_CipJ7G",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1126,7 +1127,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_CipJ7G",
         "vehicle_DaFtyk",
         "vehicle_XRF9mV",
         "vehicle_LkzqGQ",
