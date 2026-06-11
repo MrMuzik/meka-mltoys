@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_tqVYqQ": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_trailflex_jeep_png.png",
+            "vehicle_title": "Ryder 24v Trailflex Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-trailflex-jeep"
+          }
+        },
         "vehicle_7Nm4i8": {
           "type": "vehicle",
           "settings": {
@@ -962,6 +970,7 @@
         }
       },
       "block_order": [
+        "vehicle_tqVYqQ",
         "vehicle_7Nm4i8",
         "vehicle_J37Lr9",
         "vehicle_8zakmE",
