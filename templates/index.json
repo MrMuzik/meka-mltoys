@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_zyVdVA": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Outlander_png.png",
+            "vehicle_title": "Freddo 24v Can-Am Outlander",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-outlander"
+          }
+        },
         "vehicle_m6jPfd": {
           "type": "vehicle",
           "settings": {
@@ -746,6 +754,7 @@
         }
       },
       "block_order": [
+        "vehicle_zyVdVA",
         "vehicle_m6jPfd",
         "vehicle_BfQBrg",
         "vehicle_DxVg4k",
