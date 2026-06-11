@@ -611,6 +611,7 @@
         },
         "vehicle_97MVJn": {
           "type": "vehicle",
+          "name": "Freddo 24v Buccaneer Dune Buggy",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_png.png",
             "vehicle_title": "Freddo 24v Buccaneer Dune Buggy",
@@ -619,6 +620,7 @@
         },
         "vehicle_YTBCQN": {
           "type": "vehicle",
+          "name": "Freddo 12v Cat Dump Truck",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Cat_Dump_png.png",
             "vehicle_title": "Freddo 12v Cat Dump Truck",
@@ -627,6 +629,7 @@
         },
         "vehicle_qkkMLp": {
           "type": "vehicle",
+          "name": "Freddo 12v C8 Corvette Stingray",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_C8_Corvette_Stingray.png",
             "vehicle_title": "Freddo 12v C8 Corvette Stingray",
@@ -635,6 +638,7 @@
         },
         "vehicle_6dfrEG": {
           "type": "vehicle",
+          "name": "Big Toys Green Country 24v Mercedes G63",
           "settings": {
             "vehicle_image": "shopify://shop_images/BTGC_Mercedes_G63.png",
             "vehicle_title": "Big Toys Green Country 24v Mercedes G63",
@@ -643,6 +647,7 @@
         },
         "vehicle_X8Bjgg": {
           "type": "vehicle",
+          "name": "Big Toys Green Country 12v GMC Denali 4x4",
           "settings": {
             "vehicle_image": "shopify://shop_images/BTGC_GMC_Denali_png.png",
             "vehicle_title": "Big Toys Green Country 12v GMC Denali 4x4",
@@ -651,6 +656,7 @@
         },
         "vehicle_8Nzyzg": {
           "type": "vehicle",
+          "name": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
             "vehicle_title": "Big Toys Green Country 24v Can-Am Maverick X3 4x4 UTV",
