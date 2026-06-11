@@ -377,6 +377,7 @@
         },
         "vehicle_xjXXLR": {
           "type": "vehicle",
+          "name": "Ryder Drifter 2.0 Go-Kart",
           "settings": {
             "vehicle_image": "shopify://shop_images/Ryder_2.0_drifter_png.png",
             "vehicle_title": "Ryder Drifter 2.0 Go-Kart",
@@ -385,6 +386,7 @@
         },
         "vehicle_RUAEwC": {
           "type": "vehicle",
+          "name": "Ryder Toys 24v All Wheel Drive Buggy",
           "settings": {
             "vehicle_image": "shopify://shop_images/Ryder_24v_png.png",
             "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
@@ -393,6 +395,7 @@
         },
         "vehicle_z7D6ED": {
           "type": "vehicle",
+          "name": "Peg Perego John Deere Ground Loader Tractor",
           "settings": {
             "vehicle_image": "shopify://shop_images/John_Deere_Ground_Loader_png.png",
             "vehicle_title": "Peg Perego John Deere Ground Loader Tractor",
@@ -401,6 +404,7 @@
         },
         "vehicle_kpU8Mw": {
           "type": "vehicle",
+          "name": "Moderno 24v Mercedes G63",
           "settings": {
             "vehicle_image": "shopify://shop_images/moderno_g63_png.png",
             "vehicle_title": "Moderno 24v Mercedes G63",
@@ -409,6 +413,7 @@
         },
         "vehicle_cRiqWM": {
           "type": "vehicle",
+          "name": "Moderno Lamborghini Aventador SVJ",
           "settings": {
             "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
             "vehicle_title": "Moderno Lamborghini Aventador SVJ",
@@ -417,6 +422,7 @@
         },
         "vehicle_RfyJzV": {
           "type": "vehicle",
+          "name": "Moderno Can-Am Outlander",
           "settings": {
             "vehicle_image": "shopify://shop_images/moderno_can-am_outlander_png.png",
             "vehicle_title": "Moderno Can-Am Outlander",
