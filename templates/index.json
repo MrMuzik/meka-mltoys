@@ -314,6 +314,7 @@
       "blocks": {
         "vehicle_NkFC3X": {
           "type": "vehicle",
+          "name": "Ryder XL UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/Ryder_XL_UTV_png.png",
             "vehicle_title": "Ryder XL UTV",
@@ -322,6 +323,7 @@
         },
         "vehicle_XFygng": {
           "type": "vehicle",
+          "name": "Ryder Vintage Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_vintage_jeep_png.png",
             "vehicle_title": "Ryder Vintage Jeep",
@@ -330,6 +332,7 @@
         },
         "vehicle_tqVYqQ": {
           "type": "vehicle",
+          "name": "Ryder 24v Trailflex Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_trailflex_jeep_png.png",
             "vehicle_title": "Ryder 24v Trailflex Jeep",
@@ -338,6 +341,7 @@
         },
         "vehicle_7Nm4i8": {
           "type": "vehicle",
+          "name": "Ryder Mercedes Benz G63",
           "settings": {
             "vehicle_image": "shopify://shop_images/Ryder_Mercedes_png.png",
             "vehicle_title": "Ryder Mercedes Benz G63",
@@ -346,6 +350,7 @@
         },
         "vehicle_J37Lr9": {
           "type": "vehicle",
+          "name": "Ryder 12&24v Lifted Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_lifted_jeep_png.png",
             "vehicle_title": "Ryder 12&24v Lifted Jeep",
@@ -354,6 +359,7 @@
         },
         "vehicle_8zakmE": {
           "type": "vehicle",
+          "name": "Ryder Lamborghini Aventador SVJ",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_lambo_png.png",
             "vehicle_title": "Ryder Lamborghini Aventador SVJ",
@@ -362,6 +368,7 @@
         },
         "vehicle_pjdrzM": {
           "type": "vehicle",
+          "name": "Ryder Ford Super Duty Truck",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_ford_super_duty_png.png",
             "vehicle_title": "Ryder Ford Super Duty Truck",
