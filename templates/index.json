@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_XFygng": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_vintage_jeep_png.png",
+            "vehicle_title": "Ryder Vintage Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-vintage-jeep"
+          }
+        },
         "vehicle_tqVYqQ": {
           "type": "vehicle",
           "settings": {
@@ -970,6 +978,7 @@
         }
       },
       "block_order": [
+        "vehicle_XFygng",
         "vehicle_tqVYqQ",
         "vehicle_7Nm4i8",
         "vehicle_J37Lr9",
