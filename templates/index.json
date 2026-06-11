@@ -663,6 +663,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-renegade"
           }
         },
+        "vehicle_zYRFWr": {
+          "type": "vehicle",
+          "name": "Freddo 24v Chevrolet Silverado",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Silverado_png.png",
+            "vehicle_title": "Freddo 24v Chevrolet Silverado",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-chevy-silverado"
+          }
+        },
+        "vehicle_k7bxxj": {
+          "type": "vehicle",
+          "name": "Freddo 24v GMC Denali",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_GMC_Denali_png.png",
+            "vehicle_title": "Freddo 24v GMC Denali",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-gmc-denali"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -897,24 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-lamborghini-huracan"
           }
         },
-        "vehicle_k7bxxj": {
-          "type": "vehicle",
-          "name": "Freddo 24v GMC Denali",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_GMC_Denali_png.png",
-            "vehicle_title": "Freddo 24v GMC Denali",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-gmc-denali"
-          }
-        },
-        "vehicle_zYRFWr": {
-          "type": "vehicle",
-          "name": "Freddo 24v Chevrolet Silverado",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Silverado_png.png",
-            "vehicle_title": "Freddo 24v Chevrolet Silverado",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-chevy-silverado"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1109,6 +1109,8 @@
         "vehicle_m6jPfd",
         "vehicle_zyVdVA",
         "vehicle_ahCinF",
+        "vehicle_zYRFWr",
+        "vehicle_k7bxxj",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_diJPym",
         "vehicle_Tb4ETW",
         "vehicle_YaNVUr",
-        "vehicle_k7bxxj",
-        "vehicle_zYRFWr",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
