@@ -836,6 +836,7 @@
         },
         "vehicle_XRF9mV": {
           "type": "vehicle",
+          "name": "Power Wheels Lightning McQueen",
           "settings": {
             "vehicle_image": "shopify://shop_images/mcqueen_cutout.png",
             "vehicle_title": "Power Wheels Lightning McQueen",
@@ -844,6 +845,7 @@
         },
         "vehicle_LkzqGQ": {
           "type": "vehicle",
+          "name": "Power Wheels Porsche GT3",
           "settings": {
             "vehicle_image": "shopify://shop_images/porche_cutout.png",
             "vehicle_title": "Power Wheels Porsche GT3",
@@ -852,6 +854,7 @@
         },
         "vehicle_Akyjix": {
           "type": "vehicle",
+          "name": "Adventure Force 24v Thunder Tank",
           "settings": {
             "vehicle_image": "shopify://shop_images/tank_cutout.png",
             "vehicle_title": "Adventure Force 24v Thunder Tank",
@@ -860,6 +863,7 @@
         },
         "vehicle_kA7RJU": {
           "type": "vehicle",
+          "name": "Big Toys Country 24v Challenger XL",
           "settings": {
             "vehicle_image": "shopify://shop_images/big_toys_country_cutout.png",
             "vehicle_title": "Big Toys Country 24v Challenger XL",
@@ -868,6 +872,7 @@
         },
         "vehicle_dA3hqa": {
           "type": "vehicle",
+          "name": "Big Toys Direct 24v Red Tiger",
           "settings": {
             "vehicle_image": "shopify://shop_images/big_toys_direct_cutout.png",
             "vehicle_title": "Big Toys Direct 24v Red Tiger",
@@ -876,6 +881,7 @@
         },
         "vehicle_UQtrDW": {
           "type": "vehicle",
+          "name": "Bravo Monster Jam 24v Grave Digger",
           "settings": {
             "vehicle_image": "shopify://shop_images/bravo_monster_cutout.png",
             "vehicle_title": "Bravo Monster Jam 24v Grave Digger",
@@ -884,6 +890,7 @@
         },
         "vehicle_Qa6Bj9": {
           "type": "vehicle",
+          "name": "Dynacraft 12v Mighty Dump Truck",
           "settings": {
             "vehicle_image": "shopify://shop_images/dynacraft_might_dump_cutout.png",
             "vehicle_title": "Dynacraft 12v Mighty Dump Truck",
@@ -892,6 +899,7 @@
         },
         "vehicle_EBmgjq": {
           "type": "vehicle",
+          "name": "Dynacraft 24v UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/dynacraft_24n_cutout.png",
             "vehicle_title": "Dynacraft 24v UTV",
@@ -900,6 +908,7 @@
         },
         "vehicle_FpweXW": {
           "type": "vehicle",
+          "name": "Dynacraft 24v Trailrider",
           "settings": {
             "vehicle_image": "shopify://shop_images/dynacraft_trailrider.png",
             "vehicle_title": "Dynacraft 24v Trailrider",
@@ -908,6 +917,7 @@
         },
         "vehicle_qCW6rx": {
           "type": "vehicle",
+          "name": "Huffy 12v Ford F150",
           "settings": {
             "vehicle_image": "shopify://shop_images/huffy_ford.png",
             "vehicle_title": "Huffy 12v Ford F150",
@@ -916,6 +926,7 @@
         },
         "vehicle_iyVLpg": {
           "type": "vehicle",
+          "name": "Huffy C8 Corvette",
           "settings": {
             "vehicle_image": "shopify://shop_images/corvette_cutout.png",
             "vehicle_title": "Huffy C8 Corvette",
@@ -924,6 +935,7 @@
         },
         "vehicle_B434hw": {
           "type": "vehicle",
+          "name": "Huffy Land Rover",
           "settings": {
             "vehicle_image": "shopify://shop_images/huffy_landrover.png",
             "vehicle_title": "Huffy Land Rover",
@@ -932,6 +944,7 @@
         },
         "vehicle_9wCyRp": {
           "type": "vehicle",
+          "name": "Kid MotorZ Camaro",
           "settings": {
             "vehicle_image": "shopify://shop_images/camaro_cutout.png",
             "vehicle_title": "Kid MotorZ Camaro",
@@ -940,6 +953,7 @@
         },
         "vehicle_pDRxBp": {
           "type": "vehicle",
+          "name": "Kid Trax Zero Turn Lawn Mower",
           "settings": {
             "vehicle_image": "shopify://shop_images/lawnmower_cutout.png",
             "vehicle_title": "Kid Trax Zero Turn Lawn Mower",
@@ -948,6 +962,7 @@
         },
         "vehicle_QM9BFX": {
           "type": "vehicle",
+          "name": "Kid Trax 1969 Ford Bronco",
           "settings": {
             "vehicle_image": "shopify://shop_images/kid_trax_cutout.png",
             "vehicle_title": "Kid Trax 1969 Ford Bronco",
@@ -956,6 +971,7 @@
         },
         "vehicle_n3DXMb": {
           "type": "vehicle",
+          "name": "Kid Trax 2021 Ford Bronco",
           "settings": {
             "vehicle_image": "shopify://shop_images/bronco_cutout.png",
             "vehicle_title": "Kid Trax 2021 Ford Bronco",
