@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_z7D6ED": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/John_Deere_Ground_Loader_png.png",
+            "vehicle_title": "Peg Perego John Deere Ground Loader Tractor",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-loader-tractor-copy"
+          }
+        },
         "vehicle_kpU8Mw": {
           "type": "vehicle",
           "settings": {
@@ -906,6 +914,7 @@
         }
       },
       "block_order": [
+        "vehicle_z7D6ED",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_RfyJzV",
