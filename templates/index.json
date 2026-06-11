@@ -339,7 +339,7 @@
         "vehicle_xyecRV": {
           "type": "vehicle",
           "settings": {
-            "vehicle_image": "shopify://shop_images/BCP_Angry_Jeep.png",
+            "vehicle_image": "shopify://shop_images/BCP_Angry_Jeep_png.png",
             "vehicle_title": "Best Choice Products Angry Jeep",
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-angry-jeep"
           }
