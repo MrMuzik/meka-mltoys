@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_cRiqWM": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
+            "vehicle_title": "Moderno Lamborghini Aventador SVJ",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-lamborghini-aventador-svj"
+          }
+        },
         "vehicle_RfyJzV": {
           "type": "vehicle",
           "settings": {
@@ -890,6 +898,7 @@
         }
       },
       "block_order": [
+        "vehicle_cRiqWM",
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
