@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_DxVg4k": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_XXL_png.png",
+            "vehicle_title": "Freddo 24v Buccaneer XXL",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-buccaneer-xxl-dune-buggy"
+          }
+        },
         "vehicle_97MVJn": {
           "type": "vehicle",
           "settings": {
@@ -722,6 +730,7 @@
         }
       },
       "block_order": [
+        "vehicle_DxVg4k",
         "vehicle_97MVJn",
         "vehicle_YTBCQN",
         "vehicle_qkkMLp",
