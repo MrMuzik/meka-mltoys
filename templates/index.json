@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_jYyTiD": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Alpine_Crawler_png.png",
+            "vehicle_title": "Big Toys Green Country 24v Alpine Crawler 4x4",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-alpine-crawler-4x4"
+          }
+        },
         "vehicle_QAx3Hz": {
           "type": "vehicle",
           "settings": {
@@ -666,6 +674,7 @@
         }
       },
       "block_order": [
+        "vehicle_jYyTiD",
         "vehicle_QAx3Hz",
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
