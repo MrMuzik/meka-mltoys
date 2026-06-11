@@ -431,6 +431,7 @@
         },
         "vehicle_TLY4Hc": {
           "type": "vehicle",
+          "name": "Moderno Can-Am Renegade",
           "settings": {
             "vehicle_image": "shopify://shop_images/moderno_can_am_renegade_png.png",
             "vehicle_title": "Moderno Can-Am Renegade",
@@ -439,6 +440,7 @@
         },
         "vehicle_jW9jyU": {
           "type": "vehicle",
+          "name": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
             "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
@@ -447,6 +449,7 @@
         },
         "vehicle_mpGdVW": {
           "type": "vehicle",
+          "name": "Garvee 24v Toyota Land Cruiser",
           "settings": {
             "vehicle_image": "shopify://shop_images/Garvee_Toyota_Landcruiser_png.png",
             "vehicle_title": "Garvee 24v Toyota Land Cruiser",
@@ -455,6 +458,7 @@
         },
         "vehicle_RgVwtH": {
           "type": "vehicle",
+          "name": "Garvee 24v \"Speed\" 4wd UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/Garvee_Challenger_png.png",
             "vehicle_title": "Garvee 24v \"Speed\" 4wd UTV",
@@ -463,6 +467,7 @@
         },
         "vehicle_bbcTPc": {
           "type": "vehicle",
+          "name": "Garvee 24v Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/Garvee_Jeep_png.png",
             "vehicle_title": "Garvee 24v Jeep",
@@ -471,6 +476,7 @@
         },
         "vehicle_emC8Hc": {
           "type": "vehicle",
+          "name": "Garvee 24v Dump Truck",
           "settings": {
             "vehicle_image": "shopify://shop_images/Garvee_Dump_Truck_png.png",
             "vehicle_title": "Garvee 24v Dump Truck",
@@ -479,6 +485,7 @@
         },
         "vehicle_U3WWQR": {
           "type": "vehicle",
+          "name": "Garvee 24v Chevy Silverado",
           "settings": {
             "vehicle_image": "shopify://shop_images/Garvee_Chevy_Silverado_png.png",
             "vehicle_title": "Garvee 24v Chevy Silverado",
@@ -487,6 +494,7 @@
         },
         "vehicle_YC3H48": {
           "type": "vehicle",
+          "name": "Freddo 24v Military Willy Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Willys_png.png",
             "vehicle_title": "Freddo 24v Military Willy Jeep",
@@ -495,6 +503,7 @@
         },
         "vehicle_LexhCW": {
           "type": "vehicle",
+          "name": "Freddo 24v Storm UTV",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Storm_png.png",
             "vehicle_title": "Freddo 24v Storm UTV",
