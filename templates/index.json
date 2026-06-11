@@ -573,6 +573,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/dynacraft-12v-mighty-dump-truck"
           }
         },
+        "vehicle_FpweXW": {
+          "type": "vehicle",
+          "name": "Dynacraft 24v Trailrider",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dynacraft_trailrider.png",
+            "vehicle_title": "Dynacraft 24v Trailrider",
+            "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-trailrider"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -906,15 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-utv"
           }
         },
-        "vehicle_FpweXW": {
-          "type": "vehicle",
-          "name": "Dynacraft 24v Trailrider",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/dynacraft_trailrider.png",
-            "vehicle_title": "Dynacraft 24v Trailrider",
-            "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-trailrider"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1099,6 +1099,7 @@
         "vehicle_6dfrEG",
         "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
+        "vehicle_FpweXW",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_YTBCQN",
         "vehicle_qkkMLp",
         "vehicle_EBmgjq",
-        "vehicle_FpweXW",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
