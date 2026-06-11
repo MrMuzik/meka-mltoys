@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_7Nm4i8": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ryder_Mercedes_png.png",
+            "vehicle_title": "Ryder Mercedes Benz G63",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63"
+          }
+        },
         "vehicle_J37Lr9": {
           "type": "vehicle",
           "settings": {
@@ -954,6 +962,7 @@
         }
       },
       "block_order": [
+        "vehicle_7Nm4i8",
         "vehicle_J37Lr9",
         "vehicle_8zakmE",
         "vehicle_pjdrzM",
