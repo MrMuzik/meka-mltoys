@@ -366,6 +366,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/power-wheels-corvette-porsche-gt3-mustang-mcqueen-tuned-kits"
           }
         },
+        "vehicle_xkRkk8": {
+          "type": "vehicle",
+          "name": "Power Wheels Cadillac Escalade",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
+            "vehicle_title": "Power Wheels Cadillac Escalade",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-cadillac-escalade"
+          }
+        },
+        "vehicle_y7CkyQ": {
+          "type": "vehicle",
+          "name": "Power Wheels Dune Racer",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/pink_cart_cutout_1_ad8bfb81-4027-46f3-953e-ac41563d1c0c.png",
+            "vehicle_title": "Power Wheels Dune Racer",
+            "vehicle_link": "shopify://collections/power-wheels-dune-racer"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -762,24 +780,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_xkRkk8": {
-          "type": "vehicle",
-          "name": "Power Wheels Cadillac Escalade",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
-            "vehicle_title": "Power Wheels Cadillac Escalade",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-cadillac-escalade"
-          }
-        },
-        "vehicle_y7CkyQ": {
-          "type": "vehicle",
-          "name": "Power Wheels Dune Racer",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/pink_cart_cutout_1_ad8bfb81-4027-46f3-953e-ac41563d1c0c.png",
-            "vehicle_title": "Power Wheels Dune Racer",
-            "vehicle_link": "shopify://collections/power-wheels-dune-racer"
-          }
-        },
         "vehicle_VcBCjR": {
           "type": "vehicle",
           "name": "Power Wheels Ford F-150",
@@ -1076,6 +1076,8 @@
         "vehicle_MYa83y",
         "vehicle_Jwrp8Y",
         "vehicle_DyC69y",
+        "vehicle_xkRkk8",
+        "vehicle_y7CkyQ",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1120,8 +1122,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_xkRkk8",
-        "vehicle_y7CkyQ",
         "vehicle_VcBCjR",
         "vehicle_aLwVBB",
         "vehicle_kKAbER",
