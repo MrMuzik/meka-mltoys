@@ -719,6 +719,7 @@
         },
         "vehicle_fXeNXY": {
           "type": "vehicle",
+          "name": "Power Wheels Baja Extreme",
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-extreme-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Extreme",
@@ -727,6 +728,7 @@
         },
         "vehicle_MYa83y": {
           "type": "vehicle",
+          "name": "Power Wheels Baja Trailster",
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-baja-trailster-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Baja Trailster",
@@ -735,6 +737,7 @@
         },
         "vehicle_DyC69y": {
           "type": "vehicle",
+          "name": "Power Wheels C7 Corvette",
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-C7-corvette-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels C7 Corvette",
@@ -743,6 +746,7 @@
         },
         "vehicle_Jwrp8Y": {
           "type": "vehicle",
+          "name": "Power Wheels Camper",
           "settings": {
             "vehicle_image": "shopify://shop_images/collection-barbie-dream-camper_600x_cutout_1_1.png",
             "vehicle_title": "Power Wheels Camper",
@@ -751,6 +755,7 @@
         },
         "vehicle_KR4kxX": {
           "type": "vehicle",
+          "name": "Best Choice Products 12v Land Rover",
           "settings": {
             "vehicle_image": "shopify://shop_images/BCP_Land_rover_png.png",
             "vehicle_title": "Best Choice Products 12v Land Rover",
@@ -759,6 +764,7 @@
         },
         "vehicle_xkRkk8": {
           "type": "vehicle",
+          "name": "Power Wheels Cadillac Escalade",
           "settings": {
             "vehicle_image": "shopify://shop_images/vehicle-power-wheels-cadillac-escalade-800px_600x_cutout_1.png",
             "vehicle_title": "Power Wheels Cadillac Escalade",
@@ -767,6 +773,7 @@
         },
         "vehicle_y7CkyQ": {
           "type": "vehicle",
+          "name": "Power Wheels Dune Racer",
           "settings": {
             "vehicle_image": "shopify://shop_images/pink_cart_cutout_1_ad8bfb81-4027-46f3-953e-ac41563d1c0c.png",
             "vehicle_title": "Power Wheels Dune Racer",
@@ -775,6 +782,7 @@
         },
         "vehicle_VcBCjR": {
           "type": "vehicle",
+          "name": "Power Wheels Ford F-150",
           "settings": {
             "vehicle_image": "shopify://shop_images/ford_truck_cutout_jpg.png",
             "vehicle_title": "Power Wheels Ford F-150",
@@ -783,6 +791,7 @@
         },
         "vehicle_aLwVBB": {
           "type": "vehicle",
+          "name": "Power Wheels Ford Mustang",
           "settings": {
             "vehicle_image": "shopify://shop_images/Ford_mustang.png",
             "vehicle_title": "Power Wheels Ford Mustang",
@@ -791,6 +800,7 @@
         },
         "vehicle_kKAbER": {
           "type": "vehicle",
+          "name": "Power Wheels Hot Wheels Racer",
           "settings": {
             "vehicle_image": "shopify://shop_images/hotwheels_cutout.png",
             "vehicle_title": "Power Wheels Hot Wheels Racer",
@@ -799,6 +809,7 @@
         },
         "vehicle_yi83xR": {
           "type": "vehicle",
+          "name": "Power Wheels Jeep Hurricane",
           "settings": {
             "vehicle_image": "shopify://shop_images/hurricane_cutout.png",
             "vehicle_title": "Power Wheels Jeep Hurricane",
@@ -807,6 +818,7 @@
         },
         "vehicle_CipJ7G": {
           "type": "vehicle",
+          "name": "Power Wheels Jeep Wranglers",
           "settings": {
             "vehicle_image": "shopify://shop_images/jeep_wrangler_cutout.png",
             "vehicle_title": "Power Wheels Jeep Wranglers",
@@ -815,6 +827,7 @@
         },
         "vehicle_DaFtyk": {
           "type": "vehicle",
+          "name": "Power Wheels Kawasaki KFX's",
           "settings": {
             "vehicle_image": "shopify://shop_images/kawasaki_cutout.png",
             "vehicle_title": "Power Wheels Kawasaki KFX's",
