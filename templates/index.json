@@ -456,6 +456,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
           }
         },
+        "vehicle_Akyjix": {
+          "type": "vehicle",
+          "name": "Adventure Force 24v Thunder Tank",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/tank_cutout.png",
+            "vehicle_title": "Adventure Force 24v Thunder Tank",
+            "vehicle_link": "https://www.mltoys.com/collections/adventure-force-24v-thunder-tank"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -852,15 +861,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_Akyjix": {
-          "type": "vehicle",
-          "name": "Adventure Force 24v Thunder Tank",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/tank_cutout.png",
-            "vehicle_title": "Adventure Force 24v Thunder Tank",
-            "vehicle_link": "https://www.mltoys.com/collections/adventure-force-24v-thunder-tank"
-          }
-        },
         "vehicle_kA7RJU": {
           "type": "vehicle",
           "name": "Big Toys Country 24v Challenger XL",
@@ -1086,6 +1086,7 @@
         "vehicle_DaFtyk",
         "vehicle_XRF9mV",
         "vehicle_LkzqGQ",
+        "vehicle_Akyjix",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1130,7 +1131,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_Akyjix",
         "vehicle_kA7RJU",
         "vehicle_dA3hqa",
         "vehicle_UQtrDW",
