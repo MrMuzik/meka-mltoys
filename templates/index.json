@@ -384,6 +384,15 @@
             "vehicle_link": "shopify://collections/power-wheels-dune-racer"
           }
         },
+        "vehicle_VcBCjR": {
+          "type": "vehicle",
+          "name": "Power Wheels Ford F-150",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ford_truck_cutout_jpg.png",
+            "vehicle_title": "Power Wheels Ford F-150",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-ford-f-150"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -780,15 +789,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_VcBCjR": {
-          "type": "vehicle",
-          "name": "Power Wheels Ford F-150",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/ford_truck_cutout_jpg.png",
-            "vehicle_title": "Power Wheels Ford F-150",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-ford-f-150"
-          }
-        },
         "vehicle_aLwVBB": {
           "type": "vehicle",
           "name": "Power Wheels Ford Mustang",
@@ -1078,6 +1078,7 @@
         "vehicle_DyC69y",
         "vehicle_xkRkk8",
         "vehicle_y7CkyQ",
+        "vehicle_VcBCjR",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1122,7 +1123,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_VcBCjR",
         "vehicle_aLwVBB",
         "vehicle_kKAbER",
         "vehicle_yi83xR",
