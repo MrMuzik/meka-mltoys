@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_6dfrEG": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Mercedes_G63.png",
+            "vehicle_title": "Big Toys Green Country 24v Mercedes G63",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-mercedes-g63"
+          }
+        },
         "vehicle_X8Bjgg": {
           "type": "vehicle",
           "settings": {
@@ -690,6 +698,7 @@
         }
       },
       "block_order": [
+        "vehicle_6dfrEG",
         "vehicle_X8Bjgg",
         "vehicle_8Nzyzg",
         "vehicle_jYyTiD",
