@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_jW9jyU": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
+            "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
+          }
+        },
         "vehicle_mpGdVW": {
           "type": "vehicle",
           "settings": {
@@ -866,6 +874,7 @@
         }
       },
       "block_order": [
+        "vehicle_jW9jyU",
         "vehicle_mpGdVW",
         "vehicle_RgVwtH",
         "vehicle_bbcTPc",
