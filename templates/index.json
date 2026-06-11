@@ -636,6 +636,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-c8-corvette-stingray"
           }
         },
+        "vehicle_m6jPfd": {
+          "type": "vehicle",
+          "name": "Freddo 24v Can-Am Maverick",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Maverick_png.png",
+            "vehicle_title": "Freddo 24v Can-Am Maverick",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-maverick"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -906,15 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-outlander"
           }
         },
-        "vehicle_m6jPfd": {
-          "type": "vehicle",
-          "name": "Freddo 24v Can-Am Maverick",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Maverick_png.png",
-            "vehicle_title": "Freddo 24v Can-Am Maverick",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-maverick"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1106,6 +1106,7 @@
         "vehicle_97MVJn",
         "vehicle_DxVg4k",
         "vehicle_BfQBrg",
+        "vehicle_m6jPfd",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_zYRFWr",
         "vehicle_ahCinF",
         "vehicle_zyVdVA",
-        "vehicle_m6jPfd",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
