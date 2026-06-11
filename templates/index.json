@@ -645,6 +645,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-maverick"
           }
         },
+        "vehicle_zyVdVA": {
+          "type": "vehicle",
+          "name": "Freddo 24v Can-Am Outlander",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Outlander_png.png",
+            "vehicle_title": "Freddo 24v Can-Am Outlander",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-outlander"
+          }
+        },
+        "vehicle_ahCinF": {
+          "type": "vehicle",
+          "name": "Freddo 24v Can-Am Renegade ATV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_renegade_png.png",
+            "vehicle_title": "Freddo 24v Can-Am Renegade ATV",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-renegade"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -897,24 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-chevy-silverado"
           }
         },
-        "vehicle_ahCinF": {
-          "type": "vehicle",
-          "name": "Freddo 24v Can-Am Renegade ATV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_renegade_png.png",
-            "vehicle_title": "Freddo 24v Can-Am Renegade ATV",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-renegade"
-          }
-        },
-        "vehicle_zyVdVA": {
-          "type": "vehicle",
-          "name": "Freddo 24v Can-Am Outlander",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Outlander_png.png",
-            "vehicle_title": "Freddo 24v Can-Am Outlander",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-outlander"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1107,6 +1107,8 @@
         "vehicle_DxVg4k",
         "vehicle_BfQBrg",
         "vehicle_m6jPfd",
+        "vehicle_zyVdVA",
+        "vehicle_ahCinF",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_YaNVUr",
         "vehicle_k7bxxj",
         "vehicle_zYRFWr",
-        "vehicle_ahCinF",
-        "vehicle_zyVdVA",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
