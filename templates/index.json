@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_xjXXLR": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ryder_2.0_drifter_png.png",
+            "vehicle_title": "Ryder Drifter 2.0 Go-Kart",
+            "vehicle_link": ""
+          }
+        },
         "vehicle_RUAEwC": {
           "type": "vehicle",
           "settings": {
@@ -922,6 +930,7 @@
         }
       },
       "block_order": [
+        "vehicle_xjXXLR",
         "vehicle_RUAEwC",
         "vehicle_z7D6ED",
         "vehicle_kpU8Mw",
