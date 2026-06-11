@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_X8Bjgg": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_GMC_Denali_png.png",
+            "vehicle_title": "Vehicle NameBig Toys Green Country 12v GMC Denali 4x4",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-12v-gmc-denali-4x4"
+          }
+        },
         "vehicle_8Nzyzg": {
           "type": "vehicle",
           "settings": {
@@ -682,6 +690,7 @@
         }
       },
       "block_order": [
+        "vehicle_X8Bjgg",
         "vehicle_8Nzyzg",
         "vehicle_jYyTiD",
         "vehicle_QAx3Hz",
