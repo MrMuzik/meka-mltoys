@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_RUAEwC": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ryder_24v_png.png",
+            "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
+          }
+        },
         "vehicle_z7D6ED": {
           "type": "vehicle",
           "settings": {
@@ -914,6 +922,7 @@
         }
       },
       "block_order": [
+        "vehicle_RUAEwC",
         "vehicle_z7D6ED",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
