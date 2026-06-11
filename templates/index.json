@@ -465,6 +465,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/adventure-force-24v-thunder-tank"
           }
         },
+        "vehicle_xyecRV": {
+          "type": "vehicle",
+          "name": "Best Choice Products Angry Jeep",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BCP_Angry_Jeep_png.png",
+            "vehicle_title": "Best Choice Products Angry Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-angry-jeep"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -843,15 +852,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-jeep"
           }
         },
-        "vehicle_xyecRV": {
-          "type": "vehicle",
-          "name": "Best Choice Products Angry Jeep",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/BCP_Angry_Jeep_png.png",
-            "vehicle_title": "Best Choice Products Angry Jeep",
-            "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-angry-jeep"
-          }
-        },
         "vehicle_KR4kxX": {
           "type": "vehicle",
           "name": "Best Choice Products 12v Land Rover",
@@ -1087,6 +1087,7 @@
         "vehicle_XRF9mV",
         "vehicle_LkzqGQ",
         "vehicle_Akyjix",
+        "vehicle_xyecRV",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1129,7 +1130,6 @@
         "vehicle_jYyTiD",
         "vehicle_QAx3Hz",
         "vehicle_DA6Q3c",
-        "vehicle_xyecRV",
         "vehicle_KR4kxX",
         "vehicle_kA7RJU",
         "vehicle_dA3hqa",
