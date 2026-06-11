@@ -492,6 +492,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
+        "vehicle_dA3hqa": {
+          "type": "vehicle",
+          "name": "Big Toys Direct 24v Red Tiger",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/big_toys_direct_cutout.png",
+            "vehicle_title": "Big Toys Direct 24v Red Tiger",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-direct-24v-red-tiger"
+          }
+        },
+        "vehicle_QAx3Hz": {
+          "type": "vehicle",
+          "name": "Big Toys Country Lamborghini Aventador SVJ",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
+            "vehicle_title": "Big Toys Direct Lamborghini Aventador SVJ",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-lamborghini-aventador-svj"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -852,15 +870,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-alpine-crawler-4x4"
           }
         },
-        "vehicle_QAx3Hz": {
-          "type": "vehicle",
-          "name": "Big Toys Country Lamborghini Aventador SVJ",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
-            "vehicle_title": "Big Toys Country Lamborghini Aventador SVJ",
-            "vehicle_link": "shopify://collections/big-toys-country-lamborghini-aventador-svj"
-          }
-        },
         "vehicle_kA7RJU": {
           "type": "vehicle",
           "name": "Big Toys Country 24v Challenger XL",
@@ -868,15 +877,6 @@
             "vehicle_image": "shopify://shop_images/big_toys_country_cutout.png",
             "vehicle_title": "Big Toys Country 24v Challenger XL",
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-24v-challenger-xl"
-          }
-        },
-        "vehicle_dA3hqa": {
-          "type": "vehicle",
-          "name": "Big Toys Direct 24v Red Tiger",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/big_toys_direct_cutout.png",
-            "vehicle_title": "Big Toys Direct 24v Red Tiger",
-            "vehicle_link": "https://www.mltoys.com/collections/big-toys-direct-24v-red-tiger"
           }
         },
         "vehicle_UQtrDW": {
@@ -1090,6 +1090,8 @@
         "vehicle_xyecRV",
         "vehicle_DA6Q3c",
         "vehicle_KR4kxX",
+        "vehicle_dA3hqa",
+        "vehicle_QAx3Hz",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1130,9 +1132,7 @@
         "vehicle_X8Bjgg",
         "vehicle_8Nzyzg",
         "vehicle_jYyTiD",
-        "vehicle_QAx3Hz",
         "vehicle_kA7RJU",
-        "vehicle_dA3hqa",
         "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
         "vehicle_EBmgjq",
