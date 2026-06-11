@@ -555,6 +555,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-mercedes-g63"
           }
         },
+        "vehicle_UQtrDW": {
+          "type": "vehicle",
+          "name": "Bravo Monster Jam 24v Grave Digger",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/bravo_monster_cutout.png",
+            "vehicle_title": "Bravo Monster Jam 24v Grave Digger",
+            "vehicle_link": "https://www.mltoys.com/collections/bravo-monster-jam-24v-grave-digger"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -879,15 +888,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-c8-corvette-stingray"
           }
         },
-        "vehicle_UQtrDW": {
-          "type": "vehicle",
-          "name": "Bravo Monster Jam 24v Grave Digger",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/bravo_monster_cutout.png",
-            "vehicle_title": "Bravo Monster Jam 24v Grave Digger",
-            "vehicle_link": "https://www.mltoys.com/collections/bravo-monster-jam-24v-grave-digger"
-          }
-        },
         "vehicle_Qa6Bj9": {
           "type": "vehicle",
           "name": "Dynacraft 12v Mighty Dump Truck",
@@ -1097,6 +1097,7 @@
         "vehicle_kA7RJU",
         "vehicle_X8Bjgg",
         "vehicle_6dfrEG",
+        "vehicle_UQtrDW",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1133,7 +1134,6 @@
         "vehicle_97MVJn",
         "vehicle_YTBCQN",
         "vehicle_qkkMLp",
-        "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
         "vehicle_EBmgjq",
         "vehicle_FpweXW",
