@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_k7bxxj": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_GMC_Denali_png.png",
+            "vehicle_title": "Freddo 24v GMC Denali",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-gmc-denali"
+          }
+        },
         "vehicle_zYRFWr": {
           "type": "vehicle",
           "settings": {
@@ -770,6 +778,7 @@
         }
       },
       "block_order": [
+        "vehicle_k7bxxj",
         "vehicle_zYRFWr",
         "vehicle_ahCinF",
         "vehicle_zyVdVA",
