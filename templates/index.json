@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_NkFC3X": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ryder_XL_UTV_png.png",
+            "vehicle_title": "Ryder XL UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-xl-utv"
+          }
+        },
         "vehicle_XFygng": {
           "type": "vehicle",
           "settings": {
@@ -978,6 +986,7 @@
         }
       },
       "block_order": [
+        "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
         "vehicle_7Nm4i8",
