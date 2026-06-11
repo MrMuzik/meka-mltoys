@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_8zakmE": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_lambo_png.png",
+            "vehicle_title": "Ryder Lamborghini Aventador SVJ",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-lamborghini-aventador"
+          }
+        },
         "vehicle_pjdrzM": {
           "type": "vehicle",
           "settings": {
@@ -938,6 +946,7 @@
         }
       },
       "block_order": [
+        "vehicle_8zakmE",
         "vehicle_pjdrzM",
         "vehicle_xjXXLR",
         "vehicle_RUAEwC",
