@@ -546,6 +546,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-12v-gmc-denali-4x4"
           }
         },
+        "vehicle_6dfrEG": {
+          "type": "vehicle",
+          "name": "Big Toys Green Country 24v Mercedes G63",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Mercedes_G63.png",
+            "vehicle_title": "Big Toys Green Country 24v Mercedes G63",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-mercedes-g63"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -870,15 +879,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-c8-corvette-stingray"
           }
         },
-        "vehicle_6dfrEG": {
-          "type": "vehicle",
-          "name": "Big Toys Green Country 24v Mercedes G63",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/BTGC_Mercedes_G63.png",
-            "vehicle_title": "Big Toys Green Country 24v Mercedes G63",
-            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-mercedes-g63"
-          }
-        },
         "vehicle_UQtrDW": {
           "type": "vehicle",
           "name": "Bravo Monster Jam 24v Grave Digger",
@@ -1096,6 +1096,7 @@
         "vehicle_8Nzyzg",
         "vehicle_kA7RJU",
         "vehicle_X8Bjgg",
+        "vehicle_6dfrEG",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1132,7 +1133,6 @@
         "vehicle_97MVJn",
         "vehicle_YTBCQN",
         "vehicle_qkkMLp",
-        "vehicle_6dfrEG",
         "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
         "vehicle_EBmgjq",
