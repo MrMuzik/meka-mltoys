@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_pjdrzM": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_ford_super_duty_png.png",
+            "vehicle_title": "Ryder Ford Super Duty Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63-copy"
+          }
+        },
         "vehicle_xjXXLR": {
           "type": "vehicle",
           "settings": {
@@ -930,6 +938,7 @@
         }
       },
       "block_order": [
+        "vehicle_pjdrzM",
         "vehicle_xjXXLR",
         "vehicle_RUAEwC",
         "vehicle_z7D6ED",
