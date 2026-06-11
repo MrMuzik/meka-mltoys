@@ -447,6 +447,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/power-wheels-disney-lightning-mcqueen"
           }
         },
+        "vehicle_LkzqGQ": {
+          "type": "vehicle",
+          "name": "Power Wheels Porsche GT3",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/porche_cutout.png",
+            "vehicle_title": "Power Wheels Porsche GT3",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -843,15 +852,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_LkzqGQ": {
-          "type": "vehicle",
-          "name": "Power Wheels Porsche GT3",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/porche_cutout.png",
-            "vehicle_title": "Power Wheels Porsche GT3",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-porsche-gt3"
-          }
-        },
         "vehicle_Akyjix": {
           "type": "vehicle",
           "name": "Adventure Force 24v Thunder Tank",
@@ -1085,6 +1085,7 @@
         "vehicle_CipJ7G",
         "vehicle_DaFtyk",
         "vehicle_XRF9mV",
+        "vehicle_LkzqGQ",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1129,7 +1130,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_LkzqGQ",
         "vehicle_Akyjix",
         "vehicle_kA7RJU",
         "vehicle_dA3hqa",
