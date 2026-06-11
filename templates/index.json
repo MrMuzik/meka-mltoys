@@ -402,6 +402,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/power-wheels-ford-mustang"
           }
         },
+        "vehicle_kKAbER": {
+          "type": "vehicle",
+          "name": "Power Wheels Hot Wheels Racer",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/hotwheels_cutout.png",
+            "vehicle_title": "Power Wheels Hot Wheels Racer",
+            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -798,15 +807,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/best-choice-products-12v-land-rover"
           }
         },
-        "vehicle_kKAbER": {
-          "type": "vehicle",
-          "name": "Power Wheels Hot Wheels Racer",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/hotwheels_cutout.png",
-            "vehicle_title": "Power Wheels Hot Wheels Racer",
-            "vehicle_link": "https://www.mltoys.com/collections/power-wheels-hot-wheels-racer"
-          }
-        },
         "vehicle_yi83xR": {
           "type": "vehicle",
           "name": "Power Wheels Jeep Hurricane",
@@ -1080,6 +1080,7 @@
         "vehicle_y7CkyQ",
         "vehicle_VcBCjR",
         "vehicle_aLwVBB",
+        "vehicle_kKAbER",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1124,7 +1125,6 @@
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_KR4kxX",
-        "vehicle_kKAbER",
         "vehicle_yi83xR",
         "vehicle_CipJ7G",
         "vehicle_DaFtyk",
