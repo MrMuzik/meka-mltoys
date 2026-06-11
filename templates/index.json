@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_QAx3Hz": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Moderno_Lambo.png",
+            "vehicle_title": "Big Toys Country Lamborghini Aventador SVJ",
+            "vehicle_link": "shopify://collections/big-toys-country-lamborghini-aventador-svj"
+          }
+        },
         "vehicle_DA6Q3c": {
           "type": "vehicle",
           "settings": {
@@ -658,6 +666,7 @@
         }
       },
       "block_order": [
+        "vehicle_QAx3Hz",
         "vehicle_DA6Q3c",
         "vehicle_xyecRV",
         "vehicle_iUkNT3",
