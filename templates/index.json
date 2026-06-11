@@ -609,6 +609,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-cat-dump-truck"
           }
         },
+        "vehicle_97MVJn": {
+          "type": "vehicle",
+          "name": "Freddo 24v Buccaneer Dune Buggy",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_png.png",
+            "vehicle_title": "Freddo 24v Buccaneer Dune Buggy",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-buccaneer-dune-buggy"
+          }
+        },
+        "vehicle_DxVg4k": {
+          "type": "vehicle",
+          "name": "Freddo 24v Buccaneer XXL",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_XXL_png.png",
+            "vehicle_title": "Freddo 24v Buccaneer XXL",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-buccaneer-xxl-dune-buggy"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -897,24 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-c8-corvette-stingray"
           }
         },
-        "vehicle_DxVg4k": {
-          "type": "vehicle",
-          "name": "Freddo 24v Buccaneer XXL",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_XXL_png.png",
-            "vehicle_title": "Freddo 24v Buccaneer XXL",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-buccaneer-xxl-dune-buggy"
-          }
-        },
-        "vehicle_97MVJn": {
-          "type": "vehicle",
-          "name": "Freddo 24v Buccaneer Dune Buggy",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Buccaneer_png.png",
-            "vehicle_title": "Freddo 24v Buccaneer Dune Buggy",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-buccaneer-dune-buggy"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1103,6 +1103,8 @@
         "vehicle_EBmgjq",
         "vehicle_qkkMLp",
         "vehicle_YTBCQN",
+        "vehicle_97MVJn",
+        "vehicle_DxVg4k",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_zyVdVA",
         "vehicle_m6jPfd",
         "vehicle_BfQBrg",
-        "vehicle_DxVg4k",
-        "vehicle_97MVJn",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
