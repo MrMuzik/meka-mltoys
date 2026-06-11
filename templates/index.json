@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_diJPym": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Mercedes_GT63_57f316b6-a3ef-4cae-b23d-69e4fc60b653.png",
+            "vehicle_title": "Freddo 24v Mercedes GT63",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-gt63"
+          }
+        },
         "vehicle_Tb4ETW": {
           "type": "vehicle",
           "settings": {
@@ -794,6 +802,7 @@
         }
       },
       "block_order": [
+        "vehicle_diJPym",
         "vehicle_Tb4ETW",
         "vehicle_YaNVUr",
         "vehicle_k7bxxj",
