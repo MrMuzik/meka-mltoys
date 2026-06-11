@@ -681,6 +681,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-gmc-denali"
           }
         },
+        "vehicle_YaNVUr": {
+          "type": "vehicle",
+          "name": "Freddo 24v Lamborghini Huracan",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Huracan_png.png",
+            "vehicle_title": "Freddo 24v Lamborghini Huracan",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-lamborghini-huracan"
+          }
+        },
+        "vehicle_Tb4ETW": {
+          "type": "vehicle",
+          "name": "Freddo 24v Mercedes Benz G-Wagon",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_GWagon_png.png",
+            "vehicle_title": "Freddo 24v Mercedes Benz G-Wagon",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-benx-gwagon"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -897,24 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-gt63"
           }
         },
-        "vehicle_Tb4ETW": {
-          "type": "vehicle",
-          "name": "Freddo 24v Mercedes Benz G-Wagon",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_GWagon_png.png",
-            "vehicle_title": "Freddo 24v Mercedes Benz G-Wagon",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-benx-gwagon"
-          }
-        },
-        "vehicle_YaNVUr": {
-          "type": "vehicle",
-          "name": "Freddo 24v Lamborghini Huracan",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Huracan_png.png",
-            "vehicle_title": "Freddo 24v Lamborghini Huracan",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-lamborghini-huracan"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1111,6 +1111,8 @@
         "vehicle_ahCinF",
         "vehicle_zYRFWr",
         "vehicle_k7bxxj",
+        "vehicle_YaNVUr",
+        "vehicle_Tb4ETW",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_LexhCW",
         "vehicle_iMPeTg",
         "vehicle_diJPym",
-        "vehicle_Tb4ETW",
-        "vehicle_YaNVUr",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
