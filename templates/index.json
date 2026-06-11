@@ -537,6 +537,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-24v-challenger-xl"
           }
         },
+        "vehicle_X8Bjgg": {
+          "type": "vehicle",
+          "name": "Big Toys Green Country 12v GMC Denali 4x4",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_GMC_Denali_png.png",
+            "vehicle_title": "Big Toys Green Country 12v GMC Denali 4x4",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-12v-gmc-denali-4x4"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -870,15 +879,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-24v-mercedes-g63"
           }
         },
-        "vehicle_X8Bjgg": {
-          "type": "vehicle",
-          "name": "Big Toys Green Country 12v GMC Denali 4x4",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/BTGC_GMC_Denali_png.png",
-            "vehicle_title": "Big Toys Green Country 12v GMC Denali 4x4",
-            "vehicle_link": "https://www.mltoys.com/collections/big-toys-green-country-12v-gmc-denali-4x4"
-          }
-        },
         "vehicle_UQtrDW": {
           "type": "vehicle",
           "name": "Bravo Monster Jam 24v Grave Digger",
@@ -1095,6 +1095,7 @@
         "vehicle_jYyTiD",
         "vehicle_8Nzyzg",
         "vehicle_kA7RJU",
+        "vehicle_X8Bjgg",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1132,7 +1133,6 @@
         "vehicle_YTBCQN",
         "vehicle_qkkMLp",
         "vehicle_6dfrEG",
-        "vehicle_X8Bjgg",
         "vehicle_UQtrDW",
         "vehicle_Qa6Bj9",
         "vehicle_EBmgjq",
