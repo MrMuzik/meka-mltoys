@@ -699,6 +699,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-benx-gwagon"
           }
         },
+        "vehicle_diJPym": {
+          "type": "vehicle",
+          "name": "Freddo 24v Mercedes GT63",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Mercedes_GT63_57f316b6-a3ef-4cae-b23d-69e4fc60b653.png",
+            "vehicle_title": "Freddo 24v Mercedes GT63",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-gt63"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -906,15 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-raider-jeep"
           }
         },
-        "vehicle_diJPym": {
-          "type": "vehicle",
-          "name": "Freddo 24v Mercedes GT63",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Mercedes_GT63_57f316b6-a3ef-4cae-b23d-69e4fc60b653.png",
-            "vehicle_title": "Freddo 24v Mercedes GT63",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-gt63"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1113,6 +1113,7 @@
         "vehicle_k7bxxj",
         "vehicle_YaNVUr",
         "vehicle_Tb4ETW",
+        "vehicle_diJPym",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_YC3H48",
         "vehicle_LexhCW",
         "vehicle_iMPeTg",
-        "vehicle_diJPym",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
