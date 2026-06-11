@@ -315,8 +315,9 @@
         "vehicle_emC8Hc": {
           "type": "vehicle",
           "settings": {
-            "vehicle_title": "Vehicle Name",
-            "vehicle_link": ""
+            "vehicle_image": "shopify://shop_images/Garvee_Dump_Truck_png.png",
+            "vehicle_title": "Garvee 24v Dump Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-dump-truck"
           }
         },
         "vehicle_U3WWQR": {
