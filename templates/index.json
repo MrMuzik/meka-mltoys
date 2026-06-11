@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_Tb4ETW": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_GWagon_png.png",
+            "vehicle_title": "Freddo 24v Mercedes Benz G-Wagon",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-benx-gwagon"
+          }
+        },
         "vehicle_YaNVUr": {
           "type": "vehicle",
           "settings": {
@@ -786,6 +794,7 @@
         }
       },
       "block_order": [
+        "vehicle_Tb4ETW",
         "vehicle_YaNVUr",
         "vehicle_k7bxxj",
         "vehicle_zYRFWr",
