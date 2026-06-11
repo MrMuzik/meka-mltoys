@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_YTBCQN": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Cat_Dump_png.png",
+            "vehicle_title": "Freddo 12v Cat Dump Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-cat-dump-truck"
+          }
+        },
         "vehicle_qkkMLp": {
           "type": "vehicle",
           "settings": {
@@ -706,6 +714,7 @@
         }
       },
       "block_order": [
+        "vehicle_YTBCQN",
         "vehicle_qkkMLp",
         "vehicle_6dfrEG",
         "vehicle_X8Bjgg",
