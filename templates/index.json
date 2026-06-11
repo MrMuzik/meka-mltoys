@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_LexhCW": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Storm_png.png",
+            "vehicle_title": "Freddo 24v Storm UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-storm-utv"
+          }
+        },
         "vehicle_iMPeTg": {
           "type": "vehicle",
           "settings": {
@@ -810,6 +818,7 @@
         }
       },
       "block_order": [
+        "vehicle_LexhCW",
         "vehicle_iMPeTg",
         "vehicle_diJPym",
         "vehicle_Tb4ETW",
