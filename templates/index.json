@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_YaNVUr": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Huracan_png.png",
+            "vehicle_title": "Freddo 24v Lamborghini Huracan",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-lamborghini-huracan"
+          }
+        },
         "vehicle_k7bxxj": {
           "type": "vehicle",
           "settings": {
@@ -778,6 +786,7 @@
         }
       },
       "block_order": [
+        "vehicle_YaNVUr",
         "vehicle_k7bxxj",
         "vehicle_zYRFWr",
         "vehicle_ahCinF",
