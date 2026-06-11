@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_m6jPfd": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Can-Am_Maverick_png.png",
+            "vehicle_title": "Freddo 24v Can-Am Maverick",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-can-am-maverick"
+          }
+        },
         "vehicle_BfQBrg": {
           "type": "vehicle",
           "settings": {
@@ -738,6 +746,7 @@
         }
       },
       "block_order": [
+        "vehicle_m6jPfd",
         "vehicle_BfQBrg",
         "vehicle_DxVg4k",
         "vehicle_97MVJn",
