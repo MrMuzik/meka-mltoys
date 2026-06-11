@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_KR4kxX": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BCP_Land_rover.png",
+            "vehicle_title": "BCP 12v Land Rover",
+            "vehicle_link": ""
+          }
+        },
         "vehicle_iUkNT3": {
           "type": "vehicle",
           "settings": {
@@ -634,6 +642,7 @@
         }
       },
       "block_order": [
+        "vehicle_KR4kxX",
         "vehicle_iUkNT3",
         "vehicle_jJFBe8",
         "vehicle_fXeNXY",
