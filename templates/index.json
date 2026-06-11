@@ -512,6 +512,7 @@
         },
         "vehicle_iMPeTg": {
           "type": "vehicle",
+          "name": "Freddo 24v Raider Jeep",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Raider_png.png",
             "vehicle_title": "Freddo 24v Raider Jeep",
@@ -520,6 +521,7 @@
         },
         "vehicle_diJPym": {
           "type": "vehicle",
+          "name": "Freddo 24v Mercedes GT63",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Mercedes_GT63_57f316b6-a3ef-4cae-b23d-69e4fc60b653.png",
             "vehicle_title": "Freddo 24v Mercedes GT63",
@@ -528,6 +530,7 @@
         },
         "vehicle_Tb4ETW": {
           "type": "vehicle",
+          "name": "Freddo 24v Mercedes Benz G-Wagon",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_GWagon_png.png",
             "vehicle_title": "Freddo 24v Mercedes Benz G-Wagon",
@@ -536,6 +539,7 @@
         },
         "vehicle_YaNVUr": {
           "type": "vehicle",
+          "name": "Freddo 24v Lamborghini Huracan",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Huracan_png.png",
             "vehicle_title": "Freddo 24v Lamborghini Huracan",
@@ -544,6 +548,7 @@
         },
         "vehicle_k7bxxj": {
           "type": "vehicle",
+          "name": "Freddo 24v GMC Denali",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_GMC_Denali_png.png",
             "vehicle_title": "Freddo 24v GMC Denali",
@@ -552,6 +557,7 @@
         },
         "vehicle_zYRFWr": {
           "type": "vehicle",
+          "name": "Freddo 24v Chevrolet Silverado",
           "settings": {
             "vehicle_image": "shopify://shop_images/Freddo_Silverado_png.png",
             "vehicle_title": "Freddo 24v Chevrolet Silverado",
