@@ -312,6 +312,21 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_RfyJzV": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/moderno_can-am_outlander_png.png",
+            "vehicle_title": "Moderno Can-Am Outlander",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-outlander"
+          }
+        },
+        "vehicle_TLY4Hc": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_title": "Vehicle Name",
+            "vehicle_link": ""
+          }
+        },
         "vehicle_jW9jyU": {
           "type": "vehicle",
           "settings": {
@@ -874,6 +889,8 @@
         }
       },
       "block_order": [
+        "vehicle_RfyJzV",
+        "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
         "vehicle_mpGdVW",
         "vehicle_RgVwtH",
