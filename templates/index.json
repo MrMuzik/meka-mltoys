@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_YC3H48": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Willys_png.png",
+            "vehicle_title": "Freddo 24v Military Willy Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-willy-military-jeep"
+          }
+        },
         "vehicle_LexhCW": {
           "type": "vehicle",
           "settings": {
@@ -818,6 +826,7 @@
         }
       },
       "block_order": [
+        "vehicle_YC3H48",
         "vehicle_LexhCW",
         "vehicle_iMPeTg",
         "vehicle_diJPym",
