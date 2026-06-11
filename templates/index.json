@@ -312,6 +312,14 @@
     "ml_upgrade_vehicle_HzwWPQ": {
       "type": "ml-upgrade-vehicle",
       "blocks": {
+        "vehicle_qkkMLp": {
+          "type": "vehicle",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_C8_Corvette_Stingray.png",
+            "vehicle_title": "Freddo 12v C8 Corvette Stingray",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-c8-corvette-stingray"
+          }
+        },
         "vehicle_6dfrEG": {
           "type": "vehicle",
           "settings": {
@@ -698,6 +706,7 @@
         }
       },
       "block_order": [
+        "vehicle_qkkMLp",
         "vehicle_6dfrEG",
         "vehicle_X8Bjgg",
         "vehicle_8Nzyzg",
