@@ -591,6 +591,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/dynacraft-24v-utv"
           }
         },
+        "vehicle_qkkMLp": {
+          "type": "vehicle",
+          "name": "Freddo 12v C8 Corvette Stingray",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_C8_Corvette_Stingray.png",
+            "vehicle_title": "Freddo 12v C8 Corvette Stingray",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-c8-corvette-stingray"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -906,15 +915,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-cat-dump-truck"
           }
         },
-        "vehicle_qkkMLp": {
-          "type": "vehicle",
-          "name": "Freddo 12v C8 Corvette Stingray",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_C8_Corvette_Stingray.png",
-            "vehicle_title": "Freddo 12v C8 Corvette Stingray",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-12v-c8-corvette-stingray"
-          }
-        },
         "vehicle_qCW6rx": {
           "type": "vehicle",
           "name": "Huffy 12v Ford F150",
@@ -1101,6 +1101,7 @@
         "vehicle_Qa6Bj9",
         "vehicle_FpweXW",
         "vehicle_EBmgjq",
+        "vehicle_qkkMLp",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_DxVg4k",
         "vehicle_97MVJn",
         "vehicle_YTBCQN",
-        "vehicle_qkkMLp",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
