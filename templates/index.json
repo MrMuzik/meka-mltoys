@@ -980,6 +980,7 @@
         },
         "vehicle_c8xRCd": {
           "type": "vehicle",
+          "name": "Kid Trax Dodge Charger",
           "settings": {
             "vehicle_image": "shopify://shop_images/copcar_cutout.png",
             "vehicle_title": "Kid Trax Dodge Charger",
@@ -988,6 +989,7 @@
         },
         "vehicle_rVtQWD": {
           "type": "vehicle",
+          "name": "Kid Trax Dodge Ram",
           "settings": {
             "vehicle_image": "shopify://shop_images/dodge_ram_cutout.png",
             "vehicle_title": "Kid Trax Dodge Ram",
@@ -996,6 +998,7 @@
         },
         "vehicle_GABVQL": {
           "type": "vehicle",
+          "name": "Mercedes G63 6x6",
           "settings": {
             "vehicle_image": "shopify://shop_images/mercedes_G63_cutout.png",
             "vehicle_title": "Mercedes G63 6x6",
@@ -1004,6 +1007,7 @@
         },
         "vehicle_McdVpG": {
           "type": "vehicle",
+          "name": "Peg Perego John Deere Gator",
           "settings": {
             "vehicle_image": "shopify://shop_images/peg_john_deer_cutout.png",
             "vehicle_title": "Peg Perego John Deere Gator",
@@ -1012,6 +1016,7 @@
         },
         "vehicle_HhF8BK": {
           "type": "vehicle",
+          "name": "Peg Perego John Deere Ground Force Tractor",
           "settings": {
             "vehicle_image": "shopify://shop_images/john_deer_gound_force_cutout.png",
             "vehicle_title": "Peg Perego John Deere Ground Force Tractor",
@@ -1020,6 +1025,7 @@
         },
         "vehicle_dPwRTQ": {
           "type": "vehicle",
+          "name": "Peg Perego Polaris RZR 900",
           "settings": {
             "vehicle_image": "shopify://shop_images/peg_polaris.png",
             "vehicle_title": "Peg Perego Polaris RZR 900",
@@ -1028,6 +1034,7 @@
         },
         "vehicle_hUfKBY": {
           "type": "vehicle",
+          "name": "Roll Play 24v Monster Truck",
           "settings": {
             "vehicle_image": "shopify://shop_images/monster_truck_cutout.png",
             "vehicle_title": "Roll Play 24v Monster Truck",
@@ -1036,6 +1043,7 @@
         },
         "vehicle_EheBWY": {
           "type": "vehicle",
+          "name": "Roll Play Chevy Silverado",
           "settings": {
             "vehicle_image": "shopify://shop_images/silverado_cutout.png",
             "vehicle_title": "Roll Play Chevy Silverado",
@@ -1044,6 +1052,7 @@
         },
         "vehicle_yFmWMn": {
           "type": "vehicle",
+          "name": "Roll Play GMC Denali",
           "settings": {
             "vehicle_image": "shopify://shop_images/gmc_cutout.png",
             "vehicle_title": "Roll Play GMC Denali",
@@ -1052,6 +1061,7 @@
         },
         "vehicle_EF4jWC": {
           "type": "vehicle",
+          "name": "Ryder Toys 24v All Wheel Drive Buggy",
           "settings": {
             "vehicle_image": "shopify://shop_images/ryder_cutout.png",
             "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
