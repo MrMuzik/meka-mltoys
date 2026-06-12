@@ -969,6 +969,15 @@
             "vehicle_link": ""
           }
         },
+        "vehicle_pjdrzM": {
+          "type": "vehicle",
+          "name": "Ryder Ford Super Duty Truck",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_ford_super_duty_png.png",
+            "vehicle_title": "Ryder Ford Super Duty Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63-copy"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1021,15 +1030,6 @@
             "vehicle_image": "shopify://shop_images/ryder_lambo_png.png",
             "vehicle_title": "Ryder Lamborghini Aventador SVJ",
             "vehicle_link": "https://www.mltoys.com/collections/ryder-lamborghini-aventador"
-          }
-        },
-        "vehicle_pjdrzM": {
-          "type": "vehicle",
-          "name": "Ryder Ford Super Duty Truck",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/ryder_ford_super_duty_png.png",
-            "vehicle_title": "Ryder Ford Super Duty Truck",
-            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63-copy"
           }
         },
         "vehicle_RUAEwC": {
@@ -1143,13 +1143,13 @@
         "vehicle_hUfKBY",
         "vehicle_EF4jWC",
         "vehicle_xjXXLR",
+        "vehicle_pjdrzM",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
         "vehicle_7Nm4i8",
         "vehicle_J37Lr9",
         "vehicle_8zakmE",
-        "vehicle_pjdrzM",
         "vehicle_RUAEwC",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
