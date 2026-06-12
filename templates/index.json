@@ -708,6 +708,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-mercedes-gt63"
           }
         },
+        "vehicle_iMPeTg": {
+          "type": "vehicle",
+          "name": "Freddo 24v Raider Jeep",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Raider_png.png",
+            "vehicle_title": "Freddo 24v Raider Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-raider-jeep"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -904,15 +913,6 @@
             "vehicle_image": "shopify://shop_images/Freddo_Storm_png.png",
             "vehicle_title": "Freddo 24v Storm UTV",
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-storm-utv"
-          }
-        },
-        "vehicle_iMPeTg": {
-          "type": "vehicle",
-          "name": "Freddo 24v Raider Jeep",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Raider_png.png",
-            "vehicle_title": "Freddo 24v Raider Jeep",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-raider-jeep"
           }
         },
         "vehicle_qCW6rx": {
@@ -1114,6 +1114,7 @@
         "vehicle_YaNVUr",
         "vehicle_Tb4ETW",
         "vehicle_diJPym",
+        "vehicle_iMPeTg",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_U3WWQR",
         "vehicle_YC3H48",
         "vehicle_LexhCW",
-        "vehicle_iMPeTg",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
