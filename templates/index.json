@@ -888,6 +888,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-renegade"
           }
         },
+        "vehicle_cRiqWM": {
+          "type": "vehicle",
+          "name": "Moderno Lamborghini Aventador SVJ",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
+            "vehicle_title": "Moderno Lamborghini Aventador SVJ",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-lamborghini-aventador-svj"
+          }
+        },
         "vehicle_McdVpG": {
           "type": "vehicle",
           "name": "Peg Perego John Deere Gator",
@@ -1041,15 +1050,6 @@
             "vehicle_link": ""
           }
         },
-        "vehicle_cRiqWM": {
-          "type": "vehicle",
-          "name": "Moderno Lamborghini Aventador SVJ",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
-            "vehicle_title": "Moderno Lamborghini Aventador SVJ",
-            "vehicle_link": "https://www.mltoys.com/collections/moderno-lamborghini-aventador-svj"
-          }
-        },
         "vehicle_pDRxBp": {
           "type": "vehicle",
           "name": "Kid Trax Zero Turn Lawn Mower",
@@ -1125,6 +1125,7 @@
         "vehicle_jW9jyU",
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
+        "vehicle_cRiqWM",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
         "vehicle_z7D6ED",
@@ -1142,7 +1143,6 @@
         "vehicle_XFygng",
         "vehicle_NkFC3X",
         "vehicle_kpU8Mw",
-        "vehicle_cRiqWM",
         "vehicle_pDRxBp"
       ],
       "name": "Upgrades by Vehicle",
