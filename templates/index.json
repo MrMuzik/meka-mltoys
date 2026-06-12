@@ -852,6 +852,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
           }
         },
+        "vehicle_GABVQL": {
+          "type": "vehicle",
+          "name": "Mercedes G63 6x6",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/mercedes_G63_cutout.png",
+            "vehicle_title": "Mercedes G63 6x6",
+            "vehicle_link": "https://www.mltoys.com/collections/mercedes-g63-6x6"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -996,15 +1005,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
           }
         },
-        "vehicle_GABVQL": {
-          "type": "vehicle",
-          "name": "Mercedes G63 6x6",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/mercedes_G63_cutout.png",
-            "vehicle_title": "Mercedes G63 6x6",
-            "vehicle_link": "https://www.mltoys.com/collections/mercedes-g63-6x6"
-          }
-        },
         "vehicle_McdVpG": {
           "type": "vehicle",
           "name": "Peg Perego John Deere Gator",
@@ -1130,6 +1130,7 @@
         "vehicle_n3DXMb",
         "vehicle_c8xRCd",
         "vehicle_rVtQWD",
+        "vehicle_GABVQL",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1146,7 +1147,6 @@
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
         "vehicle_pDRxBp",
-        "vehicle_GABVQL",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
         "vehicle_dPwRTQ",
