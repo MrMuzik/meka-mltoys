@@ -780,6 +780,33 @@
             "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-toyota-land-cruiser"
           }
         },
+        "vehicle_qCW6rx": {
+          "type": "vehicle",
+          "name": "Huffy 12v Ford F150",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/huffy_ford.png",
+            "vehicle_title": "Huffy 12v Ford F150",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-12v-f-150"
+          }
+        },
+        "vehicle_iyVLpg": {
+          "type": "vehicle",
+          "name": "Huffy C8 Corvette",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/corvette_cutout.png",
+            "vehicle_title": "Huffy C8 Corvette",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-c8-corvette"
+          }
+        },
+        "vehicle_B434hw": {
+          "type": "vehicle",
+          "name": "Huffy Land Rover",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/huffy_landrover.png",
+            "vehicle_title": "Huffy Land Rover",
+            "vehicle_link": "https://www.mltoys.com/collections/huffy-land-rover"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -913,33 +940,6 @@
             "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
             "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
             "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
-          }
-        },
-        "vehicle_qCW6rx": {
-          "type": "vehicle",
-          "name": "Huffy 12v Ford F150",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/huffy_ford.png",
-            "vehicle_title": "Huffy 12v Ford F150",
-            "vehicle_link": "https://www.mltoys.com/collections/huffy-12v-f-150"
-          }
-        },
-        "vehicle_iyVLpg": {
-          "type": "vehicle",
-          "name": "Huffy C8 Corvette",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/corvette_cutout.png",
-            "vehicle_title": "Huffy C8 Corvette",
-            "vehicle_link": "https://www.mltoys.com/collections/huffy-c8-corvette"
-          }
-        },
-        "vehicle_B434hw": {
-          "type": "vehicle",
-          "name": "Huffy Land Rover",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/huffy_landrover.png",
-            "vehicle_title": "Huffy Land Rover",
-            "vehicle_link": "https://www.mltoys.com/collections/huffy-land-rover"
           }
         },
         "vehicle_9wCyRp": {
@@ -1122,6 +1122,9 @@
         "vehicle_bbcTPc",
         "vehicle_RgVwtH",
         "vehicle_mpGdVW",
+        "vehicle_qCW6rx",
+        "vehicle_iyVLpg",
+        "vehicle_B434hw",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1137,9 +1140,6 @@
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
-        "vehicle_qCW6rx",
-        "vehicle_iyVLpg",
-        "vehicle_B434hw",
         "vehicle_9wCyRp",
         "vehicle_pDRxBp",
         "vehicle_QM9BFX",
