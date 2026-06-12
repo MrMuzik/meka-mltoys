@@ -1014,15 +1014,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/ryder-trailflex-jeep"
           }
         },
-        "vehicle_NkFC3X": {
-          "type": "vehicle",
-          "name": "Ryder XL UTV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Ryder_XL_UTV_png.png",
-            "vehicle_title": "Ryder XL UTV",
-            "vehicle_link": "https://www.mltoys.com/collections/ryder-xl-utv"
-          }
-        },
         "vehicle_XFygng": {
           "type": "vehicle",
           "name": "Ryder Vintage Jeep",
@@ -1032,13 +1023,13 @@
             "vehicle_link": "https://www.mltoys.com/collections/ryder-vintage-jeep"
           }
         },
-        "vehicle_RUAEwC": {
+        "vehicle_NkFC3X": {
           "type": "vehicle",
-          "name": "Ryder Toys 24v All Wheel Drive Buggy",
+          "name": "Ryder XL UTV",
           "settings": {
-            "vehicle_image": "shopify://shop_images/Ryder_24v_png.png",
-            "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
-            "vehicle_link": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
+            "vehicle_image": "shopify://shop_images/Ryder_XL_UTV_png.png",
+            "vehicle_title": "Ryder XL UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-xl-utv"
           }
         },
         "vehicle_kpU8Mw": {
@@ -1148,9 +1139,8 @@
         "vehicle_J37Lr9",
         "vehicle_7Nm4i8",
         "vehicle_tqVYqQ",
-        "vehicle_NkFC3X",
         "vehicle_XFygng",
-        "vehicle_RUAEwC",
+        "vehicle_NkFC3X",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_pDRxBp"
