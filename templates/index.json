@@ -978,6 +978,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63-copy"
           }
         },
+        "vehicle_8zakmE": {
+          "type": "vehicle",
+          "name": "Ryder Lamborghini Aventador SVJ",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/ryder_lambo_png.png",
+            "vehicle_title": "Ryder Lamborghini Aventador SVJ",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-lamborghini-aventador"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1021,15 +1030,6 @@
             "vehicle_image": "shopify://shop_images/ryder_lifted_jeep_png.png",
             "vehicle_title": "Ryder 12&24v Lifted Jeep",
             "vehicle_link": "https://www.mltoys.com/collections/ryder-lifted-jeep"
-          }
-        },
-        "vehicle_8zakmE": {
-          "type": "vehicle",
-          "name": "Ryder Lamborghini Aventador SVJ",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/ryder_lambo_png.png",
-            "vehicle_title": "Ryder Lamborghini Aventador SVJ",
-            "vehicle_link": "https://www.mltoys.com/collections/ryder-lamborghini-aventador"
           }
         },
         "vehicle_RUAEwC": {
@@ -1144,12 +1144,12 @@
         "vehicle_EF4jWC",
         "vehicle_xjXXLR",
         "vehicle_pjdrzM",
+        "vehicle_8zakmE",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
         "vehicle_7Nm4i8",
         "vehicle_J37Lr9",
-        "vehicle_8zakmE",
         "vehicle_RUAEwC",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
