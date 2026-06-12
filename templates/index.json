@@ -933,6 +933,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/roll-play-gmc-denali"
           }
         },
+        "vehicle_EheBWY": {
+          "type": "vehicle",
+          "name": "Roll Play Chevy Silverado",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/silverado_cutout.png",
+            "vehicle_title": "Roll Play Chevy Silverado",
+            "vehicle_link": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
+          }
+        },
+        "vehicle_hUfKBY": {
+          "type": "vehicle",
+          "name": "Roll Play 24v Monster Truck",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/monster_truck_cutout.png",
+            "vehicle_title": "Roll Play 24v Monster Truck",
+            "vehicle_link": "https://www.mltoys.com/collections/rollplay-24v-monster-truck"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1041,24 +1059,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
           }
         },
-        "vehicle_hUfKBY": {
-          "type": "vehicle",
-          "name": "Roll Play 24v Monster Truck",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/monster_truck_cutout.png",
-            "vehicle_title": "Roll Play 24v Monster Truck",
-            "vehicle_link": "https://www.mltoys.com/collections/rollplay-24v-monster-truck"
-          }
-        },
-        "vehicle_EheBWY": {
-          "type": "vehicle",
-          "name": "Roll Play Chevy Silverado",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/silverado_cutout.png",
-            "vehicle_title": "Roll Play Chevy Silverado",
-            "vehicle_link": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
-          }
-        },
         "vehicle_EF4jWC": {
           "type": "vehicle",
           "name": "Ryder Toys 24v All Wheel Drive Buggy",
@@ -1139,6 +1139,8 @@
         "vehicle_z7D6ED",
         "vehicle_dPwRTQ",
         "vehicle_yFmWMn",
+        "vehicle_EheBWY",
+        "vehicle_hUfKBY",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1151,8 +1153,6 @@
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_pDRxBp",
-        "vehicle_hUfKBY",
-        "vehicle_EheBWY",
         "vehicle_EF4jWC"
       ],
       "name": "Upgrades by Vehicle",
