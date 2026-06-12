@@ -1049,6 +1049,15 @@
             "vehicle_title": "Ryder XL UTV",
             "vehicle_link": "https://www.mltoys.com/collections/ryder-xl-utv"
           }
+        },
+        "vehicle_nbCb3h": {
+          "type": "vehicle",
+          "name": "Tobbi 24v Lamborghini",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Tobbi_Lamborghini_png.png",
+            "vehicle_title": "Tobbi 24v Lamborghini",
+            "vehicle_link": "https://www.mltoys.com/collections/tobbi-24v-lamborghini"
+          }
         }
       },
       "block_order": [
@@ -1133,7 +1142,8 @@
         "vehicle_7Nm4i8",
         "vehicle_tqVYqQ",
         "vehicle_XFygng",
-        "vehicle_NkFC3X"
+        "vehicle_NkFC3X",
+        "vehicle_nbCb3h"
       ],
       "name": "Upgrades by Vehicle",
       "settings": {
