@@ -834,6 +834,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-2021-ford-bronco"
           }
         },
+        "vehicle_c8xRCd": {
+          "type": "vehicle",
+          "name": "Kid Trax Dodge Charger",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/copcar_cutout.png",
+            "vehicle_title": "Kid Trax Dodge Charger",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-charger"
+          }
+        },
+        "vehicle_rVtQWD": {
+          "type": "vehicle",
+          "name": "Kid Trax Dodge Ram",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/dodge_ram_cutout.png",
+            "vehicle_title": "Kid Trax Dodge Ram",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -978,24 +996,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
           }
         },
-        "vehicle_c8xRCd": {
-          "type": "vehicle",
-          "name": "Kid Trax Dodge Charger",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/copcar_cutout.png",
-            "vehicle_title": "Kid Trax Dodge Charger",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-charger"
-          }
-        },
-        "vehicle_rVtQWD": {
-          "type": "vehicle",
-          "name": "Kid Trax Dodge Ram",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/dodge_ram_cutout.png",
-            "vehicle_title": "Kid Trax Dodge Ram",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
-          }
-        },
         "vehicle_GABVQL": {
           "type": "vehicle",
           "name": "Mercedes G63 6x6",
@@ -1128,6 +1128,8 @@
         "vehicle_9wCyRp",
         "vehicle_QM9BFX",
         "vehicle_n3DXMb",
+        "vehicle_c8xRCd",
+        "vehicle_rVtQWD",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1144,8 +1146,6 @@
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
         "vehicle_pDRxBp",
-        "vehicle_c8xRCd",
-        "vehicle_rVtQWD",
         "vehicle_GABVQL",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
