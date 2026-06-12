@@ -888,6 +888,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-renegade"
           }
         },
+        "vehicle_McdVpG": {
+          "type": "vehicle",
+          "name": "Peg Perego John Deere Gator",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/peg_john_deer_cutout.png",
+            "vehicle_title": "Peg Perego John Deere Gator",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-gator"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1003,15 +1012,6 @@
             "vehicle_image": "shopify://shop_images/lawnmower_cutout.png",
             "vehicle_title": "Kid Trax Zero Turn Lawn Mower",
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
-          }
-        },
-        "vehicle_McdVpG": {
-          "type": "vehicle",
-          "name": "Peg Perego John Deere Gator",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/peg_john_deer_cutout.png",
-            "vehicle_title": "Peg Perego John Deere Gator",
-            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-gator"
           }
         },
         "vehicle_HhF8BK": {
@@ -1134,6 +1134,7 @@
         "vehicle_jW9jyU",
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
+        "vehicle_McdVpG",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1147,7 +1148,6 @@
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_pDRxBp",
-        "vehicle_McdVpG",
         "vehicle_HhF8BK",
         "vehicle_dPwRTQ",
         "vehicle_hUfKBY",
