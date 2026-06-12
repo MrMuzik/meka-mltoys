@@ -897,6 +897,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/moderno-lamborghini-aventador-svj"
           }
         },
+        "vehicle_kpU8Mw": {
+          "type": "vehicle",
+          "name": "Moderno 24v Mercedes G63",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/moderno_g63_png.png",
+            "vehicle_title": "Moderno 24v Mercedes G63",
+            "vehicle_link": ""
+          }
+        },
         "vehicle_McdVpG": {
           "type": "vehicle",
           "name": "Peg Perego John Deere Gator",
@@ -1041,15 +1050,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/ryder-xl-utv"
           }
         },
-        "vehicle_kpU8Mw": {
-          "type": "vehicle",
-          "name": "Moderno 24v Mercedes G63",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/moderno_g63_png.png",
-            "vehicle_title": "Moderno 24v Mercedes G63",
-            "vehicle_link": ""
-          }
-        },
         "vehicle_pDRxBp": {
           "type": "vehicle",
           "name": "Kid Trax Zero Turn Lawn Mower",
@@ -1126,6 +1126,7 @@
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
         "vehicle_cRiqWM",
+        "vehicle_kpU8Mw",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
         "vehicle_z7D6ED",
@@ -1142,7 +1143,6 @@
         "vehicle_tqVYqQ",
         "vehicle_XFygng",
         "vehicle_NkFC3X",
-        "vehicle_kpU8Mw",
         "vehicle_pDRxBp"
       ],
       "name": "Upgrades by Vehicle",
