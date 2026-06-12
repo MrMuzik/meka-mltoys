@@ -735,6 +735,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-willy-military-jeep"
           }
         },
+        "vehicle_U3WWQR": {
+          "type": "vehicle",
+          "name": "Garvee 24v Chevy Silverado",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Garvee_Chevy_Silverado_png.png",
+            "vehicle_title": "Garvee 24v Chevy Silverado",
+            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-chevy-silverado"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -904,15 +913,6 @@
             "vehicle_image": "shopify://shop_images/Garvee_Dump_Truck_png.png",
             "vehicle_title": "Garvee 24v Dump Truck",
             "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-dump-truck"
-          }
-        },
-        "vehicle_U3WWQR": {
-          "type": "vehicle",
-          "name": "Garvee 24v Chevy Silverado",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Garvee_Chevy_Silverado_png.png",
-            "vehicle_title": "Garvee 24v Chevy Silverado",
-            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-chevy-silverado"
           }
         },
         "vehicle_qCW6rx": {
@@ -1117,6 +1117,7 @@
         "vehicle_iMPeTg",
         "vehicle_LexhCW",
         "vehicle_YC3H48",
+        "vehicle_U3WWQR",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1136,7 +1137,6 @@
         "vehicle_RgVwtH",
         "vehicle_bbcTPc",
         "vehicle_emC8Hc",
-        "vehicle_U3WWQR",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
