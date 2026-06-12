@@ -807,6 +807,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/huffy-land-rover"
           }
         },
+        "vehicle_9wCyRp": {
+          "type": "vehicle",
+          "name": "Kid MotorZ Camaro",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/camaro_cutout.png",
+            "vehicle_title": "Kid MotorZ Camaro",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-motorz-camaro"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -940,15 +949,6 @@
             "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
             "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
             "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
-          }
-        },
-        "vehicle_9wCyRp": {
-          "type": "vehicle",
-          "name": "Kid MotorZ Camaro",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/camaro_cutout.png",
-            "vehicle_title": "Kid MotorZ Camaro",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-motorz-camaro"
           }
         },
         "vehicle_pDRxBp": {
@@ -1125,6 +1125,7 @@
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
+        "vehicle_9wCyRp",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1140,7 +1141,6 @@
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
-        "vehicle_9wCyRp",
         "vehicle_pDRxBp",
         "vehicle_QM9BFX",
         "vehicle_n3DXMb",
