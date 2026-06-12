@@ -852,15 +852,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
           }
         },
-        "vehicle_jW9jyU": {
-          "type": "vehicle",
-          "name": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
-            "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
-            "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
-          }
-        },
         "vehicle_GABVQL": {
           "type": "vehicle",
           "name": "Mercedes G63 6x6",
@@ -868,6 +859,15 @@
             "vehicle_image": "shopify://shop_images/mercedes_G63_cutout.png",
             "vehicle_title": "Mercedes G63 6x6",
             "vehicle_link": "https://www.mltoys.com/collections/mercedes-g63-6x6"
+          }
+        },
+        "vehicle_jW9jyU": {
+          "type": "vehicle",
+          "name": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
+            "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
           }
         },
         "vehicle_NkFC3X": {
@@ -1130,8 +1130,8 @@
         "vehicle_n3DXMb",
         "vehicle_c8xRCd",
         "vehicle_rVtQWD",
-        "vehicle_jW9jyU",
         "vehicle_GABVQL",
+        "vehicle_jW9jyU",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
