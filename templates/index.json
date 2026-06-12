@@ -852,15 +852,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-dodge-ram"
           }
         },
-        "vehicle_pDRxBp": {
-          "type": "vehicle",
-          "name": "Kid Trax Zero Turn Lawn Mower",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/lawnmower_cutout.png",
-            "vehicle_title": "Kid Trax Zero Turn Lawn Mower",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
-          }
-        },
         "vehicle_GABVQL": {
           "type": "vehicle",
           "name": "Mercedes G63 6x6",
@@ -1121,7 +1112,6 @@
         "vehicle_n3DXMb",
         "vehicle_c8xRCd",
         "vehicle_rVtQWD",
-        "vehicle_pDRxBp",
         "vehicle_GABVQL",
         "vehicle_jW9jyU",
         "vehicle_RfyJzV",
