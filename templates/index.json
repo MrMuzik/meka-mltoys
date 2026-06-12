@@ -924,6 +924,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/peg-perego-polaris-rzr-900"
           }
         },
+        "vehicle_yFmWMn": {
+          "type": "vehicle",
+          "name": "Roll Play GMC Denali",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/gmc_cutout.png",
+            "vehicle_title": "Roll Play GMC Denali",
+            "vehicle_link": "https://www.mltoys.com/collections/roll-play-gmc-denali"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1050,15 +1059,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/roll-play-chevy-silverado"
           }
         },
-        "vehicle_yFmWMn": {
-          "type": "vehicle",
-          "name": "Roll Play GMC Denali",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/gmc_cutout.png",
-            "vehicle_title": "Roll Play GMC Denali",
-            "vehicle_link": "https://www.mltoys.com/collections/roll-play-gmc-denali"
-          }
-        },
         "vehicle_EF4jWC": {
           "type": "vehicle",
           "name": "Ryder Toys 24v All Wheel Drive Buggy",
@@ -1138,6 +1138,7 @@
         "vehicle_HhF8BK",
         "vehicle_z7D6ED",
         "vehicle_dPwRTQ",
+        "vehicle_yFmWMn",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1152,7 +1153,6 @@
         "vehicle_pDRxBp",
         "vehicle_hUfKBY",
         "vehicle_EheBWY",
-        "vehicle_yFmWMn",
         "vehicle_EF4jWC"
       ],
       "name": "Upgrades by Vehicle",
