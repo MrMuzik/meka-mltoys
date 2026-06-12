@@ -879,6 +879,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-outlander"
           }
         },
+        "vehicle_TLY4Hc": {
+          "type": "vehicle",
+          "name": "Moderno Can-Am Renegade",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/moderno_can_am_renegade_png.png",
+            "vehicle_title": "Moderno Can-Am Renegade",
+            "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-renegade"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -985,15 +994,6 @@
             "vehicle_image": "shopify://shop_images/Moderno_Lambo_png.png",
             "vehicle_title": "Moderno Lamborghini Aventador SVJ",
             "vehicle_link": "https://www.mltoys.com/collections/moderno-lamborghini-aventador-svj"
-          }
-        },
-        "vehicle_TLY4Hc": {
-          "type": "vehicle",
-          "name": "Moderno Can-Am Renegade",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/moderno_can_am_renegade_png.png",
-            "vehicle_title": "Moderno Can-Am Renegade",
-            "vehicle_link": "https://www.mltoys.com/collections/moderno-can-am-renegade"
           }
         },
         "vehicle_pDRxBp": {
@@ -1133,6 +1133,7 @@
         "vehicle_GABVQL",
         "vehicle_jW9jyU",
         "vehicle_RfyJzV",
+        "vehicle_TLY4Hc",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1145,7 +1146,6 @@
         "vehicle_z7D6ED",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
-        "vehicle_TLY4Hc",
         "vehicle_pDRxBp",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
