@@ -996,6 +996,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/ryder-lifted-jeep"
           }
         },
+        "vehicle_7Nm4i8": {
+          "type": "vehicle",
+          "name": "Ryder Mercedes Benz G63",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Ryder_Mercedes_png.png",
+            "vehicle_title": "Ryder Mercedes Benz G63",
+            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1021,15 +1030,6 @@
             "vehicle_image": "shopify://shop_images/ryder_trailflex_jeep_png.png",
             "vehicle_title": "Ryder 24v Trailflex Jeep",
             "vehicle_link": "https://www.mltoys.com/collections/ryder-trailflex-jeep"
-          }
-        },
-        "vehicle_7Nm4i8": {
-          "type": "vehicle",
-          "name": "Ryder Mercedes Benz G63",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Ryder_Mercedes_png.png",
-            "vehicle_title": "Ryder Mercedes Benz G63",
-            "vehicle_link": "https://www.mltoys.com/collections/ryder-mercedes-benz-g63"
           }
         },
         "vehicle_RUAEwC": {
@@ -1146,10 +1146,10 @@
         "vehicle_pjdrzM",
         "vehicle_8zakmE",
         "vehicle_J37Lr9",
+        "vehicle_7Nm4i8",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
-        "vehicle_7Nm4i8",
         "vehicle_RUAEwC",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
