@@ -915,6 +915,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-loader-tractor-copy"
           }
         },
+        "vehicle_dPwRTQ": {
+          "type": "vehicle",
+          "name": "Peg Perego Polaris RZR 900",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/peg_polaris.png",
+            "vehicle_title": "Peg Perego Polaris RZR 900",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-polaris-rzr-900"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -1023,15 +1032,6 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
           }
         },
-        "vehicle_dPwRTQ": {
-          "type": "vehicle",
-          "name": "Peg Perego Polaris RZR 900",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/peg_polaris.png",
-            "vehicle_title": "Peg Perego Polaris RZR 900",
-            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-polaris-rzr-900"
-          }
-        },
         "vehicle_hUfKBY": {
           "type": "vehicle",
           "name": "Roll Play 24v Monster Truck",
@@ -1137,6 +1137,7 @@
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
         "vehicle_z7D6ED",
+        "vehicle_dPwRTQ",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1149,7 +1150,6 @@
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_pDRxBp",
-        "vehicle_dPwRTQ",
         "vehicle_hUfKBY",
         "vehicle_EheBWY",
         "vehicle_yFmWMn",
