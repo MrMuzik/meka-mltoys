@@ -717,6 +717,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-raider-jeep"
           }
         },
+        "vehicle_LexhCW": {
+          "type": "vehicle",
+          "name": "Freddo 24v Storm UTV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Storm_png.png",
+            "vehicle_title": "Freddo 24v Storm UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-storm-utv"
+          }
+        },
+        "vehicle_YC3H48": {
+          "type": "vehicle",
+          "name": "Freddo 24v Military Willy Jeep",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Freddo_Willys_png.png",
+            "vehicle_title": "Freddo 24v Military Willy Jeep",
+            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-willy-military-jeep"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -895,24 +913,6 @@
             "vehicle_image": "shopify://shop_images/Garvee_Chevy_Silverado_png.png",
             "vehicle_title": "Garvee 24v Chevy Silverado",
             "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-chevy-silverado"
-          }
-        },
-        "vehicle_YC3H48": {
-          "type": "vehicle",
-          "name": "Freddo 24v Military Willy Jeep",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Willys_png.png",
-            "vehicle_title": "Freddo 24v Military Willy Jeep",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-willy-military-jeep"
-          }
-        },
-        "vehicle_LexhCW": {
-          "type": "vehicle",
-          "name": "Freddo 24v Storm UTV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Freddo_Storm_png.png",
-            "vehicle_title": "Freddo 24v Storm UTV",
-            "vehicle_link": "https://www.mltoys.com/collections/freddo-24v-storm-utv"
           }
         },
         "vehicle_qCW6rx": {
@@ -1115,6 +1115,8 @@
         "vehicle_Tb4ETW",
         "vehicle_diJPym",
         "vehicle_iMPeTg",
+        "vehicle_LexhCW",
+        "vehicle_YC3H48",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_bbcTPc",
         "vehicle_emC8Hc",
         "vehicle_U3WWQR",
-        "vehicle_YC3H48",
-        "vehicle_LexhCW",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
