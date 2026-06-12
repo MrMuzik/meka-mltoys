@@ -762,6 +762,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-jeep"
           }
         },
+        "vehicle_RgVwtH": {
+          "type": "vehicle",
+          "name": "Garvee 24v \"Speed\" 4wd UTV",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Garvee_Challenger_png.png",
+            "vehicle_title": "Garvee 24v \"Speed\" 4wd UTV",
+            "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-24v-challenger-xl-copy"
+          }
+        },
+        "vehicle_mpGdVW": {
+          "type": "vehicle",
+          "name": "Garvee 24v Toyota Land Cruiser",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/Garvee_Toyota_Landcruiser_png.png",
+            "vehicle_title": "Garvee 24v Toyota Land Cruiser",
+            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-toyota-land-cruiser"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -895,24 +913,6 @@
             "vehicle_image": "shopify://shop_images/BTGC_Can_Am_png.png",
             "vehicle_title": "Moderno 24v Can-Am Maverick X3 4x4 UTV",
             "vehicle_link": "https://www.mltoys.com/collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
-          }
-        },
-        "vehicle_mpGdVW": {
-          "type": "vehicle",
-          "name": "Garvee 24v Toyota Land Cruiser",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Garvee_Toyota_Landcruiser_png.png",
-            "vehicle_title": "Garvee 24v Toyota Land Cruiser",
-            "vehicle_link": "https://www.mltoys.com/collections/garvee-24v-toyota-land-cruiser"
-          }
-        },
-        "vehicle_RgVwtH": {
-          "type": "vehicle",
-          "name": "Garvee 24v \"Speed\" 4wd UTV",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/Garvee_Challenger_png.png",
-            "vehicle_title": "Garvee 24v \"Speed\" 4wd UTV",
-            "vehicle_link": "https://www.mltoys.com/collections/big-toys-country-24v-challenger-xl-copy"
           }
         },
         "vehicle_qCW6rx": {
@@ -1120,6 +1120,8 @@
         "vehicle_U3WWQR",
         "vehicle_emC8Hc",
         "vehicle_bbcTPc",
+        "vehicle_RgVwtH",
+        "vehicle_mpGdVW",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1135,8 +1137,6 @@
         "vehicle_RfyJzV",
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
-        "vehicle_mpGdVW",
-        "vehicle_RgVwtH",
         "vehicle_qCW6rx",
         "vehicle_iyVLpg",
         "vehicle_B434hw",
