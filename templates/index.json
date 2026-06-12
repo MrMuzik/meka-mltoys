@@ -816,6 +816,24 @@
             "vehicle_link": "https://www.mltoys.com/collections/kid-motorz-camaro"
           }
         },
+        "vehicle_QM9BFX": {
+          "type": "vehicle",
+          "name": "Kid Trax 1969 Ford Bronco",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/kid_trax_cutout.png",
+            "vehicle_title": "Kid Trax 1969 Ford Bronco",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-1969-bronco"
+          }
+        },
+        "vehicle_n3DXMb": {
+          "type": "vehicle",
+          "name": "Kid Trax 2021 Ford Bronco",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/bronco_cutout.png",
+            "vehicle_title": "Kid Trax 2021 Ford Bronco",
+            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-2021-ford-bronco"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -958,24 +976,6 @@
             "vehicle_image": "shopify://shop_images/lawnmower_cutout.png",
             "vehicle_title": "Kid Trax Zero Turn Lawn Mower",
             "vehicle_link": "https://www.mltoys.com/collections/kid-trax-zero-turn-lawn-mower"
-          }
-        },
-        "vehicle_QM9BFX": {
-          "type": "vehicle",
-          "name": "Kid Trax 1969 Ford Bronco",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/kid_trax_cutout.png",
-            "vehicle_title": "Kid Trax 1969 Ford Bronco",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-1969-bronco"
-          }
-        },
-        "vehicle_n3DXMb": {
-          "type": "vehicle",
-          "name": "Kid Trax 2021 Ford Bronco",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/bronco_cutout.png",
-            "vehicle_title": "Kid Trax 2021 Ford Bronco",
-            "vehicle_link": "https://www.mltoys.com/collections/kid-trax-2021-ford-bronco"
           }
         },
         "vehicle_c8xRCd": {
@@ -1126,6 +1126,8 @@
         "vehicle_iyVLpg",
         "vehicle_B434hw",
         "vehicle_9wCyRp",
+        "vehicle_QM9BFX",
+        "vehicle_n3DXMb",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1142,8 +1144,6 @@
         "vehicle_TLY4Hc",
         "vehicle_jW9jyU",
         "vehicle_pDRxBp",
-        "vehicle_QM9BFX",
-        "vehicle_n3DXMb",
         "vehicle_c8xRCd",
         "vehicle_rVtQWD",
         "vehicle_GABVQL",
