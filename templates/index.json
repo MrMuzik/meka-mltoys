@@ -906,6 +906,15 @@
             "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-force-tractor"
           }
         },
+        "vehicle_z7D6ED": {
+          "type": "vehicle",
+          "name": "Peg Perego John Deere Ground Loader Tractor",
+          "settings": {
+            "vehicle_image": "shopify://shop_images/John_Deere_Ground_Loader_png.png",
+            "vehicle_title": "Peg Perego John Deere Ground Loader Tractor",
+            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-loader-tractor-copy"
+          }
+        },
         "vehicle_NkFC3X": {
           "type": "vehicle",
           "name": "Ryder XL UTV",
@@ -985,15 +994,6 @@
             "vehicle_image": "shopify://shop_images/Ryder_24v_png.png",
             "vehicle_title": "Ryder Toys 24v All Wheel Drive Buggy",
             "vehicle_link": "https://www.mltoys.com/collections/ryder-toys-24v-all-wheel-drive-buggy"
-          }
-        },
-        "vehicle_z7D6ED": {
-          "type": "vehicle",
-          "name": "Peg Perego John Deere Ground Loader Tractor",
-          "settings": {
-            "vehicle_image": "shopify://shop_images/John_Deere_Ground_Loader_png.png",
-            "vehicle_title": "Peg Perego John Deere Ground Loader Tractor",
-            "vehicle_link": "https://www.mltoys.com/collections/peg-perego-john-deere-ground-loader-tractor-copy"
           }
         },
         "vehicle_kpU8Mw": {
@@ -1136,6 +1136,7 @@
         "vehicle_TLY4Hc",
         "vehicle_McdVpG",
         "vehicle_HhF8BK",
+        "vehicle_z7D6ED",
         "vehicle_NkFC3X",
         "vehicle_XFygng",
         "vehicle_tqVYqQ",
@@ -1145,7 +1146,6 @@
         "vehicle_pjdrzM",
         "vehicle_xjXXLR",
         "vehicle_RUAEwC",
-        "vehicle_z7D6ED",
         "vehicle_kpU8Mw",
         "vehicle_cRiqWM",
         "vehicle_pDRxBp",
