@@ -884,8 +884,8 @@
           "type": "faq",
           "name": "What ML Toys parts is it",
           "settings": {
-            "question": "What ML Toys parts is it compatible with?",
-            "answer": ""
+            "question": "What ML Toys parts is the vehiclecompatible with?",
+            "answer": "As the leader in performance ride-on vehicle parts, we offer a number of parts compatible with the Fire Engine."
           }
         },
         "faq_TRVPqD": {
@@ -893,11 +893,12 @@
           "name": "Is it available anywhere else",
           "settings": {
             "question": "Is this vehicle available anywhere else in the USA?",
-            "answer": ""
+            "answer": "The Fire Engine is an exclusive vehicle to ML Toys, the industry leader in performance ride-on vehicle parts."
           }
         },
         "faq_qUBXYc": {
           "type": "faq",
+          "name": "How difficult is assembly?",
           "settings": {
             "question": "How difficult is assembly?",
             "answer": ""
@@ -905,9 +906,10 @@
         },
         "faq_Ya8jqX": {
           "type": "faq",
+          "name": "Warranty",
           "settings": {
             "question": "What does the warranty cover?",
-            "answer": ""
+            "answer": "ML Toys offers a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
           }
         },
         "faq_hWtkYr": {
@@ -923,7 +925,7 @@
           "name": "Return Policy",
           "settings": {
             "question": "What is the ML Toys return policy?",
-            "answer": "ML Toys offers a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
+            "answer": "All sales are final. ML Toys does offer a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
           }
         }
       },
