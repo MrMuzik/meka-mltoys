@@ -844,7 +844,7 @@
         "headline_highlight": "Industry Leader",
         "headline_suffix": "In Performance Ride On Parts.",
         "subtext": "Built stronger, backed by real support, and ready to upgrade.\nOrder yours before they're gone.",
-        "primary_label": "Order Now • $900",
+        "primary_label": "Order Now • $899",
         "primary_url": "",
         "primary_show_arrow": true,
         "secondary_label": "Watch The Walkthrough",
@@ -858,6 +858,7 @@
       "blocks": {
         "faq_pU3RPR": {
           "type": "faq",
+          "name": "How long does the battery",
           "settings": {
             "question": "How long does the battery last on a single charge?",
             "answer": "Stock 12V 12Ah battery delivers about 1.5 to 2 hours of mixed driving on flat surfaces. Upgraded ML Toys batteries can stretch that to 3+ hours."
@@ -865,13 +866,15 @@
         },
         "faq_APG6At": {
           "type": "faq",
+          "name": "How fast does it go?",
           "settings": {
-            "question": "How fast does it go?",
+            "question": "How fast does does the ML Toys fire engine Go?",
             "answer": ""
           }
         },
         "faq_XGyNDK": {
           "type": "faq",
+          "name": "Can it be upgraded",
           "settings": {
             "question": "Can it be upgraded with better motors or batteries?",
             "answer": ""
@@ -879,6 +882,7 @@
         },
         "faq_pVAHHc": {
           "type": "faq",
+          "name": "What ML Toys parts is it",
           "settings": {
             "question": "What ML Toys parts is it compatible with?",
             "answer": ""
@@ -886,15 +890,9 @@
         },
         "faq_TRVPqD": {
           "type": "faq",
+          "name": "Is it available anywhere else",
           "settings": {
-            "question": "Is this available anywhere else in the USA?",
-            "answer": ""
-          }
-        },
-        "faq_inJAVp": {
-          "type": "faq",
-          "settings": {
-            "question": "What is the weight limit and age range?",
+            "question": "Is this vehicle available anywhere else in the USA?",
             "answer": ""
           }
         },
@@ -923,7 +921,7 @@
           "type": "faq",
           "settings": {
             "question": "What is the return policy?",
-            "answer": ""
+            "answer": "ML Toys offers a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
           }
         }
       },
@@ -933,7 +931,6 @@
         "faq_XGyNDK",
         "faq_pVAHHc",
         "faq_TRVPqD",
-        "faq_inJAVp",
         "faq_qUBXYc",
         "faq_Ya8jqX",
         "faq_hWtkYr",
