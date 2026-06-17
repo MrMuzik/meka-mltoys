@@ -912,15 +912,17 @@
         },
         "faq_hWtkYr": {
           "type": "faq",
+          "name": "Contact ML Toys",
           "settings": {
             "question": "How do I reach ML Toys with a question?",
-            "answer": ""
+            "answer": "The best way to contact us is to fill out the form on this page https://www.mltoys.com/pages/contact-us. You can also purchase a video conference with tech support using this same page."
           }
         },
         "faq_fDXiKD": {
           "type": "faq",
+          "name": "Return Policy",
           "settings": {
-            "question": "What is the return policy?",
+            "question": "What is the ML Toys return policy?",
             "answer": "ML Toys offers a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
           }
         }
