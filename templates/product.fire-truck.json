@@ -368,6 +368,19 @@
         "show_bottom_rip": true
       }
     },
+    "sp_video_9gYm76": {
+      "type": "sp-video",
+      "name": "Video — See it in Action",
+      "settings": {
+        "eyebrow": "ROLL THE TAPE",
+        "headline": "See it in Action",
+        "subtext": "",
+        "video_type": "youtube",
+        "youtube_url": "https://www.youtube.com/watch?v=CuiHmom10Mc&feature=youtu.be",
+        "video_file": "",
+        "duration_label": ""
+      }
+    },
     "featured_collection_LM7fB8": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -387,7 +400,7 @@
         "hours_label": "Hours",
         "mins_label": "Minutes",
         "secs_label": "Seconds",
-        "countdown_label_bg": "#FB542F",
+        "countdown_label_bg": "#fb542f",
         "label_text_color": "main",
         "collection": "firetruck",
         "products_to_show": 4,
@@ -406,20 +419,6 @@
         "swipe_on_mobile": true,
         "padding_top": 70,
         "padding_bottom": 70
-      }
-    },
-    "sp_video_9gYm76": {
-      "type": "sp-video",
-      "disabled": true,
-      "name": "Video — See it in Action",
-      "settings": {
-        "eyebrow": "ROLL THE TAPE",
-        "headline": "See it in Action",
-        "subtext": "Full vehicle walkthrough, real ride footage, and everything that makes this truck the real deal.",
-        "video_type": "youtube",
-        "youtube_url": "https://www.youtube.com/watch?v=IRi0n3ZSqxM",
-        "video_file": "",
-        "duration_label": ""
       }
     },
     "sp_upgrade_story_LeafAn": {
@@ -1025,8 +1024,8 @@
     "related_products",
     "17560776142eb8d1a3",
     "sp_social_proof_ixHC8m",
-    "featured_collection_LM7fB8",
     "sp_video_9gYm76",
+    "featured_collection_LM7fB8",
     "sp_upgrade_story_LeafAn",
     "sp_features_bhN6Pm",
     "sp_sound_familiar_e7nFpH",
