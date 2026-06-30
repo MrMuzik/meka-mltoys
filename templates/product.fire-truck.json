@@ -378,6 +378,7 @@
         "video_type": "youtube",
         "youtube_url": "https://www.youtube.com/watch?v=CuiHmom10Mc&feature=youtu.be",
         "video_file": "",
+        "poster_image": "shopify://shop_images/fire_truck_thumbnail.jpg",
         "duration_label": ""
       }
     },
