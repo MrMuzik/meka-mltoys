@@ -384,6 +384,7 @@
     },
     "featured_collection_LM7fB8": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Firetruck Parts & Accessories",
