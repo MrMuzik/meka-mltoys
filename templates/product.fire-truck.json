@@ -40,6 +40,7 @@
         },
         "judge_me_reviews_preview_badge_ddEEJh": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {}
         },
         "ft_hook_Nm4p": {
@@ -367,8 +368,49 @@
         "show_bottom_rip": true
       }
     },
+    "featured_collection_LM7fB8": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Firetruck Parts & Accessories",
+        "heading_size": "h2",
+        "description": "",
+        "text_size_block": "medium",
+        "text_color": "main",
+        "show_description": false,
+        "countdown_label": "",
+        "countdown_font_weight": "600",
+        "numbers_size": "h4",
+        "countdown_date": "",
+        "countdown_end": "show_zeroes",
+        "days_label": "Days",
+        "hours_label": "Hours",
+        "mins_label": "Minutes",
+        "secs_label": "Seconds",
+        "countdown_label_bg": "#FB542F",
+        "label_text_color": "main",
+        "collection": "firetruck",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
     "sp_video_9gYm76": {
       "type": "sp-video",
+      "disabled": true,
       "name": "Video — See it in Action",
       "settings": {
         "eyebrow": "ROLL THE TAPE",
@@ -983,6 +1025,7 @@
     "related_products",
     "17560776142eb8d1a3",
     "sp_social_proof_ixHC8m",
+    "featured_collection_LM7fB8",
     "sp_video_9gYm76",
     "sp_upgrade_story_LeafAn",
     "sp_features_bhN6Pm",
