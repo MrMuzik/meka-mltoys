@@ -384,7 +384,6 @@
     },
     "featured_collection_LM7fB8": {
       "type": "featured-collection",
-      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Firetruck Parts & Accessories",
@@ -405,8 +404,8 @@
         "countdown_label_bg": "#fb542f",
         "label_text_color": "main",
         "collection": "firetruck",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 5,
+        "columns_desktop": 5,
         "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
