@@ -37,6 +37,31 @@
             "mobile_content_alignment": "center"
           }
         },
+        "image_slide_JcyBwK": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/Desktop_e3a88e6d-1f12-41b4-9a0e-bdf2b2077557.jpg",
+            "image_mobile": "shopify://shop_images/Mobile_2.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Introducing The ML Toys Firetruck",
+            "heading_size": "h1",
+            "text": "<p>Our Exlcusive 12V Ride-On Vehicle. Built strong and upgrade ready for future Firefighters!</p>",
+            "text_size_block": "medium",
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://products/firetruck-12v-ride-on-vehicle",
+            "button_style_secondary_1": false,
+            "enable_button_arrow": false,
+            "button_label_2": "View Details",
+            "button_link_2": "shopify://products/firetruck-12v-ride-on-vehicle",
+            "button_style_secondary_2": true,
+            "color_scheme": "scheme-3",
+            "show_text_box": false,
+            "desktop_content_position": "bottom-center",
+            "mobile_content_position": "bottom-center",
+            "desktop_content_alignment": "left",
+            "mobile_content_alignment": "center"
+          }
+        },
         "image_slide_73mVmn": {
           "type": "image_slide",
           "settings": {
@@ -86,38 +111,13 @@
             "desktop_content_alignment": "left",
             "mobile_content_alignment": "center"
           }
-        },
-        "image_slide_JcyBwK": {
-          "type": "image_slide",
-          "settings": {
-            "image": "shopify://shop_images/Desktop_e3a88e6d-1f12-41b4-9a0e-bdf2b2077557.jpg",
-            "image_mobile": "shopify://shop_images/Mobile_2.jpg",
-            "image_overlay_opacity": 0,
-            "heading": "Introducing The ML Toys Firetruck",
-            "heading_size": "h1",
-            "text": "<p>Our Exlcusive 12V Ride-On Vehicle. Built strong and upgrade ready for future Firefighters!</p>",
-            "text_size_block": "medium",
-            "button_label_1": "Shop Now",
-            "button_link_1": "shopify://products/firetruck-12v-ride-on-vehicle",
-            "button_style_secondary_1": false,
-            "enable_button_arrow": false,
-            "button_label_2": "View Details",
-            "button_link_2": "shopify://products/firetruck-12v-ride-on-vehicle",
-            "button_style_secondary_2": true,
-            "color_scheme": "scheme-3",
-            "show_text_box": false,
-            "desktop_content_position": "bottom-center",
-            "mobile_content_position": "bottom-center",
-            "desktop_content_alignment": "left",
-            "mobile_content_alignment": "center"
-          }
         }
       },
       "block_order": [
         "image_slide_6Dg7rM",
+        "image_slide_JcyBwK",
         "image_slide_73mVmn",
-        "image_slide_TGGRkA",
-        "image_slide_JcyBwK"
+        "image_slide_TGGRkA"
       ],
       "settings": {
         "image_height": "medium",
