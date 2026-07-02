@@ -403,7 +403,7 @@
         "secs_label": "Seconds",
         "countdown_label_bg": "#fb542f",
         "label_text_color": "main",
-        "collection": "firetruck",
+        "collection": "mltoys-firetruck-upgrade-parts",
         "products_to_show": 5,
         "columns_desktop": 5,
         "full_width": true,
