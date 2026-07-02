@@ -17,8 +17,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Save 15% on Racing Parts",
-            "link": "shopify://pages/power-wheels-racing"
+            "text": "Introducing the ML Toys Fire Truck Vehicle!",
+            "link": "shopify://products/firetruck-12v-ride-on-vehicle"
           }
         }
       },
