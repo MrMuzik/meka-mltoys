@@ -433,8 +433,8 @@
             "label": "STOCK BUILD",
             "title": "Stock Build",
             "description": "Fast, strong, and ready to ride right out of the box.",
-            "speed_value": "3",
-            "speed_unit": "MPH"
+            "speed_value": "",
+            "speed_unit": ""
           }
         },
         "stage_N86Xdw": {
@@ -445,8 +445,8 @@
             "label": "BATTERY",
             "title": "Battery Upgrades",
             "description": "More ride time, more consistent power, longer adventures.",
-            "speed_value": "5",
-            "speed_unit": "MPH"
+            "speed_value": "",
+            "speed_unit": ""
           }
         },
         "stage_xcPQ6W": {
@@ -457,8 +457,8 @@
             "label": "MOTORS",
             "title": "Motor/Gearbox Upgrades",
             "description": "More speed, more torque, more excitement.",
-            "speed_value": "6.5",
-            "speed_unit": "MPH"
+            "speed_value": "",
+            "speed_unit": ""
           }
         },
         "stage_GaNVmA": {
@@ -868,9 +868,9 @@
       "name": "Guarantee Bar",
       "settings": {
         "badge_pct": "100%",
-        "badge_label": "GUARANTEE",
+        "badge_label": "Supported",
         "headline": "We Stand Behind Every Vehicle.",
-        "body": "If something isn't right, we'll make it right. That's the deal, backed by US-based ML Toys support and a parts catalog that's stocked and ready to ship.",
+        "body": "If something isn't right, you can always reach us. Talk to real people. US-based ML Toys support and a parts catalog that's stocked and ready to ship.",
         "show_bottom_rip": true,
         "bottom_rip_bg": "#ffffff",
         "margin_bottom": "-150px"
@@ -881,7 +881,7 @@
       "name": "Anchor CTA",
       "settings": {
         "hero_image": "shopify://shop_images/hero-composite_016439f5-ce14-4ff1-9945-7101b7ace6ff.png",
-        "eyebrow": "LAST LAP",
+        "eyebrow": "Let's Go!",
         "headline_prefix": "The",
         "headline_highlight": "Industry Leader",
         "headline_suffix": "In Performance Ride-On Parts.",
@@ -892,7 +892,7 @@
         "secondary_label": "Watch The Walkthrough",
         "secondary_url": "",
         "show_scarcity": true,
-        "scarcity_text": "LIMITED STOCK · SHIPS IN 24 HRS · FREE U.S. SHIPPING"
+        "scarcity_text": "Accepting Orders Now!"
       }
     },
     "sp_faq_zhjHBV": {
@@ -911,7 +911,7 @@
           "name": "How fast does it go?",
           "settings": {
             "question": "How fast does does the ML Toys fire engine Go?",
-            "answer": ""
+            "answer": "All stock Ride-On Toys are limited in the speed they can go. The Fire Trucks can travel at about 5 MPH before you decide to make any upgrades."
           }
         },
         "faq_XGyNDK": {
@@ -919,7 +919,7 @@
           "name": "Can it be upgraded",
           "settings": {
             "question": "Can it be upgraded with better motors or batteries?",
-            "answer": ""
+            "answer": "Yes. We are first and foremost an upgrade company. Explore our upgrades."
           }
         },
         "faq_pVAHHc": {
