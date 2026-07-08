@@ -424,12 +424,12 @@
             "url": "https://www.mltoys.com/collections/mercedes-g63-6x6"
           }
         },
-        "grid_item_UhG4Cb": {
+        "grid_item_ae6cwe": {
           "type": "grid_item",
           "settings": {
-            "image": "shopify://shop_images/BTGC_Can_Am_28d44708-e877-4ff7-bb1e-1691e08fe56f.png",
-            "title": "Moderno Can-Am Maverick X3 4x4 UTV 24v",
-            "url": "shopify://collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
+            "image": "shopify://shop_images/FireTruck15729__2_1.png",
+            "title": "MLToys Firetruck",
+            "url": "shopify://collections/mltoys-firetruck-upgrade-parts"
           }
         }
       },
@@ -482,7 +482,7 @@
         "grid_item_15",
         "grid_item_DKtAfQ",
         "grid_item_EWMgDr",
-        "grid_item_UhG4Cb"
+        "grid_item_ae6cwe"
       ],
       "name": "Grid view",
       "settings": {
@@ -500,6 +500,14 @@
     "featured_grid_6MymWm": {
       "type": "featured-grid",
       "blocks": {
+        "grid_item_bqtKQW": {
+          "type": "grid_item",
+          "settings": {
+            "image": "shopify://shop_images/BTGC_Can_Am_28d44708-e877-4ff7-bb1e-1691e08fe56f.png",
+            "title": "Moderno Can-Am Maverick X3 4x4 UTV 24v",
+            "url": "shopify://collections/moderno-24v-can-am-maverick-x3-4x4-utv-copy"
+          }
+        },
         "grid_item_Pd3GCT": {
           "type": "grid_item",
           "settings": {
@@ -819,6 +827,7 @@
         }
       },
       "block_order": [
+        "grid_item_bqtKQW",
         "grid_item_Pd3GCT",
         "grid_item_4JyLEL",
         "grid_item_yCMxUH",
