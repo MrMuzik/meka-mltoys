@@ -322,6 +322,7 @@
         },
         "quote_rrVfhP": {
           "type": "quote",
+          "disabled": true,
           "settings": {
             "quote_text": "Every kid in the neighborhood wants a turn. We've had to start a sign-up sheet.",
             "reviewer_name": "Marcus T.",
@@ -331,6 +332,7 @@
         },
         "quote_hkwaMA": {
           "type": "quote",
+          "disabled": true,
           "settings": {
             "quote_text": "Worth every penny. The quality is obvious the second you open the box. Doesn't feel like a toy — feels like a real vehicle.",
             "reviewer_name": "Sarah K.",
@@ -340,6 +342,7 @@
         },
         "quote_3GwXjw": {
           "type": "quote",
+          "disabled": true,
           "settings": {
             "quote_text": "Had a question, emailed ML Toys, and heard back fast from a real person. Great experience start to finish.",
             "reviewer_name": "Derek L.",
@@ -363,7 +366,7 @@
       "settings": {
         "eyebrow": "OUT IN THE WILD",
         "headline": "The Coolest Ride On The Block",
-        "subtext": "Real photos from real ML Toys families. No stock libraries. No staged catalog shots. Just kids being kids on the truck they're going to remember forever.",
+        "subtext": "Every truck is built for adventure, imagination, and the moments kids will remember long after the ride is over.",
         "show_top_rip": true,
         "show_bottom_rip": true
       }
