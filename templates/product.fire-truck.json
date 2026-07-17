@@ -1015,6 +1015,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_FhUdL9"
       ],
+      "disabled": true,
       "name": "Reviews",
       "settings": {
         "eyebrow": "CUSTOMER REVIEWS",
