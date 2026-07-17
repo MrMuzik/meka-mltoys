@@ -995,7 +995,7 @@
         "cta_show_arrow": true,
         "show_top_rip": true,
         "top_rip_bg": "#ffffff",
-        "show_bottom_rip": true,
+        "show_bottom_rip": false,
         "bottom_rip_bg": "#ffffff"
       }
     },
