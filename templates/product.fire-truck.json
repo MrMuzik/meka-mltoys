@@ -1007,7 +1007,7 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "show_shop_reviews": true,
+            "show_shop_reviews": false,
             "empty_state": "other_products_reviews"
           }
         }
