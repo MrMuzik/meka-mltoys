@@ -64,6 +64,7 @@
         },
         "image_slide_73mVmn": {
           "type": "image_slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/unblurimageai_Mask_group_1_88e68c94-4d8a-493f-9f8e-b3e09bded034.jpg",
             "image_mobile": "shopify://shop_images/unblurimageai_Mask_group_2.jpg",
