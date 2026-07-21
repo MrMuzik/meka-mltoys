@@ -20,9 +20,9 @@
     color: rgb(var(--color-foreground-secondary));
 } */
 
-.article-card[data-color="secondary"] .article-card__excerpt {
-  /* color: rgb(var(--color-foreground-secondary)); */
-}
+/* .article-card[data-color="secondary"] .article-card__excerpt {
+  color: rgb(var(--color-foreground-secondary));
+} */
 
 .article-tags {
   position: absolute;
