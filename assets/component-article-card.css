@@ -78,6 +78,11 @@
 }
 .article-card .card__heading {
   margin-bottom: 1.2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2; /* Standard property */
+  -webkit-line-clamp: 2; /* Required for Safari and older browsers */
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 1025px) {
