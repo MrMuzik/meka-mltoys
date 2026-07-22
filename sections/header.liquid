@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-mltoys-featured-card.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
@@ -500,31 +501,23 @@
                                       {%- endif -%}
                                     </li>
                                   {%- endfor -%}
+                                  {% if section.settings.drawer_card_image != blank %}
+                                      <li>
+                                        <div class="mltoys-featured-card__wrapper">
+                                          {% render 'mltoys-featured-card',
+                                            image: section.settings.drawer_card_image,
+                                            image_hover: section.settings.drawer_card_image_hover,
+                                            title: section.settings.drawer_card_title,
+                                            subtext: section.settings.drawer_card_subtext,
+                                            button_link: section.settings.drawer_card_button_link,
+                                            button_text: section.settings.drawer_card_button_text,
+                                            badge_text: section.settings.drawer_card_badge_text
+                                          %}
+                                        </div>
+                                      </li>
+                                    {% endif %}
                                 </ul>
                               </nav>
-
-															{% if section.settings.drawer_product != blank %}
-																{% liquid
-																	assign menu_id = 2
-																	if section.settings.menu_type_desktop == 'mega'
-																		assign menu_id = 3
-																	endif
-																%}
-																<div class="menu-drawer__product contains-card contains-card--product">
-																	{% render 'card-product',
-																		card_product: section.settings.drawer_product,
-																		media_aspect_ratio: 'square',
-																		show_secondary_image: true,
-																		show_vendor: false,
-																		show_rating: true,
-																		show_compare: settings.enable_compare,
-																		show_quick_add: true,
-																		section_id: section.id,
-																		menu_id: menu_id
-																	%}
-																</div>
-															{% endif %}
-
 														</div>
 													</div>
 												</div>
@@ -1111,9 +1104,49 @@
       "info": "This image will be displayed in the menu drawer for the 'Power Wheels' link."
     },
     {
-      "type": "product",
-      "id": "drawer_product",
-      "label": "Menu drawer product"
+      "type": "header",
+      "content": "Menu Drawer Featured Card"
+    },
+    {
+      "type": "image_picker",
+      "id": "drawer_card_image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "drawer_card_image_hover",
+      "label": "Hover image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "drawer_card_badge_text",
+      "label": "Badge text",
+      "info": "Leave blank to hide the badge"
+    },
+    {
+      "type": "text",
+      "id": "drawer_card_title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "drawer_card_subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "url",
+      "id": "drawer_card_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "drawer_card_button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "header",
+      "content": "Sticky Header Settings"
     },
     {
       "type": "select",
