@@ -1,0 +1,64 @@
+{% comment %}
+  Manually-configured featured card for the header menu drawer.
+  Accepts: image, image_hover, title, subtext, button_link, button_text.
+  Deliberately does NOT reference any Shopify `product` object — selecting
+  a product anywhere in this card was triggering Globo Product Variants
+  to misidentify it as the page's product and pull the wrong variant
+  into the cart. Keep this snippet product-object-free.
+{% endcomment %}
+
+{%- if image != blank -%}
+  <div class="mltoys-featured-card">
+    <div class="mltoys-featured-card__badge-wrap">
+        {%- if badge_text != blank -%}
+          <span class="mltoys-featured-card__badge">{{ badge_text | escape }}</span>
+        {%- endif -%}
+      <a href="{{ button_link | default: '#' }}" class="mltoys-featured-card__media-link" aria-label="{{ title | escape }}">
+        <div class="mltoys-featured-card__media">
+          <img
+            class="mltoys-featured-card__image mltoys-featured-card__image--primary"
+            src="{{ image | image_url: width: 400 }}"
+            srcset="{{ image | image_url: width: 400 }} 400w,
+                    {{ image | image_url: width: 600 }} 600w,
+                    {{ image | image_url: width: 800 }} 800w"
+            sizes="(min-width: 750px) 400px, 90vw"
+            alt="{{ image.alt | default: title | escape }}"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
+            loading="lazy">
+
+          {%- if image_hover != blank -%}
+            <img
+              class="mltoys-featured-card__image mltoys-featured-card__image--secondary"
+              src="{{ image_hover | image_url: width: 400 }}"
+              srcset="{{ image_hover | image_url: width: 400 }} 400w,
+                      {{ image_hover | image_url: width: 600 }} 600w,
+                      {{ image_hover | image_url: width: 800 }} 800w"
+              sizes="(min-width: 750px) 400px, 90vw"
+              alt="{{ image_hover.alt | default: title | escape }}"
+              width="{{ image_hover.width }}"
+              height="{{ image_hover.height }}"
+              loading="lazy">
+          {%- endif -%}
+        </div>
+      </a>
+    </div>
+    <div class="mltoys-featured-card__info">
+      {%- if title != blank -%}
+        <a href="{{ button_link | default: '#' }}" class="mltoys-featured-card__title">
+          {{ title | escape }}
+        </a>
+      {%- endif -%}
+
+      {%- if subtext != blank -%}
+        <p class="mltoys-featured-card__subtext">{{ subtext | escape }}</p>
+      {%- endif -%}
+
+      {%- if button_text != blank -%}
+        <a href="{{ button_link | default: '#' }}" class="mltoys-featured-card__btn">
+          {{ button_text | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
