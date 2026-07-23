@@ -352,6 +352,21 @@
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+              {% if section.settings.drawer_card_image != blank %}
+                <li>
+                  <div class="mltoys-featured-card__wrapper">
+                    {% render 'mltoys-featured-card',
+                      image: section.settings.drawer_card_image,
+                      image_hover: section.settings.drawer_card_image_hover,
+                      title: section.settings.drawer_card_title,
+                      subtext: section.settings.drawer_card_subtext,
+                      button_link: section.settings.drawer_card_button_link,
+                      button_text: section.settings.drawer_card_button_text,
+                      badge_text: section.settings.drawer_card_badge_text
+                    %}
+                  </div>
+                </li>
+              {% endif %}
             </ul>
           </nav>
 
