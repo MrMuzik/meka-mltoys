@@ -12,6 +12,7 @@
   assign list_blocks = section.blocks | where: 'type', 'list_item'
   assign bubble_blocks = section.blocks | where: 'type', 'bubble'
   assign image_layer_blocks = section.blocks | where: 'type', 'image_layer'
+  assign decal_blocks = section.blocks | where: 'type', 'decal'
 -%}
 
 <div
@@ -31,6 +32,8 @@
     </div>
   {%- endif -%}
 
+  
+
   {%- if section.settings.enable_ripped_edge_top -%}
     <div class="mfh-ripped-edge mfh-ripped-edge--top" aria-hidden="true">
       {%- render 'ripped-edge-top', fill_color: section.settings.ripped_edge_color -%}
@@ -39,7 +42,7 @@
 
   <div class="mfh-inner">
     <div class="mfh-hero">
-      {%- if layout_style == 'static' -%}
+      
         {%- if section.settings.static_image != blank -%}
           <img
             class="mfh-hero__static-image"
@@ -54,12 +57,8 @@
             loading="lazy"
           >
         {%- endif -%}
-      {%- else -%}
+      {%- if layout_style == 'dynamic' -%}
         <featured-highlight-bubbles class="mfh-dynamic">
-          {%- if section.settings.show_glow_effect -%}
-            <div class="mfh-glow" aria-hidden="true"></div>
-          {%- endif -%}
-
           {%- for block in image_layer_blocks -%}
             <div
               class="mfh-image-layer"
@@ -72,22 +71,6 @@
               {%- endif -%}
             </div>
           {%- endfor -%}
-
-          {%- for block in star_blocks -%}
-            <div
-              class="mfh-star mfh-star--{{ block.settings.z_index }}{% if block.settings.hide_on_mobile %} mfh-star--hide-mobile{% endif %}"
-              style="top:{{ block.settings.top }}%; left:{{ block.settings.left }}%; width:{{ block.settings.size }}px; height:{{ block.settings.size }}px; transform: rotate({{ block.settings.rotation }}deg);"
-              aria-hidden="true"
-              {{ block.shopify_attributes }}
-            >
-              {%- if block.settings.image != blank -%}
-                <img src="{{ block.settings.image | image_url: width: 200 }}" alt="" loading="lazy">
-              {%- else -%}
-                {%- render 'icon-star-default', star_color: section.settings.star_color -%}
-              {%- endif -%}
-            </div>
-          {%- endfor -%}
-
           <div class="mfh-central-image">
             {%- if section.settings.central_image != blank -%}
               <img
@@ -121,7 +104,19 @@
     </div>
 
     <div class="mfh-content">
-      {%- if section.settings.header != blank -%}
+        {%- for block in decal_blocks -%}
+            <div
+            class="mfh-decal"
+            style="--mfh-decal-z-index: {{ block.settings.z_index }}; top:{{ block.settings.top }}%; left:{{ block.settings.left }}%; width:{{ block.settings.size }}px; transform: rotate({{ block.settings.rotation }}deg);"
+            aria-hidden="true"
+            {{ block.shopify_attributes }}
+            >
+            {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="" loading="lazy">
+            {%- endif -%}
+            </div>
+        {%- endfor -%}
+        {%- if section.settings.header != blank -%}
         <h2 class="mfh-header">{{ section.settings.header }}</h2>
       {%- endif -%}
 
@@ -215,21 +210,6 @@
     right: 0;
   }
 
-  @media (min-width: 1400px) {
-    #mfh-{{ section.id }} .mfh-bg-texture {
-      width: 1277px;
-    }
-  }
-
-  @media (max-width: 1399px) {
-    #mfh-{{ section.id }} .mfh-bg-texture {
-      width: 100%;
-    }
-    #mfh-{{ section.id }} .mfh-bg-texture {
-     object-fit: contain;
-    }
-  }
-
   #mfh-{{ section.id }} .mfh-ripped-edge {
     position: absolute;
     width: 100%;
@@ -237,18 +217,21 @@
     right: 0;
     margin: auto;
     height: auto;
-    z-index: 2;
+    z-index: 0;
     pointer-events: none;
   }
   #mfh-{{ section.id }} .mfh-ripped-edge svg { display: block; width: 100%; height: auto; }
-  #mfh-{{ section.id }} .mfh-ripped-edge--top { top: -70px; }
-  #mfh-{{ section.id }} .mfh-ripped-edge--bottom { bottom: -55px; transform: rotate(179deg); }
+  #mfh-{{ section.id }} .mfh-ripped-edge svg .st0 {
+    fill: {{ section.settings.ripped_edge_color }};
+  }
+  #mfh-{{ section.id }} .mfh-ripped-edge--top { top: -92px; transform: rotate(180deg);}
+  #mfh-{{ section.id }} .mfh-ripped-edge--bottom { bottom: -94px;  }
 
   .mfh-inner {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 38% 62%;
     align-items: center;
     gap: 0;
     max-width: 1340px;
@@ -261,18 +244,21 @@
   .mfh-hero__static-image { display: block; width: 100%; height: auto; }
   .mfh-hero__placeholder svg { width: 100%; height: auto; }
 
+  .mfh-decal {
+    position: absolute;
+    z-index: var(--mfh-decal-z-index, 3);
+    pointer-events: none;
+  }
+  .mfh-decal img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   /* -- Dynamic layout -- */
   .mfh-dynamic { position: relative; display: block; }
   .mfh-central-image { position: relative; z-index: 2; }
   .mfh-central-image img { display: block; width: 100%; height: auto; }
-
-  .mfh-glow {
-    position: absolute;
-    inset: -20%;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
-  }
 
   .mfh-image-layer {
     position: absolute;
@@ -286,15 +272,6 @@
     height: 100%;
     object-fit: contain;
   }
-
-  .mfh-star {
-    position: absolute;
-    pointer-events: none;
-  }
-  .mfh-star--behind { z-index: 1; }
-  .mfh-star--above { z-index: 3; }
-  .mfh-star img,
-  .mfh-star svg { display: block; width: 100%; height: 100%; }
 
   .mfh-bubble {
     position: absolute;
@@ -403,16 +380,43 @@
     line-height: 24px;
     text-decoration: none;
     white-space: nowrap;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: background-color 0.3s ease;
   }
   .mfh-button:hover {
-    transform: translate(1px, -2px);
-    box-shadow: -3px 6px 0px var(--mfh-accent);
+    color: #ffffff;
+    background: var(--mfh-accent);
   }
   .mfh-button__icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
   .mfh-button__icon .icon { width: 12px; height: 12px; }
 
   /* -- Responsive -- */
+  @media (min-width: 1400px) {
+    #mfh-{{ section.id }} .mfh-bg-texture {
+      width: 1277px;
+    }
+    #mfh-{{ section.id }}.mfh-layout--dynamic .mfh-hero__static-image{ 
+        display: none;
+    }
+  }
+
+  @media (max-width: 1399px) {
+    #mfh-{{ section.id }} .mfh-bg-texture {
+      width: 100%;
+      position:relative;
+    }
+    #mfh-{{ section.id }} .mfh-bg-texture img{
+        object-fit:contain;
+        position:absolute;
+        top:0;
+        height:auto;
+    }
+    .mfh-layout--dynamic .mfh-hero__static-image{ 
+        display: block;
+    }
+    #mfh-{{ section.id }}.mfh-layout--dynamic .mfh-dynamic{
+        display: none;
+    }
+  }
   @media (max-width: 989px) {
     .mfh-inner {
       grid-template-columns: 1fr;
@@ -422,11 +426,19 @@
     }
     .mfh-hero { order: 1; }
     .mfh-content { order: 2; }
-    .mfh-star--hide-mobile { display: none; }
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--top { top: -30px;}
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--bottom { bottom: -30px; }
   }
   @media (max-width: 749px) {
-    .mfh-inner { padding-left: 20px; padding-right: 20px; }
+    #mfh-{{ section.id }} .mfh-inner { 
+        padding-left: 20px; 
+        padding-right: 20px; 
+    }
+      
     .mfh-description { max-width: 100%; }
+    .mfh-decal { display: none; }
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--top { top: 0;}
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--bottom { bottom: 0; }
   }
 {%- endstyle -%}
 
@@ -441,8 +453,8 @@
       "id": "layout_style",
       "label": "Layout style",
       "options": [
-        { "value": "static", "label": "Static (reusable)" },
-        { "value": "dynamic", "label": "Dynamic (pixel-perfect)" }
+        { "value": "static", "label": "Static (Single Image)" },
+        { "value": "dynamic", "label": "Dynamic (Image Layers)" }
       ],
       "default": "static"
     },
@@ -466,12 +478,11 @@
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "checkbox", "id": "show_button_arrow", "label": "Show arrow icon", "default": true },
 
-    { "type": "header", "content": "Static image", "info": "Used when Layout style is Static. Replaces the central image and bubble/star cluster with one uploaded graphic." },
-    { "type": "image_picker", "id": "static_image", "label": "Static image", "visible_if": "{{ section.settings.layout_style == 'static' }}" },
+    { "type": "header", "content": "Mobile & Static image", "info": "Used on mobile and when layout style is Static. Replaces the central image and bubble/star cluster with one uploaded graphic." },
+    { "type": "image_picker", "id": "static_image", "label": "Mobile &Static image"},
 
     { "type": "header", "content": "Dynamic image", "visible_if": "{{ section.settings.layout_style == 'dynamic' }}" },
     { "type": "image_picker", "id": "central_image", "label": "Central image", "visible_if": "{{ section.settings.layout_style == 'dynamic' }}" },
-    { "type": "checkbox", "id": "show_glow_effect", "label": "Show glow effect behind image", "default": true, "visible_if": "{{ section.settings.layout_style == 'dynamic' }}" },
 
     { "type": "header", "content": "Background texture" },
     { "type": "image_picker", "id": "background_texture_image", "label": "Background texture image" },
@@ -480,8 +491,6 @@
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }
     ], "default": "right" },
-    { "type": "color", "id": "star_color", "label": "Default star color", "info": "Used when a star block has no image of its own.", "default": "#ffffff", "visible_if": "{{ section.settings.layout_style == 'dynamic' }}" },
-
     { "type": "header", "content": "Section padding" },
     { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 180, "step": 2, "unit": "px", "default": 70 },
     { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 180, "step": 2, "unit": "px", "default": 70 }
@@ -536,6 +545,19 @@
         { "type": "range", "id": "top", "label": "Position from top", "min": -50, "max": 100, "step": 2, "unit": "%", "default": 0 },
         { "type": "range", "id": "left", "label": "Position from left", "min": -50, "max": 100, "step": 2, "unit": "%", "default": 0 },
         { "type": "range", "id": "size", "label": "Size", "min": 100, "max": 600, "step": 5, "unit": "px", "default": 570 },
+        { "type": "range", "id": "rotation", "label": "Rotation", "min": -45, "max": 45, "step": 1, "unit": "°", "default": 0 }
+      ]
+    },
+    {
+      "type": "decal",
+      "name": "Decal",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "range", "id": "z_index", "label": "Z-index", "min": 0, "max": 10, "step": 1, "default": 3 },
+        { "type": "range", "id": "top", "label": "Position from top", "min": -20, "max": 100, "step": 2, "unit": "%", "default": 10 },
+        { "type": "range", "id": "left", "label": "Position from left", "min": -20, "max": 100, "step": 2, "unit": "%", "default": 10 },
+        { "type": "range", "id": "size", "label": "Size", "min": 40, "max": 400, "step": 5, "unit": "px", "default": 140 },
         { "type": "range", "id": "rotation", "label": "Rotation", "min": -45, "max": 45, "step": 1, "unit": "°", "default": 0 }
       ]
     }
