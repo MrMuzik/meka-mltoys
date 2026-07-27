@@ -87,7 +87,9 @@
         },
         "globo_product_options_app_block_czPKJJ": {
           "type": "shopify://apps/globo-product-options/blocks/app-block/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
-          "settings": {}
+          "settings": {
+            "product": ""
+          }
         },
         "inventory_pbCRT8": {
           "type": "inventory",
@@ -889,7 +891,7 @@
         "headline_highlight": "Industry Leader",
         "headline_suffix": "In Performance Ride-On Parts.",
         "subtext": "Built stronger, backed by real support, and ready to upgrade.\nOrder yours before they're gone.",
-        "primary_label": "Order Now • $899",
+        "primary_label": "Order Now",
         "primary_url": "",
         "primary_show_arrow": true,
         "secondary_label": "Watch The Walkthrough",
