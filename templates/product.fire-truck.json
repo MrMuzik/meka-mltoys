@@ -485,7 +485,7 @@
             "title": "Stickers & Style",
             "description": "Four sticker packs to change the personality of the truck — Classic FD, Wildland, EMS Rescue, and a Custom Decals option for the kids who want to make it theirs.",
             "link_label": "EXPLORE STICKER PACKS",
-            "link_url": ""
+            "link_url": "shopify://collections/mltoys-firetruck-upgrade-parts"
           }
         },
         "extra_card_kQrKHK": {
@@ -495,7 +495,7 @@
             "title": "Service Centers & Parts",
             "description": "Service centers across the USA ready to support your upgrades. All parts from the biggest name in ride-on toy upgrades. Stocked and ready to ship.",
             "link_label": "FIND A SERVICE CENTER",
-            "link_url": ""
+            "link_url": "shopify://pages/ml-toys-service-centers"
           }
         }
       },
