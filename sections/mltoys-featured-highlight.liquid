@@ -1,0 +1,748 @@
+{% comment %}
+  ML Toys Featured Highlight
+  Two layout modes, toggled via section.settings.layout_style:
+  - static: one merchant-uploaded image replaces the whole hero cluster.
+  - dynamic: central image + up to 3 hover-interactive bubble images + up to
+    6 decorative stars, positioned by percentage so they track whatever
+    central image is uploaded.
+{% endcomment %}
+
+{%- liquid
+  assign layout_style = section.settings.layout_style
+  assign list_blocks = section.blocks | where: 'type', 'list_item'
+  assign bubble_blocks = section.blocks | where: 'type', 'bubble'
+  assign image_layer_blocks = section.blocks | where: 'type', 'image_layer'
+  assign decal_blocks = section.blocks | where: 'type', 'decal'
+-%}
+
+<div
+  id="mfh-{{ section.id }}"
+  class="mfh-wrap mfh-layout--{{ layout_style }}"
+  style="--mfh-bg: {{ section.settings.background_color }}; --mfh-text: {{ section.settings.text_color }}; --mfh-accent: {{ section.settings.accent_color }};"
+>
+  {%- if section.settings.background_texture_image != blank -%}
+    <div class="mfh-bg-texture mfh-bg-texture--{{ section.settings.background_texture_alignment }}" aria-hidden="true">
+      <img
+        src="{{ section.settings.background_texture_image | image_url: width: 2400 }}"
+        alt=""
+        loading="lazy"
+        width="{{ section.settings.background_texture_image.width }}"
+        height="{{ section.settings.background_texture_image.height }}"
+        decoding="async"
+      >
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.enable_ripped_edge_top -%}
+    <div class="mfh-ripped-edge mfh-ripped-edge--top" aria-hidden="true">
+      {%- render 'ripped-edge-top', fill_color: section.settings.ripped_edge_color -%}
+    </div>
+  {%- endif -%}
+
+  <div class="mfh-inner">
+    <div class="mfh-hero">
+      {%- if section.settings.static_image != blank -%}
+        <img
+          class="mfh-hero__static-image"
+          src="{{ section.settings.static_image | image_url: width: 1600 }}"
+          srcset="
+            {{ section.settings.static_image | image_url: width: 800 }} 800w,
+            {{ section.settings.static_image | image_url: width: 1200 }} 1200w,
+            {{ section.settings.static_image | image_url: width: 1600 }} 1600w
+          "
+          sizes="(min-width: 990px) 50vw, 90vw"
+          alt="{{ section.settings.static_image.alt | default: section.settings.header | escape }}"
+          width="{{ section.settings.static_image.width }}"
+          height="{{ section.settings.static_image.height }}"
+          loading="lazy"
+        >
+      {%- endif -%}
+      {%- if layout_style == 'dynamic' -%}
+        <featured-highlight-bubbles class="mfh-dynamic">
+          {%- for block in image_layer_blocks -%}
+            <div
+              class="mfh-image-layer"
+              style="--mfh-image-layer-z: {{ block.settings.z_index }}; top:{{ block.settings.top }}%; left:{{ block.settings.left }}%; width:{{ block.settings.size }}px; height:{{ block.settings.size }}px; transform: rotate({{ block.settings.rotation }}deg);"
+              aria-hidden="true"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 800 }}" alt="" loading="lazy">
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+          <div class="mfh-central-image">
+            {%- if section.settings.central_image != blank -%}
+              <img
+                src="{{ section.settings.central_image | image_url: width: 1600 }}"
+                srcset="
+                  {{ section.settings.central_image | image_url: width: 800 }} 800w,
+                  {{ section.settings.central_image | image_url: width: 1200 }} 1200w,
+                  {{ section.settings.central_image | image_url: width: 1600 }} 1600w
+                "
+                sizes="(min-width: 990px) 50vw, 90vw"
+                alt="{{ section.settings.central_image.alt | default: section.settings.header | escape }}"
+                width="{{ section.settings.central_image.width }}"
+                height="{{ section.settings.central_image.height }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </div>
+
+          {%- for block in bubble_blocks -%}
+            <div
+              class="mfh-bubble"
+              style="top:{{ block.settings.top }}%; left:{{ block.settings.left }}%; width:{{ block.settings.size }}px; height:{{ block.settings.size }}px; transform: rotate({{ block.settings.rotation }}deg);"
+              {%- if block.settings.linked_list_item != '0' %}
+                data-target="{{ block.settings.linked_list_item }}"
+              {% endif %}
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="" loading="lazy">
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </featured-highlight-bubbles>
+      {%- endif -%}
+    </div>
+
+    <div class="mfh-content">
+      {%- for block in decal_blocks -%}
+        <div
+          class="mfh-decal"
+          style="--mfh-decal-z-index: {{ block.settings.z_index }}; top:{{ block.settings.top }}%; left:{{ block.settings.left }}%; width:{{ block.settings.size }}px; transform: rotate({{ block.settings.rotation }}deg);"
+          aria-hidden="true"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="" loading="lazy">
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+      {%- if section.settings.header != blank -%}
+        <h2 class="mfh-header">{{ section.settings.header }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.sub_header != blank -%}
+        <p class="mfh-sub-header">{{ section.settings.sub_header }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="mfh-description">{{ section.settings.description | newline_to_br }}</p>
+      {%- endif -%}
+
+      {%- if list_blocks.size > 0 -%}
+        <ul class="mfh-list" role="list">
+          {%- for block in list_blocks -%}
+            <li class="mfh-list__item" data-list-index="{{ forloop.index }}" {{ block.shopify_attributes }}>
+              <span class="mfh-list__icon">
+                {%- if block.settings.icon != blank -%}
+                  <img src="{{ block.settings.icon | image_url: width: 56 }}" alt="" loading="lazy">
+                {%- else -%}
+                  {%- render 'icon-check-default', check_color: section.settings.accent_color -%}
+                {%- endif -%}
+              </span>
+              {%- if block.settings.text != blank -%}
+                <span class="mfh-list__text">{{ block.settings.text }}</span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="mfh-button">
+          <span>{{ section.settings.button_text | escape }}</span>
+          {%- if section.settings.show_button_arrow -%}
+            <span class="mfh-button__icon">{%- render 'icon-arrow-short' -%}</span>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.enable_ripped_edge_bottom -%}
+    <div class="mfh-ripped-edge mfh-ripped-edge--bottom" aria-hidden="true">
+      {%- render 'ripped-edge-bottom', fill_color: section.settings.ripped_edge_color -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{%- if layout_style == 'dynamic' and bubble_blocks.size > 0 -%}
+  <script src="{{ 'mltoys-featured-highlight.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  #mfh-{{ section.id }} {
+    position: relative;
+    isolation: isolate;
+    background: var(--mfh-bg);
+    color: var(--mfh-text);
+    overflow: hidden;
+  }
+
+  #mfh-{{ section.id }} .mfh-bg-texture {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+    opacity: 0.9;
+  }
+
+  #mfh-{{ section.id }} .mfh-bg-texture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #mfh-{{ section.id }} .mfh-bg-texture--left {
+    left: 0;
+  }
+
+  #mfh-{{ section.id }} .mfh-bg-texture--center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #mfh-{{ section.id }} .mfh-bg-texture--right {
+    right: 0;
+  }
+
+  #mfh-{{ section.id }} .mfh-ripped-edge {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #mfh-{{ section.id }} .mfh-ripped-edge svg { display: block; width: 100%; height: auto; }
+  #mfh-{{ section.id }} .mfh-ripped-edge svg .st0 {
+    fill: {{ section.settings.ripped_edge_color }};
+  }
+  #mfh-{{ section.id }} .mfh-ripped-edge--top { top: -78px; transform: rotate(180deg);}
+  #mfh-{{ section.id }} .mfh-ripped-edge--bottom { bottom: -84px;  }
+
+  .mfh-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 38% 62%;
+    align-items: center;
+    gap: 0;
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top }}px 56px {{ section.settings.padding_bottom }}px;
+  }
+
+  /* -- Hero (image slot, shared by both layouts) -- */
+  .mfh-hero { position: relative; order: 2; }
+  .mfh-hero__static-image { display: block; width: 100%; height: auto; }
+
+  .mfh-decal {
+    position: absolute;
+    z-index: var(--mfh-decal-z-index, 3);
+    pointer-events: none;
+  }
+  .mfh-decal img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* -- Dynamic layout -- */
+  .mfh-dynamic { position: relative; display: block; }
+  .mfh-central-image { position: relative; z-index: 2; }
+  .mfh-central-image img { display: block; width: 100%; height: auto; }
+
+  .mfh-image-layer {
+    position: absolute;
+    z-index: var(--mfh-image-layer-z, 0);
+    pointer-events: none;
+    overflow: visible;
+  }
+  .mfh-image-layer img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .mfh-bubble {
+    position: absolute;
+    z-index: 4;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+  }
+  .mfh-bubble img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .mfh-bubble:hover { transform: scale(1.12) !important; z-index: 20; }
+
+  /* -- Content -- */
+  .mfh-content {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .mfh-header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 65px);
+    line-height: 1.01;
+    margin: 0;
+    color:var(--mfh-text);
+  }
+
+  .mfh-sub-header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2.4vw, 36px);
+    line-height: 1.01;
+    margin: 0;
+  }
+
+  .mfh-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 440px;
+    margin: 0;
+  }
+
+  .mfh-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 8px 0 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .mfh-list__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.2s ease;
+  }
+  .mfh-list__item.is-active { transform: translateY(-4px); }
+
+  .mfh-list__icon { flex-shrink: 0; width: 28px; height: 28px; }
+  .mfh-list__icon img,
+  .mfh-list__icon svg { display: block; width: 100%; height: 100%; }
+
+  .mfh-list__text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    position: relative;
+  }
+  .mfh-list__text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.25s ease;
+  }
+  .mfh-list__item.is-active .mfh-list__text::after { width: 100%; }
+
+  .mfh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 4px 16px;
+    background: #ffffff;
+    color: var(--mfh-accent);
+    border: 2px solid var(--mfh-accent);
+    border-radius: 16px;
+    box-shadow: -2px 4px 0px var(--mfh-accent);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+  }
+  .mfh-button:hover {
+    color: #ffffff;
+    background: var(--mfh-accent);
+  }
+  .mfh-button__icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+  .mfh-button__icon .icon { width: 12px; height: 12px; }
+
+  /* -- Responsive -- */
+  @media (min-width: 1400px) {
+    #mfh-{{ section.id }} .mfh-bg-texture {
+      width: 1277px;
+    }
+    #mfh-{{ section.id }}.mfh-layout--dynamic .mfh-hero__static-image{
+        display: none;
+    }
+  }
+
+  @media (max-width: 1399px) {
+    #mfh-{{ section.id }} .mfh-bg-texture {
+      width: 100%;
+      position:relative;
+    }
+    #mfh-{{ section.id }} .mfh-bg-texture img{
+        object-fit:contain;
+        position:absolute;
+        top:0;
+        height:auto;
+    }
+    .mfh-layout--dynamic .mfh-hero__static-image{
+        display: block;
+    }
+    #mfh-{{ section.id }}.mfh-layout--dynamic .mfh-dynamic{
+        display: none;
+    }
+  }
+  @media (max-width: 989px) {
+    .mfh-inner {
+      grid-template-columns: 1fr;
+      padding-left: 32px;
+      padding-right: 32px;
+      gap: 24px;
+    }
+    .mfh-hero { order: 1; }
+    .mfh-content { order: 2; }
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--top { top: -30px;}
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--bottom { bottom: -30px; }
+  }
+  @media (max-width: 749px) {
+    #mfh-{{ section.id }} .mfh-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    .mfh-description { max-width: 100%; }
+    .mfh-decal { display: none; }
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--top { top: 0;}
+    #mfh-{{ section.id }} .mfh-ripped-edge.mfh-ripped-edge--bottom { bottom: 0; }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Featured Highlight",
+  "tag": "section",
+  "class": "mfh-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        { "value": "static", "label": "Static (Single Image)" },
+        { "value": "dynamic", "label": "Dynamic (Image Layers)" }
+      ],
+      "default": "static"
+    },
+    { "type": "header", "content": "Ripped edges" },
+    { "type": "checkbox", "id": "enable_ripped_edge_top", "label": "Enable ripped edge — top", "default": false },
+    { "type": "checkbox", "id": "enable_ripped_edge_bottom", "label": "Enable ripped edge — bottom", "default": false },
+    { "type": "color", "id": "ripped_edge_color", "label": "Ripped edge color", "default": "#ffffff" },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#d60000" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Accent color (button, checkmarks)", "default": "#001429" },
+
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "header", "label": "Header", "default": "The ML Toys 12V Fire Truck" },
+    { "type": "text", "id": "sub_header", "label": "Sub header", "default": "Our Own Ride-On Vehicle" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Skip the upgraded parts and buy a ride-on that's built tough to last from day 1"
+    },
+
+    { "type": "header", "content": "Shop now button" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Shop Now" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "checkbox", "id": "show_button_arrow", "label": "Show arrow icon", "default": true },
+
+    {
+      "type": "header",
+      "content": "Mobile & Static image",
+      "info": "Used on mobile and when layout style is Static. Replaces the central image and bubble/star cluster with one uploaded graphic."
+    },
+    { "type": "image_picker", "id": "static_image", "label": "Mobile &Static image" },
+
+    { "type": "header", "content": "Dynamic image", "visible_if": "{{ section.settings.layout_style == 'dynamic' }}" },
+    {
+      "type": "image_picker",
+      "id": "central_image",
+      "label": "Central image",
+      "visible_if": "{{ section.settings.layout_style == 'dynamic' }}"
+    },
+
+    { "type": "header", "content": "Background texture" },
+    { "type": "image_picker", "id": "background_texture_image", "label": "Background texture image" },
+    {
+      "type": "select",
+      "id": "background_texture_alignment",
+      "label": "Background texture alignment",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    { "type": "header", "content": "Section padding" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top padding",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom padding",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "List item",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon", "info": "Leave blank to use the default check icon." },
+        { "type": "text", "id": "text", "label": "Text", "default": "List item" }
+      ]
+    },
+    {
+      "type": "bubble",
+      "name": "Bubble image",
+      "limit": 3,
+      "settings": [
+        { "type": "paragraph", "content": "Dynamic layout only." },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "range",
+          "id": "size",
+          "label": "Size",
+          "min": 60,
+          "max": 220,
+          "step": 2,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Position from top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Position from left",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "default": 70
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "label": "Rotation",
+          "min": -45,
+          "max": 45,
+          "step": 1,
+          "unit": "°",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "linked_list_item",
+          "label": "Link to list item",
+          "info": "On hover, the linked list item rises and underlines.",
+          "options": [
+            { "value": "0", "label": "None" },
+            { "value": "1", "label": "1" },
+            { "value": "2", "label": "2" },
+            { "value": "3", "label": "3" },
+            { "value": "4", "label": "4" },
+            { "value": "5", "label": "5" },
+            { "value": "6", "label": "6" }
+          ],
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "type": "image_layer",
+      "name": "Image layer",
+      "limit": 6,
+      "settings": [
+        { "type": "paragraph", "content": "Dynamic layout only." },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "range", "id": "z_index", "label": "Z-index", "min": 0, "max": 10, "step": 1, "default": 0 },
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Position from top",
+          "min": -50,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Position from left",
+          "min": -50,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "size",
+          "label": "Size",
+          "min": 100,
+          "max": 600,
+          "step": 5,
+          "unit": "px",
+          "default": 570
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "label": "Rotation",
+          "min": -45,
+          "max": 45,
+          "step": 1,
+          "unit": "°",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "decal",
+      "name": "Decal",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "range", "id": "z_index", "label": "Z-index", "min": 0, "max": 10, "step": 1, "default": 3 },
+        {
+          "type": "range",
+          "id": "top",
+          "label": "Position from top",
+          "min": -20,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "left",
+          "label": "Position from left",
+          "min": -20,
+          "max": 100,
+          "step": 2,
+          "unit": "%",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "size",
+          "label": "Size",
+          "min": 40,
+          "max": 400,
+          "step": 5,
+          "unit": "px",
+          "default": 140
+        },
+        {
+          "type": "range",
+          "id": "rotation",
+          "label": "Rotation",
+          "min": -45,
+          "max": 45,
+          "step": 1,
+          "unit": "°",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Highlight",
+      "blocks": [
+        { "type": "list_item", "settings": { "text": "Working Lights, Siren & Water Cannon" } },
+        { "type": "list_item", "settings": { "text": "Real Customer Support" } },
+        { "type": "list_item", "settings": { "text": "All Terrain Rubber Tires" } },
+        { "type": "list_item", "settings": { "text": "Upgraded Gearboxes" } },
+        { "type": "list_item", "settings": { "text": "Built Tough From Day 1" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

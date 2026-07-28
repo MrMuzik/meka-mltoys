@@ -1,4 +1,18 @@
+# Keep these out of pushes to the store
 node_modules/
+dist/
+.vscode/
+.git/
+.env
+.env.*
+targets.rtf
+README.md
+package.json
+package-lock.json
+postcss.config.js
+vite.config.js
+.gitignore
+.shopifyignore
 .DS_Store
 *.zip
 *.psd

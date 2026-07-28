@@ -1,0 +1,10 @@
+{% comment %}
+  Fallback checklist icon for mltoys-featured-highlight list_item blocks.
+  Renders a white circle badge with a check mark so merchants get a working
+  result without needing to upload an icon. `check_color` tints the mark
+  (defaults to the section's accent color).
+{% endcomment %}
+<svg class="icon icon-check-default" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="13" fill="#ffffff"/>
+  <path d="M8.5 14.5L12 18L19.5 10" stroke="{{ check_color | default: '#001429' }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
