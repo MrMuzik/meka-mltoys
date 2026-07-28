@@ -1167,6 +1167,161 @@
         "button_link": "shopify://pages/upgrades-by-vehicle"
       }
     },
+    "mltoys_featured_highlight_j739hV": {
+      "type": "mltoys-featured-highlight",
+      "blocks": {
+        "image_layer_wKenQp": {
+          "type": "image_layer",
+          "settings": {
+            "image": "shopify://shop_images/squiggly-arrow-decal.svg",
+            "z_index": 2,
+            "top": 0,
+            "left": -10,
+            "size": 100,
+            "rotation": 0
+          }
+        },
+        "bubble_GhVbmW": {
+          "type": "bubble",
+          "settings": {
+            "image": "shopify://shop_images/LIFESTYLE.png",
+            "size": 96,
+            "top": 13,
+            "left": 34,
+            "rotation": 0,
+            "linked_list_item": "3"
+          }
+        },
+        "bubble_RGrULK": {
+          "type": "bubble",
+          "settings": {
+            "image": "shopify://shop_images/FireTruck15762.jpg",
+            "size": 88,
+            "top": 20,
+            "left": 84,
+            "rotation": 18,
+            "linked_list_item": "1"
+          }
+        },
+        "bubble_VBnYYH": {
+          "type": "bubble",
+          "settings": {
+            "image": "shopify://shop_images/FireTruck15749__2.jpg",
+            "size": 114,
+            "top": 75,
+            "left": 21,
+            "rotation": 0,
+            "linked_list_item": "1"
+          }
+        },
+        "image_layer_izWWei": {
+          "type": "image_layer",
+          "settings": {
+            "image": "shopify://shop_images/red-star-layer.svg",
+            "z_index": 3,
+            "top": -6,
+            "left": 8,
+            "size": 570,
+            "rotation": 0
+          }
+        },
+        "image_layer_Ryjb46": {
+          "type": "image_layer",
+          "settings": {
+            "image": "shopify://shop_images/bottom-star-layer.svg",
+            "z_index": 1,
+            "top": 4,
+            "left": 26,
+            "size": 540,
+            "rotation": 0
+          }
+        },
+        "image_layer_n9cWKE": {
+          "type": "image_layer",
+          "settings": {
+            "image": "shopify://shop_images/drawn-circle.svg",
+            "z_index": 0,
+            "top": 0,
+            "left": 20,
+            "size": 570,
+            "rotation": 5
+          }
+        },
+        "list_item_T9itYh": {
+          "type": "list_item",
+          "settings": {
+            "icon": "shopify://shop_images/sketch-check.svg",
+            "text": "Working Lights, Siren & Water Cannon"
+          }
+        },
+        "list_item_gdEXmm": {
+          "type": "list_item",
+          "settings": {
+            "icon": "shopify://shop_images/sketch-check.svg",
+            "text": "Real Customer Support"
+          }
+        },
+        "list_item_nJNqcg": {
+          "type": "list_item",
+          "settings": {
+            "icon": "shopify://shop_images/sketch-check.svg",
+            "text": "All Terrain Rubber Tires"
+          }
+        },
+        "list_item_RWANic": {
+          "type": "list_item",
+          "settings": {
+            "icon": "shopify://shop_images/sketch-check.svg",
+            "text": "Upgraded Gearboxes"
+          }
+        },
+        "list_item_yKXyJ6": {
+          "type": "list_item",
+          "settings": {
+            "icon": "shopify://shop_images/sketch-check.svg",
+            "text": "Built Tough From Day 1"
+          }
+        }
+      },
+      "block_order": [
+        "image_layer_wKenQp",
+        "bubble_GhVbmW",
+        "bubble_RGrULK",
+        "bubble_VBnYYH",
+        "image_layer_izWWei",
+        "image_layer_Ryjb46",
+        "image_layer_n9cWKE",
+        "list_item_T9itYh",
+        "list_item_gdEXmm",
+        "list_item_nJNqcg",
+        "list_item_RWANic",
+        "list_item_yKXyJ6"
+      ],
+      "name": "Featured Highlight",
+      "settings": {
+        "layout_style": "dynamic",
+        "enable_ripped_edge_top": true,
+        "enable_ripped_edge_bottom": false,
+        "ripped_edge_color": "#ffffff",
+        "background_color": "#d60000",
+        "text_color": "#ffffff",
+        "accent_color": "#001429",
+        "header": "The ML Toys12V Fire Truck",
+        "sub_header": "Our Own Ride-On Vehicle",
+        "description": "Skip the upgraded parts and buy a ride-on that's built tough to last from day 1",
+        "button_text": "Shop Now",
+        "button_link": "shopify://products/firetruck-12v-ride-on-vehicle",
+        "show_button_arrow": true,
+        "static_image": "shopify://shop_images/firetruck-highlight-group.png",
+        "central_image": "shopify://shop_images/Fire-truck-transparent.png",
+        "background_texture_image": "shopify://shop_images/red-burst-texture.png",
+        "background_texture_alignment": "right",
+        "padding_top": 136,
+        "padding_bottom": 84,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
     "collection_list_grid_QcWpEc": {
       "type": "collection-list-grid",
       "blocks": {
@@ -1240,7 +1395,7 @@
         "background_color": "#001429",
         "section_text_color": "#ffffff",
         "show_background_tread": false,
-        "show_ripped_edges": true,
+        "show_ripped_edges": false,
         "title": "Stock Parts",
         "icon_one": "shopify://shop_images/elements_1_0be52c91-f1df-4c16-b142-edce0de70434.svg",
         "icon_two": "shopify://shop_images/elements_2.svg",
@@ -1534,6 +1689,7 @@
     "a845fd8c-a661-412b-b2da-7787cec2a078",
     "ml_video_carousel_Wgrakp",
     "ml_upgrade_vehicle_HzwWPQ",
+    "mltoys_featured_highlight_j739hV",
     "collection_list_grid_QcWpEc",
     "image_hubspot_banner_NDAMET",
     "ml_toys_product_slider_qxnMqY",
