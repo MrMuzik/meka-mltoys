@@ -1,0 +1,563 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign post_blocks = section.blocks | where: 'type', 'post'
+  assign display_count = 0
+
+  if section.settings.blog_source == 'manual'
+    assign display_count = post_blocks.size
+  elsif section.settings.blog != blank
+    assign display_count = section.settings.blog.articles_count
+  endif
+
+  if display_count > 3
+    assign display_count = 3
+  endif
+-%}
+
+<div id="mfbv2-{{ section.id }}" class="mfbv2-section">
+  {%- if section.settings.enable_ripped_edge_top -%}
+    <div class="mfbv2-ripped-edge mfbv2-ripped-edge--top" aria-hidden="true">
+      {%- render 'ripped-edge-top' -%}
+    </div>
+  {%- endif -%}
+
+  <div class="page-width mfbv2-section-padding">
+    {%- if section.settings.header != blank or section.settings.subtext != blank -%}
+      <div class="section-heading align-center{% if section.settings.enable_heading_background %} mfbv2-heading-backdrop{% endif %}">
+        {%- if section.settings.header != blank -%}
+          <h2 class="section-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.header }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.subtext != blank -%}
+          <div class="mfbv2-subtext rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.subtext }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="mfbv2-grid" data-count="{{ display_count }}">
+      {%- if section.settings.blog_source == 'manual' -%}
+        {%- for block in post_blocks limit: 3 -%}
+          {%- render 'mltoys-blog-v2-card',
+            article: block.settings.article,
+            large: forloop.first,
+            read_more_text: section.settings.read_more_text,
+            placeholder_index: forloop.index,
+            block_attributes: block.shopify_attributes,
+            animation_order: forloop.index
+          -%}
+        {%- endfor -%}
+      {%- elsif section.settings.blog != blank -%}
+        {%- for article in section.settings.blog.articles limit: 3 -%}
+          {%- render 'mltoys-blog-v2-card',
+            article: article,
+            large: forloop.first,
+            read_more_text: section.settings.read_more_text,
+            placeholder_index: forloop.index,
+            animation_order: forloop.index
+          -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    {%- if display_count == 0 -%}
+      <p class="mfbv2-empty-state">
+        {%- if section.settings.blog_source == 'manual' -%}
+          Add up to 3 "Blog post" blocks and select an article for each.
+        {%- else -%}
+          Select a blog above to display its 3 most recent posts.
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+
+    {%- if section.settings.view_all_text != blank -%}
+      <div class="mfbv2-view-all">
+        <a href="{{ section.settings.view_all_link | default: '#' }}" class="mfbv2-view-all__button">
+          <span>{{ section.settings.view_all_text }}</span>
+          {%- render 'arrow-right' -%}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.enable_ripped_edge_bottom -%}
+    <div class="mfbv2-ripped-edge mfbv2-ripped-edge--bottom" aria-hidden="true">
+      {%- render 'ripped-edge-bottom' -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{%- style -%}
+  #mfbv2-{{ section.id }} {
+    position: relative;
+    isolation: isolate;
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    overflow: hidden;
+  }
+
+  {%- if section.settings.background_image != blank -%}
+    #mfbv2-{{ section.id }} {
+      background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');
+      background-size: cover;
+      background-position: center;
+    }
+    #mfbv2-{{ section.id }}::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: #000000;
+      opacity: {{ section.settings.background_overlay_opacity | divided_by: 100.0 }};
+      pointer-events: none;
+    }
+  {%- endif -%}
+
+  #mfbv2-{{ section.id }} .mfbv2-ripped-edge {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-ripped-edge svg { display: block; width: 100%; height: auto; }
+  #mfbv2-{{ section.id }} .mfbv2-ripped-edge svg .st0 {
+    fill: {{ section.settings.ripped_edge_color }};
+  }
+  #mfbv2-{{ section.id }} .mfbv2-ripped-edge--top { top: -78px; transform: rotate(180deg); }
+  #mfbv2-{{ section.id }} .mfbv2-ripped-edge--bottom { bottom: -84px; }
+
+  #mfbv2-{{ section.id }} .mfbv2-section-padding {
+    position: relative;
+    z-index: 1;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  #mfbv2-{{ section.id }} .section-title {
+    color: {{ section.settings.text_color }};
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-subtext {
+    margin-top: 1rem;
+    color: {{ section.settings.text_color }};
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-heading-backdrop {
+    position: relative;
+    z-index: 1;
+    background-color: {{ section.settings.background_color }};
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 40px;
+    border-radius: 16px;
+  }
+
+  @media screen and (max-width: 749px) {
+    #mfbv2-{{ section.id }} .mfbv2-heading-backdrop {
+      padding: 16px 24px;
+    }
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 500px) minmax(0, 500px);
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    gap: 24px;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-grid[data-count="1"] {
+    grid-template-columns: minmax(0, 438px);
+    grid-template-rows: 1fr;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-grid[data-count="1"] .mfbv2-card-link:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-grid[data-count="2"] {
+    grid-template-rows: 1fr;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-grid[data-count="2"] .mfbv2-card-link:nth-child(2) {
+    grid-row: 1 / span 2;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card-link {
+    position: relative;
+    display: block;
+    min-height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card-link--placeholder { pointer-events: none; }
+  #mfbv2-{{ section.id }} .mfbv2-card-link:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+  #mfbv2-{{ section.id }} .mfbv2-card-link:nth-child(2) { grid-column: 2; grid-row: 1; }
+  #mfbv2-{{ section.id }} .mfbv2-card-link:nth-child(3) { grid-column: 2; grid-row: 2; }
+
+  #mfbv2-{{ section.id }} .mfbv2-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card__media img,
+  #mfbv2-{{ section.id }} .mfbv2-card__media svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card-link:hover .mfbv2-card__media img {
+    transform: scale(1.05);
+  }
+
+  /* Gradient overlay so the title/meta/CTA stay legible over any photo. */
+  #mfbv2-{{ section.id }} .mfbv2-card__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.05) 35%,
+      rgba(0, 0, 0, 0.65) 75%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+    pointer-events: none;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__title {
+    color: {{ section.settings.text_color }};
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card-link--large .mfbv2-card__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card-link--small .mfbv2-card__title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: {{ section.settings.text_color }};
+    opacity: 0.85;
+    display: flex;
+    gap: 6px;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__cta {
+    margin-top: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: {{ section.settings.text_color }};
+    transition: color 0.2s ease;
+    text-decoration: none;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card-link:hover .mfbv2-card__cta {
+    color: rgb(var(--color-accent));
+    text-decoration: underline;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-card__cta .icon-wrap {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-left: 2px;
+    transform: rotate(270deg);
+    color: rgb(var(--color-accent));
+  }
+  #mfbv2-{{ section.id }} .mfbv2-card__cta .icon-wrap svg {
+    width: auto;
+    height: 8px;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-empty-state {
+    text-align: center;
+    opacity: 0.7;
+    font-family: 'Inter', sans-serif;
+    margin-top: 24px;
+  }
+
+  #mfbv2-{{ section.id }} .mfbv2-view-all {
+    margin-top: 40px;
+    text-align: center;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-view-all__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #001429;
+    border: 2px solid #001429;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-view-all__button:hover {
+    background: #001429;
+    color: #ffffff;
+  }
+  #mfbv2-{{ section.id }} .mfbv2-view-all__button:hover svg path {
+    fill: #ffffff;
+  }
+
+  @media screen and (max-width: 989px) {
+    #mfbv2-{{ section.id }} .mfbv2-ripped-edge--top { top: -30px; }
+    #mfbv2-{{ section.id }} .mfbv2-ripped-edge--bottom { bottom: -30px; }
+  }
+
+  @media screen and (max-width: 749px) {
+    #mfbv2-{{ section.id }} .mfbv2-ripped-edge--top { top: 0; }
+    #mfbv2-{{ section.id }} .mfbv2-ripped-edge--bottom { bottom: 0; }
+
+    #mfbv2-{{ section.id }} .mfbv2-section-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.57 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.57 | round: 0 }}px;
+    }
+
+    #mfbv2-{{ section.id }} .mfbv2-grid {
+      display: flex;
+      grid-template-columns: unset;
+      grid-template-rows: unset;
+      justify-content: flex-start;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 16px;
+      margin: 0 -16px;
+      padding: 0 16px;
+    }
+    #mfbv2-{{ section.id }} .mfbv2-grid::-webkit-scrollbar { display: none; }
+
+    #mfbv2-{{ section.id }} .mfbv2-card-link {
+      grid-column: auto !important;
+      grid-row: auto !important;
+      flex: 0 0 88%;
+      scroll-snap-align: start;
+      height: 420px;
+      min-height: 0;
+    }
+
+    /* Mobile card: image fills the top 60% (landscape), text sits in a solid-color panel below (40%). */
+    #mfbv2-{{ section.id }} .mfbv2-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #mfbv2-{{ section.id }} .mfbv2-card__media {
+      position: relative;
+      inset: auto;
+      flex: 0 0 60%;
+      min-height: 0;
+    }
+    #mfbv2-{{ section.id }} .mfbv2-card__media::after {
+      content: none;
+    }
+
+    #mfbv2-{{ section.id }} .mfbv2-card__content {
+      position: relative;
+      inset: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      flex: 0 0 40%;
+      min-height: 0;
+      overflow: hidden;
+      justify-content: center;
+      background-color: {{ section.settings.mobile_card_background_color }};
+      padding: 16px 20px;
+    }
+
+    #mfbv2-{{ section.id }} .mfbv2-card__title,
+    #mfbv2-{{ section.id }} .mfbv2-card__meta,
+    #mfbv2-{{ section.id }} .mfbv2-card__cta {
+      color: {{ section.settings.mobile_text_color }};
+    }
+
+    #mfbv2-{{ section.id }} .mfbv2-card-link--large .mfbv2-card__title,
+    #mfbv2-{{ section.id }} .mfbv2-card-link--small .mfbv2-card__title {
+      font-size: 18px;
+    }
+
+    /* Fixed 60/40 split above depends on this: clamp long titles instead of letting them push the image smaller. */
+    #mfbv2-{{ section.id }} .mfbv2-card__title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1199px) {
+    #mfbv2-{{ section.id }} .mfbv2-section-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.72 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.72 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "ML Toys Featured Blog V2",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "header", "label": "Header", "default": "Pit Stop Blog" },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.all.heading_size.label",
+      "options": [
+        { "value": "h3", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h2", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__3.label" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Stay up-to-date with advice from our professionals</p>"
+    },
+
+    { "type": "header", "content": "Background" },
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    {
+      "type": "range",
+      "id": "background_overlay_opacity",
+      "label": "Background image overlay opacity",
+      "info": "Darkens the background image to help text stand out.",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    },
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#001429" },
+    {
+      "type": "checkbox",
+      "id": "enable_heading_background",
+      "label": "Add background behind heading text",
+      "info": "Uses the background color above as a backdrop behind the header and subtext, useful when a background image reduces legibility.",
+      "default": false
+    },
+
+    { "type": "header", "content": "Ripped edges" },
+    { "type": "checkbox", "id": "enable_ripped_edge_top", "label": "Enable top ripped edge", "default": false },
+    { "type": "checkbox", "id": "enable_ripped_edge_bottom", "label": "Enable bottom ripped edge", "default": false },
+    { "type": "color", "id": "ripped_edge_color", "label": "Ripped edge color", "default": "#ffffff" },
+
+    { "type": "header", "content": "View all button" },
+    { "type": "text", "id": "view_all_text", "label": "Button text", "default": "View All Blogs" },
+    { "type": "url", "id": "view_all_link", "label": "Button link" },
+
+    { "type": "header", "content": "Blog source" },
+    {
+      "type": "select",
+      "id": "blog_source",
+      "label": "Choose blog source",
+      "options": [
+        { "value": "latest", "label": "Latest (pull in the most recent posts)" },
+        { "value": "manual", "label": "Manual (select blog posts below)" }
+      ],
+      "default": "latest"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog",
+      "info": "Used when blog source is set to Latest. Displays the 3 most recent posts."
+    },
+
+    { "type": "header", "content": "Customization" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+    { "type": "text", "id": "read_more_text", "label": "Read more text", "default": "Read More" },
+    {
+      "type": "color",
+      "id": "mobile_card_background_color",
+      "label": "Mobile card background color",
+      "info": "On mobile, each card's text sits in a solid-color panel below the image instead of over it.",
+      "default": "#ffffff"
+    },
+    { "type": "color", "id": "mobile_text_color", "label": "Mobile text color", "default": "#001429" },
+
+    { "type": "header", "content": "Section padding" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 70
+    }
+  ],
+  "blocks": [
+    {
+      "type": "post",
+      "name": "Blog post",
+      "limit": 3,
+      "settings": [{ "type": "article", "id": "article", "label": "Select article" }]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ML Toys Featured Blog V2",
+      "blocks": [{ "type": "post" }, { "type": "post" }, { "type": "post" }]
+    }
+  ]
+}
+{% endschema %}
