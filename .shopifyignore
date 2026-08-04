@@ -17,7 +17,3 @@ vite.config.js
 *.zip
 *.psd
 *.sketch
-config/*.json
-config/settings_data.json
-templates/**/*.json
-templates/*.json
