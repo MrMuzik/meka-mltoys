@@ -1585,75 +1585,55 @@
         "padding_bottom": 70
       }
     },
-    "mltoys_featured_blog_section_gKepmf": {
-      "type": "mltoys-featured-blog-section",
+    "mltoys_featured_blog_v2_PN6CwJ": {
+      "type": "mltoys-featured-blog-v2",
       "blocks": {
-        "custom_iih4B8": {
-          "type": "custom",
+        "post_6VUBwg": {
+          "type": "post",
           "settings": {
-            "custom_image": "shopify://shop_images/Rectangle_23798.png",
-            "custom_heading": "How To Get In To Power Wheels Racing",
-            "custom_description": "<p>March 19, 2025 - 6 min read</p>",
-            "custom_link_title": "Read More",
-            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/how-to-get-in-to-power-wheels-racing",
-            "text_color": "foreground",
-            "text_size_block": "medium",
-            "button_style": "link_icon",
-            "item_color_scheme": "scheme-1"
+            "article": "power-wheels-and-ride-on-toys/what-are-the-best-brands-of-power-wheels-ride-on-toys"
           }
         },
-        "custom_m9KxPH": {
-          "type": "custom",
+        "post_6BVKRq": {
+          "type": "post",
           "settings": {
-            "custom_image": "shopify://shop_images/Rectangle_23799.png",
-            "custom_heading": "How Do You Make a Power Wheels Faster?",
-            "custom_description": "<p>March 16, 2025 - 3 min read</p>",
-            "custom_link_title": "Read More",
-            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/how-do-you-make-a-power-wheels-faster",
-            "text_color": "foreground",
-            "text_size_block": "medium",
-            "button_style": "link_icon",
-            "item_color_scheme": "scheme-1"
+            "article": "power-wheels-and-ride-on-toys/how-to-store-a-ride-on-toy-or-power-wheels-for-winter"
           }
         },
-        "custom_UntPxk": {
-          "type": "custom",
+        "post_3xkdPT": {
+          "type": "post",
           "settings": {
-            "custom_image": "shopify://shop_images/Rectangle_23800.png",
-            "custom_heading": "What’s the Best Battery for a Power Wheels?",
-            "custom_description": "<p>March 13, 2025 - 7 min read</p>",
-            "custom_link_title": "Read More",
-            "custom_link_url": "shopify://blogs/power-wheels-and-ride-on-toys/what-s-the-best-battery-for-a-power-wheels",
-            "text_color": "foreground",
-            "text_size_block": "medium",
-            "button_style": "link_icon",
-            "item_color_scheme": "scheme-1"
+            "article": "power-wheels-and-ride-on-toys/what-are-the-most-reliable-and-durable-ride-on-toy-brands"
           }
         }
       },
       "block_order": [
-        "custom_iih4B8",
-        "custom_m9KxPH",
-        "custom_UntPxk"
+        "post_6VUBwg",
+        "post_6BVKRq",
+        "post_3xkdPT"
       ],
-      "name": "ML Toys Featured Blog",
+      "name": "ML Toys Featured Blog V2",
       "settings": {
-        "enable_ripped_edges": true,
+        "header": "Pit Stop Blog",
+        "heading_size": "h1",
+        "subtext": "<p>Stay up-to-date with advice from our professionals</p>",
         "background_image": "shopify://shop_images/bottom-bg-racetrack_2310922c-b6fc-489c-89a3-95f405519849.svg",
+        "background_overlay_opacity": 0,
         "background_color": "#001429",
-        "section_text_color": "#ffffff",
-        "heading": "Pit Stop Blog",
-        "heading_alignment": "center",
-        "heading_size": "h2",
-        "description": "<p>Stay up-to-date with advice from our professionals</p>",
-        "text_color": "foreground",
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "color_scheme": "",
-        "padding_top": 70,
-        "padding_bottom": 70,
-        "button_link": "shopify://blogs/power-wheels-and-ride-on-toys",
-        "button_text": "View All Blogs"
+        "enable_heading_background": true,
+        "enable_ripped_edge_top": false,
+        "enable_ripped_edge_bottom": true,
+        "ripped_edge_color": "#ffffff",
+        "view_all_text": "View All Blogs",
+        "view_all_link": "shopify://blogs/power-wheels-and-ride-on-toys",
+        "blog_source": "latest",
+        "blog": "power-wheels-and-ride-on-toys",
+        "text_color": "#ffffff",
+        "read_more_text": "Read More",
+        "mobile_card_background_color": "#ffffff",
+        "mobile_text_color": "#001429",
+        "padding_top": 40,
+        "padding_bottom": 120
       }
     },
     "175825075732a38aad": {
@@ -1693,7 +1673,7 @@
     "collection_list_grid_QcWpEc",
     "image_hubspot_banner_NDAMET",
     "ml_toys_product_slider_qxnMqY",
-    "mltoys_featured_blog_section_gKepmf",
+    "mltoys_featured_blog_v2_PN6CwJ",
     "175825075732a38aad"
   ]
 }
