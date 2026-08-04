@@ -1,0 +1,76 @@
+{%- comment -%}
+  Renders a single post tile for the ML Toys Featured Blog V2 section.
+  Accepts:
+    article           - the blog article object (may be blank for an unconfigured manual block)
+    large             - boolean, true for the large/first tile
+    read_more_text    - button label
+    placeholder_index - 1-based index, used to vary the placeholder image/copy when article is blank
+    block_attributes  - block.shopify_attributes string (manual mode only, blank for latest mode)
+    animation_order    - forloop.index, used for the scroll-reveal animation
+{%- endcomment -%}
+
+{%- liquid
+  assign read_minutes = 1
+  if article.content != blank
+    assign word_count = article.content | strip_html | split: ' ' | size
+    assign read_minutes = word_count | times: 1.0 | divided_by: 200 | ceil
+    if read_minutes < 1
+      assign read_minutes = 1
+    endif
+  endif
+
+  assign placeholder_cycle = placeholder_index | modulo: 3 | plus: 1
+  assign placeholder_image = 'blog-apparel-' | append: placeholder_cycle
+
+  assign image_sizes = '(min-width: 750px) 33vw, 100vw'
+  if large
+    assign image_sizes = '(min-width: 750px) 66vw, 100vw'
+  endif
+-%}
+
+<a
+  href="{{ article.url | default: '#' }}"
+  class="mfbv2-card-link{% if large %} mfbv2-card-link--large{% else %} mfbv2-card-link--small{% endif %}{% if article == blank %} mfbv2-card-link--placeholder{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  {%- if article == blank %} tabindex="-1" aria-disabled="true"{% endif %}
+  {%- if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ animation_order }};"{% endif %}
+  {{ block_attributes }}
+>
+  <div class="mfbv2-card">
+    <div class="mfbv2-card__media">
+      {%- if article.image != blank -%}
+        {{
+          article.image
+          | image_url: width: 1600
+          | image_tag:
+            widths: '400, 600, 800, 1000, 1200, 1600',
+            sizes: image_sizes,
+            loading: 'lazy',
+            alt: article.image.alt | default: article.title
+        }}
+      {%- else -%}
+        {{ placeholder_image | placeholder_svg_tag: 'mfbv2-card__placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+    <div class="mfbv2-card__content">
+      <h3 class="mfbv2-card__title">
+        {{ article.title | default: 'Select an article' }}
+      </h3>
+
+      {%- if article != blank -%}
+        <div class="mfbv2-card__meta">
+          <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%B %d, %Y' }}</time>
+          <span aria-hidden="true">-</span>
+          <span>{{ read_minutes }} min read</span>
+        </div>
+
+        {%- if read_more_text != blank -%}
+          <span class="mfbv2-card__cta link animate-arrow">
+            <span>{{ read_more_text | escape }}</span>
+            <span class="icon-wrap">{%- render 'icon-caret' -%}</span>
+          </span>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+</a>
