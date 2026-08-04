@@ -972,7 +972,7 @@
           "name": "Return Policy",
           "settings": {
             "question": "What is the ML Toys return policy?",
-            "answer": "All sales are final. ML Toys does offer a limited 30 day warranty from date of delivery. The warranty covers manufacturing defects. We are unable to cover damage incurred from driving the vehicle or if modifications are done outside of the ones sold by MLToys."
+            "answer": "<strong>Firetruck 60 Day Return</strong><br>\nTo be eligible for a return, the product must:\n<br>Be received by MLToys within 14 days of the date your return was approved.\n<br>Be the same product that was originally purchased.\n<br>Include all original accessories and items that were included with the product, including the original box or packaging, manuals, parts, hardware, and any other included items.\n<br>Be returned in its original condition andmust not have been tampered with, used, modified, altered, or otherwise changed.\n<br><br><strong>Returns That Cannot Be Accepted</strong>\n<br>Unfortunately, we cannot accept a return if:\n\n<br>The return was not pre-authorized by MLToys.\n<br>The product is received more than14 days after the return was approved.\n<br>The product is missing the original box, packaging, manuals, parts, accessories, or other items that were originally included.\n<br>The product shows signs of tampering, modification, alteration, or unauthorized repair.\n<br>The product returned is different from the product originally purchased.\n<br><br><em>If a returned product does not meet these requirements, MLToys reserves the right to refuse the return or return the product to the customer.</em>"
           }
         }
       },
