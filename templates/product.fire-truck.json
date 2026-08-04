@@ -55,8 +55,8 @@
             "price_size": "md",
             "price_color": "foreground",
             "show_shipping_message": false,
-            "shipping_message_text": "Shipping calculated at checkout.",
-            "shipping_page": "shipping-policy"
+            "shipping_message_text": "",
+            "shipping_page": ""
           }
         },
         "ft_save_Rq7s": {
@@ -203,6 +203,9 @@
         "share_GkUBzj",
         "delivery_date_Kz744U",
         "text_xtRNAN"
+      ],
+      "custom_css": [
+        ".product__tax {display: none;}"
       ],
       "settings": {
         "enable_sticky_info": true,
