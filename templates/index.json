@@ -151,20 +151,10 @@
             "button_style_secondary": false
           }
         },
-        "collection_zRtVh4": {
-          "type": "collection",
-          "settings": {
-            "collection": "combination-kits",
-            "collection_title": "Combo Kits",
-            "show_view_all": true,
-            "button_label": "All Combo Kits",
-            "button_style_secondary": false
-          }
-        },
         "collection_rCjLVR": {
           "type": "collection",
           "settings": {
-            "collection": "power-wheels-electrical-upgrades",
+            "collection": "electrical-upgrades-for-power-wheels-ride-on-toys-copy",
             "collection_title": "Electrical",
             "show_view_all": true,
             "button_label": "All Electrical",
@@ -195,7 +185,6 @@
       "block_order": [
         "collection_7DKKte",
         "collection_PczVrk",
-        "collection_zRtVh4",
         "collection_rCjLVR",
         "collection_PPt9QW",
         "collection_4biRzd"
