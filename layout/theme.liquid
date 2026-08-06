@@ -450,5 +450,93 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+     <script>
+      //--- This script is for generating the product cards on blog posts -- 
+  (function () {
+    var STORE_DOMAIN = "ml-toys-store.myshopify.com"; // this site's Storefront domain
+    var STORE_TOKEN = "f0cb8becb65a3ecf724ed615548b01e1"; // this site's Storefront Access Token
+
+    function escapeHtml(s) {
+      return (s || "").replace(/[&<>"']/g, function (c) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[c];
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var cards = Array.prototype.slice.call(
+        document.querySelectorAll(".spc-card[data-handle]"),
+      );
+      if (!cards.length) return;
+
+      var aliasMap = {};
+      var queryParts = cards.map(function (card, i) {
+        var alias = "p" + i;
+        aliasMap[alias] = card;
+        var handle = card.getAttribute("data-handle").replace(/"/g, "");
+        return (
+          alias +
+          ': productByHandle(handle: "' +
+          handle +
+          '") { title featuredImage { url altText } priceRange { minVariantPrice { amount currencyCode } } }'
+        );
+      });
+      var query = "query { " + queryParts.join(" ") + " }";
+
+      fetch("https://" + STORE_DOMAIN + "/api/2024-01/graphql.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shopify-Storefront-Access-Token": STORE_TOKEN,
+        },
+        body: JSON.stringify({ query: query }),
+      })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (data) {
+          if (!data.data) return;
+          Object.keys(aliasMap).forEach(function (alias) {
+            var product = data.data[alias];
+            var card = aliasMap[alias];
+            if (!product) return;
+
+            var titleEl = card.querySelector(".spc-title");
+            var imgWrap = card.querySelector(".spc-image");
+            var priceEl = card.querySelector(".spc-price");
+
+            if (titleEl && product.title) titleEl.textContent = product.title;
+            if (imgWrap && product.featuredImage) {
+              imgWrap.innerHTML =
+                '<img src="' +
+                product.featuredImage.url +
+                '" alt="' +
+                escapeHtml(product.featuredImage.altText) +
+                '" style="width:100%;height:100%;object-fit:cover;border-radius:4px;display:block;" />';
+            }
+            if (
+              priceEl &&
+              product.priceRange &&
+              product.priceRange.minVariantPrice
+            ) {
+              var amount = parseFloat(
+                product.priceRange.minVariantPrice.amount,
+              ).toFixed(2);
+              priceEl.textContent = "$" + amount;
+            }
+          });
+        })
+        .catch(function () {
+          /* fails silently — card stays blank rather than broken */
+        });
+    });
+  })();
+</script>
+
   </body>
 </html>
