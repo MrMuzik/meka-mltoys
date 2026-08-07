@@ -5779,7 +5779,7 @@ div#cf_ram_guest_image_section img {
   display: block;
   text-align: center;
   background-color: var(--dm-product-card-primary);
-  color: #ffffff;
+  color: #ffffff!important;
   text-decoration: none;
   font-weight: 600;
   padding: 10px 0;
