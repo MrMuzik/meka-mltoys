@@ -5718,7 +5718,7 @@ div#cf_ram_guest_image_section img {
 /* Digmo Updates: Blog Product Card Styling */
 
 :root {
-  --dm-product-card-primary: var(--alpha-button-background);
+  --dm-product-card-primary: #e01d3a;
 }
 
 .dm-product-card {
