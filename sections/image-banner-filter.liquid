@@ -637,6 +637,24 @@
 </filter-slider>
 
 <script src="{{ 'slider-filter.js' | asset_url }}" defer="defer"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Adjust selector to match your slider CTA buttons
+    const sliderCTAs = document.querySelectorAll('.slider__cta, .slideshow__cta, [data-slider-cta]');
+
+    sliderCTAs.forEach(function (btn, index) {
+      btn.addEventListener('click', function () {
+        Shopify.analytics.publish('slider_cta_click', {
+          button_label: btn.innerText.trim(),
+          button_url: btn.href || btn.getAttribute('data-url') || '',
+          slide_index: index,
+          slide_title: btn.closest('[data-slide-title]')?.dataset.slideTitle || ''
+        });
+      });
+    });
+  });
+</script>
+
 
 {% schema %}
 {
