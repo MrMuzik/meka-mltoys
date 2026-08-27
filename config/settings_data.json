@@ -206,6 +206,11 @@
         "type": "shopify://apps/blog-product-spotlight/blocks/app-embed/3dc47331-0778-42b5-9fb0-518fad36306f",
         "disabled": false,
         "settings": {}
+      },
+      "6603642584040985330": {
+        "type": "shopify://apps/chaterimo/blocks/chat_widget/0ccccbc9-09fe-4d2f-a4f6-3aab2ab3edfe",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
